@@ -593,6 +593,12 @@ const lifeData = [
 		'range': 'ww',
 	},
 	{
+		'name': 'amastigomycota',
+		'rank': 'clade',
+		'parent': 'eumycota',
+		'range': 'ww',
+	},
+	{
 		'name': 'amborella',
 		'rank': 'genus',
 		'parent': 'amborellaceae',
@@ -879,6 +885,12 @@ const lifeData = [
 		'age': lifeDataPeriod.maastrichtian,
 	},
 	{
+		'name': 'apieae',
+		'rank': 'tribe',
+		'parent': 'apiaceae',
+		'range': 'ww',
+	},
+	{
 		'name': 'apis',
 		'rank': 'genus',
 		'parent': 'apidae',
@@ -897,7 +909,7 @@ const lifeData = [
 	{
 		'name': 'apium',
 		'rank': 'genus',
-		'parent': 'apiaceae',
+		'parent': 'apieae',
 		'range': 'ww',
 	},
 	{
@@ -1128,7 +1140,7 @@ const lifeData = [
 	{
 		'name': 'ascomycota',
 		'rank': 'division',
-		'parent': 'fungi',
+		'parent': 'amastigomycota',
 		'range': 'ww',
 		'age': lifeDataPeriod.early_devonian,
 	},
@@ -1182,7 +1194,7 @@ const lifeData = [
 	{
 		'name': 'asteroidea',
 		'rank': 'class',
-		'parent': 'echinodermata',
+		'parent': 'eleutherozoa',
 		'range': 'wo',
 		'age': lifeDataPeriod.ordovician,
 		'desc': 'Starfish',
@@ -1469,7 +1481,7 @@ const lifeData = [
 	{
 		'name': 'basidiomycota',
 		'rank': 'division',
-		'parent': 'fungi',
+		'parent': 'amastigomycota',
 		'range': 'ww',
 		'age': 330,
 	},
@@ -1519,7 +1531,7 @@ const lifeData = [
 	{
 		'name': 'blastocladiomycota',
 		'rank': 'division',
-		'parent': 'fungi',
+		'parent': 'eumycota',
 		'range': 'ww', // ???
 	},
 	{
@@ -1591,7 +1603,7 @@ const lifeData = [
 	{
 		'name': 'brachiopoda',
 		'rank': 'phylum',
-		'parent': 'kryptotrochozoa',
+		'parent': 'lophophorata',
 		'range': 'ww', // ?
 		'age': lifeDataPeriod.terreneuvian,
 		'desc': 'Lampshells',
@@ -1690,7 +1702,7 @@ const lifeData = [
 	{
 		'name': 'bryozoa',
 		'rank': 'phylum',
-		'parent': 'kryptotrochozoa',
+		'parent': 'lophophorata',
 		'range': 'wo', // ?
 		'age': lifeDataPeriod.ordovician,
 		'desc': 'Moss animals',
@@ -2379,9 +2391,15 @@ const lifeData = [
 		'range': 'ea',
 	},
 	{
+		'name': 'chytridiomyceta',
+		'rank': 'subkingdom',
+		'parent': 'eumycota',
+		'range': 'ww', // ???
+	},
+	{
 		'name': 'chytridiomycota',
 		'rank': 'division',
-		'parent': 'fungi',
+		'parent': 'chytridiomyceta',
 		'range': 'ww', // ???
 	},
 	{
@@ -2763,7 +2781,7 @@ const lifeData = [
 	{
 		'name': 'cucurbitales',
 		'rank': 'order',
-		'parent': 'fabids',
+		'parent': 'nitrogen-fixing',
 		'range': 'ww',
 	},
 	{
@@ -2786,7 +2804,7 @@ const lifeData = [
 	{
 		'name': 'cuminum',
 		'rank': 'genus',
-		'parent': 'apiaceae',
+		'parent': 'scandiceae',
 		'range': 'as',
 	},
 	{
@@ -2898,7 +2916,7 @@ const lifeData = [
 	{
 		'name': 'cycliophora',
 		'rank': 'phylum',
-		'parent': 'kryptotrochozoa',
+		'parent': 'lophotrochozoa',
 		'range': 'al', // ?
 	},
 	{
@@ -2950,7 +2968,7 @@ const lifeData = [
 	{
 		'name': 'daucus',
 		'rank': 'genus',
-		'parent': 'apiaceae',
+		'parent': 'scandiceae',
 		'range': 'ww',
 	},
 	{
@@ -3110,7 +3128,7 @@ const lifeData = [
 	{
 		'name': 'dicyemida',
 		'rank': 'phylum',
-		'parent': 'platytrochozoa',
+		'parent': 'mesozoa',
 		'range': 'wo', // ?
 	},
 	{
@@ -3334,7 +3352,7 @@ const lifeData = [
 	{
 		'name': 'echinoidea',
 		'rank': 'class',
-		'parent': 'echinodermata',
+		'parent': 'eleutherozoa',
 		'range': 'wo',
 		'age': lifeDataPeriod.ordovician,
 		'desc': 'Urchins',
@@ -3404,6 +3422,13 @@ const lifeData = [
 		'desc': 'Finger Millet',
 	},
 	{
+		'name': 'eleutherozoa',
+		'rank': 'subphylum',
+		'parent': 'echinodermata',
+		'range': 'ww',
+		'age': lifeDataPeriod.ordovician,
+	},
+	{
 		'name': 'embryophyta',
 		'rank': 'clade',
 		'parent': 'plantae',
@@ -3431,7 +3456,7 @@ const lifeData = [
 	{
 		'name': 'entoprocta',
 		'rank': 'phylum',
-		'parent': 'kryptotrochozoa',
+		'parent': 'lophophorata',
 		'range': 'wo', // ?
 		'age': lifeDataPeriod.terreneuvian,
 		'desc': 'Goblet worms',
@@ -3677,6 +3702,12 @@ const lifeData = [
 		'range': 'ww',
 	},
 	{
+		'name': 'eumycota',
+		'rank': 'clade',
+		'parent': 'fungi',
+		'range': 'ww',
+	},
+	{
 		'name': 'eurotiales',
 		'rank': 'order',
 		'parent': 'eurotiomycetes',
@@ -3698,7 +3729,7 @@ const lifeData = [
 	{
 		'name': 'fabales',
 		'rank': 'order',
-		'parent': 'fabids',
+		'parent': 'nitrogen-fixing',
 		'range': 'ww',
 	},
 	{
@@ -3716,7 +3747,7 @@ const lifeData = [
 	{
 		'name': 'fagales',
 		'rank': 'order',
-		'parent': 'fabids',
+		'parent': 'nitrogen-fixing',
 		'range': 'ww',
 	},
 	{
@@ -3796,7 +3827,7 @@ const lifeData = [
 	{
 		'name': 'ferula',
 		'rank': 'genus',
-		'parent': 'apiaceae',
+		'parent': 'scandiceae',
 		'range': 'as',
 	},
 	{
@@ -3937,7 +3968,7 @@ const lifeData = [
 	{
 		'name': 'gastrotricha',
 		'rank': 'phylum',
-		'parent': 'platytrochozoa',
+		'parent': 'rouphozoa',
 		'range': 'ww', // ?
 		'desc': 'Hairybellies',
 	},
@@ -4018,7 +4049,7 @@ const lifeData = [
 	{
 		'name': 'glomeromycota',
 		'rank': 'division',
-		'parent': 'fungi',
+		'parent': 'amastigomycota',
 		'range': 'ww', // ???
 	},
 	{
@@ -4325,7 +4356,7 @@ const lifeData = [
 	{
 		'name': 'holothuroidea',
 		'rank': 'class',
-		'parent': 'echinodermata',
+		'parent': 'eleutherozoa',
 		'range': 'wo',
 		'age': lifeDataPeriod.mid_ordovician,
 		'desc': 'Sea cucumbers',
@@ -5148,6 +5179,13 @@ const lifeData = [
 		'desc': 'Anglerfish',
 	},
 	{
+		'name': 'lophophorata',
+		'rank': 'clade',
+		'parent': 'kryptotrochozoa',
+		'range': 'ww',
+		'age': lifeDataPeriod.terreneuvian,
+	},
+	{
 		'name': 'lophotrochozoa',
 		'rank': 'superphylum',
 		'parent': 'platytrochozoa',
@@ -5392,6 +5430,12 @@ const lifeData = [
 		'parent': 'mesonychoteuthis',
 		'range': 'so',
 		'desc': 'Colossal Squid',
+	},
+	{
+		'name': 'mesozoa',
+		'rank': 'clade',
+		'parent': 'platytrochozoa',
+		'range': 'wo',
 	},
 	{
 		'name': 'metamonada',
@@ -5715,7 +5759,7 @@ const lifeData = [
 	{
 		'name': 'nakalipithecus',
 		'rank': 'genus',
-		'parent': 'hominidae',
+		'parent': 'homininae', // hominidae article
 		'range': 'af',
 		'extinct': true,
 		'age': 9.9,
@@ -5790,7 +5834,7 @@ const lifeData = [
 	{
 		'name': 'neocallimastigomycota',
 		'rank': 'division',
-		'parent': 'fungi',
+		'parent': 'chytridiomyceta',
 		'range': 'ww', // ???
 	},
 	{
@@ -5829,6 +5873,13 @@ const lifeData = [
 		'age': 558,
 		'authority': authorities.jondelius,
 		'develop': 'nephridia (proto-kidneys)',
+	},
+	{
+		'name': 'nitrogen-fixing',
+		'rank': 'clade',
+		'parent': 'fabids',
+		'range': 'ww',
+		'wiki': 'Rosids#Phylogeny',
 	},
 	{
 		'name': 'nomascus',
@@ -5964,7 +6015,7 @@ const lifeData = [
 	{
 		'name': 'ophiuroidea',
 		'rank': 'class',
-		'parent': 'echinodermata',
+		'parent': 'eleutherozoa',
 		'range': 'wo',
 		'age': lifeDataPeriod.ordovician,
 		'desc': 'Brittle stars',
@@ -6078,7 +6129,7 @@ const lifeData = [
 	{
 		'name': 'orthonectida',
 		'rank': 'phylum',
-		'parent': 'platytrochozoa',
+		'parent': 'mesozoa',
 		'range': 'wo', // ?
 	},
 	{
@@ -6646,7 +6697,7 @@ const lifeData = [
 	{
 		'name': 'petroselinum',
 		'rank': 'genus',
-		'parent': 'apiaceae',
+		'parent': 'apieae',
 		'range': 'ow',
 	},
 	{
@@ -6772,7 +6823,7 @@ const lifeData = [
 	{
 		'name': 'phoronida',
 		'rank': 'phylum',
-		'parent': 'kryptotrochozoa',
+		'parent': 'lophophorata',
 		'range': 'wo', // ?
 		'age': lifeDataPeriod.silurian,
 		'desc': 'Horseshoe worms',
@@ -7016,7 +7067,7 @@ const lifeData = [
 	{
 		'name': 'platyhelminthes',
 		'rank': 'phylum',
-		'parent': 'platytrochozoa',
+		'parent': 'rouphozoa',
 		'range': 'ww',
 		'age': 580,
 		'desc': 'Flatworm',
@@ -7815,7 +7866,7 @@ const lifeData = [
 	{
 		'name': 'rosales',
 		'rank': 'order',
-		'parent': 'fabids',
+		'parent': 'nitrogen-fixing',
 		'range': 'ww',
 	},
 	{
@@ -7831,6 +7882,12 @@ const lifeData = [
 		'parent': 'gnathifera',
 		'range': 'ww',
 		'age': lifeDataPeriod.middle_jurassic,
+	},
+	{
+		'name': 'rouphozoa',
+		'rank': 'clade',
+		'parent': 'platytrochozoa',
+		'range': 'ww',
 	},
 	{
 		'name': 'rozellomycota',
@@ -8014,6 +8071,12 @@ const lifeData = [
 		'name': 'scalidophora',
 		'rank': 'clade',
 		'parent': 'ecdysozoa',
+		'range': 'ww',
+	},
+	{
+		'name': 'scandiceae',
+		'rank': 'tribe',
+		'parent': 'apiaceae',
 		'range': 'ww',
 	},
 	{
