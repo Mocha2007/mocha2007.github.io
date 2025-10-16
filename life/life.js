@@ -586,10 +586,11 @@ const stat_elem = {
 			elem.appendChild(ol);
 			top.forEach(t => {
 				const li = document.createElement('li');
-				li.innerHTML = `${t.name}: ${t.stats[spec]} ${unit}`; // todo - make fancier
+				li.appendChild(t.a);
+				li.appendChild(document.createTextNode(`: ${t.stats[spec]} ${unit}`)) // todo - make fancier
 				const category = this.cat.cat(t);
 				li.style.backgroundColor = this.cat.colors[category];
-				li.title = category;
+				li.title = `${capitalizeFirstLetter(category)} (${capitalizeFirstLetter(t.parent_id)})`;
 				ol.appendChild(li);
 			});
 		});
