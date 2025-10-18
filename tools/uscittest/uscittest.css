@@ -1,0 +1,25 @@
+html, body {
+	background-color: black;
+	color: silver;
+}
+h1, h2 {
+	text-align: center;
+}
+.answer {
+	border: 0.3vw solid silver;
+	border-radius: 1vw;
+	background-color: grey;
+	color: black;
+	cursor: pointer;
+	width: 100%;
+}
+.answer_container {
+	display: grid;
+	gap: 1vw;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: repeat(2, auto);
+	margin: 0 auto;
+}
+.answer:hover {
+	opacity: 50%;
+}
