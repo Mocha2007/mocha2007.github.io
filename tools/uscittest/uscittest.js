@@ -232,7 +232,154 @@ const USCITTEST = {
 			real_answers: ['Mike Johnson'],
 			fake_answers: ['Kevin McCarthy', 'Paul Ryan', 'James Vance'],
 		},
-		// todo: Q31+
+		{
+			question: 'Who does a U.S. senator represent?',
+			real_answers: ['People of their state'],
+			fake_answers: ['People of their district', 'People of their party', 'People of their region'],
+		},
+		{
+			question: 'Who elects U.S. senators?',
+			real_answers: ['Citizens of their state'],
+			fake_answers: ['The President', 'Members of Congress', 'State legislatures'],
+		},
+		{
+			question: 'Who does a member of the House of Representatives represent?',
+			real_answers: ['People of their district'],
+			fake_answers: ['People of their state', 'People of their party', 'People of their region'],
+		},
+		{
+			question: 'Who elects members of the House of Representatives?',
+			real_answers: ['Citizens of their district'],
+			fake_answers: ['The President', 'Members of Congress', 'State legislatures'],
+		},
+		{
+			question: 'Some states have more representatives than other states. Why?',
+			real_answers: ['Their state\'s population'],
+			fake_answers: ['Their state\'s wealth', 'Their state\'s location', 'Their state\'s history'],
+		},
+		{
+			question: 'The President of the United States is elected for how many years?',
+			real_answers: ['4 years'],
+			fake_answers: ['2 years', '8 years', 'For life'],
+		},
+		{
+			question: 'The President of the United States can serve only two terms. Why?',
+			real_answers: ['The 22<sup>nd</sup> Amendment', 'To keep the president from becoming too powerful'],
+			fake_answers: ['Historical precendent', 'Marbury v. Madison', 'They must serve additional terms in the role of Vice President instead'],
+		},
+		{
+			question: 'Who is the current President of the United States?',
+			real_answers: ['Donald Trump'],
+			fake_answers: ['Joe Biden', 'Barack Obama', 'George Bush'],
+		},
+		{
+			question: 'Who is the current Vice President of the United States?',
+			real_answers: ['James Vance'],
+			fake_answers: ['Mike Pence', 'Kamala Harris', 'Joe Biden'],
+		},
+		{
+			question: 'If the president can no longer serve, who becomes president?',
+			real_answers: ['The Vice President'],
+			fake_answers: ['The Speaker of the House', 'The President pro tempore of the Senate', 'The Secretary of State'],
+		},
+		{
+			question: 'Name one power of the president.',
+			real_answers: ['Signs bills into law', 'Vetoes bills', 'Enforces laws', 'Leads the military', 'Chief Diplomat', 'Appoints federal judges'],
+			fake_answers: ['Makes laws', 'Appoints state governors', 'Interprets the constitution'],
+		},
+		{
+			question: 'Who is the Commander in Chief of the U.S. military?',
+			real_answers: ['The President'],
+			fake_answers: ['Congress', 'The Supreme Court', 'The Secretary of Defense'],
+		},
+		{
+			question: 'Who signs bills to become laws?',
+			real_answers: ['The President'],
+			fake_answers: ['Congress', 'The Supreme Court', 'The Secretary of State'],
+		},
+		{
+			question: 'Who vetoes bills?',
+			real_answers: ['The President'],
+			fake_answers: ['Congress', 'The Supreme Court', 'The Secretary of State'],
+		},
+		{
+			question: 'Who appoints federal judges?',
+			real_answers: ['The President'],
+			fake_answers: ['Congress', 'The Supreme Court', 'The Secretary of Justice'],
+		},
+		{
+			question: 'The executive branch has many parts. Name one.',
+			real_answers: ['The President', 'The Cabinet', 'Federal departments and agencies'],
+			fake_answers: ['Congress', 'The Supreme Court', 'State governments'],
+		},
+		{
+			question: 'What does the President\'s Cabinet do?',
+			real_answers: ['Advises the President'],
+			fake_answers: ['Makes laws for the states', 'Interprets the Constitution', 'Commands the military directly'],
+		},
+		// todo Q48
+		{
+			question: 'Why is the Electoral College important?',
+			real_answers: ['It decides who is elected president', 'It provides a compromise between the popular election of the president and congressional selection.'],
+			fake_answers: ['It determines the order of presidential succession', 'It decides the outcome of congressional elections', 'It allows for a direct popular vote for President', 'It eliminates the need for a runoff election'],
+		},
+		{
+			question: 'What is one part of the judicial branch?',
+			real_answers: ['Supreme Court', 'Federal Courts'],
+			fake_answers: ['State Courts', 'Congress', 'The Presidency'],
+		},
+		{
+			question: 'What does the judicial branch do?',
+			real_answers: ['Reviews laws', 'Explains laws', 'Resolves disputes about the law', 'Decides if a law goes against the U.S. Constitution'],
+			fake_answers: ['Makes laws for the country', 'Commands the military', 'Negotiates treaties'],
+		},
+		{
+			question: 'What is the highest court in the United States?',
+			real_answers: ['The Supreme Court'],
+			fake_answers: ['The Court of Public Opinion', 'The Presidency', 'The Senate'],
+		},
+		{
+			question: 'How many seats are on the Supreme Court?',
+			real_answers: ['9'],
+			fake_answers: ['8', '10', '12'],
+		},
+		{
+			question: 'How many Supreme Court justices are usually needed to decide a case?',
+			real_answers: ['A majority'],
+			fake_answers: ['A plurality', 'Unanimity', 'At least one'],
+		},
+		{
+			question: 'How long do Supreme Court justices serve?',
+			real_answers: ['For life', 'Until retirement'],
+			fake_answers: ['4 years', '6 years', '8 years'],
+		},
+		{
+			question: 'Supreme Court justices serve for life. Why?',
+			real_answers: ['To be independent of politics', 'To limit outside influence'],
+			fake_answers: ['To ensure the continuance of tradition', 'The principle of <i>Stare decisis</i>', 'To prevent frequent overturning of precedent'],
+		},
+		{
+			question: 'Who is the current Chief Justice of the United States?',
+			real_answers: ['John Roberts'],
+			fake_answers: ['William Rehnquist', 'Clarence Thomas', 'Samuel Alito', 'Sonia Sotomayor', 'Elena Kagan', 'Neil Gorsuch', 'Brett Kavanaugh', 'Amy Coney Barrett', 'Ketanji Brown Jackson'],
+		},
+		{
+			question: 'Name one power that is only for the federal government.',
+			real_answers: ['Print money', 'Declare war', 'Create armies', 'Make treaties', 'Set foreign policy'],
+			fake_answers: ['Regulate intrastate commerce', 'Make local laws', 'Collect state taxes'],
+		},
+		{
+			question: 'Name one power that is only for the states.',
+			real_answers: ['Provide schooling and education', 'Provide protection', 'Provide public safety', 'Grant driver\'s licenses', 'Approve zoning and land use'],
+			fake_answers: ['Regulate foreign policy', 'Declare war', 'Negotiate treaties'],
+		},
+		{
+			question: 'What is the purpose of the 10<sup>th</sup> Amendment?',
+			real_answers: ['To grant powers not given to the federal government to the states'],
+			fake_answers: ['To prohibit cruel and unusual punishment', 'To prevent unreasonable search and seizure', 'To affirm the rights of all citizens to vote'],
+		},
+		// todo Q60, 61, 62
+		// todo: Q63+
 	],
 	random: {
 		/** @param {Array|String} iterable */
