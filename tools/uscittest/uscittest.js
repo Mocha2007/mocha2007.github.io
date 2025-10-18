@@ -400,7 +400,143 @@ const USCITTEST = {
 			fake_answers: ['To prohibit cruel and unusual punishment', 'To prevent unreasonable search and seizure', 'To affirm the rights of all citizens to vote'],
 		},
 		// todo Q60, 61, 62
-		// todo: Q63+
+		{
+			question: 'There are four amendments to the U.S. Constitution about who can vote. Describe one of them.',
+			real_answers: ['Citizens 18 and older can vote', 'You don\'t have to pay a poll tax to vote', 'Any citizen can vote', 'A male citizen of any race can vote'],
+			fake_answers: ['A literacy test is required to vote', 'Voting is limited to property owners', 'A poll tax is required to vote'],
+		},
+		{
+			question: 'Who can vote in federal elections, run for federal office, and serve on a jury in the United States?',
+			real_answers: ['U.S. citizens excepting residents of U.S. territories'],
+			fake_answers: ['Residents of the United States', 'U.S. citizens, or residents who have lived in the United States for at least 10 years', 'All U.S. citizens'],
+		},
+		// todo Q65
+		{
+			question: 'What do we show loyalty to when we say the Pledge of Allegiance?',
+			real_answers: ['The flag', 'The United States'],
+			fake_answers: ['The President', 'The Constitution', 'The American People'],
+		},
+		// todo Q67, Q68, Q69
+		{
+			question: 'What is one way Americans can serve their country?',
+			real_answers: ['Vote', 'Pay taxes', 'Obey the law', 'Serve in the military', 'Run for office', 'Work for local, state, or federal government'],
+			fake_answers: ['Ignore public issues', 'Avoid taxes', 'Move to another country'],
+		},
+		{
+			question: 'Why is it important to pay federal taxes?',
+			real_answers: ['It\'s required by law', 'All people pay to fund the federal government', 'It is required by the 16th amendment to the U.S. constitution', 'It is one\'s civic duty'],
+			fake_answers: ['You must pay a poll tax to vote in federal elections', 'You must pay to run for public office', 'You must pay to travel abroad'],
+		},
+		{
+			question: 'It is important for all men age 18 through 25 to register for the Selective Service. Name one reason why.',
+			real_answers: ['It\'s required by law', 'It makes the draft fair', 'It is one\'s civic duty'],
+			fake_answers: ['You receive preferential treatment in college admissions', 'You are exempted from jury duty', 'It qualifies one for certain types of financial aid'],
+		},
+		{
+			question: 'The colonists came to America for many reasons. Name one.',
+			real_answers: ['Freedom', 'Economic opportunity', 'To escape persecution'],
+			fake_answers: ['To establish a new monarchy', 'To spread Christianity to the Native Americans', 'To escape European city life'],
+		},
+		{
+			question: 'Who lived in America before the Europeans arrived?',
+			real_answers: ['Native Americans'],
+			fake_answers: ['The Dutch', 'Mexicans', 'African-Americans'],
+		},
+		{
+			question: 'What group of people was taken and sold as slaves?',
+			real_answers: ['Africans'],
+			fake_answers: ['The Dutch', 'Italians', 'The Irish'],
+		},
+		{
+			question: 'What war did the Americans fight to win independence from Britain?',
+			real_answers: ['The American Revolution'],
+			fake_answers: ['The War of 1812', 'The Mexican-American War', 'The French and Indian War'],
+		},
+		{
+			question: 'Name one reason why the Americans declared independence from Britain',
+			real_answers: ['High taxes', 'Taxation without representation', 'Quartering of British soldiers in Americans\' homes', 'Self-government', 'The Boston Massacre', 'The Intolerable Acts'],
+			fake_answers: ['To establish a new monarchy', 'To protest British trade policies that unfairly benefited the colonies', 'To align with other European powers'],
+		},
+		{
+			question: 'Who wrote the Declaration of Independence?',
+			real_answers: ['Thomas Jefferson'],
+			fake_answers: ['Benjamin Franklin', 'James Madison', 'George Washington'],
+		},
+		{
+			question: 'When was the Declaration of Independence adopted?',
+			real_answers: ['July 4, 1776'],
+			fake_answers: ['February 2, 1781', 'June 21, 1788', 'April 7, 1776'],
+		},
+		{
+			question: 'The American Revolution had many important events. Name one.',
+			real_answers: ['Battle of Bunker Hill', 'Declaration of Independence', 'Battle of Trenton', 'Battle of Saratoga', 'Valley Forge', 'Battle of Yorktown'],
+			fake_answers: ['Battle of Gettysburg', 'The Emancipation Proclamation', 'The California Gold Rush'],
+		},
+		// todo 81
+		{
+			question: 'What founding document was written in 1787?',
+			real_answers: ['The Constitution'],
+			fake_answers: ['The Declaration of Independence', 'The Articles of Confederation', 'The Bill of Rights'],
+		},
+		{
+			question: 'The Federalist Papers supported the passage of the U.S. Constitution. Name one of the writers.',
+			real_answers: ['Alexander Hamilton', 'James Madison', 'John Jay', 'Publius'],
+			fake_answers: ['Thomas Jefferson', 'Benjamin Franklin', 'George Washington'],
+		},
+		{
+			question: 'Why were the Federalist Papers important?',
+			real_answers: ['They supported passing the Constitution'],
+			fake_answers: ['They established the Bill of Rights', 'They created the system of checks and balances', 'They established the Declaration of Independence'],
+		},
+		{
+			question: 'Benjamin Franklin is famous for many things. Name one.',
+			real_answers: ['Founded the first free public libraries', 'First Postmaster General of the United States', 'Helped write the Declaration of Independence', 'Inventor', 'U.S. Diplomat'],
+			fake_answers: ['He led the Continental Army to victory in the American Revolution', 'He created the Connecticut Compromise', 'He was the first governor of Virginia'],
+		},
+		{
+			question: 'George Washington is famous for many things. Name one.',
+			real_answers: ['First president', 'General of the Continental Army', 'President of the Constitutional Convention'],
+			fake_answers: ['Wrote the Declaration of Independence', 'First governor of Virginia', 'Inventor'],
+		},
+		{
+			question: 'Thomas Jefferson is famous for many things. Name one.',
+			real_answers: ['Wrote the Declaration of Independence', 'Doubled the size of the United States', 'Third president of the United States', 'First Secretary of State', 'Founded the University of Virginia', 'Writer of the Virginia Statute on Religious Freedom'],
+			fake_answers: ['General of the Continental Army', 'First President', 'He was the first Governor of Virginia'],
+		},
+		{
+			question: 'James Madison is famous for many things. Name one.',
+			real_answers: ['Wrote the Constitution', 'Fourth president of the United States', 'One of the writers of the Federalist Papers'],
+			fake_answers: ['President during the Mexican-American war', 'Primary author of the Declaration of Independence', 'First president of the United States'],
+		},
+		{
+			question: 'Alexander Hamilton is famous for many things. Name one.',
+			real_answers: ['First Secretary of the Treasury', 'One of the writers of the Federalist Papers', 'Helped establish the First Bank of the United States', 'Aide to General George Washington', 'Member of the Continental Congress'],
+			fake_answers: ['Founder of the University of Virginia', 'Primary author of the Declaration of Independence', 'First president of the United States'],
+		},
+		{
+			question: 'What territory did the United States buy from France in 1803',
+			real_answers: ['Louisiana'],
+			fake_answers: ['Florida', 'Ohio', 'New Mexico', 'Oregon'],
+		},
+		{
+			question: 'Name one war fought by the United States in the 1800s.',
+			// https://en.wikipedia.org/wiki/List_of_wars_involving_the_United_States_in_the_19th_century
+			real_answers: ['Barbary Wars', 'War of 1812', 'American Indian Wars', 'Patriot War', 'Mexican-American War', 'Second Opium War', 'Mormon Wars', 'Reform War', 'Pig War', 'American Civil War', 'Liberian-Grebo War', 'Las Cuevas War', 'Garza War', 'Spanish-American War'],
+			fake_answers: [
+				// late 18th c. American wars
+				'American-Algerian War', 'Revolutionary War',
+				// early 20th c. American wars
+				'World War I',
+				// 18th century non-American wars
+				'Napoleonic Wars', 'First Opium War', 'Crimean War', 'Boer Wars',
+			],
+		},
+		{
+			question: 'Name the U.S. war between the North and the South',
+			real_answers: ['The Civil War'],
+			fake_answers: ['The Revolutionary War', 'The War of Northern Aggression', 'The Border Wars'],
+		},
+		// todo: Q93+
 	],
 	random: {
 		/** @param {Array|String} iterable */
