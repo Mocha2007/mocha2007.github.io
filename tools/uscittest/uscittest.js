@@ -532,11 +532,46 @@ const USCITTEST = {
 			],
 		},
 		{
-			question: 'Name the U.S. war between the North and the South',
+			question: 'Name the U.S. war between the North and the South.',
 			real_answers: ['The Civil War'],
 			fake_answers: ['The Revolutionary War', 'The War of Northern Aggression', 'The Border Wars'],
 		},
-		// todo: Q93+
+		{
+			question: 'The Civil War had many important events. Name one.',
+			real_answers: ['Battle of Fort Sumter', 'Emancipation Proclamation', 'Battle of Vicksburg', 'Battle of Gettysburg', 'Sherman\'s March', 'Surrender at Appomattox', 'Battle of Antietam', 'Assassination of Abraham Lincoln'],
+			fake_answers: ['Battle of Bunker Hill', 'Declaration of Independence', 'Battle of Trenton', 'Battle of Saratoga', 'Valley Forge', 'Battle of Yorktown'],
+		},
+		{
+			question: 'Abraham Lincoln is famous for many things. Name one.',
+			real_answers: ['Freed the slaves', 'Saved the Union', 'Led the U.S. during the Civil War', '16th president of the United States', 'Delivered the Gettysburg Address'],
+			fake_answers: ['Wrote the Declaration of Independence', 'Inventor', 'Led the U.S. during the American Revolution'],
+		},
+		{
+			question: 'What did the Emancipation Proclamation do?',
+			real_answers: ['Freed all slaves in the Confederacy'],
+			fake_answers: ['Freed all slaves in the Union', 'Freed all adult slaves', 'Freed all male slaves'],
+		},
+		{
+			question: 'What U.S. war ended slavery in the United States?',
+			real_answers: ['Civil War'],
+			fake_answers: ['American Revolution', 'Mexican-American War', 'World War I'],
+		},
+		{
+			question: 'What amendment says that all persons born or naturalized in the United States, and subject to the jurisdiction thereof, are U.S. citizens?',
+			real_answers: ['14th'],
+			fake_answers: ['13th', '15th', '16th'],
+		},
+		{
+			question: 'When did all men get the right to vote?',
+			real_answers: ['After the Civil War', 'During Reconstruction', 'With the 15th Amendment', '1870'],
+			fake_answers: ['After the Revolutionary War', 'During the Era of Good Feelings', 'With the 14th Amendment', '1866'],
+		},
+		{
+			question: 'Name one leader of the women\'s rights movement in the 1800s',
+			real_answers: ['Susan B. Anthony', 'Elizabeth Cady Stanton', 'Sojourner Truth', 'Harriet Tubman', 'Lucretia Mott', 'Lucy Stone'],
+			fake_answers: ['Emily Bakersfield', 'Alice Worth', 'Ophelia Staunton'],
+		},
+		// todo: Q100+
 	],
 	random: {
 		/** @param {Array|String} iterable */
