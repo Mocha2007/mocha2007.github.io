@@ -11,6 +11,7 @@ h1, h2 {
 	background-color: grey;
 	color: black;
 	cursor: pointer;
+	text-align: center;
 	width: 100%;
 }
 .answer_container {
