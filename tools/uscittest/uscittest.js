@@ -514,7 +514,7 @@ const USCITTEST = {
 			fake_answers: ['Founder of the University of Virginia', 'Primary author of the Declaration of Independence', 'First president of the United States'],
 		},
 		{
-			question: 'What territory did the United States buy from France in 1803',
+			question: 'What territory did the United States buy from France in 1803?',
 			real_answers: ['Louisiana'],
 			fake_answers: ['Florida', 'Ohio', 'New Mexico', 'Oregon'],
 		},
