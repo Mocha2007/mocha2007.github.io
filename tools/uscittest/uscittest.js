@@ -84,6 +84,27 @@ const USCITTEST = {
 			return elem;
 		},
 		/** @returns {HTMLDivElement} */
+		get score(){
+			const elem = document.createElement('div');
+			const h = document.createElement('h2');
+			h.innerHTML = 'Result';
+			elem.appendChild(h);
+			const inner = document.createElement('div');
+			elem.appendChild(inner);
+			inner.innerHTML =
+			`Correct: ${USCITTEST.test_state.answered_correct}<br>
+			Incorrect: ${USCITTEST.test_state.answered_incorrect}<br>
+			Score: ${Math.round(100 * USCITTEST.test_state.answered_correct / USCITTEST.test_state.answered_total)}%<br>
+			Result: ${USCITTEST.config.min_pass_score <= USCITTEST.test_state.answered_correct ? 'PASS' : 'FAIL'}<br>
+			`;
+			const retry_button = document.createElement('div');
+			retry_button.innerHTML = 'Retry';
+			retry_button.onclick = () => USCITTEST.test_state.reset();
+			retry_button.classList.add('answer');
+			inner.appendChild(retry_button);
+			return elem;
+		},
+		/** @returns {HTMLDivElement} */
 		get test(){
 			return document.getElementById('test');
 		}
@@ -431,14 +452,9 @@ const USCITTEST = {
 			this.next();
 		},
 		score(){
-			const passed = USCITTEST.config.min_pass_score <= this.answered_correct;
-			if (passed){
-				alert(`You scored ${this.answered_correct} of ${this.answered_total}. This means you PASSED.`);
-			}
-			else {
-				alert(`You scored ${this.answered_correct} of ${this.answered_total}. This means you FAILED.`);
-			}
-			this.reset();
+			const container = USCITTEST.elem.test;
+			container.innerHTML = '';
+			container.appendChild(USCITTEST.elem.score);
 		},
 		/** @type {Question[]} */
 		unseen_questions: [],

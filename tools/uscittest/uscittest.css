@@ -10,7 +10,6 @@ h1, h2 {
 	border-radius: 1vw;
 	background-color: grey;
 	color: black;
-	cursor: pointer;
 	font-size: 200%;
 	text-align: center;
 	padding-bottom: 2vh;
@@ -24,8 +23,15 @@ h1, h2 {
 	grid-template-rows: repeat(2, auto);
 	margin: 0 auto;
 }
-.answer:hover {
-	opacity: 50%;
+.answer, .button {
+	cursor: pointer;
+	user-select: none;
+}
+.answer:hover, .button:hover {
+	opacity: 67%;
+}
+.answer:active, .button:active {
+	opacity: 33%;
 }
 .question h2 {
 	font-size: 150%;
