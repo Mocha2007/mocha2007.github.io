@@ -11,7 +11,10 @@ h1, h2 {
 	background-color: grey;
 	color: black;
 	cursor: pointer;
+	font-size: 200%;
 	text-align: center;
+	padding-bottom: 2vh;
+	padding-top: 2vh;
 	width: 100%;
 }
 .answer_container {
@@ -23,4 +26,7 @@ h1, h2 {
 }
 .answer:hover {
 	opacity: 50%;
+}
+.question h2 {
+	font-size: 150%;
 }
