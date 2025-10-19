@@ -567,11 +567,26 @@ const USCITTEST = {
 			fake_answers: ['After the Revolutionary War', 'During the Era of Good Feelings', 'With the 14th Amendment', '1866'],
 		},
 		{
-			question: 'Name one leader of the women\'s rights movement in the 1800s',
+			question: 'Name one leader of the women\'s rights movement in the 1800s.',
 			real_answers: ['Susan B. Anthony', 'Elizabeth Cady Stanton', 'Sojourner Truth', 'Harriet Tubman', 'Lucretia Mott', 'Lucy Stone'],
 			fake_answers: ['Emily Bakersfield', 'Alice Worth', 'Ophelia Staunton'],
 		},
-		// todo: Q100+
+		{
+			question: 'Name one war fought by the United States in the 1900s.',
+			real_answers: ['Banana Wars', 'World War I', 'World War II', 'Korean War', 'Vietnam War', 'Gulf War'],
+			fake_answers: [
+				// american wars in the late 19th / early 21st c.
+				'War in Afghanistan', 'Iraq War',
+				// non-american 20th c. wars
+				'Spanish-American War',
+			],
+		},
+		{
+			question: 'Why did the United States enter World War I?',
+			real_answers: ['Because Germany attacked U.S. ships', 'To support the Allied Powers', 'To oppose the Central Powers'],
+			fake_answers: ['To stop the rise of Nazism', 'In response to the attack on the <i>Maine</i>', 'In response to the attack on Pearl Harbor'],
+		},
+		// todo: Q102+
 	],
 	random: {
 		/** @param {Array|String} iterable */
