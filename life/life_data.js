@@ -3252,6 +3252,14 @@ const lifeData = [
 		},
 	},
 	{
+		'name': 'dinosauria',
+		'rank': 'clade',
+		'parent': 'archosauria',
+		'age': 233.23,
+		'range': 'ww',
+		'desc': 'Dinosaurs',
+	},
+	{
 		'name': 'dinozoa',
 		'rank': 'clade',
 		'parent': 'myzozoa',
@@ -6188,7 +6196,7 @@ const lifeData = [
 	{
 		'name': 'ornithischia',
 		'rank': 'order',
-		'parent': 'archosauria',
+		'parent': 'dinosauria',
 		'extinct': true,
 		'range': 'ww',
 		'age': 200.91,
@@ -8207,7 +8215,7 @@ const lifeData = [
 	{
 		'name': 'saurischia',
 		'rank': 'clade',
-		'parent': 'archosauria',
+		'parent': 'dinosauria',
 		'range': 'ww',
 		'age': 233.23,
 	},
