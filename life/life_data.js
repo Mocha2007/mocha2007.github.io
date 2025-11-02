@@ -940,6 +940,13 @@ const lifeData = [
 		},
 	},
 	{
+		'name': 'apodiformes',
+		'rank': 'order',
+		'parent': 'neoaves',
+		'range': 'ww',
+		'age': lifeDataPeriod.late_paleocene,
+	},
+	{
 		'name': 'arachis',
 		'rank': 'genus',
 		'parent': 'fabaceae',
@@ -2760,6 +2767,14 @@ const lifeData = [
 		'age': 540,
 		'authority': authorities.eschscholtz,
 		'desc': 'Comb Jellies',
+	},
+	{
+		'name': 'cucuiformes',
+		'rank': 'order',
+		'parent': 'neoaves',
+		'range': 'ww',
+		'age': 34,
+		'desc': 'Cuckoos',
 	},
 	{
 		'name': 'cucumis',
@@ -9062,6 +9077,14 @@ const lifeData = [
 				'ploidy': 6,
 			},
 		},
+	},
+	{
+		'name': 'trochilidae',
+		'rank': 'family',
+		'parent': 'apodiformes',
+		'range': 'nw',
+		'age': 30,
+		'desc': 'Hummingbirds',
 	},
 	{
 		'name': 'trypanosoma',
