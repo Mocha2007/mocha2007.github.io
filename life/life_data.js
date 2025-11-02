@@ -5519,6 +5519,14 @@ const lifeData = [
 		'emoji': '🪼',
 	},
 	{
+		'name': 'meleagris',
+		'rank': 'genus',
+		'parent': 'phasianinae',
+		'age': 23,
+		'range': 'na',
+		'desc': 'Turkey',
+	},
+	{
 		'name': 'mesangiospermae',
 		'rank': 'clade',
 		'parent': 'angiospermae',
