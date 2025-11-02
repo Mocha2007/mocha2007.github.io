@@ -1996,6 +1996,13 @@ const lifeData = [
 		},
 	},
 	{
+		'name': 'cariamiformes',
+		'rank': 'order',
+		'parent': 'telluraves',
+		'range': 'sa',
+		'age': lifeDataPeriod.early_eocene,
+	},
+	{
 		'name': 'caridea',
 		'rank': 'infraorder',
 		'parent': 'decapoda',
@@ -6874,6 +6881,20 @@ const lifeData = [
 		'range': 'wo', // ?
 		'age': lifeDataPeriod.silurian,
 		'desc': 'Horseshoe worms',
+	},
+	{
+		'name': 'phorusrhacidae',
+		'rank': 'family',
+		'parent': 'cariamiformes',
+		'range': 'nw',
+		'extinct': true,
+		'age': 43,
+		'age_end': 0.1,
+		'desc': 'Terror birds',
+		'stats': {
+			height: 3,
+			weight: 350,
+		},
 	},
 	{
 		'name': 'phragmites',
