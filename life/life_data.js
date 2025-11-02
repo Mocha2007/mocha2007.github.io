@@ -3192,6 +3192,20 @@ const lifeData = [
 		}
 	},
 	{
+		'name': 'dinornithiformes',
+		'rank': 'order',
+		'parent': 'palaeognathae',
+		'range': 'oc',
+		'extinct': true,
+		'age': 17,
+		'age_end': 0.0006,
+		'desc': 'Moa',
+		'stats': {
+			height: 3.6,
+			weight: 230,
+		},
+	},
+	{
 		'name': 'dinozoa',
 		'rank': 'clade',
 		'parent': 'myzozoa',
@@ -3934,7 +3948,7 @@ const lifeData = [
 	{
 		'name': 'galloanserae',
 		'rank': 'superorder',
-		'parent': 'aves',
+		'parent': 'neognathae',
 		'range': 'ww',
 		'age': lifeDataPeriod.maastrichtian,
 		'desc': 'Fowl',
@@ -5865,7 +5879,7 @@ const lifeData = [
 	{
 		'name': 'neoaves',
 		'rank': 'clade',
-		'parent': 'aves',
+		'parent': 'neognathae',
 		'range': 'ww',
 		'age': 62.5,
 	},
@@ -5894,6 +5908,13 @@ const lifeData = [
 			length: (0.686 + 0.94)/2,
 			weight: (11.5 + 23)/2,
 		},
+	},
+	{
+		'name': 'neognathae',
+		'rank': 'infraclass',
+		'parent': 'aves',
+		'range': 'ww',
+		'age': 72,
 	},
 	{
 		'name': 'nephropidae',
@@ -6327,6 +6348,13 @@ const lifeData = [
 		'stats': {
 			length: 0.011,
 		},
+	},
+	{
+		'name': 'palaeognathae',
+		'rank': 'infraclass',
+		'parent': 'aves',
+		'range': 'af;nw;oc',
+		'age': 60,
 	},
 	{
 		'name': 'palaeoryctidae',
