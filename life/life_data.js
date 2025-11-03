@@ -4819,6 +4819,9 @@ const lifeData = [
 		'range': 'wo',
 		'age': lifeDataPeriod.late_ediacaran,
 		'desc': 'Glass sponges',
+		'stats': {
+			lifespan: 10e3, // https://en.wikipedia.org/wiki/List_of_longest-living_organisms#Aquatic_animals
+		},
 	},
 	{
 		'name': 'hexapoda',
@@ -9632,6 +9635,7 @@ const lifeData = [
 		'stats': {
 			brain_weight: 200*neuron_mass, // asplanchna brightwellii
 			length: (0.05e-3 + 0.5e-3)/2,
+			lifespan: 120, // https://en.wikipedia.org/wiki/List_of_longest-living_organisms#Aquatic_animals
 		}
 	},
 	{
