@@ -1843,6 +1843,9 @@ const lifeData = [
 		'parent': 'candida',
 		'range': 'ww',
 		'desc': 'Opportunistic pathogenic yeast that is a common member of the human gut flora',
+		'stats': {
+			length: (10e-6 + 12e-6)/2,
+		},
 	},
 	{
 		'name': 'canidae',
@@ -1910,6 +1913,11 @@ const lifeData = [
 				'ploidy': 2,
 			},
 			'sex': 'XY',
+		},
+		'stats': {
+			length: (1.22 + 1.25)/2,
+			speed: 60*kph,
+			weight: (15.8 + 14.1)/2,
 		},
 	},
 	{
@@ -1991,6 +1999,7 @@ const lifeData = [
 			},
 			'sex': 'XY',
 		},
+		'wiki': 'Capra_(genus)',
 	},
 	{
 		'name': 'caprinae',
@@ -2011,6 +2020,9 @@ const lifeData = [
 		'parent': 'capsicum',
 		'range': 'nw',
 		'desc': 'Peppers, incl. Bell and Jalape&ntilde;os',
+		'stats': {
+			height: 2,
+		},
 	},
 	{
 		'name': 'carcharhinidae',
@@ -2302,6 +2314,16 @@ const lifeData = [
 		'parent': 'prunus',
 		'range': 'ea',
 		'desc': 'Cherry',
+		'genetic': {
+			'chromosome': {
+				'autosomal': 8,
+				'ploidy': 2,
+			}, // hermaphroditic?
+		},
+		// P. avium
+		'stats': {
+			height: (5+25)/2,
+		},
 	},
 	{
 		'name': 'ceratioidea',
@@ -2410,6 +2432,9 @@ const lifeData = [
 		'rank': 'species',
 		'parent': 'chlamydia',
 		'range': 'ww',
+		'desc': {
+			length: (200e-9 + 400e-9)/2, // elementary bodies
+		}
 	},
 	{
 		'name': 'chlamydiaceae',
@@ -2564,6 +2589,9 @@ const lifeData = [
 		'parent': 'citrullus',
 		'range': 'af',
 		'desc': 'Watermelon',
+		'stats': {
+			weight: 4.18, // 'wild plants bear fruit up to 20 cm diam.'
+		},
 	},
 	{
 		'name': 'citrus',
@@ -2578,7 +2606,7 @@ const lifeData = [
 		},
 	},
 	{
-		'name': 'citrus latifola',
+		'name': 'citrus latifolia',
 		'rank': 'species',
 		'parent': 'citrus',
 		'range': 'as',
@@ -2635,6 +2663,9 @@ const lifeData = [
 		'parent': 'clavicipitaceae',
 		'range': 'ww',
 		'desc': 'Ergot',
+		'stats': {
+			'length': (3e-6 + 5e-6)/2,
+		},
 	},
 	{
 		'name': 'clavicipitaceae',
@@ -3010,6 +3041,9 @@ const lifeData = [
 		'parent': 'cyanea',
 		'range': 'wo',
 		'desc': 'Lion\'s Mane Jellyfish, among the largest jellyfish',
+		'stats': {
+			length: 36.6,
+		},
 	},
 	{
 		'name': 'cyaneidae',
@@ -3149,6 +3183,10 @@ const lifeData = [
 				'ploidy': 2,
 			},
 		},
+		'stats': {
+			height: (0.6 + 2)/2,
+		},
+		'wiki': 'Carrot',
 	},
 	{
 		'name': 'debaryomycetaceae',
