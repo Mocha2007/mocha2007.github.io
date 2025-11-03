@@ -3268,6 +3268,10 @@ const lifeData = [
 		'range': 'na;eu',
 		'age': 295,
 		'age_end': 270,
+		'stats': {
+			length: 4.6,
+			weight: 250,
+		}
 	},
 	{
 		'name': 'dinoflagellata',
@@ -3504,6 +3508,10 @@ const lifeData = [
 		'extinct': true,
 		'age': 73,
 		'age_end': 66,
+		'stats': {
+			length: 12,
+			weight: 5.6e3,
+		}
 	},
 	{
 		'name': 'ehrlichia',
@@ -6515,6 +6523,10 @@ const lifeData = [
 		'extinct': true,
 		'age': 70,
 		'age_end': 66,
+		'stats': {
+			length: 4.5,
+			weight: (370+450)/2,
+		}
 	},
 	{
 		'name': 'pacmad clade',
@@ -8772,6 +8784,10 @@ const lifeData = [
 		'range': 'af', // N. Africa
 		'age': 100,
 		'age_end': 94,
+		'stats': {
+			length: 14,
+			weight: 7.4e3,
+		}
 	},
 	{
 		'name': 'spiralia',
@@ -9148,6 +9164,10 @@ const lifeData = [
 		'age': 69.42,
 		'age_end': 66.04,
 		'range': 'na',
+		'stats': {
+			length: 3.5,
+			weight: 250,
+		}
 	},
 	{
 		'name': 'thuchomyces',
