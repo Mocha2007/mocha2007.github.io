@@ -2673,6 +2673,9 @@ const lifeData = [
 				'ploidy': 2,
 			},
 		},
+		'stats': {
+			lifespan: (50+100)/2, // https://aplustree.com/how-long-do-trees-live/
+		}
 	},
 	{
 		'name': 'citrus latifolia',
@@ -2804,6 +2807,7 @@ const lifeData = [
 		'desc': 'Coconut',
 		'stats': {
 			height: 30,
+			lifespan: (60+80)/2, // https://aplustree.com/how-long-do-trees-live/
 		},
 	},
 	{
@@ -5844,6 +5848,7 @@ const lifeData = [
 		'desc': 'Apple',
 		'stats': {
 			height: (2 + 10)/2,
+			lifespan: (50+100)/2, // https://aplustree.com/how-long-do-trees-live/
 		},
 	},
 	{
