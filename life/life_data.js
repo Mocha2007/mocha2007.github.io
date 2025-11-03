@@ -541,6 +541,9 @@ const lifeData = [
 		'parent': 'allium',
 		'range': 'as',
 		'desc': 'Onion',
+		'stats': {
+			height: (0.15 + 0.45)/2,
+		},
 	},
 	{
 		'name': 'allium fistulosum',
@@ -566,6 +569,9 @@ const lifeData = [
 				'autosomal': 8,
 				'ploidy': 2,
 			},
+		},
+		'stats': {
+			height: 1,
 		},
 	},
 	{
@@ -938,7 +944,7 @@ const lifeData = [
 		'name': 'apis',
 		'rank': 'genus',
 		'parent': 'apidae',
-		'range': 'ea',
+		'range': 'ow',
 		'age': lifeDataPeriod.oligocene,
 		'desc': 'Honey Bee',
 		'genetic': {
@@ -1107,6 +1113,9 @@ const lifeData = [
 		'parent': 'architeuthis',
 		'range': 'wo',
 		'desc': 'Giant Squid',
+		'stats': {
+			length: 5,
+		},
 	},
 	{
 		'name': 'archosauria',
@@ -1274,6 +1283,9 @@ const lifeData = [
 		'parent': 'auricularia',
 		'range': 'as',
 		'desc': 'Black wood ear',
+		'stats': {
+			height: 1.5e-3, // '1.5 mm thick'
+		},
 	},
 	{
 		'name': 'auriculariaceae',
@@ -1412,6 +1424,9 @@ const lifeData = [
 		'parent': 'bacillus',
 		'range': 'ww',
 		'desc': 'Anthrax',
+		'stats': {
+			length: (3e-6 + 5e-6)/2,
+		},
 	},
 	{
 		'name': 'bacteria',
@@ -1469,6 +1484,10 @@ const lifeData = [
 		'parent': 'balamuthia',
 		'range': 'ww',
 		'desc': 'Brain-Eating Amoeba',
+		'stats': {
+			// "30-120 mcm in diameter"
+			length: (30e-6 + 120e-6)/2,
+		},
 	},
 	{
 		'name': 'balamuthiidae',
@@ -1550,6 +1569,10 @@ const lifeData = [
 		'parent': 'betulaceae',
 		'range': 'nh',
 		'desc': 'Birch',
+		// B. pubescens
+		'stats': {
+			height: (10+20)/2,
+		},
 	},
 	{
 		'name': 'betulaceae',
@@ -1651,6 +1674,9 @@ const lifeData = [
 			},
 			'sex': 'XY',
 		},
+		'stats': {
+			length: (600 + 1200)/2,
+		},
 	},
 	{
 		'name': 'bovidae',
@@ -1716,6 +1742,9 @@ const lifeData = [
 				'ploidy': 2,
 			},
 		},
+		'stats': {
+			height: 1.5,
+		},
 	},
 	{
 		'name': 'brassica rapa',
@@ -1723,6 +1752,10 @@ const lifeData = [
 		'parent': 'brassica',
 		'range': 'ea',
 		'desc': 'Turnip',
+		// subsp. rapa
+		'stats': {
+			weight: 1,
+		},
 	},
 	{
 		'name': 'brassicaceae',
@@ -1765,6 +1798,9 @@ const lifeData = [
 		'range': 'wo', // ?
 		'age': lifeDataPeriod.ordovician,
 		'desc': 'Moss animals',
+		'stats': {
+			length: 0.5e-3,
+		},
 	},
 	// C
 	{
