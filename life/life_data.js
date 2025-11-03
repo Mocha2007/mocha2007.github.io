@@ -5372,6 +5372,7 @@ const lifeData = [
 		'range': 'cn',
 		'extinct': true,
 		'age': lifeDataPeriod.late_jurassic,
+		'age_end': lifeDataPeriod.early_cretaceous,
 		'stats': {
 			weight: (0.015 + 0.017)/2,
 		}
@@ -5400,6 +5401,7 @@ const lifeData = [
 		'parent': 'protostomia',
 		'range': 'ow', // Ediacara hills (Aus) and White sea (Russia)
 		'age': 570,
+		'age_end': 555,
 		'extinct': true,
 		'stats': {
 			length: 0.15,
@@ -8141,6 +8143,9 @@ const lifeData = [
 		'range': 'ww',
 		'age': 1850, // "This symbiotic relationship probably developed 1.7 to 2 billion years ago."
 		'extinct': true,
+		'stats': {
+			'length': 1e-6 * Math.sqrt((0.75 + 3)/2), // sqrt of cross-sectional area
+		},
 	},
 	{
 		'name': 'protostomia',
@@ -8328,7 +8333,7 @@ const lifeData = [
 		'range': 'wo',
 		'extinct': true,
 		'age': lifeDataPeriod.early_ordovician,
-		'age': lifeDataPeriod.late_devonian,
+		'age_end': lifeDataPeriod.late_devonian,
 	},
 	{
 		'name': 'pteridophyta',
@@ -10082,8 +10087,8 @@ const lifeData = [
 		'rank': 'phylum',
 		'parent': 'chordata',
 		'range': 'ww', // ?
-		'age': lifeDataPeriod.cambrian_stage_3,
-		'age_end': lifeDataPeriod.drumian,
+		'age': 520,
+		'age_end': 501,
 		'extinct': true,
 	},
 	{
