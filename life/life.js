@@ -680,6 +680,12 @@ function verify(){
 	if (0 < age_can_be_guessed.length){
 		console.warn(age_can_be_guessed.map(t => t.url));
 	}
+	// extinct childless genera without stats
+	console.debug(`extinct childless genera without stats:`)
+	const ecgwos = Taxon.taxa.filter(t => t.extinct && t.rank == 'genus' && !t.stats && !t.children.length);
+	if (ecgwos.length) {
+		console.warn(ecgwos);
+	}
 }
 
 main();
