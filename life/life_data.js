@@ -1570,6 +1570,14 @@ const lifeData = [
 		'range': 'ww', // ???
 	},
 	{
+		'name': 'boidae',
+		'rank': 'family',
+		'parent': 'serpentes',
+		'range': 'ww',
+		'age': 70.6,
+		'desc': 'Boas',
+	},
+	{
 		'name': 'bop',
 		'rank': 'clade',
 		'parent': 'poaceae',
@@ -2780,6 +2788,14 @@ const lifeData = [
 		'range': 'nw;af;as;oc',
 		'age': 46,
 		'desc': 'Crocodile',
+	},
+	{
+		'name': 'crotalinae',
+		'rank': 'subfamily',
+		'parent': 'viperidae',
+		'age': lifeDataPeriod.early_miocene,
+		'range': 'nw;as',
+		'desc': 'Pit vipers',
 	},
 	{
 		'name': 'crustacea',
@@ -7881,6 +7897,13 @@ const lifeData = [
 			height: 20,
 		},
 	},
+	{
+		'name': 'pythonidae',
+		'rank': 'family',
+		'parent': 'serpentes',
+		'range': 'af;as;au',
+		'desc': 'Pythons',
+	},
 	// Q
 	{
 		'name': 'quercus',
@@ -9596,6 +9619,14 @@ const lifeData = [
 		'stats': {
 			weight: (3 + 5)/2,
 		},
+	},
+	{
+		'name': 'viperidae',
+		'rank': 'family',
+		'parent': 'serpentes',
+		'age': 47,
+		'range': 'nw;ow',
+		'desc': 'Vipers',
 	},
 	{
 		'name': 'vitaceae',
