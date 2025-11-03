@@ -1675,7 +1675,7 @@ const lifeData = [
 			'sex': 'XY',
 		},
 		'stats': {
-			length: (600 + 1200)/2,
+			weight: (600 + 1200)/2,
 		},
 	},
 	{
