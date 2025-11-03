@@ -4074,6 +4074,7 @@ const lifeData = [
 		'rank': 'clade',
 		'parent': 'tracheophyta',
 		'range': 'ww',
+		'age': 400, // ? see body
 	},
 	{
 		'name': 'eurotiales',
@@ -4105,6 +4106,7 @@ const lifeData = [
 		'rank': 'clade',
 		'parent': 'rosids',
 		'range': 'ww',
+		'age': (108+91)/2, // https://www.pnas.org/doi/10.1073/pnas.0813376106
 	},
 	{
 		'name': 'fagaceae',
@@ -5252,6 +5254,7 @@ const lifeData = [
 		'rank': 'family',
 		'parent': 'iguania',
 		'range': 'nw',
+		'age': 62, // iguaninae
 	},
 	{
 		'name': 'iguanodon',
@@ -5852,6 +5855,7 @@ const lifeData = [
 		'rank': 'clade',
 		'parent': 'rosids',
 		'range': 'ww',
+		'age': (107+83)/2, // https://www.pnas.org/doi/10.1073/pnas.0813376106
 	},
 	{
 		'name': 'mammalia',
@@ -7405,6 +7409,7 @@ const lifeData = [
 		'rank': 'genus',
 		'parent': 'phascolarctidae',
 		'range': 'au',
+		'age': lifeDataPeriod.late_pleistocene, // p. stirtoni
 	},
 	{
 		'name': 'phascolarctos cinereus',
@@ -7452,6 +7457,7 @@ const lifeData = [
 		'rank': 'subfamily',
 		'parent': 'phasianidae',
 		'range': 'ow',
+		'age': 30,
 	},
 	{
 		'name': 'phenacopithecus',
@@ -7923,6 +7929,7 @@ const lifeData = [
 		'rank': 'subfamily',
 		'parent': 'bop',
 		'range': 'ww',
+		'age': (61+77)/2, // https://www.jstor.org/stable/26798979
 	},
 	{
 		'name': 'porifera',
