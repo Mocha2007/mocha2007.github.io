@@ -4159,6 +4159,9 @@ const lifeData = [
 		'parent': 'flammulina',
 		'range': 'as',
 		'desc': 'Enoki',
+		'stats': {
+			height: 50e-3,
+		},
 	},
 	{
 		'name': 'foraminifera',
@@ -4203,6 +4206,12 @@ const lifeData = [
 		'parent': 'gadidae',
 		'range': 'nh',
 		'desc': 'Cod',
+		// g. morhua
+		'stats': {
+			length: 1, // g. morhua
+			lifespan: 25,
+			weight: 96,
+		},
 	},
 	{
 		'name': 'galliformes',
@@ -4281,6 +4290,9 @@ const lifeData = [
 		'parent': 'rouphozoa',
 		'range': 'ww', // ?
 		'desc': 'Hairybellies',
+		'stats': {
+			length: (0.06e-3 + 3e-3)/2,
+		},
 	},
 	{
 		'name': 'gekkota',
@@ -4391,6 +4403,9 @@ const lifeData = [
 		'parent': 'gnathifera',
 		'range': 'wo', // ?
 		'desc': 'Jaw worms',
+		'stats': {
+			length: (0.5e-3 + 1e-3)/2,
+		},
 	},
 	{
 		'name': 'gnetophyta',
@@ -4433,6 +4448,10 @@ const lifeData = [
 		'parent': 'malvaceae',
 		'range': 'ww',
 		'desc': 'Cotton',
+		// g. herbaceum
+		'stats': {
+			height: (0.6 + 1.8)/2,
+		}
 	},
 	{
 		'name': 'graecopithecini',
@@ -4470,6 +4489,9 @@ const lifeData = [
 		'rank': 'species',
 		'parent': 'gromia',
 		'range': 'ww',
+		'stats': {
+			length: (4.7e-3 + 38e-3)/2, // diam.
+		},
 	},
 	{
 		'name': 'gromiida',
@@ -4592,6 +4614,9 @@ const lifeData = [
 		'parent': 'hericium',
 		'range': 'na;ea',
 		'desc': 'Lion\'s mane',
+		'stats': {
+			length: 1e-2,
+		},
 	},
 	{
 		'name': 'heterolobosea',
@@ -4633,6 +4658,10 @@ const lifeData = [
 		'range': 'wo',
 		'age': 23,
 		'desc': 'Seahorse',
+		'wiki': 'Seahorse',
+		'stats': {
+			height: (1.5e-2 + 35e-2)/2,
+		},
 	},
 	{
 		'name': 'hippopotamidae',
@@ -4931,6 +4960,10 @@ const lifeData = [
 			},
 			'sex': 'XY',
 		},
+		'stats': {
+			length: (0.6 + 0.9)/2,
+			weight: (6+9)/2,
+		},
 	},
 	{
 		'name': 'hordeum',
@@ -4982,6 +5015,9 @@ const lifeData = [
 		'parent': 'hydridae',
 		'range': 'ww',
 		'wiki': 'Hydra_(genus)',
+		'stats': {
+			length: 0.01,
+		},
 	},
 	{
 		'name': 'hydridae',
