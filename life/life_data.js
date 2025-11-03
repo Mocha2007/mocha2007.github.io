@@ -1693,6 +1693,9 @@ const lifeData = [
 		'range': 'ww', // ?
 		'age': lifeDataPeriod.terreneuvian,
 		'desc': 'Lampshells',
+		'stats': {
+			length: (10e-3 + 30e-3)/2, // most species
+		},
 	},
 	{
 		'name': 'brachiosauridae',
@@ -2393,6 +2396,9 @@ const lifeData = [
 		'range': 'wo', // ?
 		'age': lifeDataPeriod.terreneuvian,
 		'desc': 'Arrow worms',
+		'stats': {
+			length: (2e-3 + 120e-3)/2,
+		},
 	},
 	{
 		'name': 'chamaeleonidae',
@@ -2538,6 +2544,9 @@ const lifeData = [
 		'rank': 'phylum',
 		'parent': 'myzozoa',
 		'range': 'ww', // ???
+		'stats': {
+			length: (3e-6 + 40e-6)/2,
+		},
 	},
 	{
 		'name': 'chrysanthemum',
@@ -3117,6 +3126,9 @@ const lifeData = [
 		'rank': 'phylum',
 		'parent': 'lophotrochozoa',
 		'range': 'al', // ?
+		'stats': {
+			length: 0.5e-3,
+		},
 	},
 	{
 		'name': 'cyclomedusa',
@@ -3283,19 +3295,6 @@ const lifeData = [
 		'desc': 'In deuterostomes, the first opening, the blastopore, becomes the anus, while in protostomes, it becomes the mouth.',
 	},
 	{
-		'name': 'diantamoeba',
-		'rank': 'genus',
-		'parent': 'monocercomonadidae',
-		'range': 'ww',
-	},
-	{
-		'name': 'diantamoeba fragilis',
-		'rank': 'species',
-		'parent': 'diantamoeba',
-		'range': 'ww',
-		'desc': 'Diantamoebiasis-causing protozoan',
-	},
-	{
 		'name': 'diaphoretickes',
 		'rank': 'clade',
 		'parent': 'bikonta',
@@ -3309,6 +3308,9 @@ const lifeData = [
 		'range': 'wo',
 		'age': lifeDataPeriod.jurassic,
 		'desc': 'Diatom',
+		'stats': {
+			length: (2e-6 + 2e-3)/2,
+		},
 	},
 	{
 		'name': 'dickinsonia',
@@ -3318,6 +3320,9 @@ const lifeData = [
 		'age': 567,
 		'age_end': 550,
 		'extinct': true,
+		'stats': {
+			length: (5e-3 + 1)/2, // 'a few mm to over a m in length'
+		}
 	},
 	{
 		'name': 'dickinsoniidae',
@@ -3333,6 +3338,9 @@ const lifeData = [
 		'rank': 'phylum',
 		'parent': 'mesozoa',
 		'range': 'wo', // ?
+		'stats': {
+			length: (0.5e-3 + 7e-3)/2,
+		},
 	},
 	{
 		'name': 'didelphimorphia',
@@ -3347,6 +3355,19 @@ const lifeData = [
 				'ploidy': 2,
 			},
 		},
+	},
+	{
+		'name': 'dientamoeba',
+		'rank': 'genus',
+		'parent': 'monocercomonadidae',
+		'range': 'ww',
+	},
+	{
+		'name': 'dientamoeba fragilis',
+		'rank': 'species',
+		'parent': 'dientamoeba',
+		'range': 'ww',
+		'desc': 'Dientamoebiasis-causing protozoan',
 	},
 	{
 		'name': 'digitaria',
@@ -3567,6 +3588,10 @@ const lifeData = [
 			},
 			'sex': 'XY',
 		},
+		'stats': {
+			length: 2.5e-3,
+			lifespan: 50/365.2425,
+		},
 	},
 	{
 		'name': 'drosophilidae',
@@ -3734,6 +3759,9 @@ const lifeData = [
 		'range': 'wo', // ?
 		'age': lifeDataPeriod.terreneuvian,
 		'desc': 'Goblet worms',
+		'stats': {
+			length: (0.1e-3 + 7e-3)/2,
+		},
 	},
 	{
 		'name': 'eosimiidae',
@@ -3880,6 +3908,10 @@ const lifeData = [
 		'parent': 'escherichia',
 		'range': 'ww',
 		'desc': 'E. Coli',
+		'stats': {
+			length: 2e-6,
+			weight: Math.pow(0.65e-6, 3), // 0.6-0.7 mcm^3, assuming density ~ water
+		},
 	},
 	{
 		'name': 'euarchontoglires',
