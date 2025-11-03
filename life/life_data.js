@@ -4227,6 +4227,25 @@ const lifeData = [
 		'range': 'ww',
 		'age': 1200, // https://en.wikipedia.org/wiki/Evolution_of_fungi#Early_evolution
 	},
+	{
+		'name': 'fusarium',
+		'rank': 'genus',
+		'parent': 'nectriaceae',
+		'range': 'ww',
+	},
+	{
+		'name': 'fusarium oxysporum',
+		'rank': 'species',
+		'parent': 'fusarium',
+		'range': 'ww',
+	},
+	{
+		'name': 'fusarium oxysporum cubense',
+		'rank': 'forma specialis',
+		'parent': 'fusarium oxysporum',
+		'range': 'ww',
+		'desc': 'Panama disease-causing fungus',
+	},
 	// G
 	{
 		'name': 'gadidae',
@@ -6252,6 +6271,12 @@ const lifeData = [
 		'range': 'wo',
 		'age': 230,
 		'desc': 'Nautilus',
+	},
+	{
+		'name': 'nectriaceae',
+		'rank': 'family',
+		'parent': 'hypocreales',
+		'range': 'ww',
 	},
 	{
 		'name': 'nematoda',

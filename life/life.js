@@ -144,7 +144,7 @@ class Taxon {
 		const details = document.createElement('details');
 		details.open = openSetting;
 		const rank = lifeData[i].rank;
-		details.classList.add(rank);
+		details.classList.add(rank.replaceAll(' ', '_'));
 		const name = lifeData[i].name;
 		if (lifeData[i+1] && lifeData[i+1].name < name)
 			console.warn(`${name} out of order!`);
