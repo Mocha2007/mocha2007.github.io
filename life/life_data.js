@@ -266,6 +266,18 @@ const lifeData = [
 		}
 	},
 	{
+		'name': 'acholeplasmataceae',
+		'rank': 'family',
+		'parent': 'acholeplasmatales',
+		'range': 'ww',
+	},
+	{
+		'name': 'acholeplasmatales',
+		'rank': 'order',
+		'parent': 'mollicutes',
+		'range': 'ww',
+	},
+	{
 		'name': 'acinonychini',
 		'rank': 'tribe',
 		'parent': 'felinae',
@@ -5962,6 +5974,12 @@ const lifeData = [
 		'range': 'ww',
 	},
 	{
+		'name': 'mollicutes',
+		'rank': 'class',
+		'parent': 'mycoplasmatota',
+		'range': 'ww',
+	},
+	{
 		'name': 'mollusca',
 		'rank': 'phylum',
 		'parent': 'lophotrochozoa',
@@ -6125,6 +6143,12 @@ const lifeData = [
 		'parent': 'mycobacterium',
 		'range': 'ww',
 		'desc': 'Tuberculosis',
+	},
+	{
+		'name': 'mycoplasmatota',
+		'rank': 'phylum',
+		'parent': 'bacillati',
+		'range': 'ww',
 	},
 	{
 		'name': 'mycosarcoma',
@@ -7503,6 +7527,19 @@ const lifeData = [
 		'parent': 'phytophthora',
 		'range': 'ww',
 		'desc': 'Potato blight-causing water mold',
+	},
+	{
+		'name': 'phytoplasma',
+		'rank': 'genus',
+		'parent': 'acholeplasmataceae',
+		'range': 'ww',
+	},
+	{
+		'name': 'phytoplasma vitis',
+		'rank': 'species',
+		'parent': 'phytoplasma',
+		'range': 'ww',
+		'desc': 'Flavescence dorée-causing bacterium',
 	},
 	{
 		'name': 'picea',
