@@ -3189,7 +3189,7 @@ const lifeData = [
 		'rank': 'genus',
 		'parent': 'animalia',
 		'range': 'wo',
-		'age': lifeDataPeriod.tonian,
+		'age': 1000,
 		'age_end': lifeDataPeriod.ediacaran,
 		'extinct': true,
 		'stats': {
@@ -4583,6 +4583,15 @@ const lifeData = [
 		'rank': 'class',
 		'parent': 'cercozoa',
 		'range': 'ww',
+	},
+	{
+		'name': 'grypania',
+		'rank': 'genus',
+		'parent': 'eukaryota',
+		'range': 'na', // https://en.wikipedia.org/wiki/Marquette_Iron_Range
+		'age': 1870,
+		'age_end': lifeDataPeriod.ediacaran,
+		'extinct': true,
 	},
 	{
 		'name': 'gymnospermae',
