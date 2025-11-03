@@ -6449,6 +6449,24 @@ const lifeData = [
 	},
 	// P
 	{
+		'name': 'pachycephalosauridae',
+		'rank': 'family',
+		'parent': 'ornithischia',
+		'range': 'na;as',
+		'extinct': true,
+		'age': lifeDataPeriod.aptian,
+		'age_end': lifeDataPeriod.maastrichtian,
+	},
+	{
+		'name': 'pachycephalosaurus',
+		'rank': 'genus',
+		'parent': 'pachycephalosauridae',
+		'range': 'na',
+		'extinct': true,
+		'age': 70,
+		'age_end': 66,
+	},
+	{
 		'name': 'pacmad clade',
 		'rank': 'clade',
 		'parent': 'poaceae',
