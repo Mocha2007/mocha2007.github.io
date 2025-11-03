@@ -4336,6 +4336,16 @@ const lifeData = [
 	},
 	// H
 	{
+		'name': 'hadrosauridae',
+		'rank': 'family',
+		'parent': 'cerapoda',
+		'extinct': true,
+		'age': 86.3,
+		'age_end': 66,
+		'range': 'nw;ow',
+		'desc': 'Hadrosaurs',
+	},
+	{
 		'name': 'haemospororida',
 		'rank': 'order',
 		'parent': 'aconoidasida',
