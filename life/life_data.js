@@ -28,6 +28,7 @@ const lifeDataPeriod = {
 	early_jurassic: 188,
 	early_miocene: 19,
 	early_oligocene: 31,
+	early_ordovician: 479,
 	early_pleistocene: 2,
 	ediacaran: 587,
 	eocene: 45,
@@ -8134,6 +8135,15 @@ const lifeData = [
 		'genetic': {
 			'sex': 'ZW',
 		},
+	},
+	{
+		'name': 'pteraspidomorpha',
+		'rank': 'class',
+		'parent': 'agnatha',
+		'range': 'wo',
+		'extinct': true,
+		'age': lifeDataPeriod.early_ordovician,
+		'age': lifeDataPeriod.late_devonian,
 	},
 	{
 		'name': 'pteridophyta',
