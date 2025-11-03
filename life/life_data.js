@@ -4051,6 +4051,7 @@ const lifeData = [
 		'stats': {
 			length: 2e-6,
 			speed: 30e-6, // https://bionumbers.hms.harvard.edu/bionumber.aspx?id=108082&ver=1&trm=speed&org=
+			temperature: 37,
 			weight: watersphere(Math.cbrt(1e-6 * 0.625e-6 * 0.625e-6)), // 0.6-0.7 mcm^3, assuming density ~ water
 		},
 	},
@@ -8927,6 +8928,9 @@ const lifeData = [
 		'rank': 'species',
 		'parent': 'salmonella',
 		'range': 'ww',
+		'stats': {
+			temperature: (2+54)/2,
+		}
 	},
 	{
 		'name': 'salmonidae',
