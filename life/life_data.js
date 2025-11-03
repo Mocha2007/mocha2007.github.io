@@ -10267,6 +10267,7 @@ const lifeData = [
 		'stats': {
 			'height': (0.01 + 0.04)/2,
 			'length': (0.01 + 0.04)/2,
+			'weight': watersphere((0.01 + 0.04)/4),
 		},
 		'desc': 'Bubble algae',
 	},
