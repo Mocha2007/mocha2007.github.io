@@ -3881,6 +3881,7 @@ const lifeData = [
 		'rank': 'order',
 		'parent': 'gammaproteobacteria',
 		'range': 'ww',
+		'age': 140, // https://bionumbers.hms.harvard.edu/bionumber.aspx?id=107087&ver=5&trm=Salmonella+enterica&org=
 	},
 	{
 		'name': 'enterobacteriaceae',
@@ -6281,6 +6282,11 @@ const lifeData = [
 		'parent': 'mycobacterium',
 		'range': 'ww',
 		'desc': 'Tuberculosis',
+		'stats': {
+			// https://bionumbers.hms.harvard.edu/files/One-dimensional%20profiles%20of%20M.%20tuberculosis%20cells.pdf
+			'length': 0.345e-6,
+			'weight': watersphere(0.345e-6/2),
+		}
 	},
 	{
 		'name': 'mycoplasmatota',
@@ -8188,6 +8194,11 @@ const lifeData = [
 		'rank': 'species',
 		'parent': 'prochlorococcus',
 		'range': 'wo',
+		'stats': {
+			// https://bionumbers.hms.harvard.edu/bionumber.aspx?id=101520&ver=9&trm=Prochlorococcus+marinus&org=
+			length: 0.6e-6,
+			weight: watersphere(0.6e-6/2),
+		}
 	},
 	{
 		'name': 'proconsul',
