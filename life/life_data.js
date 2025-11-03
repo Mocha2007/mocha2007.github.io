@@ -659,6 +659,7 @@ const lifeData = [
 		'rank': 'clade',
 		'parent': 'eumycota',
 		'range': 'ww',
+		'age': 650, // https://link.springer.com/article/10.1007/s13225-018-0401-0?fromPaywallRec=false
 	},
 	{
 		'name': 'amborella',
@@ -1258,6 +1259,7 @@ const lifeData = [
 		'rank': 'order',
 		'parent': 'campanulids',
 		'range': 'ww',
+		'age': (116+82)/2, // see phylogeny section
 	},
 	{
 		'name': 'asterids',
@@ -1635,6 +1637,7 @@ const lifeData = [
 		'rank': 'division',
 		'parent': 'eumycota',
 		'range': 'ww', // ???
+		'age': 500, // https://link.springer.com/article/10.1007/s13225-018-0401-0?fromPaywallRec=false
 	},
 	{
 		'name': 'boidae',
@@ -2188,6 +2191,7 @@ const lifeData = [
 		'rank': 'order',
 		'parent': 'eudicots',
 		'range': 'ww',
+		'age': 111, // see body
 	},
 	{
 		'name': 'castor',
@@ -2605,12 +2609,14 @@ const lifeData = [
 		'rank': 'subkingdom',
 		'parent': 'eumycota',
 		'range': 'ww', // ???
+		'age': 575, // https://link.springer.com/article/10.1007/s13225-018-0401-0?fromPaywallRec=false
 	},
 	{
 		'name': 'chytridiomycota',
 		'rank': 'division',
 		'parent': 'chytridiomyceta',
 		'range': 'ww', // ???
+		'age': 425, // https://link.springer.com/article/10.1007/s13225-018-0401-0?fromPaywallRec=false
 	},
 	{
 		'name': 'ciliophora',
@@ -4054,6 +4060,7 @@ const lifeData = [
 		'rank': 'clade',
 		'parent': 'fungi',
 		'range': 'ww',
+		'age': 900, // https://link.springer.com/article/10.1007/s13225-018-0401-0?fromPaywallRec=false
 	},
 	{
 		'name': 'euphausiacea',
@@ -4455,6 +4462,7 @@ const lifeData = [
 		'rank': 'division',
 		'parent': 'amastigomycota',
 		'range': 'ww', // ???
+		'age': 460, // https://link.springer.com/article/10.1007/s13225-024-00540-z
 	},
 	{
 		'name': 'gnathifera',
@@ -6361,6 +6369,7 @@ const lifeData = [
 		'rank': 'division',
 		'parent': 'chytridiomyceta',
 		'range': 'ww', // ???
+		'age': 70, // https://link.springer.com/article/10.1007/s13225-018-0401-0?fromPaywallRec=false
 	},
 	{
 		'name': 'neofelis',
@@ -8615,6 +8624,7 @@ const lifeData = [
 		'rank': 'division',
 		'parent': 'fungi',
 		'range': 'ww', // ???
+		'age': 850, // https://link.springer.com/article/10.1007/s13225-018-0401-0?fromPaywallRec=false
 	},
 	{
 		'name': 'russulales',
@@ -8665,6 +8675,7 @@ const lifeData = [
 		'rank': 'subdivision',
 		'parent': 'ascomycota',
 		'range': 'ww',
+		'age': 438.4, // https://link.springer.com/article/10.1007/s13225-024-00540-z
 		'desc': 'True yeasts',
 	},
 	{
