@@ -6523,7 +6523,13 @@ const lifeData = [
 		'desc': 'Velvet worms',
 	},
 	{
-		'name': 'oomyceta',
+		'name': 'oomycetes',
+		'rank': 'class',
+		'parent': 'oomycota',
+		'range': 'ww',
+	},
+	{
+		'name': 'oomycota',
 		'rank': 'phylum',
 		'parent': 'pseudofungi',
 		'range': 'ww',
@@ -7266,6 +7272,18 @@ const lifeData = [
 		'range': 'ww', // ???
 	},
 	{
+		'name': 'peronosporaceae',
+		'rank': 'family',
+		'parent': 'peronosporales',
+		'range': 'ww',
+	},
+	{
+		'name': 'peronosporales',
+		'rank': 'class',
+		'parent': 'oomycetes',
+		'range': 'ww',
+	},
+	{
 		'name': 'petalonamae',
 		'rank': 'phylum',
 		'parent': 'animalia',
@@ -7472,6 +7490,19 @@ const lifeData = [
 		'rank': 'order',
 		'parent': 'myxogastria',
 		'range': 'ww',
+	},
+	{
+		'name': 'phytophthora',
+		'rank': 'genus',
+		'parent': 'peronosporaceae',
+		'range': 'ww',
+	},
+	{
+		'name': 'phytophthora infestans',
+		'rank': 'species',
+		'parent': 'phytophthora',
+		'range': 'ww',
+		'desc': 'Potato blight-causing water mold',
 	},
 	{
 		'name': 'picea',
