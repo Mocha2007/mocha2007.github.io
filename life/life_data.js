@@ -4,6 +4,8 @@
 // https://upload.wikimedia.org/wikipedia/commons/e/e3/Timeline_of_life.png
 // (x - 2932 px)(1000 yr / 626 px)
 const kph = 1000 / 60 / 60;
+/** https://en.wikipedia.org/wiki/List_of_animals_by_number_of_neurons */
+const neuron_mass = 1.3/86e9;
 /** just select the middle of the era */
 const lifeDataPeriod = {
 	albian: 107,
@@ -771,7 +773,9 @@ const lifeData = [
 		'age': 521,
 		'desc': 'Lancelet',
 		'stats': {
+			brain_weight: 20e3*neuron_mass,
 			length: (0.025 + 0.08)/2,
+			weight: 1000 * 52.5e-3 * 6.5e-3 * 6.5e-3, // based on diagrams, assuming ~52.5 mm long, ~6.5 tall and wide
 		},
 	},
 	{
@@ -811,6 +815,7 @@ const lifeData = [
 		'age': lifeDataPeriod.zanclean,
 		'desc': 'Mallard',
 		'stats': {
+			brain_weight: 367e6*neuron_mass,
 			length: (0.5 + 0.65)/2,
 			weight: (0.7 + 1.6)/2,
 		},
@@ -971,6 +976,12 @@ const lifeData = [
 			},
 			'sex': 'Haplodiploidy',
 		},
+		// a. mellifera
+		'stats': {
+			brain_weight: 613e3*neuron_mass,
+			speed: 7.5, // https://bionumbers.hms.harvard.edu/search.aspx?trm=apis+mellifera
+			weight: 0.2e-3,
+		}
 	},
 	{
 		'name': 'apium',
@@ -1275,6 +1286,9 @@ const lifeData = [
 		'range': 'wo',
 		'age': lifeDataPeriod.ordovician,
 		'desc': 'Starfish',
+		'stats': {
+			brain_weight: 500*neuron_mass,
+		}
 	},
 	{
 		'name': 'asteroideae',
@@ -1993,6 +2007,7 @@ const lifeData = [
 		},
 		'stats': {
 			bite_force: 351.5, // https://www.academia.edu/figures/3464750/table-1-taste-average-bite-forces-at-the-canine-tips-bf-and
+			brain_weight: 2.253e9*neuron_mass,
 			encephalization_quotient: 1.2, // https://en.wikipedia.org/wiki/Encephalization_quotient
 		}
 	},
@@ -2301,6 +2316,7 @@ const lifeData = [
 			'sex': 'XY',
 		},
 		'stats': {
+			brain_weight: 240e6*neuron_mass,
 			length: (0.2 + 0.25)/2,
 			weight: (0.7 + 1.2)/2,
 		},
@@ -2835,6 +2851,9 @@ const lifeData = [
 			},
 			'sex': 'XY',
 		},
+		'stats': {
+			brain_weight: 310e6*neuron_mass,
+		}
 	},
 	{
 		'name': 'commelinids',
@@ -2964,6 +2983,12 @@ const lifeData = [
 		'range': 'nw;af;as;oc',
 		'age': 46,
 		'desc': 'Crocodile',
+		// c. niloticus
+		'stats': {
+			brain_weight: 80.5e6*neuron_mass,
+			length: (3.5+5)/2,
+			weight: (225+750)/2,
+		},
 	},
 	{
 		'name': 'crotalinae',
@@ -3662,8 +3687,10 @@ const lifeData = [
 			'sex': 'XY',
 		},
 		'stats': {
+			brain_weight: 150e3*neuron_mass,
 			length: 2.5e-3,
 			lifespan: 50/365.2425,
+			weight: 1e-6, // https://bionumbers.hms.harvard.edu/bionumber.aspx?id=110030
 		},
 	},
 	{
@@ -4343,6 +4370,7 @@ const lifeData = [
 		'range': 'as',
 		'desc': 'Red Junglefowl',
 		'stats': {
+			brain_weight: 221e6*neuron_mass,
 			length: 0.7,
 			weight: (1 + 1.5)/2,
 		},
@@ -4531,6 +4559,7 @@ const lifeData = [
 		},
 		// eastern gorilla
 		'stats': {
+			brain_weight: 3.34e10*neuron_mass,
 			encephalization_quotient: 1.39, // https://en.wikipedia.org/wiki/Encephalization_quotient
 			height: (1.7 + 1.5)/2,
 			weight: (140 + 205.5 + 90 + 100)/4,
@@ -5130,7 +5159,9 @@ const lifeData = [
 		'range': 'ww',
 		'wiki': 'Hydra_(genus)',
 		'stats': {
+			brain_weight: 5600*neuron_mass,
 			length: 0.01,
+			weight: 1000 * (10e-3 + 30e-3)/2 * 1e-3 * 1e-3, // h. vulgaris, assuming density ~ water
 		},
 	},
 	{
@@ -5161,6 +5192,7 @@ const lifeData = [
 			'sex': 'XY',
 		},
 		'stats': {
+			brain_weight: 1.6e9*neuron_mass,
 			height: (0.5 + 0.62)/2,
 			length: (1.06 + 1.34)/2,
 			weight: (35 + 66)/2,
@@ -5949,6 +5981,10 @@ const lifeData = [
 		'age': 23,
 		'range': 'na',
 		'desc': 'Turkey',
+		'stats': {
+			brain_weight: 492.873e6*neuron_mass,
+			weight: (5+11+2.5+5.4)/4,
+		}
 	},
 	{
 		'name': 'mesangiospermae',
@@ -6132,6 +6168,7 @@ const lifeData = [
 			'sex': 'XY',
 		},
 		'stats': {
+			brain_weight: 71e6*neuron_mass,
 			length: (0.075 + 0.1)/2,
 			weight: (0.011 + 0.03)/2,
 		},
@@ -6550,6 +6587,9 @@ const lifeData = [
 		'age': lifeDataPeriod.middle_jurassic,
 		'desc': 'Octopus',
 		'emoji': '🐙',
+		'stats': {
+			brain_weight: 500e6*neuron_mass,
+		}
 	},
 	{
 		'name': 'oegopsida',
@@ -7003,6 +7043,7 @@ const lifeData = [
 			'sex': 'XY',
 		},
 		'stats': {
+			brain_weight: 2.8e10*neuron_mass,
 			encephalization_quotient: (2.2+2.5)/2, // https://en.wikipedia.org/wiki/Encephalization_quotient
 			height: 1.5,
 			weight: (40 + 70 + 27 + 50)/4,
@@ -7082,6 +7123,7 @@ const lifeData = [
 		},
 		'stats': {
 			bite_force: 1314.7, // https://www.academia.edu/figures/3464750/table-1-taste-average-bite-forces-at-the-canine-tips-bf-and
+			brain_weight: 4.667e9*neuron_mass,
 			length: (1.6 + 1.84 + 1.84 + 2.08)/4,
 			weight: (110 + 143.52 + 160 + 225)/4,
 		},
@@ -7300,6 +7342,7 @@ const lifeData = [
 		'wiki': 'Pavo_(bird)',
 		// p. cristacus
 		'stats': {
+			brain_weight: 570.934e6*neuron_mass,
 			length: (1 + 1.2)/2,
 			weight: (4.1 + 5.2)/2,
 		},
@@ -7953,6 +7996,7 @@ const lifeData = [
 		},
 		// bornean orangutan
 		'stats': {
+			brain_weight: 3.26e10*neuron_mass,
 			length: (1.2 + 1,7 + 1 + 1.2)/4,
 			weight: (75 + 38.5)/2,
 		},
@@ -8095,6 +8139,7 @@ const lifeData = [
 		'desc': 'Raccoon',
 		'emoji': '🦝',
 		'stats': {
+			brain_weight: 2.148e9*neuron_mass,
 			encephalization_quotient: 1.62, // https://en.wikipedia.org/wiki/Encephalization_quotient
 			height: (0.23 + 0.3)/2,
 			length: (0.4 + 0.7)/2,
@@ -8350,6 +8395,7 @@ const lifeData = [
 		'range': 'af',
 		'desc': 'Grey Parrot',
 		'stats': {
+			brain_weight: 1.566e9*neuron_mass,
 			length: 0.33,
 			lifespan: (40+60)/2,
 			weight: 0.4,
@@ -8656,6 +8702,10 @@ const lifeData = [
 		'parent': 'gnathifera',
 		'range': 'ww',
 		'age': lifeDataPeriod.middle_jurassic,
+		'stats': {
+			brain_weight: 200*neuron_mass, // asplanchna brightwellii
+			length: (0.1e-3 + 0.5e-3)/2,
+		}
 	},
 	{
 		'name': 'rouphozoa',
@@ -8893,6 +8943,7 @@ const lifeData = [
 			'sex': 'XY',
 		},
 		'stats': {
+			brain_weight: 453.66e6*neuron_mass,
 			encephalization_quotient: 1.1, // https://en.wikipedia.org/wiki/Encephalization_quotient
 		}
 	},
@@ -9352,6 +9403,7 @@ const lifeData = [
 			'sex': 'XY',
 		},
 		'stats': {
+			brain_weight: 2.22e9*neuron_mass,
 			encephalization_quotient: 0.38, // https://en.wikipedia.org/wiki/Encephalization_quotient
 		},
 		'wiki': 'Sus_(genus)',
@@ -9469,6 +9521,10 @@ const lifeData = [
 		'range': 'ww',
 		'age': lifeDataPeriod.turonian,
 		'desc': 'Tardigrade',
+		'stats': {
+			brain_weight: 200*neuron_mass, // asplanchna brightwellii
+			length: (0.05e-3 + 0.5e-3)/2,
+		}
 	},
 	{
 		'name': 'tarsiidae',
@@ -10252,6 +10308,7 @@ const lifeData = [
 		},
 		'stats': {
 			bite_force: 144, // https://www.academia.edu/figures/3464750/table-1-taste-average-bite-forces-at-the-canine-tips-bf-and
+			brain_weight: 2.11e9*neuron_mass,
 			encephalization_quotient: 1.92, // https://en.wikipedia.org/wiki/Encephalization_quotient
 			jump: 2,
 			height: (0.35 + 0.5)/2,
