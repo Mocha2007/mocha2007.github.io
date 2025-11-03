@@ -21,6 +21,7 @@ const lifeDataPeriod = {
 	cretaceous: 105,
 	devonian: 389,
 	early_carboniferous: 341,
+	early_cenomanian: 99,
 	early_cretaceous: 122,
 	early_devonian: 407,
 	early_eocene: 50,
@@ -34,6 +35,7 @@ const lifeDataPeriod = {
 	fortunian: 534,
 	gelasian: 2,
 	hettangian: 200,
+	holocene: 0.006,
 	induan: 251,
 	jurassic: 172,
 	kungurian: 278,
@@ -2297,6 +2299,14 @@ const lifeData = [
 		'desc': 'Arrow worms',
 	},
 	{
+		'name': 'chamaeleonidae',
+		'rank': 'family',
+		'parent': 'iguania',
+		'range': 'ow',
+		'age': 26,
+		'desc': 'Chamaeleons'
+	},
+	{
 		'name': 'charnia',
 		'rank': 'genus',
 		'parent': 'charniidae',
@@ -3226,6 +3236,15 @@ const lifeData = [
 		'desc': 'Fonio',
 	},
 	{
+		'name': 'dimetrodon',
+		'rank': 'genus',
+		'parent': 'sphenacodontidae',
+		'extinct': true,
+		'range': 'na;eu',
+		'age': 295,
+		'age_end': 270,
+	},
+	{
 		'name': 'dinoflagellata',
 		'rank': 'phylum',
 		'parent': 'dinozoa',
@@ -4071,6 +4090,14 @@ const lifeData = [
 		'desc': 'Hairybellies',
 	},
 	{
+		'name': 'gekkota',
+		'rank': 'suborder',
+		'parent': 'squamata',
+		'range': 'ww',
+		'age': 100,
+		'desc': 'Geckos'
+	},
+	{
 		'name': 'ginkgo',
 		'rank': 'genus',
 		'parent': 'ginkgoaceae',
@@ -4873,6 +4900,26 @@ const lifeData = [
 		'desc': 'Ichthyosaur',
 	},
 	{
+		'name': 'iguana',
+		'rank': 'genus',
+		'parent': 'iguanidae',
+		'range': 'nw',
+		'age': lifeDataPeriod.holocene,
+	},
+	{
+		'name': 'iguania',
+		'rank': 'suborder',
+		'parent': 'squamata',
+		'range': 'ww',
+		'age': lifeDataPeriod.early_cretaceous,
+	},
+	{
+		'name': 'iguanidae',
+		'rank': 'family',
+		'parent': 'iguania',
+		'range': 'nw',
+	},
+	{
 		'name': 'iguanodon',
 		'rank': 'genus',
 		'parent': 'iguanodontidae',
@@ -5464,7 +5511,7 @@ const lifeData = [
 	{
 		'name': 'mammalia',
 		'rank': 'class',
-		'parent': 'amniota',
+		'parent': 'synapsida',
 		'range': 'ww',
 		'age': 225,
 		'desc': 'Mammals',
@@ -8262,6 +8309,14 @@ const lifeData = [
 		'range': 'ww',
 	},
 	{
+		'name': 'scincidae',
+		'rank': 'family',
+		'parent': 'squamata',
+		'range': 'ww',
+		'age': lifeDataPeriod.early_cenomanian,
+		'desc': 'Skinks'
+	},
+	{
 		'name': 'sciuridae',
 		'rank': 'family',
 		'parent': 'rodentia',
@@ -8550,6 +8605,15 @@ const lifeData = [
 		'age': 370,
 	},
 	{
+		'name': 'sphenacodontidae',
+		'rank': 'family',
+		'parent': 'synapsida',
+		'extinct': true,
+		'range': 'na;eu',
+		'age': 300,
+		'age_end': 272,
+	},
+	{
 		'name': 'sphenisciformes',
 		'rank': 'order',
 		'parent': 'neoaves',
@@ -8758,6 +8822,13 @@ const lifeData = [
 			length: 0.9,
 			weight: 14,
 		},
+	},
+	{
+		'name': 'synapsida',
+		'rank': 'clade',
+		'parent': 'amniota',
+		'range': 'ww',
+		'age': 318,
 	},
 	{
 		'name': 'synechococcales',
