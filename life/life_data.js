@@ -260,6 +260,9 @@ const lifeData = [
 		'rank': 'genus',
 		'parent': 'polyphysaceae',
 		'range': 'ww',
+		'stats': {
+			height: (0.04 + 0.1)/2,
+		}
 	},
 	{
 		'name': 'acinonychini',
@@ -430,7 +433,10 @@ const lifeData = [
 		'rank': 'species',
 		'parent': 'agaricus',
 		'range': 'nh',
-		'desc': 'Button mushroom'
+		'desc': 'Button mushroom',
+		'stats': {
+			'height': 0.06,
+		},
 	},
 	{
 		'name': 'agnatha',
@@ -509,6 +515,12 @@ const lifeData = [
 		'range': 'na;cn',
 		'age': 37.2,
 		'desc': 'Alligator',
+		// A. mississippiensis
+		'stats': {
+			bite_force: 13172,
+			length: (2.6+3+3.4+4.5)/4,
+			weight: 500,
+		},
 	},
 	{
 		'name': 'alligatoridae',
