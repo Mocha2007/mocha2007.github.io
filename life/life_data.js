@@ -845,6 +845,7 @@ const lifeData = [
 		'rank': 'tribe',
 		'parent': 'panicoideae',
 		'range': 'ww',
+		'age': (12+15)/2, // https://bionumbers.hms.harvard.edu/bionumber.aspx?id=105194&ver=1&trm=divergence&org=
 	},
 	{
 		'name': 'angiospermae',
@@ -3707,6 +3708,7 @@ const lifeData = [
 		'rank': 'genus',
 		'parent': 'drosophilidae',
 		'range': 'ww',
+		'age': 5.4, // https://bionumbers.hms.harvard.edu/bionumber.aspx?id=106175&ver=2&trm=divergence&org=
 	},
 	{
 		'name': 'drosophila melanogaster',
@@ -3881,13 +3883,13 @@ const lifeData = [
 		'rank': 'order',
 		'parent': 'gammaproteobacteria',
 		'range': 'ww',
-		'age': 140, // https://bionumbers.hms.harvard.edu/bionumber.aspx?id=107087&ver=5&trm=Salmonella+enterica&org=
 	},
 	{
 		'name': 'enterobacteriaceae',
 		'rank': 'family',
 		'parent': 'enterobacterales',
 		'range': 'ww',
+		'age': 140, // https://bionumbers.hms.harvard.edu/bionumber.aspx?id=107087&ver=5&trm=Salmonella+enterica&org=
 	},
 	{
 		'name': 'entoprocta',
@@ -6392,6 +6394,7 @@ const lifeData = [
 		'rank': 'clade',
 		'parent': 'alveolata',
 		'range': 'ww',
+		'age': (800+900)/2, // https://bionumbers.hms.harvard.edu/bionumber.aspx?id=107516&ver=2&trm=divergence&org=
 	},
 	// N
 	{
@@ -8843,6 +8846,7 @@ const lifeData = [
 		'rank': 'genus',
 		'parent': 'saccharomycetaceae',
 		'range': 'ww',
+		'age': (5+10)/2, // https://bionumbers.hms.harvard.edu/bionumber.aspx?id=113705&ver=1&trm=divergence&org=
 	},
 	{
 		'name': 'saccharomyces cerevisiae',
