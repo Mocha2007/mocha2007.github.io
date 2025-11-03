@@ -1566,6 +1566,19 @@ const lifeData = [
 		'desc': 'Ray',
 	},
 	{
+		'name': 'beauveria',
+		'rank': 'genus',
+		'parent': 'cordycipitaceae',
+		'range': 'ww',
+	},
+	{
+		'name': 'beauveria bassiana',
+		'rank': 'species',
+		'parent': 'beauveria',
+		'range': 'ww',
+		'desc': 'White muscardine disease-causing fungus',
+	},
+	{
 		'name': 'betula',
 		'rank': 'genus',
 		'parent': 'betulaceae',
@@ -2824,6 +2837,12 @@ const lifeData = [
 		'name': 'convovulaceae',
 		'rank': 'family',
 		'parent': 'solanales',
+		'range': 'ww',
+	},
+	{
+		'name': 'cordycipitaceae',
+		'rank': 'family',
+		'parent': 'hypocreales',
 		'range': 'ww',
 	},
 	{
@@ -5918,6 +5937,12 @@ const lifeData = [
 		'range': 'ww',
 	},
 	{
+		'name': 'microsporidia',
+		'rank': 'class',
+		'parent': 'rozellomycota',
+		'range': 'ww',
+	},
+	{
 		'name': 'mollusca',
 		'rank': 'phylum',
 		'parent': 'lophotrochozoa',
@@ -6347,6 +6372,25 @@ const lifeData = [
 		'stats': {
 			weight: 7.5,
 		},
+	},
+	{
+		'name': 'nosema',
+		'rank': 'genus',
+		'parent': 'nosematidae',
+		'range': 'ww',
+	},
+	{
+		'name': 'nosema bombycis',
+		'rank': 'species',
+		'parent': 'nosema',
+		'range': 'ww',
+		'desc': 'Pébrine-causing fungus',
+	},
+	{
+		'name': 'nosematidae',
+		'rank': 'family',
+		'parent': 'microsporidia',
+		'range': 'ww',
 	},
 	{
 		'name': 'nyanzapithecus',
