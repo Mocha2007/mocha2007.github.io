@@ -286,6 +286,7 @@ const lifeData = [
 		'age': lifeDataPeriod.pliestocene,
 		'desc': 'Cheetah',
 		'stats': {
+			bite_force: 338.8, // https://www.academia.edu/figures/3464750/table-1-taste-average-bite-forces-at-the-canine-tips-bf-and
 			height: (0.67 + 0.94)/2,
 			length: (1.1 + 1.5)/2,
 			speed: 104 * kph,
@@ -1894,6 +1895,7 @@ const lifeData = [
 			'sex': 'XY',
 		},
 		'stats': {
+			bite_force: 493.5, // https://www.academia.edu/figures/3464750/table-1-taste-average-bite-forces-at-the-canine-tips-bf-and
 			height: (0.8 + 0.85)/2,
 			length: (1.05 + 1.6)/2,
 			weight: 40,
@@ -1935,6 +1937,9 @@ const lifeData = [
 			},
 			'sex': 'XY',
 		},
+		'stats': {
+			bite_force: 351.5, // https://www.academia.edu/figures/3464750/table-1-taste-average-bite-forces-at-the-canine-tips-bf-and
+		}
 	},
 	{
 		'name': 'cannabaceae',
@@ -4055,6 +4060,7 @@ const lifeData = [
 			'sex': 'XY',
 		},
 		'stats': {
+			bite_force: 73.3, // https://www.academia.edu/figures/3464750/table-1-taste-average-bite-forces-at-the-canine-tips-bf-and
 			brain_weight: (0.025 + 0.03)/2,
 			heartrate: (150 + 180)/2,
 			height: (0.23 + 0.25)/2,
@@ -5423,6 +5429,7 @@ const lifeData = [
 		'range': 'nw',
 		'desc': 'Ocelot',
 		'stats': {
+			bite_force: 199.5, // https://www.academia.edu/figures/3464750/table-1-taste-average-bite-forces-at-the-canine-tips-bf-and
 			height: (0.4 + 0.5)/2,
 			weight: (7 + 15.5)/2,
 		},
@@ -5552,6 +5559,7 @@ const lifeData = [
 		'range': 'na',
 		'desc': 'Bobcat',
 		'stats': {
+			bite_force: 184.5, // https://www.academia.edu/figures/3464750/table-1-taste-average-bite-forces-at-the-canine-tips-bf-and
 			height: (0.3 + 0.6)/2,
 			length: 0.827,
 			stride: (0.2 + 0.45)/2,
@@ -6792,6 +6800,7 @@ const lifeData = [
 			'sex': 'XY',
 		},
 		'stats': {
+			bite_force: 1314.7, // https://www.academia.edu/figures/3464750/table-1-taste-average-bite-forces-at-the-canine-tips-bf-and
 			length: (1.6 + 1.84 + 1.84 + 2.08)/4,
 			weight: (110 + 143.52 + 160 + 225)/4,
 		},
@@ -6819,6 +6828,7 @@ const lifeData = [
 		'desc': 'Leopard',
 		'emoji': '🐆',
 		'stats': {
+			bite_force: 621.1, // https://www.academia.edu/figures/3464750/table-1-taste-average-bite-forces-at-the-canine-tips-bf-and
 			height: (0.6 + 0.7 + 0.57 + 0.64)/4,
 			length: (0.92 + 1.83)/2,
 			weight: (30.9 + 72 + 20.5 + 43)/4,
@@ -6849,6 +6859,7 @@ const lifeData = [
 			'sex': 'XY',
 		},
 		'stats': {
+			bite_force: 1472.1, // https://www.academia.edu/figures/3464750/table-1-taste-average-bite-forces-at-the-canine-tips-bf-and
 			height: (0.8 + 1.1)/2,
 			length: (1.4 + 2.8)/2,
 			weight: (200 + 260 + 100 + 160)/2,
@@ -6862,6 +6873,7 @@ const lifeData = [
 		'age': lifeDataPeriod.late_pleistocene,
 		'desc': 'Snow Leopard',
 		'stats': {
+			bite_force: 387.6, // https://www.academia.edu/figures/3464750/table-1-taste-average-bite-forces-at-the-canine-tips-bf-and
 			height: 0.56,
 			length: (0.75 + 1.5)/2,
 			weight: (44 + 55 + 35 + 40)/4,
@@ -8047,6 +8059,7 @@ const lifeData = [
 		'age': 1.2,
 		'desc': 'Mountain Lion',
 		'stats': {
+			bite_force: 497.1, // https://www.academia.edu/figures/3464750/table-1-taste-average-bite-forces-at-the-canine-tips-bf-and
 			height: (0.6 + 0.9)/2,
 			jump: 5.5,
 			length: (2.4 + 2.05)/2,
@@ -9890,6 +9903,7 @@ const lifeData = [
 			'sex': 'XY',
 		},
 		'stats': {
+			bite_force: 144, // https://www.academia.edu/figures/3464750/table-1-taste-average-bite-forces-at-the-canine-tips-bf-and
 			jump: 2,
 			height: (0.35 + 0.5)/2,
 			length: (0.45 + 0.9)/2,
