@@ -5755,6 +5755,9 @@ const lifeData = [
 		'age': 94,
 		'age_end': 66,
 		'desc': 'Mosasaur',
+		'stats': {
+			length: 4,
+		}
 	},
 	{
 		'name': 'muridae',
