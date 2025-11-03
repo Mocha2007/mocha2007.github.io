@@ -1619,6 +1619,25 @@ const lifeData = [
 		'desc': 'Boas',
 	},
 	{
+		'name': 'bombycidae',
+		'rank': 'family',
+		'parent': 'lepidoptera',
+		'range': 'as', // ?
+	},
+	{
+		'name': 'bombyx',
+		'rank': 'genus',
+		'parent': 'bombycidae',
+		'range': 'as', // ?
+	},
+	{
+		'name': 'bombyx mori',
+		'rank': 'species',
+		'parent': 'bombyx',
+		'range': 'as',
+		'desc': 'Silk moth',
+	},
+	{
 		'name': 'bop',
 		'rank': 'clade',
 		'parent': 'poaceae',
