@@ -1726,6 +1726,7 @@ const lifeData = [
 			'sex': 'XY',
 		},
 		'stats': {
+			encephalization_quotient: (0.52+0.59)/2, // https://en.wikipedia.org/wiki/Encephalization_quotient
 			weight: (600 + 1200)/2,
 		},
 	},
@@ -1992,6 +1993,7 @@ const lifeData = [
 		},
 		'stats': {
 			bite_force: 351.5, // https://www.academia.edu/figures/3464750/table-1-taste-average-bite-forces-at-the-canine-tips-bf-and
+			encephalization_quotient: 1.2, // https://en.wikipedia.org/wiki/Encephalization_quotient
 		}
 	},
 	{
@@ -3423,6 +3425,9 @@ const lifeData = [
 				'ploidy': 2,
 			},
 		},
+		'stats': {
+			encephalization_quotient: 0.2, // https://en.wikipedia.org/wiki/Encephalization_quotient
+		}
 	},
 	{
 		'name': 'dientamoeba',
@@ -3921,6 +3926,7 @@ const lifeData = [
 			'sex': 'XY',
 		},
 		'stats': {
+			encephalization_quotient: 0.92, // https://en.wikipedia.org/wiki/Encephalization_quotient
 			height: (1.42 + 1.57)/2,
 			speed: 70.76 * kph,
 			weight: (380 + 600)/2,
@@ -4525,6 +4531,7 @@ const lifeData = [
 		},
 		// eastern gorilla
 		'stats': {
+			encephalization_quotient: 1.39, // https://en.wikipedia.org/wiki/Encephalization_quotient
 			height: (1.7 + 1.5)/2,
 			weight: (140 + 205.5 + 90 + 100)/4,
 		},
@@ -4798,6 +4805,7 @@ const lifeData = [
 			'sex': 'XY',
 		},
 		'stats': {
+			encephalization_quotient: 0.37, // https://en.wikipedia.org/wiki/Encephalization_quotient
 			height: (1.3 + 1.65)/2,
 			length: (2.9 + 5.05)/2,
 			lifespan: (40 + 50)/2,
@@ -5111,6 +5119,9 @@ const lifeData = [
 			},
 			'sex': 'XY',
 		},
+		'stats': {
+			encephalization_quotient: 0.92, // https://en.wikipedia.org/wiki/Encephalization_quotient
+		}
 	},
 	{
 		'name': 'hydra',
@@ -5657,6 +5668,9 @@ const lifeData = [
 		'age': 53,
 		'desc': 'Rabbit, Hare',
 		'emoji': '🐇',
+		'stats': {
+			encephalization_quotient: 0.4, // https://en.wikipedia.org/wiki/Encephalization_quotient
+		}
 	},
 	{
 		'name': 'leptocardii',
@@ -6868,6 +6882,9 @@ const lifeData = [
 			},
 			'sex': 'XY',
 		},
+		'stats': {
+			encephalization_quotient: 0.8, // https://en.wikipedia.org/wiki/Encephalization_quotient
+		}
 	},
 	// P
 	{
@@ -6986,6 +7003,7 @@ const lifeData = [
 			'sex': 'XY',
 		},
 		'stats': {
+			encephalization_quotient: (2.2+2.5)/2, // https://en.wikipedia.org/wiki/Encephalization_quotient
 			height: 1.5,
 			weight: (40 + 70 + 27 + 50)/4,
 		},
@@ -8077,6 +8095,7 @@ const lifeData = [
 		'desc': 'Raccoon',
 		'emoji': '🦝',
 		'stats': {
+			encephalization_quotient: 1.62, // https://en.wikipedia.org/wiki/Encephalization_quotient
 			height: (0.23 + 0.3)/2,
 			length: (0.4 + 0.7)/2,
 			speed: (16 + 24)/2 * kph,
@@ -8873,6 +8892,9 @@ const lifeData = [
 			},
 			'sex': 'XY',
 		},
+		'stats': {
+			encephalization_quotient: 1.1, // https://en.wikipedia.org/wiki/Encephalization_quotient
+		}
 	},
 	{
 		'name': 'scleractinia',
@@ -9328,6 +9350,9 @@ const lifeData = [
 				'ploidy': 2,
 			},
 			'sex': 'XY',
+		},
+		'stats': {
+			encephalization_quotient: 0.38, // https://en.wikipedia.org/wiki/Encephalization_quotient
 		},
 		'wiki': 'Sus_(genus)',
 	},
@@ -10227,6 +10252,7 @@ const lifeData = [
 		},
 		'stats': {
 			bite_force: 144, // https://www.academia.edu/figures/3464750/table-1-taste-average-bite-forces-at-the-canine-tips-bf-and
+			encephalization_quotient: 1.92, // https://en.wikipedia.org/wiki/Encephalization_quotient
 			jump: 2,
 			height: (0.35 + 0.5)/2,
 			length: (0.45 + 0.9)/2,
