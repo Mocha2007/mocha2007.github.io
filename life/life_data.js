@@ -2156,6 +2156,9 @@ const lifeData = [
 			lifespan: 70,
 			speed: 25 * kph,
 			weight: 2000,
+			// h. hippocampus
+			// https://datadryad.org/dataset/doi:10.5061/dryad.sxksn035q
+			brain_weight: 29530e-6,
 		},
 		'genetic': {
 			'chromosome': {
@@ -3626,6 +3629,14 @@ const lifeData = [
 		'range': 'wo',
 		'age': lifeDataPeriod.early_devonian,
 		'desc': 'Lungfish',
+		'stats': {
+			// protopterus annectens
+			// https://datadryad.org/dataset/doi:10.5061/dryad.sxksn035q
+			lifespan: 23,
+			length: 100e-2,
+			weight: 4000e-3,
+			brain_weight: 224e-6,
+		}
 	},
 	{
 		'name': 'diprotodontia',
@@ -4826,6 +4837,12 @@ const lifeData = [
 		'wiki': 'Seahorse',
 		'stats': {
 			height: (1.5e-2 + 35e-2)/2,
+			// h. hippocampus
+			// https://datadryad.org/dataset/doi:10.5061/dryad.sxksn035q
+			lifespan: 1.3,
+			length: 15e-2,
+			weight: 2.05e-3,
+			brain_weight: 10.5e-6,
 		},
 	},
 	{
@@ -6321,6 +6338,13 @@ const lifeData = [
 		'range': 'wo',
 		'age': 311,
 		'desc': 'Hagfish',
+		'stats': {
+			// myxine glutinosa
+			// https://datadryad.org/dataset/doi:10.5061/dryad.sxksn035q
+			length: 95e-2,
+			weight: 161.93e-3,
+			brain_weight: 15.66e-6,
+		}
 	},
 	{
 		'name': 'myxococcales',
@@ -7456,6 +7480,14 @@ const lifeData = [
 		'range': 'wo',
 		'age': lifeDataPeriod.late_devonian,
 		'desc': 'Lampreys',
+		'stats': {
+			// petromyzon marinus
+			// https://datadryad.org/dataset/doi:10.5061/dryad.sxksn035q
+			lifespan: 11,
+			length: 120e-2,
+			weight: 2500e-3,
+			brain_weight: 37.5e-6,
+		}
 	},
 	{
 		'name': 'petroselinum',
@@ -7978,6 +8010,12 @@ const lifeData = [
 		'parent': 'gadidae',
 		'range': 'al',
 		'desc': 'Pollock',
+		// p. pollachius
+		'stats': {
+			// https://datadryad.org/dataset/doi:10.5061/dryad.sxksn035q
+			weight: 18140e-3,
+			brain_weight: 2218.196e-6,
+		}
 	},
 	{
 		'name': 'polyphysaceae',
@@ -8101,6 +8139,12 @@ const lifeData = [
 			length: 3.1,
 			lifespan: 20,
 			weight: (27+55)/2,
+			// h. hippocampus
+			// https://datadryad.org/dataset/doi:10.5061/dryad.sxksn035q
+			lifespan: 20,
+			length: 400e-2,
+			weight: 205930e-3,
+			brain_weight: 18830e-6,
 		},
 	},
 	{
@@ -9025,6 +9069,14 @@ const lifeData = [
 		'range': 'wo',
 		'age': lifeDataPeriod.upper_jurassic,
 		'desc': 'Catshark',
+		'stats': {
+			// scyliorhinus canicula
+			// https://datadryad.org/dataset/doi:10.5061/dryad.sxksn035q
+			lifespan: 12,
+			length: 100e-2,
+			weight: 1320e-3,
+			brain_weight: 1380e-6,
+		}
 	},
 	{
 		'name': 'scyphozoa',
@@ -9122,6 +9174,13 @@ const lifeData = [
 		'range': 'wo',
 		'age': 100,
 		'desc': 'Catfish',
+		'stats': {
+			// silurus glanis
+			// https://datadryad.org/dataset/doi:10.5061/dryad.sxksn035q
+			lifespan: 80,
+			length: 500e-2,
+			weight: 306000e-3,
+		}
 	},
 	{
 		'name': 'simiiformes',
@@ -9642,6 +9701,13 @@ const lifeData = [
 		'range': 'wo',
 		'age': 56,
 		'desc': 'Pufferfish',
+		'stats': {
+			// tetraodon lineatus
+			// https://datadryad.org/dataset/doi:10.5061/dryad.sxksn035q
+			lifespan: 5.9,
+			length: 43e-2,
+			weight: 1000e-3,
+		}
 	},
 	{
 		'name': 'tetraodontiformes',
@@ -9744,6 +9810,14 @@ const lifeData = [
 		'range': 'wo',
 		'age': 56,
 		'desc': 'Tuna',
+		// thunnus thynnus
+		'stats': {
+			// https://datadryad.org/dataset/doi:10.5061/dryad.sxksn035q
+			lifespan: 32,
+			length: 458e-2,
+			weight: 684000e-3,
+			brain_weight: 3090e-6,
+		}
 	},
 	{
 		'name': 'thyreophora',
