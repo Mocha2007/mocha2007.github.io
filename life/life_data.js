@@ -5122,6 +5122,7 @@ const lifeData = [
 			heartrate: 70,
 			height: (1.71 + 1.59)/2,
 			lifespan: (72.6 + 73.2)/2,
+			temperature: 37,
 			speed: 44.72 * kph,
 			weight: (77 + 59)/2,
 		},
