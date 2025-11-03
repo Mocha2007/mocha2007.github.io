@@ -306,6 +306,9 @@ const lifeData = [
 			length: (1.1 + 1.5)/2,
 			speed: 104 * kph,
 			weight: (21 + 65)/2,
+			// https://peerj.com/articles/301/#supp-2
+			brain_weight: 0.11e-2 * 22.2,
+			temperature: 39,
 		},
 		'genetic': {
 			'chromosome': {
@@ -536,6 +539,9 @@ const lifeData = [
 			bite_force: 13172,
 			length: (2.6+3+3.4+4.5)/4,
 			weight: 500,
+			// https://peerj.com/articles/301/#supp-2
+			brain_weight: 0.007e-2 * 205,
+			temperature: 22.8,
 		},
 	},
 	{
@@ -1967,6 +1973,9 @@ const lifeData = [
 			height: (0.8 + 0.85)/2,
 			length: (1.05 + 1.6)/2,
 			weight: 40,
+			// https://peerj.com/articles/301/#supp-2
+			brain_weight: 0.508e-2 * 29.94,
+			temperature: 38.4,
 		},
 	},
 	{
@@ -2074,6 +2083,12 @@ const lifeData = [
 			},
 			'sex': 'XY',
 		},
+		'stats': {
+			// https://peerj.com/articles/301/#supp-2
+			brain_weight: 0.419e-2 * 27.66,
+			temperature: 39.5,
+			weight: 27.66,
+		},
 		'wiki': 'Capra_(genus)',
 	},
 	{
@@ -2106,6 +2121,13 @@ const lifeData = [
 		'range': 'wo',
 		'age': lifeDataPeriod.valanginian,
 		'desc': 'Requiem sharks',
+		// galeocerdo cuvier
+		'stats': {
+			// https://peerj.com/articles/301/#supp-2
+			brain_weight: 0.067e-2 * 123,
+			temperature: 19.5,
+			weight: 123,
+		}
 	},
 	{
 		'name': 'carcharhiniformes',
@@ -4337,6 +4359,10 @@ const lifeData = [
 			length: 1, // g. morhua
 			lifespan: 25,
 			weight: 96,
+			// https://peerj.com/articles/301/#supp-2
+			brain_weight: 0.048e-2 * 10.6,
+			temperature: 10,
+			weight: 10.6,
 		},
 	},
 	{
@@ -7140,6 +7166,9 @@ const lifeData = [
 			height: (0.57 + 0.81)/2,
 			length: (1.12 + 1.85)/2,
 			weight: (56 + 96)/2,
+			// https://peerj.com/articles/301/#supp-2
+			brain_weight: 0.426e-2 * 34.47,
+			temperature: 37.7,
 		},
 	},
 	{
@@ -7155,6 +7184,9 @@ const lifeData = [
 			height: (0.6 + 0.7 + 0.57 + 0.64)/4,
 			length: (0.92 + 1.83)/2,
 			weight: (30.9 + 72 + 20.5 + 43)/4,
+			// https://peerj.com/articles/301/#supp-2
+			brain_weight: 0.281e-2 * 48,
+			temperature: 37.7,
 		},
 		'genetic': {
 			'chromosome': {
@@ -7186,6 +7218,9 @@ const lifeData = [
 			height: (0.8 + 1.1)/2,
 			length: (1.4 + 2.8)/2,
 			weight: (200 + 260 + 100 + 160)/2,
+			// https://peerj.com/articles/301/#supp-2
+			brain_weight: 0.144e-2 * 209,
+			temperature: 37.5,
 		},
 	},
 	{
@@ -8483,6 +8518,13 @@ const lifeData = [
 		'parent': 'serpentes',
 		'range': 'af;as;au',
 		'desc': 'Pythons',
+		// python molurus
+		'stats': {
+			// https://peerj.com/articles/301/#supp-2
+			brain_weight: 0.018e-2 * 61.4,
+			temperature: 28.2,
+			weight: 61.4,
+		}
 	},
 	// Q
 	{
@@ -8838,6 +8880,13 @@ const lifeData = [
 		'parent': 'salmonidae',
 		'range': 'nh',
 		'desc': 'Salmon',
+		// salmo trutta
+		'stats': {
+			// https://peerj.com/articles/301/#supp-2
+			brain_weight: 0.195e-2 * 0.292,
+			temperature: 16,
+			weight: 0.292,
+		}
 	},
 	{
 		'name': 'samburupithecus',
@@ -10058,6 +10107,13 @@ const lifeData = [
 			},
 			'sex': 'XY',
 		},
+		// u. arctos
+		'stats': {
+			// https://peerj.com/articles/301/#supp-2
+			brain_weight: 0.164e-2 * 142.88,
+			temperature: 38,
+			weight: 142.88,
+		}
 	},
 	{
 		'name': 'ustilaginaceae',
@@ -10261,6 +10317,13 @@ const lifeData = [
 		'age': 47,
 		'range': 'nw;ow',
 		'desc': 'Vipers',
+		// agkistrodon piscovoris
+		'stats': {
+			// https://peerj.com/articles/301/#supp-2
+			brain_weight: 0.088e-2 * 0.728,
+			temperature: 26.2,
+			weight: 0.728,
+		}
 	},
 	{
 		'name': 'vitaceae',

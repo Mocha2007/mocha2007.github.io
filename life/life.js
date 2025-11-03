@@ -596,7 +596,7 @@ const stat_elem = {
 		});
 	},
 	// current specs: HEIGHT, LENGTH, SPEED, WEIGHT
-	specs: ['height', 'length', 'speed', 'weight', 'bite_force', 'encephalization_quotient', 'jump', 'lifespan'],
+	specs: ['height', 'length', 'speed', 'weight', 'bite_force', 'encephalization_quotient', 'jump', 'lifespan', 'temperature'],
 	unit: {
 		bite_force: 'N',
 		encephalization_quotient: '',
@@ -605,6 +605,7 @@ const stat_elem = {
 		length: 'm',
 		lifespan: 'yr',
 		speed: 'm/s',
+		temperature: '°C',
 		weight: 'kg',
 	},
 	get year(){
