@@ -681,8 +681,8 @@ function verify(){
 		console.warn(age_can_be_guessed.map(t => t.url));
 	}
 	// extinct childless taxa without stats
-	console.debug(`extinct childless taxa without stats:`)
-	const ectwos = Taxon.taxa.filter(t => t.extinct && !t.stats && !t.children.length);
+	console.debug(`childless taxa without stats:`)
+	const ectwos = Taxon.taxa.filter(t => !t.stats && !t.children.length);
 	if (ectwos.length) {
 		console.warn(ectwos);
 	}

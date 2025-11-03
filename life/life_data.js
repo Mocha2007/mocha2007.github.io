@@ -356,6 +356,10 @@ const lifeData = [
 			},
 			// 'sex': 'XY',
 		},
+		'stats': {
+			length: (4e-3 + 7e-3)/2,
+			lifespan: (2 + 4)/2 *7/365.2425,
+		}
 	},
 	{
 		'name': 'aegyptopithecus',
