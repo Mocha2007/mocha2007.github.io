@@ -3409,6 +3409,22 @@ const lifeData = [
 		'range': 'ww', // ???
 	},
 	{
+		'name': 'dionaea',
+		'rank': 'genus',
+		'parent': 'droseraceae',
+		'range': 'na',
+	},
+	{
+		'name': 'dionaea muscipula',
+		'rank': 'species',
+		'parent': 'dionaea',
+		'range': 'na',
+		'desc': 'Venus flytrap',
+		'stats': {
+			bite_force: 149e-3, // https://pubmed.ncbi.nlm.nih.gov/22959673/
+		},
+	},
+	{
 		'name': 'dioscorea',
 		'rank': 'genus',
 		'parent': 'dioscoreaceae',
@@ -3523,6 +3539,13 @@ const lifeData = [
 		'age_end': 66,
 		'extinct': true,
 		'range': 'ww',
+	},
+	{
+		'name': 'droseraceae',
+		'rank': 'family',
+		'parent': 'caryophyllales',
+		'range': 'ww',
+		'age': lifeDataPeriod.late_cretaceous,
 	},
 	{
 		'name': 'drosophila',
