@@ -100,6 +100,9 @@ function tree_mass(diam, height){
 	const C = 6 / 0.0254 / 0.3048 * 0.45359237; // ~ 351.53478982
 	return C * diam * height;
 }
+function watersphere(r){
+	return 1000 * 4/3 * Math.PI * Math.pow(r, 3);
+}
 const authorities = {
 	/** Arambourg, 1948 */
 	arambourg: {
@@ -4044,7 +4047,8 @@ const lifeData = [
 		'desc': 'E. Coli',
 		'stats': {
 			length: 2e-6,
-			weight: Math.pow(0.65e-6, 3), // 0.6-0.7 mcm^3, assuming density ~ water
+			speed: 30e-6, // https://bionumbers.hms.harvard.edu/bionumber.aspx?id=108082&ver=1&trm=speed&org=
+			weight: watersphere(Math.cbrt(1e-6 * 0.625e-6 * 0.625e-6)), // 0.6-0.7 mcm^3, assuming density ~ water
 		},
 	},
 	{
@@ -9565,10 +9569,27 @@ const lifeData = [
 		'age': 318,
 	},
 	{
+		'name': 'synechococcaceae',
+		'rank': 'family',
+		'parent': 'synechococcales',
+		'range': 'ww',
+	},
+	{
 		'name': 'synechococcales',
 		'rank': 'order',
 		'parent': 'cyanophyceae',
 		'range': 'ww',
+	},
+	{
+		'name': 'synechococcus',
+		'rank': 'genus',
+		'parent': 'synechococcaceae',
+		'range': 'wo',
+		'stats': {
+			length: (0.6e-6 + 2.1e-6)/2, // https://bionumbers.hms.harvard.edu/bionumber.aspx?id=108790&ver=4&trm=Synechococcus&org=
+			speed: (5e-6 + 25e-6)/2, // https://bionumbers.hms.harvard.edu/bionumber.aspx?id=109314&ver=3&trm=speed&org=
+			weight: watersphere((0.6e-6 + 2.1e-6)/4), // water sphere with radius https://bionumbers.hms.harvard.edu/bionumber.aspx?id=108790&ver=4&trm=Synechococcus&org=
+		}
 	},
 	{
 		'name': 'syngnathidae',
