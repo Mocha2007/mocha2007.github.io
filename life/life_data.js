@@ -8592,6 +8592,24 @@ const lifeData = [
 		},
 	},
 	{
+		'name': 'spinosauridae',
+		'rank': 'family',
+		'parent': 'theropoda',
+		'extinct': true,
+		'range': 'ow;sa',
+		'age': 140,
+		'age_end': 94,
+	},
+	{
+		'name': 'spinosaurus',
+		'rank': 'genus',
+		'parent': 'spinosauridae',
+		'extinct': true,
+		'range': 'af', // N. Africa
+		'age': 100,
+		'age_end': 94,
+	},
+	{
 		'name': 'spiralia',
 		'rank': 'clade',
 		'parent': 'protostomia',
