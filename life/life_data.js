@@ -9477,6 +9477,14 @@ const lifeData = [
 		'desc': 'Vanilla',
 	},
 	{
+		'name': 'varanidae',
+		'rank': 'family',
+		'parent': 'toxicofera',
+		'range': 'af;as;oc',
+		'age': 80,
+		'desc': 'Monitor lizards',
+	},
+	{
 		'name': 'velociraptor',
 		'rank': 'genus',
 		'parent': 'dromaeosauridae',
