@@ -4909,7 +4909,7 @@ const lifeData = [
 	{
 		'name': 'iguania',
 		'rank': 'suborder',
-		'parent': 'squamata',
+		'parent': 'toxicofera',
 		'range': 'ww',
 		'age': lifeDataPeriod.early_cretaceous,
 	},
@@ -5697,7 +5697,7 @@ const lifeData = [
 	{
 		'name': 'mosasauridae',
 		'rank': 'family',
-		'parent': 'squamata',
+		'parent': 'toxicofera',
 		'extinct': true,
 		'range': 'ww',
 		'age': 94,
@@ -8431,7 +8431,7 @@ const lifeData = [
 	{
 		'name': 'serpentes',
 		'rank': 'suborder',
-		'parent': 'squamata',
+		'parent': 'toxicofera',
 		'range': 'ww',
 		'age': 94,
 		'desc': 'Snake',
@@ -9058,6 +9058,13 @@ const lifeData = [
 		'stats': {
 			length: 0.2,
 		}
+	},
+	{
+		'name': 'toxicofera',
+		'rank': 'clade',
+		'parent': 'squamata',
+		'range': 'ww',
+		'age': lifeDataPeriod.bathonian,
 	},
 	{
 		'name': 'toxoplasma',
