@@ -7533,6 +7533,9 @@ const lifeData = [
 		'rank': 'genus',
 		'parent': 'acholeplasmataceae',
 		'range': 'ww',
+		'stats': {
+			length: 1e-6, // diameter, max.
+		},
 	},
 	{
 		'name': 'phytoplasma vitis',
