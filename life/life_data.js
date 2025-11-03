@@ -5137,6 +5137,10 @@ const lifeData = [
 		'age': lifeDataPeriod.induan,
 		'age_end': lifeDataPeriod.turonian,
 		'desc': 'Ichthyosaur',
+		'stats': {
+			length: (2+4)/2,
+			weight: (163 + 950)/2,
+		}
 	},
 	{
 		'name': 'iguana',
@@ -5232,6 +5236,9 @@ const lifeData = [
 				'ploidy': 2,
 			},
 		},
+		'stats': {
+			height: (0.13 + 0.51)/2,
+		}
 	},
 	{
 		'name': 'isoetales',
@@ -5319,6 +5326,9 @@ const lifeData = [
 		'range': 'wo', // ?
 		'age': lifeDataPeriod.terreneuvian,
 		'desc': 'Mud dragons',
+		'stats': {
+			length: 1e-3, // up to 4 cm in cambrian
+		},
 	},
 	{
 		'name': 'kryptotrochozoa',
