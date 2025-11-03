@@ -384,7 +384,7 @@ function openParents(object){
 }
 
 function refreshButtons(){
-	document.getElementById('toggle_button_inner').innerHTML = openSetting ? 'Close' : 'Open';
+	// document.getElementById('toggle_button_inner').innerHTML = openSetting ? 'Close' : 'Open';
 }
 
 /** @param {string} string */
@@ -426,9 +426,9 @@ function searchButton(){
 	});
 }
 
-function toggle(){
+function toggle(setting){
 	// make everything closed or open (toggle)
-	openSetting = !openSetting;
+	openSetting = typeof setting === 'undefined' ? !openSetting : setting;
 	refreshButtons();
 	Array.from(document.getElementsByTagName('DETAILS')).forEach(
 		element => element.open = openSetting

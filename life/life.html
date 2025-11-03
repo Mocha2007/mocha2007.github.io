@@ -12,7 +12,8 @@
 <script src="life.js" async></script>
 <h1>Life</h1>
 <div id="controls">
-	<button type="button" onclick="toggle();"><span id="toggle_button_inner"></span> all</button>
+	<button type="button" onclick="toggle(false);">Close all</button>
+	<button type="button" onclick="toggle(true);">Open all</button>
 	<!-- | <input type="text" id="control_clade">
 	&larr; <input type="submit" value="Open this" onclick="openParents(objects[document.getElementById('control_clade').value]);"> -->
 	| <input type="text" id="search_clade">
