@@ -815,7 +815,7 @@ const lifeData = [
 	{
 		'name': 'ankylosauridae',
 		'rank': 'family',
-		'parent': 'ornithischia',
+		'parent': 'thyreophora',
 		'extinct': true,
 		'age': 122,
 		'age_end': 66,
@@ -2236,6 +2236,15 @@ const lifeData = [
 		'age': 500,
 	},
 	{
+		'name': 'cerapoda',
+		'rank': 'clade',
+		'parent': 'ornithischia',
+		'range': 'ww',
+		'extinct': true,
+		'age': 170,
+		'age_end': 66,
+	},
+	{
 		'name': 'cerasus',
 		'rank': 'subgenus',
 		'parent': 'prunus',
@@ -2253,7 +2262,7 @@ const lifeData = [
 	{
 		'name': 'ceratopsidae',
 		'rank': 'family',
-		'parent': 'ornithischia',
+		'parent': 'cerapoda',
 		'extinct': true,
 		'age': 82,
 		'age_end': 66,
@@ -4951,7 +4960,7 @@ const lifeData = [
 	{
 		'name': 'iguanodontidae',
 		'rank': 'family',
-		'parent': 'ornithischia',
+		'parent': 'cerapoda',
 		'extinct': true,
 		'range': 'ow',
 		'age': 126,
@@ -6451,7 +6460,7 @@ const lifeData = [
 	{
 		'name': 'pachycephalosauridae',
 		'rank': 'family',
-		'parent': 'ornithischia',
+		'parent': 'cerapoda',
 		'range': 'na;as',
 		'extinct': true,
 		'age': lifeDataPeriod.aptian,
@@ -8737,7 +8746,7 @@ const lifeData = [
 	{
 		'name': 'stegosauridae',
 		'rank': 'family',
-		'parent': 'ornithischia',
+		'parent': 'thyreophora',
 		'extinct': true,
 		'age': 169,
 		'age_end': 100.5,
@@ -9088,6 +9097,15 @@ const lifeData = [
 		'range': 'wo',
 		'age': 56,
 		'desc': 'Tuna',
+	},
+	{
+		'name': 'thyreophora',
+		'rank': 'clade',
+		'parent': 'ornithischia',
+		'range': 'ww',
+		'extinct': true,
+		'age': 200.91,
+		'age_end': 66,
 	},
 	{
 		'name': 'tingamarra',
