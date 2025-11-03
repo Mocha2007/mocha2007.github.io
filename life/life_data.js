@@ -614,6 +614,7 @@ const lifeData = [
 		'rank': 'class',
 		'parent': 'pseudomonadota',
 		'range': 'ww',
+		'age': 1900, // https://www.nature.com/articles/s41467-021-23645-4
 	},
 	{
 		'name': 'alveolata',
@@ -8120,7 +8121,7 @@ const lifeData = [
 	{
 		'name': 'proto-mitochondrion',
 		'rank': 'species',
-		'parent': 'rickettsiales',
+		'parent': 'alphaproteobacteria',
 		'range': 'ww',
 		'age': 1850, // "This symbiotic relationship probably developed 1.7 to 2 billion years ago."
 		'extinct': true,
@@ -8561,6 +8562,7 @@ const lifeData = [
 		'rank': 'order',
 		'parent': 'alphaproteobacteria',
 		'range': 'ww',
+		'age': (1741+1607)/2, // https://www.nature.com/articles/s41467-021-23645-4
 	},
 	{
 		'name': 'rodentia',
