@@ -1602,6 +1602,7 @@ const lifeData = [
 		// B. pubescens
 		'stats': {
 			height: (10+20)/2,
+			lifespan: (50+150)/2, // https://bigtree.cnre.vt.edu/lifespan.html
 		},
 	},
 	{
@@ -2184,6 +2185,7 @@ const lifeData = [
 		'desc': 'Pecan',
 		'stats': {
 			height: (20 + 40)/2,
+			lifespan: 300, // https://bigtree.cnre.vt.edu/lifespan.html
 		},
 	},
 	{
@@ -2381,6 +2383,7 @@ const lifeData = [
 		// P. avium
 		'stats': {
 			height: (5+25)/2,
+			lifespan: 100, // https://bigtree.cnre.vt.edu/lifespan.html
 		},
 	},
 	{
@@ -4133,6 +4136,9 @@ const lifeData = [
 				'ploidy': 2,
 			},
 		},
+		'stats': {
+			lifespan: 300, // https://bigtree.cnre.vt.edu/lifespan.html
+		},
 	},
 	{
 		'name': 'felidae',
@@ -5363,6 +5369,7 @@ const lifeData = [
 		'desc': 'Walnut',
 		'stats': {
 			height: (10 + 40)/2,
+			lifespan: 150, // https://bigtree.cnre.vt.edu/lifespan.html
 		},
 	},
 	{
@@ -7581,7 +7588,7 @@ const lifeData = [
 		// p. abies
 		'stats': {
 			height: (35+55)/2,
-			lifespan: 300,
+			lifespan: 150, // https://bigtree.cnre.vt.edu/lifespan.html
 		},
 	},
 	{
@@ -7645,6 +7652,7 @@ const lifeData = [
 		'desc': 'Pine',
 		'stats': {
 			height: (3 + 80)/2,
+			lifespan: (100+200)/2, // https://bigtree.cnre.vt.edu/lifespan.html
 		},
 	},
 	{
@@ -8415,7 +8423,7 @@ const lifeData = [
 		'desc': 'Oak',
 		'stats': {
 			height: 44,
-			lifespan: 600,
+			lifespan: (80+300)/2, // https://bigtree.cnre.vt.edu/lifespan.html
 		},
 	},
 	{
