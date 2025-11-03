@@ -2790,6 +2790,9 @@ const lifeData = [
 		'extinct': true,
 		'age': lifeDataPeriod.miaolingian,
 		'age_end': lifeDataPeriod.hettangian,
+		'stats': {
+			length: (4e-2 + 40e-2)/2,
+		}
 	},
 	{
 		'name': 'conoidasida',
@@ -5594,6 +5597,9 @@ const lifeData = [
 		'range': 'wo', // ?
 		'age': lifeDataPeriod.cambrian_stage_2,
 		'desc': 'Brush heads',
+		'stats': {
+			length: (100e-6 + 1e-3)/2,
+		}
 	},
 	{
 		'name': 'lorisoidea',
