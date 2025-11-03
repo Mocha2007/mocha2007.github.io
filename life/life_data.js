@@ -2437,7 +2437,7 @@ const lifeData = [
 		'rank': 'species',
 		'parent': 'chlamydia',
 		'range': 'ww',
-		'desc': {
+		'stats': {
 			length: (200e-9 + 400e-9)/2, // elementary bodies
 		}
 	},
