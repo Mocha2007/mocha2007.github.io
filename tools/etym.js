@@ -131,6 +131,20 @@ const etym = {
 		if (word) // residual
 			this.elem.result.appendChild(this.residual(word));
 	},
+	testTaxa(i = -1){
+		const script = document.createElement('script');
+		script.onload = () => {}; // onload;
+		script.src = '../life/life_data.js';
+		document.head.appendChild(script);
+		setTimeout(() => {
+			// choose random
+			i = i < 0 ? Math.floor(Math.random() * lifeData.length) : i;
+			const taxon = lifeData[i];
+			const name = taxon.name;
+			console.debug(i, name, taxon);
+			this.solve(name);
+		}, 100);
+	},
 };
 
 if (typeof etymLangData !== 'object')
