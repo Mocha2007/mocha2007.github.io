@@ -2636,8 +2636,12 @@ const lifeData = [
 		'rank': 'class',
 		'parent': 'choanozoa',
 		'range': 'wo',
-		'age': 100.5,
+		'age': 786.62, // see body
 		'desc': 'Choanoflagellate',
+		'stats': {
+			length: (5e-6+10e-6+4e-6+6e-6)/4, // proterospongia and diaphanoeca grandis
+			weight: watersphere(6.25e-6),
+		},
 	},
 	{
 		'name': 'choanozoa',
