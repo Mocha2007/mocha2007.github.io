@@ -4109,7 +4109,6 @@ const lifeData = [
 		'stats': {
 			length: 2e-6,
 			speed: 30e-6, // https://bionumbers.hms.harvard.edu/bionumber.aspx?id=108082&ver=1&trm=speed&org=
-			temperature: 37,
 			weight: 6.25e-13, // https://hypertextbook.com/facts/2003/LouisSiu.shtml
 		},
 	},
@@ -5636,6 +5635,10 @@ const lifeData = [
 		'parent': 'laetiporaceae',
 		'range': 'ww',
 		'desc': 'Chicken of the woods',
+		'stats': {
+			length: (5e-2 + 25e-2)/2,
+			weight: 45,
+		},
 	},
 	{
 		'name': 'lagomorpha',
@@ -5891,6 +5894,11 @@ const lifeData = [
 			},
 			'sex': 'XY',
 		},
+		'stats': {
+			length: (0.6 + 1.8)/2,
+			lifespan: 16,
+			weight: (1+45)/2,
+		}
 	},
 	{
 		'name': 'lycophyta',
@@ -6072,6 +6080,10 @@ const lifeData = [
 		'range': 'ww',
 		'age': 472,
 		'desc': 'Liverwort',
+		'stats': {
+			length: 10e-2,
+			width: (2e-3 + 20e-3)/2,
+		}
 	},
 	{
 		'name': 'marsupialia',
@@ -6119,6 +6131,10 @@ const lifeData = [
 		'parent': 'mesonychoteuthis',
 		'range': 'so',
 		'desc': 'Colossal Squid',
+		'stats': {
+			length: 4.2,
+			weight: (600+700)/2,
+		}
 	},
 	{
 		'name': 'mesozoa',
@@ -6167,6 +6183,9 @@ const lifeData = [
 		'rank': 'phylum',
 		'parent': 'gnathifera',
 		'range': 'ww',
+		'stats': {
+			length: 109e-6, // assuming diagram is to scale
+		}
 	},
 	{
 		'name': 'microsporidia',
@@ -6227,6 +6246,10 @@ const lifeData = [
 		'parent': 'morchella',
 		'range': 'nh',
 		'desc': 'Common Morel',
+		'stats': {
+			height: (2e-2 + 10e-2), // cap + stem (both abt same height, so /2*2)
+			length: (2e-2 + 7e-2)/2, // cap breadth
+		}
 	},
 	{
 		'name': 'morchellaceae',
@@ -6300,6 +6323,10 @@ const lifeData = [
 				'ploidy': 3,
 			},
 		},
+		'wiki': 'Musa_(genus)',
+		'stats': {
+			height: 9,
+		}
 	},
 	{
 		'name': 'musaceae',
@@ -6313,6 +6340,10 @@ const lifeData = [
 		'parent': 'mustelidae',
 		'range': 'ww',
 		'desc': 'Weasel',
+		'stats': {
+			length: (0.173 + 0.217)/2,
+			
+		}
 	},
 	{
 		'name': 'mustelidae',
