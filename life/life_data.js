@@ -7462,6 +7462,10 @@ const lifeData = [
 			'year': 2012,
 		},
 		'desc': 'Myojin parakaryote',
+		'stats': {
+			length: 10e-6,
+			weight: watersphere(5e-6),
+		}
 	},
 	{
 		'name': 'parapithecidae',
@@ -7766,6 +7770,9 @@ const lifeData = [
 		'range': 'ow',
 		'age': 47.8,
 		'desc': 'Pangolin',
+		'stats': {
+			length: (0.3 + 1)/2,
+		}
 	},
 	{
 		'name': 'phoronida',
@@ -7774,6 +7781,10 @@ const lifeData = [
 		'range': 'wo', // ?
 		'age': lifeDataPeriod.silurian,
 		'desc': 'Horseshoe worms',
+		'stats': {
+			length: 2e-2,
+			width: 1.5e-3,
+		}
 	},
 	{
 		'name': 'phorusrhacidae',
@@ -7885,6 +7896,10 @@ const lifeData = [
 		'rank': 'phylum',
 		'parent': 'archaeplastida',
 		'range': 'ww', // ???
+		'stats': {
+			length: 3e-6, // 'size'
+			weight: watersphere(1.5e-6),
+		}
 	},
 	{
 		'name': 'pierolapithecus',
@@ -7986,6 +8001,9 @@ const lifeData = [
 				'ploidy': 2,
 			},
 		},
+		'stats': {
+			height: (1+2)/2,
+		}
 	},
 	{
 		'name': 'placentalia',
@@ -8245,6 +8263,10 @@ const lifeData = [
 		'rank': 'division',
 		'parent': 'plantae',
 		'range': 'ww', // ???
+		'stats': {
+			length: 2.8e-6, // image
+			weight: watersphere(1.4e-6),
+		}
 	},
 	{
 		'name': 'priapulida',
@@ -8446,6 +8468,11 @@ const lifeData = [
 		'range': 'ww',
 		'age': 1650, // "Gloeomargarita's relative would have ended up in an ancestral archaeplastid ... 1900-1400 million years ago"
 		'extinct': true,
+		'stats': {
+			length: (3e-6 + 10e-6)/2, // diameter
+			weight: watersphere(2.714417617e-6),
+			width: (1e-6 + 3e-3)/2,
+		}
 	},
 	{
 		'name': 'proto-mitochondrion',
@@ -8496,7 +8523,11 @@ const lifeData = [
 		'rank': 'species',
 		'parent': 'prototheca',
 		'range': 'ww',
-		'desc': 'Protothecosis-causing green alga'
+		'desc': 'Protothecosis-causing green alga',
+		'stats': {
+			length: (3e-6 + 11e-6)/2,
+			weight: watersphere((3e-6 + 11e-6)/4),
+		},
 	},
 	{
 		'name': 'provora',
@@ -8546,6 +8577,7 @@ const lifeData = [
 		'parent': 'prunus',
 		'range': 'as',
 		'desc': 'Plum',
+		'wiki': 'Prunus_subg._Prunus',
 	},
 	{
 		'name': 'prymnesiophyceae',
@@ -8699,6 +8731,9 @@ const lifeData = [
 		'parent': 'bangiaceae',
 		'range': 'wo',
 		'desc': 'Nori',
+		'stats': {
+			height: 1,
+		}
 	},
 	{
 		'name': 'pyrus',
@@ -8915,6 +8950,7 @@ const lifeData = [
 		'parent': 'rosaceae',
 		'range': 'ww',
 		'desc': 'Rose',
+		'wiki': 'Rose',
 	},
 	{
 		'name': 'rosaceae',
