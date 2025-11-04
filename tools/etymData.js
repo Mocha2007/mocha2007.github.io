@@ -301,10 +301,10 @@ const etymData = [
 		forms: ['us$', 'i$'],
 	},
 	{
-		head: 'amoeba',
-		lang: EDS.latin,
+		head: 'ămoibḗ',
+		lang: EDS.greek,
 		gloss: 'change',
-		forms: ['amoebo'],
+		forms: ['amoebo?'],
 	},
 	{
 		head: 'anellus',
@@ -319,10 +319,16 @@ const etymData = [
 		forms: ['av'],
 	},
 	{
-		head: 'colo',
+		head: 'centrum',
 		lang: EDS.latin,
 		gloss: 'strain',
 		forms: ['colo', 'col'],
+	},
+	{
+		head: 'colo',
+		lang: EDS.latin,
+		gloss: 'center',
+		forms: ['centr'],
 	},
 	{
 		head: 'conus',
