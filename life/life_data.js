@@ -13,6 +13,7 @@ const lifeDataPeriod = {
 	barremian: 124,
 	bathonian: 167,
 	burdigalian: 18,
+	calymmian: 1500,
 	cambrian: 513,
 	cambrian_stage_2: 525,
 	cambrian_stage_3: 518,
@@ -21,6 +22,7 @@ const lifeDataPeriod = {
 	cenomanian: 97,
 	chattian: 25,
 	cretaceous: 105,
+	danian: 64,
 	devonian: 389,
 	early_carboniferous: 341,
 	early_cenomanian: 99,
@@ -1166,7 +1168,7 @@ const lifeData = [
 		'rank': 'clade',
 		'parent': 'cam',
 		'range': 'ww',
-		'age': 1600,
+		'age': lifeDataPeriod.calymmian,
 	},
 	{
 		'name': 'architeuthidae',
@@ -7631,7 +7633,7 @@ const lifeData = [
 		'rank': 'genus',
 		'parent': 'phascolarctidae',
 		'range': 'au',
-		'age': lifeDataPeriod.late_pleistocene, // p. stirtoni
+		'age': 0.7,
 	},
 	{
 		'name': 'phascolarctos cinereus',
@@ -8014,7 +8016,7 @@ const lifeData = [
 		'parent': 'plesiadapiformes',
 		'range': 'na;ea',
 		'extinct': true,
-		'age': lifeDataPeriod.late_cretaceous,
+		'age': lifeDataPeriod.danian,
 		'age_end': lifeDataPeriod.early_eocene,
 	},
 	{
@@ -8032,7 +8034,7 @@ const lifeData = [
 		'parent': 'plesiadapidae',
 		'range': 'na;eu',
 		'extinct': true,
-		'age': lifeDataPeriod.late_cretaceous,
+		'age': lifeDataPeriod.late_paleocene,
 		'age_end': lifeDataPeriod.early_eocene,
 		'stats': {
 			weight: 2.1,
