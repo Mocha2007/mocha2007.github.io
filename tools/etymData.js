@@ -956,6 +956,12 @@ const etymData = [
 		forms: ['cteno'],
 	},
 	{
+		head: 'kŭ́ănos',
+		lang: EDS.greek,
+		gloss: 'dark blue',
+		forms: ['cyano?'],
+	},
+	{
 		head: 'kúklos',
 		lang: EDS.greek,
 		gloss: 'circle',
