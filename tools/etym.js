@@ -132,7 +132,7 @@ const etym = {
 			this.elem.result.appendChild(this.residual(word));
 	},
 	testTaxa(i = -1){
-		if (typeof taxon === 'undefined') {
+		if (typeof lifeData === 'undefined') {
 			const script = document.createElement('script');
 			script.onload = () => {}; // onload;
 			script.src = '../life/life_data.js';
