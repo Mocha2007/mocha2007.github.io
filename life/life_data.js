@@ -2996,6 +2996,18 @@ const lifeData = [
 		'range': 'ww',
 	},
 	{
+		'name': 'corystospermales',
+		'rank': 'order',
+		'parent': 'spermatophyta',
+		'range': 'af;sa;oc;an',
+		'extinct': true,
+		'age': lifeDataPeriod.lopingian,
+		'age_end': lifeDataPeriod.early_jurassic,
+		'stats': {
+			height: 10, // dicroidium
+		},
+	},
+	{
 		'name': 'cpr group',
 		'rank': 'clade',
 		'parent': 'bacteria',
