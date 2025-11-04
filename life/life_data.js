@@ -461,6 +461,17 @@ const lifeData = [
 		},
 	},
 	{
+		'name': 'agathis',
+		'rank': 'genus',
+		'parent': 'araucariaceae',
+		'range': 'as;oc',
+		'age': 64.67,
+		// a. dammara
+		'stats': {
+			height: 60,
+		},
+	},
+	{
 		'name': 'agnatha',
 		'rank': 'infraphylum',
 		'parent': 'vertebrata',
@@ -1059,6 +1070,30 @@ const lifeData = [
 		'range': 'ww',
 		'age': 319,
 		'desc': 'Spider',
+	},
+	{
+		'name': 'araucaria',
+		'rank': 'genus',
+		'parent': 'araucariaceae',
+		'range': 'sa;oc',
+		'age': lifeDataPeriod.middle_jurassic,
+		'stats': {
+			height: (5+80)/2,
+		},
+	},
+	{
+		'name': 'araucariaceae',
+		'rank': 'family',
+		'parent': 'araucariales',
+		'range': 'sa;as;oc',
+		'age': lifeDataPeriod.early_jurassic,
+	},
+	{
+		'name': 'araucariales',
+		'rank': 'order',
+		'parent': 'pinopsida',
+		'range': 'sa;as;oc',
+		'age': lifeDataPeriod.early_jurassic,
 	},
 	{
 		'name': 'archaea',
@@ -10524,6 +10559,16 @@ const lifeData = [
 		'parent': 'cetruminantia',
 		'range': 'af',
 		'age': lifeDataPeriod.early_eocene,
+	},
+	{
+		'name': 'wollemia',
+		'rank': 'genus',
+		'parent': 'araucariaceae',
+		'range': 'au',
+		'stats': {
+			height: (25+40)/2,
+			lifespan: (500+1000)/2,
+		},
 	},
 	// X
 	{
