@@ -321,14 +321,14 @@ const etymData = [
 	{
 		head: 'centrum',
 		lang: EDS.latin,
-		gloss: 'strain',
-		forms: ['colo', 'col'],
+		gloss: 'center',
+		forms: ['centr'],
 	},
 	{
 		head: 'colo',
 		lang: EDS.latin,
-		gloss: 'center',
-		forms: ['centr'],
+		gloss: 'strain',
+		forms: ['colo', 'col'],
 	},
 	{
 		head: 'conus',
