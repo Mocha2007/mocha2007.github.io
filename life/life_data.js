@@ -2648,7 +2648,7 @@ const lifeData = [
 		'rank': 'clade',
 		'parent': 'opisthokonta',
 		'range': 'ww',
-		'age': 950,
+		'age': 750,
 		'authority': {
 			'original_authority': 'Brunet and King',
 			'year': 2017,
@@ -4383,7 +4383,7 @@ const lifeData = [
 		'rank': 'kingdom',
 		'parent': 'opisthokonta',
 		'range': 'ww',
-		'age': 1200, // https://en.wikipedia.org/wiki/Evolution_of_fungi#Early_evolution
+		'age': 1300, // https://en.wikipedia.org/wiki/Evolution_of_fungi#Early_evolution
 	},
 	{
 		'name': 'fusarium',
@@ -7020,6 +7020,14 @@ const lifeData = [
 		'extinct': true,
 		'age': 9.6,
 		'age_end': 7.4,
+	},
+	{
+		'name': 'ourasphaira',
+		'rank': 'genus',
+		'parent': 'fungi',
+		'range': 'na',
+		'extinct': true,
+		'age': 1000,
 	},
 	{
 		'name': 'ovis',
