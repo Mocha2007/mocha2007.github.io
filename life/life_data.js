@@ -1002,8 +1002,10 @@ const lifeData = [
 		// a. mellifera
 		'stats': {
 			brain_weight: 613e3*neuron_mass,
+			length: 1.2e-2, // https://devichedesigns.com/work/bee-anatomy drone and worker
 			lifespan: 8, // https://genomics.senescence.info/species/entry.php?species=Apis_mellifera
 			speed: 7.5, // https://bionumbers.hms.harvard.edu/search.aspx?trm=apis+mellifera
+			temperature: 35,
 			weight: 0.2e-3,
 		}
 	},
