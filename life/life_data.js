@@ -989,6 +989,7 @@ const lifeData = [
 		// a. mellifera
 		'stats': {
 			brain_weight: 613e3*neuron_mass,
+			lifespan: 8, // https://genomics.senescence.info/species/entry.php?species=Apis_mellifera
 			speed: 7.5, // https://bionumbers.hms.harvard.edu/search.aspx?trm=apis+mellifera
 			weight: 0.2e-3,
 		}
@@ -8855,7 +8856,10 @@ const lifeData = [
 		'rank': 'species',
 		'parent': 'saccharomyces',
 		'range': 'ww',
-		'desc': 'Brewer\'s yeast, Baker\'s yeast'
+		'desc': 'Brewer\'s yeast, Baker\'s yeast',
+		'stats': {
+			lifespan: 0.04, // https://genomics.senescence.info/species/entry.php?species=Saccharomyces_cerevisiae
+		},
 	},
 	{
 		'name': 'saccharomycetaceae',
