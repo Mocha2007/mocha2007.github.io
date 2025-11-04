@@ -6342,7 +6342,7 @@ const lifeData = [
 		'desc': 'Weasel',
 		'stats': {
 			length: (0.173 + 0.217)/2,
-			
+
 		}
 	},
 	{
@@ -6510,6 +6510,10 @@ const lifeData = [
 		'parent': 'naegleria',
 		'range': 'ww',
 		'desc': 'Brain-eating Amoeba',
+		'stats': {
+			length: (7e-6 + 15e-6)/2, // diam
+			weight: watersphere((7e-6 + 15e-6)/4),
+		}
 	},
 	{
 		'name': 'nakalipithecus',
@@ -6541,6 +6545,9 @@ const lifeData = [
 		'range': 'wo',
 		'age': 230,
 		'desc': 'Nautilus',
+		'stats': {
+			length: (0.1 + 0.25)/2,
+		},
 	},
 	{
 		'name': 'nectriaceae',
@@ -6563,6 +6570,9 @@ const lifeData = [
 		'range': 'ww', // ?
 		'age': lifeDataPeriod.cenomanian,
 		'desc': 'Horsehair worms',
+		'stats': {
+			length: (0.05 + 0.1)/2,
+		}
 	},
 	{
 		'name': 'nemertea',
@@ -6584,6 +6594,10 @@ const lifeData = [
 		'parent': 'nemopilema',
 		'range': 'pa',
 		'desc': 'Nomura\'s Jellyfish, among the largest jellyfish',
+		'stats': {
+			length: 2, // diam
+			weight: 200,
+		},
 	},
 	{
 		'name': 'neoaves',
@@ -6633,6 +6647,12 @@ const lifeData = [
 		'range': 'wo',
 		'age': lifeDataPeriod.valanginian,
 		'desc': 'Lobster',
+		'stats': {
+			length: (0.25 + 0.5)/2,
+			lifespan: (45+50)/2,
+			speed: 5,
+			weight: 20.15, // record
+		}
 	},
 	{
 		'name': 'nephrozoa',
@@ -6787,6 +6807,9 @@ const lifeData = [
 		'parent': 'omphalotus',
 		'range': 'au',
 		'desc': 'Ghost Fungus',
+		'stats': {
+			length: 0.3, // max diam
+		},
 	},
 	{
 		'name': 'onychophora',
@@ -6795,6 +6818,9 @@ const lifeData = [
 		'range': 'nw;af;as;oc',
 		'age': lifeDataPeriod.late_carboniferous,
 		'desc': 'Velvet worms',
+		'stats': {
+			length: 0.22, // max
+		},
 	},
 	{
 		'name': 'oomycetes',
@@ -6816,6 +6842,9 @@ const lifeData = [
 		'range': 'wo',
 		'age': lifeDataPeriod.ordovician,
 		'desc': 'Brittle stars',
+		'stats': {
+			length: 0.6, // max arm length
+		},
 	},
 	{
 		'name': 'opisthokonta',
@@ -7007,6 +7036,9 @@ const lifeData = [
 		'age': 760,
 		'age_end': 550,
 		'extinct': true,
+		'stats': {
+			length: (1e-3/3 + 5e-3)/2, // 'size'
+		}
 	},
 	{
 		'name': 'otavipithecus',
