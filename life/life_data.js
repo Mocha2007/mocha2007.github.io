@@ -1789,6 +1789,7 @@ const lifeData = [
 		},
 		'stats': {
 			encephalization_quotient: (0.52+0.59)/2, // https://en.wikipedia.org/wiki/Encephalization_quotient
+			temperature: (37.8 + 40)/2, // https://hypertextbook.com/facts/1998/PeiJunChen.shtml
 			weight: (600 + 1200)/2,
 		},
 	},
@@ -2060,6 +2061,7 @@ const lifeData = [
 			bite_force: 351.5, // https://www.academia.edu/figures/3464750/table-1-taste-average-bite-forces-at-the-canine-tips-bf-and
 			brain_weight: 2.253e9*neuron_mass,
 			encephalization_quotient: 1.2, // https://en.wikipedia.org/wiki/Encephalization_quotient
+			temperature: 38.2, // https://hypertextbook.com/facts/1999/JieYaoHuang.shtml
 		}
 	},
 	{
@@ -4106,7 +4108,7 @@ const lifeData = [
 			length: 2e-6,
 			speed: 30e-6, // https://bionumbers.hms.harvard.edu/bionumber.aspx?id=108082&ver=1&trm=speed&org=
 			temperature: 37,
-			weight: watersphere(Math.cbrt(1e-6 * 0.625e-6 * 0.625e-6)), // 0.6-0.7 mcm^3, assuming density ~ water
+			weight: 6.25e-13, // https://hypertextbook.com/facts/2003/LouisSiu.shtml
 		},
 	},
 	{
@@ -5812,6 +5814,7 @@ const lifeData = [
 		'emoji': '🐇',
 		'stats': {
 			encephalization_quotient: 0.4, // https://en.wikipedia.org/wiki/Encephalization_quotient
+			speed: (12+20)/2, // https://hypertextbook.com/facts/2001/RobertCohen.shtml
 		}
 	},
 	{
@@ -8920,7 +8923,9 @@ const lifeData = [
 		'range': 'ww',
 		'desc': 'Brewer\'s yeast, Baker\'s yeast',
 		'stats': {
+			length: (5e-6 + 10e-6)/2, // https://hypertextbook.com/facts/2000/JennyNg.shtml
 			lifespan: 0.04, // https://genomics.senescence.info/species/entry.php?species=Saccharomyces_cerevisiae
+			weight: watersphere((5e-6 + 10e-6)/4), // derived from length
 		},
 	},
 	{
@@ -9943,6 +9948,7 @@ const lifeData = [
 		'desc': 'Tuna',
 		// thunnus thynnus
 		'stats': {
+			speed: (17+22)/2, // https://hypertextbook.com/facts/2000/IsaacKlein.shtml
 			// https://datadryad.org/dataset/doi:10.5061/dryad.sxksn035q
 			lifespan: 32,
 			length: 458e-2,
