@@ -87,3 +87,40 @@ summary a {
 	padding-bottom: 20vh;
 	padding-top: 20vh;
 }
+/* time buttons */
+.neogene {
+	background-color: rgb(255,230,25);
+}
+.paleogene {
+	background-color: rgb(253,154,82);
+}
+.cretaceous {
+	background-color: rgb(127,198,78);
+}
+.jurassic {
+	background-color: rgb(52,178,201);
+}
+.triassic {
+	background-color: rgb(129,43,146);
+}
+.permian {
+	background-color: rgb(240,64,40);
+}
+.carboniferous {
+	background-color: rgb(103,165,153);
+}
+.devonian {
+	background-color: rgb(203,140,55);
+}
+.silurian {
+	background-color: rgb(179,225,182);
+}
+.ordovician {
+	background-color: rgb(0,146,112);
+}
+.cambrian {
+	background-color: rgb(127,160,86);
+}
+.ediacaran {
+	background-color: rgb(254,217,106);
+}

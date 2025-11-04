@@ -595,6 +595,10 @@ const stat_elem = {
 			});
 		});
 	},
+	set(t){
+		this.elem.input.value = t;
+		this.refresh();
+	},
 	// current specs: HEIGHT, LENGTH, SPEED, WEIGHT
 	specs: ['height', 'length', 'speed', 'weight', 'bite_force', 'encephalization_quotient', 'jump', 'lifespan', 'temperature'],
 	unit: {

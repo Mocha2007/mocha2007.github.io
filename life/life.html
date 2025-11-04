@@ -3,6 +3,7 @@
 <meta charset="utf-8">
 <meta name="description" content="By Mocha2007">
 <link rel="shortcut icon" href="../img/favicon.ico">
+<link href="../css/button.css" type="text/css" rel="stylesheet">
 <link href="life.css" type="text/css" rel="stylesheet">
 <link href="../tools/paleomap.css" type="text/css" rel="stylesheet">
 <title>Life</title>
@@ -28,6 +29,16 @@
 <span>
 	Species statistical maxima at epoch <input id="stats_age_input" type="number" min="0" max="4600" value="0" onclick="stat_elem.refresh();" onkeyup="stat_elem.refresh();"> Mya
 </span>
+<span class="button ediacaran" onclick="stat_elem.set(585);" title="Ediacaran">E</span>
+<span class="button cambrian" onclick="stat_elem.set(515);" title="Cambrian">Ꞓ</span>
+<span class="button ordovician" onclick="stat_elem.set(465);" title="Ordovician">O</span>
+<span class="button silurian" onclick="stat_elem.set(430);" title="Silurian">S</span>
+<span class="button devonian" onclick="stat_elem.set(390);" title="Devonian">D</span>
+<span class="button carboniferous" onclick="stat_elem.set(330);" title="Carboniferous">C</span>
+<span class="button permian" onclick="stat_elem.set(275);" title="Permian">P</span>
+<span class="button triassic" onclick="stat_elem.set(225);" title="Triassic">T</span>
+<span class="button jurassic" onclick="stat_elem.set(170);" title="Jurassic">J</span>
+<span class="button cretaceous" onclick="stat_elem.set(105);" title="Cretaceous">K</span>
 <div id="stats_container"></div>
 <div class="padding"></div>
 </html>
