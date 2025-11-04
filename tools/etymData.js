@@ -301,12 +301,6 @@ const etymData = [
 		forms: ['us$', 'i$'],
 	},
 	{
-		head: 'ămoibḗ',
-		lang: EDS.greek,
-		gloss: 'change',
-		forms: ['amoebo?'],
-	},
-	{
 		head: 'anellus',
 		lang: EDS.latin,
 		gloss: 'little ring',
@@ -323,6 +317,12 @@ const etymData = [
 		lang: EDS.latin,
 		gloss: 'center',
 		forms: ['centr'],
+	},
+	{
+		head: 'citrus',
+		lang: EDS.latin,
+		gloss: 'citrus',
+		forms: ['citr'],
 	},
 	{
 		head: 'colo',
@@ -524,16 +524,10 @@ const etymData = [
 		forms: ['a'],
 	},
 	{
-		head: 'an-',
+		head: 'ămoibḗ',
 		lang: EDS.greek,
-		gloss: 'un-',
-		forms: ['an(?=[aehiou])'], // "any-" impossible since no greek word starts y-, it's always hy-
-	},
-	{
-		head: 'aná',
-		lang: EDS.greek,
-		gloss: 'up',
-		forms: ['ana'],
+		gloss: 'change',
+		forms: ['amoebo?'],
 	},
 	{
 		head: 'amníon',
@@ -546,6 +540,18 @@ const etymData = [
 		lang: EDS.greek,
 		gloss: 'both',
 		forms: ['amphi'],
+	},
+	{
+		head: 'an-',
+		lang: EDS.greek,
+		gloss: 'un-',
+		forms: ['an(?=[aehiou])'], // "any-" impossible since no greek word starts y-, it's always hy-
+	},
+	{
+		head: 'aná',
+		lang: EDS.greek,
+		gloss: 'up',
+		forms: ['ana'],
 	},
 	{
 		head: 'anḗr',
