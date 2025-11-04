@@ -1307,7 +1307,7 @@ const etymData = [
 		head: 'ptéris',
 		lang: EDS.greek,
 		gloss: 'male fern',
-		forms: ['pterido'],
+		forms: ['pterido?'],
 	},
 	{
 		head: 'pterón',
