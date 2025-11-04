@@ -118,7 +118,7 @@ const etymData = [
 		head: '-alis',
 		lang: EDS.latin,
 		gloss: '(ADJ)',
-		forms: ['alis$', 'ales$', 'alia$', 'al'],
+		forms: ['alis$', 'a?les$', 'alia$', 'al'],
 	},
 	{
 		head: '-anae',
@@ -990,6 +990,12 @@ const etymData = [
 		lang: EDS.greek,
 		gloss: 'loosening',
 		forms: ['lysis', 'lyso', 'lys'],
+	},
+	{
+		head: 'malva',
+		lang: EDS.latin,
+		gloss: 'mallow',
+		forms: ['malva'],
 	},
 	{
 		head: 'mástix',
