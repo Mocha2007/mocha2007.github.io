@@ -9247,6 +9247,15 @@ const lifeData = [
 		},
 	},
 	{
+		'name': 'shuiyousphaeridium',
+		'rank': 'genus',
+		'parent': 'eukaryota',
+		'extinct': true,
+		'range': 'cn',
+		'age': 1800,
+		'age_end': 540,
+	},
+	{
 		'name': 'siluriformes',
 		'rank': 'order',
 		'parent': 'teleostei',
@@ -9707,6 +9716,15 @@ const lifeData = [
 			length: 0.3,
 			weight: (0.066 + 0.15)/2,
 		},
+	},
+	{
+		'name': 'tappania',
+		'rank': 'genus',
+		'parent': 'fungi',
+		'extinct': true,
+		'range': 'na;as',
+		'age': 1630,
+		'age_end': 550,
 	},
 	{
 		'name': 'taraxacum',
