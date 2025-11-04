@@ -4157,6 +4157,7 @@ const lifeData = [
 		'rank': 'phylum',
 		'parent': 'discicristata',
 		'range': 'ww',
+		'age': lifeDataPeriod.stenian,
 	},
 	{
 		'name': 'eukaryota',
@@ -4741,7 +4742,7 @@ const lifeData = [
 	{
 		'name': 'grypania',
 		'rank': 'genus',
-		'parent': 'eukaryota',
+		'parent': 'life',
 		'range': 'na', // https://en.wikipedia.org/wiki/Marquette_Iron_Range
 		'age': 1870,
 		'age_end': lifeDataPeriod.ediacaran,
