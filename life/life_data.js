@@ -3781,7 +3781,7 @@ const lifeData = [
 			'sex': 'XY',
 		},
 		'stats': {
-			brain_weight: 150e3*neuron_mass,
+			brain_weight: 139255*neuron_mass,
 			length: 2.5e-3,
 			lifespan: 50/365.2425,
 			weight: 10e-6 / 9.80665, // https://bionumbers.hms.harvard.edu/bionumber.aspx?id=110030
