@@ -8491,7 +8491,6 @@ const lifeData = [
 		'desc': 'Coccolithophore',
 		// coccolithus pelagicus
 		'stats': {
-			height: 10e-6,
 			length: 10e-6,
 		}
 	},
@@ -8697,7 +8696,6 @@ const lifeData = [
 		'age': lifeDataPeriod.cambrian,
 		'stats': {
 			length: (0.1e-3 + 0.2e-3)/2,
-			height: (0.1e-3 + 0.2e-3)/2,
 		},
 	},
 	{
