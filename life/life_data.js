@@ -9516,6 +9516,7 @@ const lifeData = [
 		'age_end': 145,
 		'range': 'nh',
 		'stats': {
+			brain_weight: 80e-3, // https://simple.wikipedia.org/wiki/Dinosaur_brains_and_intelligence
 			length: 7.5,
 			weight: 5e3,
 		},
