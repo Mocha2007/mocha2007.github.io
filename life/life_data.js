@@ -3,6 +3,7 @@
 // sources
 // https://upload.wikimedia.org/wikipedia/commons/e/e3/Timeline_of_life.png
 // (x - 2932 px)(1000 yr / 626 px)
+const ktoc = 273.15;
 const kph = 1000 / 60 / 60;
 /** https://en.wikipedia.org/wiki/List_of_animals_by_number_of_neurons */
 const neuron_mass = 1.3/86e9;
@@ -309,6 +310,7 @@ const lifeData = [
 			bite_force: 338.8, // https://www.academia.edu/figures/3464750/table-1-taste-average-bite-forces-at-the-canine-tips-bf-and
 			height: (0.67 + 0.94)/2,
 			length: (1.1 + 1.5)/2,
+			lifespan: 20.5,
 			speed: 104 * kph,
 			weight: (21 + 65)/2,
 			// https://peerj.com/articles/301/#supp-2
@@ -513,6 +515,7 @@ const lifeData = [
 		},
 		'stats': {
 			length: (1.2 + 1.9)/2,
+			lifespan: 36.8,
 			weight: (100 + 115)/2,
 		},
 	},
@@ -540,6 +543,8 @@ const lifeData = [
 		},
 		'stats': {
 			length: (0.51 + 0.635)/2,
+			lifespan: 19,
+			temperature: 310.75-ktoc,
 			weight: (4 + 15 + 4.2 + 13.4)/4,
 		},
 	},
@@ -554,6 +559,7 @@ const lifeData = [
 		'stats': {
 			bite_force: 13172,
 			length: (2.6+3+3.4+4.5)/4,
+			lifespan: 77,
 			weight: 500,
 			// https://peerj.com/articles/301/#supp-2
 			brain_weight: 0.007e-2 * 205,
@@ -733,6 +739,9 @@ const lifeData = [
 		'range': 'na',
 		'stats': {
 			length: (0.15 + 0.45)/2,
+			lifespan: 17,
+			temperature: 290-ktoc, // a. maculatum
+			weight: 12.84e-3, // a. maculatum
 		},
 		'desc': 'Axolotl',
 	},
@@ -839,6 +848,7 @@ const lifeData = [
 		'stats': {
 			brain_weight: 367e6*neuron_mass,
 			length: (0.5 + 0.65)/2,
+			lifespan: 29.1,
 			weight: (0.7 + 1.6)/2,
 		},
 		'genetic': {
@@ -1192,6 +1202,7 @@ const lifeData = [
 		'desc': 'Giant Squid',
 		'stats': {
 			length: 5,
+			lifespan: 35,
 		},
 	},
 	{
@@ -1771,6 +1782,8 @@ const lifeData = [
 		},
 		'stats': {
 			height: (1.11 + 1.38 + 1.05 + 1.17)/4,
+			lifespan: 26.3,
+			temperature: 311.15-ktoc,
 			weight: (350 + 585 + 225 + 255)/4,
 		},
 	},
@@ -1791,6 +1804,7 @@ const lifeData = [
 		},
 		'stats': {
 			encephalization_quotient: (0.52+0.59)/2, // https://en.wikipedia.org/wiki/Encephalization_quotient
+			lifespan: 20,
 			temperature: (37.8 + 40)/2, // https://hypertextbook.com/facts/1998/PeiJunChen.shtml
 			weight: (600 + 1200)/2,
 		},
@@ -2017,6 +2031,7 @@ const lifeData = [
 			bite_force: 493.5, // https://www.academia.edu/figures/3464750/table-1-taste-average-bite-forces-at-the-canine-tips-bf-and
 			height: (0.8 + 0.85)/2,
 			length: (1.05 + 1.6)/2,
+			lifespan: 20.6,
 			weight: 40,
 			// https://peerj.com/articles/301/#supp-2
 			brain_weight: 0.508e-2 * 29.94,
@@ -2063,6 +2078,7 @@ const lifeData = [
 			bite_force: 351.5, // https://www.academia.edu/figures/3464750/table-1-taste-average-bite-forces-at-the-canine-tips-bf-and
 			brain_weight: 2.253e9*neuron_mass,
 			encephalization_quotient: 1.2, // https://en.wikipedia.org/wiki/Encephalization_quotient
+			lifespan: 27,
 			temperature: 38.2, // https://hypertextbook.com/facts/1999/JieYaoHuang.shtml
 		}
 	},
@@ -2130,6 +2146,7 @@ const lifeData = [
 			'sex': 'XY',
 		},
 		'stats': {
+			lifespan: 20.8, // c. hircus
 			// https://peerj.com/articles/301/#supp-2
 			brain_weight: 0.419e-2 * 27.66,
 			temperature: 39.5,
@@ -2235,6 +2252,8 @@ const lifeData = [
 		'desc': 'Cardinal',
 		'stats': {
 			length: (0.21 + 0.23)/2,
+			lifespan: 28.5,
+			weight: 42.6e-3,
 		},
 	},
 	{
@@ -2308,6 +2327,7 @@ const lifeData = [
 		},
 		'stats': {
 			length: (0.74 + 0.9)/2,
+			lifespan: 23.4,
 			weight: 20,
 		},
 	},
@@ -2389,6 +2409,8 @@ const lifeData = [
 		'stats': {
 			brain_weight: 240e6*neuron_mass,
 			length: (0.2 + 0.25)/2,
+			lifespan: 12,
+			temperature: 312.15-ktoc,
 			weight: (0.7 + 1.2)/2,
 		},
 	},
@@ -2984,6 +3006,7 @@ const lifeData = [
 		// c. corax
 		'stats': {
 			length: (0.54 + 0.71)/2,
+			lifespan: 69,
 			weight: (0.69 + 2.25)/2,
 		},
 	},
@@ -3269,6 +3292,7 @@ const lifeData = [
 		'desc': 'Blue Jay',
 		'stats': {
 			length: (0.22 + 0.3)/2,
+			lifespan: 26.2,
 			weight: (0.07 + 0.1)/2,
 		},
 		'genetic': {
@@ -3341,6 +3365,7 @@ const lifeData = [
 		'wiki': 'Swan',
 		'stats': {
 			length: 1.5,
+			lifespan: 40, // c. olor
 			weight: 15,
 		},
 	},
