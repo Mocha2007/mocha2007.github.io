@@ -88,6 +88,9 @@ summary a {
 	padding-top: 20vh;
 }
 /* time buttons */
+.quaternary {
+	background-color: rgb(249,249,127);
+}
 .neogene {
 	background-color: rgb(255,230,25);
 }
