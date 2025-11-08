@@ -14,6 +14,7 @@ class PaleoMap {
 		// preload images
 		// https://stackoverflow.com/questions/3646036/preloading-images-with-javascript
 		const img = new Image();
+		img.crossOrigin = "anonymous"; // prevent error spam
 		img.src = src;
 	}
 	score(year){
