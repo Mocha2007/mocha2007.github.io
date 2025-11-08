@@ -174,6 +174,7 @@ const paleomap = {
 		// find closest year...
 		const year = this.year;
 		const map = PaleoMap.maps.sort((a, b) => a.score(year) - b.score(year))[0];
+		this.elem.img.crossOrigin = "anonymous"; // prevent error spam
 		this.elem.img.src = map.src;
 		this.elem.img.title = this.elem.img.alt = `Map of the Earth circa ${map.mya} MYA`;
 	},
