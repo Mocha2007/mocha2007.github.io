@@ -2313,7 +2313,8 @@ const blogData = [
 	@p
 	Note that, with regard to the computed values, although a given piece might seem to be comparable to pieces of orthodox chess,
 	within a given variant, pieces can have drastically different values.
-	<a href='https://lichess.org/@/ubdip/blog/finding-the-value-of-pieces/PByOBlNB'>This analysis</a> of crazyhouse rates queens and rooks as about 4 and 3 pawns, respectively.
+	<a href='https://lichess.org/@/ubdip/blog/finding-the-value-of-pieces/PByOBlNB'>This analysis</a> of crazyhouse,
+	for instance, rates queens and rooks as about 4 and 3 pawns, respectively.
 	@p
 	Sample game (Victory for Black):
 	<p>
