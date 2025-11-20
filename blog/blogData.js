@@ -2174,7 +2174,7 @@ const blogData = [
 	`,
 	`
 	@title Stress-Testing Obscure Chess Variant (with Modern Technology!)
-	@date 1763658499694
+	@date 1763659038539
 	@tags chess
 	After discovering Fairy Stockfish, a stockfish variant tuned to chess variants, I was curious about an old chess variant I read about many years ago:
 	<a href='https://archive.is/arPAg#selection-3601.27-3601.36'>MLP Chess</a>
@@ -2208,6 +2208,7 @@ const blogData = [
 	stalemateValue = loss<br>
 	startFen = arfqitciqfra/pppppppppppp/12/12/12/12/PPPPPPPPPPPP/ARFQITCIQFRA w KQkq - 0 1
 	</code>
+	@p
 	I found:
 	<ul class="list2">
 		<li>There was a significant (2.53 pawns at depth 25) advantage for black.</li>
@@ -2309,6 +2310,11 @@ const blogData = [
 			<td>4&frac12;</td>
 		</tr>
 	</table>
+	@p
+	Note that, with regard to the computed values, although a given piece might seem to be comparable to pieces of orthodox chess,
+	within a given variant, pieces can have drastically different values.
+	<a href='https://lichess.org/@/ubdip/blog/finding-the-value-of-pieces/PByOBlNB'>This analysis</a> of crazyhouse rates queens and rooks as about 4 and 3 pawns, respectively.
+	@p
 	Sample game (Victory for Black):
 	<p>
 		1. Pi4 Rj6 2. Pg3 Pe5 3. Pe3 Pg6 4. Pj3 Pf6 5. Pd4 Pxd4 6. Ph4 Pxe3 7. Pxe3 Td6 8. Fi2 Tb4 9. Rc3 Rg7 10. Pa3 Txc3 11. Pxc3 Ac5 12. Ac4 Ad5 13. Tf3 Ad6 14. Ae4 Qe7 15. Axg7 Ixg7 16. Rh2 Axf3 17. Rxf3 Pd5 18. Qd3 Pc6 19. Pl3 Fd6 20. Qe2 Rd7 21. Rd4 Rc4 22. Qd3 Re5 23. Qj2 Pf5 24. Ra5 Pb6 25. Rb3 Fc5 26. Rd2 Rg4 27. Ai1 Rxh1 28. Axh1 Pl5 29. Pc4 Al6 30. Ph5 Ak6 31. Pxd5 Pxd5 32. Qxd5 Axk2 33. Qj1 Aj2 34. Ch3 Axi2 35. Qxi2 Pi6 36. Ak1 Pj6 37. Pxg6 Pxg6 38. Ci1 Qf6 39. Qd4 Fe4 40. Qd3 Fg5 41. Cg2 Pi5 42. Pc4 Qi6 43. Fb3 Qd6 44. Ai1 Pa5 45. Rf1 Ie6 46. Rd2 If6 47. Pc5 Pa4 48. Fxa4 Pxc5 49. Fxc5 Qxc5 50. Rxc5 Ie8 51. Rxf6 Fxf6 52. If2 Fe5 53. Pe4 Fh7 54. Ae1 Fhf6 55. Qc4 Qh7 56. Ci1 Pxe4 57. Axe4 Fxe4 58. Qxe4 Fd6 59. Qd5 Ce7 60. Qd4 Fc4 61. Qg2 Fxa3 62. Qc5 Fb5 63. Ch3 Pk5 64. Cj2 Cg8 65. Pg4 Qi6 66. Qh3 Ie6 67. Pg5 Fc6 68. Qd6 Fb4 69. Qg4 Fd3 70. Ie3 Fc2 71. Ie5 Fd3 72. Ie3 If7 73. Qd5 Fc2 74. If4 Ci7 75. Qd7 Ig8 76. Qe4 Fb4 77. Qe8 Ih7 78. Qf7 Ii8 79. Qf6 Ck8 80. Qh6 Fc3 81. Qd3 Fd4 82. Qe4 Ij7 83. Qf6 Fc3 84. Qd3 Pl4 85. Qh6 Fd4 86. Qe4 Ik6 87. Qh8 Fc3 88. Qd3 Pj5 89. Qg7 Fd4 90. Qe4 Fc5 91. Qd5 Fb4 92. Qc4 Fc5 93. Qd5 Ij7 94. Qh6 Qi7 95. If6 Qj6 96. Ch3 Pxi4 97. Pxi4 Ii6 98. Qxj6 Cxj6 99. Cxi5 Ixi4 100. Cxg6 Pk4 101. Pxk4 Pl3 102. Pk5 Ck8 103. Pk6 Pl2 104. Pk7 Pl1=T 105. Qc6 Fe4 106. If8 Fxg5 107. Qc5 Fe6 108. Ie7 Ff5 109. Cf4 Tc1 110. Cd5 Fe6 111. Cf6 Tf4 112. Ch7 Th6 113. Ie5 Txh7 0-1
