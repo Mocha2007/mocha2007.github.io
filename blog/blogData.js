@@ -2172,4 +2172,150 @@ const blogData = [
 	Australia, Austria, Belgium, Burkina Faso, Burundi, Cameroon, Chile, China, Cuba, Dominican Republic, Ecuador, Guatemala, Haiti, Hungary, Ivory Coast, Kenya, Indonesia, Madagascar, Mozambique,
 	Paraguay, Portugal, Rwanda, South Africa, South Korea, South Sudan, United Kingdom, Vietnam
 	`,
+	`
+	@title Stress-Testing Obscure Chess Variant (with Modern Technology!)
+	@date 1763658499694
+	@tags chess
+	After discovering Fairy Stockfish, a stockfish variant tuned to chess variants, I was curious about an old chess variant I read about many years ago:
+	<a href='https://archive.is/arPAg#selection-3601.27-3601.36'>MLP Chess</a>
+	(<a href='https://web.archive.org/web/20160226202526/http://pasaruconworld.wikia.com/wiki/MLP_Chess'>alt link</a>)
+	After creating the following variants.ini file with a near-perfect copy of the rules:
+	<code>
+	# MLP Chess<br>
+	# https://archive.is/arPAg<br>
+	[mlp:chess]<br>
+	maxFile = 12<br>
+	# applejack<br>
+	customPiece1 = a:R4fJ<br>
+	# twilight<br>
+	customPiece2 = t:Q3rlR<br>
+	# rarity<br>
+	customPiece3 = i:FfbDpJ<br>
+	# rainbow dash<br>
+	customPiece4 = r:NC<br>
+	# fluttershy<br>
+	customPiece5 = f:nNF<br>
+	# pinkie pie<br>
+	customPiece6 = q:FDbW<br>
+	# celestia<br>
+	customPiece7 = c:ynN<br>
+	extinctionValue = loss<br>
+	extinctionPieceTypes = c<br>
+	promotionPieceTypes = atirfq<br>
+	castlingKingPiece = c<br>
+	castlingRookPieces = a<br>
+	chess960 = true<br>
+	stalemateValue = loss<br>
+	startFen = arfqitciqfra/pppppppppppp/12/12/12/12/PPPPPPPPPPPP/ARFQITCIQFRA w KQkq - 0 1
+	</code>
+	I found:
+	<ul class="list2">
+		<li>There was a significant (2.53 pawns at depth 25) advantage for black.</li>
+		<li>The principal variation was <code>1. Pi4 Pd5 2. Pd3 Pe5 3. Pg3 Pg6 4. Pc3 Pf5 5. Pl3 Pc6 6. Rd2 Fd6 7. Pf3 Re7 8. Pd4 Pxd4 9. Pxd4</code></li>
+		<li>I found the following approximate piece values, by experimentation with alternate piece setups:</li>
+		<li>As for the author's theory hypotheses:
+		<ul class="list2">
+			<li>
+				"It's for certain that Twilight + Applejack + Celestia vs. Celestia is forced win"
+				- appears true: engine gives mate in 4 when the lone Celestia is in the center.
+			</li>
+			<li>
+				"I'm almost sure two Fluttershies + Celestia vs. Celestia will be a win."
+				- appears true: engine gives mate in 12 when the lone Celestia is in the center.
+			</li>
+			<li>
+				"It may be advantageous to play 1. e4 ... 2. Re2 just to get it safe, yet still centralized."
+				- appears half true: 1. e4 is suboptimal, but given that, 2. Re2 is optimal.
+			</li>
+			<li>
+				"This makes Applejack worth significantly more than a Rook in the opening, but the difference diminishes."
+				- appears true, based on engine analysis.
+			</li>
+		</ul>
+		</li>
+	</ul>
+	<table>
+		<tr>
+			<th rowspan=2>Piece</th>
+			<th rowspan=2>Symbol</th>
+			<th rowspan=2>Assigned Value</th>
+			<th rowspan=2>My Evaluation</th>
+			<th colspan=4>Engine Evaluations</th>
+		</tr>
+		<tr>
+			<th>Opening</th>
+			<th>Middlegame</th>
+			<th>Endgame</th>
+			<th>(avg.)</th>
+		</tr>
+		<tr>
+			<td>Twilight</td>
+			<td>T</td>
+			<td>6.25</td>
+			<td>6&frac12;</td>
+			<td>~9&frac12;</td>
+			<td>~5&frac12;</td>
+			<td>~13</td>
+			<td>9&frac14;</td>
+		</tr>
+		<tr>
+			<td>Applejack</td>
+			<td>A</td>
+			<td>5.00</td>
+			<td>5</td>
+			<td>~6&frac34;</td>
+			<td>~6&frac14;</td>
+			<td>~5</td>
+			<td>6</td>
+		</tr>
+		<tr>
+			<td>Rainbow Dash</td>
+			<td>R</td>
+			<td>4.00</td>
+			<td>4</td>
+			<td>~9</td>
+			<td>~9</td>
+			<td>~6&frac12;</td>
+			<td>8</td>
+		</tr>
+		<tr>
+			<td>Pinkie Pie</td>
+			<td>&Pi;</td>
+			<td>3.50</td>
+			<td>3&frac34;</td>
+			<td>~5</td>
+			<td>~&frac14;</td>
+			<td>~4</td>
+			<td>3</td>
+		</tr>
+		<tr>
+			<td>Rarity</td>
+			<td>I</td>
+			<td>3.50</td>
+			<td>4</td>
+			<td>~13&frac14;</td>
+			<td>~8&frac34;</td>
+			<td>~7&frac12;</td>
+			<td>10</td>
+		</tr>
+		<tr>
+			<td>Fluttershy</td>
+			<td>F</td>
+			<td>3.25</td>
+			<td>4</td>
+			<td>~6</td>
+			<td>~2&frac12;</td>
+			<td>~5&frac14;</td>
+			<td>4&frac12;</td>
+		</tr>
+	</table>
+	Sample game (Victory for Black):
+	<p>
+		1. Pi4 Rj6 2. Pg3 Pe5 3. Pe3 Pg6 4. Pj3 Pf6 5. Pd4 Pxd4 6. Ph4 Pxe3 7. Pxe3 Td6 8. Fi2 Tb4 9. Rc3 Rg7 10. Pa3 Txc3 11. Pxc3 Ac5 12. Ac4 Ad5 13. Tf3 Ad6 14. Ae4 Qe7 15. Axg7 Ixg7 16. Rh2 Axf3 17. Rxf3 Pd5 18. Qd3 Pc6 19. Pl3 Fd6 20. Qe2 Rd7 21. Rd4 Rc4 22. Qd3 Re5 23. Qj2 Pf5 24. Ra5 Pb6 25. Rb3 Fc5 26. Rd2 Rg4 27. Ai1 Rxh1 28. Axh1 Pl5 29. Pc4 Al6 30. Ph5 Ak6 31. Pxd5 Pxd5 32. Qxd5 Axk2 33. Qj1 Aj2 34. Ch3 Axi2 35. Qxi2 Pi6 36. Ak1 Pj6 37. Pxg6 Pxg6 38. Ci1 Qf6 39. Qd4 Fe4 40. Qd3 Fg5 41. Cg2 Pi5 42. Pc4 Qi6 43. Fb3 Qd6 44. Ai1 Pa5 45. Rf1 Ie6 46. Rd2 If6 47. Pc5 Pa4 48. Fxa4 Pxc5 49. Fxc5 Qxc5 50. Rxc5 Ie8 51. Rxf6 Fxf6 52. If2 Fe5 53. Pe4 Fh7 54. Ae1 Fhf6 55. Qc4 Qh7 56. Ci1 Pxe4 57. Axe4 Fxe4 58. Qxe4 Fd6 59. Qd5 Ce7 60. Qd4 Fc4 61. Qg2 Fxa3 62. Qc5 Fb5 63. Ch3 Pk5 64. Cj2 Cg8 65. Pg4 Qi6 66. Qh3 Ie6 67. Pg5 Fc6 68. Qd6 Fb4 69. Qg4 Fd3 70. Ie3 Fc2 71. Ie5 Fd3 72. Ie3 If7 73. Qd5 Fc2 74. If4 Ci7 75. Qd7 Ig8 76. Qe4 Fb4 77. Qe8 Ih7 78. Qf7 Ii8 79. Qf6 Ck8 80. Qh6 Fc3 81. Qd3 Fd4 82. Qe4 Ij7 83. Qf6 Fc3 84. Qd3 Pl4 85. Qh6 Fd4 86. Qe4 Ik6 87. Qh8 Fc3 88. Qd3 Pj5 89. Qg7 Fd4 90. Qe4 Fc5 91. Qd5 Fb4 92. Qc4 Fc5 93. Qd5 Ij7 94. Qh6 Qi7 95. If6 Qj6 96. Ch3 Pxi4 97. Pxi4 Ii6 98. Qxj6 Cxj6 99. Cxi5 Ixi4 100. Cxg6 Pk4 101. Pxk4 Pl3 102. Pk5 Ck8 103. Pk6 Pl2 104. Pk7 Pl1=T 105. Qc6 Fe4 106. If8 Fxg5 107. Qc5 Fe6 108. Ie7 Ff5 109. Cf4 Tc1 110. Cd5 Fe6 111. Cf6 Tf4 112. Ch7 Th6 113. Ie5 Txh7 0-1
+	</p>
+	I use one of this game's positions for middlegame analysis (the engine gives about -5.3 in black's favor):
+	<p>
+		4i1c1qf2/p3q1ipppp1/1pp3p3a1/2fp1p1P3p/2P5P3/P2QP1P2P1P/2PR4FQP1/2F1I1CA4 w - - 1 31
+	</p>
+	`,
 ];
