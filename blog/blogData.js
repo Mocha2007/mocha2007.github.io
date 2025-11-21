@@ -2324,5 +2324,63 @@ const blogData = [
 	<p>
 		4i1c1qf2/p3q1ipppp1/1pp3p3a1/2fp1p1P3p/2P5P3/P2QP1P2P1P/2PR4FQP1/2F1I1CA4 w - - 1 31
 	</p>
+	@p
+	Addendum: Another experiment, where I pitted 23 of one piece + Celestia against 23 of another piece + Celestia,
+	shows the following strength hierarchy:
+	<code>T > R > A > F > &Pi; > I</code>
+	@p
+	In another experiment, It took a horde of 56 pawns to counter 10 Fluttershies.
+	I also found the other following values:
+	<table>
+		<tr>
+			<th>Piece</th>
+			<th>Symbol</th>
+			<th># Pieces</th>
+			<th># Pawns</th>
+			<th>Implied Value</th>
+		</tr>
+		<tr>
+			<td>Twilight</td>
+			<td>T</td>
+			<td>8</td>
+			<td>59</td>
+			<td>7.4</td>
+		</tr>
+		<tr>
+			<td>Applejack</td>
+			<td>A</td>
+			<td>10</td>
+			<td>49</td>
+			<td>4.9</td>
+		</tr>
+		<tr>
+			<td>Rainbow Dash</td>
+			<td>R</td>
+			<td>8</td>
+			<td>58</td>
+			<td>7.3</td>
+		</tr>
+		<tr>
+			<td>Pinkie Pie</td>
+			<td>&Pi;</td>
+			<td>10</td>
+			<td>44</td>
+			<td>4.4</td>
+		</tr>
+		<tr>
+			<td>Rarity</td>
+			<td>I</td>
+			<td>8</td>
+			<td>59</td>
+			<td>7.4</td>
+		</tr>
+		<tr>
+			<td>Fluttershy</td>
+			<td>F</td>
+			<td>10</td>
+			<td>56</td>
+			<td>5.6</td>
+		</tr>
+	</table>
 	`,
 ];
