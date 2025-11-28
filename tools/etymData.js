@@ -391,6 +391,12 @@ const etymData = [
 		forms: ['loric'],
 	},
 	{
+		head: 'luna',
+		lang: EDS.latin,
+		gloss: 'moon',
+		forms: ['luna', 'lune$'],
+	},
+	{
 		head: 'malva',
 		lang: EDS.latin,
 		gloss: 'mallow',
@@ -792,6 +798,12 @@ const etymData = [
 		lang: EDS.greek,
 		gloss: 'belly',
 		forms: ['gastro'],
+	},
+	{
+		head: 'gê',
+		lang: EDS.greek,
+		gloss: 'earth',
+		forms: ['geo'],
 	},
 	{
 		head: 'geneá',
@@ -1524,6 +1536,12 @@ const etymData = [
 		lang: EDS.greek,
 		gloss: 'narrow',
 		forms: ['steno?'],
+	},
+	{
+		head: 'stoikheîon',
+		lang: EDS.greek,
+		gloss: 'element',
+		forms: ['stoichio'],
 	},
 	{
 		head: 'stóma',
