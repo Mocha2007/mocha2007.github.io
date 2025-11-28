@@ -151,14 +151,7 @@ const etym = {
 		return word.length === 0;
 	},
 	testTaxa(i = -1){
-		if (typeof lifeData === 'undefined') {
-			if (!this.testTaxaLoad) {
-				const script = document.createElement('script');
-				script.onload = () => {}; // onload;
-				script.src = '../life/life_data.js';
-				document.head.appendChild(script);
-				this.testTaxaLoad = true;
-			}
+		if (!this.testTaxaInit()){
 			setTimeout(() => this.testTaxa(i), 100);
 			return;
 		}
@@ -174,11 +167,32 @@ const etym = {
 			const words = taxon.name.split(' ');
 			name = words[words.length-1];
 			success = this.solve(name);
-			if (success) {
-				console.debug(`${name} good`);
-			}
+			if (success) console.debug(`${name} good`);
 		} while (success && ++i < lifeData.length)
 		console.warn(i, taxon.name, taxon, `https://en.wikipedia.org/wiki/${taxon.name}`);
+	},
+	testTaxaAll(){
+		if (!this.testTaxaInit()){
+			setTimeout(() => this.testTaxaAll(), 100);
+			return;
+		}
+		lifeData
+			.filter((taxon, i) => taxon.name.indexOf(' ') < 0 && !this.solve(taxon.name))
+			.forEach(taxon => console.warn(taxon.name, `https://en.wikipedia.org/wiki/${taxon.name}`));
+	},
+	testTaxaInit(){
+		if (typeof lifeData === 'undefined') {
+			if (!this.testTaxaLoad) {
+				const script = document.createElement('script');
+				script.onload = () => {}; // onload;
+				script.src = '../life/life_data.js';
+				document.head.appendChild(script);
+				this.testTaxaLoad = true;
+			}
+			setTimeout(() => this.testTaxaInit(), 100);
+			return false;
+		}
+		return true;
 	},
 	testTaxaLoad: false,
 };
