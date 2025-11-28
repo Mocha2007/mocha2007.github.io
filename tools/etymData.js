@@ -540,6 +540,12 @@ const etymData = [
 		forms: ['dux$', 'duke$'],
 	},
 	{
+		head: 'fabula',
+		lang: EDS.latin,
+		gloss: 'fable',
+		forms: ['fabula?', 'fable'],
+	},
+	{
 		head: 'fistula',
 		lang: EDS.latin,
 		gloss: 'pipe',
@@ -983,6 +989,18 @@ const etymData = [
 		lang: EDS.greek,
 		gloss: 'joint',
 		forms: ['arthro', 'arthr'],
+	},
+	{
+		head: 'ắrtĭos',
+		lang: EDS.greek,
+		gloss: 'complete',
+		forms: ['artio'],
+	},
+	{
+		head: 'askós',
+		lang: EDS.greek,
+		gloss: 'sac',
+		forms: ['asco'], // ASCOmycota
 	},
 	{
 		head: 'autós',
