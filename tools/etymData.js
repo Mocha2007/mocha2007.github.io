@@ -136,7 +136,7 @@ const etymData = [
 		head: '-alis',
 		lang: EDS.latin,
 		gloss: '(ADJ)',
-		forms: ['alis$', 'a?les$', 'alia$', 'al'],
+		forms: ['alis$', 'a?les$', 'alia$', 'al$'],
 	},
 	{
 		head: '-anae',
@@ -313,6 +313,12 @@ const etymData = [
 		forms: ['ius$', 'ii$'],
 	},
 	{
+		head: '-ivus',
+		lang: EDS.latin,
+		gloss: '-ive',
+		forms: ['ive$', 'ivus$', 'iva$', 'ivum$'],
+	},
+	{
 		head: '-nus',
 		lang: EDS.latin,
 		gloss: '(ADJ)',
@@ -335,6 +341,12 @@ const etymData = [
 		lang: EDS.latin,
 		gloss: '(taxon)',
 		forms: ['odes$'],
+	},
+	{
+		head: '-osus',
+		lang: EDS.latin,
+		gloss: '-ose, -ous',
+		forms: ['oses$', 'osus$', 'osa$', 'osum$'],
 	},
 	{
 		head: '-tus',
@@ -425,6 +437,12 @@ const etymData = [
 		lang: EDS.latin,
 		gloss: 'cone',
 		forms: ['con'],
+	},
+	{
+		head: 'fistula',
+		lang: EDS.latin,
+		gloss: 'pipe',
+		forms: ['fistul'],
 	},
 	{
 		head: 'flagellum',
@@ -541,10 +559,22 @@ const etymData = [
 		forms: ['rot'],
 	},
 	{
+		head: 'sero',
+		lang: EDS.latin,
+		gloss: 'sow',
+		forms: ['sat'],
+	},
+	{
 		head: 'tardus',
 		lang: EDS.latin,
 		gloss: 'slow',
 		forms: ['tardi', 'tard'],
+	},
+	{
+		head: 'verus',
+		lang: EDS.latin,
+		gloss: 'true',
+		forms: ['ver', 'vera$', 'verus$', 'verum$'],
 	},
 	{
 		head: 'viridis',
@@ -684,6 +714,12 @@ const etymData = [
 		lang: EDS.greek,
 		gloss: 'sky, ether',
 		forms: ['ether', 'eth'],
+	},
+	{
+		head: 'álpha',
+		lang: EDS.greek,
+		gloss: 'alpha',
+		forms: ['alpha'],
 	},
 	{
 		head: 'ămoibḗ',
