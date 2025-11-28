@@ -426,6 +426,12 @@ const etymData = [
 		forms: ['ambula?'],
 	},
 	{
+		head: 'anas',
+		lang: EDS.latin,
+		gloss: 'duck',
+		forms: ['anas$', 'anat'],
+	},
+	{
 		head: 'anellus',
 		lang: EDS.latin,
 		gloss: 'little ring',
@@ -1637,6 +1643,12 @@ const etymData = [
 		lang: EDS.greek,
 		gloss: 'fodder',
 		forms: ['po'],
+	},
+	{
+		head: 'pṓgōn',
+		lang: EDS.greek,
+		gloss: 'beard',
+		forms: ['pogon'],
 	},
 	{
 		head: 'poús',
