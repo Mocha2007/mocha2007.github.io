@@ -1933,6 +1933,12 @@ const etymData = [
 		forms: ['thesis$', 'thet'],
 	},
 	{
+		head: 'thḗkē',
+		lang: EDS.greek,
+		gloss: 'box',
+		forms: ['thec'], // eg. anthoaTHECata
+	},
+	{
 		head: 'theós',
 		lang: EDS.greek,
 		gloss: 'god',
