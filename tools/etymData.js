@@ -775,16 +775,28 @@ const etymData = [
 		forms: ['amaryll', 'amaryllis$'],
 	},
 	{
-		head: 'ămoibḗ',
+		head: 'ămblŭ́s',
 		lang: EDS.greek,
-		gloss: 'change',
-		forms: ['amoebo?'],
+		gloss: 'dull',
+		forms: ['ambly', 'amby'], // amby exists in Ambystoma as an accidental misspelling that became standardized
+	},
+	{
+		head: 'Ắmmōn',
+		lang: EDS.greek,
+		gloss: 'Amun',
+		forms: ['ammon'],
 	},
 	{
 		head: 'amníon',
 		lang: EDS.greek,
 		gloss: 'bowl',
 		forms: ['amnio'],
+	},
+	{
+		head: 'ămoibḗ',
+		lang: EDS.greek,
+		gloss: 'change',
+		forms: ['amoebo?'],
 	},
 	{
 		head: 'amphí',
