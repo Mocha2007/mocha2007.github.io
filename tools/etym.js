@@ -133,20 +133,24 @@ const etym = {
 	},
 	testTaxa(i = -1){
 		if (typeof lifeData === 'undefined') {
-			const script = document.createElement('script');
-			script.onload = () => {}; // onload;
-			script.src = '../life/life_data.js';
-			document.head.appendChild(script);
+			if (!this.testTaxaLoad) {
+				const script = document.createElement('script');
+				script.onload = () => {}; // onload;
+				script.src = '../life/life_data.js';
+				document.head.appendChild(script);
+				this.testTaxaLoad = true;
+			}
+			setTimeout(() => this.testTaxa(i), 100);
+			return;
 		}
-		setTimeout(() => {
-			// choose random
-			i = i < 0 ? Math.floor(Math.random() * lifeData.length) : i;
-			const taxon = lifeData[i];
-			const name = taxon.name;
-			console.debug(i, name, taxon);
-			this.solve(name);
-		}, 100);
+		// choose random
+		i = i < 0 ? Math.floor(Math.random() * lifeData.length) : i;
+		const taxon = lifeData[i];
+		const name = taxon.name;
+		console.debug(i, name, taxon);
+		this.solve(name);
 	},
+	testTaxaLoad: false,
 };
 
 if (typeof etymLangData !== 'object')
