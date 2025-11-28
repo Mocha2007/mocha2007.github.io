@@ -486,6 +486,12 @@ const etymData = [
 		forms: ['arane'],
 	},
 	{
+		head: 'auris',
+		lang: EDS.latin,
+		gloss: 'ear',
+		forms: ['aur'],
+	},
+	{
 		head: 'avis',
 		lang: EDS.latin,
 		gloss: 'bird',
@@ -1001,6 +1007,30 @@ const etymData = [
 		lang: EDS.greek,
 		gloss: 'sac',
 		forms: ['asco'], // ASCOmycota
+	},
+	{
+		head: 'asphárăgos',
+		lang: EDS.greek,
+		gloss: 'asparagus',
+		forms: ['asph?arag'],
+	},
+	{
+		head: 'asphódelos',
+		lang: EDS.greek,
+		gloss: 'asphodel',
+		forms: ['asphodel'],
+	},
+	{
+		head: 'astakós',
+		lang: EDS.greek,
+		gloss: 'lobster',
+		forms: ['astac'],
+	},
+	{
+		head: 'ăstḗr',
+		lang: EDS.greek,
+		gloss: 'star',
+		forms: ['aster', 'astro'],
 	},
 	{
 		head: 'autós',
@@ -1627,6 +1657,12 @@ const etymData = [
 		forms: ['nitro'],
 	},
 	{
+		head: 'nómos',
+		lang: EDS.greek,
+		gloss: 'law',
+		forms: ['nom'], // astroNOMy
+	},
+	{
 		head: 'odṓn',
 		lang: EDS.greek,
 		gloss: 'tooth',
@@ -1889,6 +1925,12 @@ const etymData = [
 		lang: EDS.greek,
 		gloss: 'nose',
 		forms: ['rhino'],
+	},
+	{
+		head: 'rhĭ́ză',
+		lang: EDS.greek,
+		gloss: 'root',
+		forms: ['rhizo?'], // astroRHIZida, RHIZOme
 	},
 	{
 		head: 'rhómbos',
