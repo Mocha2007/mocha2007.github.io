@@ -736,7 +736,7 @@ const etymData = [
 		head: 'aísthēsĭs',
 		lang: EDS.greek,
 		gloss: 'perception',
-		forms: ['esthet'],
+		forms: ['a?esthet'],
 	},
 	{
 		head: 'aithḗr',
