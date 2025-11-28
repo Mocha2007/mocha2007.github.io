@@ -438,6 +438,12 @@ const etymData = [
 		forms: ['ann?ell?'],
 	},
 	{
+		head: 'anima',
+		lang: EDS.latin,
+		gloss: 'air',
+		forms: ['anim'],
+	},
+	{
 		head: 'avis',
 		lang: EDS.latin,
 		gloss: 'bird',
@@ -845,6 +851,12 @@ const etymData = [
 		lang: EDS.greek,
 		gloss: 'receptacle',
 		forms: ['angio'],
+	},
+	{
+		head: 'ankúlos',
+		lang: EDS.greek,
+		gloss: 'crooked',
+		forms: ['ankylo?'],
 	},
 	{
 		head: 'ánthos',
