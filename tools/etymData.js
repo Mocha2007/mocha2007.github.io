@@ -444,6 +444,12 @@ const etymData = [
 		forms: ['anim'],
 	},
 	{
+		head: 'anser',
+		lang: EDS.latin,
+		gloss: 'goose',
+		forms: ['anser'],
+	},
+	{
 		head: 'avis',
 		lang: EDS.latin,
 		gloss: 'bird',
