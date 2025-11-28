@@ -147,9 +147,11 @@ const etym = {
 		// choose random
 		let success = true;
 		let name, taxon;
+		if (i < 0){
+			i = Math.floor(Math.random() * lifeData.length);
+		}
 		do {
-			const this_i = i < 0 ? Math.floor(Math.random() * lifeData.length) : i;
-			taxon = lifeData[this_i];
+			taxon = lifeData[i];
 			/** @type {string[]} */
 			const words = taxon.name.split(' ');
 			name = words[words.length-1];
@@ -157,7 +159,8 @@ const etym = {
 			if (success) {
 				console.debug(`${name} good`);
 			}
-		} while (success)
+			i++;
+		} while (success && i < taxon.length)
 		console.warn(i, taxon.name, taxon, `https://en.wikipedia.org/wiki/${taxon.name}`);
 	},
 	testTaxaLoad: false,

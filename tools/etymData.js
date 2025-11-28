@@ -403,6 +403,12 @@ const etymData = [
 		forms: ['por'],
 	},
 	{
+		head: 'pro',
+		lang: EDS.latin,
+		gloss: 'for',
+		forms: ['pro'],
+	},
+	{
 		head: 'repo',
 		lang: EDS.latin,
 		gloss: 'creep',
@@ -1488,6 +1494,12 @@ const etymData = [
 		lang: EDS.greek,
 		gloss: 'end',
 		forms: ['telo'],
+	},
+	{
+		head: 'Tēthū́s',
+		lang: EDS.greek,
+		gloss: 'Tethys',
+		forms: ['tethys?'],
 	},
 	{
 		head: 'tetra-',
