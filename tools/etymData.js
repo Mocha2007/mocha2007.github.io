@@ -1195,6 +1195,12 @@ const etymData = [
 		forms: ['cnid'],
 	},
 	{
+		head: 'koîlos',
+		lang: EDS.greek,
+		gloss: 'hollow',
+		forms: ['coel'], // coelacanth
+	},
+	{
 		head: 'kontós',
 		lang: EDS.greek,
 		gloss: 'pole',
