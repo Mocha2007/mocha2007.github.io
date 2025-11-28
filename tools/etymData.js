@@ -775,6 +775,12 @@ const etymData = [
 		forms: ['o?id'],
 	},
 	{
+		head: '-ĭ́dĭon',
+		lang: EDS.greek,
+		gloss: '(DIM)',
+		forms: ['idio?'], // basIDIOmycota
+	},
+	{
 		head: '-ikós',
 		lang: EDS.greek,
 		gloss: '(ADJ)',
@@ -1085,6 +1091,12 @@ const etymData = [
 		lang: EDS.greek,
 		gloss: 'rod',
 		forms: ['bacteri'],
+	},
+	{
+		head: 'bắsĭs',
+		lang: EDS.greek,
+		gloss: 'step',
+		forms: ['bas', 'base$'],
 	},
 	{
 		head: 'bĭblĭ́on',
