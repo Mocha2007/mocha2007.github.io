@@ -289,6 +289,12 @@ const etymData = [
 		forms: ['odes$'],
 	},
 	{
+		head: '-tus',
+		lang: EDS.latin,
+		gloss: '-ed',
+		forms: ['tus$', 'ta$', 'tum$'],
+	},
+	{
 		head: '-um',
 		lang: EDS.latin,
 		gloss: '(N)',
@@ -371,6 +377,12 @@ const etymData = [
 		lang: EDS.latin,
 		gloss: 'step',
 		forms: ['grad'],
+	},
+	{
+		head: 'iuba',
+		lang: EDS.latin,
+		gloss: 'mane',
+		forms: ['iuba', 'juba'],
 	},
 	{
 		head: 'lorica',
