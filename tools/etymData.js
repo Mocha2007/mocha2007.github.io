@@ -456,6 +456,12 @@ const etymData = [
 		forms: ['colo', 'col'],
 	},
 	{
+		head: 'coma',
+		lang: EDS.latin,
+		gloss: 'hair',
+		forms: ['com'],
+	},
+	{
 		head: 'conus',
 		lang: EDS.latin,
 		gloss: 'cone',
@@ -676,7 +682,13 @@ const etymData = [
 		head: '-on',
 		lang: EDS.greek,
 		gloss: '(N)',
-		forms: ['on'],
+		forms: ['on$'],
+	},
+	{
+		head: '-os',
+		lang: EDS.greek,
+		gloss: '(N)',
+		forms: ['os$'],
 	},
 	{
 		head: '-tos',
