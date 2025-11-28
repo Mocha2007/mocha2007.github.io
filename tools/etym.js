@@ -130,6 +130,7 @@ const etym = {
 		solution.forEach((r, i) => this.elem.result.appendChild(r.elem(solution2[i])));
 		if (word) // residual
 			this.elem.result.appendChild(this.residual(word));
+		return word.length === 0;
 	},
 	testTaxa(i = -1){
 		if (typeof lifeData === 'undefined') {
@@ -144,11 +145,20 @@ const etym = {
 			return;
 		}
 		// choose random
-		i = i < 0 ? Math.floor(Math.random() * lifeData.length) : i;
-		const taxon = lifeData[i];
-		const name = taxon.name;
-		console.debug(i, name, taxon);
-		this.solve(name);
+		let success = true;
+		let name, taxon;
+		do {
+			const this_i = i < 0 ? Math.floor(Math.random() * lifeData.length) : i;
+			taxon = lifeData[this_i];
+			/** @type {string[]} */
+			const words = taxon.name.split(' ');
+			name = words[words.length-1];
+			success = this.solve(name);
+			if (success) {
+				console.debug(`${name} good`);
+			}
+		} while (success)
+		console.warn(i, taxon.name, taxon, `https://en.wikipedia.org/wiki/${taxon.name}`);
 	},
 	testTaxaLoad: false,
 };
