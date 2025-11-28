@@ -313,6 +313,12 @@ const etymData = [
 		forms: ['abiet', 'abies$'],
 	},
 	{
+		head: 'acetabulum',
+		lang: EDS.latin,
+		gloss: 'saucer',
+		forms: ['acetabul'],
+	},
+	{
 		head: 'anellus',
 		lang: EDS.latin,
 		gloss: 'little ring',
@@ -371,6 +377,12 @@ const etymData = [
 		lang: EDS.latin,
 		gloss: 'breastplate',
 		forms: ['loric'],
+	},
+	{
+		head: 'malva',
+		lang: EDS.latin,
+		gloss: 'mallow',
+		forms: ['malva'],
 	},
 	{
 		head: 'mamma',
@@ -546,6 +558,12 @@ const etymData = [
 		lang: EDS.greek,
 		gloss: 'un-',
 		forms: ['a'],
+	},
+	{
+		head: 'ácholos',
+		lang: EDS.greek,
+		gloss: 'not choleric',
+		forms: ['achole'], // https://en.wikipedia.org/wiki/Acholeplasmataceae ?
 	},
 	{
 		head: 'ămoibḗ',
@@ -971,7 +989,7 @@ const etymData = [
 		head: 'kinéō',
 		lang: EDS.greek,
 		gloss: 'move',
-		forms: ['kino'],
+		forms: ['kino', 'cin'], // cin in CINema aCINonyx
 	},
 	{
 		head: 'koîlos',
@@ -1038,12 +1056,6 @@ const etymData = [
 		lang: EDS.greek,
 		gloss: 'loosening',
 		forms: ['lysis', 'lyso', 'lys'],
-	},
-	{
-		head: 'malva',
-		lang: EDS.latin,
-		gloss: 'mallow',
-		forms: ['malva'],
 	},
 	{
 		head: 'mástix',
@@ -1184,10 +1196,10 @@ const etymData = [
 		forms: ['oestro', 'estro'],
 	},
 	{
-		head: 'ónukhos',
+		head: 'ónŭx',
 		lang: EDS.greek,
 		gloss: 'claw',
-		forms: ['onycho'],
+		forms: ['onycho?', 'onyx'],
 	},
 	{
 		head: 'opísthios',
@@ -1284,6 +1296,12 @@ const etymData = [
 		lang: EDS.greek,
 		gloss: 'plant',
 		forms: ['phyta$', 'phyte$', 'phyto', 'phyt'],
+	},
+	{
+		head: 'plắsmă',
+		lang: EDS.greek,
+		gloss: 'figure, image',
+		forms: ['plasmat?'],
 	},
 	{
 		head: 'platús',
