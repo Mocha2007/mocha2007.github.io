@@ -176,9 +176,10 @@ const etym = {
 			setTimeout(() => this.testTaxaAll(), 100);
 			return;
 		}
-		lifeData
-			.filter((taxon, i) => taxon.name.indexOf(' ') < 0 && !this.solve(taxon.name))
-			.forEach(taxon => console.warn(taxon.name, `https://en.wikipedia.org/wiki/${taxon.name}`));
+		console.warn(lifeData
+			.filter(taxon => taxon.name.indexOf(' ') < 0 && !this.solve(taxon.name))
+			.map(taxon => `${taxon.name}\t(https://en.wikipedia.org/wiki/${taxon.name})`)
+			.join('\n'));
 	},
 	testTaxaInit(){
 		if (typeof lifeData === 'undefined') {

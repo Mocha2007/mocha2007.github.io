@@ -2256,6 +2256,12 @@ const etymData = [
 		gloss: 'animal',
 		forms: ['zoo', 'zoa', 'zo'],
 	},
+	{
+		head: 'zŭgón',
+		lang: EDS.greek,
+		gloss: 'yoke',
+		forms: ['zygo'],
+	},
 ];
 
 // compile langs automatically
