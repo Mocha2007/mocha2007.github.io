@@ -186,6 +186,12 @@ const etymData = [
 		forms: ['ate$', 'ato', 'at'], // eg. choano-flagell-at-ea
 	},
 	{
+		head: '-culum',
+		lang: EDS.latin,
+		gloss: '(N)',
+		forms: ['cul(?=.)', 'cr(?=.)', 'culum$', 'crum$'],
+	},
+	{
 		head: '-ea',
 		lang: EDS.latin,
 		gloss: '(taxon)',
@@ -412,6 +418,12 @@ const etymData = [
 		lang: EDS.latin,
 		gloss: 'pit',
 		forms: ['alve'],
+	},
+	{
+		head: 'ambulo',
+		lang: EDS.latin,
+		gloss: 'walk',
+		forms: ['ambula?'],
 	},
 	{
 		head: 'anellus',
@@ -1894,7 +1906,7 @@ const etymData = [
 		head: 'thríx',
 		lang: EDS.greek,
 		gloss: 'hair',
-		forms: ['thrich', 'trich'], // gastrotrica drops the h for some reason
+		forms: ['thrich', 'tricho?'], // gastrotrica drops the h for some reason
 	},
 	{
 		head: 'thŭreós',
