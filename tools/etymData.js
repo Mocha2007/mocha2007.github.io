@@ -1754,6 +1754,12 @@ const etymData = [
 		forms: ['stather'],
 	},
 	{
+		head: 'stegănós',
+		lang: EDS.greek,
+		gloss: 'watertight',
+		forms: ['stegano?'],
+	},
+	{
 		head: 'stégos',
 		lang: EDS.greek,
 		gloss: 'roof',
