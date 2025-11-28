@@ -183,7 +183,7 @@ const etymData = [
 		head: '-atus',
 		lang: EDS.latin,
 		gloss: '(PP)',
-		forms: ['ate$', 'ato', 'at'], // eg. choano-flagell-at-ea
+		forms: ['ate$', 'ato', 'at(?=[^h])'], // eg. choano-flagell-at-ea
 	},
 	{
 		head: '-culum',
