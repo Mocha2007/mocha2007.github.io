@@ -159,8 +159,7 @@ const etym = {
 			if (success) {
 				console.debug(`${name} good`);
 			}
-			i++;
-		} while (success && i < taxon.length)
+		} while (success && ++i < lifeData.length)
 		console.warn(i, taxon.name, taxon, `https://en.wikipedia.org/wiki/${taxon.name}`);
 	},
 	testTaxaLoad: false,
