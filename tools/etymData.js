@@ -7,7 +7,6 @@ const EDS = {
 	greek: 'Ancient Greek',
 	italian: 'Italian',
 	latin: 'Latin',
-	mocha: '(mochanoises)',
 	spanish: 'Spanish',
 };
 
@@ -1903,14 +1902,6 @@ const etymData = [
 		gloss: 'animal',
 		forms: ['zoo', 'zoa', 'zo'],
 	},
-	/*
-	{
-		head: '(mochanoise)',
-		lang: EDS.mocha,
-		gloss: 'gay',
-		forms: ['kippi', 'boi', 'snueg'],
-	},
-	*/
 ];
 
 // compile langs automatically
