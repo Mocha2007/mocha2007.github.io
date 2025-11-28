@@ -706,7 +706,7 @@ const etymData = [
 		head: 'a-',
 		lang: EDS.greek,
 		gloss: 'un-',
-		forms: ['a'],
+		forms: ['a(?=[^aehiou])'],
 	},
 	{
 		head: 'ácholos',
