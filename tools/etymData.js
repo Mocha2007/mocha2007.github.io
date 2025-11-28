@@ -829,6 +829,12 @@ const etymData = [
 		forms: ['bacteri'],
 	},
 	{
+		head: 'bĭblĭ́on',
+		lang: EDS.greek,
+		gloss: 'book',
+		forms: ['biblio'],
+	},
+	{
 		head: 'bíos',
 		lang: EDS.greek,
 		gloss: 'life',
