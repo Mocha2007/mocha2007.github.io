@@ -757,6 +757,12 @@ const etymData = [
 		forms: ['amanita$', 'amanit'],
 	},
 	{
+		head: 'Amărŭllĭ́s',
+		lang: EDS.greek,
+		gloss: 'Amaryllis',
+		forms: ['amaryll', 'amaryllis$'],
+	},
+	{
 		head: 'ămoibḗ',
 		lang: EDS.greek,
 		gloss: 'change',
