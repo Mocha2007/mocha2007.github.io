@@ -145,6 +145,12 @@ const etymData = [
 		forms: ['ales$'],
 	},
 	{
+		head: '-ans',
+		lang: EDS.latin,
+		gloss: '-ing',
+		forms: ['ans$', 'ant'],
+	},
+	{
 		head: '-anus',
 		lang: EDS.latin,
 		gloss: '(ADJ)',
@@ -197,6 +203,12 @@ const etymData = [
 		lang: EDS.latin,
 		gloss: '(DIM)',
 		forms: ['ell', 'el'],
+	},
+	{
+		head: '-ens',
+		lang: EDS.latin,
+		gloss: '-ing',
+		forms: ['ens$', 'ent'],
 	},
 	{
 		head: '-es',
@@ -361,6 +373,24 @@ const etymData = [
 		forms: ['acetabul'],
 	},
 	{
+		head: 'Aegyptus',
+		lang: EDS.latin,
+		gloss: 'Egypt',
+		forms: ['a?egypto?'],
+	},
+	{
+		head: 'Afer',
+		lang: EDS.latin,
+		gloss: 'African',
+		forms: ['afro'],
+	},
+	{
+		head: 'Africa',
+		lang: EDS.latin,
+		gloss: 'Africa',
+		forms: ['africa', 'africo'],
+	},
+	{
 		head: 'anellus',
 		lang: EDS.latin,
 		gloss: 'little ring',
@@ -401,6 +431,12 @@ const etymData = [
 		lang: EDS.latin,
 		gloss: 'whip',
 		forms: ['flagell'],
+	},
+	{
+		head: 'fulgeo',
+		lang: EDS.latin,
+		gloss: 'blaze',
+		forms: ['fulg'],
 	},
 	{
 		head: 'fungus',
@@ -624,6 +660,24 @@ const etymData = [
 		lang: EDS.greek,
 		gloss: 'not choleric',
 		forms: ['achole'], // https://en.wikipedia.org/wiki/Acholeplasmataceae ?
+	},
+	{
+		head: 'agărĭkón',
+		lang: EDS.greek,
+		gloss: 'Phellinus pomaceus',
+		forms: ['agarico?'],
+	},
+	{
+		head: 'agăthĭ́s',
+		lang: EDS.greek,
+		gloss: 'ball of thread',
+		forms: ['agathis$', 'agath'],
+	},
+	{
+		head: 'aílouros',
+		lang: EDS.greek,
+		gloss: 'cat',
+		forms: ['ailuro'],
 	},
 	{
 		head: 'aithḗr',
@@ -1118,6 +1172,12 @@ const etymData = [
 		forms: ['cyclio'], // cycliophora
 	},
 	{
+		head: 'leukós',
+		lang: EDS.greek,
+		gloss: 'bright, white',
+		forms: ['leuco?', 'leuko?'],
+	},
+	{
 		head: 'lípos',
 		lang: EDS.greek,
 		gloss: 'fat',
@@ -1164,6 +1224,12 @@ const etymData = [
 		lang: EDS.greek,
 		gloss: 'less',
 		forms: ['meio'],
+	},
+	{
+		head: 'mélās',
+		lang: EDS.greek,
+		gloss: 'black',
+		forms: ['melano?'],
 	},
 	{
 		head: 'méthŭ',
@@ -1394,6 +1460,12 @@ const etymData = [
 		forms: ['phyta$', 'phyte$', 'phyto', 'phyt'],
 	},
 	{
+		head: 'pĭ́thēkos',
+		lang: EDS.greek,
+		gloss: 'ape',
+		forms: ['pithecus$', 'pithec'],
+	},
+	{
 		head: 'plắsmă',
 		lang: EDS.greek,
 		gloss: 'figure, image',
@@ -1596,6 +1668,12 @@ const etymData = [
 		lang: EDS.greek,
 		gloss: 'ball',
 		forms: ['sphere?'],
+	},
+	{
+		head: 'sporā́',
+		lang: EDS.greek,
+		gloss: 'seed',
+		forms: ['spore$', 'spor'],
 	},
 	{
 		head: 'statherós',

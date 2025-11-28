@@ -405,14 +405,14 @@ const lifeData = [
 	{
 		'name': 'afropithecus',
 		'rank': 'genus',
-		'parent': 'afropithidae',
+		'parent': 'afropithecidae',
 		'range': 'af',
 		'extinct': true,
 		'age': 18,
 		'age_end': 16,
 	},
 	{
-		'name': 'afropithidae',
+		'name': 'afropithecidae',
 		'rank': 'family',
 		'parent': 'hominoidea',
 		'range': 'af',
