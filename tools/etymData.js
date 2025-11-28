@@ -141,7 +141,7 @@ const etymData = [
 		head: '-alis',
 		lang: EDS.latin,
 		gloss: '(ADJ)',
-		forms: ['alis$', 'a?les$', 'alia$', 'al$'],
+		forms: ['alis$', 'a?les$', 'alia$', 'al$', 'alo(?=.)'],
 	},
 	{
 		head: '-anae',
@@ -183,7 +183,7 @@ const etymData = [
 		head: '-arius',
 		lang: EDS.latin,
 		gloss: '(ADJ)',
-		forms: ['ary$'],
+		forms: ['ari(?=.)', 'ary$'],
 	},
 	{
 		head: '-atus',
@@ -226,6 +226,12 @@ const etymData = [
 		lang: EDS.latin,
 		gloss: '(taxon)',
 		forms: ['es$'],
+	},
+	{
+		head: '-esco',
+		lang: EDS.latin,
+		gloss: '-esce',
+		forms: ['esc', 'esce$'],
 	},
 	{
 		head: '-fer',
@@ -492,10 +498,34 @@ const etymData = [
 		forms: ['aur'],
 	},
 	{
+		head: 'auster',
+		lang: EDS.latin,
+		gloss: 'south',
+		forms: ['austro?'],
+	},
+	{
+		head: 'avena',
+		lang: EDS.latin,
+		gloss: 'oat',
+		forms: ['aven', 'avena$'],
+	},
+	{
 		head: 'avis',
 		lang: EDS.latin,
 		gloss: 'bird',
-		forms: ['av'],
+		forms: ['avi', 'avis$', 'aves$'],
+	},
+	{
+		head: 'baculus',
+		lang: EDS.latin,
+		gloss: 'staff',
+		forms: ['bacul', 'bacill'],
+	},
+	{
+		head: 'ballaena',
+		lang: EDS.latin,
+		gloss: 'whale',
+		forms: ['ball?aeno?'],
 	},
 	{
 		head: 'centrum',
@@ -670,6 +700,12 @@ const etymData = [
 		lang: EDS.latin,
 		gloss: 'for',
 		forms: ['pro'],
+	},
+	{
+		head: 'pubes',
+		lang: EDS.latin,
+		gloss: 'adult',
+		forms: ['pub'],
 	},
 	{
 		head: 'repo',
@@ -947,6 +983,12 @@ const etymData = [
 		lang: EDS.greek,
 		gloss: 'flower',
 		forms: ['antho'],
+	},
+	{
+		head: 'ắnthrăx',
+		lang: EDS.greek,
+		gloss: 'coal',
+		forms: ['anthrac', 'anthrax$'],
 	},
 	{
 		head: 'ánthrōpos',
