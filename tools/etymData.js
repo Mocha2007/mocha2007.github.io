@@ -733,6 +733,12 @@ const etymData = [
 		forms: ['ailuro'],
 	},
 	{
+		head: 'aísthēsĭs',
+		lang: EDS.greek,
+		gloss: 'perception',
+		forms: ['esthet'],
+	},
+	{
 		head: 'aithḗr',
 		lang: EDS.greek,
 		gloss: 'sky, ether',
