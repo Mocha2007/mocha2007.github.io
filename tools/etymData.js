@@ -733,9 +733,9 @@ const etymData = [
 		forms: ['ailuro'],
 	},
 	{
-		head: 'aísthēsĭs',
+		head: 'aisthắnomai',
 		lang: EDS.greek,
-		gloss: 'perception',
+		gloss: 'perceive',
 		forms: ['a?esthet'],
 	},
 	{
