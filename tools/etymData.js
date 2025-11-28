@@ -528,6 +528,18 @@ const etymData = [
 		forms: ['ball?aeno?'],
 	},
 	{
+		head: 'betulla',
+		lang: EDS.latin,
+		gloss: 'birch',
+		forms: ['betull?'],
+	},
+	{
+		head: 'bi-',
+		lang: EDS.latin,
+		gloss: 'two',
+		forms: ['bi(?=.)'],
+	},
+	{
 		head: 'centrum',
 		lang: EDS.latin,
 		gloss: 'center',
@@ -622,6 +634,12 @@ const etymData = [
 		lang: EDS.latin,
 		gloss: 'mane',
 		forms: ['iuba', 'juba'],
+	},
+	{
+		head: 'latus',
+		lang: EDS.latin,
+		gloss: 'side',
+		forms: ['later'],
 	},
 	{
 		head: 'lorica',
@@ -1099,6 +1117,12 @@ const etymData = [
 		forms: ['bas', 'base$'],
 	},
 	{
+		head: 'bắtos',
+		lang: EDS.greek,
+		gloss: 'blackberry, skate',
+		forms: ['bat'], // BAToidea
+	},
+	{
 		head: 'bĭblĭ́on',
 		lang: EDS.greek,
 		gloss: 'book',
@@ -1295,6 +1319,12 @@ const etymData = [
 		lang: EDS.greek,
 		gloss: 'woman',
 		forms: ['gyneco', 'gyn'],
+	},
+	{
+		head: 'gûros',
+		lang: EDS.greek,
+		gloss: 'ring',
+		forms: ['gyro?'],
 	},
 	{
 		head: 'Hāídēs',
