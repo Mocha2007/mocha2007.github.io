@@ -1039,6 +1039,12 @@ const etymData = [
 		forms: ['arach?'],
 	},
 	{
+		head: 'ărĭthmós',
+		lang: EDS.greek,
+		gloss: 'number',
+		forms: ['arithmet', 'arithm'],
+	},
+	{
 		head: 'arkhaîos',
 		lang: EDS.greek,
 		gloss: 'ancient',
