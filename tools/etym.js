@@ -97,32 +97,50 @@ const etym = {
 		elem.innerHTML = `<em>${match}</em><br><strong>${title}</strong><br><q>${gloss}</q><br>${lang}`;
 		return elem;
 	},
-	/** @param {string} word */
+	/** Solves a word by left-to-right by finding the longest matching root at each step
+	 * @param {string} word */
 	solve(word){
 		this.reset();
 		/** @type {Root[]} */
 		const solution = [];
 		/** @type {string[]} */
 		const solution2 = [];
-		let some = true;
+		let found_match = true;
 		const langs = this.acceptableLangs;
-		while (some){
-			some = false;
+		while (found_match){
+			found_match = false;
+			/** @type {Root} */
+			let best_candidate_solution;
+			/** @type {string} */
+			let best_candidate_solution2;
+			/** @type {string} */
+			let best_candidate_remainder;
 			for (const r of Root.roots){
 				if (!langs.includes(r.lang))
 					continue;
 				if (this.debug)
 					console.debug(`testing ${word} for root ${r.head}...`);
 				const o = r.matches(word);
+				// do we have a match?
 				if (o){
-					solution.push(o[0]);
-					solution2.push(o[1]);
-					word = o[2];
-					some = true;
-					if (this.debug)
-						console.debug(`${word} matches ${r.head}!`);
-					break;
+					found_match = true;
+					// is this match better than our preexisting one?
+					if (typeof best_candidate_remainder === 'undefined' || o[2].length < best_candidate_remainder.length) {
+						best_candidate_solution = o[0];
+						best_candidate_solution2 = o[1];
+						best_candidate_remainder = o[2];
+						if (best_candidate_remainder.length === 0){
+							break; // we can stop now!
+						}
+					}
 				}
+			}
+			if (found_match){
+				solution.push(best_candidate_solution);
+				solution2.push(best_candidate_solution2);
+				word = best_candidate_remainder; // okay, now we only look at the rest of the word...
+				if (this.debug)
+					console.debug(`${word} matches ${r.head}!`);
 			}
 			if (word.length < 1)
 				break;
