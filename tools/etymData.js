@@ -1022,6 +1022,12 @@ const etymData = [
 		forms: ['gyneco', 'gyn'],
 	},
 	{
+		head: 'Hāídēs',
+		lang: EDS.greek,
+		gloss: 'Hades',
+		forms: ['hade'],
+	},
+	{
 		head: 'haplóos',
 		lang: EDS.greek,
 		gloss: 'single',
@@ -1554,6 +1560,12 @@ const etymData = [
 		lang: EDS.greek,
 		gloss: 'plate',
 		forms: ['placo'],
+	},
+	{
+		head: 'Ploútōn',
+		lang: EDS.greek,
+		gloss: 'Hades',
+		forms: ['pluton?'],
 	},
 	{
 		head: 'pnoḗ',
