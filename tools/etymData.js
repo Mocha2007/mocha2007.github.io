@@ -530,6 +530,12 @@ const etymData = [
 		forms: ['phor'],
 	},
 	{
+		head: 'ắkănthă',
+		lang: EDS.greek,
+		gloss: 'thorn',
+		forms: ['acantho?'],
+	},
+	{
 		head: 'aktís',
 		lang: EDS.greek,
 		gloss: 'ray',
