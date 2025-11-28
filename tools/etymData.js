@@ -307,6 +307,12 @@ const etymData = [
 		forms: ['us$', 'i$'],
 	},
 	{
+		head: 'abies',
+		lang: EDS.latin,
+		gloss: 'silver fir',
+		forms: ['abiet', 'abies$'],
+	},
+	{
 		head: 'anellus',
 		lang: EDS.latin,
 		gloss: 'little ring',
@@ -1566,6 +1572,12 @@ const etymData = [
 		lang: EDS.greek,
 		gloss: 'hair',
 		forms: ['thrich', 'trich'], // gastrotrica drops the h for some reason
+	},
+	{
+		head: 'thŭreós',
+		lang: EDS.greek,
+		gloss: 'shield',
+		forms: ['thyreo', 'thyro'],
 	},
 	{
 		head: 'tónos',
