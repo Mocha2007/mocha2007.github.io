@@ -638,6 +638,12 @@ const etymData = [
 		forms: ['brachio'],
 	},
 	{
+		head: 'brômă',
+		lang: EDS.greek,
+		gloss: 'food',
+		forms: ['broma'],
+	},
+	{
 		head: 'brúon',
 		lang: EDS.greek,
 		gloss: 'moss',
@@ -1280,6 +1286,12 @@ const etymData = [
 		forms: ['po'],
 	},
 	{
+		head: 'poús',
+		lang: EDS.greek,
+		gloss: 'foot',
+		forms: ['pode?', 'pus'],
+	},
+	{
 		head: 'pólis',
 		lang: EDS.greek,
 		gloss: 'city',
@@ -1319,7 +1331,7 @@ const etymData = [
 		head: 'Prōteús',
 		lang: EDS.greek,
 		gloss: 'Proteus',
-		forms: ['proteo'],
+		forms: ['proteo?'],
 	},
 	{
 		head: 'prôtos',
@@ -1514,10 +1526,28 @@ const etymData = [
 		forms: ['thesis$', 'thet'],
 	},
 	{
+		head: 'theós',
+		lang: EDS.greek,
+		gloss: 'god',
+		forms: ['theos?'],
+	},
+	{
+		head: 'thḗr',
+		lang: EDS.greek,
+		gloss: 'beast',
+		forms: ['thero?'],
+	},
+	{
 		head: 'thēríon',
 		lang: EDS.greek,
 		gloss: 'beast',
 		forms: ['theria'],
+	},
+	{
+		head: 'thermós',
+		lang: EDS.greek,
+		gloss: 'hot',
+		forms: ['thermo?'],
 	},
 	{
 		head: 'thríx',
