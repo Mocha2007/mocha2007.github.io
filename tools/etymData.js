@@ -259,6 +259,12 @@ const etymData = [
 		forms: ['ites$'],
 	},
 	{
+		head: '-ium',
+		lang: EDS.latin,
+		gloss: '(used to form names of elements)',
+		forms: ['ium$'],
+	},
+	{
 		head: '-ius',
 		lang: EDS.latin,
 		gloss: '(N)',
@@ -870,6 +876,12 @@ const etymData = [
 		lang: EDS.greek,
 		gloss: 'pleasure',
 		forms: ['hedon'],
+	},
+	{
+		head: 'hḗlĭos',
+		lang: EDS.greek,
+		gloss: 'sun',
+		forms: ['helio?'],
 	},
 	{
 		head: 'hélmins',
