@@ -68,6 +68,12 @@ const etymData = [
 		gloss: 'RNA',
 		forms: ['rna'],
 	},
+	{
+		head: 'thucholite',
+		lang: EDS.english,
+		gloss: 'thucholite',
+		forms: ['thucho'],
+	},
 	// GERMAN
 	{
 		head: 'ur-',
@@ -998,6 +1004,12 @@ const etymData = [
 		forms: ['lipo'],
 	},
 	{
+		head: 'lĭ́thos',
+		lang: EDS.greek,
+		gloss: 'stone',
+		forms: ['lite$', 'litho?'],
+	},
+	{
 		head: 'lógos',
 		lang: EDS.greek,
 		gloss: 'word',
@@ -1103,7 +1115,7 @@ const etymData = [
 		head: 'múkēs',
 		lang: EDS.greek,
 		gloss: 'fungus',
-		forms: ['mycetes$', 'mycet', 'myco'],
+		forms: ['mycetes$', 'mycet', 'myces', 'myco'],
 	},
 	{
 		head: 'nânos',
