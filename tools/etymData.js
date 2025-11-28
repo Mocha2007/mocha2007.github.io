@@ -107,6 +107,12 @@ const etymData = [
 	},
 	// SPANISH
 	{
+		head: 'armadillo',
+		lang: EDS.spanish,
+		gloss: 'armadillo',
+		forms: ['armadillo?'],
+	},
+	{
 		head: 'pico',
 		lang: EDS.spanish,
 		gloss: 'speck',
@@ -249,7 +255,7 @@ const etymData = [
 		head: '-idae',
 		lang: EDS.latin,
 		gloss: '(family of animal or subclass of plant)',
-		forms: ['idae$'],
+		forms: ['i?dae$'],
 	},
 	{
 		head: '-iformes',
@@ -286,6 +292,12 @@ const etymData = [
 		lang: EDS.latin,
 		gloss: '(tribe of animal)',
 		forms: ['ini$'],
+	},
+	{
+		head: '-is',
+		lang: EDS.latin,
+		gloss: '(N)',
+		forms: ['is$'],
 	},
 	{
 		head: '-ista',
@@ -450,6 +462,30 @@ const etymData = [
 		forms: ['anser'],
 	},
 	{
+		head: 'apex',
+		lang: EDS.latin,
+		gloss: 'apex',
+		forms: ['apex$', 'apic'],
+	},
+	{
+		head: 'apis',
+		lang: EDS.latin,
+		gloss: 'bee',
+		forms: ['api'], // todo: what do I do with apicomplexa (< apex)?
+	},
+	{
+		head: 'apium',
+		lang: EDS.latin,
+		gloss: 'parsley, celery',
+		forms: ['api'], // todo: what do I do with apiaceae (< apium)?
+	},
+	{
+		head: 'aranea',
+		lang: EDS.latin,
+		gloss: 'spider',
+		forms: ['arane'],
+	},
+	{
 		head: 'avis',
 		lang: EDS.latin,
 		gloss: 'bird',
@@ -480,10 +516,28 @@ const etymData = [
 		forms: ['com'],
 	},
 	{
+		head: 'complexus',
+		lang: EDS.latin,
+		gloss: 'embraced',
+		forms: ['complex'],
+	},
+	{
 		head: 'conus',
 		lang: EDS.latin,
 		gloss: 'cone',
 		forms: ['con'],
+	},
+	{
+		head: 'duco',
+		lang: EDS.latin,
+		gloss: 'lead',
+		forms: ['duc'],
+	},
+	{
+		head: 'dux',
+		lang: EDS.latin,
+		gloss: 'leader',
+		forms: ['dux$', 'duke$'],
 	},
 	{
 		head: 'fistula',
@@ -514,6 +568,12 @@ const etymData = [
 		lang: EDS.latin,
 		gloss: 'step',
 		forms: ['grad'],
+	},
+	{
+		head: 'gravis',
+		lang: EDS.latin,
+		gloss: 'heavy',
+		forms: ['grave?'], // eg. GRAVEolens
 	},
 	{
 		head: 'iuba',
@@ -568,6 +628,12 @@ const etymData = [
 		lang: EDS.latin,
 		gloss: 'neither',
 		forms: ['neuter', 'neutr'],
+	},
+	{
+		head: 'olens',
+		lang: EDS.latin,
+		gloss: 'smelling',
+		forms: ['olens$', 'olent'],
 	},
 	{
 		head: 'per',
@@ -877,10 +943,40 @@ const etymData = [
 		forms: ['anthropo', 'anthrope$'],
 	},
 	{
+		head: 'ăpắtē',
+		lang: EDS.greek,
+		gloss: 'deceit',
+		forms: ['apato'], // eg. APATOtheria
+	},
+	{
+		head: 'ărắkhnēs',
+		lang: EDS.greek,
+		gloss: 'spider',
+		forms: ['arachn'],
+	},
+	{
+		head: 'ắrăkos',
+		lang: EDS.greek,
+		gloss: 'wild chickling vetch',
+		forms: ['arach?'],
+	},
+	{
 		head: 'arkhaîos',
 		lang: EDS.greek,
 		gloss: 'ancient',
 		forms: ['archaeo', 'archae'],
+	},
+	{
+		head: 'árkhō',
+		lang: EDS.greek,
+		gloss: 'lead',
+		forms: ['archo', 'archi?', 'arch$'], // ARCHOsaur, ARCHIteuthis, monARCH
+	},
+	{
+		head: 'ắrktos',
+		lang: EDS.greek,
+		gloss: 'bear',
+		forms: ['arct'],
 	},
 	{
 		head: 'árthron',
@@ -1048,7 +1144,7 @@ const etymData = [
 		head: 'gê',
 		lang: EDS.greek,
 		gloss: 'earth',
-		forms: ['geo'],
+		forms: ['geo', 'gae'], // geology, hypogaeum
 	},
 	{
 		head: 'geneá',
@@ -1441,10 +1537,16 @@ const etymData = [
 		forms: ['mitri'], // Haplomitriopsida
 	},
 	{
+		head: 'monắs',
+		lang: EDS.greek,
+		gloss: 'unit',
+		forms: ['monad'],
+	},
+	{
 		head: 'mónos',
 		lang: EDS.greek,
 		gloss: 'single',
-		forms: ['monad', 'mono'],
+		forms: ['mono?'], // MONarch
 	},
 	{
 		head: 'mōrós',
@@ -1633,6 +1735,12 @@ const etymData = [
 		forms: ['plasmat?'],
 	},
 	{
+		head: 'plastós',
+		lang: EDS.greek,
+		gloss: 'formed',
+		forms: ['plast'],
+	},
+	{
 		head: 'platús',
 		lang: EDS.greek,
 		gloss: 'flat',
@@ -1732,7 +1840,7 @@ const etymData = [
 		head: 'ptéris',
 		lang: EDS.greek,
 		gloss: 'male fern',
-		forms: ['pterido?'],
+		forms: ['pterido?', 'pteris$'],
 	},
 	{
 		head: 'pterón',
@@ -1744,7 +1852,7 @@ const etymData = [
 		head: 'ptérux',
 		lang: EDS.greek,
 		gloss: 'wing',
-		forms: ['pteryg'],
+		forms: ['pteryg', 'pteryx$'],
 	},
 	{
 		head: 'ptússō',
@@ -1925,6 +2033,12 @@ const etymData = [
 		lang: EDS.greek,
 		gloss: 'four',
 		forms: ['tetra'],
+	},
+	{
+		head: 'teuthĭ́s',
+		lang: EDS.greek,
+		gloss: 'squid',
+		forms: ['teuth'],
 	},
 	{
 		head: 'títhēmi',
