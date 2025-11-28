@@ -145,11 +145,11 @@ const etym = {
 			return;
 		}
 		// choose random
-		let success = true;
-		let name, taxon;
 		if (i < 0){
 			i = Math.floor(Math.random() * lifeData.length);
 		}
+		// search for failure
+		let name, success, taxon;
 		do {
 			taxon = lifeData[i];
 			/** @type {string[]} */
