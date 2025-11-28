@@ -1522,7 +1522,7 @@ const etymData = [
 		head: 'oxús',
 		lang: EDS.greek,
 		gloss: 'sharp',
-		forms: ['oxy'],
+		forms: ['oxy', 'ox'], // ox in Amphioxus
 	},
 	{
 		head: 'palaiós',
