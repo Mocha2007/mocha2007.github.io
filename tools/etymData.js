@@ -343,6 +343,12 @@ const etymData = [
 		forms: ['odes$'],
 	},
 	{
+		head: '-olus',
+		lang: EDS.latin,
+		gloss: '(DIM)',
+		forms: ['ol'],
+	},
+	{
 		head: '-osus',
 		lang: EDS.latin,
 		gloss: '-ose, -ous',
@@ -361,7 +367,7 @@ const etymData = [
 		forms: ['um$'],
 	},
 	{
-		head: '-ul-',
+		head: '-ulus',
 		lang: EDS.latin,
 		gloss: '(DIM)',
 		forms: ['ul'],
@@ -401,6 +407,12 @@ const etymData = [
 		lang: EDS.latin,
 		gloss: 'Africa',
 		forms: ['africa', 'africo'],
+	},
+	{
+		head: 'alveus',
+		lang: EDS.latin,
+		gloss: 'pit',
+		forms: ['alve'],
 	},
 	{
 		head: 'anellus',
