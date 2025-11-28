@@ -523,6 +523,12 @@ const etymData = [
 		forms: ['mollusc'],
 	},
 	{
+		head: 'musca',
+		lang: EDS.latin,
+		gloss: 'fly',
+		forms: ['musc'],
+	},
+	{
 		head: 'neuter',
 		lang: EDS.latin,
 		gloss: 'neither',
@@ -662,6 +668,12 @@ const etymData = [
 		forms: ['on'],
 	},
 	{
+		head: '-tos',
+		lang: EDS.greek,
+		gloss: '(ADJ)',
+		forms: ['th'], // eg. amaranth
+	},
+	{
 		head: '-ōsis',
 		lang: EDS.greek,
 		gloss: '(state)',
@@ -732,6 +744,12 @@ const etymData = [
 		lang: EDS.greek,
 		gloss: 'alpha',
 		forms: ['alpha'],
+	},
+	{
+		head: 'amānī́tēs',
+		lang: EDS.greek,
+		gloss: 'mushroom',
+		forms: ['amanita$', 'amanit'],
 	},
 	{
 		head: 'ămoibḗ',
@@ -1254,6 +1272,12 @@ const etymData = [
 		lang: EDS.greek,
 		gloss: 'loosening',
 		forms: ['lysis', 'lyso', 'lys'],
+	},
+	{
+		head: 'măraínō',
+		lang: EDS.greek,
+		gloss: 'quench',
+		forms: ['maran'],
 	},
 	{
 		head: 'mástix',
