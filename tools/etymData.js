@@ -21,6 +21,12 @@ const etymData = [
 		forms: ['er'],
 	},
 	{
+		head: '-ery',
+		lang: EDS.english,
+		gloss: '(N)',
+		forms: ['e?ries$', 'e?ry$'],
+	},
+	{
 		head: '-ish',
 		lang: EDS.english,
 		gloss: '(ADJ)',
@@ -43,6 +49,12 @@ const etymData = [
 		lang: EDS.english,
 		gloss: '(infrafamily of animal)',
 		forms: ['odd$'],
+	},
+	{
+		head: '-ol',
+		lang: EDS.latin,
+		gloss: '(used to form names of alcohols)',
+		forms: ['ol$'],
 	},
 	{
 		head: '-s',
@@ -131,6 +143,12 @@ const etymData = [
 		lang: EDS.latin,
 		gloss: '(superorder of non-animal)',
 		forms: ['ales$'],
+	},
+	{
+		head: '-anus',
+		lang: EDS.latin,
+		gloss: '(ADJ)',
+		forms: ['ane$', 'an'],
 	},
 	{
 		head: '-ara',
@@ -542,6 +560,12 @@ const etymData = [
 		forms: ['ism'],
 	},
 	{
+		head: '-istḗs',
+		lang: EDS.greek,
+		gloss: '-ist',
+		forms: ['ist'],
+	},
+	{
 		head: '-îtis',
 		lang: EDS.greek,
 		gloss: '(disease)',
@@ -600,6 +624,12 @@ const etymData = [
 		lang: EDS.greek,
 		gloss: 'not choleric',
 		forms: ['achole'], // https://en.wikipedia.org/wiki/Acholeplasmataceae ?
+	},
+	{
+		head: 'aithḗr',
+		lang: EDS.greek,
+		gloss: 'sky, ether',
+		forms: ['ether', 'eth'],
 	},
 	{
 		head: 'ămoibḗ',
@@ -920,6 +950,12 @@ const etymData = [
 		forms: ['hydro'],
 	},
 	{
+		head: 'hū́lē',
+		lang: EDS.greek,
+		gloss: 'wood',
+		forms: ['yl'], // eg. methyl
+	},
+	{
 		head: 'hupér',
 		lang: EDS.greek,
 		gloss: 'over',
@@ -1008,6 +1044,12 @@ const etymData = [
 		lang: EDS.greek,
 		gloss: 'guts',
 		forms: ['chord'],
+	},
+	{
+		head: 'khŭmeíā',
+		lang: EDS.greek,
+		gloss: 'alchemy',
+		forms: ['chem'],
 	},
 	{
 		head: 'knídē',
@@ -1122,6 +1164,12 @@ const etymData = [
 		lang: EDS.greek,
 		gloss: 'less',
 		forms: ['meio'],
+	},
+	{
+		head: 'méthŭ',
+		lang: EDS.greek,
+		gloss: 'wine',
+		forms: ['meth'],
 	},
 	{
 		head: 'métron',
