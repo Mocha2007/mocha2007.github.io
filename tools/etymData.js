@@ -145,6 +145,18 @@ const etymData = [
 		forms: ['aria$'],
 	},
 	{
+		head: '-aris',
+		lang: EDS.latin,
+		gloss: '(ADJ)',
+		forms: ['ar$'],
+	},
+	{
+		head: '-arius',
+		lang: EDS.latin,
+		gloss: '(ADJ)',
+		forms: ['ary$'],
+	},
+	{
 		head: '-atus',
 		lang: EDS.latin,
 		gloss: '(PP)',
