@@ -910,7 +910,7 @@ const etymData = [
 		head: 'aílouros',
 		lang: EDS.greek,
 		gloss: 'cat',
-		forms: ['ailuro'],
+		forms: ['ailuro?'],
 	},
 	{
 		head: 'aisthắnomai',
@@ -1133,6 +1133,18 @@ const etymData = [
 		lang: EDS.greek,
 		gloss: 'life',
 		forms: ['bio', 'bi'],
+	},
+	{
+		head: 'blăstós',
+		lang: EDS.greek,
+		gloss: 'sprout',
+		forms: ['blasto'],
+	},
+	{
+		head: 'bómbūx',
+		lang: EDS.greek,
+		gloss: 'silkworm',
+		forms: ['bombyx$', 'bombyc(?=.)'],
 	},
 	{
 		head: 'Boréās',
@@ -1481,6 +1493,12 @@ const etymData = [
 		lang: EDS.greek,
 		gloss: 'alchemy',
 		forms: ['chem'],
+	},
+	{
+		head: 'klắdos',
+		lang: EDS.greek,
+		gloss: 'young shoot of a tree',
+		forms: ['cladi?o', 'clade$'],
 	},
 	{
 		head: 'knídē',
