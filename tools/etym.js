@@ -18,7 +18,7 @@ class Root {
 	}
 	/**
 	 * @param {string} s
-	 * @returns {false | [string, string]}
+	 * @returns {false | [Root, string, string]}
 	 */
 	matches(s){
 		let match, re;
