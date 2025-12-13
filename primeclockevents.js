@@ -175,6 +175,7 @@ var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 	[760e6, '<a href="https://en.wikipedia.org/wiki/Otavia">Otavia</a>'],
 	[750e6, 'First <a href="https://en.wikipedia.org/wiki/Protozoa">Protozoa</a> appear'],
 	[750e6, '<a href="https://en.wikipedia.org/wiki/Kaigas">Kaigas Glaciation</a>'],
+	[725e6, '<a href="https://en.wikipedia.org/wiki/Life_on_Venus#Cataclysmic_events">Global resurfacing evnet</a> on Venus'],
 	[720e6, 'Beginning of the <a href="https://en.wikipedia.org/wiki/Cryogenian">Cryogenian</a> period'],
 	[715e6, '<a href="https://en.wikipedia.org/wiki/Sturtian_glaciation">Sturtian Glaciation</a>'],
 	[714e6, 'Earth\'s first <a href="https://en.wikipedia.org/wiki/Solar_eclipse#Types">Annular solar eclipse</a>'], // source: "lunatool geo era" command
