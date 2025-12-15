@@ -742,7 +742,7 @@ var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 	[diff(1578024000), 'The <a href="https://en.wikipedia.org/wiki/2020_Baghdad_International_Airport_airstrike">2020 Baghdad International Airport airstrike</a> kills <a href="https://en.wikipedia.org/wiki/Qasem_Soleimani">Qasem Soleimani</a>'],
 	[diff(1578024000), '<a href="https://en.wikipedia.org/wiki/Brexit">Brexit</a>'],
 	[diff(1584835200), 'A national emergency <a href="https://en.wikipedia.org/wiki/Timeline_of_the_COVID-19_pandemic_in_the_United_States">is declared</a> in the US in response to the Coronavirus pandemic'],
-	[diff(1590458400), 'The <a href="https://en.wikipedia.org/wiki/Killing_of_George_Floyd">Murder of George Floyd</a> spawns <a href="https://en.wikipedia.org/wiki/George_Floyd_protests">subsequent riots and protests</a>'],
+	[diff(1590458400), 'The <a href="https://en.wikipedia.org/wiki/Killing_of_George_Floyd">Murder of George Floyd</a> spawns <a href="https://en.wikipedia.org/wiki/George_Floyd_protests">subsequent protests</a>'],
 	[diff(1596553698), 'The <a href="https://en.wikipedia.org/wiki/2020_Beirut_explosion">Beirut Explosion</a>'],
 	// 2021
 	[diff(1609955580), 'The January 6th <a href="https://en.wikipedia.org/wiki/2021_United_States_Capitol_attack">US Capitol Attack</a>'],
@@ -750,7 +750,7 @@ var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 	[diff(1626786660), '<a href="https://en.wikipedia.org/wiki/Blue_Origin_NS-16">Blue Origin NS-16</a> launches'],
 	[diff(1628985600), 'The <a href="https://en.wikipedia.org/wiki/Fall_of_Kabul_(2021)">Fall of Kabul</a>'],
 	// 2022
-	[diff(1645668000), 'The <a href="https://en.wikipedia.org/wiki/2022_Russian_invasion_of_Ukraine">Russia invades Ukraine</a>'],
+	[diff(1645668000), '<a href="https://en.wikipedia.org/wiki/2022_Russian_invasion_of_Ukraine">Russia invades Ukraine</a>'],
 	[diff(1657247400), 'The <a href="https://en.wikipedia.org/wiki/Assassination_of_Shinzo_Abe">Assassination of Shinzo Abe</a>'],
 	[diff(1669809600), 'The launch of <a href="https://en.wikipedia.org/wiki/ChatGPT">ChatGPT</a>'],
 	// 2023
@@ -759,7 +759,7 @@ var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 	[diff(1681516800), 'Start of the <a href="https://en.wikipedia.org/wiki/Sudanese_civil_war_(2023%E2%80%93present)">Sudanese civil War</a>'],
 	[diff(1728259200), 'Start of the <a href="https://en.wikipedia.org/wiki/Gaza_war">Gaza War</a>'],
 	// 2024
-	[diff(1730862000), 'Donald Trump <a href="https://en.wikipedia.org/wiki/2016_United_States_presidential_election">re-elected</a> president of the US in close election'], // roughly when it became certain; abt 22:00 EST 5 NOV 2024
+	[diff(1730862000), 'Donald Trump <a href="https://en.wikipedia.org/wiki/2024_United_States_presidential_election">re-elected</a> president of the US in close election'], // roughly when it became certain; abt 22:00 EST 5 NOV 2024
 	[diff(1733312700), '<a href="https://en.wikipedia.org/wiki/Killing_of_Brian_Thompson#Killing">Killing of Brian Thompson</a>']
 // 2020
 // https://en.wikipedia.org/wiki/Timelines_of_world_history
