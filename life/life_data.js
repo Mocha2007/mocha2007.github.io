@@ -1810,6 +1810,19 @@ const lifeData = [
 		},
 	},
 	{
+		'name': 'botrytis',
+		'rank': 'genus',
+		'parent': 'sclerotiniaceae',
+		'range': 'ww',
+	},
+	{
+		'name': 'botrytis cinerea',
+		'rank': 'species',
+		'parent': 'botrytis',
+		'range': 'ww',
+		'desc': 'Noble rot, grey mold',
+	},
+	{
 		'name': 'bovidae',
 		'rank': 'family',
 		'parent': 'cetruminantia',
@@ -4851,6 +4864,12 @@ const lifeData = [
 		},
 	},
 	{
+		'name': 'helotiales',
+		'rank': 'order',
+		'parent': 'leotiomycetes',
+		'range': 'ww',
+	},
+	{
 		'name': 'hemichordata',
 		'rank': 'phylum',
 		'parent': 'ambulacraria',
@@ -5826,6 +5845,12 @@ const lifeData = [
 			height: (0.4 + 0.5)/2,
 			weight: (7 + 15.5)/2,
 		},
+	},
+	{
+		'name': 'leotiomycetes',
+		'rank': 'class',
+		'parent': 'ascomycota',
+		'range': 'ww',
 	},
 	{
 		'name': 'lepidoptera',
@@ -9270,6 +9295,12 @@ const lifeData = [
 		'range': 'wo',
 		'age': 240,
 		'desc': 'Hard Coral',
+	},
+	{
+		'name': 'sclerotiniaceae',
+		'rank': 'family',
+		'parent': 'helotiales',
+		'range': 'ww',
 	},
 	{
 		'name': 'scombridae',
