@@ -5849,7 +5849,7 @@ const lifeData = [
 	{
 		'name': 'leotiomycetes',
 		'rank': 'class',
-		'parent': 'ascomycota',
+		'parent': 'pezizomycotina',
 		'range': 'ww',
 	},
 	{
