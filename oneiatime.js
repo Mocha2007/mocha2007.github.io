@@ -634,7 +634,7 @@ function mochaLunisolar(t, link, lang){
 		throw new Error('INVALID DATE');
 	var _1h = 1000*60*60;
 	var _1d = 24*_1h;
-	var epoch = new Date(Date.UTC(2015, 2, 20, 5)); // local midnight, last vernal equinox with a full moon - the next closest is in 1939, and beyond that, before 1900
+	var epoch = new Date(Date.UTC(2015, 2, 20, 16, 11)); // midway between vernal equinox and new moon - see mlsc.html for further notes
 	var LUNAR_SIDEREAL_PERIOD = 27.321661 * _1d; // used only for lunar mansions
 	var normalYearLength = 354;
 	var cycleLength = 334;
