@@ -634,7 +634,7 @@ function mochaLunisolar(t, link, lang){
 		throw new Error('INVALID DATE');
 	var _1h = 1000*60*60;
 	var _1d = 24*_1h;
-	var epoch = new Date(Date.UTC(2015, 2, 20, 16, 11)); // midway between vernal equinox and new moon - see mlsc.html for further notes
+	var epoch = new Date(Date.UTC(1681, 2, 20)); // see mlsc.html for further notes
 	var LUNAR_SIDEREAL_PERIOD = 27.321661 * _1d; // used only for lunar mansions
 	var normalYearLength = 354;
 	var cycleLength = 334;
@@ -770,7 +770,7 @@ function mochaLunisolar(t, link, lang){
 mochaLunisolar.eraStarts = [6, 14, 19, 25, 32, 37, 42, 51, 59, 63, 69, 77]; // based on even divisions centered roughly on the middle of pisces...
 //							  March April May June July August September October November December January February Intercalary
 mochaLunisolar.cyclesPerEpi = mochaLunisolar.eraStarts[11];
-mochaLunisolar.eraROffset = 12; // set to 7 for the original lengths
+mochaLunisolar.eraROffset = 11; // set to 7 for the original lengths
 mochaLunisolar.mansions = [
 	// starting 0 deg ecliptic long, ending 360, in intervals of 10 deg, visualize a box +/- 5 deg longitude +/- 6 deg latitude, choose brightest star
 	'ω Piscium', 'δ Piscium', 'ε Piscium', 'η Piscium', 'μ Ceti', '5 Tauri', 'Pleiades', 'Aldebaran', '119 Tauri', 'ζ Tauri',
