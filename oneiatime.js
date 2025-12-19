@@ -770,7 +770,7 @@ function mochaLunisolar(t, link, lang){
 mochaLunisolar.eraStarts = [6, 13, 19, 25, 32, 38, 44, 51, 58, 64, 70, 77]; // based on even divisions centered roughly on the middle of pisces...
 //							  March April May June July August September October November December January February Intercalary
 mochaLunisolar.cyclesPerEpi = mochaLunisolar.eraStarts[11];
-mochaLunisolar.eraROffset = 9; // set to 7 for the original lengths
+mochaLunisolar.eraROffset = 11; // set to 7 for the original lengths
 mochaLunisolar.mansions = [
 	// starting 0 deg ecliptic long, ending 360, in intervals of 10 deg, visualize a box +/- 5 deg longitude +/- 6 deg latitude, choose brightest star
 	'ω Piscium', 'δ Piscium', 'ε Piscium', 'η Piscium', 'μ Ceti', '5 Tauri', 'Pleiades', 'Aldebaran', '119 Tauri', 'ζ Tauri',
