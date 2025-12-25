@@ -2398,7 +2398,7 @@ const blogData = [
 	- worse than the Gregorian calendar, but actually more accurate than the Julian or Hebrew calendars.
 	These cycle lengths have the bonus of still conforming to our "perfect square" requirements".
 	@p
-	As a bonus, we set the epoch (Year 0 start) as April 10, 1970 in the Gregorian calendar,
+	As a bonus, we set the epoch (Year 0 start) as April 11, 1970 in the Gregorian calendar,
 	so the start of the year only wanders about 20 days from the vernal equinox.
 	As a secondary bonus, we define a day as comprising 294 "minutes" of 294 "seconds".
 	This means our fake "second" is 999.6 ms long - imperceptibly different from a real one.
