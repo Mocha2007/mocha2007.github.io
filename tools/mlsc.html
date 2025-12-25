@@ -40,17 +40,18 @@
 		Every so often, a <em>leap month</em> is inserted, which may have 30 or 31 days.
 		There are twelve months in a <em>common year</em>,
 		and thirteen in a <em>leap year</em>.
+		The average length of a month across a whole cycle is &ap;29.5306 days.
 	</p>
 	<h3 id="mlsc_e_leap"><a href="#mlsc_e_leap">^</a>Leap Month Rules</h3>
 	<p>
 		If the cycle number (which is the year number mod 334, explained later)
-		mod 19 mod 3 is 0<abbr title="Believe it or not, this is the unique way to get 123 leap years in a cycle with as few modulus operations as possible. Unfortunately, that leaves 6 double leap years, but nothing can really be done about that. This '123' in turn was chosen to minimize the difference in number of long and short leap years, thereby minimizing drift of the new moon from the start of months.">*</abbr>, then the year is a <em>leap year</em>.
+		mod 19 mod 3 is 0<abbr title="Believe it or not, this is the unique way to get 376 leap years in a cycle with as few modulus operations as possible. Unfortunately, that leaves 6 double leap years, but nothing can really be done about that. This '376' in turn was chosen to minimize the difference in number of long and short leap years, thereby minimizing drift of the new moon from the start of months.">*</abbr>, then the year is a <em>leap year</em>.
 		Otherwise, it is a common year.
 	</p>
 	<p>
 		The leap month is inserted at the end of a leap year.
 		The number of leap months passed in the current cycle is recorded.
-		If this number mod 17 is even, then the leap month has 31 days,
+		If this number mod 19 is even, then the leap month has 31 days,
 		otherwise if it is odd, it has 30 days.
 	</p>
 	<h3 id="mlsc_e_s1"><a href="#mlsc_e_s1">^</a>Summary so far</h3>
@@ -60,17 +61,18 @@
 	</p>
 	<p>
 		A <em>year</em> approximates <a href="https://en.wikipedia.org/wiki/Tropical_year">Earth's tropical orbital period</a>.
+		A MLSC year is approximately &ap;365.2419 days long, on average.
 	</p>
 	<h3 id="mlsc_e_cycles"><a href="#mlsc_e_cycles">^</a>Cycles, Ages, and Precessions</h3>
 	<p>
-		A <em>cycle</em> comprises 334 years.
-		The length of the cycle was chosen because the number of lunar synodic months in 334 tropical years
+		A <em>cycle</em> comprises 1021 years.
+		The length of the cycle was chosen because the number of lunar synodic months in 1021 tropical years
 		is <em>quite nearly</em> a whole number, simplifying calculations.
-		An <em>precession</em> comprises 77 cycles (and is thus 25,718 MLSC years or about 25,717 Julian years).
+		A <em>precession</em> comprises 25 cycles (and is thus 25,525 MLSC years or about 25,524 Julian years).
 		The current cycle in the precession determines the <em>age</em>.
 		A precession approximates <a href="https://en.wikipedia.org/wiki/Axial_precession">Earth's axial precession</a>,
 		and thus what constellation the <a href="https://en.wikipedia.org/wiki/March_equinox">vernal equinox</a> lies in.
-		Ages vary in length from 4 to 9 cycles, described in the table below:
+		All ages except Virgo are 2 cycles long - Virgo has one extra cycle:
 	</p>
 	<table>
 		<tr>
@@ -79,51 +81,51 @@
 		</tr>
 		<tr>
 			<td>Aries</td>
-			<td>6</td>
+			<td>2</td>
 		</tr>
 		<tr style="background-color: #040; font-weight: bold;">
 			<td>Pisces</td>
-			<td>8</td>
+			<td>2</td>
 		</tr>
 		<tr>
 			<td>Aquarius</td>
-			<td>5</td>
+			<td>2</td>
 		</tr>
 		<tr>
 			<td>Capricornus</td>
-			<td>6</td>
+			<td>2</td>
 		</tr>
 		<tr>
 			<td>Sagittarius</td>
-			<td>7</td>
+			<td>2</td>
 		</tr>
 		<tr>
 			<td>Ophiuchus</td>
-			<td>5</td>
+			<td>2</td>
 		</tr>
 		<tr>
 			<td>Libra</td>
-			<td>5</td>
+			<td>2</td>
 		</tr>
 		<tr>
 			<td>Virgo</td>
-			<td>9</td>
+			<td>3</td>
 		</tr>
 		<tr>
 			<td>Leo</td>
-			<td>8</td>
+			<td>2</td>
 		</tr>
 		<tr>
 			<td>Cancer</td>
-			<td>4</td>
+			<td>2</td>
 		</tr>
 		<tr>
 			<td>Gemini</td>
-			<td>6</td>
+			<td>2</td>
 		</tr>
 		<tr>
 			<td>Taurus</td>
-			<td>8</td>
+			<td>2</td>
 		</tr>
 	</table>
 	<p>
@@ -132,13 +134,13 @@
 	</p>
 	<p>
 		Precessions start with <em>Aries</em> and proceed backwards around the <a href="https://en.wikipedia.org/wiki/Zodiac">zodiac</a>.
-		The current <em>Age of Pisces</em> began <time datetime="0011-03-20">March 20, 11 CE</time>,
-		and will end <time datetime="2683-03-20">March 20, 2683 CE</time>.
+		The current <em>Age of Pisces</em> began <time datetime="0660-03-21">March 21, 660 CE</time>,
+		and will end <time datetime="2702-03-21">March 21, 2702 CE</time>.
 	</p>
 	<h3 id="mlsc_e_gals"><a href="#mlsc_e_gals">^</a>Gals</h3>
 	<p>
 		The largest division of time is the <em>gal</em>.
-		A gal is 8,750 precessions (and is thus 225,032,500 MLSC years or about 225,027,888 Julian years).
+		A gal is 8,800 precessions (and is thus 224,620,000 MLSC years or about 224,615,031 Julian years).
 		A gal approximates the time taken for the sun to orbit the milky way once
 		(the <a href="https://en.wikipedia.org/wiki/Galactic_year">galactic year</a>).
 		The current precession's beginning of the age of Aries defines the start of <em>gal 0</em>.
@@ -169,30 +171,30 @@
 		</tr>
 		<tr>
 			<td>Cycle</td>
-			<td>334 yr<br>4,131 mo<br>121,991 d</td>
-			<td>1.05400224 &times; 10<sup>10</sup> s</td>
+			<td>1,021 yr<br>12,628 mo<br>372,912 d</td>
+			<td>3.22195968 &times; 10<sup>10</sup> s</td>
 		</tr>
 		<tr>
 			<td>Age</td>
-			<td>4-9 Cycles<br>1,336-3,006 yr</td>
+			<td>2-3 Cycles<br>2,042-3,063 yr</td>
 			<td>~7 &times; 10<sup>10</sup> s</td>
 		</tr>
 		<tr>
 			<td>Precession</td>
-			<td>12 Ages<br>77 cycles<br>25,718 yr</td>
-			<td>8.115817248 &times; 10<sup>11</sup> s</td>
+			<td>12 Ages<br>25 cycles<br>25,525 yr</td>
+			<td>8.0548992 &times; 10<sup>11</sup> s</td>
 		</tr>
 		<tr>
 			<td>Gal</td>
-			<td>8,750 precessions<br>225.0325 Myr</td>
-			<td>7.101340092 &times; 10<sup>15</sup> s</td>
+			<td>8,800 precessions<br>224.62 Myr</td>
+			<td>7.088311296 &times; 10<sup>15</sup> s</td>
 		</tr>
 	</table>
 	<h3 id="mlsc_e_epoch"><a href="#mlsc_e_epoch">^</a>Epoch</h3>
 	<p>
 		The <em>epoch</em>, or fixed, defined point in time for the calendar,
 		is <time datetime="1681-03-20">March 20, 1681</time>,
-		defined as being the start of the sixth cycle of the age of Pisces, first precession in the 61st gal.
+		defined as being the start of the second cycle of the age of Pisces, first precession in the 61st gal.
 	</p>
 	<p>
 		This was chosen due to being the closest alignment of a new moon with the vernal equinox since 1583.
