@@ -2393,7 +2393,7 @@ const blogData = [
 	Common years are 19 months of 19 days (361 days total),
 	and leap years are 20 months of 20 days (400 days total).
 	There is one leap year every 9 year "small cycle", except every 49-"small-cycle" "big cycle" (= 441 years = 161,073 days), a leap year is skipped,
-	meaning the average year length is 161,073/441 &asymp; 365.2449 days,
+	meaning the average year length is 161,073/441 &ap; 365.2449 days,
 	leading to an error relative to the tropical year of 1 day in 369 years
 	- worse than the Gregorian calendar, but actually more accurate than the Julian or Hebrew calendars.
 	These cycle lengths have the bonus of still conforming to our "perfect square" requirements".
