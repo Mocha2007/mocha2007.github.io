@@ -2416,6 +2416,21 @@ const blogData = [
 	This means, for example, the Cretaceous period lasted from approximately -323,000 to -219,600,
 	and the Cambrian from -627,400 to -596,400.
 	The Earth formed in approximately -1,820,000, and the universe formed in approximately -3,174,000.
+	`,
+	`
+	@title Alternate Calendars #3: "Thermal Calendar"
+	@date 1766673264092
+	@tags calendar
+	This calendar is location-dependent, so for these examples I use Warsaw.
+	The range of mean daily temperatures from the climate normals for an area are considered (eg. -5.65&deg;C to 18.36&degC).
+	This range is divided into quartiles. Let the boundary between the first two quartiles be considered the "spring temperature" (eg. -0.9&deg;C)
+	The beginning of a year begins on the first day after the midpoint between the winter solstice and vernal equinox
+	(eg. 2025-02-03 21:11 UTC, with seasonal lag this is often the coldest part of the year)
+	with a mean daily temperature greater than this temperature (ie., at SP, 0&deg;C).
+	For the example of Warsaw, this means the current year (2025) began on 3 Feb 2025 (the earliest possible day).
+	@p
+	This calendar type might have been more useful prior to recent climate change.
+	I suspect nowadays it will often occur at the earliest possible time.
 	`
 ];
 // don't forget, run blog.timestamp to get the timestamp!
