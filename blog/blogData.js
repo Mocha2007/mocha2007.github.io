@@ -2392,11 +2392,11 @@ const blogData = [
 	Years are categorized into common and leap years, much like the Gregorian calendar.
 	Common years are 19 months of 19 days (361 days total),
 	and leap years are 20 months of 20 days (400 days total).
-	There is one leap year every 9 years,
-	meaning the average year length is 365&frac13; days,
-	leading to an error relative to the tropical year of 1 day in 11 years
-	- much worse than the Gregorian and Julian calendars, but at least not as bad as the Mesoamerican long count calendar or the Egyptian calendars
-	(which had 360 day and 365 day years, respectively).
+	There is one leap year every 9 year "small cycle", except every 49-"small-cycle" "big cycle" (= 441 years = 161,073 days), a leap year is skipped,
+	meaning the average year length is 161,073/441 &asymp; 365.2449 days,
+	leading to an error relative to the tropical year of 1 day in 369 years
+	- worse than the Gregorian calendar, but actually more accurate than the Julian or Hebrew calendars.
+	These cycle lengths have the bonus of still conforming to our "perfect square" requirements".
 	@p
 	As a bonus, we set the epoch (Year 0 start) as April 10, 1970 in the Gregorian calendar,
 	so the start of the year only wanders about 20 days from the vernal equinox.
