@@ -662,7 +662,7 @@ function mochaLunisolar(t, link, lang){
 	// now figure out month/day
 	var mo;
 	for (mo = 0; mo < 13; mo++){
-		var monthLength = 30 - mo % 2 + (yearLength === 385 && mo === 12); // stuff in parens is accounting for long leap months
+		var monthLength = yearLength == 385 && mo == 5 ? 30 : 30 - mo % 2; // Sixth month in long leap years is extended from 29 to 30 days
 		if (monthLength <= daysSinceEpoch){
 			daysSinceEpoch -= monthLength;
 			monthStartT += _1d*monthLength;
@@ -685,14 +685,13 @@ function mochaLunisolar(t, link, lang){
 		+ ' ' + (eraR+1) + localization.of0 + eraLength + ', ' + localization.year +' ' + (mod(y, cycleLength)+1) + ')');
 	// weekday
 	monthStartT = new Date(monthStartT);
-	var q3start = monthLength === 31 ? 23 : 22;
 	var quarters = [
 		monthStartT,
 		new Date(monthStartT.getFullYear(), monthStartT.getMonth(), monthStartT.getDate()+7),
 		new Date(monthStartT.getFullYear(), monthStartT.getMonth(), monthStartT.getDate()+15),
-		new Date(monthStartT.getFullYear(), monthStartT.getMonth(), monthStartT.getDate()+q3start)
+		new Date(monthStartT.getFullYear(), monthStartT.getMonth(), monthStartT.getDate()+22)
 	];
-	var weekLengths = [7, 8, q3start - 15, 29 < monthLength ? 8 : 7];
+	var weekLengths = [7, 8, 7, 29 < monthLength ? 8 : 7];
 	var currentQuarter = (mod(quarters.findIndex(q => t < q), 5)+3)%4;
 	var daysAfterQuarter = Math.floor((t - quarters[currentQuarter])/_1d);
 	var quarterName = localization.the + localization.quarterNames[currentQuarter];
