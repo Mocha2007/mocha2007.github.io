@@ -2383,4 +2383,25 @@ const blogData = [
 		</tr>
 	</table>
 	`,
+	`
+	@title Alternate Calendars #1: "Perfect Squares"
+	@date 1766662245173
+	@tags calendar
+	Inspired by the Baha'i calendar, here is a hypothetical calendar that only uses perfect squares for year length:
+	@p
+	Years are categorized into common and leap years, much like the Gregorian calendar.
+	Common years are 19 months of 19 days (361 days total),
+	and leap years are 20 months of 20 days (400 days total).
+	There is one leap year every 9 years,
+	meaning the average year length is 365&frac13; days,
+	leading to an error relative to the tropical year of 1 day in 11 years
+	- much worse than the Gregorian and Julian calendars, but at least not as bad as the Mesoamerican long count calendar or the Egyptian calendars
+	(both had 360 day years).
+	@p
+	As a bonus, we set the epoch (Year 0 start) as April 10, 1970 in the Gregorian calendar,
+	so the start of the year only wanders about 20 days from the vernal equinox.
+	As a secondary bonus, we define a day as comprising 294 "minutes" of 294 "seconds".
+	This means our fake "second" is 999.6 ms long - imperceptibly different from a real one.
+	`
 ];
+// don't forget, run blog.timestamp to get the timestamp!
