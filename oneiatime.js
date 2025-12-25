@@ -767,10 +767,10 @@ function mochaLunisolar(t, link, lang){
 // 5374 CE (MLST ~3359) it would switch to Capricorn after 10 334-cycles
 // current "era" = (C+7) % 77
 // mochaLunisolar.eraStarts = [4, 12, 17, 23, 31, 36, 41, 50, 58, 62, 69, 77];
-mochaLunisolar.eraStarts = [2, 4, 6, 8, 10, 12, 14, 17, 19, 21, 23, 25]; // based on even divisions centered roughly on the middle of pisces...
+mochaLunisolar.eraStarts = [2, 5, 7, 9, 11, 13, 15, 18, 20, 21, 23, 25]; // based on even divisions centered roughly on the middle of pisces...
 //							  March April May June July August September October November December January February Intercalary
 mochaLunisolar.cyclesPerEpi = mochaLunisolar.eraStarts[11];
-mochaLunisolar.eraROffset = 3; // set to 7 for the original lengths
+mochaLunisolar.eraROffset = 4; // set to 7 for the original lengths
 mochaLunisolar.mansions = [
 	// starting 0 deg ecliptic long, ending 360, in intervals of 10 deg, visualize a box +/- 5 deg longitude +/- 6 deg latitude, choose brightest star
 	'ω Piscium', 'δ Piscium', 'ε Piscium', 'η Piscium', 'μ Ceti', '5 Tauri', 'Pleiades', 'Aldebaran', '119 Tauri', 'ζ Tauri',
