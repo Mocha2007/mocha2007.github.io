@@ -2396,7 +2396,7 @@ const blogData = [
 	meaning the average year length is 365&frac13; days,
 	leading to an error relative to the tropical year of 1 day in 11 years
 	- much worse than the Gregorian and Julian calendars, but at least not as bad as the Mesoamerican long count calendar or the Egyptian calendars
-	(both had 360 day years).
+	(which had 360 day and 365 day years, respectively).
 	@p
 	As a bonus, we set the epoch (Year 0 start) as April 10, 1970 in the Gregorian calendar,
 	so the start of the year only wanders about 20 days from the vernal equinox.
