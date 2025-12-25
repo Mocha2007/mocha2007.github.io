@@ -2402,6 +2402,20 @@ const blogData = [
 	so the start of the year only wanders about 20 days from the vernal equinox.
 	As a secondary bonus, we define a day as comprising 294 "minutes" of 294 "seconds".
 	This means our fake "second" is 999.6 ms long - imperceptibly different from a real one.
+	`,
+	`
+	@title Alternate Calendars #2: "Progressive Calendar"
+	@date 1766666564715
+	@tags calendar
+	The idea behind this calendar is quite simple: the length of a year becomes one day longer each year.
+	Thus, on year 0, the year is 0 days long, starting on year 1, the year is 1 day long, then 2, 3, and so on.
+	The epoch is 0000-01-01 in the proleptic Gregorian calendar.
+	At the time of writing, the year 1217 would have just begun (on 2025-11-17), and would be, as its name suggests, 1,217 days long.
+	@p
+	We define negative years as having positive length, otherwise year N would be the same as year -N.
+	This means, for example, the Cretaceous period lasted from approximately -323,000 to -219,600,
+	and the Cambrian from -627,400 to -596,400.
+	The Earth formed in approximately -1,820,000, and the universe formed in approximately -3,174,000.
 	`
 ];
 // don't forget, run blog.timestamp to get the timestamp!
