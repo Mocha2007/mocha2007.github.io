@@ -10779,6 +10779,12 @@ const lifeData = [
 		'age': lifeDataPeriod.early_eocene,
 	},
 	{
+		'name': 'wolbachia',
+		'rank': 'genus',
+		'parent': 'ehrlichiaceae',
+		'range': 'ww',
+	},
+	{
 		'name': 'wollemia',
 		'rank': 'genus',
 		'parent': 'araucariaceae',
