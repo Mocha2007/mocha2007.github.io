@@ -206,6 +206,7 @@ const elementData = [
 			nutrition: 3,
 			oxidation: [1],
 			prices: {
+				2026: 17.108, // 5 Jan 2026
 				2022: 79.42,
 				2020: 83.5,
 				2018: 16.5,
@@ -711,6 +712,7 @@ const elementData = [
 			},
 			oxidation: [3],
 			prices: {
+				2026: 3.0231, // 2 Jan 2026
 				2022: 1.078/pound,
 				2021: 0.975/pound,
 				2019: 1.79,
@@ -1386,6 +1388,7 @@ const elementData = [
 			nutrition: 2,
 			oxidation: [2, 3],
 			prices: {
+				2026: 0.1072, // 2 Jan 2026
 				2022: 0.1099,
 				2021: 164.41/1000,
 				2020: 0.424,
@@ -1441,6 +1444,7 @@ const elementData = [
 			nutrition: 2,
 			oxidation: [2, 3],
 			prices: {
+				2026: 53.355, // 2 Jan 2026
 				2022: 23.566/pound,
 				2021: 25.18/pound,
 				2019: 32.8,
@@ -1496,6 +1500,7 @@ const elementData = [
 			nutrition: 3,
 			oxidation: [2],
 			prices: {
+				2026: 16.750, // 1 Jan 2026
 				2022: 12.28/pound,
 				2021: 7.2756/pound,
 				2019: 13.9,
@@ -1557,6 +1562,7 @@ const elementData = [
 			nutrition: 2,
 			oxidation: [1, 2],
 			prices: {
+				2026: 12.454, // 1 Jan 2026
 				2022: 3.794/pound,
 				2021: 4.0547/pound,
 				2019: 6,
@@ -1613,6 +1619,7 @@ const elementData = [
 			nutrition: 2,
 			oxidation: [2],
 			prices: {
+				2026: 3.1301, // 2 Jan 2026
 				2022: 1.3962/pound,
 				2021: 1.2474/pound,
 				2019: 2.55,
@@ -1666,6 +1673,7 @@ const elementData = [
 			},
 			oxidation: [3],
 			prices: {
+				2026: 236.22, // 5 Jan 2026
 				2022: 218.82,
 				2020: 148,
 			},
@@ -2238,6 +2246,7 @@ const elementData = [
 			nutrition: 2,
 			oxidation: [4, 6],
 			prices: {
+				2026: 66.214, // 5 Jan 2026
 				2022: 46.5,
 				2021: 12.28/pound,
 				2019: 40.1,
@@ -2339,6 +2348,7 @@ const elementData = [
 			},
 			oxidation: [3, 4],
 			prices: {
+				2025: 29257.18, // 31 Oct 2025
 				2022: 553.49/ounce, // year average
 				2021: 566.85/ounce, // year average
 				2020: 264.94/ounce, // year average
@@ -2395,6 +2405,7 @@ const elementData = [
 			},
 			oxidation: [3],
 			prices: {
+				2026: 303824.55, // 2 Jan 2026
 				2022: 15560.66/ounce, // year average
 				2021: 20064.59/ounce, // year average
 				2020: 11235.95/ounce, // year average
@@ -2452,6 +2463,7 @@ const elementData = [
 			},
 			oxidation: [0, 2, 4],
 			prices: {
+				2026: 53595.29, // 2 Jan 2026
 				2022: 2133.95/ounce, // year average
 				2021: 2407.67/ounce, // year average
 				2020: 2209.99/ounce, // year average
@@ -2512,6 +2524,7 @@ const elementData = [
 			},
 			oxidation: [1],
 			prices: {
+				2026: 2334.79, // 2 Jan 2026
 				2022: 23.74/ounce,
 				2021: 25.645/ounce,
 				2019: 521,
@@ -2621,6 +2634,7 @@ const elementData = [
 			},
 			oxidation: [3],
 			prices: {
+				2026: 404.44, // 5 Jan 2026
 				2022: 205.9,
 				2019: 167,
 			},
@@ -2676,6 +2690,7 @@ const elementData = [
 			},
 			oxidation: [-4, 2, 4],
 			prices: {
+				2026: 40.409, // 2 Jan 2026
 				2022: 23.307,
 				2021: 12.565/pound,
 				2019: 18.7,
@@ -2786,6 +2801,7 @@ const elementData = [
 			},
 			oxidation: [-2, 2, 4, 6],
 			prices: {
+				2026: 104.51, // 5 Jan 2026
 				2022: 78.559,
 				2019: 63.5,
 			},
@@ -2839,6 +2855,7 @@ const elementData = [
 			nutrition: 2,
 			oxidation: [-1, 1, 3, 5, 7],
 			prices: {
+				2026: 180.01, // 2 Jan 2026
 				2019: 35,
 			},
 			production: 28e3, // https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-iodine.pdf
@@ -3186,6 +3203,7 @@ const elementData = [
 			nutrition: 4,
 			oxidation: [3],
 			prices: {
+				2026: 108.45, // 5 Jan 2026
 				2022: 135,
 				2021: 120.8,
 				2019: 57.5,
@@ -4037,6 +4055,7 @@ const elementData = [
 			},
 			oxidation: [3, 4],
 			prices: {
+				2025: 144678.36, // 31 Oct 2025
 				2022: 4455.78/ounce, // year average
 				2021: 5081.52/ounce, // year average
 				2020: 1628.06/ounce, // year average
@@ -4093,6 +4112,7 @@ const elementData = [
 			},
 			oxidation: [2, 4],
 			prices: {
+				2026: 64741.96, // 1 Jan 2026
 				2022: 966.03/ounce, // year average
 				2021: 1095.32/ounce, // year average
 				2020: 887.94/ounce, // year average
@@ -4152,6 +4172,7 @@ const elementData = [
 			},
 			oxidation: [1, 3],
 			prices: {
+				2026: 139277.35, // 2 Jan 2026
 				2022: 1806.35/ounce,
 				2021: 1711.5/ounce,
 				2020: 44800,
@@ -4308,6 +4329,7 @@ const elementData = [
 			},
 			oxidation: [2, 4],
 			prices: {
+				2026: 2.0035, // 2 Jan 2026
 				2022: 0.9857/pound,
 				2021: 0.8729/pound,
 				2019: 2,
