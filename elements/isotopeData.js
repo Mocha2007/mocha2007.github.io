@@ -4971,7 +4971,7 @@ const isotopeData = [
 			['sf', 1],
 			['a', trace],
 		],
-		halfLife: 44*minute,
+		halfLife: 39*minute,
 	},
 	{
 		name: 'Lr-262',
@@ -4979,14 +4979,14 @@ const isotopeData = [
 			['b+', 1],
 			['a', trace],
 		],
-		halfLife: 216*minute,
+		halfLife: 4*hour,
 	},
 	{
 		name: 'Lr-264',
 		decayTypes: [
 			['sf', 1],
 		],
-		halfLife: 3*hour,
+		halfLife: 4.8*hour,
 	},
 	{
 		name: 'Lr-266',
@@ -5002,14 +5002,21 @@ const isotopeData = [
 			['b+', 0.14],
 			['sf', 0.1],
 		],
-		halfLife: 68,
+		halfLife: 2.1,
+	},
+	{
+		name: 'Rf-263',
+		decayTypes: [
+			['sf', 1],
+		],
+		halfLife: 11*minute,
 	},
 	{
 		name: 'Rf-265',
 		decayTypes: [
 			['sf', 1],
 		],
-		halfLife: 1.1*minute,
+		halfLife: 1.3*minute,
 	},
 	{
 		name: 'Rf-266',
@@ -5023,7 +5030,7 @@ const isotopeData = [
 		decayTypes: [
 			['sf', 1],
 		],
-		halfLife: 2.5*hour,
+		halfLife: 48*minute,
 	},
 	{
 		name: 'Rf-268',
@@ -5045,7 +5052,7 @@ const isotopeData = [
 			['sf', 1],
 			['ec', 1],
 		],
-		halfLife: 80*minute,
+		halfLife: 11*minute,
 	},
 	{
 		name: 'Db-267',
@@ -5053,7 +5060,7 @@ const isotopeData = [
 			['sf', 1],
 			['ec', 1],
 		],
-		halfLife: 4.6*hour,
+		halfLife: 1.4*hour,
 	},
 	{
 		name: 'Db-268',
@@ -5062,7 +5069,7 @@ const isotopeData = [
 			['ec', 0.01],
 			['a', trace],
 		],
-		halfLife: 30.8*hour,
+		halfLife: 16*hour,
 	},
 	{
 		name: 'Db-270',
@@ -5081,11 +5088,18 @@ const isotopeData = [
 		halfLife: 8,
 	},
 	{
+		name: 'Sg-267',
+		decayTypes: [
+			['a', 1],
+		],
+		halfLife: 9.8*minute,
+	},
+	{
 		name: 'Sg-269',
 		decayTypes: [
 			['a', 1],
 		],
-		halfLife: 14*minute,
+		halfLife: 13*minute,
 	},
 	{
 		name: 'Sg-271',
@@ -5093,14 +5107,14 @@ const isotopeData = [
 			['a', 0.67],
 			['sf', 0.33],
 		],
-		halfLife: 2.4*minute,
+		halfLife: 31,
 	},
 	{
 		name: 'Bh-274',
 		decayTypes: [
 			['a', 1],
 		],
-		halfLife: 0.9*minute,
+		halfLife: 44,
 	},
 	{
 		name: 'Bh-278',
@@ -5114,28 +5128,42 @@ const isotopeData = [
 		decayTypes: [
 			['a', 1],
 		],
-		halfLife: 16,
+		halfLife: 13,
+	},
+	{
+		name: 'Hs-271',
+		decayTypes: [
+			['a', 1],
+		],
+		halfLife: 46,
 	},
 	{
 		name: 'Hs-275',
 		decayTypes: [
 			['a', 1],
 		],
-		halfLife: 290e-3,
+		halfLife: 600e-3,
 	},
 	{
 		name: 'Hs-277',
 		decayTypes: [
 			['sf', 1],
 		],
-		halfLife: 12e-3,
+		halfLife: 18e-3,
+	},
+	{
+		name: 'Hs-278',
+		decayTypes: [
+			['sf', 1],
+		],
+		halfLife: 0, // ???
 	},
 	{
 		name: 'Mt-278',
 		decayTypes: [
 			['a', 1],
 		],
-		halfLife: 7.6,
+		halfLife: 4.5,
 	},
 	{
 		name: 'Mt-282',
@@ -5147,25 +5175,32 @@ const isotopeData = [
 	{
 		name: 'Ds-279',
 		decayTypes: [
-			['sf', 0.9],
-			['a', 0.1],
+			['sf', 0.87],
+			['a', 0.13],
 		],
-		halfLife: 0.18,
+		halfLife: 0.186,
 	},
 	{
 		name: 'Ds-281',
 		decayTypes: [
-			['sf', 0.94],
-			['a', 0.06],
+			['sf', 0.9],
+			['a', 0.1],
 		],
-		halfLife: 9.6,
+		halfLife: 14,
+	},
+	{
+		name: 'Ds-282',
+		decayTypes: [
+			['a', 1],
+		],
+		halfLife: 67,
 	},
 	{
 		name: 'Rg-282',
 		decayTypes: [
 			['a', 1],
 		],
-		halfLife: 2.1*minute,
+		halfLife: 100,
 	},
 	{
 		name: 'Rg-286',
@@ -5179,29 +5214,30 @@ const isotopeData = [
 		decayTypes: [
 			['sf', 1],
 		],
-		halfLife: 800e-6,
+		halfLife: 830e-6,
 	},
 	{
 		name: 'Cn-283',
 		decayTypes: [
-			['a', 0.9],
-			['sf', 0.1], // ec listed as a "maybe"
+			['a', 0.96],
+			['sf', 0.04], // ec listed as a "maybe"
 		],
-		halfLife: 4,
+		halfLife: 3.81,
 	},
 	{
 		name: 'Cn-285',
 		decayTypes: [
 			['a', 1],
 		],
-		halfLife: 29,
+		halfLife: 28,
 	},
 	{
 		name: 'Cn-286',
 		decayTypes: [
-			['sf', 1],
+			['sf', 1], // a listed as secondary, no % given
+			['a', trace],
 		],
-		halfLife: 8.45,
+		halfLife: 8.4,
 	},
 	{
 		name: 'Nh-286',
@@ -5214,23 +5250,31 @@ const isotopeData = [
 		name: 'Nh-290',
 		decayTypes: [
 			['a', 1],
+			['sf', trace], // "SF < 50%"
 		],
 		halfLife: 2,
 	},
 	{
 		name: 'Fl-286',
 		decayTypes: [
-			['sf', 0.6],
-			['a', 0.4],
+			['a', 0.55],
+			['sf', 0.45],
 		],
-		halfLife: 130e-3,
+		halfLife: 105e-3,
 	},
 	{
 		name: 'Fl-287',
 		decayTypes: [
 			['a', 1], // ec listed as a maybe
 		],
-		halfLife: 0.51,
+		halfLife: 0.36,
+	},
+	{
+		name: 'Fl-289',
+		decayTypes: [
+			['a', 1],
+		],
+		halfLife: 1.9,
 	},
 	{
 		name: 'Fl-290',
@@ -5252,14 +5296,21 @@ const isotopeData = [
 		decayTypes: [
 			['a', 1],
 		],
-		halfLife: 15e-3,
+		halfLife: 8.3e-3,
 	},
 	{
 		name: 'Lv-291',
 		decayTypes: [
 			['a', 1],
 		],
-		halfLife: 6.3e-3,
+		halfLife: 19e-3,
+	},
+	{
+		name: 'Lv-293',
+		decayTypes: [
+			['a', 1],
+		],
+		halfLife: 57e-3,
 	},
 	{
 		name: 'Lv-294',
@@ -5278,9 +5329,8 @@ const isotopeData = [
 	{
 		name: 'Og-294',
 		decayTypes: [
-			['a', 1], // sf listed as secondary; no percentages
-			['sf', trace],
+			['a', 1],
 		],
-		halfLife: 700e-6,
+		halfLife: 580e-6,
 	},
 ];

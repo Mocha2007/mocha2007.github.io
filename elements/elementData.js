@@ -5272,7 +5272,7 @@ const elementData = [
 		z: 108,
 		name: 'Hassium',
 		symbol: 'Hs',
-		mass: 269,
+		mass: 271,
 		group: 8,
 		period: 7,
 		properties: {
@@ -5316,7 +5316,7 @@ const elementData = [
 		z: 110,
 		name: 'Darmstadtium',
 		symbol: 'Ds',
-		mass: 281,
+		mass: 282,
 		group: 10,
 		period: 7,
 		properties: {
