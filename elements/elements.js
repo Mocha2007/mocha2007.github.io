@@ -895,7 +895,9 @@ class ChemElement {
 			case 'ptm':{
 				// post-transition metal categorization by electronegativity and melting point
 				const en = this.electronegativity || this.predictedElectronegativity;
-				const satisfies_en = 1.5 < en && en < 2.05;
+				const satisfies_en_lo = 1.5 < en;
+				const satisfies_en_hi = en < 2.05;
+				const satisfies_en = satisfies_en_lo && satisfies_en_hi;
 				const satisfies_temp = (this.temperatures ? this.temperatures.melt : this.predictedMelt) < 1000;
 				if (satisfies_en) {
 					if (satisfies_temp) {
@@ -906,7 +908,7 @@ class ChemElement {
 					}
 				}
 				else if (satisfies_temp) {
-					c = '#00f';
+					c = satisfies_en_lo ? '#08f' : '#80f';
 				}
 				else {
 					c = '#000';
