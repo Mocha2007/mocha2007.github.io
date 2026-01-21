@@ -898,7 +898,7 @@ class ChemElement {
 				const satisfies_en_lo = 1.5 < en;
 				const satisfies_en_hi = en < 2.05;
 				const satisfies_en = satisfies_en_lo && satisfies_en_hi;
-				const satisfies_temp = (this.temperatures ? this.temperatures.melt : this.predictedMelt) < 1000;
+				const satisfies_temp = (this.temperatures ? this.temperatures.melt : this.predictedMelt) < 950;
 				if (satisfies_en) {
 					if (satisfies_temp) {
 						c = '#fff';
