@@ -891,6 +891,28 @@ class ChemElement {
 				c = gradient1(remap(Math.max(0, Math.log(this.production)), [0, maxProd], [0, 1]));
 				break;
 			}
+			// there is deliberately no button for this, this is a personal utility accessed through tableColor('ptm');
+			case 'ptm':{
+				// post-transition metal categorization by electronegativity and melting point
+				const en = this.electronegativity || this.predictedElectronegativity;
+				const satisfies_en = 1.5 < en && en < 2.05;
+				const satisfies_temp = (this.temperatures ? this.temperatures.melt : this.predictedMelt) < 1000;
+				if (satisfies_en) {
+					if (satisfies_temp) {
+						c = '#fff';
+					}
+					else {
+						c = '#cc0';
+					}
+				}
+				else if (satisfies_temp) {
+					c = '#00f';
+				}
+				else {
+					c = '#000';
+				}
+				break;
+			}
 			case 'radius':{
 				const rr = elements.filter(e => e.avgRadius).map(e => e.avgRadius);
 				c = gradient1(remap(this.avgRadius, [Math.min(...rr), Math.max(...rr)], [0, 1]));
