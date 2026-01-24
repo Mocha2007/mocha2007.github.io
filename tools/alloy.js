@@ -6,6 +6,25 @@ class Alloy {
 		/** elem name -> fraction */
 		this.composition = composition;
 	}
+	get shortDescElem(){
+		const list = [];
+		for (let sym in this.composition){
+			list.push([sym, this.composition[sym]]);
+		}
+		list.sort((a, b) => b[1] - a[1]);
+		const elem = document.createElement('span');
+		elem.classList.add('shortDescElem');
+		list.forEach(x => {
+			const [sym, f] = x;
+			const color = ALLOY.rarityColor(f);
+			const inner = document.createElement('span');
+			elem.appendChild(inner);
+			inner.innerHTML = sym;
+			inner.title = `${Math.round(f*100)}% ${sym}`;
+			inner.style.color = color;
+		});
+		return elem;
+	}
 	dist(other_composition){
 		let ssq = 0;
 		for (let sym in this.composition){
@@ -44,6 +63,14 @@ class ChemicalElement {
 const ALLOY = {
 	/** @type {Alloy[]} */
 	alloys: [
+		new Alloy('Alnico', {
+			Fe: 0.515,
+			Ni: 0.205,
+			Co: 0.145,
+			Al: 0.1,
+			Cu: 0.03,
+			Ti: 0.005,
+		}),
 		new Alloy('Amalgam (Arquerite)', {
 			Hg: 0.87,
 			Ag: 0.13,
@@ -120,6 +147,12 @@ const ALLOY = {
 			Cu: 0.86,
 			Sn: 0.12,
 			Bi: 0.02,
+		}),
+		new Alloy('Bronze (French)', {
+			Cu: 0.91,
+			Zn: 0.06,
+			Sn: 0.02,
+			Pb: 0.01,
 		}),
 		new Alloy('Bronze (Orichalcum)', {
 			Cu: 0.775,
@@ -244,6 +277,16 @@ const ALLOY = {
 			Mn: 0.01,
 			Si: 0.0025
 		}),
+		new Alloy('Neodymium magnet', {
+			Fe: 0.72,
+			Nd: 0.27,
+			B: 0.01,
+		}),
+		new Alloy('Newton\'s metal', {
+			Bi: 8/16,
+			Pb: 5/16,
+			Sn: 3/16,
+		}),
 		new Alloy('Nichrome', {
 			Ni: 0.8,
 			Cr: 0.2,
@@ -286,10 +329,20 @@ const ALLOY = {
 			Fe: 0.9575,
 			C: 0.0425,
 		}),
+		new Alloy('Queen\'s metal', {
+			Sn: 9/12,
+			Sb: 1/12,
+			Pb: 1/12,
+			Bi: 1/12,
+		}),
 		new Alloy('Rose\'s metal', {
 			Bi: 0.5,
 			Pb: 0.265,
 			Sn: 0.235,
+		}),
+		new Alloy('Samarium-Cobalt magnet', {
+			Co: 0.66,
+			Sm: 0.34,
 		}),
 		new Alloy('Shibuichi', {
 			Cu: 0.75,
@@ -411,6 +464,18 @@ const ALLOY = {
 			slider_container.appendChild(label);
 		});
 	},
+	/** @param {number} f */
+	rarityColor(f){
+		return [
+			'violet',
+			'lightcoral',
+			'burlywood',
+			'palegreen',
+			'cornflowerblue',
+			'white',
+			'silver',
+		][Math.floor(-Math.log2(f))] || 'grey';
+	},
 	refresh(){
 		// get current slider states
 		const composition = {};
@@ -425,6 +490,7 @@ const ALLOY = {
 			const entry = document.createElement('div');
 			const name = errors[i][0].name;
 			entry.innerHTML = `#${i+1} (dist: ${Math.sqrt(errors[i][1]).toFixed(3)}): <span class="answer">${name}</span>`;
+			entry.appendChild(errors[i][0].shortDescElem);
 			result.appendChild(entry);
 		}
 	},

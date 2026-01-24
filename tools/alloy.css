@@ -9,3 +9,18 @@ label {
 	color: #dbd;
 	font-weight: bold;
 }
+.shortDescElem {
+	padding-left: 1em;
+	font-size: 75%;
+	user-select: none;
+}
+.shortDescElem::before {
+	content: '(';
+}
+.shortDescElem::after {
+	content: ')';
+}
+.shortDescElem span {
+	padding-left: 0.2em;
+	padding-right: 0.2em;
+}
