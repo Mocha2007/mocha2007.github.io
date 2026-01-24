@@ -326,8 +326,8 @@ const ALLOY = {
 		}),
 		new Alloy('Gold (Spangold)', {
 			Au: 0.76,
-			Cu: 0.18,
-			Al: 0.06,
+			Cu: 0.19,
+			Al: 0.05,
 		}),
 		new Alloy('Gold (White)', {
 			Au: 0.9,
