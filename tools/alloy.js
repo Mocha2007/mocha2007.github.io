@@ -36,11 +36,11 @@ class ChemicalElement {
 const ALLOY = {
 	/** @type {Alloy[]} */
 	alloys: [
-		new Alloy('Amalgam (arquerite)', {
+		new Alloy('Amalgam (Arquerite)', {
 			Hg: 0.87,
 			Ag: 0.13,
 		}),
-		new Alloy('Amalgam (dental)', {
+		new Alloy('Amalgam (Dental)', {
 			Hg: 0.5,
 			Ag: 0.28,
 			Sn: 0.14,
@@ -121,25 +121,25 @@ const ALLOY = {
 			C: 0.03,
 			Si: 0.02,
 		}),
-		new Alloy('Coal (anthracite)', {
+		new Alloy('Coal (Anthracite)', {
 			C: 0.915,
 			S: 0.005,
 		}),
-		new Alloy('Coal (bituminous)', {
+		new Alloy('Coal (Bituminous)', {
 			C: 0.844,
 			O: 0.067,
 			H: 0.054,
 			S: 0.018,
 			N: 0.017,
 		}),
-		new Alloy('Coal (sub-bituminous)', {
+		new Alloy('Coal (Sub-bituminous)', {
 			C: 0.4,
 			// "15-30% inherent moisture" -> ~22.5% water -> 
 			O: 0.2,
 			H: 0.025,
 			S: 0.005,
 		}),
-		new Alloy('Coal (lignite)', {
+		new Alloy('Coal (Lignite)', {
 			C: 0.3,
 			// "up to 75% inherent moisture" -> appx.
 			O: 0.35,
@@ -153,46 +153,46 @@ const ALLOY = {
 			Fe: 0.4,
 			Cr: 0.6,
 		}),
-		new Alloy('Gold (black)', {
+		new Alloy('Gold (Black)', {
 			Au: 0.75,
 			Co: 0.25,
 		}),
-		new Alloy('Gold (blue)', {
+		new Alloy('Gold (Blue)', {
 			In: 0.54,
 			Au: 0.46,
 		}),
-		new Alloy('Gold (crown)', {
+		new Alloy('Gold (Crown)', {
 			Au: 11/12,
 			Cu: 1/12,
 		}),
-		new Alloy('Gold (green)', {
+		new Alloy('Gold (Green)', {
 			Au: 0.785,
 			Ag: 0.215,
 		}),
-		new Alloy('Gold (pink)', {
+		new Alloy('Gold (Pink)', {
 			Au: 0.75,
 			Cu: 0.2,
 			Ag: 0.05,
 		}),
-		new Alloy('Gold (purple)', {
+		new Alloy('Gold (Purple)', {
 			Au: 0.79,
 			Al: 0.21,
 		}),
-		new Alloy('Gold (red)', {
+		new Alloy('Gold (Red)', {
 			Au: 0.75,
 			Cu: 0.25,
 		}),
-		new Alloy('Gold (rose)', {
+		new Alloy('Gold (Rose)', {
 			Au: 0.75,
 			Cu: 0.2225,
 			Ag: 0.0275,
 		}),
-		new Alloy('Gold (spangold)', {
+		new Alloy('Gold (Spangold)', {
 			Au: 0.76,
 			Cu: 0.18,
 			Al: 0.06,
 		}),
-		new Alloy('Gold (white)', {
+		new Alloy('Gold (White)', {
 			Au: 0.9,
 			Ni: 0.1,
 		}),
@@ -219,6 +219,13 @@ const ALLOY = {
 			Sb: 0.05e-6,
 			Ag: 0.03e-6,
 		}),
+		new Alloy('Monel', {
+			Ni: 0.665,
+			Cu: 0.31,
+			Fe: 0.0125,
+			Mn: 0.01,
+			Si: 0.0025
+		}),
 		new Alloy('Nichrome', {
 			Ni: 0.8,
 			Cr: 0.2,
@@ -234,25 +241,25 @@ const ALLOY = {
 			Zn: 0.05,
 			Sn: 0.01,
 		}),
-		new Alloy('Pewter (brittania)', {
+		new Alloy('Pewter (Brittania)', {
 			Sn: 0.925,
 			Sb: 0.055,
 			Cu: 0.02,
 		}),
-		new Alloy('Pewter (fine)', {
+		new Alloy('Pewter (Fine)', {
 			Sn: 0.99,
 			Cu: 0.01,
 		}),
-		new Alloy('Pewter (lay)', {
+		new Alloy('Pewter (Lay)', {
 			Sn: 0.85,
 			Pb: 0.15,
 		}),
-		new Alloy('Pewter (modern)', {
+		new Alloy('Pewter (Modern)', {
 			Sn: 0.905,
 			Sb: 0.075,
 			Cu: 0.02,
 		}),
-		new Alloy('Pewter (trifle)', {
+		new Alloy('Pewter (Trifle)', {
 			Sn: 0.95,
 			Pb: 0.04,
 			Cu: 0.01,
@@ -274,25 +281,34 @@ const ALLOY = {
 			Fe: 0.9892,
 			C: 0.0108,
 		}),
-		new Alloy('Steel (stainless)', {
+		new Alloy('Steel (Acmonital)', {
+			Fe: 0.799,
+			Cr: 0.1825,
+			Si: 0.0115,
+			Mg: 0.005,
+			C: 0.0014,
+			S: 0.0003,
+			P: 0.0003,
+		}),
+		new Alloy('Steel (Stainless)', {
 			Fe: 0.8092,
 			Cr: 0.18,
 			C: 0.0108,
 		}),
-		new Alloy('Silver (brittania)', {
+		new Alloy('Silver (Brittania)', {
 			Ag: 23/24,
 			Cu: 1/24,
 		}),
-		new Alloy('Silver (sterling)', {
+		new Alloy('Silver (Sterling)', {
 			Ag: 0.925,
 			Cu: 0.075,
 		}),
-		new Alloy('Solder (lead)', {
+		new Alloy('Solder (Lead)', {
 			// typical
 			Sn: 0.6,
 			Pb: 0.4,
 		}),
-		new Alloy('Solder (lead-free)', {
+		new Alloy('Solder (Lead-free)', {
 			// typical
 			Ag: 0.64,
 			Sn: 0.18,
