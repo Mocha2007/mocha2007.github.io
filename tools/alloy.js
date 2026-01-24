@@ -36,6 +36,16 @@ class ChemicalElement {
 const ALLOY = {
 	/** @type {Alloy[]} */
 	alloys: [
+		new Alloy('Amalgam (arquerite)', {
+			Hg: 0.87,
+			Ag: 0.13,
+		}),
+		new Alloy('Amalgam (dental)', {
+			Hg: 0.5,
+			Ag: 0.28,
+			Sn: 0.14,
+			Zn: 0.08,
+		}),
 		new Alloy('Billon', {
 			Cu: 0.6,
 			Ag: 0.4,
@@ -253,6 +263,7 @@ const ALLOY = {
 		new ChemicalElement('gold', 'Au'),
 		new ChemicalElement('iron', 'Fe'),
 		new ChemicalElement('lead', 'Pb'),
+		new ChemicalElement('mercury', 'Hg'),
 		new ChemicalElement('nickel', 'Ni'),
 		new ChemicalElement('silicon', 'Si'),
 		new ChemicalElement('silver', 'Ag'),
@@ -310,10 +321,10 @@ const ALLOY = {
 		const result = this.elem.result;
 		result.innerHTML = '';
 		// list all items in errors, up to 10 max!
-		for (let i = 0; i < Math.min(errors.length, 10); i++) {
+		for (let i = 0; i < Math.min(errors.length, 9); i++) {
 			const entry = document.createElement('div');
 			const name = errors[i][0].name;
-			entry.innerHTML = `#${i+1} (dist: ${Math.sqrt(errors[i][1])}): <a href="https://en.wikipedia.org/wiki/${name}">${name}</a>`;
+			entry.innerHTML = `#${i+1} (dist: ${Math.sqrt(errors[i][1]).toFixed(3)}): <span class="answer">${name}</span>`;
 			result.appendChild(entry);
 		}
 	},
