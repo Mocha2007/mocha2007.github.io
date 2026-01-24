@@ -1,0 +1,7 @@
+#slider_container {
+	columns: 4;
+}
+label {
+	break-inside: avoid;
+	display: block;
+}
