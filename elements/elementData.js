@@ -3925,7 +3925,6 @@ const elementData = [
 			bulkModulus: 370e9,
 			categories: {
 				nativeMetal: 0.5,
-				nobleMetal: 0.5,
 				preciousMetal: true,
 				refractoryMetal: true,
 				tech: 0.5,
