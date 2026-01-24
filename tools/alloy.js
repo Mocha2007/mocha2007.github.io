@@ -13,6 +13,14 @@ class Alloy {
 			let other_amt = other_composition[sym] || 0;
 			ssq += Math.pow(my_amt-other_amt, 2);
 		}
+		for (let sym in other_composition){
+			if (this.composition[sym]){
+				continue; // don't double-count
+			}
+			let my_amt = this.composition[sym] || 0;
+			let other_amt = other_composition[sym] || 0;
+			ssq += Math.pow(my_amt-other_amt, 2);
+		}
 		return ssq;
 	}
 }
