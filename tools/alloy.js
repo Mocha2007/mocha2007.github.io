@@ -72,14 +72,27 @@ const ALLOY = {
 			Ti: 0.005,
 		}),
 		new Alloy('Amalgam (Arquerite)', {
-			Hg: 0.87,
-			Ag: 0.13,
+			Ag: 0.87,
+			Hg: 0.13,
 		}),
 		new Alloy('Amalgam (Dental)', {
 			Hg: 0.5,
 			Ag: 0.28,
 			Sn: 0.14,
 			Zn: 0.08,
+		}),
+		new Alloy('Amalgam (Eugenite)', {
+			Ag: 0.84,
+			Hg: 0.16,
+		}),
+		new Alloy('Amalgam (Moschellandsbergite)', {
+			Ag: 0.4,
+			Hg: 0.6,
+		}),
+		new Alloy('Amalgam (Temagamite)', {
+			Te: 0.42,
+			Pd: 0.36,
+			Hg: 0.22,
 		}),
 		new Alloy('Ashtadhatu', {
 			Au: 1/8,
