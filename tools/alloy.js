@@ -36,75 +36,156 @@ class ChemicalElement {
 const ALLOY = {
 	/** @type {Alloy[]} */
 	alloys: [
-		new Alloy('billon', {
+		new Alloy('Billon', {
 			Cu: 0.6,
 			Ag: 0.4,
 		}),
-		new Alloy('bismuth bronze', {
+		new Alloy('Brass (Common)', {
+			Cu: 0.63,
+			Zn: 0.37,
+		}),
+		new Alloy('Brass (Dutch metal)', {
+			Cu: 0.865,
+			Zn: 0.135,
+		}),
+		new Alloy('Brass (Gilding metal)', {
+			Cu: 0.92,
+			Zn: 0.08,
+		}),
+		new Alloy('Brass (Gunmetal)', {
+			Cu: 0.88,
+			Zn: 0.1,
+			Sn: 0.02,
+		}),
+		new Alloy('Brass (Muntz metal)', {
+			Cu: 0.6,
+			Zn: 0.4,
+		}),
+		new Alloy('Brass (Naval)', {
+			Cu: 0.59,
+			Zn: 0.4,
+			Sn: 0.01,
+		}),
+		new Alloy('Brass (Pinchbeck)', {
+			Cu: 0.91,
+			Zn: 0.09,
+		}),
+		new Alloy('Bronze', {
+			Cu: 0.88,
+			Sn: 0.12,
+		}),
+		new Alloy('Bronze (Aluminum)', {
+			Cu: 0.92,
+			Al: 0.08,
+		}),
+		new Alloy('Bronze (Bismuth)', {
 			Cu: 0.86,
 			Sn: 0.12,
 			Bi: 0.02,
 		}),
-		new Alloy('brass', {
-			Cu: 2/3,
-			Zn: 1/3,
+		new Alloy('Bronze (White)', {
+			Cu: 0.55,
+			Sn: 0.3,
+			Zn: 0.15,
 		}),
-		new Alloy('bronze', {
-			Cu: 0.88,
-			Sn: 0.12,
+		new Alloy('Cast iron', {
+			Fe: 0.95,
+			C: 0.03,
+			Si: 0.02,
 		}),
-		new Alloy('electrum', {
+		new Alloy('Electrum', {
 			Ag: 0.5,
 			Au: 0.5,
 		}),
-		new Alloy('hepatizon', {
+		new Alloy('Ferrochrome', {
+			Fe: 0.4,
+			Cr: 0.6,
+		}),
+		new Alloy('Hepatizon', {
 			Cu: 0.84,
 			Ag: 0.08,
 			Au: 0.08,
 		}),
-		new Alloy('nickel silver', {
+		// https://oxfordre.com/planetaryscience/display/10.1093/acrefore/9780190647926.001.0001/acrefore-9780190647926-e-206
+		new Alloy('Meteoric iron', {
+			// typical composition
+			Fe: 0.91,
+			Ni: 0.08,
+			Co: 0.005,
+			C: 0.0004,
+			Cr: 20e-6,
+			Au: 1e-6,
+			Zn: 1e-6,
+			Si: 0.2e-6,
+			Sb: 0.05e-6,
+			Ag: 0.03e-6,
+		}),
+		new Alloy('Nichrome', {
+			Ni: 0.8,
+			Cr: 0.2,
+		}),
+		new Alloy('Nickel silver', {
 			Cu: 0.6,
 			Ni: 0.2,
 			Zn: 0.2,
 		}),
-		new Alloy('pewter (fine)', {
+		new Alloy('Nordic gold', {
+			Cu: 0.89,
+			Al: 0.05,
+			Zn: 0.05,
+			Sn: 0.01,
+		}),
+		new Alloy('Pewter (fine)', {
 			Sn: 0.99,
 			Cu: 0.01,
 		}),
-		new Alloy('pewter (lay)', {
+		new Alloy('Pewter (lay)', {
 			Sn: 0.85,
 			Pb: 0.15,
 		}),
-		new Alloy('pewter (modern)', {
+		new Alloy('Pewter (modern)', {
 			Sn: 0.905,
 			Sb: 0.075,
 			Cu: 0.02,
 		}),
-		new Alloy('pewter (trifle)', {
+		new Alloy('Pewter (trifle)', {
 			Sn: 0.95,
 			Pb: 0.04,
 			Cu: 0.01,
 		}),
-		new Alloy('pig iron', {
+		new Alloy('Pig iron', {
 			Fe: 0.9575,
 			C: 0.0425,
 		}),
-		new Alloy('rose gold', {
+		new Alloy('Purple gold', {
+			Au: 0.79,
+			Al: 0.21,
+		}),
+		new Alloy('Rose gold', {
 			Au: 0.75,
 			Cu: 0.25,
 		}),
-		new Alloy('steel', {
+		new Alloy('Rose\'s metal', {
+			Bi: 0.5,
+			Pb: 0.265,
+			Sn: 0.235,
+		}),
+		new Alloy('Steel', {
 			Fe: 0.9892,
 			C: 0.0108,
 		}),
-		new Alloy('steel (stainless)', {
+		new Alloy('Steel (stainless)', {
 			Fe: 0.8092,
 			Cr: 0.18,
 			C: 0.0108,
 		}),
-		new Alloy('sterling silver', {
+		new Alloy('Sterling silver', {
 			Ag: 0.925,
 			Cu: 0.075,
+		}),
+		new Alloy('White gold', {
+			Au: 0.9,
+			Ni: 0.1,
 		}),
 	],
 	config: {
@@ -122,6 +203,7 @@ const ALLOY = {
 	},
 	/** @type {ChemicalElement[]} */
 	elements: [
+		new ChemicalElement('aluminum', 'Al'),
 		new ChemicalElement('antimony', 'Sb'),
 		new ChemicalElement('bismuth', 'Bi'),
 		new ChemicalElement('carbon', 'C'),
@@ -131,6 +213,7 @@ const ALLOY = {
 		new ChemicalElement('iron', 'Fe'),
 		new ChemicalElement('lead', 'Pb'),
 		new ChemicalElement('nickel', 'Ni'),
+		new ChemicalElement('silicon', 'Si'),
 		new ChemicalElement('silver', 'Ag'),
 		new ChemicalElement('tin', 'Sn'),
 		new ChemicalElement('zinc', 'Zn'),
