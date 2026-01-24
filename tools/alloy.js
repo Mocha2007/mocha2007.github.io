@@ -91,6 +91,15 @@ const ALLOY = {
 			Fe: 1/8,
 			Hg: 1/8,
 		}),
+		new Alloy('Babbitt metal', {
+			Sn: 0.91,
+			Cu: 0.045,
+			Sb: 0.045,
+		}),
+		new Alloy('Beryllium Copper', {
+			Cu: 0.9825,
+			Be: 0.0175,
+		}),
 		new Alloy('Billon', {
 			Cu: 0.6,
 			Ag: 0.4,
@@ -102,6 +111,11 @@ const ALLOY = {
 		new Alloy('Brass (Common)', {
 			Cu: 0.63,
 			Zn: 0.37,
+		}),
+		new Alloy('Brass (Devarda\'s alloy)', {
+			Cu: 0.5,
+			Al: 0.45,
+			Zn: 0.05,
 		}),
 		new Alloy('Brass (Dutch metal)', {
 			Cu: 0.865,
@@ -235,6 +249,17 @@ const ALLOY = {
 			Fe: 0.0125,
 			Mn: 0.004
 		}),
+		new Alloy('Ductile Iron', {
+			Fe: 0.9338,
+			C: 0.0335,
+			Si: 0.0175,
+			Ni: 0.01,
+			Mn: 0.0025,
+			Cu: 0.001,
+			Mg: 0.0007,
+			Cr: 0.0007,
+			P: 0.0003,
+		}),
 		new Alloy('Electrum', {
 			Ag: 0.5,
 			Au: 0.5,
@@ -286,6 +311,11 @@ const ALLOY = {
 			Au: 0.9,
 			Ni: 0.1,
 		}),
+		new Alloy('Grey Iron', {
+			Fe: 0.9475,
+			C: 0.0325,
+			Si: 0.02,
+		}),
 		new Alloy('Hepatizon', {
 			Cu: 0.84,
 			Ag: 0.08,
@@ -304,6 +334,12 @@ const ALLOY = {
 			Co: 0.005,
 			P: 0.002,
 			C: 0.0004,
+		}),
+		new Alloy('Mischmetal', {
+			Ce: 0.55,
+			La: 0.25,
+			Nd: 0.15,
+			Fe: 0.05,
 		}),
 		new Alloy('Monel', {
 			Ni: 0.665,
@@ -372,6 +408,10 @@ const ALLOY = {
 			Cu: 0.75,
 			Ag: 0.25,
 		}),
+		new Alloy('Sodium-Potassium alloy (Eutectic)', {
+			K: 0.77,
+			Na: 0.23,
+		}),
 		new Alloy('Steel', {
 			Fe: 0.9892,
 			C: 0.0108,
@@ -385,10 +425,66 @@ const ALLOY = {
 			S: 0.0003,
 			P: 0.0003,
 		}),
+		new Alloy('Steel (High-speed)', {
+			// T1
+			Fe: 0.75725,
+			W: 0.18,
+			Cr: 0.04,
+			V: 0.01,
+			C: 0.00725,
+			Si: 0.003,
+			Mn: 0.0025,
+		}),
+		new Alloy('Steel (Maraging)', {
+			// Grade 200
+			Fe: 0.6995,
+			Ni: 0.18,
+			Co: 0.085,
+			Mo: 0.0325,
+			Ti: 0.002,
+			Al: 0.001,
+		}),
+		new Alloy('Steel (Razorblade)', {
+			Fe: 0.8615,
+			Cr: 0.1325,
+			C: 0.006,
+		}),
+		new Alloy('Steel (Silver)', {
+			Fe: 0.97818,
+			C: 0.0113,
+			Cr: 0.0043,
+			Mn: 0.0037,
+			Si: 0.0022,
+			S: 0.00018,
+			P: 0.00014,
+		}),
 		new Alloy('Steel (Stainless)', {
 			Fe: 0.8092,
 			Cr: 0.18,
 			C: 0.0108,
+		}),
+		new Alloy('Steel (Tamahagane)', {
+			Fe: 0.994,
+			C: 0.006,
+		}),
+		new Alloy('Steel (Weathering)', {
+			// ASTM A242
+			Fe: 0.9697,
+			Cr: 0.00875,
+			Ni: 0.0065,
+			Si: 0.005,
+			Cu: 0.004,
+			Mn: 0.0035,
+			C: 0.0012,
+			P: 0.00105,
+			S: 0.0003,
+		}),
+		new Alloy('Steel (Wootz)', {
+			Fe: 0.9811,
+			C: 0.0134 + 0.0031,
+			S: 0.0017,
+			Si: 0.0004,
+			As: 0.0003,
 		}),
 		new Alloy('Silver (Brittania)', {
 			Ag: 23/24,
@@ -414,6 +510,14 @@ const ALLOY = {
 			Cu: 0.8,
 			Ag: 0.15,
 			Au: 0.05,
+		}),
+		new Alloy('Wrought Iron', {
+			Fe: 0.995,
+			C: 0.0015,
+			P: 0.00125,
+			Si: 0.0011,
+			S: 0.0006,
+			Mn: 0.00055,
 		}),
 	],
 	config: {
