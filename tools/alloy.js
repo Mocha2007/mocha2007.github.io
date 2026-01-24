@@ -127,6 +127,17 @@ const ALLOY = {
 			Zn: 0.4,
 			Sn: 0.01,
 		}),
+		new Alloy('Brass (Nickel silver)', {
+			Cu: 0.6,
+			Ni: 0.2,
+			Zn: 0.2,
+		}),
+		new Alloy('Brass (Nordic gold)', {
+			Cu: 0.89,
+			Al: 0.05,
+			Zn: 0.05,
+			Sn: 0.01,
+		}),
 		new Alloy('Brass (Pinchbeck)', {
 			Cu: 0.91,
 			Zn: 0.09,
@@ -153,22 +164,6 @@ const ALLOY = {
 			Zn: 0.06,
 			Sn: 0.02,
 			Pb: 0.01,
-		}),
-		new Alloy('Bronze (Hepatizon)', {
-			Cu: 0.84,
-			Ag: 0.08,
-			Au: 0.08,
-		}),
-		new Alloy('Bronze (Nickel silver)', {
-			Cu: 0.6,
-			Ni: 0.2,
-			Zn: 0.2,
-		}),
-		new Alloy('Bronze (Nordic gold)', {
-			Cu: 0.89,
-			Al: 0.05,
-			Zn: 0.05,
-			Sn: 0.01,
 		}),
 		new Alloy('Bronze (Orichalcum)', {
 			Cu: 0.775,
@@ -262,6 +257,11 @@ const ALLOY = {
 		new Alloy('Gold (White)', {
 			Au: 0.9,
 			Ni: 0.1,
+		}),
+		new Alloy('Hepatizon', {
+			Cu: 0.84,
+			Ag: 0.08,
+			Au: 0.08,
 		}),
 		new Alloy('Melchior', {
 			Cu: 0.825,
