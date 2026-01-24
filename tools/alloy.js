@@ -46,6 +46,16 @@ const ALLOY = {
 			Sn: 0.14,
 			Zn: 0.08,
 		}),
+		new Alloy('Ashtadhatu', {
+			Au: 1/8,
+			Ag: 1/8,
+			Cu: 1/8,
+			Pb: 1/8,
+			Zn: 1/8,
+			Sn: 1/8,
+			Fe: 1/8,
+			Hg: 1/8,
+		}),
 		new Alloy('Billon', {
 			Cu: 0.6,
 			Ag: 0.4,
@@ -93,6 +103,14 @@ const ALLOY = {
 			Sn: 0.12,
 			Bi: 0.02,
 		}),
+		new Alloy('Bronze (Orichalcum)', {
+			Cu: 0.775,
+			Sn: 0.175,
+			// 5% left, contains "small % ni, pb, fe"
+			Ni: 0.05/3,
+			Pb: 0.05/3,
+			Fe: 0.05/3,
+		}),
 		new Alloy('Bronze (White)', {
 			Cu: 0.55,
 			Sn: 0.3,
@@ -135,17 +153,44 @@ const ALLOY = {
 			Fe: 0.4,
 			Cr: 0.6,
 		}),
+		new Alloy('Gold (black)', {
+			Au: 0.75,
+			Co: 0.25,
+		}),
+		new Alloy('Gold (blue)', {
+			In: 0.54,
+			Au: 0.46,
+		}),
 		new Alloy('Gold (crown)', {
 			Au: 11/12,
 			Cu: 1/12,
+		}),
+		new Alloy('Gold (green)', {
+			Au: 0.785,
+			Ag: 0.215,
+		}),
+		new Alloy('Gold (pink)', {
+			Au: 0.75,
+			Cu: 0.2,
+			Ag: 0.05,
 		}),
 		new Alloy('Gold (purple)', {
 			Au: 0.79,
 			Al: 0.21,
 		}),
-		new Alloy('Gold (rose)', {
+		new Alloy('Gold (red)', {
 			Au: 0.75,
 			Cu: 0.25,
+		}),
+		new Alloy('Gold (rose)', {
+			Au: 0.75,
+			Cu: 0.2225,
+			Ag: 0.0275,
+		}),
+		new Alloy('Gold (spangold)', {
+			Au: 0.76,
+			Cu: 0.18,
+			Al: 0.06,
 		}),
 		new Alloy('Gold (white)', {
 			Au: 0.9,
@@ -155,6 +200,10 @@ const ALLOY = {
 			Cu: 0.84,
 			Ag: 0.08,
 			Au: 0.08,
+		}),
+		new Alloy('Melchior', {
+			Cu: 0.825,
+			Ni: 0.175,
 		}),
 		// https://oxfordre.com/planetaryscience/display/10.1093/acrefore/9780190647926.001.0001/acrefore-9780190647926-e-206
 		new Alloy('Meteoric iron', {
@@ -237,6 +286,23 @@ const ALLOY = {
 		new Alloy('Silver (sterling)', {
 			Ag: 0.925,
 			Cu: 0.075,
+		}),
+		new Alloy('Solder (lead)', {
+			// typical
+			Sn: 0.6,
+			Pb: 0.4,
+		}),
+		new Alloy('Solder (lead-free)', {
+			// typical
+			Ag: 0.64,
+			Sn: 0.18,
+			Cu: 0.14,
+			Zn: 0.04,
+		}),
+		new Alloy('Tumbaga', {
+			Cu: 0.8,
+			Ag: 0.15,
+			Au: 0.05,
 		}),
 	],
 	config: {
