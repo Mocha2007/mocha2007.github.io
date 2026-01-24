@@ -112,6 +112,10 @@ const ALLOY = {
 			Cu: 0.92,
 			Al: 0.08,
 		}),
+		new Alloy('Bronze (Arsenical)', {
+			Cu: 0.92,
+			As: 0.08,
+		}),
 		new Alloy('Bronze (Bismuth)', {
 			Cu: 0.86,
 			Sn: 0.12,
