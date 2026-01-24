@@ -154,6 +154,22 @@ const ALLOY = {
 			Sn: 0.02,
 			Pb: 0.01,
 		}),
+		new Alloy('Bronze (Hepatizon)', {
+			Cu: 0.84,
+			Ag: 0.08,
+			Au: 0.08,
+		}),
+		new Alloy('Bronze (Nickel silver)', {
+			Cu: 0.6,
+			Ni: 0.2,
+			Zn: 0.2,
+		}),
+		new Alloy('Bronze (Nordic gold)', {
+			Cu: 0.89,
+			Al: 0.05,
+			Zn: 0.05,
+			Sn: 0.01,
+		}),
 		new Alloy('Bronze (Orichalcum)', {
 			Cu: 0.775,
 			Sn: 0.175,
@@ -247,11 +263,6 @@ const ALLOY = {
 			Au: 0.9,
 			Ni: 0.1,
 		}),
-		new Alloy('Hepatizon', {
-			Cu: 0.84,
-			Ag: 0.08,
-			Au: 0.08,
-		}),
 		new Alloy('Melchior', {
 			Cu: 0.825,
 			Ni: 0.175,
@@ -290,17 +301,6 @@ const ALLOY = {
 		new Alloy('Nichrome', {
 			Ni: 0.8,
 			Cr: 0.2,
-		}),
-		new Alloy('Nickel silver', {
-			Cu: 0.6,
-			Ni: 0.2,
-			Zn: 0.2,
-		}),
-		new Alloy('Nordic gold', {
-			Cu: 0.89,
-			Al: 0.05,
-			Zn: 0.05,
-			Sn: 0.01,
 		}),
 		new Alloy('Pewter (Brittania)', {
 			Sn: 0.925,
