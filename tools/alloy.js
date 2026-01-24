@@ -290,13 +290,23 @@ const ALLOY = {
 			In: 0.215,
 			Sn: 0.1,
 		}),
+		// https://web.archive.org/web/20180730063422/https://link.springer.com/content/pdf/10.1007/BF03214796.pdf
 		new Alloy('Gold (Black)', {
 			Au: 0.75,
 			Co: 0.25,
 		}),
-		new Alloy('Gold (Blue)', {
+		new Alloy('Gold (Blue, Gallium)', {
+			Au: 0.585,
+			Ga: 0.415,
+		}),
+		new Alloy('Gold (Blue, Indium)', {
 			In: 0.54,
 			Au: 0.46,
+		}),
+		new Alloy('Gold (Blue, Iron)', {
+			Au: 0.75,
+			Fe: 0.244,
+			Ni: 0.006,
 		}),
 		new Alloy('Gold (Crown)', {
 			Au: 11/12,
