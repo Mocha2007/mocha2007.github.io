@@ -237,16 +237,22 @@ const ALLOY = {
 			N: 0.017,
 		}),
 		new Alloy('Coal (Sub-bituminous)', {
-			C: 0.4,
-			// "15-30% inherent moisture" -> ~22.5% water -> 
-			O: 0.2,
-			H: 0.025,
-			S: 0.005,
+			// based on https://www.researchgate.net/figure/Characteristics-of-petcoke-and-sub-bituminous-coal_tbl1_262849791
+			C: 0.656,
+			O: 0.2115,
+			H: 0.0453,
+			N: 0.0083,
+			S: 0.0018,
+			Cl: 0.001,
 		}),
 		new Alloy('Coal (Lignite)', {
 			C: 0.3,
-			// "up to 75% inherent moisture" -> appx.
-			O: 0.35,
+			// based on Obomkpa here:
+			// https://www.researchgate.net/figure/EDX-Elemental-Composition-of-Nigerian-Lignite-Coals_tbl2_338124784
+			// which seems typical?
+			O: 0.45,
+			Si: 0.15,
+			Al: 0.05,
 			H: 0.05,
 		}),
 		new Alloy('Cupronickel', {
