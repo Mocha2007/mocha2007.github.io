@@ -219,6 +219,12 @@ const ALLOY = {
 			C: 0.03,
 			Si: 0.02,
 		}),
+		new Alloy('Cerrosafe', {
+			Bi: 0.425,
+			Pb: 0.377,
+			Sn: 0.113,
+			Cd: 0.085,
+		}),
 		new Alloy('Coal (Anthracite)', {
 			C: 0.915,
 			S: 0.005,
@@ -267,6 +273,16 @@ const ALLOY = {
 		new Alloy('Ferrochrome', {
 			Fe: 0.4,
 			Cr: 0.6,
+		}),
+		new Alloy('Field\'s metal', {
+			In: 0.51,
+			Bi: 0.325,
+			Sn: 0.165,
+		}),
+		new Alloy('Galinstan', {
+			Ga: 0.685,
+			In: 0.215,
+			Sn: 0.1,
 		}),
 		new Alloy('Gold (Black)', {
 			Au: 0.75,
@@ -389,6 +405,12 @@ const ALLOY = {
 			Fe: 0.9575,
 			C: 0.0425,
 		}),
+		new Alloy('Pot metal', {
+			// common late 19th c. formulation:
+			Cu: 0.67,
+			Pb: 0.29,
+			Sb: 0.04,
+		}),
 		new Alloy('Queen\'s metal', {
 			Sn: 9/12,
 			Sb: 1/12,
@@ -510,6 +532,12 @@ const ALLOY = {
 			Cu: 0.8,
 			Ag: 0.15,
 			Au: 0.05,
+		}),
+		new Alloy('Wood\'s metal', {
+			Bi: 0.5,
+			Pb: 0.267,
+			Sn: 0.133,
+			Cd: 0.1,
 		}),
 		new Alloy('Wrought Iron', {
 			Fe: 0.995,
