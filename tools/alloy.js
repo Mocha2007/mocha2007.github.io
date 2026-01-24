@@ -117,6 +117,11 @@ const ALLOY = {
 			Cu: 0.6,
 			Ag: 0.4,
 		}),
+		new Alloy('Brass (Admiralty)', {
+			Cu: 0.69,
+			Zn: 0.3,
+			Sn: 0.01,
+		}),
 		new Alloy('Brass (Cartridge)', {
 			Cu: 0.7,
 			Zn: 0.3,
