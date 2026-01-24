@@ -93,6 +93,30 @@ const ALLOY = {
 			C: 0.03,
 			Si: 0.02,
 		}),
+		new Alloy('Coal (anthracite)', {
+			C: 0.915,
+			S: 0.005,
+		}),
+		new Alloy('Coal (bituminous)', {
+			C: 0.844,
+			O: 0.067,
+			H: 0.054,
+			S: 0.018,
+			N: 0.017,
+		}),
+		new Alloy('Coal (sub-bituminous)', {
+			C: 0.4,
+			// "15-30% inherent moisture" -> ~22.5% water -> 
+			O: 0.2,
+			H: 0.025,
+			S: 0.005,
+		}),
+		new Alloy('Coal (lignite)', {
+			C: 0.3,
+			// "up to 75% inherent moisture" -> appx.
+			O: 0.35,
+			H: 0.05,
+		}),
 		new Alloy('Electrum', {
 			Ag: 0.5,
 			Au: 0.5,
@@ -100,6 +124,22 @@ const ALLOY = {
 		new Alloy('Ferrochrome', {
 			Fe: 0.4,
 			Cr: 0.6,
+		}),
+		new Alloy('Gold (crown)', {
+			Au: 11/12,
+			Cu: 1/12,
+		}),
+		new Alloy('Gold (purple)', {
+			Au: 0.79,
+			Al: 0.21,
+		}),
+		new Alloy('Gold (rose)', {
+			Au: 0.75,
+			Cu: 0.25,
+		}),
+		new Alloy('Gold (white)', {
+			Au: 0.9,
+			Ni: 0.1,
 		}),
 		new Alloy('Hepatizon', {
 			Cu: 0.84,
@@ -135,6 +175,11 @@ const ALLOY = {
 			Zn: 0.05,
 			Sn: 0.01,
 		}),
+		new Alloy('Pewter (brittania)', {
+			Sn: 0.925,
+			Sb: 0.055,
+			Cu: 0.02,
+		}),
 		new Alloy('Pewter (fine)', {
 			Sn: 0.99,
 			Cu: 0.01,
@@ -157,18 +202,14 @@ const ALLOY = {
 			Fe: 0.9575,
 			C: 0.0425,
 		}),
-		new Alloy('Purple gold', {
-			Au: 0.79,
-			Al: 0.21,
-		}),
-		new Alloy('Rose gold', {
-			Au: 0.75,
-			Cu: 0.25,
-		}),
 		new Alloy('Rose\'s metal', {
 			Bi: 0.5,
 			Pb: 0.265,
 			Sn: 0.235,
+		}),
+		new Alloy('Shibuichi', {
+			Cu: 0.75,
+			Ag: 0.25,
 		}),
 		new Alloy('Steel', {
 			Fe: 0.9892,
@@ -179,13 +220,13 @@ const ALLOY = {
 			Cr: 0.18,
 			C: 0.0108,
 		}),
-		new Alloy('Sterling silver', {
+		new Alloy('Silver (brittania)', {
+			Ag: 23/24,
+			Cu: 1/24,
+		}),
+		new Alloy('Silver (sterling)', {
 			Ag: 0.925,
 			Cu: 0.075,
-		}),
-		new Alloy('White gold', {
-			Au: 0.9,
-			Ni: 0.1,
 		}),
 	],
 	config: {
