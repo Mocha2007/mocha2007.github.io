@@ -77,6 +77,12 @@ const ALLOY = {
 			Zn: 0.1,
 			Sn: 0.02,
 		}),
+		new Alloy('Brass (Manganese)', {
+			Cu: 0.77,
+			Zn: 0.12,
+			Mn: 0.07,
+			Ni: 0.04,
+		}),
 		new Alloy('Brass (Muntz metal)', {
 			Cu: 0.6,
 			Zn: 0.4,
