@@ -95,6 +95,10 @@ const ALLOY = {
 			Cu: 0.6,
 			Ag: 0.4,
 		}),
+		new Alloy('Brass (Cartridge)', {
+			Cu: 0.7,
+			Zn: 0.3,
+		}),
 		new Alloy('Brass (Common)', {
 			Cu: 0.63,
 			Zn: 0.37,
@@ -154,6 +158,10 @@ const ALLOY = {
 			Cu: 0.92,
 			As: 0.08,
 		}),
+		new Alloy('Bronze (Bell)', {
+			Cu: 0.78,
+			Sn: 0.22,
+		}),
 		new Alloy('Bronze (Bismuth)', {
 			Cu: 0.86,
 			Sn: 0.12,
@@ -172,6 +180,20 @@ const ALLOY = {
 			Ni: 0.05/3,
 			Pb: 0.05/3,
 			Fe: 0.05/3,
+		}),
+		new Alloy('Bronze (Phosphor)', {
+			Cu: 0.9407,
+			Sn: 0.0575,
+			P: 0.0018,
+		}),
+		new Alloy('Bronze (Silicon)', {
+			Cu: 0.8,
+			Zn: 0.14,
+			Si: 0.04,
+		}),
+		new Alloy('Bronze (Speculum metal)', {
+			Cu: 2/3,
+			Sn: 1/3,
 		}),
 		new Alloy('Bronze (White)', {
 			Cu: 0.55,
@@ -206,6 +228,12 @@ const ALLOY = {
 			// "up to 75% inherent moisture" -> appx.
 			O: 0.35,
 			H: 0.05,
+		}),
+		new Alloy('Cupronickel', {
+			Cu: 0.8835,
+			Ni: 0.1,
+			Fe: 0.0125,
+			Mn: 0.004
 		}),
 		new Alloy('Electrum', {
 			Ag: 0.5,
@@ -272,14 +300,10 @@ const ALLOY = {
 			// typical composition
 			Fe: 0.91,
 			Ni: 0.08,
+			S: 0.007,
 			Co: 0.005,
+			P: 0.002,
 			C: 0.0004,
-			Cr: 20e-6,
-			Au: 1e-6,
-			Zn: 1e-6,
-			Si: 0.2e-6,
-			Sb: 0.05e-6,
-			Ag: 0.03e-6,
 		}),
 		new Alloy('Monel', {
 			Ni: 0.665,
