@@ -846,7 +846,7 @@ const ALLOY = {
 		new AlloyCategory('High-entropy alloy', c => {let s = 0; for (let e in c){if (0.05 <= c[e]) s+=1;} return 5 <= s;}),
 		new AlloyCategory('Pewter', c => 0.5 < c.Sn),
 		new AlloyCategory('Steel', c => 0.5 < c.Fe && 0.0002 <= c.C && c.C <= 0.0214),
-		new AlloyCategory('Stainless Steel', c => 0.5 < c.Fe && 0.105 <= c.Cr),
+		new AlloyCategory('Stainless Steel', c => 0.5 < c.Fe && 0.0002 <= c.C && c.C <= 0.0214 && 0.105 <= c.Cr),
 		new AlloyCategory('Cast Iron', c => 0.5 < c.Fe && 0.0214 < c.C && c.C <= 0.0667),
 	],
 	config: {
