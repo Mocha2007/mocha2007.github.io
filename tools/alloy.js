@@ -38,7 +38,7 @@ class Alloy {
 		for (let sym in this.composition){
 			let my_amt = this.composition[sym] || 0;
 			let other_amt = other_composition[sym] || 0;
-			ssq += Math.pow(my_amt-other_amt, ALLOY.config.exponent);
+			ssq += Math.pow(Math.abs(my_amt-other_amt), ALLOY.config.exponent);
 		}
 		for (let sym in other_composition){
 			if (this.composition[sym]){
@@ -46,7 +46,7 @@ class Alloy {
 			}
 			let my_amt = this.composition[sym] || 0;
 			let other_amt = other_composition[sym] || 0;
-			ssq += Math.pow(my_amt-other_amt, ALLOY.config.exponent);
+			ssq += Math.pow(Math.abs(my_amt-other_amt), ALLOY.config.exponent);
 		}
 		return ssq;
 	}
