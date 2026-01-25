@@ -999,6 +999,17 @@ const ALLOY = {
 				f: c => {let s = (c.Cu||0)+(c.Ag||0)+(c.Au||0);return {var0: c.Cu/s, var1: c.Ag/s};},
 			})
 		),
+		new AlloyCategory('Al-Fe-Si', c => 0.5 <= (c.Al||0) + (c.Fe||0) + (c.Si||0),
+			new PhaseDiagram({
+				src: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Al-Fe-Si_1.jpg',
+				type: 'ternary',
+				x_min: 0.133124287,
+				x_max: 4.651368307,
+				y_min: -3.753225805,
+				y_max: 0.827419355,
+				f: c => {let s = (c.Si||0)+(c.Fe||0)+(c.Al||0);return {var0: c.Si/s, var1: c.Fe/s};},
+			})
+		),
 		new AlloyCategory('Cr-Fe-Ni', c => 0.5 <= (c.Cr||0) + (c.Fe||0) + (c.Ni||0),
 			new PhaseDiagram({
 				src: 'https://upload.wikimedia.org/wikipedia/commons/d/da/Fe-Cr-Ni-solidus-phase-diagram.svg',
