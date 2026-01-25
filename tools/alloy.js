@@ -1021,6 +1021,18 @@ const ALLOY = {
 				f: c => {let s = (c.Si||0)+(c.Fe||0)+(c.Al||0);return {var0: c.Si/s, var1: c.Fe/s};},
 			})
 		),
+		// TODO - broken?!
+		new AlloyCategory('Au-Bi-Te', c => 0.5 <= (c.Au||0) + (c.Bi||0) + (c.Te||0),
+			new PhaseDiagram({
+				src: 'https://upload.wikimedia.org/wikipedia/commons/9/90/Ternary_Diagram_Au-Bi-Te.png',
+				type: 'ternary',
+				x_min: -0.15,
+				x_max: 1.15,
+				y_min: 0.10,
+				y_max: 1.45,
+				f: c => {let s = (c.Au||0)+(c.Te||0)+(c.Bi||0);return {var0: c.Au/s, var1: c.Te/s};},
+			})
+		),
 		new AlloyCategory('Bi-Pb-Sn', c => 0.5 <= (c.Pb||0) + (c.Bi||0) + (c.Sn||0),
 			new PhaseDiagram({
 				src: 'https://upload.wikimedia.org/wikipedia/commons/0/0b/Britannica_Alloys_Text_Figure_9.jpg',
