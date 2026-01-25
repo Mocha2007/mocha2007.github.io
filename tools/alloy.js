@@ -6,6 +6,14 @@ class Alloy {
 		/** elem name -> fraction */
 		this.composition = composition;
 	}
+	/** @returns {HTMLSpanElement} button to set sliders to this alloy */
+	get gotoElem(){
+		const elem = document.createElement('span');
+		elem.classList.add('button');
+		elem.innerHTML = '&rarr;';
+		elem.onclick = () => ALLOY.setSliders(this.composition);
+		return elem;
+	}
 	get shortDescElem(){
 		const list = [];
 		for (let sym in this.composition){
@@ -57,6 +65,9 @@ class ChemicalElement {
 	}
 	get slider_id(){
 		return `slider-${this.sym}`;
+	}
+	updateSliderNumber(){
+		document.getElementById(`${this.slider_id}-n`).innerHTML = document.getElementById(this.slider_id).value;
 	}
 }
 
@@ -656,7 +667,7 @@ const ALLOY = {
 			label.innerHTML = `<div><a href="https://en.wikipedia.org/wiki/${e.name}">${e.name}</a> (${e.sym}) = <span id="${e.slider_id}-n">${slider.value}</span>%</div>`;
 			label.onmousemove = label.onclick = () => {
 				// update the n for this slider
-				document.getElementById(`${e.slider_id}-n`).innerHTML = document.getElementById(e.slider_id).value;
+				e.updateSliderNumber();
 				// update result
 				this.refresh();
 			};
@@ -688,12 +699,22 @@ const ALLOY = {
 		// list all items in errors, up to 10 max!
 		for (let i = 0; i < Math.min(errors.length, 9); i++) {
 			const entry = document.createElement('div');
-			const name = errors[i][0].name;
-			entry.innerHTML = `#${i+1} (dist: ${Math.sqrt(errors[i][1]).toFixed(3)}): <span class="answer">${name}</span>`;
-			entry.appendChild(errors[i][0].shortDescElem);
+			const alloy = errors[i][0];
+			entry.innerHTML = `#${i+1} (dist: ${Math.sqrt(errors[i][1]).toFixed(3)}): <span class="answer">${alloy.name}</span>`;
+			entry.appendChild(alloy.gotoElem);
+			entry.appendChild(alloy.shortDescElem);
 			result.appendChild(entry);
 		}
 	},
+	setSliders(composition = {}){
+		this.elements.forEach(e => {
+			const slider = document.getElementById(e.slider_id);
+			slider.value = composition[e.sym]*this.config.slider_notches || 0;
+			// refresh slider numbers
+			e.updateSliderNumber();
+		});
+		this.refresh();
+	}
 };
 
 ALLOY.init();
