@@ -117,6 +117,11 @@ const ALLOY = {
 			Cu: 0.6,
 			Ag: 0.4,
 		}),
+		new Alloy('Billon ("War Nickel")', {
+			Cu: 0.56,
+			Ag: 0.35,
+			Mn: 0.09,
+		}),
 		new Alloy('Brass (Admiralty)', {
 			Cu: 0.69,
 			Zn: 0.3,
@@ -571,11 +576,6 @@ const ALLOY = {
 			Cu: 0.8,
 			Ag: 0.15,
 			Au: 0.05,
-		}),
-		new Alloy('"War Nickel" alloy', {
-			Cu: 0.56,
-			Ag: 0.35,
-			Mn: 0.09,
 		}),
 		new Alloy('Wood\'s metal', {
 			Bi: 0.5,
