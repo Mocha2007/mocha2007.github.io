@@ -481,6 +481,16 @@ const ALLOY = {
 			Ag: 0.08,
 			Au: 0.08,
 		}),
+		new Alloy('Iconel', {
+			// 718
+			Ni: 0.525,
+			Cr: 0.19,
+			Fe: 0.18925,
+			Nb: 0.05125,
+			Mo: 0.0305,
+			Ti: 0.009,
+			Al: 0.005,
+		}),
 		new Alloy('Invar', {
 			Fe: 0.64,
 			Ni: 0.36,
