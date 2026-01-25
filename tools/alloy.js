@@ -203,6 +203,11 @@ const ALLOY = {
 			Cu: 0.92,
 			Al: 0.08,
 		}),
+		new Alloy('Bronze (Architectural)', {
+			Cu: 0.57,
+			Zn: 0.4,
+			Pb: 0.03,
+		}),
 		new Alloy('Bronze (Arsenical)', {
 			Cu: 0.92,
 			As: 0.08,
@@ -428,6 +433,20 @@ const ALLOY = {
 		new Alloy('Nichrome', {
 			Ni: 0.8,
 			Cr: 0.2,
+		}),
+		new Alloy('Panchaloha', {
+			Au: 1/5,
+			Ag: 1/5,
+			Cu: 1/5,
+			Zn: 1/5,
+			Fe: 1/5,
+		}),
+		new Alloy('Cantor alloy', {
+			Cr: 51.996/280.405,
+			Mn: 54.938/280.405,
+			Fe: 55.845/280.405,
+			Co: 58.933/280.405,
+			Ni: 58.693/280.405,
 		}),
 		new Alloy('Pewter (Brittania)', {
 			Sn: 0.925,
