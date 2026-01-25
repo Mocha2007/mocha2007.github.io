@@ -247,6 +247,11 @@ const ALLOY = {
 			Sn: 0.02,
 			Pb: 0.01,
 		}),
+		new Alloy('Bronze (Oilite)', {
+			Cu: 0.89,
+			Sn: 0.1,
+			Fe: 0.01,
+		}),
 		new Alloy('Bronze (Orichalcum)', {
 			Cu: 0.775,
 			Sn: 0.175,
@@ -473,6 +478,18 @@ const ALLOY = {
 		new Alloy('Invar', {
 			Fe: 0.64,
 			Ni: 0.36,
+		}),
+		new Alloy('Kanthal', {
+			Fe: 0.6925,
+			Cr: 0.25,
+			Al: 0.0575,
+		}),
+		new Alloy('Kovar', {
+			Fe: 0.535,
+			Ni: 0.29,
+			Co: 0.17,
+			Mn: 0.003,
+			Si: 0.002,
 		}),
 		new Alloy('Melchior', {
 			Cu: 0.825,
