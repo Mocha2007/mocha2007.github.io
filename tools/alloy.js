@@ -762,6 +762,15 @@ const ALLOY = {
 			// my impression is that this is a "medium" carbon amt
 			C: 0.0006,
 		}),
+		new Alloy('Steel (Stainless, Marine)', {
+			// https://en.wikipedia.org/wiki/SAE_316L_stainless_steel
+			Fe: 0.6944,
+			Cr: 0.17,
+			Ni: 0.11,
+			Mo: 0.025,
+			// based on SAE 304
+			C: 0.0006,
+		}),
 		new Alloy('Steel (Tamahagane)', {
 			Fe: 0.994,
 			C: 0.006,
