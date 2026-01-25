@@ -999,6 +999,17 @@ const ALLOY = {
 				f: c => {let s = (c.Cu||0)+(c.Ag||0)+(c.Au||0);return {var0: c.Cu/s, var1: c.Ag/s};},
 			})
 		),
+		new AlloyCategory('Ag-Cu-Sn', c => 0.5 <= (c.Ag||0) + (c.Sn||0) + (c.Cu||0),
+			new PhaseDiagram({
+				src: 'https://upload.wikimedia.org/wikipedia/commons/9/99/Sn-Ag-Cu-phase-diagram-greek.svg',
+				type: 'ternary',
+				x_min: 0.175,
+				x_max: 0.844010417,
+				y_min: 0.213802083,
+				y_max: 0.794791667,
+				f: c => {let s = (c.Cu||0)+(c.Sn||0)+(c.Ag||0);return {var0: c.Cu/s, var1: c.Sn/s};},
+			})
+		),
 		new AlloyCategory('Al-Fe-Si', c => 0.5 <= (c.Al||0) + (c.Fe||0) + (c.Si||0),
 			new PhaseDiagram({
 				src: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Al-Fe-Si_1.jpg',
