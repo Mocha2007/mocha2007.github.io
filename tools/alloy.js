@@ -394,10 +394,12 @@ const ALLOY = {
 			H: 0.05,
 		}),
 		new Alloy('Cupronickel', {
-			Cu: 0.8835,
+			// https://en.wikipedia.org/wiki/Cupronickel#Physical_and_mechanical_properties
+			// 90-10
+			Cu: 0.876,
 			Ni: 0.1,
-			Fe: 0.0125,
-			Mn: 0.004
+			Fe: 0.014,
+			Mn: 0.01
 		}),
 		new Alloy('Duralumin', {
 			Al: 0.9355,
