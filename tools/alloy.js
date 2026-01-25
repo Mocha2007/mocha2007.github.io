@@ -52,6 +52,22 @@ class Alloy {
 	}
 }
 
+class AlloyCategory {
+	/** @param {string} name */
+	constructor(name, filter){
+		/** @type {string} */
+		this.name = name;
+		this.filter = filter;
+	}
+	get matchElem(){
+		// todo
+		const elem = document.createElement('span');
+		elem.classList.add('catMatch');
+		elem.innerHTML = this.name;
+		return elem;
+	}
+}
+
 class ChemicalElement {
 	/**
 	 * @param {string} name 
@@ -628,18 +644,21 @@ const ALLOY = {
 			Mn: 0.00055,
 		}),
 	],
+	categories: [
+		new AlloyCategory('Bronze', c => 0.5 < c.Cu && 0 < c.Sn),
+	],
 	config: {
 		slider_notches: 100,
 	},
 	elem: {
+		/** @type {HTMLDivElement} */
+		categories: undefined,
 		/** @returns {HTMLDivElement} */
 		get container(){
 			return document.getElementById('alloy_container');
 		},
-		/** @returns {HTMLDivElement} */
-		get result(){
-			return document.getElementById('result');
-		},
+		/** @type {HTMLDivElement} */
+		result: undefined,
 	},
 	/** @type {ChemicalElement[]} */
 	elements: [
@@ -667,13 +686,25 @@ const ALLOY = {
 		// ok now continue
 		this.initSliders();
 		this.initResult();
+		this.initCategories();
+		this.refresh();
 		console.info('alloy.js initialized');
 	},
+	initCategories(){
+		const cat_header = document.createElement('h2');
+		cat_header.innerHTML = 'Categories';
+		this.elem.container.appendChild(cat_header);
+		const category_container = this.elem.categories = document.createElement('div');
+		category_container.id = 'categoryContainer';
+		this.elem.container.appendChild(category_container);
+	},
 	initResult(){
-		const result = document.createElement('div');
+		const result_header = document.createElement('h2');
+		result_header.innerHTML = 'Matches';
+		this.elem.container.appendChild(result_header);
+		const result = this.elem.result = document.createElement('div');
 		result.id = 'result';
 		this.elem.container.appendChild(result);
-		this.refresh();
 	},
 	initSliders(){
 		const slider_container = document.createElement('div');
@@ -730,6 +761,13 @@ const ALLOY = {
 			entry.appendChild(alloy.shortDescElem);
 			result.appendChild(entry);
 		}
+		// refresh categories
+		this.elem.categories.innerHTML = '';
+		this.categories.forEach(cat => {
+			if (cat.filter(composition)){
+				this.elem.categories.appendChild(cat.matchElem);
+			}
+		});
 	},
 	setSliders(composition = {}){
 		this.elements.forEach(e => {
