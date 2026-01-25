@@ -135,6 +135,12 @@ const ALLOY = {
 			Al: 0.45,
 			Zn: 0.05,
 		}),
+		new Alloy('Brass (Dollar coin cladding alloy)', {
+			Cu: 0.77,
+			Zn: 0.12,
+			Mn: 0.07,
+			Ni: 0.04,
+		}),
 		new Alloy('Brass (Dutch metal)', {
 			Cu: 0.865,
 			Zn: 0.135,
@@ -546,6 +552,10 @@ const ALLOY = {
 			Ag: 23/24,
 			Cu: 1/24,
 		}),
+		new Alloy('Silver (Coin)', {
+			Ag: 0.9,
+			Cu: 0.1,
+		}),
 		new Alloy('Silver (Sterling)', {
 			Ag: 0.925,
 			Cu: 0.075,
@@ -566,6 +576,11 @@ const ALLOY = {
 			Cu: 0.8,
 			Ag: 0.15,
 			Au: 0.05,
+		}),
+		new Alloy('"War Nickel" alloy', {
+			Cu: 0.56,
+			Ag: 0.35,
+			Mn: 0.09,
 		}),
 		new Alloy('Wood\'s metal', {
 			Bi: 0.5,
