@@ -541,8 +541,10 @@ const ALLOY = {
 			Si: 0.002,
 		}),
 		new Alloy('Melchior', {
-			Cu: 0.825,
-			Ni: 0.175,
+			Cu: 0.682,
+			Ni: 0.3,
+			Mn: 0.01,
+			Fe: 0.008,
 		}),
 		// https://oxfordre.com/planetaryscience/display/10.1093/acrefore/9780190647926.001.0001/acrefore-9780190647926-e-206
 		new Alloy('Meteoric Iron', {
