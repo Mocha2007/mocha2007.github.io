@@ -976,7 +976,7 @@ const ALLOY = {
 				src: 'https://upload.wikimedia.org/wikipedia/commons/9/9c/Diagramme_binaire_Cu_Zn.svg',
 				type: 'linear',
 				axis: 'x',
-				y: 0.734119782,
+				y: 0.911,
 				x_min: 0.089132134,
 				x_max: 0.916340891,
 				f: c => {return {var0: c.Zn, var1: 0};},
