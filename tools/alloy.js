@@ -1032,6 +1032,17 @@ const ALLOY = {
 				f: c => {let s = (c.Sn||0)+(c.Bi||0)+(c.Pb||0);return {var0: c.Sn/s, var1: c.Bi/s};},
 			})
 		),
+		new AlloyCategory('Li-O-W', c => 0.5 <= (c.Li||0) + (c.O||0) + (c.W||0),
+			new PhaseDiagram({
+				src: 'https://upload.wikimedia.org/wikipedia/commons/3/30/PhasendreieckLiWO.jpg',
+				type: 'ternary',
+				x_min: 0.03,
+				x_max: 0.64,
+				y_min: 0.08,
+				y_max: 0.94,
+				f: c => {let s = (c.W||0)+(c.Li||0)+(c.O||0);return {var0: c.W/s, var1: c.Li/s};},
+			})
+		),
 		new AlloyCategory('Cr-Fe-Ni', c => 0.5 <= (c.Cr||0) + (c.Fe||0) + (c.Ni||0),
 			new PhaseDiagram({
 				src: 'https://upload.wikimedia.org/wikipedia/commons/d/da/Fe-Cr-Ni-solidus-phase-diagram.svg',
