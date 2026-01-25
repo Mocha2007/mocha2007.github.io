@@ -38,7 +38,7 @@ class Alloy {
 		for (let sym in this.composition){
 			let my_amt = this.composition[sym] || 0;
 			let other_amt = other_composition[sym] || 0;
-			ssq += Math.pow(my_amt-other_amt, 2);
+			ssq += Math.pow(my_amt-other_amt, ALLOY.config.exponent);
 		}
 		for (let sym in other_composition){
 			if (this.composition[sym]){
@@ -46,7 +46,7 @@ class Alloy {
 			}
 			let my_amt = this.composition[sym] || 0;
 			let other_amt = other_composition[sym] || 0;
-			ssq += Math.pow(my_amt-other_amt, 2);
+			ssq += Math.pow(my_amt-other_amt, ALLOY.config.exponent);
 		}
 		return ssq;
 	}
@@ -776,6 +776,7 @@ const ALLOY = {
 		new AlloyCategory('Cast Iron', c => 0.5 < c.Fe && 0.0214 < c.C && c.C <= 0.0667),
 	],
 	config: {
+		exponent: 2,
 		slider_notches: 100,
 	},
 	elem: {
