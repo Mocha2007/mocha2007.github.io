@@ -731,10 +731,11 @@ const ALLOY = {
 		}),
 		new Alloy('Steel (Stainless)', {
 			// https://en.wikipedia.org/wiki/SAE_304_stainless_steel#Chemical_composition
-			Fe: 0.7146,
+			Fe: 0.7144,
 			Cr: 0.19,
 			Ni: 0.095,
-			C: 0.0004,
+			// my impression is that this is a "medium" carbon amt
+			C: 0.0006,
 		}),
 		new Alloy('Steel (Tamahagane)', {
 			Fe: 0.994,
