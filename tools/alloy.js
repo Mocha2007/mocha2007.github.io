@@ -28,7 +28,7 @@ class Alloy {
 			const inner = document.createElement('span');
 			elem.appendChild(inner);
 			inner.innerHTML = sym;
-			inner.title = `${Math.round(f*100)}% ${sym}`;
+			inner.title = `${(f*100).toFixed(1)}% ${sym}`;
 			inner.style.color = color;
 		});
 		return elem;
