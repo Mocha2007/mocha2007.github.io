@@ -528,6 +528,28 @@ const ALLOY = {
 			Fe: 0.64,
 			Ni: 0.36,
 		}),
+		new Alloy('Irogane (Karakane)', {
+			Cu: 0.85,
+			Pb: 0.1,
+			Sn: 0.05,
+		}),
+		new Alloy('Irogane (Kuromido)', {
+			Cu: 0.99,
+			As: 0.01,
+		}),
+		new Alloy('Irogane (Shakudo)', {
+			Cu: 0.955,
+			Au: 0.045,
+		}),
+		new Alloy('Irogane (Shibuichi)', {
+			Cu: 0.75,
+			Ag: 0.25,
+		}),
+		new Alloy('Irogane (Shinchu)', {
+			Cu: 0.795,
+			Zn: 0.175,
+			Pb: 0.03,
+		}),
 		new Alloy('Kanthal', {
 			Fe: 0.6925,
 			Cr: 0.25,
@@ -702,10 +724,6 @@ const ALLOY = {
 		new Alloy('Samarium-Cobalt magnet', {
 			Co: 0.66,
 			Sm: 0.34,
-		}),
-		new Alloy('Shibuichi', {
-			Cu: 0.75,
-			Ag: 0.25,
 		}),
 		new Alloy('Sodium-Potassium alloy (Eutectic)', {
 			K: 0.77,
