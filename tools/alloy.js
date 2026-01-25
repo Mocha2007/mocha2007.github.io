@@ -303,6 +303,14 @@ const ALLOY = {
 			Si: 0.01,
 			Mn: 0.0055,
 		}),
+		new Alloy('Cast Iron (Ni-resist)', {
+			Fe: 0.715,
+			Ni: 0.2,
+			C: 0.03,
+			Cr: 0.025,
+			Si: 0.02,
+			Mn: 0.01,
+		}),
 		new Alloy('Cast Iron (White)', {
 			Fe: 0.953,
 			C: 0.034,
