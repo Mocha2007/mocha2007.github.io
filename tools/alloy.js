@@ -98,6 +98,10 @@ const ALLOY = {
 			Cu: 0.03,
 			Ti: 0.005,
 		}),
+		new Alloy('Alperm', {
+			Fe: 0.84,
+			Al: 0.16,
+		}),
 		new Alloy('Amalgam (Arquerite)', {
 			Ag: 0.87,
 			Hg: 0.13,
@@ -363,9 +367,29 @@ const ALLOY = {
 			Ag: 0.5,
 			Au: 0.5,
 		}),
+		new Alloy('Elinvar', {
+			Fe: 0.52,
+			Ni: 0.36,
+			Cr: 0.12,
+		}),
+		new Alloy('Fernico', {
+			Fe: 0.535,
+			Ni: 0.29,
+			Co: 0.17,
+			Mn: 0.003,
+			Si: 0.002,
+		}),
+		new Alloy('Ferroaluminum', {
+			Fe: 0.5,
+			Al: 0.5,
+		}),
 		new Alloy('Ferrochrome', {
 			Fe: 0.4,
 			Cr: 0.6,
+		}),
+		new Alloy('Ferrovanadium', {
+			Fe: 0.4,
+			V: 0.6,
 		}),
 		new Alloy('Field\'s metal', {
 			In: 0.51,
@@ -430,17 +454,32 @@ const ALLOY = {
 			Au: 0.9,
 			Ni: 0.1,
 		}),
+		new Alloy('Havar', {
+			Co: 0.42,
+			Cr: 0.195,
+			Fe: 0.1905,
+			Ni: 0.127,
+			W: 0.027,
+			Mo: 0.022,
+			Mn: 0.016,
+			C: 0.002,
+			Be: 0.0005,
+		}),
 		new Alloy('Hepatizon', {
 			Cu: 0.84,
 			Ag: 0.08,
 			Au: 0.08,
+		}),
+		new Alloy('Invar', {
+			Fe: 0.64,
+			Ni: 0.36,
 		}),
 		new Alloy('Melchior', {
 			Cu: 0.825,
 			Ni: 0.175,
 		}),
 		// https://oxfordre.com/planetaryscience/display/10.1093/acrefore/9780190647926.001.0001/acrefore-9780190647926-e-206
-		new Alloy('Meteoric iron', {
+		new Alloy('Meteoric Iron', {
 			// typical composition
 			Fe: 0.91,
 			Ni: 0.08,
@@ -448,6 +487,27 @@ const ALLOY = {
 			Co: 0.005,
 			P: 0.002,
 			C: 0.0004,
+		}),
+		new Alloy('Meteoric Iron (Antitaenite)', {
+			Fe: 0.74,
+			Ni: 0.26,
+		}),
+		new Alloy('Meteoric Iron (Awaruite)', {
+			Fe: 0.7,
+			Ni: 0.3,
+		}),
+		new Alloy('Meteoric Iron (Earth\'s core)', {
+			Fe: 0.965,
+			Ni: 0.055,
+		}),
+		new Alloy('Meteoric Iron (Kamacite)', {
+			Fe: 0.895,
+			Ni: 0.1,
+			Co: 0.005,
+		}),
+		new Alloy('Meteoric Iron (Taenite)', {
+			Ni: 0.51,
+			Fe: 0.49,
 		}),
 		new Alloy('Mischmetal', {
 			Ce: 0.55,
@@ -461,6 +521,12 @@ const ALLOY = {
 			Fe: 0.0125,
 			Mn: 0.01,
 			Si: 0.0025
+		}),
+		new Alloy('Mu-metal', {
+			Ni: 0.77,
+			Fe: 0.16,
+			Cu: 0.05,
+			Cr: 0.02,
 		}),
 		new Alloy('Neodymium magnet', {
 			Fe: 0.72,
@@ -524,9 +590,15 @@ const ALLOY = {
 			Pb: 0.04,
 			Cu: 0.01,
 		}),
-		new Alloy('Pig iron', {
+		new Alloy('Pig Iron', {
 			Fe: 0.9575,
 			C: 0.0425,
+		}),
+		new Alloy('Pig Iron (Nickel)', {
+			// formula guesstimated from https://en.wikipedia.org/wiki/Nickel_pig_iron
+			Fe: 0.875,
+			Ni: 0.085,
+			C: 0.04,
 		}),
 		new Alloy('Pot metal', {
 			// common late 19th c. formulation:
@@ -563,6 +635,13 @@ const ALLOY = {
 			C: 0.0014,
 			S: 0.0003,
 			P: 0.0003,
+		}),
+		new Alloy('Steel (CPM S30V)', {
+			Fe: 0.7855,
+			Cr: 0.14,
+			V: 0.04,
+			Mo: 0.02,
+			C: 0.0145,
 		}),
 		new Alloy('Steel (High-speed)', {
 			// T1
