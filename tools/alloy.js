@@ -236,13 +236,23 @@ const ALLOY = {
 			Zn: 0.05,
 			Sn: 0.01,
 		}),
-		new Alloy('Brass (Orichalcum)', {
+		new Alloy('Brass (Orichalcum, Greek)', {
 			Cu: 0.775,
 			Zn: 0.175,
 			// 5% left, contains "small % ni, pb, fe"
 			Ni: 0.05/3,
 			Pb: 0.05/3,
 			Fe: 0.05/3,
+		}),
+		new Alloy('Brass (Orichalcum, Roman)', {
+			// https://pmc.ncbi.nlm.nih.gov/articles/PMC6722059/
+			// sample A (n=22)
+			Cu: 0.7883,
+			Zn: 0.2064,
+			Fe: 0.0034,
+			Sn: 0.0007,
+			Pb: 0.0006,
+			As: 0.0001,
 		}),
 		new Alloy('Brass (Pinchbeck)', {
 			Cu: 0.91,
