@@ -530,8 +530,18 @@ const ALLOY = {
 			Ni: 0.3,
 		}),
 		new Alloy('Meteoric Iron (Earth\'s core)', {
-			Fe: 0.965,
+			// based primarily on
+			// https://en.wikipedia.org/wiki/Planetary_core#Determining_primary_composition_%E2%80%93_Earth
+			Fe: 0.85,
 			Ni: 0.055,
+			Si: 0.03225,
+			O: 0.03225,
+			S: 0.019,
+			Cr: 0.009,
+			Co: 0.0025,
+			P: 0.002,
+			C: 0.002,
+			H: 0.001,
 		}),
 		new Alloy('Meteoric Iron (Kamacite)', {
 			Fe: 0.895,
