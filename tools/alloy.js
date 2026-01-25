@@ -730,9 +730,11 @@ const ALLOY = {
 			P: 0.00014,
 		}),
 		new Alloy('Steel (Stainless)', {
-			Fe: 0.8092,
-			Cr: 0.18,
-			C: 0.0108,
+			// https://en.wikipedia.org/wiki/SAE_304_stainless_steel#Chemical_composition
+			Fe: 0.7146,
+			Cr: 0.19,
+			Ni: 0.095,
+			C: 0.0004,
 		}),
 		new Alloy('Steel (Tamahagane)', {
 			Fe: 0.994,
