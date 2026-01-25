@@ -552,6 +552,16 @@ const ALLOY = {
 			Ni: 0.51,
 			Fe: 0.49,
 		}),
+		new Alloy('Meteoric Iron (Venus\'s core)', {
+			// https://en.wikipedia.org/wiki/Planetary_core#Venus
+			Fe: 0.886,
+			Ni: 0.055,
+			S: 0.051,
+			Co: 0.0026,
+			// assuming remainder is 50/50 Si and O
+			Si: 0.0027,
+			O: 0.0027,
+		}),
 		new Alloy('Mischmetal', {
 			Ce: 0.55,
 			La: 0.25,
