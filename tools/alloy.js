@@ -276,10 +276,38 @@ const ALLOY = {
 			Sn: 0.3,
 			Zn: 0.15,
 		}),
-		new Alloy('Cast iron', {
+		new Alloy('Cast Iron', {
 			Fe: 0.95,
 			C: 0.03,
 			Si: 0.02,
+		}),
+		new Alloy('Cast Iron (Ductile)', {
+			Fe: 0.9338,
+			C: 0.0335,
+			Si: 0.0175,
+			Ni: 0.01,
+			Mn: 0.0025,
+			Cu: 0.001,
+			Mg: 0.0007,
+			Cr: 0.0007,
+			P: 0.0003,
+		}),
+		new Alloy('Cast Iron (Grey)', {
+			Fe: 0.9475,
+			C: 0.0325,
+			Si: 0.02,
+		}),
+		new Alloy('Cast Iron (Malleable)', {
+			Fe: 0.9595,
+			C: 0.025,
+			Si: 0.01,
+			Mn: 0.0055,
+		}),
+		new Alloy('Cast Iron (White)', {
+			Fe: 0.953,
+			C: 0.034,
+			Si: 0.007,
+			Mn: 0.006,
 		}),
 		new Alloy('Cerrosafe', {
 			Bi: 0.425,
@@ -322,17 +350,6 @@ const ALLOY = {
 			Ni: 0.1,
 			Fe: 0.0125,
 			Mn: 0.004
-		}),
-		new Alloy('Ductile Iron', {
-			Fe: 0.9338,
-			C: 0.0335,
-			Si: 0.0175,
-			Ni: 0.01,
-			Mn: 0.0025,
-			Cu: 0.001,
-			Mg: 0.0007,
-			Cr: 0.0007,
-			P: 0.0003,
 		}),
 		new Alloy('Electrum', {
 			Ag: 0.5,
@@ -404,11 +421,6 @@ const ALLOY = {
 		new Alloy('Gold (White)', {
 			Au: 0.9,
 			Ni: 0.1,
-		}),
-		new Alloy('Grey Iron', {
-			Fe: 0.9475,
-			C: 0.0325,
-			Si: 0.02,
 		}),
 		new Alloy('Hepatizon', {
 			Cu: 0.84,
