@@ -272,6 +272,12 @@ const ALLOY = {
 			Sn: 0.02,
 			Pb: 0.01,
 		}),
+		new Alloy('Bronze (Italian)', {
+			// https://it.wikipedia.org/wiki/Bronzital
+			Cu: 0.92,
+			Al: 0.06,
+			Ni: 0.02,
+		}),
 		new Alloy('Bronze (Oilite)', {
 			Cu: 0.89,
 			Sn: 0.1,
