@@ -240,6 +240,11 @@ const ALLOY = {
 			Cu: 0.91,
 			Zn: 0.09,
 		}),
+		new Alloy('Brass (Silicon tombac)', {
+			Cu: 0.8,
+			Zn: 0.16,
+			Si: 0.04,
+		}),
 		new Alloy('Bronze', {
 			Cu: 0.88,
 			Sn: 0.12,
@@ -581,6 +586,11 @@ const ALLOY = {
 			Mn: 0.003,
 			Si: 0.002,
 		}),
+		new Alloy('Manganin', {
+			Cu: 0.842,
+			Mn: 0.121,
+			Ni: 0.037,
+		}),
 		new Alloy('Melchior', {
 			Cu: 0.682,
 			Ni: 0.3,
@@ -864,6 +874,10 @@ const ALLOY = {
 			Sn: 0.18,
 			Cu: 0.14,
 			Zn: 0.04,
+		}),
+		new Alloy('Tellurium copper', {
+			Cu: 0.994,
+			Te: 0.006,
 		}),
 		new Alloy('Tumbaga', {
 			Cu: 0.8,
