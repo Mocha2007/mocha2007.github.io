@@ -70,20 +70,45 @@ class AlloyCategory {
 
 class ChemicalElement {
 	/**
-	 * @param {string} name 
-	 * @param {string} sym 
+	 * @param {string} name
+	 * @param {string} sym
+	 * @param {ElementCategory} cat
 	 */
-	constructor(name, sym){
+	constructor(name, sym, cat = ElementCategory.NULL){
 		/** @type {string} */
 		this.name = name;
 		/** @type {string} */
 		this.sym = sym;
+		/** @type {ElementCategory} */
+		this.cat = cat;
 	}
 	get slider_id(){
 		return `slider-${this.sym}`;
 	}
 	updateSliderNumber(){
 		document.getElementById(`${this.slider_id}-n`).innerHTML = document.getElementById(this.slider_id).value;
+	}
+}
+
+class ElementCategory {
+	static NULL = "null";
+	static METALLOID = "Metalloid";
+	static METAL_TRANS = "Transition Metal";
+	static METAL_POSTTRANS = "Post-Transition Metal";
+	static NONMETAL = "Nonmetal";
+	static color(self){
+		switch (self){
+			case ElementCategory.METAL_POSTTRANS:
+				return "#ccc";
+			case ElementCategory.METAL_TRANS:
+				return "#fcc";
+			case ElementCategory.METALLOID:
+				return "#cc9";
+			case ElementCategory.NONMETAL:
+				return "#ff8";
+			default:
+				return "grey";
+		}
 	}
 }
 
@@ -830,22 +855,22 @@ const ALLOY = {
 	},
 	/** @type {ChemicalElement[]} */
 	elements: [
-		new ChemicalElement('aluminum', 'Al'),
-		new ChemicalElement('antimony', 'Sb'),
-		new ChemicalElement('bismuth', 'Bi'),
-		new ChemicalElement('carbon', 'C'),
-		new ChemicalElement('chromium', 'Cr'),
-		new ChemicalElement('copper', 'Cu'),
-		new ChemicalElement('gold', 'Au'),
-		new ChemicalElement('iron', 'Fe'),
-		new ChemicalElement('lead', 'Pb'),
-		new ChemicalElement('mercury', 'Hg'),
-		new ChemicalElement('manganese', 'Mn'),
-		new ChemicalElement('nickel', 'Ni'),
-		new ChemicalElement('silicon', 'Si'),
-		new ChemicalElement('silver', 'Ag'),
-		new ChemicalElement('tin', 'Sn'),
-		new ChemicalElement('zinc', 'Zn'),
+		new ChemicalElement('aluminum', 'Al', ElementCategory.METAL_POSTTRANS),
+		new ChemicalElement('antimony', 'Sb', ElementCategory.METALLOID),
+		new ChemicalElement('bismuth', 'Bi', ElementCategory.METAL_POSTTRANS),
+		new ChemicalElement('carbon', 'C', ElementCategory.NONMETAL),
+		new ChemicalElement('chromium', 'Cr', ElementCategory.METAL_TRANS),
+		new ChemicalElement('copper', 'Cu', ElementCategory.METAL_TRANS),
+		new ChemicalElement('gold', 'Au', ElementCategory.METAL_TRANS),
+		new ChemicalElement('iron', 'Fe', ElementCategory.METAL_TRANS),
+		new ChemicalElement('lead', 'Pb', ElementCategory.METAL_POSTTRANS),
+		new ChemicalElement('mercury', 'Hg', ElementCategory.METAL_POSTTRANS),
+		new ChemicalElement('manganese', 'Mn', ElementCategory.METAL_TRANS),
+		new ChemicalElement('nickel', 'Ni', ElementCategory.METAL_TRANS),
+		new ChemicalElement('silicon', 'Si', ElementCategory.METALLOID),
+		new ChemicalElement('silver', 'Ag', ElementCategory.METAL_TRANS),
+		new ChemicalElement('tin', 'Sn', ElementCategory.METAL_POSTTRANS),
+		new ChemicalElement('zinc', 'Zn', ElementCategory.METAL_POSTTRANS),
 	],
 	init(){
 		if (typeof this.elem.container === 'undefined'){
@@ -895,7 +920,7 @@ const ALLOY = {
 			// label
 			const label = document.createElement('label');
 			label.for = slider.name = slider.id = e.slider_id;
-			label.innerHTML = `<div><a href="https://en.wikipedia.org/wiki/${e.name}">${e.name}</a> (${e.sym}) = <span id="${e.slider_id}-n">${slider.value}</span>%</div>`;
+			label.innerHTML = `<div><a href="https://en.wikipedia.org/wiki/${e.name}">${e.name}</a> (<abbr style="color:${ElementCategory.color(e.cat)}" title="${e.cat}">${e.sym}</abbr>) = <span id="${e.slider_id}-n">${slider.value}</span>%</div>`;
 			label.onmousemove = label.onclick = () => {
 				// update the n for this slider
 				e.updateSliderNumber();
