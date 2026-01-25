@@ -840,6 +840,7 @@ const ALLOY = {
 		new ChemicalElement('iron', 'Fe'),
 		new ChemicalElement('lead', 'Pb'),
 		new ChemicalElement('mercury', 'Hg'),
+		new ChemicalElement('manganese', 'Mn'),
 		new ChemicalElement('nickel', 'Ni'),
 		new ChemicalElement('silicon', 'Si'),
 		new ChemicalElement('silver', 'Ag'),
