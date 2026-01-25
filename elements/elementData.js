@@ -3335,7 +3335,7 @@ const elementData = [
 			},
 			covalentRadius: 185e-12,
 			crystal: 'cI',
-			density: 5243,
+			density: 5246,
 			discovery: 1901,
 			electronAffinity: 11e3,
 			electronegativity: 1.15,
