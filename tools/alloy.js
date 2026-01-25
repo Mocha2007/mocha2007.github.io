@@ -1021,6 +1021,17 @@ const ALLOY = {
 				f: c => {let s = (c.Si||0)+(c.Fe||0)+(c.Al||0);return {var0: c.Si/s, var1: c.Fe/s};},
 			})
 		),
+		new AlloyCategory('Bi-Pb-Sn', c => 0.5 <= (c.Pb||0) + (c.Bi||0) + (c.Sn||0),
+			new PhaseDiagram({
+				src: 'https://upload.wikimedia.org/wikipedia/commons/0/0b/Britannica_Alloys_Text_Figure_9.jpg',
+				type: 'ternary',
+				x_min: 0.07,
+				x_max: 0.94,
+				y_min: 0.07,
+				y_max: 0.92,
+				f: c => {let s = (c.Sn||0)+(c.Bi||0)+(c.Pb||0);return {var0: c.Sn/s, var1: c.Bi/s};},
+			})
+		),
 		new AlloyCategory('Cr-Fe-Ni', c => 0.5 <= (c.Cr||0) + (c.Fe||0) + (c.Ni||0),
 			new PhaseDiagram({
 				src: 'https://upload.wikimedia.org/wikipedia/commons/d/da/Fe-Cr-Ni-solidus-phase-diagram.svg',
