@@ -240,6 +240,12 @@ const ALLOY = {
 			Sn: 0.0575,
 			P: 0.0018,
 		}),
+		new Alloy('Bronze (Plastic)', {
+			// based on https://encyclopedia2.thefreedictionary.com/plastic+bronze
+			Cu: 0.62,
+			Pb: 0.3,
+			Sn: 0.08,
+		}),
 		new Alloy('Bronze (Silicon)', {
 			Cu: 0.8,
 			Zn: 0.14,
