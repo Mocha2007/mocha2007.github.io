@@ -393,6 +393,16 @@ const ALLOY = {
 			Al: 0.05,
 			H: 0.05,
 		}),
+		new Alloy('Constantan', {
+			Cu: 0.55,
+			Ni: 0.45,
+		}),
+		new Alloy('Cunife', {
+			Cu: 0.6,
+			Ni: 0.2,
+			Fe: 0.175,
+			Co: 0.025,
+		}),
 		new Alloy('Cupronickel', {
 			// https://en.wikipedia.org/wiki/Cupronickel#Physical_and_mechanical_properties
 			// 90-10
@@ -406,6 +416,10 @@ const ALLOY = {
 			Cu: 0.0435,
 			Mg: 0.015,
 			Mn: 0.006,
+		}),
+		new Alloy('Dymalloy', {
+			Ag: 0.8,
+			Cu: 0.2,
 		}),
 		new Alloy('Electrum', {
 			Ag: 0.5,
@@ -497,6 +511,11 @@ const ALLOY = {
 		new Alloy('Gold (White)', {
 			Au: 0.9,
 			Ni: 0.1,
+		}),
+		new Alloy('Guanín', {
+			Au: 18/32,
+			Cu: 8/32,
+			Ag: 6/32,
 		}),
 		new Alloy('Havar', {
 			Co: 0.42,
