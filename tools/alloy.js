@@ -61,7 +61,7 @@ class AlloyCategory {
 	}
 	get matchElem(){
 		// todo
-		const elem = document.createElement('span');
+		const elem = document.createElement('li');
 		elem.classList.add('catMatch');
 		elem.innerHTML = this.name;
 		return elem;
@@ -645,13 +645,20 @@ const ALLOY = {
 		}),
 	],
 	categories: [
+		new AlloyCategory('Amalgam', c => 0 < c.Hg),
+		new AlloyCategory('Billon', c => 0.5 < c.Cu && (0 < c.Ag || 0 < c.Au)),
+		new AlloyCategory('Brass', c => 0.5 < c.Cu && 0 < c.Zn),
 		new AlloyCategory('Bronze', c => 0.5 < c.Cu && 0 < c.Sn),
+		new AlloyCategory('High-entropy alloy', c => {let s = 0; for (let e in c){if (0.05 <= c[e]) s+=1;} return 5 <= s;}),
+		new AlloyCategory('Pewter', c => 0.5 < c.Sn),
+		new AlloyCategory('Steel', c => 0.5 < c.Fe && 0.0002 <= c.C && c.C <= 0.0214),
+		new AlloyCategory('Cast Iron', c => 0.5 < c.Fe && 0.0214 < c.C && c.C <= 0.0667),
 	],
 	config: {
 		slider_notches: 100,
 	},
 	elem: {
-		/** @type {HTMLDivElement} */
+		/** @type {HTMLUListElement} */
 		categories: undefined,
 		/** @returns {HTMLDivElement} */
 		get container(){
@@ -694,9 +701,15 @@ const ALLOY = {
 		const cat_header = document.createElement('h2');
 		cat_header.innerHTML = 'Categories';
 		this.elem.container.appendChild(cat_header);
-		const category_container = this.elem.categories = document.createElement('div');
+		const category_container = this.elem.categories = document.createElement('ul');
 		category_container.id = 'categoryContainer';
 		this.elem.container.appendChild(category_container);
+		// generate gold purity categories
+		for (let i = 1; i <= 24; i++){
+			this.categories.push(new AlloyCategory(`${i}K Gold`,
+				c => Math.round(c.Au * 24) == i
+			));
+		}
 	},
 	initResult(){
 		const result_header = document.createElement('h2');
