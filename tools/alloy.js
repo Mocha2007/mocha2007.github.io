@@ -1012,7 +1012,18 @@ const ALLOY = {
 				f: c => {return {var0: c.Zn, var1: 0};},
 			})
 		),
-		new AlloyCategory('Bronze', c => 0.5 < c.Cu && 0 < c.Sn),
+		new AlloyCategory('Bronze', c => 0.5 < c.Cu && 0 < c.Sn,
+			new PhaseDiagram({
+				src: 'https://upload.wikimedia.org/wikipedia/commons/7/7b/Cu-Sn_phase_diagram.jpg',
+				type: 'linear',
+				axis: 'x',
+				y: 0.86188579,
+				x_min: 0.116080937,
+				x_max: 0.973375932,
+				// we need to convert %Sn mass to %Sn mol
+				f: c => {return {var0: -10591*c.Sn/(9194*c.Sn - 19785), var1: 0};},
+			})
+		),
 		new AlloyCategory('High-entropy alloy', c => {let s = 0; for (let e in c){if (0.05 <= c[e]) s+=1;} return 5 <= s;}),
 		new AlloyCategory('Pewter', c => 0.5 < c.Sn),
 		new AlloyCategory('Steel', c => 0.5 < c.Fe && 0.0002 <= c.C && c.C <= 0.0214),
