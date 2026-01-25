@@ -891,7 +891,7 @@ const ALLOY = {
 		for (let i = 0; i < Math.min(errors.length, 9); i++) {
 			const entry = document.createElement('div');
 			const alloy = errors[i][0];
-			entry.innerHTML = `#${i+1} (dist: ${Math.sqrt(errors[i][1]).toFixed(3)}): <span class="answer">${alloy.name}</span>`;
+			entry.innerHTML = `#${i+1} (dist: ${Math.pow(errors[i][1], 1/this.config.exponent).toFixed(3)}): <span class="answer">${alloy.name}</span>`;
 			entry.appendChild(alloy.gotoElem);
 			entry.appendChild(alloy.shortDescElem);
 			result.appendChild(entry);
