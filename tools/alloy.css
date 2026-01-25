@@ -33,3 +33,20 @@ label {
 	font-weight: bold;
 	content: '✓';
 }
+.phaseDiagramContainer {
+	background-color: white;
+	position: relative;
+}
+.phaseDiagram {
+	width: 100%;
+	height: 100%;
+}
+.phaseDiagramMarker {
+	position: absolute;
+	transform: translate(-50%, -50%); /* center at position */
+	/* red circular disc */
+	width: 1vw;
+	height: 1vw;
+	border-radius: 0.5vw;
+	background-color: red;
+}

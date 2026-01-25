@@ -53,14 +53,18 @@ class Alloy {
 }
 
 class AlloyCategory {
-	/** @param {string} name */
-	constructor(name, filter){
+	/**
+	 * @param {string} name
+	 * @param {PhaseDiagram?} phaseDiagram
+	 * */
+	constructor(name, filter, phaseDiagram){
 		/** @type {string} */
 		this.name = name;
 		this.filter = filter;
+		/** @type {PhaseDiagram?} */
+		this.phaseDiagram = phaseDiagram;
 	}
 	get matchElem(){
-		// todo
 		const elem = document.createElement('li');
 		elem.classList.add('catMatch');
 		elem.innerHTML = this.name;
@@ -108,6 +112,61 @@ class ElementCategory {
 				return "#ff8";
 			default:
 				return "grey";
+		}
+	}
+}
+
+class PhaseDiagram {
+	constructor(data = {}){
+		/** @type {string} */
+		this.src = data.src;
+		/** @type {string} */
+		this.type = data.type || "linear";
+		/** @type {number} */
+		this.x = data.x || 0;
+		/** @type {number} */
+		this.y = data.y || 0;
+		/** @type {string} */
+		this.axis = data.axis || "x";
+		/** @type {number} */
+		this.x_min = data.x_min || 0;
+		/** @type {number} */
+		this.x_max = data.x_max || 1;
+		/** @type {number} */
+		this.y_min = data.y_min || 0;
+		/** @type {number} */
+		this.y_max = data.y_max || 1;
+		/** function that takes a composition and returns var0, var1 */
+		this.f = data.f || (() => {return {var0:0,var1:0};});
+	}
+	elem(composition){
+		const container = document.createElement('div');
+		container.classList.add('phaseDiagramContainer');
+		container.style.width = ALLOY.config.phaseDiagrams.size;
+		const img = document.createElement('img');
+		img.src = this.src;
+		img.classList.add('phaseDiagram');
+		container.appendChild(img);
+		const marker = document.createElement('div');
+		marker.classList.add('phaseDiagramMarker');
+		container.appendChild(marker);
+		// set marker coords
+		const inputs = this.f(composition);
+		const coords = this.coords(inputs.var0, inputs.var1);
+		marker.style.left = `${coords.x*100}%`;
+		marker.style.top = `${coords.y*100}%`;
+		return container;
+	}
+	coords(var0 = 0, var1 = 0){
+		switch (this.type + this.axis) {
+			case "linearx": {
+				const x = var0*(this.x_max - this.x_min) + this.x_min;
+				const y = this.y;
+				return {x, y};
+			}
+			default:
+				console.error("unimplemented");
+				return {x: 0, y: 0};
 		}
 	}
 }
@@ -912,7 +971,17 @@ const ALLOY = {
 	categories: [
 		new AlloyCategory('Amalgam', c => 0 < c.Hg),
 		new AlloyCategory('Billon', c => 0.5 < c.Cu && (0 < c.Ag || 0 < c.Au)),
-		new AlloyCategory('Brass', c => 0.5 < c.Cu && 0 < c.Zn),
+		new AlloyCategory('Brass', c => 0.5 < c.Cu && 0 < c.Zn,
+			new PhaseDiagram({
+				src: 'https://upload.wikimedia.org/wikipedia/commons/9/9c/Diagramme_binaire_Cu_Zn.svg',
+				type: 'linear',
+				axis: 'x',
+				y: 0.734119782,
+				x_min: 0.089132134,
+				x_max: 0.916340891,
+				f: c => {return {var0: c.Zn, var1: 0};},
+			})
+		),
 		new AlloyCategory('Bronze', c => 0.5 < c.Cu && 0 < c.Sn),
 		new AlloyCategory('High-entropy alloy', c => {let s = 0; for (let e in c){if (0.05 <= c[e]) s+=1;} return 5 <= s;}),
 		new AlloyCategory('Pewter', c => 0.5 < c.Sn),
@@ -922,6 +991,9 @@ const ALLOY = {
 	],
 	config: {
 		exponent: 2,
+		phaseDiagrams: {
+			size: "50vh",
+		},
 		slider_notches: 100,
 	},
 	elem: {
@@ -931,6 +1003,8 @@ const ALLOY = {
 		get container(){
 			return document.getElementById('alloy_container');
 		},
+		/** @type {HTMLDivElement} */
+		phases: undefined,
 		/** @type {HTMLDivElement} */
 		result: undefined,
 	},
@@ -962,6 +1036,7 @@ const ALLOY = {
 		this.initSliders();
 		this.initResult();
 		this.initCategories();
+		this.initPhases();
 		this.refresh();
 		console.info('alloy.js initialized');
 	},
@@ -978,6 +1053,14 @@ const ALLOY = {
 				c => Math.round(c.Au * 24) == i
 			));
 		}
+	},
+	initPhases(){
+		const phases_header = document.createElement('h2');
+		phases_header.innerHTML = 'Phase Diagrams';
+		this.elem.container.appendChild(phases_header);
+		const phases = this.elem.phases = document.createElement('div');
+		phases.id = 'phases';
+		this.elem.container.appendChild(phases);
 	},
 	initResult(){
 		const result_header = document.createElement('h2');
@@ -1044,9 +1127,14 @@ const ALLOY = {
 		}
 		// refresh categories
 		this.elem.categories.innerHTML = '';
+		this.elem.phases.innerHTML = '';
 		this.categories.forEach(cat => {
 			if (cat.filter(composition)){
 				this.elem.categories.appendChild(cat.matchElem);
+				// refresh phases
+				if (typeof cat.phaseDiagram !== 'undefined'){
+					this.elem.phases.appendChild(cat.phaseDiagram.elem(composition));
+				}
 			}
 		});
 	},
