@@ -135,12 +135,6 @@ const ALLOY = {
 			Al: 0.45,
 			Zn: 0.05,
 		}),
-		new Alloy('Brass (Dollar coin cladding alloy)', {
-			Cu: 0.77,
-			Zn: 0.12,
-			Mn: 0.07,
-			Ni: 0.04,
-		}),
 		new Alloy('Brass (Dutch metal)', {
 			Cu: 0.865,
 			Zn: 0.135,
@@ -155,6 +149,7 @@ const ALLOY = {
 			Sn: 0.02,
 		}),
 		new Alloy('Brass (Manganese)', {
+			// = Dollar coin cladding alloy
 			Cu: 0.77,
 			Zn: 0.12,
 			Mn: 0.07,
