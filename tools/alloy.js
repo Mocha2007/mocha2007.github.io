@@ -999,6 +999,17 @@ const ALLOY = {
 				f: c => {let s = (c.Cu||0)+(c.Ag||0)+(c.Au||0);return {var0: c.Cu/s, var1: c.Ag/s};},
 			})
 		),
+		new AlloyCategory('Cr-Fe-Ni', c => 0.5 <= (c.Cr||0) + (c.Fe||0) + (c.Ni||0),
+			new PhaseDiagram({
+				src: 'https://upload.wikimedia.org/wikipedia/commons/d/da/Fe-Cr-Ni-solidus-phase-diagram.svg',
+				type: 'ternary',
+				x_min: 0.175,
+				x_max: 0.844010417,
+				y_min: 0.213802083,
+				y_max: 0.794791667,
+				f: c => {let s = (c.Cr||0)+(c.Fe||0)+(c.Ni||0);return {var0: c.Ni/s, var1: c.Fe/s};},
+			})
+		),
 		new AlloyCategory('Amalgam', c => 0 < c.Hg),
 		new AlloyCategory('Billon', c => 0.5 < c.Cu && (0 < c.Ag || 0 < c.Au)),
 		new AlloyCategory('Brass', c => 0.5 < c.Cu && 0 < c.Zn,
@@ -1024,6 +1035,7 @@ const ALLOY = {
 				f: c => {return {var0: -10591*c.Sn/(9194*c.Sn - 19785), var1: 0};},
 			})
 		),
+		new AlloyCategory('Cupronickel', c => 0.5 < c.Cu && 0 < c.Ni),
 		new AlloyCategory('High-entropy alloy', c => {let s = 0; for (let e in c){if (0.05 <= c[e]) s+=1;} return 5 <= s;}),
 		new AlloyCategory('Pewter', c => 0.5 < c.Sn),
 		new AlloyCategory('Steel', c => 0.5 < c.Fe && 0.0002 <= c.C && c.C <= 0.0214),
