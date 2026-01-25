@@ -368,6 +368,12 @@ const ALLOY = {
 			Fe: 0.0125,
 			Mn: 0.004
 		}),
+		new Alloy('Duralumin', {
+			Al: 0.9355,
+			Cu: 0.0435,
+			Mg: 0.015,
+			Mn: 0.006,
+		}),
 		new Alloy('Electrum', {
 			Ag: 0.5,
 			Au: 0.5,
