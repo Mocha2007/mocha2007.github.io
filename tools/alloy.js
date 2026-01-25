@@ -470,6 +470,11 @@ const ALLOY = {
 			Co: 58.933/280.405,
 			Ni: 58.693/280.405,
 		}),
+		new Alloy('Pewter (Asian)', {
+			Sn: 0.975,
+			Sb: 0.015,
+			Cu: 0.01,
+		}),
 		new Alloy('Pewter (Brittania)', {
 			Sn: 0.925,
 			Sb: 0.055,
