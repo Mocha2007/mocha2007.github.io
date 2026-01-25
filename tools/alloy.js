@@ -488,6 +488,12 @@ const ALLOY = {
 			Sb: 0.075,
 			Cu: 0.02,
 		}),
+		new Alloy('Pewter (Queen\'s metal)', {
+			Sn: 9/12,
+			Sb: 1/12,
+			Pb: 1/12,
+			Bi: 1/12,
+		}),
 		new Alloy('Pewter (Trifle)', {
 			Sn: 0.95,
 			Pb: 0.04,
@@ -502,12 +508,6 @@ const ALLOY = {
 			Cu: 0.67,
 			Pb: 0.29,
 			Sb: 0.04,
-		}),
-		new Alloy('Queen\'s metal', {
-			Sn: 9/12,
-			Sb: 1/12,
-			Pb: 1/12,
-			Bi: 1/12,
 		}),
 		new Alloy('Rose\'s metal', {
 			Bi: 0.5,
