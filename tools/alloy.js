@@ -57,12 +57,14 @@ class AlloyCategory {
 	 * @param {string} name
 	 * @param {PhaseDiagram?} phaseDiagram
 	 * */
-	constructor(name, filter, phaseDiagram){
+	constructor(name, filter, hidden=false, phaseDiagram){
 		/** @type {string} */
 		this.name = name;
 		this.filter = filter;
 		/** @type {PhaseDiagram?} */
 		this.phaseDiagram = phaseDiagram;
+		/** @type {boolean} */
+		this.hidden = hidden;
 	}
 	get matchElem(){
 		const elem = document.createElement('li');
@@ -155,7 +157,6 @@ class PhaseDiagram {
 		container.appendChild(marker);
 		// set marker coords
 		const inputs = this.f(composition);
-		console.debug(inputs);
 		const coords = this.coords(inputs.var0, inputs.var1);
 		marker.style.left = `${coords.x*100}%`;
 		marker.style.top = `${coords.y*100}%`;
@@ -177,13 +178,10 @@ class PhaseDiagram {
 			}
 			case "ternary": {
 				const var2 = 1-var0-var1;
-				// console.debug(var0, var1, var2);
 				const y_raw = 1-var2;
 				const x_raw = var0 + var2 / 2; //Math.tan(60.0 / 180.0 * Math.PI);
-				console.debug(x_raw, y_raw);
 				const x = x_raw*(this.x_max - this.x_min) + this.x_min;
 				const y = y_raw*(this.y_max - this.y_min) + this.y_min;
-				// todo: verify correctness - this formula is a guess
 				return {x, y};
 			}
 			default:
@@ -991,7 +989,7 @@ const ALLOY = {
 		}),
 	],
 	categories: [
-		new AlloyCategory('Ag-Au-Cu', c => 0.5 <= (c.Au||0) + (c.Ag||0) + (c.Cu||0),
+		new AlloyCategory('Ag-Au-Cu', c => 0.5 <= (c.Au||0) + (c.Ag||0) + (c.Cu||0), true,
 			new PhaseDiagram({
 				src: 'https://upload.wikimedia.org/wikipedia/commons/e/e7/Ag-Au-Cu-colours-english.svg',
 				type: 'ternary',
@@ -1002,18 +1000,7 @@ const ALLOY = {
 				f: c => {let s = (c.Cu||0)+(c.Ag||0)+(c.Au||0);return {var0: c.Cu/s, var1: c.Ag/s};},
 			})
 		),
-		new AlloyCategory('Ag-Cu-Sn', c => 0.5 <= (c.Ag||0) + (c.Sn||0) + (c.Cu||0),
-			new PhaseDiagram({
-				src: 'https://upload.wikimedia.org/wikipedia/commons/9/99/Sn-Ag-Cu-phase-diagram-greek.svg',
-				type: 'ternary',
-				x_min: 0.175,
-				x_max: 0.844010417,
-				y_min: 0.213802083,
-				y_max: 0.794791667,
-				f: c => {let s = (c.Cu||0)+(c.Sn||0)+(c.Ag||0);return {var0: c.Cu/s, var1: c.Sn/s};},
-			})
-		),
-		new AlloyCategory('Al-Cu-Mg', c => 0.5 <= (c.Al||0) + (c.Cu||0) + (c.Mg||0),
+		new AlloyCategory('Al-Cu-Mg', c => 0.5 <= (c.Al||0) + (c.Cu||0) + (c.Mg||0), true,
 			new PhaseDiagram({
 				src: 'https://mdpi-res.com/materials/materials-16-04384/article_deploy/html/images/materials-16-04384-g001.png',
 				type: 'ternary',
@@ -1024,7 +1011,18 @@ const ALLOY = {
 				f: c => {let s = (c.Al||0)+(c.Cu||0)+(c.Mg||0);return {var0: c.Mg/s, var1: c.Al/s};},
 			})
 		),
-		new AlloyCategory('Al-Fe-Si', c => 0.5 <= (c.Al||0) + (c.Fe||0) + (c.Si||0),
+		new AlloyCategory('Ag-Cu-Sn', c => 0.5 <= (c.Ag||0) + (c.Sn||0) + (c.Cu||0), true,
+			new PhaseDiagram({
+				src: 'https://upload.wikimedia.org/wikipedia/commons/9/99/Sn-Ag-Cu-phase-diagram-greek.svg',
+				type: 'ternary',
+				x_min: 0.175,
+				x_max: 0.844010417,
+				y_min: 0.213802083,
+				y_max: 0.794791667,
+				f: c => {let s = (c.Cu||0)+(c.Sn||0)+(c.Ag||0);return {var0: c.Cu/s, var1: c.Sn/s};},
+			})
+		),
+		new AlloyCategory('Al-Fe-Si', c => 0.5 <= (c.Al||0) + (c.Fe||0) + (c.Si||0), true,
 			new PhaseDiagram({
 				src: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Al-Fe-Si_1.jpg',
 				type: 'ternary',
@@ -1035,7 +1033,8 @@ const ALLOY = {
 				f: c => {let s = (c.Si||0)+(c.Fe||0)+(c.Al||0);return {var0: c.Si/s, var1: c.Fe/s};},
 			})
 		),
-		new AlloyCategory('Au-Bi-Te', c => 0.5 <= (c.Au||0) + (c.Bi||0) + (c.Te||0),
+		new AlloyCategory('Amalgam', c => 0 < c.Hg),
+		new AlloyCategory('Au-Bi-Te', c => 0.5 <= (c.Au||0) + (c.Bi||0) + (c.Te||0), true,
 			new PhaseDiagram({
 				src: 'https://upload.wikimedia.org/wikipedia/commons/9/90/Ternary_Diagram_Au-Bi-Te.png',
 				type: 'ternary',
@@ -1046,7 +1045,7 @@ const ALLOY = {
 				f: c => {let s = (c.Au||0)+(c.Te||0)+(c.Bi||0);return {var0: c.Au/s, var1: c.Te/s};},
 			})
 		),
-		new AlloyCategory('Bi-Pb-Sn', c => 0.5 <= (c.Pb||0) + (c.Bi||0) + (c.Sn||0),
+		new AlloyCategory('Bi-Pb-Sn', c => 0.5 <= (c.Pb||0) + (c.Bi||0) + (c.Sn||0), true,
 			new PhaseDiagram({
 				src: 'https://upload.wikimedia.org/wikipedia/commons/0/0b/Britannica_Alloys_Text_Figure_9.jpg',
 				type: 'ternary',
@@ -1057,29 +1056,6 @@ const ALLOY = {
 				f: c => {let s = (c.Sn||0)+(c.Bi||0)+(c.Pb||0);return {var0: c.Sn/s, var1: c.Bi/s};},
 			})
 		),
-		new AlloyCategory('Li-O-W', c => 0.5 <= (c.Li||0) + (c.O||0) + (c.W||0),
-			new PhaseDiagram({
-				src: 'https://upload.wikimedia.org/wikipedia/commons/3/30/PhasendreieckLiWO.jpg',
-				type: 'ternary',
-				x_min: 0.03,
-				x_max: 0.64,
-				y_min: 0.08,
-				y_max: 0.94,
-				f: c => {let s = (c.W||0)+(c.Li||0)+(c.O||0);return {var0: c.W/s, var1: c.Li/s};},
-			})
-		),
-		new AlloyCategory('Cr-Fe-Ni', c => 0.5 <= (c.Cr||0) + (c.Fe||0) + (c.Ni||0),
-			new PhaseDiagram({
-				src: 'https://upload.wikimedia.org/wikipedia/commons/d/da/Fe-Cr-Ni-solidus-phase-diagram.svg',
-				type: 'ternary',
-				x_min: 0.175,
-				x_max: 0.844010417,
-				y_min: 0.213802083,
-				y_max: 0.794791667,
-				f: c => {let s = (c.Cr||0)+(c.Fe||0)+(c.Ni||0);return {var0: c.Ni/s, var1: c.Fe/s};},
-			})
-		),
-		new AlloyCategory('Amalgam', c => 0 < c.Hg),
 		new AlloyCategory('Billon', c => 0.5 < c.Cu && (0 < c.Ag || 0 < c.Au)),
 		new AlloyCategory('Brass', c => 0.5 < c.Cu && 0 < c.Zn,
 			new PhaseDiagram({
@@ -1104,12 +1080,45 @@ const ALLOY = {
 				f: c => {return {var0: -10591*c.Sn/(9194*c.Sn - 19785), var1: 0};},
 			})
 		),
-		new AlloyCategory('Cupronickel', c => 0.5 < c.Cu && 0 < c.Ni),
-		new AlloyCategory('High-entropy alloy', c => {let s = 0; for (let e in c){if (0.05 <= c[e]) s+=1;} return 5 <= s;}),
-		new AlloyCategory('Pewter', c => 0.5 < c.Sn),
-		new AlloyCategory('Steel', c => 0.5 < c.Fe && 0.0002 <= c.C && c.C <= 0.0214),
-		new AlloyCategory('Stainless Steel', c => 0.5 < c.Fe && 0.0002 <= c.C && c.C <= 0.0214 && 0.105 <= c.Cr),
 		new AlloyCategory('Cast Iron', c => 0.5 < c.Fe && 0.0214 < c.C && c.C <= 0.0667),
+		new AlloyCategory('Cr-Fe-Ni', c => 0.5 <= (c.Cr||0) + (c.Fe||0) + (c.Ni||0), true,
+			new PhaseDiagram({
+				src: 'https://upload.wikimedia.org/wikipedia/commons/d/da/Fe-Cr-Ni-solidus-phase-diagram.svg',
+				type: 'ternary',
+				x_min: 0.175,
+				x_max: 0.844010417,
+				y_min: 0.213802083,
+				y_max: 0.794791667,
+				f: c => {let s = (c.Cr||0)+(c.Fe||0)+(c.Ni||0);return {var0: c.Ni/s, var1: c.Fe/s};},
+			})
+		),
+		new AlloyCategory('Cupronickel', c => 0.5 < c.Cu && 0 < c.Ni),
+		new AlloyCategory('Fe-C<8', c => 0.5 < c.Fe && c.C <= 0.08, true,
+			new PhaseDiagram({
+				src: 'https://upload.wikimedia.org/wikipedia/commons/a/ac/FeC-phase-diagram--multilingual.svg',
+				type: 'linear',
+				axis: 'x',
+				y: 0.76,
+				x_min: 0.11,
+				x_max: 11.37,
+				f: c => {return {var0: c.C, var1: 0};},
+			})
+		),
+		new AlloyCategory('High-entropy alloy', c => {let s = 0; for (let e in c){if (0.05 <= c[e]) s+=1;} return 5 <= s;}),
+		new AlloyCategory('Li-O-W', c => 0.5 <= (c.Li||0) + (c.O||0) + (c.W||0), true,
+			new PhaseDiagram({
+				src: 'https://upload.wikimedia.org/wikipedia/commons/3/30/PhasendreieckLiWO.jpg',
+				type: 'ternary',
+				x_min: 0.03,
+				x_max: 0.64,
+				y_min: 0.08,
+				y_max: 0.94,
+				f: c => {let s = (c.W||0)+(c.Li||0)+(c.O||0);return {var0: c.W/s, var1: c.Li/s};},
+			})
+		),
+		new AlloyCategory('Pewter', c => 0.5 < c.Sn),
+		new AlloyCategory('Stainless Steel', c => 0.5 < c.Fe && 0.0002 <= c.C && c.C <= 0.0214 && 0.105 <= c.Cr),
+		new AlloyCategory('Steel', c => 0.5 < c.Fe && 0.0002 <= c.C && c.C <= 0.0214),
 	],
 	config: {
 		exponent: 2,
@@ -1256,7 +1265,9 @@ const ALLOY = {
 		this.elem.phases.innerHTML = '';
 		this.categories.forEach(cat => {
 			if (cat.filter(composition)){
-				this.elem.categories.appendChild(cat.matchElem);
+				if (!cat.hidden){
+					this.elem.categories.appendChild(cat.matchElem);
+				}
 				// refresh phases
 				if (typeof cat.phaseDiagram !== 'undefined'){
 					this.elem.phases.appendChild(cat.phaseDiagram.elem(composition));
