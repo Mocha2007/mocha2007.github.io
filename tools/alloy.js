@@ -1021,7 +1021,6 @@ const ALLOY = {
 				f: c => {let s = (c.Si||0)+(c.Fe||0)+(c.Al||0);return {var0: c.Si/s, var1: c.Fe/s};},
 			})
 		),
-		// TODO - broken?!
 		new AlloyCategory('Au-Bi-Te', c => 0.5 <= (c.Au||0) + (c.Bi||0) + (c.Te||0),
 			new PhaseDiagram({
 				src: 'https://upload.wikimedia.org/wikipedia/commons/9/90/Ternary_Diagram_Au-Bi-Te.png',
@@ -1124,16 +1123,20 @@ const ALLOY = {
 		new ChemicalElement('bismuth', 'Bi', ElementCategory.METAL_POSTTRANS),
 		new ChemicalElement('carbon', 'C', ElementCategory.NONMETAL),
 		new ChemicalElement('chromium', 'Cr', ElementCategory.METAL_TRANS),
+		new ChemicalElement('cobalt', 'Co', ElementCategory.METAL_TRANS),
 		new ChemicalElement('copper', 'Cu', ElementCategory.METAL_TRANS),
 		new ChemicalElement('gold', 'Au', ElementCategory.METAL_TRANS),
 		new ChemicalElement('iron', 'Fe', ElementCategory.METAL_TRANS),
 		new ChemicalElement('lead', 'Pb', ElementCategory.METAL_POSTTRANS),
 		new ChemicalElement('mercury', 'Hg', ElementCategory.METAL_POSTTRANS),
 		new ChemicalElement('manganese', 'Mn', ElementCategory.METAL_TRANS),
+		new ChemicalElement('molybdenum', 'Mo', ElementCategory.METAL_TRANS),
 		new ChemicalElement('nickel', 'Ni', ElementCategory.METAL_TRANS),
 		new ChemicalElement('silicon', 'Si', ElementCategory.METALLOID),
 		new ChemicalElement('silver', 'Ag', ElementCategory.METAL_TRANS),
+		new ChemicalElement('tellurium', 'Te', ElementCategory.METALLOID),
 		new ChemicalElement('tin', 'Sn', ElementCategory.METAL_POSTTRANS),
+		new ChemicalElement('vanadium', 'V', ElementCategory.METAL_TRANS),
 		new ChemicalElement('zinc', 'Zn', ElementCategory.METAL_POSTTRANS),
 	],
 	init(){
