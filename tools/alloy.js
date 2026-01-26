@@ -97,11 +97,14 @@ class ChemicalElement {
 class ElementCategory {
 	static NULL = "null";
 	static METALLOID = "Metalloid";
+	static METAL_AE = "Alkaline Earth Metal";
 	static METAL_TRANS = "Transition Metal";
 	static METAL_POSTTRANS = "Post-Transition Metal";
 	static NONMETAL = "Nonmetal";
 	static color(self){
 		switch (self){
+			case ElementCategory.METAL_AE:
+				return "#fda";
 			case ElementCategory.METAL_POSTTRANS:
 				return "#ccc";
 			case ElementCategory.METAL_TRANS:
@@ -1010,6 +1013,17 @@ const ALLOY = {
 				f: c => {let s = (c.Cu||0)+(c.Sn||0)+(c.Ag||0);return {var0: c.Cu/s, var1: c.Sn/s};},
 			})
 		),
+		new AlloyCategory('Al-Cu-Mg', c => 0.5 <= (c.Al||0) + (c.Cu||0) + (c.Mg||0),
+			new PhaseDiagram({
+				src: 'https://mdpi-res.com/materials/materials-16-04384/article_deploy/html/images/materials-16-04384-g001.png',
+				type: 'ternary',
+				x_min: 0.10,
+				x_max: 1.88,
+				y_min: -1.27,
+				y_max: 0.80,
+				f: c => {let s = (c.Al||0)+(c.Cu||0)+(c.Mg||0);return {var0: c.Mg/s, var1: c.Al/s};},
+			})
+		),
 		new AlloyCategory('Al-Fe-Si', c => 0.5 <= (c.Al||0) + (c.Fe||0) + (c.Si||0),
 			new PhaseDiagram({
 				src: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Al-Fe-Si_1.jpg',
@@ -1128,6 +1142,7 @@ const ALLOY = {
 		new ChemicalElement('gold', 'Au', ElementCategory.METAL_TRANS),
 		new ChemicalElement('iron', 'Fe', ElementCategory.METAL_TRANS),
 		new ChemicalElement('lead', 'Pb', ElementCategory.METAL_POSTTRANS),
+		new ChemicalElement('magnesium', 'Mg', ElementCategory.METAL_AE),
 		new ChemicalElement('mercury', 'Hg', ElementCategory.METAL_POSTTRANS),
 		new ChemicalElement('manganese', 'Mn', ElementCategory.METAL_TRANS),
 		new ChemicalElement('molybdenum', 'Mo', ElementCategory.METAL_TRANS),
@@ -1136,7 +1151,6 @@ const ALLOY = {
 		new ChemicalElement('silver', 'Ag', ElementCategory.METAL_TRANS),
 		new ChemicalElement('tellurium', 'Te', ElementCategory.METALLOID),
 		new ChemicalElement('tin', 'Sn', ElementCategory.METAL_POSTTRANS),
-		new ChemicalElement('vanadium', 'V', ElementCategory.METAL_TRANS),
 		new ChemicalElement('zinc', 'Zn', ElementCategory.METAL_POSTTRANS),
 	],
 	init(){
