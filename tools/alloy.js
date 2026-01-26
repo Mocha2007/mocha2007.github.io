@@ -779,6 +779,16 @@ const ALLOY = {
 			Ni: 0.8,
 			Cr: 0.2,
 		}),
+		new Alloy('Nivaflex', {
+			Co: 0.45,
+			Ni: 0.21,
+			Cr: 0.18,
+			Fe: 0.05,
+			W: 0.04,
+			Mo: 0.04,
+			Ti: 0.01,
+			Be: 0.002,
+		}),
 		new Alloy('Panchaloha', {
 			Au: 1/5,
 			Ag: 1/5,
