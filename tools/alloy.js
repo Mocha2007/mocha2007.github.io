@@ -793,6 +793,13 @@ const ALLOY = {
 			Ni: 0.8,
 			Cr: 0.2,
 		}),
+		new Alloy('Niello', {
+			// https://www.researchgate.net/figure/Elemental-composition-of-the-niello-inlays-based-on-the-SEM-EDX-measurements-The-results_tbl2_351438672
+			Ag: 0.567,
+			Cu: 0.295,
+			S: 0.092,
+			Hg: 0.046,
+		}),
 		new Alloy('Nivaflex', {
 			// https://generaleressorts.com/wp-content/uploads/2018/03/generale-ressorts-bienne-nivaflex-plus.pdf
 			Co: 0.47, // the composition leaves 2% unspecified; I have allocated this to Co
