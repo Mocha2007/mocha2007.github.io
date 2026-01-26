@@ -1277,7 +1277,7 @@ const ALLOY = {
 			const label = document.createElement('label');
 			label.for = slider.name = slider.id = e.slider_id;
 			label.innerHTML = `<div><a href="https://en.wikipedia.org/wiki/${e.name}">${e.name}</a> (<abbr style="color:${ElementCategory.color(e.cat)}" title="${e.cat}">${e.sym}</abbr>) = <span id="${e.slider_id}-n">${slider.value}</span>%</div>`;
-			label.onkeydown = label.onmousemove = label.onclick = () => {
+			label.onkeyup = label.onmousemove = label.onclick = () => {
 				// update the n for this slider
 				e.updateSliderNumber();
 				// update result
