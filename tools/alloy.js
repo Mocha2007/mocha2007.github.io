@@ -406,7 +406,7 @@ const ALLOY = {
 			Sn: 0.08,
 		}),
 		new Alloy('Bronze (Silicon)', {
-			Cu: 0.8,
+			Cu: 0.82,
 			Zn: 0.14,
 			Si: 0.04,
 		}),
@@ -780,13 +780,14 @@ const ALLOY = {
 			Cr: 0.2,
 		}),
 		new Alloy('Nivaflex', {
-			Co: 0.45,
+			// https://generaleressorts.com/wp-content/uploads/2018/03/generale-ressorts-bienne-nivaflex-plus.pdf
+			Co: 0.47, // the composition leaves 2% unspecified; I have allocated this to Co
 			Ni: 0.21,
 			Cr: 0.18,
 			Fe: 0.05,
 			W: 0.04,
 			Mo: 0.04,
-			Ti: 0.01,
+			Ti: 0.008,
 			Be: 0.002,
 		}),
 		new Alloy('Panchaloha', {
@@ -1215,6 +1216,7 @@ const ALLOY = {
 		this.initPhases();
 		this.refresh();
 		console.info('alloy.js initialized');
+		this.verify();
 	},
 	initCategories(){
 		const cat_header = document.createElement('h2');
@@ -1261,7 +1263,7 @@ const ALLOY = {
 			const label = document.createElement('label');
 			label.for = slider.name = slider.id = e.slider_id;
 			label.innerHTML = `<div><a href="https://en.wikipedia.org/wiki/${e.name}">${e.name}</a> (<abbr style="color:${ElementCategory.color(e.cat)}" title="${e.cat}">${e.sym}</abbr>) = <span id="${e.slider_id}-n">${slider.value}</span>%</div>`;
-			label.onmousemove = label.onclick = () => {
+			label.onkeydown = label.onmousemove = label.onclick = () => {
 				// update the n for this slider
 				e.updateSliderNumber();
 				// update result
@@ -1331,6 +1333,26 @@ const ALLOY = {
 			e.updateSliderNumber();
 		});
 		this.refresh();
+	},
+	verify(){
+		const seen = [];
+		this.alloys.forEach(a => {
+			let sum = 0;
+			for (let e in a.composition){
+				seen.push(e);
+				sum += a.composition[e];
+			}
+			// warn about alloy % not adding to 100
+			if (0.01 < Math.abs(1-sum)){
+				console.warn(`composition of |${a.name}| does not sum closely to 1: |${sum}|`);
+			}
+		});
+		// warn about missing elements
+		(new Set(seen)).forEach(x => {
+			if (!this.elements.some(e => e.sym === x)){
+				console.warn(`element |${x}| appears in alloys but is undefined`);
+			}
+		});
 	}
 };
 
