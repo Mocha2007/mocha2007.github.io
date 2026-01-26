@@ -158,8 +158,13 @@ class PhaseDiagram {
 		// set marker coords
 		const inputs = this.f(composition);
 		const coords = this.coords(inputs.var0, inputs.var1);
-		marker.style.left = `${coords.x*100}%`;
-		marker.style.top = `${coords.y*100}%`;
+		if (0 <= coords.x && coords.x <= 1 && 0 <= coords.y && coords.y <= 1){
+			marker.style.left = `${coords.x*100}%`;
+			marker.style.top = `${coords.y*100}%`;
+		}
+		else {
+			container.style.display = 'none';
+		}
 		return container;
 	}
 	coords(var0 = 0, var1 = 0){
