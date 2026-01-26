@@ -1021,6 +1021,11 @@ const ALLOY = {
 			Ag: 0.15,
 			Au: 0.05,
 		}),
+		new Alloy('Type metal', {
+			Pb: 0.68,
+			Sb: 0.205,
+			Sn: 0.115,
+		}),
 		new Alloy('Wood\'s metal', {
 			Bi: 0.5,
 			Pb: 0.267,
