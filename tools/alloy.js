@@ -1134,8 +1134,12 @@ const ALLOY = {
 		get container(){
 			return document.getElementById('alloy_container');
 		},
+		/** @type {HTMLTableCellElement} */
+		leftCol: undefined,
 		/** @type {HTMLDivElement} */
 		phases: undefined,
+		/** @type {HTMLTableCellElement} */
+		rightCol: undefined,
 		/** @type {HTMLDivElement} */
 		result: undefined,
 	},
@@ -1168,9 +1172,21 @@ const ALLOY = {
 			return;
 		}
 		// ok now continue
+		// top row
 		this.initSliders();
+		const layoutTable = document.createElement('table');
+		layoutTable.classList.add('layoutTable');
+		this.elem.container.appendChild(layoutTable);
+		const row = document.createElement('tr');
+		layoutTable.appendChild(row);
+		const leftCol = this.elem.leftCol = document.createElement('td');
+		row.appendChild(leftCol);
+		const rightCol = this.elem.rightCol = document.createElement('td');
+		row.appendChild(rightCol);
+		// left col
 		this.initResult();
 		this.initCategories();
+		// right col
 		this.initPhases();
 		this.refresh();
 		console.info('alloy.js initialized');
@@ -1178,10 +1194,10 @@ const ALLOY = {
 	initCategories(){
 		const cat_header = document.createElement('h2');
 		cat_header.innerHTML = 'Categories';
-		this.elem.container.appendChild(cat_header);
+		this.elem.leftCol.appendChild(cat_header);
 		const category_container = this.elem.categories = document.createElement('ul');
 		category_container.id = 'categoryContainer';
-		this.elem.container.appendChild(category_container);
+		this.elem.leftCol.appendChild(category_container);
 		// generate gold purity categories
 		for (let i = 1; i <= 24; i++){
 			this.categories.push(new AlloyCategory(`${i}K Gold`,
@@ -1192,18 +1208,18 @@ const ALLOY = {
 	initPhases(){
 		const phases_header = document.createElement('h2');
 		phases_header.innerHTML = 'Phase Diagrams';
-		this.elem.container.appendChild(phases_header);
+		this.elem.rightCol.appendChild(phases_header);
 		const phases = this.elem.phases = document.createElement('div');
 		phases.id = 'phases';
-		this.elem.container.appendChild(phases);
+		this.elem.rightCol.appendChild(phases);
 	},
 	initResult(){
 		const result_header = document.createElement('h2');
 		result_header.innerHTML = 'Matches';
-		this.elem.container.appendChild(result_header);
+		this.elem.leftCol.appendChild(result_header);
 		const result = this.elem.result = document.createElement('div');
 		result.id = 'result';
-		this.elem.container.appendChild(result);
+		this.elem.leftCol.appendChild(result);
 	},
 	initSliders(){
 		const slider_container = document.createElement('div');

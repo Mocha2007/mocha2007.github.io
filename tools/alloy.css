@@ -50,3 +50,10 @@ label {
 	border-radius: 0.5vw;
 	background-color: red;
 }
+.layoutTable {
+	width: 100%;
+}
+.layoutTable > tr > td {
+	vertical-align:top;
+	width: 50%;
+}
