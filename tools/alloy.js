@@ -466,35 +466,49 @@ const ALLOY = {
 			Sn: 0.113,
 			Cd: 0.085,
 		}),
+		// for coal ash, see
+		// https://en.wikipedia.org/wiki/Coal_combustion_products#Chemical_composition_and_classification
+		// see coal composition helper spreadsheet
+		// https://docs.google.com/spreadsheets/d/1bFXWlRE9ocEt8jXoN6eQbcedyx38dnhC3vkia68eJdg/edit?gid=0#gid=0
 		new Alloy('Coal (Anthracite)', {
-			C: 0.915,
-			S: 0.005,
+			C:  0.8129,
+			O:  0.1105,
+			Si: 0.0204,
+			Fe: 0.0191,
+			H:  0.0155,
+			Al: 0.0116,
+			Ca: 0.0051,
+			S:  0.0050,
 		}),
 		new Alloy('Coal (Bituminous)', {
-			C: 0.844,
-			O: 0.067,
-			H: 0.054,
-			S: 0.018,
-			N: 0.017,
+			C:  0.7326,
+			O:  0.1587,
+			H:  0.0743,
+			Si: 0.0100,
+			Fe: 0.0093,
+			S:  0.0070,
+			Al: 0.0056,
+			Ca: 0.0025,
 		}),
 		new Alloy('Coal (Sub-bituminous)', {
-			// based on https://www.researchgate.net/figure/Characteristics-of-petcoke-and-sub-bituminous-coal_tbl1_262849791
-			C: 0.656,
-			O: 0.2115,
-			H: 0.0453,
-			N: 0.0083,
-			S: 0.0018,
-			Cl: 0.001,
+			C:  0.6686,
+			O:  0.2229,
+			H:  0.0764,
+			Si: 0.0117,
+			Al: 0.0067,
+			Ca: 0.0063,
+			S:  0.0050,
+			Fe: 0.0025,
 		}),
 		new Alloy('Coal (Lignite)', {
-			C: 0.3,
-			// based on Obomkpa here:
-			// https://www.researchgate.net/figure/EDX-Elemental-Composition-of-Nigerian-Lignite-Coals_tbl2_338124784
-			// which seems typical?
-			O: 0.45,
-			Si: 0.15,
-			Al: 0.05,
-			H: 0.05,
+			C:  0.4614,
+			O:  0.3864,
+			H:  0.0702,
+			Ca: 0.0274,
+			Si: 0.0196,
+			Al: 0.0166,
+			S:  0.0100,
+			Fe: 0.0093,
 		}),
 		new Alloy('Constantan', {
 			Cu: 0.55,
