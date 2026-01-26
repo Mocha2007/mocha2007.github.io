@@ -460,6 +460,13 @@ const ALLOY = {
 			Si: 0.007,
 			Mn: 0.006,
 		}),
+		new Alloy('Cerrolow', {
+			// 136
+			Bi: 0.49,
+			In: 0.21,
+			Pb: 0.18,
+			Sn: 0.12,
+		}),
 		new Alloy('Cerrosafe', {
 			Bi: 0.425,
 			Pb: 0.377,
