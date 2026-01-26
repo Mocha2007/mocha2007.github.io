@@ -530,6 +530,7 @@ const sources = {
 	usa195: new Source('c. 1950', 'US', 'https://babel.hathitrust.org/cgi/pt?id=umn.31951000014585x&seq=233'),
 	usa202: new Source('2023', 'US', 'https://www.walmart.com'), // i just went onto walmart lol
 	pol202: new Source('2025', 'Poland', ''),
+	usa2026: new Source('2026', 'US', 'https://www.walmart.com'), // i just went onto walmart lol
 	skyrim: new Source('4E 201', 'Skyrim', 'https://en.uesp.net/wiki/Skyrim:Skyrim', true),
 	dorf: new Source('', 'Dwarf Fortress', 'https://dwarffortresswiki.org', true),
 	terraria: new Source('', 'Terraria', 'https://terraria.wiki.gg/wiki/Bars', true),
@@ -1613,6 +1614,83 @@ new GoodDatum(goods.honey, sources.greece, 5 * greece.drachma / (0.5 * unit.pt *
 // 2nd c. http://www.attalus.org/docs/other/inscr_24.html
 new GoodDatum(goods.slaveF, sources.greece, arithmeticAvg([7/3, 2, 4, 4, 3, 3, 3, 3, 5, 3, 1]) * greece.mina);
 new GoodDatum(goods.slaveSkilled, sources.greece, arithmeticAvg([10]) * greece.mina);
+
+// 2026
+// Metal Prices
+const usd_ag_2026 = 2.3; // ~$2.30/g as of Jan 1 2026
+new GoodDatum(goods.aluminum, sources.usa2026, 3/1000/usd_ag_2026);
+new GoodDatum(goods.copper, sources.usa2026, 12.5/1000/usd_ag_2026);
+new GoodDatum(goods.iron, sources.usa2026, 0.107/usd_ag_2026);
+new GoodDatum(goods.gold, sources.usa2026, 140/usd_ag_2026);
+new GoodDatum(goods.platinum, sources.usa2026, 65/usd_ag_2026);
+new GoodDatum(goods.uranium, sources.usa2026, 180/1000/usd_ag_2026);
+// minimum wage remains at $7.25/h
+new GoodDatum(goods.wageLaborer, sources.usa2026, 8*7.25/usd_ag_2026);
+// WALMART
+new GoodDatum(goods.rice, sources.usa2026, 3.14/(5*unit.lb)/usd_ag_2026);
+new GoodDatum(goods.flour, sources.usa2026, 2.38/(5*unit.lb)/usd_ag_2026);
+new GoodDatum(goods.oatmeal, sources.usa2026, 4.38/(42*unit.oz)/usd_ag_2026);
+new GoodDatum(goods.butter, sources.usa2026, 3.48/(16*unit.oz)/usd_ag_2026);
+new GoodDatum(goods.cheese, sources.usa2026, 2.48/(16*unit.oz)/usd_ag_2026);
+new GoodDatum(goods.egg, sources.usa2026, 3.32*12/18/usd_ag_2026);
+new GoodDatum(goods.ghee, sources.usa2026, 11.48/(9*unit.oz)/usd_ag_2026);
+new GoodDatum(goods.milk, sources.usa2026, 3.22/(128*unit.oz)/usd_ag_2026);
+new GoodDatum(goods.beef, sources.usa2026, 5.94/unit.lb/usd_ag_2026);
+new GoodDatum(goods.lamb, sources.usa2026, 10.63/unit.lb/usd_ag_2026);
+new GoodDatum(goods.pork, sources.usa2026, 4.24/unit.lb/usd_ag_2026);
+new GoodDatum(goods.veal, sources.usa2026, 129.97/(2.5*unit.lb)/usd_ag_2026);
+new GoodDatum(goods.chicken, sources.usa2026, 2.67/unit.lb/usd_ag_2026);
+new GoodDatum(goods.turkey, sources.usa2026, 1.98/unit.lb/usd_ag_2026);
+new GoodDatum(goods.fish, sources.usa2026, 5.24/unit.lb/usd_ag_2026);
+new GoodDatum(goods.fishSardines, sources.usa2026, 0.315/unit.oz/usd_ag_2026);
+new GoodDatum(goods.apple, sources.usa2026, 0.89/unit.lb/usd_ag_2026);
+new GoodDatum(goods.figs, sources.usa2026, 6.42/(8*unit.oz)/usd_ag_2026);
+new GoodDatum(goods.melon, sources.usa2026, 1.97/500/usd_ag_2026); // canteloupe, I assume the mass is 500g
+new GoodDatum(goods.asparagus, sources.usa2026, 2.97/unit.lb/usd_ag_2026);
+new GoodDatum(goods.beet, sources.usa2026, 2.96/unit.lb/usd_ag_2026);
+new GoodDatum(goods.cabbage, sources.usa2026, 0.86/unit.lb/usd_ag_2026);
+new GoodDatum(goods.garlic, sources.usa2026, 0.64/50/usd_ag_2026); // I assume the mass is 50g
+new GoodDatum(goods.leek, sources.usa2026, 4.37/100/usd_ag_2026); // I assume the mass is 100g
+new GoodDatum(goods.lettuce, sources.usa2026, 0.246/unit.oz/usd_ag_2026);
+new GoodDatum(goods.potatoSweet, sources.usa2026, 1.51/unit.lb/usd_ag_2026);
+new GoodDatum(goods.radish, sources.usa2026, 0.29/unit.oz/usd_ag_2026);
+new GoodDatum(goods.squash, sources.usa2026, 1.28/unit.lb/usd_ag_2026);
+new GoodDatum(goods.turnip, sources.usa2026, 0.166/unit.oz/usd_ag_2026);
+new GoodDatum(goods.almond, sources.usa2026, 0.52/unit.oz/usd_ag_2026);
+new GoodDatum(goods.walnut, sources.usa2026, 0.436/unit.oz/usd_ag_2026);
+new GoodDatum(goods.cinnamon, sources.usa2026, 0.528/unit.oz/usd_ag_2026);
+new GoodDatum(goods.clove, sources.usa2026, 3.35/unit.oz/usd_ag_2026);
+new GoodDatum(goods.cumin, sources.usa2026, 0.464/unit.oz/usd_ag_2026);
+new GoodDatum(goods.ginger, sources.usa2026, 3.87/unit.lb/usd_ag_2026);
+new GoodDatum(goods.mace, sources.usa2026, 2.72/unit.oz/usd_ag_2026);
+new GoodDatum(goods.mustard, sources.usa2026, 0.691/unit.oz/usd_ag_2026);
+new GoodDatum(goods.nutmeg, sources.usa2026, 1.64/unit.oz/usd_ag_2026);
+new GoodDatum(goods.pepper, sources.usa2026, 0.827/unit.oz/usd_ag_2026);
+new GoodDatum(goods.saffron, sources.usa2026, 9.99/usd_ag_2026);
+new GoodDatum(goods.chocolate, sources.usa2026, 0.488/unit.oz/usd_ag_2026);
+new GoodDatum(goods.coffee, sources.usa2026, 0.502/unit.oz/usd_ag_2026);
+new GoodDatum(goods.flax, sources.usa2026, 0.221/unit.oz/usd_ag_2026);
+new GoodDatum(goods.honey, sources.usa2026, 0.28/unit.oz/usd_ag_2026);
+new GoodDatum(goods.lard, sources.usa2026, 0.131/unit.oz/usd_ag_2026);
+new GoodDatum(goods.oilOlive, sources.usa2026, 6.12/(0.502*unit.density.oilOlive)/usd_ag_2026);
+new GoodDatum(goods.oilSesame, sources.usa2026, 3.22/(0.15*unit.density.oilOlive)/usd_ag_2026);
+new GoodDatum(goods.salt, sources.usa2026, 0.029/unit.oz/usd_ag_2026);
+new GoodDatum(goods.sesame, sources.usa2026, 0.964/unit.oz/usd_ag_2026);
+new GoodDatum(goods.soda, sources.usa2026, 0.061/unit.oz/usd_ag_2026);
+new GoodDatum(goods.sugar, sources.usa2026, 0.048/unit.oz/usd_ag_2026);
+new GoodDatum(goods.sugarBrown, sources.usa2026, 0.068/unit.oz/usd_ag_2026);
+new GoodDatum(goods.tallow, sources.usa2026, 0.598/unit.oz/usd_ag_2026);
+new GoodDatum(goods.tea, sources.usa2026, 2.18/(8*unit.oz)/usd_ag_2026);
+new GoodDatum(goods.vinegar, sources.usa2026, 0.031/unit.oz/usd_ag_2026);
+new GoodDatum(goods.ale, sources.usa2026, 0.092/unit.oz/usd_ag_2026);
+new GoodDatum(goods.beer, sources.usa2026, 0.052/unit.oz/usd_ag_2026);
+new GoodDatum(goods.wine, sources.usa2026, 0.298/unit.oz/usd_ag_2026);
+new GoodDatum(goods.candle, sources.usa2026, 0.233/unit.oz/usd_ag_2026);
+new GoodDatum(goods.soap, sources.usa2026, 0.171/unit.oz/usd_ag_2026);
+new GoodDatum(goods.charcoal, sources.usa2026, 0.657/unit.lb/usd_ag_2026);
+new GoodDatum(goods.wax, sources.usa2026, 0.261/unit.oz/usd_ag_2026);
+// cheapest horse on https://www.equinenow.com/cheap.htm
+new GoodDatum(goods.horse, sources.usa2026, 500/usd_ag_2026);
 
 /** @param {Source} source */
 function cost_of_living(source, use_indexed = true){
