@@ -88,11 +88,15 @@ class ChemicalElement {
 		/** @type {ElementCategory} */
 		this.cat = cat;
 	}
+	/** @returns {HTMLInputElement} */
+	get slider(){
+		return document.getElementById(this.slider_id);
+	}
 	get slider_id(){
 		return `slider-${this.sym}`;
 	}
 	updateSliderNumber(){
-		document.getElementById(`${this.slider_id}-n`).innerHTML = document.getElementById(this.slider_id).value;
+		document.getElementById(`${this.slider_id}-n`).innerHTML = this.slider.value;
 	}
 }
 
@@ -1177,6 +1181,12 @@ const ALLOY = {
 			return;
 		}
 		// ok now continue
+		// normalization button
+		const normalize = document.createElement('span');
+		normalize.classList.add('button');
+		normalize.innerHTML = 'Normalize';
+		normalize.onclick = () => this.normalize();
+		this.elem.container.appendChild(normalize);
 		// top row
 		this.initSliders();
 		const layoutTable = document.createElement('table');
@@ -1251,6 +1261,14 @@ const ALLOY = {
 			slider_container.appendChild(label);
 		});
 	},
+	normalize(){
+		const sum = this.elements.map(e => +e.slider.value).reduce((a, b) => a+b, 0);
+		this.elements.forEach(e => {
+			e.slider.value *= this.config.slider_notches/sum;
+			e.updateSliderNumber();
+		});
+		this.refresh();
+	},
 	/** @param {number} f */
 	rarityColor(f){
 		return [
@@ -1266,7 +1284,7 @@ const ALLOY = {
 	refresh(){
 		// get current slider states
 		const composition = {};
-		this.elements.forEach(e => composition[e.sym] = document.getElementById(e.slider_id).value/this.config.slider_notches);
+		this.elements.forEach(e => composition[e.sym] = e.slider.value/this.config.slider_notches);
 		const errors = this.alloys.map(a => [a, a.dist(composition)]);
 		errors.sort((a, b) => a[1] - b[1]);
 		// blank current output
@@ -1298,8 +1316,7 @@ const ALLOY = {
 	},
 	setSliders(composition = {}){
 		this.elements.forEach(e => {
-			const slider = document.getElementById(e.slider_id);
-			slider.value = composition[e.sym]*this.config.slider_notches || 0;
+			e.slider.value = composition[e.sym]*this.config.slider_notches || 0;
 			// refresh slider numbers
 			e.updateSliderNumber();
 		});
