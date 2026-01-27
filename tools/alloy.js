@@ -185,6 +185,11 @@ class PhaseDiagram {
 					return {x, y};
 				}
 			}
+			case "rect": {
+				const x = var0*(this.x_max - this.x_min) + this.x_min;
+				const y = var1*(this.y_max - this.y_min) + this.y_min;
+				return {x, y};
+			}
 			case "ternary": {
 				const var2 = 1-var0-var1;
 				const y_raw = 1-var2;
@@ -544,35 +549,55 @@ const ALLOY = {
 			Ca: 0.0051,
 			S:  0.0050,
 		}),
-		new Alloy('Coal (Bituminous)', {
-			C:  0.7326,
-			O:  0.1587,
-			H:  0.0743,
-			Si: 0.0100,
-			Fe: 0.0093,
-			S:  0.0070,
-			Al: 0.0056,
-			Ca: 0.0025,
+		new Alloy('Coal (Bituminous, Low-Volatile)', {
+			C:  0.7910,
+			O:  0.1117,
+			H:  0.0301,
+			S:  0.0235,
+			Si: 0.0158,
+			Fe: 0.0143,
+			Al: 0.0087,
+			Ca: 0.0038,
+		}),
+		new Alloy('Coal (Bituminous, Medium-Volatile)', {
+			C:  0.7810,
+			O:  0.1133,
+			H:  0.0401,
+			S:  0.0235,
+			Si: 0.0153,
+			Fe: 0.0143,
+			Al: 0.0087,
+			Ca: 0.0038,
+		}),
+		new Alloy('Coal (Bituminous, High-Volatile)', {
+			C:  0.7739,
+			O:  0.1139,
+			H:  0.0472,
+			S:  0.0235,
+			Si: 0.0153,
+			Fe: 0.0143,
+			Al: 0.0087,
+			Ca: 0.0038,
 		}),
 		new Alloy('Coal (Sub-bituminous)', {
-			C:  0.6686,
-			O:  0.2229,
-			H:  0.0764,
-			Si: 0.0117,
-			Al: 0.0067,
-			Ca: 0.0063,
-			S:  0.0050,
-			Fe: 0.0025,
+			C:  0.6194,
+			O:  0.2757,
+			H:  0.0677,
+			Si: 0.0137,
+			Al: 0.0078,
+			Ca: 0.0073,
+			S:  0.0055,
+			Fe: 0.0029,
 		}),
 		new Alloy('Coal (Lignite)', {
-			C:  0.4614,
-			O:  0.3864,
-			H:  0.0702,
+			C:  0.4574,
+			O:  0.3988,
+			H:  0.0669,
 			Ca: 0.0274,
 			Si: 0.0196,
 			Al: 0.0166,
-			S:  0.0100,
 			Fe: 0.0093,
+			S:  0.0040,
 		}),
 		new Alloy('Constantan', {
 			Cu: 0.55,
@@ -1196,6 +1221,35 @@ const ALLOY = {
 			})
 		),
 		new AlloyCategory('Cast Iron', c => 0.5 < c.Fe && 0.0214 < c.C && c.C <= 0.0667),
+		new AlloyCategory('Coal', c => 0.2 <= c.C, true,
+			new PhaseDiagram({
+				src: 'https://upload.wikimedia.org/wikipedia/commons/2/21/Coal_Rank_USGS.png',
+				type: 'rect',
+				x_min: 1.31,
+				x_max: 0.14,
+				y_min: 1.38,
+				y_max: 0.04,
+				f: c => {
+					let dry = 0;
+					let wet = 0;
+					for (let e in c) {
+						wet += c[e];
+						if (e !== 'O') dry += c[e];
+					}
+					// "percentage of fixed carbon, dry"
+					const var1 = (c.C||0) / dry;
+					// "Gross calorific value, BTU/lb, moist" [MAX 16,000]
+					// https://en.wikipedia.org/wiki/Carbon_dioxide
+					/** J/mol / (kg/mol) -> J/kg */
+					const ENTHALPY_OF_FORMATION_C = 395.5e3 / 0.044009;
+					/** J/kg */
+					const BTU_PER_LB = 2326;
+					const CORRECTIVE_FACTOR = 3.5; // todo: figure out why this is needed
+					const var0 = ENTHALPY_OF_FORMATION_C/BTU_PER_LB * (c.C||0) / 16e3 * CORRECTIVE_FACTOR;
+					return {var0, var1};
+				},
+			})
+		),
 		new AlloyCategory('Cr-Fe-Ni', c => 0.5 <= (c.Cr||0) + (c.Fe||0) + (c.Ni||0), true,
 			new PhaseDiagram({
 				src: 'https://upload.wikimedia.org/wikipedia/commons/d/da/Fe-Cr-Ni-solidus-phase-diagram.svg',
