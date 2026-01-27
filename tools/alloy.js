@@ -55,19 +55,25 @@ class Alloy {
 
 class AlloyProperties {
 	static PROPERTY_LIST = [
+		['A/m', 'coercivity'],
 		['K', 'curie_temperature'],
 		['kg/m&sup3;', 'density'],
+		['H/m', 'magnetic_permeability'],
 		['K', 'melt'],
 		['Ω·m', 'resistivity'],
+		['T', 'saturation_flux_density'],
 		['Pa', 'tensile_strength'],
 		['K<sup>-1</sup>', 'thermal_expansion_coefficient'],
 		['Pa', 'transverse_modulus_of_rupture'],
 	];
 	constructor(o = {}){
+		this.coercivity = o.coercivity;
 		this.curie_temperature = o.curie_temperature;
 		this.density = o.density;
+		this.magnetic_permeability = o.magnetic_permeability;
 		this.melt = o.melt;
 		this.resistivity = o.resistivity;
+		this.saturation_flux_density = o.saturation_flux_density;
 		this.tensile_strength = o.tensile_strength;
 		this.thermal_expansion_coefficient = o.thermal_expansion_coefficient;
 		this.transverse_modulus_of_rupture = o.transverse_modulus_of_rupture;
@@ -242,6 +248,8 @@ const ALLOY = {
 			Cu: 0.03,
 			Ti: 0.005,
 		}, new AlloyProperties({
+			// unknown type
+			coercivity: 32e3,
 			// Alnico 1
 			density: 6900,
 			tensile_strength: 28e6,
@@ -254,7 +262,12 @@ const ALLOY = {
 		new Alloy('Alperm', {
 			Fe: 0.84,
 			Al: 0.16,
-		}),
+		}, new AlloyProperties({
+			coercivity: 5,
+			magnetic_permeability: 55e3,
+			saturation_flux_density: 0.8,
+			resistivity: 140e-3,
+		})),
 		new Alloy('Aluminum (Aludur)', {
 			Al: 0.985,
 			Si: 0.007,
