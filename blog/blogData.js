@@ -2433,7 +2433,7 @@ const blogData = [
 	I suspect nowadays it will often occur at the earliest possible time.
 	`,
 	`
-	@title Forging Precious Metals"
+	@title Forging Precious Metals
 	@date 1769521351421
 	@tags chemistry
 	Here are pure elements that are denser or similarly dense to gold (currently $163.43/g),
