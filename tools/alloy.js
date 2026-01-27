@@ -1,10 +1,11 @@
 class Alloy {
 	/** @param {string} name */
-	constructor(name, composition){
+	constructor(name, composition, properties){
 		/** @type {string} */
 		this.name = name;
 		/** elem name -> fraction */
 		this.composition = composition;
+		this.properties = properties || new AlloyProperties();
 	}
 	/** @returns {HTMLSpanElement} button to set sliders to this alloy */
 	get gotoElem(){
@@ -49,6 +50,27 @@ class Alloy {
 			ssq += Math.pow(Math.abs(my_amt-other_amt), ALLOY.config.exponent);
 		}
 		return ssq;
+	}
+}
+
+class AlloyProperties {
+	static PROPERTY_LIST = [
+		['K', 'curie_temperature'],
+		['kg/m&sup3;', 'density'],
+		['K', 'melt'],
+		['Ω·m', 'resistivity'],
+		['Pa', 'tensile_strength'],
+		['K<sup>-1</sup>', 'thermal_expansion_coefficient'],
+		['Pa', 'transverse_modulus_of_rupture'],
+	];
+	constructor(o = {}){
+		this.curie_temperature = o.curie_temperature;
+		this.density = o.density;
+		this.melt = o.melt;
+		this.resistivity = o.resistivity;
+		this.tensile_strength = o.tensile_strength;
+		this.thermal_expansion_coefficient = o.thermal_expansion_coefficient;
+		this.transverse_modulus_of_rupture = o.transverse_modulus_of_rupture;
 	}
 }
 
@@ -205,6 +227,10 @@ class PhaseDiagram {
 	}
 }
 
+const CONSTANTS = {
+	celsius: 273.15,
+};
+
 const ALLOY = {
 	/** @type {Alloy[]} */
 	alloys: [
@@ -215,7 +241,16 @@ const ALLOY = {
 			Al: 0.1,
 			Cu: 0.03,
 			Ti: 0.005,
-		}),
+		}, new AlloyProperties({
+			// Alnico 1
+			density: 6900,
+			tensile_strength: 28e6,
+			transverse_modulus_of_rupture: 97e6,
+			thermal_expansion_coefficient: 12.6e-6,
+			resistivity: 75e-3*1e-2,
+			// Alnico 2
+			curie_temperature: 810+CONSTANTS.celsius,
+		})),
 		new Alloy('Alperm', {
 			Fe: 0.84,
 			Al: 0.16,
@@ -1017,7 +1052,7 @@ const ALLOY = {
 		}),
 		new Alloy('Silver (Decoplata)', {
 			Ag: 0.72,
-			Cu: 0.18,
+			Cu: 0.28,
 		}),
 		new Alloy('Silver (Scandinavian)', {
 			Ag: 0.83,
@@ -1402,6 +1437,7 @@ const ALLOY = {
 		row.appendChild(rightCol);
 		// left col
 		this.initResult();
+		this.initProperties();
 		this.initCategories();
 		// right col
 		this.initPhases();
@@ -1430,6 +1466,31 @@ const ALLOY = {
 		const phases = this.elem.phases = document.createElement('div');
 		phases.id = 'phases';
 		this.elem.rightCol.appendChild(phases);
+	},
+	initProperties(){
+		const prop_header = document.createElement('h2');
+		prop_header.innerHTML = 'Properties';
+		this.elem.leftCol.appendChild(prop_header);
+
+		const warning = document.createElement('p');
+		warning.innerHTML = 'WARNING: this section is very WIP';
+		this.elem.leftCol.appendChild(warning);
+
+		const property_table = this.elem.categories = document.createElement('table');
+		property_table.id = 'propertyTable';
+		this.elem.leftCol.appendChild(property_table);
+		// gen rows
+		AlloyProperties.PROPERTY_LIST.forEach(un => {
+			const [unit, name] = un;
+			const row = document.createElement('tr');
+			property_table.appendChild(row);
+			const th = document.createElement('th');
+			th.innerHTML = name;
+			row.appendChild(th);
+			const td = document.createElement('td');
+			td.id = `propertyTable_${name}`;
+			row.appendChild(td);
+		});
 	},
 	initResult(){
 		const result_header = document.createElement('h2');
@@ -1464,6 +1525,28 @@ const ALLOY = {
 			slider_container.appendChild(label);
 		});
 	},
+	nearest(composition){
+		const errors = this.alloys.map(a => [a, a.dist(composition)]);
+		errors.sort((a, b) => a[1] - b[1]);
+		return errors;
+	},
+	nearestProperties(composition){
+		const nearest = this.nearest(composition);
+		const o = new AlloyProperties();
+		AlloyProperties.PROPERTY_LIST
+			.forEach(x => {
+				const [unit, name] = x;
+				const matches = nearest.filter(a => typeof a[0].properties[name] !== 'undefined');
+				if (matches.length === 0){
+					return;
+				}
+				/** @type {Alloy} */
+				const best_fit = matches[0][0];
+				o[name] = `${best_fit.properties[name]} ${unit}`;
+				o[name+'_source'] = best_fit;
+			});
+		return o;
+	},
 	normalize(){
 		const sum = this.elements.map(e => +e.slider.value).reduce((a, b) => a+b, 0);
 		this.elements.forEach(e => {
@@ -1488,8 +1571,7 @@ const ALLOY = {
 		// get current slider states
 		const composition = {};
 		this.elements.forEach(e => composition[e.sym] = e.slider.value/this.config.slider_notches);
-		const errors = this.alloys.map(a => [a, a.dist(composition)]);
-		errors.sort((a, b) => a[1] - b[1]);
+		const errors = this.nearest(composition);
 		// blank current output
 		const result = this.elem.result;
 		result.innerHTML = '';
@@ -1515,6 +1597,16 @@ const ALLOY = {
 					this.elem.phases.appendChild(cat.phaseDiagram.elem(composition));
 				}
 			}
+		});
+		// refresh properties
+		const properties = this.nearestProperties(composition);
+		AlloyProperties.PROPERTY_LIST.forEach(x => {
+			const [unit, name] = x;
+			const td = document.getElementById(`propertyTable_${name}`);
+			td.innerHTML = properties[name];
+			/** @type {Alloy} */
+			const src = properties[`${name}_source`];
+			td.title = `source of estimate: ${src && src.name}`;
 		});
 	},
 	setSliders(composition = {}){
