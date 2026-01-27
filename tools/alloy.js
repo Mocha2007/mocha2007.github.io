@@ -637,6 +637,10 @@ const ALLOY = {
 			Fe: 0.014,
 			Mn: 0.01
 		}),
+		new Alloy('CuSil', {
+			Ag: 0.72,
+			Cu: 0.28,
+		}),
 		new Alloy('Dymalloy', {
 			Ag: 0.8,
 			Cu: 0.2,
