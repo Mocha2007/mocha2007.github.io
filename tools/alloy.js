@@ -63,6 +63,7 @@ class AlloyProperties {
 		['Ω·m', 'resistivity'],
 		['T', 'saturation_flux_density'],
 		['Pa', 'tensile_strength'],
+		['W/m·K', 'thermal_conductivity'],
 		['K<sup>-1</sup>', 'thermal_expansion_coefficient'],
 		['Pa', 'transverse_modulus_of_rupture'],
 	];
@@ -75,6 +76,7 @@ class AlloyProperties {
 		this.resistivity = o.resistivity;
 		this.saturation_flux_density = o.saturation_flux_density;
 		this.tensile_strength = o.tensile_strength;
+		this.thermal_conductivity = o.thermal_conductivity;
 		this.thermal_expansion_coefficient = o.thermal_expansion_coefficient;
 		this.transverse_modulus_of_rupture = o.transverse_modulus_of_rupture;
 	}
@@ -277,7 +279,10 @@ const ALLOY = {
 		new Alloy('Aluminum (Lockalloy)', {
 			Be: 0.62,
 			Al: 0.38,
-		}),
+		}, new AlloyProperties({
+			density: 2071,
+			thermal_conductivity: 210,
+		})),
 		new Alloy('Aluminum (Y Alloy)', {
 			Al: 0.925,
 			Cu: 0.04,
