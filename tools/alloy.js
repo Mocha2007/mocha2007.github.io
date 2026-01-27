@@ -596,6 +596,17 @@ const ALLOY = {
 			Ag: 0.8,
 			Cu: 0.2,
 		}),
+		new Alloy('Earth\'s Crust', {
+			O: 0.461,
+			Si: 0.282,
+			Al: 0.0823,
+			Fe: 0.0563,
+			Ca: 0.0415,
+			Na: 0.0236,
+			Mg: 0.0233,
+			K: 0.0209,
+			Ti: 0.00565,
+		}),
 		new Alloy('Electrum', {
 			Ag: 0.5,
 			Au: 0.5,
