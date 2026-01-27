@@ -694,6 +694,11 @@ const ALLOY = {
 			In: 0.215,
 			Sn: 0.1,
 		}),
+		new Alloy('Gold (American Bullion Coin)', {
+			Au: 0.9167,
+			Cu: 0.0533,
+			Ag: 0.03,
+		}),
 		// https://web.archive.org/web/20180730063422/https://link.springer.com/content/pdf/10.1007/BF03214796.pdf
 		new Alloy('Gold (Black)', {
 			Au: 0.75,
