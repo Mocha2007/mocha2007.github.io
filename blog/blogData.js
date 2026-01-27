@@ -2448,6 +2448,8 @@ const blogData = [
 		<li>Tungsten - <span style="color:green">&check;</span> 0.3% less dense than gold, and nearly 1,000x cheaper ($183.36/kg). A simple gold-plated tungsten bar would probably be sufficient to pass superficial examination.</li>
 		<li>Uranium - <span style="color:green">&check;</span> 1% less dense than gold, and nearly as cheap as tungsten ($196.76/kg). Strictly inferior to tungsten, but still a theoretical possibility.</li>
 	</ul>
+	The recently skyrocketing price of gold has made more metals economically viable than in the past.
+	@p
 	Of the above, the only metals cheap enough to be economically viable in forging silver are tungsten and uranium.
 	In addition to the above, the following elements are dense enough to aid in forging silver (currently $3.59/g):
 	<ul>
@@ -2463,6 +2465,7 @@ const blogData = [
 		<li>Lead - <span style="color:green">&check;</span>  8% denser than silver, and far cheaper ($1.99/kg).</li>
 		<li>Molybdenum - <span style="color:green">&check;</span>  2% less dense than silver, and far cheaper ($73.33/kg).</li>
 	</ul>
+	If silver prices keep rising like they have recently, it might not be long become thallium and hafnium also become economically viable options.
 	@p
 	In summary, metals sorted by economic viability in forging precious metals:
 	<ul>
