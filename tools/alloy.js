@@ -1002,9 +1002,41 @@ const ALLOY = {
 			Co: 0.66,
 			Sm: 0.34,
 		}),
+		new Alloy('Silver (Brittania)', {
+			Ag: 23/24,
+			Cu: 1/24,
+		}),
+		new Alloy('Silver (Coin)', {
+			Ag: 0.9,
+			Cu: 0.1,
+		}),
+		new Alloy('Silver (Decoplata)', {
+			Ag: 0.72,
+			Cu: 0.18,
+		}),
+		new Alloy('Silver (Scandinavian)', {
+			Ag: 0.83,
+			Cu: 0.17,
+		}),
+		new Alloy('Silver (Sterling)', {
+			Ag: 0.925,
+			Cu: 0.075,
+		}),
 		new Alloy('Sodium-Potassium alloy (Eutectic)', {
 			K: 0.77,
 			Na: 0.23,
+		}),
+		new Alloy('Solder (Lead)', {
+			// typical
+			Sn: 0.6,
+			Pb: 0.4,
+		}),
+		new Alloy('Solder (Lead-free)', {
+			// typical
+			Ag: 0.64,
+			Sn: 0.18,
+			Cu: 0.14,
+			Zn: 0.04,
 		}),
 		new Alloy('Steel', {
 			Fe: 0.9892,
@@ -1098,30 +1130,6 @@ const ALLOY = {
 			S: 0.0017,
 			Si: 0.0004,
 			As: 0.0003,
-		}),
-		new Alloy('Silver (Brittania)', {
-			Ag: 23/24,
-			Cu: 1/24,
-		}),
-		new Alloy('Silver (Coin)', {
-			Ag: 0.9,
-			Cu: 0.1,
-		}),
-		new Alloy('Silver (Sterling)', {
-			Ag: 0.925,
-			Cu: 0.075,
-		}),
-		new Alloy('Solder (Lead)', {
-			// typical
-			Sn: 0.6,
-			Pb: 0.4,
-		}),
-		new Alloy('Solder (Lead-free)', {
-			// typical
-			Ag: 0.64,
-			Sn: 0.18,
-			Cu: 0.14,
-			Zn: 0.04,
 		}),
 		new Alloy('Tellurium copper', {
 			Cu: 0.994,
