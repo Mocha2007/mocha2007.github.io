@@ -215,6 +215,47 @@ const ALLOY = {
 			Fe: 0.84,
 			Al: 0.16,
 		}),
+		new Alloy('Aluminum (Duralumin, 2024)', {
+			// https://en.wikipedia.org/wiki/2024_aluminium_alloy
+			Al: 0.9355,
+			Cu: 0.0435,
+			Mg: 0.015,
+			Mn: 0.006,
+		}),
+		new Alloy('Aluminum (3004)', {
+			Al: 0.977,
+			Mn: 0.0125,
+			Mg: 0.0105,
+		}),
+		new Alloy('Aluminum (4043)', {
+			Al: 0.948,
+			Si: 0.052,
+		}),
+		new Alloy('Aluminum (5456)', {
+			Al: 0.94,
+			Mg: 0.051,
+			Mn: 0.008,
+			Cr: 0.0012,
+		}),
+		new Alloy('Aluminum (6066)', {
+			Al: 0.957,
+			Si: 0.014,
+			Mg: 0.011,
+			Cu: 0.01,
+			Mn: 0.008,
+		}),
+		new Alloy('Aluminum (7075)', {
+			Al: 0.9,
+			Zn: 0.056,
+			Mg: 0.025,
+			Cu: 0.016,
+			Cr: 0.0023,
+		}),
+		new Alloy('Aluminum (8006)', {
+			Al: 0.98,
+			Fe: 0.015,
+			Mn: 0.005,
+		}),
 		new Alloy('Amalgam (Arquerite)', {
 			Ag: 0.87,
 			Hg: 0.13,
@@ -534,12 +575,6 @@ const ALLOY = {
 			Ni: 0.1,
 			Fe: 0.014,
 			Mn: 0.01
-		}),
-		new Alloy('Duralumin', {
-			Al: 0.9355,
-			Cu: 0.0435,
-			Mg: 0.015,
-			Mn: 0.006,
 		}),
 		new Alloy('Dymalloy', {
 			Ag: 0.8,
