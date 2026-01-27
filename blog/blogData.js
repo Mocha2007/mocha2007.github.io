@@ -2431,6 +2431,44 @@ const blogData = [
 	@p
 	This calendar type might have been more useful prior to recent climate change.
 	I suspect nowadays it will often occur at the earliest possible time.
+	`,
 	`
+	@title Forging Precious Metals"
+	@date 1769521351421
+	@tags chemistry
+	Here are pure elements that are denser or similarly dense to gold (currently $163.43/g),
+	and their practicality in forging gold:
+	<ul>
+		<li>Dubnium-Roentgenium - <span style="color:red">&cross;</span> Half-life less than a day, cannot produce macroscopic quantities, highly radioactive, and much more expensive regardless</li>
+		<li>Osmium - <span style="color:green">&check;</span> 17% denser than gold, and 66% cheaper ($55.43/g). Would probably need to be mixed with a small amount of a less dense metal (possibly Bismuth, to help match magnetic properties) and then plated.</li>
+		<li>Iridium - <span style="color:green">&check;</span> 17% denser than gold, and 11% cheaper ($144.68/g). Same caveats as Osmium, so strictly worse due to its price.</li>
+		<li>Platinum - <span style="color:green">&check;</span> 11% denser than gold, and 45% cheaper ($89.29/g). Same caveats as Osmium, so strictly worse due to its price.</li>
+		<li>Rhenium - <span style="color:green">&check;</span> 9% denser than gold, and 97% cheaper ($5.28/g). Strictly superior to Osmium.</li>
+		<li>Neptunium, Plutonium - <span style="color:red">&cross;</span> controlled substances, highly radioactive, much more valuable than gold.</li>
+		<li>Tungsten - <span style="color:green">&check;</span> 0.3% less dense than gold, and nearly 1,000x cheaper ($183.36/kg). A simple gold-plated tungsten bar would probably be sufficient to pass superficial examination.</li>
+		<li>Uranium - <span style="color:green">&check;</span> 1% less dense than gold, and nearly as cheap as tungsten ($196.76/kg). Strictly inferior to tungsten, but still a theoretical possibility.</li>
+	</ul>
+	Of the above, the only metals cheap enough to be economically viable in forging silver are tungsten and uranium.
+	In addition to the above, the following elements are dense enough to aid in forging silver (currently $3.59/g):
+	<ul>
+		<li>Rf, Nh, Pa, Ca, Bk, Lr, Cp, Cm, Mc, Lv, Am, Fl, Tc, Md - <span style="color:red">&cross;</span> Short half-life, cannot produce macroscopic quantities, highly radioactive, and much more expensive regardless</li>
+		<li>Tantalum - <span style="color:green">&check;</span> 59% denser than silver, and 88% cheaper ($421.31/kg).</li>
+		<li>Mercury - <span style="color:green">&check;</span> 29% denser than silver, and 94% cheaper ($218.03/kg). Will need to form an amalgam to make solid.</li>
+		<li>Hafnium - <span style="color:red">&cross;</span> 27% denser than silver, but 4x more expensive ($12.00/g).</li>
+		<li>Ruthenium - <span style="color:red">&cross;</span> 19% denser than silver, but far more expensive ($51.90/g).</li>
+		<li>Rhodium - <span style="color:red">&cross;</span> 18% denser than silver, but far more expensive ($337.58/g).</li>
+		<li>Palladium - <span style="color:red">&cross;</span> 15% denser than silver, but far more expensive ($62.08/g).</li>
+		<li>Thallium - <span style="color:red">&cross;</span> 13% denser than silver, but 3x more expensive ($9.50/g).</li>
+		<li>Thorium - <span style="color:green">&check;</span>  11% denser than silver, and 92% cheaper ($287/kg). Its radioactivity may pose a problem, however.</li>
+		<li>Lead - <span style="color:green">&check;</span>  8% denser than silver, and far cheaper ($1.99/kg).</li>
+		<li>Molybdenum - <span style="color:green">&check;</span>  2% less dense than silver, and far cheaper ($73.33/kg).</li>
+	</ul>
+	@p
+	In summary, metals sorted by economic viability in forging precious metals:
+	<ul>
+		<li>Gold: Tungsten > Uranium >> Rhenium > Osmium > Platinum > Iridium</li>
+		<li>Silver: Lead >> Molybdenum > Tungsten > Uranium > Mercury > Thorium > Tantalum</li>
+	</ul>
+	`,
 ];
 // don't forget, run blog.timestamp to get the timestamp!
