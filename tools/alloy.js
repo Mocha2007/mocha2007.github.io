@@ -215,6 +215,22 @@ const ALLOY = {
 			Fe: 0.84,
 			Al: 0.16,
 		}),
+		new Alloy('Aluminum (Aludur)', {
+			Al: 0.985,
+			Si: 0.007,
+			Mg: 0.005,
+			Fe: 0.005,
+		}),
+		new Alloy('Aluminum (Lockalloy)', {
+			Be: 0.62,
+			Al: 0.38,
+		}),
+		new Alloy('Aluminum (Y Alloy)', {
+			Al: 0.925,
+			Cu: 0.04,
+			Ni: 0.02,
+			Mg: 0.015,
+		}),
 		new Alloy('Aluminum (Duralumin, 2024)', {
 			// https://en.wikipedia.org/wiki/2024_aluminium_alloy
 			Al: 0.9355,
