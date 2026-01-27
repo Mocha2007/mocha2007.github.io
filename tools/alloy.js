@@ -1252,20 +1252,26 @@ const ALLOY = {
 				f: c => {
 					let dry = 0;
 					let wet = 0;
+					let dry_h = 0;
 					for (let e in c) {
 						wet += c[e];
-						if (e !== 'O') dry += c[e];
+						if (e === 'H') dry += dry_h = Math.max(0, c.H - 2/16 * (c.O||0));
+						else if (e !== 'O') dry += c[e];
 					}
 					// "percentage of fixed carbon, dry"
 					const var1 = (c.C||0) / dry;
 					// "Gross calorific value, BTU/lb, moist" [MAX 16,000]
 					// https://en.wikipedia.org/wiki/Carbon_dioxide
 					/** J/mol / (kg/mol) -> J/kg */
-					const ENTHALPY_OF_FORMATION_C = 395.5e3 / 0.044009;
+					const ENTHALPY_OF_FORMATION_CO2 = 395.5e3 / 0.044009;
+					const ENTHALPY_OF_FORMATION_H2O = 285.83e3 / 0.01801528;
 					/** J/kg */
 					const BTU_PER_LB = 2326;
 					const CORRECTIVE_FACTOR = 3.5; // todo: figure out why this is needed
-					const var0 = ENTHALPY_OF_FORMATION_C/BTU_PER_LB * (c.C||0) / 16e3 * CORRECTIVE_FACTOR;
+					const var0 = CORRECTIVE_FACTOR/BTU_PER_LB / 16e3 * (
+						ENTHALPY_OF_FORMATION_CO2 * (c.C||0)
+						+ ENTHALPY_OF_FORMATION_H2O * dry_h
+					);
 					return {var0, var1};
 				},
 			})
