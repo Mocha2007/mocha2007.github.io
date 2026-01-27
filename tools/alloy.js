@@ -1260,18 +1260,11 @@ const ALLOY = {
 					}
 					// "percentage of fixed carbon, dry"
 					const var1 = (c.C||0) / dry;
+					// https://en.wikipedia.org/wiki/Energy_value_of_coal#Chemical_composition
+					// in kJ/kg
+					const Q = 337*(c.C||0) + 1442*((c.H||0) - (c.O||0)/8) + 93*(c.S||0);
 					// "Gross calorific value, BTU/lb, moist" [MAX 16,000]
-					// https://en.wikipedia.org/wiki/Carbon_dioxide
-					/** J/mol / (kg/mol) -> J/kg */
-					const ENTHALPY_OF_FORMATION_CO2 = 395.5e3 / 0.044009;
-					const ENTHALPY_OF_FORMATION_H2O = 285.83e3 / 0.01801528;
-					/** J/kg */
-					const BTU_PER_LB = 2326;
-					const CORRECTIVE_FACTOR = 3.5; // todo: figure out why this is needed
-					const var0 = CORRECTIVE_FACTOR/BTU_PER_LB / 16e3 * (
-						ENTHALPY_OF_FORMATION_CO2 * (c.C||0)
-						+ ENTHALPY_OF_FORMATION_H2O * dry_h
-					);
+					const var0 = 100*Q / 2.326 / 16e3;
 					return {var0, var1};
 				},
 			})
