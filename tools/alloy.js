@@ -539,15 +539,35 @@ const ALLOY = {
 		// https://en.wikipedia.org/wiki/Coal_combustion_products#Chemical_composition_and_classification
 		// see coal composition helper spreadsheet
 		// https://docs.google.com/spreadsheets/d/1bFXWlRE9ocEt8jXoN6eQbcedyx38dnhC3vkia68eJdg/edit?gid=0#gid=0
-		new Alloy('Coal (Anthracite)', {
-			C:  0.8129,
-			O:  0.1105,
-			Si: 0.0204,
-			Fe: 0.0191,
-			H:  0.0155,
-			Al: 0.0116,
-			Ca: 0.0051,
-			S:  0.0050,
+		new Alloy('Coal (Anthracite, Meta-)', {
+			C:  0.8697,
+			O:  0.0841,
+			Si: 0.0122,
+			Fe: 0.0115,
+			H:  0.0085,
+			Al: 0.0069,
+			S:  0.0040,
+			Ca: 0.0030,
+		}),
+		new Alloy('Coal (Anthracite, Mid-)', {
+			C:  0.8380,
+			O:  0.0995,
+			Si: 0.0153,
+			H:  0.0145,
+			Fe: 0.0143,
+			Al: 0.0087,
+			S:  0.0059,
+			Ca: 0.0038,
+		}),
+		new Alloy('Coal (Anthracite, Semi-)', {
+			C:  0.8115,
+			O:  0.0994,
+			H:  0.0208,
+			Si: 0.0184,
+			Fe: 0.0172,
+			Al: 0.0104,
+			S:  0.0077,
+			Ca: 0.0046,
 		}),
 		new Alloy('Coal (Bituminous, Low-Volatile)', {
 			C:  0.7910,
