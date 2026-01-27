@@ -1260,9 +1260,11 @@ const ALLOY = {
 	},
 	/** @type {ChemicalElement[]} */
 	elements: [
+		// 24
 		new ChemicalElement('aluminum', 'Al', ElementCategory.METAL_POSTTRANS),
 		new ChemicalElement('antimony', 'Sb', ElementCategory.METALLOID),
 		new ChemicalElement('bismuth', 'Bi', ElementCategory.METAL_POSTTRANS),
+		new ChemicalElement('calcium', 'Ca', ElementCategory.METAL_AE),
 		new ChemicalElement('carbon', 'C', ElementCategory.NONMETAL),
 		new ChemicalElement('chromium', 'Cr', ElementCategory.METAL_TRANS),
 		new ChemicalElement('cobalt', 'Co', ElementCategory.METAL_TRANS),
@@ -1275,10 +1277,14 @@ const ALLOY = {
 		new ChemicalElement('manganese', 'Mn', ElementCategory.METAL_TRANS),
 		new ChemicalElement('molybdenum', 'Mo', ElementCategory.METAL_TRANS),
 		new ChemicalElement('nickel', 'Ni', ElementCategory.METAL_TRANS),
+		new ChemicalElement('oxygen', 'O', ElementCategory.NONMETAL),
+		new ChemicalElement('phosphorus', 'P', ElementCategory.NONMETAL),
 		new ChemicalElement('silicon', 'Si', ElementCategory.METALLOID),
 		new ChemicalElement('silver', 'Ag', ElementCategory.METAL_TRANS),
-		new ChemicalElement('tellurium', 'Te', ElementCategory.METALLOID),
+		new ChemicalElement('sulfur', 'S', ElementCategory.NONMETAL),
+		// new ChemicalElement('tellurium', 'Te', ElementCategory.METALLOID),
 		new ChemicalElement('tin', 'Sn', ElementCategory.METAL_POSTTRANS),
+		new ChemicalElement('titanium', 'Ti', ElementCategory.METAL_TRANS),
 		new ChemicalElement('zinc', 'Zn', ElementCategory.METAL_POSTTRANS),
 	],
 	init(){
@@ -1445,7 +1451,8 @@ const ALLOY = {
 		// warn about missing elements
 		(new Set(seen)).forEach(x => {
 			if (!this.elements.some(e => e.sym === x)){
-				console.warn(`element |${x}| appears in alloys but is undefined`);
+				const count = seen.filter(e => e === x).length;
+				console.warn(`element |${x}| appears in ${count} alloy(s) but is undefined`);
 			}
 		});
 	}
