@@ -1176,11 +1176,15 @@ const ALLOY = {
 			C: 0.002,
 			Be: 0.0005,
 		}, new AlloyProperties({
-			density: 8300,
-			elastic_modulus: 205e9,
+			// https://www.azom.com/article.aspx?ArticleID=7658
+			density: (7700+8030)/2,
+			elastic_modulus: 200e9,
+			elongation: 0.15,
 			melt: 1480 + CONSTANTS.celsius,
-			tensile_strength: 965e6,
-			thermal_conductivity: 13,
+			poissons_ratio: 0.285,
+			tensile_strength: 1158e6,
+			thermal_conductivity: 42.7,
+			yield_strength: 1034e6,
 		})),
 		new Alloy('Hepatizon', {
 			Cu: 0.84,
