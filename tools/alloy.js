@@ -1839,7 +1839,7 @@ const ALLOY = {
 			yield_strength: 90e6,
 			youngs_modulus: 211e9,
 		})),
-		new Alloy('Nickel', {Sn: 1}, new AlloyProperties({
+		new Alloy('Nickel', {Ni: 1}, new AlloyProperties({
 			boil: 3003,
 			bulk_modulus: 180e9,
 			// https://en.wikipedia.org/wiki/Curie_temperature
