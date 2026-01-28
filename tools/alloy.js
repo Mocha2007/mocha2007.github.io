@@ -1519,6 +1519,18 @@ const ALLOY = {
 			youngs_modulus: 180e9
 		})),
 		// pure metals
+		new Alloy('Chromium', {Sn: 1}, new AlloyProperties({
+			boil: 2944,
+			density: 7172,
+			electrical_conductivity: 1/125e-9,
+			melt: 2180,
+			poissons_ratio: 0.q1,
+			specific_heat_capacity: 449.073,
+			thermal_conductivity: 93.9,
+			thermal_expansion_coefficient: 4.81e-6,
+			youngs_modulus: 279e9,
+			//
+		})),
 		new Alloy('Copper', {Cu: 1}, new AlloyProperties({
 			boil: 2835,
 			density: 8935,
