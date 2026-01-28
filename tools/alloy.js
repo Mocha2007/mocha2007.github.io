@@ -1821,6 +1821,8 @@ const ALLOY = {
 		new Alloy('Nickel', {Sn: 1}, new AlloyProperties({
 			boil: 3003,
 			bulk_modulus: 180e9,
+			// https://en.wikipedia.org/wiki/Curie_temperature
+			curie_temperature: 627,
 			density: 8907,
 			electrical_conductivity: 1/69.3e-9,
 			melt: 1728,
