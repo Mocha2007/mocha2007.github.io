@@ -73,13 +73,15 @@ class AlloyProperties {
 		['H/m', 'magnetic_permeability'],
 		['K', 'melt'],
 		['', 'poissons_ratio'],
-		['T', 'saturation_flux_density'],
+		// only one material has this
+		// ['T', 'saturation_flux_density'],
 		['Pa', 'shear_modulus'],
 		['J/kg·K', 'specific_heat_capacity'],
 		['Pa', 'tensile_strength'],
 		['W/m·K', 'thermal_conductivity'],
 		['K<sup>-1</sup>', 'thermal_expansion_coefficient'],
-		['Pa', 'transverse_modulus_of_rupture'],
+		// only one material has this
+		// ['Pa', 'transverse_modulus_of_rupture'],
 		['Pa', 'yield_strength'],
 		['Pa', 'youngs_modulus'],
 	];
