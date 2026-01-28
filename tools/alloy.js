@@ -1524,7 +1524,7 @@ const ALLOY = {
 			density: 7172,
 			electrical_conductivity: 1/125e-9,
 			melt: 2180,
-			poissons_ratio: 0.q1,
+			poissons_ratio: 0.21,
 			specific_heat_capacity: 449.073,
 			thermal_conductivity: 93.9,
 			thermal_expansion_coefficient: 4.81e-6,
