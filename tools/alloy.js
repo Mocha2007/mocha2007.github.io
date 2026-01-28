@@ -67,7 +67,6 @@ class AlloyProperties {
 		['A/m', 'coercivity'],
 		['K', 'curie_temperature'],
 		['kg/m&sup3;', 'density'],
-		['Pa', 'elastic_modulus'],
 		['S/m', 'electrical_conductivity'],
 		['', 'elongation'],
 		['H/m', 'magnetic_permeability'],
@@ -87,7 +86,8 @@ class AlloyProperties {
 		this.coercivity = o.coercivity;
 		this.curie_temperature = o.curie_temperature;
 		this.density = o.density;
-		this.elastic_modulus = o.elastic_modulus;
+		/** DEPRECATED - USE EXACT NAME */
+		// this.elastic_modulus = o.elastic_modulus;
 		this.electrical_conductivity = o.electrical_conductivity;
 		this.elongation = o.elongation;
 		this.magnetic_permeability = o.magnetic_permeability;
@@ -344,8 +344,6 @@ const ALLOY = {
 			thermal_conductivity: 1.76e2,
 			yield_strength: 97e6,
 			youngs_modulus: 73e9,
-			// https://www.makeitfrom.com/material-properties/2024-O-Aluminum
-			elastic_modulus: 71e9,
 			thermal_expansion_coefficient: 23e-3,
 		})),
 		new Alloy('Aluminum (3004)', {
@@ -357,7 +355,6 @@ const ALLOY = {
 			poissons_ratio: 0.32,
 			// https://www.makeitfrom.com/material-properties/3004-O-Aluminum
 			density: 2800,
-			elastic_modulus: 70e9,
 			electrical_conductivity: 0.42*CONSTANTS.iacs,
 			elongation: 0.19,
 			melt: 630+CONSTANTS.celsius,
@@ -366,6 +363,7 @@ const ALLOY = {
 			thermal_conductivity: 160,
 			thermal_expansion_coefficient: 24e-6,
 			yield_strength: 69e6,
+			youngs_modulus: 70e9,
 		})),
 		new Alloy('Aluminum (4043)', {
 			Al: 0.948,
@@ -385,11 +383,10 @@ const ALLOY = {
 			// Poisson's ratio article
 			poissons_ratio: 0.32,
 			tensile_strength: (310e6+350e6)/2,
-			youngs_modulus: 69e9,
 			thermal_conductivity: 120,
 			thermal_expansion_coefficient: 23.9e-6,
+			youngs_modulus: 69e9,
 			// https://www.makeitfrom.com/material-properties/5456-O-Aluminum
-			elastic_modulus: 68e9,
 			elongation: 0.18,
 			melt: 570+CONSTANTS.celsius,
 			tensile_strength: 320e6,
@@ -409,13 +406,13 @@ const ALLOY = {
 			tensile_strength: 300e6,
 			yield_strength: 241e6,
 			// https://www.makeitfrom.com/material-properties/6066-O-Aluminum
-			elastic_modulus: 70e6,
 			electrical_conductivity: 0.4*CONSTANTS.iacs,
 			elongation: 0.17,
 			melt: 560+CONSTANTS.celsius,
 			specific_heat_capacity: 890,
 			thermal_conductivity: 150,
 			thermal_expansion_coefficient: 23e6,
+			youngs_modulus: 70e6,
 		})),
 		new Alloy('Aluminum (7075)', {
 			Al: 0.9,
@@ -435,8 +432,7 @@ const ALLOY = {
 			thermal_expansion_coefficient: 2.36e-5,
 			youngs_modulus: 71.7e9,
 			// https://www.makeitfrom.com/material-properties/7075-O-Aluminum
-			elastic_modulus: 70e9,
-			yield: 120e6,
+			yield_strength: 120e6,
 		})),
 		new Alloy('Aluminum (8006)', {
 			Al: 0.98,
@@ -493,13 +489,13 @@ const ALLOY = {
 			yield_strength: 30.3e6,
 			// https://www.makeitfrom.com/material-properties/Grade-1-L13910-Tin-Base-Babbitt-Metal
 			density: 7300,
-			elastic_modulus: 53e9,
 			electrical_conductivity: 0.13*CONSTANTS.iacs,
 			elongation: 0.34,
 			poissons_ratio: 0.35,
 			specific_heat_capacity: 230,
 			thermal_conductivity: 45,
 			thermal_expansion_coefficient: 21e-6,
+			youngs_modulus: 53e9,
 		})),
 		new Alloy('Beryllium Copper', {
 			Cu: 0.9825,
@@ -577,7 +573,6 @@ const ALLOY = {
 			melt: 1000+CONSTANTS.celsius,
 			tensile_strength: 221e6,
 			// https://www.makeitfrom.com/material-properties/UNS-C83400-Red-Brass
-			elastic_modulus: 110e9,
 			electrical_conductivity: 0.44*CONSTANTS.iacs,
 			elongation: 0.3,
 			poissons_ratio: 0.33,
@@ -585,6 +580,7 @@ const ALLOY = {
 			thermal_conductivity: 190,
 			thermal_expansion_coefficient: 18e-6,
 			yield_strength: 69e6,
+			youngs_modulus: 110e9,
 		})),
 		new Alloy('Brass (Manganese)', {
 			// = Dollar coin cladding alloy
@@ -646,7 +642,6 @@ const ALLOY = {
 			melt: 975+CONSTANTS.celsius,
 			// https://www.makeitfrom.com/material-properties/UNS-C87500-Silicon-Brass
 			density: 8300,
-			elastic_modulus: 110e9,
 			electrical_conductivity: 0.067*CONSTANTS.iacs,
 			elongation: 0.18,
 			poissons_ratio: 0.33,
@@ -655,6 +650,7 @@ const ALLOY = {
 			thermal_conductivity: 28,
 			thermal_expansion_coefficient: 18e-6,
 			yield_strength: 190e6,
+			youngs_modulus: 110e9,
 		})),
 		new Alloy('Bronze', {
 			Cu: 0.88,
@@ -665,7 +661,6 @@ const ALLOY = {
 			Al: 0.08,
 		}, new AlloyProperties({
 			// https://www.makeitfrom.com/material-properties/UNS-C95200-Aluminum-Bronze
-			elastic_modulus: 110e9,
 			electrical_conductivity: 0.11*CONSTANTS.iacs,
 			elongation: 0.29,
 			density: 8300,
@@ -676,6 +671,7 @@ const ALLOY = {
 			thermal_conductivity: 50,
 			thermal_expansion_coefficient: 18e-6,
 			yield_strength: 190e6,
+			youngs_modulus: 110e9,
 		})),
 		new Alloy('Bronze (Architectural)', {
 			Cu: 0.57,
@@ -691,7 +687,6 @@ const ALLOY = {
 			Sn: 0.22,
 		}, new AlloyProperties({
 			// https://www.makeitfrom.com/material-properties/UNS-C91300-Alloy-A-Bell-Metal
-			elastic_modulus: 100e9,
 			electrical_conductivity: 0.07*CONSTANTS.iacs,
 			elongation: 0.005,
 			density: 8600,
@@ -701,6 +696,7 @@ const ALLOY = {
 			tensile_strength: 240e6,
 			thermal_expansion_coefficient: 18e6,
 			yield_strength: 210e6,
+			youngs_modulus: 100e9,
 		})),
 		new Alloy('Bronze (Bismuth)', {
 			Cu: 0.86,
@@ -709,7 +705,6 @@ const ALLOY = {
 		}, new AlloyProperties({
 			density: 8885,
 			// https://www.makeitfrom.com/material-properties/UNS-C89320-Bismuth-Bronze
-			elastic_modulus: 110e9,
 			electrical_conductivity: 0.15*CONSTANTS.iacs,
 			elongation: 0.17,
 			melt: 930+CONSTANTS.celsius,
@@ -719,6 +714,7 @@ const ALLOY = {
 			thermal_conductivity: 56,
 			thermal_expansion_coefficient: 17e-6,
 			yield_strength: 140e6,
+			youngs_modulus: 110e9,
 		})),
 		new Alloy('Bronze (French)', {
 			Cu: 0.91,
@@ -750,7 +746,6 @@ const ALLOY = {
 			electrical_conductivity: 8.94e6,
 			// https://www.makeitfrom.com/material-properties/EN-CC481K-CuSn11P-C-Phosphor-Bronze
 			density: 8700,
-			elastic_modulus: 110e6,
 			elongation: 0.045,
 			melt: 880+CONSTANTS.celsius,
 			poissons_ratio: 0.34,
@@ -759,6 +754,7 @@ const ALLOY = {
 			thermal_conductivity: 64,
 			thermal_expansion_coefficient: 18e-6,
 			yield_strength: 180e6,
+			youngs_modulus: 110e6,
 		})),
 		new Alloy('Bronze (Plastic)', {
 			// based on https://encyclopedia2.thefreedictionary.com/plastic+bronze
@@ -773,7 +769,6 @@ const ALLOY = {
 		}, new AlloyProperties({
 			// https://www.makeitfrom.com/material-properties/UNS-C87200-Silicon-Bronze
 			density: 8600,
-			elastic_modulus: 110e6,
 			electrical_conductivity: 0.06*CONSTANTS.iacs,
 			elongation: 0.3,
 			melt: 860+CONSTANTS.celsius,
@@ -783,6 +778,7 @@ const ALLOY = {
 			thermal_conductivity: 28,
 			thermal_expansion_coefficient: 17e-6,
 			yield_strength: 170e6,
+			youngs_modulus: 110e6,
 		})),
 		new Alloy('Bronze (Speculum metal)', {
 			Cu: 2/3,
@@ -814,13 +810,13 @@ const ALLOY = {
 			yield_strength: 365e6,
 			// https://www.makeitfrom.com/material-properties/Austempered-Ductile-Cast-Iron
 			density: 7500,
-			elastic_modulus: 180e6,
 			elongation: (0.011+0.13)/2,
 			melt: 1340+CONSTANTS.celsius,
 			poissons_ratio: 0.29,
 			specific_heat_capacity: 490,
 			thermal_conductivity: 42,
 			thermal_expansion_coefficient: 13e-6,
+			youngs_modulus: 180e6,
 		})),
 		new Alloy('Cast Iron (Grey)', {
 			Fe: 0.9475,
@@ -831,7 +827,6 @@ const ALLOY = {
 			tensile_strength: 345e6,
 			// https://www.makeitfrom.com/material-properties/Grey-Cast-Iron
 			density: 7500,
-			elastic_modulus: 180e9,
 			electrical_conductivity: 0.074*CONSTANTS.iacs,
 			melt: 1180+CONSTANTS.celsius,
 			poissons_ratio: 0.29,
@@ -839,6 +834,7 @@ const ALLOY = {
 			thermal_conductivity: 46,
 			thermal_expansion_coefficient: 11e-6,
 			yield_strength: (98e6+290e6)/2,
+			youngs_modulus: 180e9,
 		})),
 		new Alloy('Cast Iron (Malleable)', {
 			Fe: 0.9595,
@@ -851,13 +847,13 @@ const ALLOY = {
 			yield_strength: 228e6,
 			// https://www.makeitfrom.com/material-properties/Automotive-Malleable-Cast-Iron
 			density: 7600,
-			elastic_modulus: 180e9,
 			electrical_conductivity: 0.074*CONSTANTS.iacs,
 			melt: 1370+CONSTANTS.celsius,
 			poissons_ratio: 0.29,
 			specific_heat_capacity: 480,
 			thermal_conductivity: 41,
 			thermal_expansion_coefficient: 14e-6,
+			youngs_modulus: 180e9,
 		})),
 		new Alloy('Cast Iron (Ni-resist)', {
 			Fe: 0.715,
@@ -871,11 +867,11 @@ const ALLOY = {
 			tensile_strength: 186e6,
 			// https://www.makeitfrom.com/material-properties/Austenitic-Grey-Cast-Iron-Ni-Resist
 			density: 7900,
-			elastic_modulus: 180e9,
 			melt: (1290+1350)/2+CONSTANTS.celsius,
 			poissons_ratio: 0.295,
 			specific_heat_capacity: 480,
 			thermal_expansion_coefficient: 13.5e-6,
+			youngs_modulus: 180e9,
 		})),
 		new Alloy('Cast Iron (White)', {
 			Fe: 0.953,
@@ -998,7 +994,6 @@ const ALLOY = {
 		}, new AlloyProperties({
 			curie_temperature: 35,
 			density: 8885,
-			elastic_modulus: 162e9,
 			electrical_conductivity: 1/0.56e-6,
 			elongation: 0.45,
 			melt: 1210+CONSTANTS.celsius,
@@ -1022,7 +1017,6 @@ const ALLOY = {
 			Mn: 0.01
 		}, new AlloyProperties({
 			density: 8900,
-			elastic_modulus: 135e9,
 			electrical_conductivity: 1/(19e-6*1e-2),
 			melt: (1100+1145)/2+CONSTANTS.celsius,
 			specific_heat_capacity: 377,
@@ -1030,6 +1024,7 @@ const ALLOY = {
 			thermal_conductivity: 40,
 			thermal_expansion_coefficient: 17e-6,
 			yield_strength: 105e-6,
+			youngs_modulus: 135e9,
 		})),
 		new Alloy('CuSil', {
 			Ag: 0.72,
@@ -1180,13 +1175,13 @@ const ALLOY = {
 		}, new AlloyProperties({
 			// https://www.azom.com/article.aspx?ArticleID=7658
 			density: (7700+8030)/2,
-			elastic_modulus: 200e9,
 			elongation: 0.15,
 			melt: 1480 + CONSTANTS.celsius,
 			poissons_ratio: 0.285,
 			tensile_strength: 1158e6,
 			thermal_conductivity: 42.7,
 			yield_strength: 1034e6,
+			youngs_modulus: 200e9,
 		})),
 		new Alloy('Hepatizon', {
 			Cu: 0.84,
@@ -1444,11 +1439,11 @@ const ALLOY = {
 			melt: (170+230)/2+CONSTANTS.celsius,
 			// https://www.makeitfrom.com/material-properties/Type-2-L13912-Sheet-Pewter
 			density: 7300,
-			elastic_modulus: 52e9,
 			poissons_ratio: 0.35,
 			specific_heat_capacity: 220,
 			tensile_strength: 60e6,
 			thermal_expansion_coefficient: 21e-6,
+			youngs_modulus: 52e9,
 		})),
 		new Alloy('Pewter (Queen\'s metal)', {
 			Sn: 9/12,
@@ -1530,7 +1525,6 @@ const ALLOY = {
 			melt: 183+CONSTANTS.celsius,
 			// https://www.makeitfrom.com/material-properties/ISO-Solder-Alloy-114-Pb60Sn40
 			density: 9700,
-			elastic_modulus: 30e6,
 			electrical_conductivity: 0.1*CONSTANTS.iacs,
 			elongation: 0.25,
 			poissons_ratio: 0.41,
@@ -1538,6 +1532,7 @@ const ALLOY = {
 			tensile_strength: 37e6,
 			thermal_conductivity: 44,
 			thermal_expansion_coefficient: 26e-6,
+			youngs_modulus: 30e6,
 		})),
 		new Alloy('Solder (Lead-free)', {
 			// typical
@@ -1686,9 +1681,9 @@ const ALLOY = {
 			Sn: 0.133,
 			Cd: 0.1,
 		}, new AlloyProperties({
-			elastic_modulus: 12.7e9,
 			melt: 70+CONSTANTS.celsius,
 			yield_strength: 26.2e6,
+			youngs_modulus: 12.7e9,
 		})),
 		// continue properties from here
 		new Alloy('Wrought Iron', {
