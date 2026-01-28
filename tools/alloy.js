@@ -2099,7 +2099,8 @@ const ALLOY = {
 			const row = document.createElement('tr');
 			property_table.appendChild(row);
 			const th = document.createElement('th');
-			th.innerHTML = name.replaceAll('_', ' ');
+			const pretty_name = name.replaceAll('_', ' ');
+			th.innerHTML = `<a href="https://en.wikipedia.org/wiki/${pretty_name}">${pretty_name}</a>`;
 			row.appendChild(th);
 			const td = document.createElement('td');
 			td.id = `propertyTable_${name}`;
