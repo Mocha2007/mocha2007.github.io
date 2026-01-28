@@ -613,6 +613,8 @@ const ALLOY = {
 			Zn: 0.4,
 			Sn: 0.01,
 		}, new AlloyProperties({
+			// https://www.engineeringtoolbox.com/metals-poissons-ratio-d_1268.html
+			poissons_ratio: 0.34,
 			// https://www.engineeringtoolbox.com/young-modulus-d_417.html
 			youngs_modulus: 100e9,
 		})),
@@ -677,6 +679,8 @@ const ALLOY = {
 			Cu: 0.88,
 			Sn: 0.12,
 		}, new AlloyProperties({
+			// https://www.engineeringtoolbox.com/metals-poissons-ratio-d_1268.html
+			poissons_ratio: 0.34,
 			// https://www.engineeringtoolbox.com/young-modulus-d_417.html
 			youngs_modulus: 108e9,
 		})),
@@ -768,11 +772,12 @@ const ALLOY = {
 		}, new AlloyProperties({
 			// Electrical resistivity article
 			electrical_conductivity: 8.94e6,
+			// https://www.engineeringtoolbox.com/metals-poissons-ratio-d_1268.html
+			poissons_ratio: 0.33,
 			// https://www.makeitfrom.com/material-properties/EN-CC481K-CuSn11P-C-Phosphor-Bronze
 			density: 8700,
 			elongation: 0.045,
 			melt: 880+CONSTANTS.celsius,
-			poissons_ratio: 0.34,
 			specific_heat_capacity: 370,
 			tensile_strength: 350e6,
 			thermal_conductivity: 64,
@@ -1718,6 +1723,8 @@ const ALLOY = {
 		}, new AlloyProperties({
 			density: (7.6+7.9)/2*CONSTANTS.water_density,
 			melt: 1540+CONSTANTS.celsius,
+			// https://www.engineeringtoolbox.com/metals-poissons-ratio-d_1268.html
+			poissons_ratio: 0.3,
 			tensile_strength: 303e6,
 			yield_strength: 190e6,
 			// Young's modulus article
