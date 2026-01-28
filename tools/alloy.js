@@ -1297,9 +1297,7 @@ const ALLOY = {
 			Mn: 0.00055,
 		}),
 		// pure metals
-		new Alloy('Copper', {
-			Cu: 1,
-		}, new AlloyProperties({
+		new Alloy('Copper', {Cu: 1}, new AlloyProperties({
 			boil: 2835,
 			density: 8935,
 			electrical_conductivity: 1/16.78e-9,
@@ -1310,6 +1308,27 @@ const ALLOY = {
 			thermal_expansion_coefficient: 16.64e-6,
 			yield_strength: 70e6,
 			youngs_modulus: (110e9+128e9)/2,
+		})),
+		new Alloy('Gold', {Au: 1}, new AlloyProperties({
+			boil: 3243,
+			density: 19283,
+			electrical_conductivity: 1/22.14e-9,
+			melt: 1337.33,
+			poissons_ratio: 0.4,
+			tensile_strength: 120e6,
+			thermal_conductivity: 318,
+			thermal_expansion_coefficient: 14.13e-6,
+			youngs_modulus: 79e9,
+		})),
+		new Alloy('Silver', {Ag: 1}, new AlloyProperties({
+			boil: 2435,
+			density: 10503,
+			electrical_conductivity: 1/15.87e-9,
+			melt: 1234.93,
+			poissons_ratio: 0.37,
+			thermal_conductivity: 429,
+			thermal_expansion_coefficient: 18.92e-6,
+			youngs_modulus: 83e9,
 		})),
 	],
 	categories: [
