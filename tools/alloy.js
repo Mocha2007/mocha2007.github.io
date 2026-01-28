@@ -302,12 +302,17 @@ const ALLOY = {
 			Si: 0.007,
 			Mg: 0.005,
 			Fe: 0.005,
-		}),
+		}, new AlloyProperties({
+			// Poisson's ratio article
+			poissons_ratio: 0.32,
+		})),
 		new Alloy('Aluminum (Lockalloy)', {
 			Be: 0.62,
 			Al: 0.38,
 		}, new AlloyProperties({
 			density: 2071,
+			// Poisson's ratio article
+			poissons_ratio: 0.32,
 			thermal_conductivity: 210,
 		})),
 		new Alloy('Aluminum (Y Alloy)', {
@@ -315,7 +320,10 @@ const ALLOY = {
 			Cu: 0.04,
 			Ni: 0.02,
 			Mg: 0.015,
-		}),
+		}, new AlloyProperties({
+			// Poisson's ratio article
+			poissons_ratio: 0.32,
+		})),
 		new Alloy('Aluminum (Duralumin, 2024)', {
 			// https://en.wikipedia.org/wiki/2024_aluminium_alloy
 			Al: 0.9355,
@@ -327,6 +335,8 @@ const ALLOY = {
 			electrical_conductivity: 0.3*CONSTANTS.iacs,
 			elongation: (0.1+0.25)/2,
 			melt: 500+CONSTANTS.celsius,
+			// Poisson's ratio article
+			poissons_ratio: 0.32,
 			tensile_strength: (140e6+210e6)/2,
 			yield_strength: 97e6,
 			youngs_modulus: 73e9,
@@ -335,11 +345,17 @@ const ALLOY = {
 			Al: 0.977,
 			Mn: 0.0125,
 			Mg: 0.0105,
-		}),
+		}, new AlloyProperties({
+			// Poisson's ratio article
+			poissons_ratio: 0.32,
+		})),
 		new Alloy('Aluminum (4043)', {
 			Al: 0.948,
 			Si: 0.052,
-		}),
+		}, new AlloyProperties({
+			// Poisson's ratio article
+			poissons_ratio: 0.32,
+		})),
 		new Alloy('Aluminum (5456)', {
 			Al: 0.94,
 			Mg: 0.051,
@@ -348,6 +364,8 @@ const ALLOY = {
 		}, new AlloyProperties({
 			density: 2660,
 			electrical_conductivity: 0.29*CONSTANTS.iacs,
+			// Poisson's ratio article
+			poissons_ratio: 0.32,
 			tensile_strength: (310e6+350e6)/2,
 			youngs_modulus: 69e9,
 			thermal_conductivity: 120,
@@ -362,6 +380,8 @@ const ALLOY = {
 		}, new AlloyProperties({
 			// 6061
 			density: 2700,
+			// Poisson's ratio article
+			poissons_ratio: 0.32,
 			tensile_strength: 300e6,
 			yield_strength: 241e6,
 		})),
@@ -387,7 +407,10 @@ const ALLOY = {
 			Al: 0.98,
 			Fe: 0.015,
 			Mn: 0.005,
-		}),
+		}, new AlloyProperties({
+			// Poisson's ratio article
+			poissons_ratio: 0.32,
+		})),
 		new Alloy('Amalgam (Arquerite)', {
 			Ag: 0.87,
 			Hg: 0.13,
@@ -1403,11 +1426,13 @@ const ALLOY = {
 			C: 0.0006,
 		}, new AlloyProperties({
 			density: 7750,
-			melt: 1427.5+CONSTANTS.celsius,
-			tensile_strength: 620e6,
-			yield_strength: 210e6,
 			// Electrical resistivity article
 			electrical_conductivity: 1.45e6,
+			melt: 1427.5+CONSTANTS.celsius,
+			// Poisson's ratio article
+			poissons_ratio: 0.305,
+			tensile_strength: 620e6,
+			yield_strength: 210e6,
 		})),
 		new Alloy('Steel (Stainless, Marine)', {
 			// https://en.wikipedia.org/wiki/SAE_316L_stainless_steel
