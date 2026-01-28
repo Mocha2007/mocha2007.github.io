@@ -689,6 +689,8 @@ const ALLOY = {
 			Cu: 0.88,
 			Sn: 0.12,
 		}, new AlloyProperties({
+			// https://www.engineeringtoolbox.com/metal-alloys-densities-d_50.html
+			density: (7400+8900)/2,
 			// https://www.engineeringtoolbox.com/metals-poissons-ratio-d_1268.html
 			poissons_ratio: 0.34,
 			// https://www.engineeringtoolbox.com/young-modulus-d_417.html
