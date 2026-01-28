@@ -1174,6 +1174,8 @@ const ALLOY = {
 			Nd: 0.27,
 			B: 0.01,
 		}, new AlloyProperties({
+			// Coercivity article
+			coercivity: 875e3,
 			curie_temperature: 628,
 		})),
 		new Alloy('Newton\'s metal', {
@@ -1285,6 +1287,8 @@ const ALLOY = {
 			Co: 0.66,
 			Sm: 0.34,
 		}, new AlloyProperties({
+			// Coercivity article
+			coercivity: 1400e3,
 			curie_temperature: 1033,
 		})),
 		new Alloy('Silver (Brittania)', {
@@ -1504,6 +1508,8 @@ const ALLOY = {
 		})),
 		new Alloy('Iron', {Fe: 1}, new AlloyProperties({
 			boil: 3134,
+			// Coercivity article
+			coercivity: 0.16e3,
 			curie_temperature: 1043,
 			electrical_conductivity: 1/96.1e-9,
 			density: 7874,
