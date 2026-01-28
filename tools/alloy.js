@@ -55,6 +55,7 @@ class Alloy {
 
 class AlloyProperties {
 	static PROPERTY_LIST = [
+		['K', 'boil'],
 		['A/m', 'coercivity'],
 		['K', 'curie_temperature'],
 		['kg/m&sup3;', 'density'],
@@ -62,8 +63,10 @@ class AlloyProperties {
 		['', 'elongation'],
 		['H/m', 'magnetic_permeability'],
 		['K', 'melt'],
+		['', 'poissons_ratio'],
 		['Ω·m', 'resistivity'],
 		['T', 'saturation_flux_density'],
+		['J/kg·K', 'specific_heat_capacity'],
 		['Pa', 'tensile_strength'],
 		['W/m·K', 'thermal_conductivity'],
 		['K<sup>-1</sup>', 'thermal_expansion_coefficient'],
@@ -72,6 +75,7 @@ class AlloyProperties {
 		['Pa', 'youngs_modulus'],
 	];
 	constructor(o = {}){
+		this.boil = o.boil;
 		this.coercivity = o.coercivity;
 		this.curie_temperature = o.curie_temperature;
 		this.density = o.density;
@@ -79,8 +83,10 @@ class AlloyProperties {
 		this.elongation = o.elongation;
 		this.magnetic_permeability = o.magnetic_permeability;
 		this.melt = o.melt;
+		this.poissons_ratio = o.poissons_ratio;
 		this.resistivity = o.resistivity;
 		this.saturation_flux_density = o.saturation_flux_density;
+		this.specific_heat_capacity = o.specific_heat_capacity;
 		this.tensile_strength = o.tensile_strength;
 		this.thermal_conductivity = o.thermal_conductivity;
 		this.thermal_expansion_coefficient = o.thermal_expansion_coefficient;
@@ -248,6 +254,8 @@ const CONSTANTS = {
 	celsius: 273.15,
 	/** in Ohms */
 	iacs: 0.15292,
+	/** in kg/m^3, at 20 Celsius */
+	water_density: 998.2,
 };
 
 const ALLOY = {
@@ -329,7 +337,14 @@ const ALLOY = {
 			Mg: 0.051,
 			Mn: 0.008,
 			Cr: 0.0012,
-		}),
+		}, new AlloyProperties({
+			density: 2660,
+			electrical_conductivity: 0.29*CONSTANTS.iacs,
+			tensile_strength: (310e6+350e6)/2,
+			youngs_modulus: 69e9,
+			thermal_conductivity: 120,
+			thermal_expansion_coefficient: 23.9e-6,
+		})),
 		new Alloy('Aluminum (6066)', {
 			Al: 0.957,
 			Si: 0.014,
@@ -343,7 +358,18 @@ const ALLOY = {
 			Mg: 0.025,
 			Cu: 0.016,
 			Cr: 0.0023,
-		}),
+		}, new AlloyProperties({
+			density: 2810,
+			elongation: 0.11,
+			melt: 477+CONSTANTS.celsius,
+			poissons_ratio: 0.33,
+			resistivity: 51.5e-9,
+			specific_heat_capacity: 714.8,
+			tensile_strength: 572e6,
+			thermal_conductivity: 140,
+			thermal_expansion_coefficient: 2.36e-5,
+			youngs_modulus: 71.7e9,
+		})),
 		new Alloy('Aluminum (8006)', {
 			Al: 0.98,
 			Fe: 0.015,
@@ -366,12 +392,16 @@ const ALLOY = {
 		new Alloy('Amalgam (Moschellandsbergite)', {
 			Ag: 0.4,
 			Hg: 0.6,
-		}),
+		}, new AlloyProperties({
+			density: 13.48*CONSTANTS.water_density,
+		})),
 		new Alloy('Amalgam (Temagamite)', {
 			Te: 0.42,
 			Pd: 0.36,
 			Hg: 0.22,
-		}),
+		}, new AlloyProperties({
+			density: 9.5*CONSTANTS.water_density,
+		})),
 		new Alloy('Ashtadhatu', {
 			Au: 1/8,
 			Ag: 1/8,
@@ -383,14 +413,21 @@ const ALLOY = {
 			Hg: 1/8,
 		}),
 		new Alloy('Babbitt metal', {
+			// No. 1
 			Sn: 0.91,
 			Cu: 0.045,
 			Sb: 0.045,
-		}),
+		}, new AlloyProperties({
+			melt: 223+CONSTANTS.celsius,
+			yield_strength: 30.3e6,
+		})),
 		new Alloy('Beryllium Copper', {
 			Cu: 0.9825,
 			Be: 0.0175,
-		}),
+		}, new AlloyProperties({
+			melt: 866+CONSTANTS.celsius,
+			thermal_conductivity: 107,
+		})),
 		new Alloy('Billon', {
 			Cu: 0.6,
 			Ag: 0.4,
@@ -417,7 +454,11 @@ const ALLOY = {
 			Cu: 0.5,
 			Al: 0.45,
 			Zn: 0.05,
-		}),
+		}, new AlloyProperties({
+			boil: 1179,
+			density: 5790,
+			melt: (763+833)/2,
+		})),
 		new Alloy('Brass (Dutch metal)', {
 			Cu: 0.865,
 			Zn: 0.135,
@@ -430,7 +471,11 @@ const ALLOY = {
 			Cu: 0.88,
 			Zn: 0.1,
 			Sn: 0.02,
-		}),
+		}, new AlloyProperties({
+			density: 8.7*CONSTANTS.water_density,
+			melt: 1000+CONSTANTS.celsius,
+			tensile_strength: 221e6,
+		})),
 		new Alloy('Brass (Manganese)', {
 			// = Dollar coin cladding alloy
 			Cu: 0.77,
@@ -484,7 +529,9 @@ const ALLOY = {
 			Cu: 0.8,
 			Zn: 0.16,
 			Si: 0.04,
-		}),
+		}, new AlloyProperties({
+			melt: 975+CONSTANTS.celsius,
+		})),
 		new Alloy('Bronze', {
 			Cu: 0.88,
 			Sn: 0.12,
@@ -510,7 +557,9 @@ const ALLOY = {
 			Cu: 0.86,
 			Sn: 0.12,
 			Bi: 0.02,
-		}),
+		}, new AlloyProperties({
+			density: 8885,
+		})),
 		new Alloy('Bronze (French)', {
 			Cu: 0.91,
 			Zn: 0.06,
@@ -527,7 +576,11 @@ const ALLOY = {
 			Cu: 0.89,
 			Sn: 0.1,
 			Fe: 0.01,
-		}),
+		}, new AlloyProperties({
+			density: 6600,
+			tensile_strength: 97e6,
+			yield_strength: 76e6,
+		})),
 		new Alloy('Bronze (Phosphor)', {
 			Cu: 0.9407,
 			Sn: 0.0575,
@@ -553,6 +606,7 @@ const ALLOY = {
 			Sn: 0.3,
 			Zn: 0.15,
 		}),
+		// continue properties from here
 		new Alloy('Cast Iron', {
 			Fe: 0.95,
 			C: 0.03,
