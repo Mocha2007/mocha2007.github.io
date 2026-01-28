@@ -1777,7 +1777,7 @@ const ALLOY = {
 			specific_heat_capacity: 709.1,
 			thermal_conductivity: 142,
 		})),
-		new Alloy('Chromium', {Sn: 1}, new AlloyProperties({
+		new Alloy('Chromium', {Cr: 1}, new AlloyProperties({
 			boil: 2944,
 			bulk_modulus: 160e9,
 			density: 7172,
