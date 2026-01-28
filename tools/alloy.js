@@ -1155,7 +1155,9 @@ const ALLOY = {
 			Fe: 0.72,
 			Nd: 0.27,
 			B: 0.01,
-		}),
+		}, new AlloyProperties({
+			curie_temperature: 628,
+		})),
 		new Alloy('Newton\'s metal', {
 			Bi: 8/16,
 			Pb: 5/16,
@@ -1264,7 +1266,9 @@ const ALLOY = {
 		new Alloy('Samarium-Cobalt magnet', {
 			Co: 0.66,
 			Sm: 0.34,
-		}),
+		}, new AlloyProperties({
+			curie_temperature: 1033,
+		})),
 		new Alloy('Silver (Brittania)', {
 			Ag: 23/24,
 			Cu: 1/24,
