@@ -1393,6 +1393,8 @@ const ALLOY = {
 			// Coercivity article
 			coercivity: 875e3,
 			curie_temperature: 628,
+			// https://www.engineeringtoolbox.com/permeability-d_1923.html
+			magnetic_permeability: 1.32e-6,
 		})),
 		new Alloy('Newton\'s metal', {
 			Bi: 8/16,
@@ -1645,6 +1647,8 @@ const ALLOY = {
 			density: 7750,
 			// Electrical resistivity article
 			electrical_conductivity: 1.45e6,
+			// https://www.engineeringtoolbox.com/permeability-d_1923.html
+			magnetic_permeability: (1.26e-6 + 8.8e-6)/2,
 			melt: 1427.5+CONSTANTS.celsius,
 			// Poisson's ratio article
 			poissons_ratio: 0.305,
@@ -1761,6 +1765,8 @@ const ALLOY = {
 			shear_modulus: 48e9,
 			density: 8935,
 			electrical_conductivity: 1/16.78e-9,
+			// https://www.engineeringtoolbox.com/permeability-d_1923.html
+			magnetic_permeability: 1.256629e-6,
 			melt: 1357.77,
 			poissons_ratio: 0.34,
 			tensile_strength: 220e6,
@@ -1790,6 +1796,8 @@ const ALLOY = {
 			curie_temperature: 1043,
 			electrical_conductivity: 1/96.1e-9,
 			density: 7874,
+			// https://www.engineeringtoolbox.com/permeability-d_1923.html
+			magnetic_permeability: 6.3e-3,
 			melt: 1811,
 			poissons_ratio: 0.29,
 			shear_modulus: 82e9,
