@@ -1655,16 +1655,22 @@ const ALLOY = {
 				if (matches.length === 0){
 					return;
 				}
-				// Inverse distance weighting
-				let weights = 0;
-				let values = 0;
-				matches.forEach(match => {
-					const [alloy, dist] = match;
-					const weight = Math.pow(dist, -this.config.estimation.exponent);
-					weights += weight;
-					values += alloy.properties[name] * weight;
-				});
-				o[name] = values/weights;
+				if (matches[0][1] === 0){
+					// exact match
+					o[name] = alloy.properties[name];
+				}
+				else {
+					// Inverse distance weighting
+					let weights = 0;
+					let values = 0;
+					matches.forEach(match => {
+						const [alloy, dist] = match;
+						const weight = Math.pow(dist, -this.config.estimation.exponent);
+						weights += weight;
+						values += alloy.properties[name] * weight;
+					});
+					o[name] = values/weights;
+				}
 				o[name+'_source'] = matches[0][0];
 			});
 		return o;
