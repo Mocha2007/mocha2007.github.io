@@ -1363,7 +1363,12 @@ const ALLOY = {
 		new Alloy('Steel', {
 			Fe: 0.9892,
 			C: 0.0108,
-		}),
+		}, new AlloyProperties({
+			// article on thermal conductivity
+			thermal_conductivity: 45,
+			// thermal expansion article
+			thermal_expansion_coefficient: 12e-6,
+		})),
 		new Alloy('Steel (Acmonital)', {
 			Fe: 0.799,
 			Cr: 0.1825,
@@ -1432,6 +1437,8 @@ const ALLOY = {
 			// Poisson's ratio article
 			poissons_ratio: 0.305,
 			tensile_strength: 620e6,
+			// thermal expansion article
+			thermal_expansion_coefficient: 13.7e-6,
 			yield_strength: 210e6,
 		})),
 		new Alloy('Steel (Stainless, Marine)', {
