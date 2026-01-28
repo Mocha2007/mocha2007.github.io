@@ -1067,6 +1067,9 @@ const ALLOY = {
 			density: 10000,
 			melt: 1050,
 			thermal_conductivity: 371,
+			// https://hal.science/hal-01687309/file/identification-of-mechanical-properties.pdf
+			poissons_ratio: 0.3,
+			youngs_modulus: 80e6,
 		})),
 		new Alloy('Dymalloy', {
 			Ag: 0.8,
