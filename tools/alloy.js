@@ -1558,6 +1558,17 @@ const ALLOY = {
 			yield_strength: 90e6,
 			youngs_modulus: 211e9,
 		})),
+		new Alloy('Nickel', {Sn: 1}, new AlloyProperties({
+			boil: 3003,
+			density: 8907,
+			electrical_conductivity: 1/69.3e-9,
+			melt: 1728,
+			poissons_ratio: 0.31,
+			specific_heat_capacity: 444.176,
+			thermal_conductivity: 90.9,
+			thermal_expansion_coefficient: 12.83e-6,
+			youngs_modulus: 200e9,
+		})),
 		new Alloy('Silver', {Ag: 1}, new AlloyProperties({
 			boil: 2435,
 			density: 10503,
@@ -1567,6 +1578,18 @@ const ALLOY = {
 			thermal_conductivity: 429,
 			thermal_expansion_coefficient: 18.92e-6,
 			youngs_modulus: 83e9,
+		})),
+		new Alloy('Tin', {Sn: 1}, new AlloyProperties({
+			// white tin unless otherwise specified
+			boil: 2875,
+			electrical_conductivity: 1/115e-9,
+			density: 7289,
+			melt: 505.08,
+			poissons_ratio: 0.36,
+			specific_heat_capacity: 228.389,
+			thermal_conductivity: 66.8,
+			thermal_expansion_coefficient: 21.76e-6,
+			youngs_modulus: 50e9,
 		})),
 	],
 	categories: [
