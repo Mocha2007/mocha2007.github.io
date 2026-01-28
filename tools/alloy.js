@@ -520,6 +520,8 @@ const ALLOY = {
 			thermal_conductivity: 107,
 			// https://tpsx.arc.nasa.gov/Material?id=318
 			specific_heat_capacity: 398,
+			// https://www.engineeringtoolbox.com/young-modulus-d_417.html
+			youngs_modulus: 124e9,
 		})),
 		new Alloy('Billon', {
 			Cu: 0.6,
@@ -610,12 +612,18 @@ const ALLOY = {
 			Cu: 0.59,
 			Zn: 0.4,
 			Sn: 0.01,
-		}),
+		}, new AlloyProperties({
+			// https://www.engineeringtoolbox.com/young-modulus-d_417.html
+			youngs_modulus: 100e9,
+		})),
 		new Alloy('Brass (Nickel silver)', {
 			Cu: 0.6,
 			Ni: 0.2,
 			Zn: 0.2,
-		}),
+		}, new AlloyProperties({
+			// https://www.engineeringtoolbox.com/young-modulus-d_417.html
+			youngs_modulus: 128,
+		})),
 		new Alloy('Brass (Nordic gold)', {
 			Cu: 0.89,
 			Al: 0.05,
@@ -668,7 +676,10 @@ const ALLOY = {
 		new Alloy('Bronze', {
 			Cu: 0.88,
 			Sn: 0.12,
-		}),
+		}, new AlloyProperties({
+			// https://www.engineeringtoolbox.com/young-modulus-d_417.html
+			youngs_modulus: 108e9,
+		})),
 		new Alloy('Bronze (Aluminum)', {
 			Cu: 0.92,
 			Al: 0.08,
