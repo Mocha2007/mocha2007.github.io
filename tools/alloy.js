@@ -1185,6 +1185,8 @@ const ALLOY = {
 			density: 8.8*CONSTANTS.water_density,
 			electrical_conductivity: 0.34*CONSTANTS.iacs,
 			melt: (1300+1350)/2+CONSTANTS.celsius,
+			// Young's modulus article
+			youngs_modulus: 180e9
 		})),
 		new Alloy('Mu-metal', {
 			Ni: 0.77,
@@ -1513,6 +1515,8 @@ const ALLOY = {
 			melt: 1540+CONSTANTS.celsius,
 			tensile_strength: 303e6,
 			yield_strength: 190e6,
+			// Young's modulus article
+			youngs_modulus: 180e9
 		})),
 		// pure metals
 		new Alloy('Copper', {Cu: 1}, new AlloyProperties({
