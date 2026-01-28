@@ -1390,9 +1390,12 @@ const ALLOY = {
 			Nd: 0.27,
 			B: 0.01,
 		}, new AlloyProperties({
-			// Coercivity article
-			coercivity: 875e3,
-			curie_temperature: 628,
+			coercivity: (0.875e6+2.79e6)/2,
+			curie_temperature: (310+370)/2+CONSTANTS.celsius,
+			density: 7500,
+			electrical_conductivity: 1/((110e-6+170e-6)/2*1e2),
+			tensile_strength: 85e6,
+			thermal_expansion_coefficient: 3.5e-6,
 			// https://www.engineeringtoolbox.com/permeability-d_1923.html
 			magnetic_permeability: 1.32e-6,
 		})),
@@ -1516,9 +1519,12 @@ const ALLOY = {
 			Co: 0.66,
 			Sm: 0.34,
 		}, new AlloyProperties({
-			// Coercivity article
-			coercivity: 1400e3,
-			curie_temperature: 1033,
+			coercivity: (0.493e6+2.79e6)/2,
+			curie_temperature: (700+850)/2+CONSTANTS.celsius,
+			density: (8200+8500)/2,
+			electrical_conductivity: 1/((50e-6+90e-6)/2*1e-2),
+			tensile_strength: (35e6+40e6)/2,
+			thermal_expansion_coefficient: 7e-6,
 		})),
 		new Alloy('Silver (Brittania)', {
 			Ag: 23/24,
