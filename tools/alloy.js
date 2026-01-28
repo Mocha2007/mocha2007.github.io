@@ -925,12 +925,7 @@ const ALLOY = {
 			Al: 0.0069,
 			S:  0.0040,
 			Ca: 0.0030,
-		}, new AlloyProperties({
-			// graphite
-			density: (2090+2230)/2,
-			// Electrical resistivity article
-			electrical_conductivity: 2.5e5,
-		})),
+		}),
 		new Alloy('Coal (Anthracite, Mid-)', {
 			C:  0.8380,
 			O:  0.0995,
@@ -1715,6 +1710,17 @@ const ALLOY = {
 			youngs_modulus: 180e9
 		})),
 		// pure metals
+		new Alloy('Carbon (Graphite)', {C: 1}, new AlloyProperties({
+			boil: 3915,
+			// https://en.wikipedia.org/wiki/Bulk_modulus#Selected_values
+			bulk_modulus: 34,
+			density: 2266,
+			// Electrical resistivity article
+			electrical_conductivity: 2.5e5,
+			melt: 3915,
+			specific_heat_capacity: 709.1,
+			thermal_conductivity: 142,
+		})),
 		new Alloy('Chromium', {Sn: 1}, new AlloyProperties({
 			boil: 2944,
 			bulk_modulus: 160e9,
