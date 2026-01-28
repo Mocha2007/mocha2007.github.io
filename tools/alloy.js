@@ -454,15 +454,23 @@ const ALLOY = {
 			Cu: 0.69,
 			Zn: 0.3,
 			Sn: 0.01,
-		}),
+		}, new AlloyProperties({
+			// Electrical resistivity article
+			electrical_conductivity: 33.4e6,
+		})),
 		new Alloy('Brass (Cartridge)', {
 			Cu: 0.7,
 			Zn: 0.3,
-		}),
+		}, new AlloyProperties({
+			// Electrical resistivity article
+			electrical_conductivity: 33.4e6,
+		})),
 		new Alloy('Brass (Common)', {
 			Cu: 0.63,
 			Zn: 0.37,
 		}, new AlloyProperties({
+			// Electrical resistivity article
+			electrical_conductivity: 33.4e6,
 			// Ultimate tensile strength article
 			density: 8730,
 			tensile_strength: 500e6,
@@ -474,6 +482,8 @@ const ALLOY = {
 			Zn: 0.05,
 		}, new AlloyProperties({
 			boil: 1179,
+			// Electrical resistivity article
+			electrical_conductivity: 33.4e6,
 			density: 5790,
 			melt: (763+833)/2,
 		})),
@@ -520,7 +530,10 @@ const ALLOY = {
 			Al: 0.05,
 			Zn: 0.05,
 			Sn: 0.01,
-		}),
+		}, new AlloyProperties({
+			// Electrical resistivity article
+			electrical_conductivity: 33.4e6,
+		})),
 		new Alloy('Brass (Orichalcum, Greek)', {
 			// Caponetti, 2021
 			// Ignoring trace elements (< 500 ppm)
@@ -603,7 +616,10 @@ const ALLOY = {
 			Cu: 0.9407,
 			Sn: 0.0575,
 			P: 0.0018,
-		}),
+		}, new AlloyProperties({
+			// Electrical resistivity article
+			electrical_conductivity: 8.94e6,
+		})),
 		new Alloy('Bronze (Plastic)', {
 			// based on https://encyclopedia2.thefreedictionary.com/plastic+bronze
 			Cu: 0.62,
@@ -715,6 +731,8 @@ const ALLOY = {
 		}, new AlloyProperties({
 			// graphite
 			density: (2090+2230)/2,
+			// Electrical resistivity article
+			electrical_conductivity: 2.5e5,
 		})),
 		new Alloy('Coal (Anthracite, Mid-)', {
 			C:  0.8380,
@@ -1384,6 +1402,8 @@ const ALLOY = {
 			melt: 1427.5+CONSTANTS.celsius,
 			tensile_strength: 620e6,
 			yield_strength: 210e6,
+			// Electrical resistivity article
+			electrical_conductivity: 1.45e6,
 		})),
 		new Alloy('Steel (Stainless, Marine)', {
 			// https://en.wikipedia.org/wiki/SAE_316L_stainless_steel
