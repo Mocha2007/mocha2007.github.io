@@ -64,6 +64,7 @@ class Alloy {
 class AlloyProperties {
 	static PROPERTY_LIST = [
 		['K', 'boil'],
+		['Pa', 'bulk_modulus'],
 		['A/m', 'coercivity'],
 		['K', 'curie_temperature'],
 		['kg/m&sup3;', 'density'],
@@ -73,6 +74,7 @@ class AlloyProperties {
 		['K', 'melt'],
 		['', 'poissons_ratio'],
 		['T', 'saturation_flux_density'],
+		['Pa', 'shear_modulus'],
 		['J/kg·K', 'specific_heat_capacity'],
 		['Pa', 'tensile_strength'],
 		['W/m·K', 'thermal_conductivity'],
@@ -83,6 +85,7 @@ class AlloyProperties {
 	];
 	constructor(o = {}){
 		this.boil = o.boil;
+		this.bulk_modulus = o.bulk_modulus;
 		this.coercivity = o.coercivity;
 		this.curie_temperature = o.curie_temperature;
 		this.density = o.density;
@@ -94,6 +97,7 @@ class AlloyProperties {
 		this.melt = o.melt;
 		this.poissons_ratio = o.poissons_ratio;
 		this.saturation_flux_density = o.saturation_flux_density;
+		this.shear_modulus = o.shear_modulus;
 		this.specific_heat_capacity = o.specific_heat_capacity;
 		this.tensile_strength = o.tensile_strength;
 		this.thermal_conductivity = o.thermal_conductivity;
@@ -1704,18 +1708,21 @@ const ALLOY = {
 		// pure metals
 		new Alloy('Chromium', {Sn: 1}, new AlloyProperties({
 			boil: 2944,
+			bulk_modulus: 160e9,
 			density: 7172,
 			electrical_conductivity: 1/125e-9,
 			melt: 2180,
 			poissons_ratio: 0.21,
+			shear_modulus: 115e9,
 			specific_heat_capacity: 449.073,
 			thermal_conductivity: 93.9,
 			thermal_expansion_coefficient: 4.81e-6,
 			youngs_modulus: 279e9,
-			//
 		})),
 		new Alloy('Copper', {Cu: 1}, new AlloyProperties({
 			boil: 2835,
+			bulk_modulus: 140e9,
+			shear_modulus: 48e9,
 			density: 8935,
 			electrical_conductivity: 1/16.78e-9,
 			melt: 1357.77,
@@ -1728,10 +1735,12 @@ const ALLOY = {
 		})),
 		new Alloy('Gold', {Au: 1}, new AlloyProperties({
 			boil: 3243,
+			bulk_modulus: 180e9,
 			density: 19283,
 			electrical_conductivity: 1/22.14e-9,
 			melt: 1337.33,
 			poissons_ratio: 0.4,
+			shear_modulus: 27e9,
 			tensile_strength: 120e6,
 			thermal_conductivity: 318,
 			thermal_expansion_coefficient: 14.13e-6,
@@ -1739,6 +1748,7 @@ const ALLOY = {
 		})),
 		new Alloy('Iron', {Fe: 1}, new AlloyProperties({
 			boil: 3134,
+			bulk_modulus: 170e9,
 			// Coercivity article
 			coercivity: 0.16e3,
 			curie_temperature: 1043,
@@ -1746,6 +1756,7 @@ const ALLOY = {
 			density: 7874,
 			melt: 1811,
 			poissons_ratio: 0.29,
+			shear_modulus: 82e9,
 			specific_heat_capacity: 449.458,
 			tensile_strength: 350e6,
 			thermal_conductivity: 80.4,
@@ -1755,10 +1766,12 @@ const ALLOY = {
 		})),
 		new Alloy('Nickel', {Sn: 1}, new AlloyProperties({
 			boil: 3003,
+			bulk_modulus: 180e9,
 			density: 8907,
 			electrical_conductivity: 1/69.3e-9,
 			melt: 1728,
 			poissons_ratio: 0.31,
+			shear_modulus: 76e9,
 			specific_heat_capacity: 444.176,
 			thermal_conductivity: 90.9,
 			thermal_expansion_coefficient: 12.83e-6,
@@ -1766,10 +1779,12 @@ const ALLOY = {
 		})),
 		new Alloy('Silver', {Ag: 1}, new AlloyProperties({
 			boil: 2435,
+			bulk_modulus: 100e9,
 			density: 10503,
 			electrical_conductivity: 1/15.87e-9,
 			melt: 1234.93,
 			poissons_ratio: 0.37,
+			shear_modulus: 30e9,
 			thermal_conductivity: 429,
 			thermal_expansion_coefficient: 18.92e-6,
 			youngs_modulus: 83e9,
@@ -1777,10 +1792,12 @@ const ALLOY = {
 		new Alloy('Tin', {Sn: 1}, new AlloyProperties({
 			// white tin unless otherwise specified
 			boil: 2875,
+			bulk_modulus: 58e9,
 			electrical_conductivity: 1/115e-9,
 			density: 7289,
 			melt: 505.08,
 			poissons_ratio: 0.36,
+			shear_modulus: 18e9,
 			specific_heat_capacity: 228.389,
 			thermal_conductivity: 66.8,
 			thermal_expansion_coefficient: 21.76e-6,
