@@ -498,10 +498,11 @@ const ALLOY = {
 			Cu: 0.045,
 			Sb: 0.045,
 		}, new AlloyProperties({
+			// https://www.engineeringtoolbox.com/metal-alloys-densities-d_50.html
+			density: 7272,
 			melt: 223+CONSTANTS.celsius,
 			yield_strength: 30.3e6,
 			// https://www.makeitfrom.com/material-properties/Grade-1-L13910-Tin-Base-Babbitt-Metal
-			density: 7300,
 			electrical_conductivity: 0.13*CONSTANTS.iacs,
 			elongation: 0.34,
 			poissons_ratio: 0.35,
@@ -537,6 +538,8 @@ const ALLOY = {
 			Zn: 0.3,
 			Sn: 0.01,
 		}, new AlloyProperties({
+			// https://www.engineeringtoolbox.com/metal-alloys-densities-d_50.html
+			density: 8525,
 			// Electrical resistivity article
 			electrical_conductivity: 33.4e6,
 		})),
@@ -544,6 +547,8 @@ const ALLOY = {
 			Cu: 0.7,
 			Zn: 0.3,
 		}, new AlloyProperties({
+			// https://www.engineeringtoolbox.com/metal-alloys-densities-d_50.html
+			density: 8530,
 			// Electrical resistivity article
 			electrical_conductivity: 33.4e6,
 		})),
@@ -607,7 +612,10 @@ const ALLOY = {
 		new Alloy('Brass (Muntz metal)', {
 			Cu: 0.6,
 			Zn: 0.4,
-		}),
+		}, new AlloyProperties({
+			// https://www.engineeringtoolbox.com/metal-alloys-densities-d_50.html
+			density: 8520,
+		})),
 		new Alloy('Brass (Naval)', {
 			Cu: 0.59,
 			Zn: 0.4,
@@ -618,11 +626,13 @@ const ALLOY = {
 			// https://www.engineeringtoolbox.com/young-modulus-d_417.html
 			youngs_modulus: 100e9,
 		})),
-		new Alloy('Brass (Nickel silver)', {
+		new Alloy('Brass (Nickel Silver)', {
 			Cu: 0.6,
 			Ni: 0.2,
 			Zn: 0.2,
 		}, new AlloyProperties({
+			// https://www.engineeringtoolbox.com/metal-alloys-densities-d_50.html
+			density: (8400+8900)/2,
 			// https://www.engineeringtoolbox.com/young-modulus-d_417.html
 			youngs_modulus: 128,
 		})),
@@ -1076,7 +1086,10 @@ const ALLOY = {
 		new Alloy('Electrum', {
 			Ag: 0.5,
 			Au: 0.5,
-		}),
+		}, new AlloyProperties({
+			// https://www.engineeringtoolbox.com/metal-alloys-densities-d_50.html
+			density: (12500+15000)/2,
+		})),
 		new Alloy('Elinvar', {
 			Fe: 0.52,
 			Ni: 0.36,
@@ -1225,6 +1238,8 @@ const ALLOY = {
 			Ti: 0.009,
 			Al: 0.005,
 		}, new AlloyProperties({
+			// https://www.engineeringtoolbox.com/metal-alloys-densities-d_50.html
+			density: 8497,
 			melt: 1260 + CONSTANTS.celsius,
 		})),
 		new Alloy('Invar', {
@@ -1410,6 +1425,8 @@ const ALLOY = {
 			Ni: 0.8,
 			Cr: 0.2,
 		}, new AlloyProperties({
+			// https://www.engineeringtoolbox.com/metal-alloys-densities-d_50.html
+			density: 8400,
 			electrical_conductivity: 1/(1.12e-6),
 			melt: 1400+CONSTANTS.celsius,
 		})),
