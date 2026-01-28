@@ -1146,7 +1146,10 @@ const ALLOY = {
 		new Alloy('Gold (Purple)', {
 			Au: 0.79,
 			Al: 0.21,
-		}),
+		}, new AlloyProperties({
+			// https://en.wikipedia.org/wiki/File:Phasendiagramm_Gold-Aluminium.svg
+			melt: 1060+CONSTANTS.celsius,
+		})),
 		new Alloy('Gold (Red)', {
 			Au: 0.75,
 			Cu: 0.25,
