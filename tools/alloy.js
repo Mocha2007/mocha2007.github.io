@@ -105,6 +105,13 @@ class AlloyProperties {
 		this.transverse_modulus_of_rupture = o.transverse_modulus_of_rupture;
 		this.yield_strength = o.yield_strength;
 		this.youngs_modulus = o.youngs_modulus;
+		// Elastic Moduli computation
+		// common situation: only Young's modulus and Poisson's ratio are given.
+		if (this.youngs_modulus && this.poissons_ratio){
+			const [E, v] = [this.youngs_modulus, this.poissons_ratio];
+			this.bulk_modulus ||= E/(3-6*v);
+			this.shear_modulus ||= E/(2*(1+v));
+		}
 	}
 }
 
