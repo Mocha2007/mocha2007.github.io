@@ -58,6 +58,8 @@ class AlloyProperties {
 		['A/m', 'coercivity'],
 		['K', 'curie_temperature'],
 		['kg/m&sup3;', 'density'],
+		['S/m', 'electrical_conductivity'],
+		['', 'elongation'],
 		['H/m', 'magnetic_permeability'],
 		['K', 'melt'],
 		['Ω·m', 'resistivity'],
@@ -66,11 +68,15 @@ class AlloyProperties {
 		['W/m·K', 'thermal_conductivity'],
 		['K<sup>-1</sup>', 'thermal_expansion_coefficient'],
 		['Pa', 'transverse_modulus_of_rupture'],
+		['Pa', 'yield_strength'],
+		['Pa', 'youngs_modulus'],
 	];
 	constructor(o = {}){
 		this.coercivity = o.coercivity;
 		this.curie_temperature = o.curie_temperature;
 		this.density = o.density;
+		this.electrical_conductivity = o.electrical_conductivity;
+		this.elongation = o.elongation;
 		this.magnetic_permeability = o.magnetic_permeability;
 		this.melt = o.melt;
 		this.resistivity = o.resistivity;
@@ -79,6 +85,8 @@ class AlloyProperties {
 		this.thermal_conductivity = o.thermal_conductivity;
 		this.thermal_expansion_coefficient = o.thermal_expansion_coefficient;
 		this.transverse_modulus_of_rupture = o.transverse_modulus_of_rupture;
+		this.yield_strength = o.yield_strength;
+		this.youngs_modulus = o.youngs_modulus;
 	}
 }
 
@@ -236,7 +244,10 @@ class PhaseDiagram {
 }
 
 const CONSTANTS = {
+	/** in Kelvins */
 	celsius: 273.15,
+	/** in Ohms */
+	iacs: 0.15292,
 };
 
 const ALLOY = {
@@ -295,7 +306,15 @@ const ALLOY = {
 			Cu: 0.0435,
 			Mg: 0.015,
 			Mn: 0.006,
-		}),
+		}, new AlloyProperties({
+			density: 2780,
+			electrical_conductivity: 0.3*CONSTANTS.iacs,
+			elongation: (0.1+0.25)/2,
+			melt: 500+CONSTANTS.celsius,
+			tensile_strength: (140e6+210e6)/2,
+			yield_strength: 97e6,
+			youngs_modulus: 73e9,
+		})),
 		new Alloy('Aluminum (3004)', {
 			Al: 0.977,
 			Mn: 0.0125,
