@@ -1441,7 +1441,11 @@ const ALLOY = {
 			Fe: 55.845/280.405,
 			Co: 58.933/280.405,
 			Ni: 58.693/280.405,
-		}),
+		}, new AlloyProperties({
+			// https://www.sciencedirect.com/science/article/pii/S2238785421010000
+			tensile_strength: 491e6,
+			yield_strength: 215e6,
+		})),
 		new Alloy('Pewter (Asian)', {
 			Sn: 0.975,
 			Sb: 0.015,
