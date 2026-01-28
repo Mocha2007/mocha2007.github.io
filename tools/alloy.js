@@ -1839,6 +1839,20 @@ const ALLOY = {
 			yield_strength: 90e6,
 			youngs_modulus: 211e9,
 		})),
+		new Alloy('Lead', {Pb: 1}, new AlloyProperties({
+			boil: 2022,
+			bulk_modulus: 46e9,
+			density: 11348,
+			electrical_conductivity: 1/208e-9,
+			melt: 600.61,
+			poissons_ratio: 0.44,
+			shear_modulus: 5.6e9,
+			specific_heat_capacity: 128.62,
+			thermal_conductivity: 35.3,
+			thermal_expansion_coefficient: 28.73e-6,
+			youngs_modulus: 16e9,
+			//
+		})),
 		new Alloy('Nickel', {Ni: 1}, new AlloyProperties({
 			boil: 3003,
 			bulk_modulus: 180e9,
