@@ -15,6 +15,14 @@ class Alloy {
 		elem.onclick = () => ALLOY.setSliders(this.composition);
 		return elem;
 	}
+	get is_pure_element(){
+		let counted = false;
+		for (let _ in this.composition){
+			if (counted) return false;
+			counted = true;
+		}
+		return counted;
+	}
 	get shortDescElem(){
 		const list = [];
 		for (let sym in this.composition){
@@ -64,7 +72,6 @@ class AlloyProperties {
 		['H/m', 'magnetic_permeability'],
 		['K', 'melt'],
 		['', 'poissons_ratio'],
-		['Ω·m', 'resistivity'],
 		['T', 'saturation_flux_density'],
 		['J/kg·K', 'specific_heat_capacity'],
 		['Pa', 'tensile_strength'],
@@ -84,7 +91,6 @@ class AlloyProperties {
 		this.magnetic_permeability = o.magnetic_permeability;
 		this.melt = o.melt;
 		this.poissons_ratio = o.poissons_ratio;
-		this.resistivity = o.resistivity;
 		this.saturation_flux_density = o.saturation_flux_density;
 		this.specific_heat_capacity = o.specific_heat_capacity;
 		this.tensile_strength = o.tensile_strength;
@@ -273,10 +279,10 @@ const ALLOY = {
 			coercivity: 32e3,
 			// Alnico 1
 			density: 6900,
+			electrical_conductivity: 1/(75e-3*1e-2),
 			tensile_strength: 28e6,
 			transverse_modulus_of_rupture: 97e6,
 			thermal_expansion_coefficient: 12.6e-6,
-			resistivity: 75e-3*1e-2,
 			// Alnico 2
 			curie_temperature: 810+CONSTANTS.celsius,
 		})),
@@ -285,9 +291,9 @@ const ALLOY = {
 			Al: 0.16,
 		}, new AlloyProperties({
 			coercivity: 5,
+			electrical_conductivity: 1/140e-3,
 			magnetic_permeability: 55e3,
 			saturation_flux_density: 0.8,
-			resistivity: 140e-3,
 		})),
 		new Alloy('Aluminum (Aludur)', {
 			Al: 0.985,
@@ -360,10 +366,10 @@ const ALLOY = {
 			Cr: 0.0023,
 		}, new AlloyProperties({
 			density: 2810,
+			electrical_conductivity: 1/51.5e-9,
 			elongation: 0.11,
 			melt: 477+CONSTANTS.celsius,
 			poissons_ratio: 0.33,
-			resistivity: 51.5e-9,
 			specific_heat_capacity: 714.8,
 			tensile_strength: 572e6,
 			thermal_conductivity: 140,
@@ -1290,6 +1296,21 @@ const ALLOY = {
 			S: 0.0006,
 			Mn: 0.00055,
 		}),
+		// pure metals
+		new Alloy('Copper', {
+			Cu: 1,
+		}, new AlloyProperties({
+			boil: 2835,
+			density: 8935,
+			electrical_conductivity: 1/16.78e-9,
+			melt: 1357.77,
+			poissons_ratio: 0.34,
+			tensile_strength: 220e6,
+			thermal_conductivity: 401,
+			thermal_expansion_coefficient: 16.64e-6,
+			yield_strength: 70e6,
+			youngs_modulus: (110e9+128e9)/2,
+		})),
 	],
 	categories: [
 		new AlloyCategory('Ag-Au-Cu', c => 0.5 <= (c.Au||0) + (c.Ag||0) + (c.Cu||0), true,
