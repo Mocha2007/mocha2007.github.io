@@ -67,6 +67,7 @@ class AlloyProperties {
 		['A/m', 'coercivity'],
 		['K', 'curie_temperature'],
 		['kg/m&sup3;', 'density'],
+		['Pa', 'elastic_modulus'],
 		['S/m', 'electrical_conductivity'],
 		['', 'elongation'],
 		['H/m', 'magnetic_permeability'],
@@ -86,6 +87,7 @@ class AlloyProperties {
 		this.coercivity = o.coercivity;
 		this.curie_temperature = o.curie_temperature;
 		this.density = o.density;
+		this.elastic_modulus = o.elastic_modulus;
 		this.electrical_conductivity = o.electrical_conductivity;
 		this.elongation = o.elongation;
 		this.magnetic_permeability = o.magnetic_permeability;
@@ -612,7 +614,6 @@ const ALLOY = {
 			Sn: 0.3,
 			Zn: 0.15,
 		}),
-		// continue properties from here
 		new Alloy('Cast Iron', {
 			Fe: 0.95,
 			C: 0.03,
@@ -628,18 +629,29 @@ const ALLOY = {
 			Mg: 0.0007,
 			Cr: 0.0007,
 			P: 0.0003,
-		}),
+		}, new AlloyProperties({
+			elongation: 0.18,
+			tensile_strength: 483e6,
+			yield_strength: 365e6,
+		})),
 		new Alloy('Cast Iron (Grey)', {
 			Fe: 0.9475,
 			C: 0.0325,
 			Si: 0.02,
-		}),
+		}, new AlloyProperties({
+			elongation: 0.005,
+			tensile_strength: 345e6,
+		})),
 		new Alloy('Cast Iron (Malleable)', {
 			Fe: 0.9595,
 			C: 0.025,
 			Si: 0.01,
 			Mn: 0.0055,
-		}),
+		}, new AlloyProperties({
+			elongation: 0.12,
+			tensile_strength: 359e6,
+			yield_strength: 228e6,
+		})),
 		new Alloy('Cast Iron (Ni-resist)', {
 			Fe: 0.715,
 			Ni: 0.2,
@@ -647,26 +659,36 @@ const ALLOY = {
 			Cr: 0.025,
 			Si: 0.02,
 			Mn: 0.01,
-		}),
+		}, new AlloyProperties({
+			elongation: 0.02,
+			tensile_strength: 186e6,
+		})),
 		new Alloy('Cast Iron (White)', {
 			Fe: 0.953,
 			C: 0.034,
 			Si: 0.007,
 			Mn: 0.006,
-		}),
+		}, new AlloyProperties({
+			elongation: 0,
+			tensile_strength: 172e6,
+		})),
 		new Alloy('Cerrolow', {
 			// 136
 			Bi: 0.49,
 			In: 0.21,
 			Pb: 0.18,
 			Sn: 0.12,
-		}),
+		}, new AlloyProperties({
+			melt: 58+CONSTANTS.celsius,
+		})),
 		new Alloy('Cerrosafe', {
 			Bi: 0.425,
 			Pb: 0.377,
 			Sn: 0.113,
 			Cd: 0.085,
-		}),
+		}, new AlloyProperties({
+			melt: 74+CONSTANTS.celsius,
+		})),
 		// for coal ash, see
 		// https://en.wikipedia.org/wiki/Coal_combustion_products#Chemical_composition_and_classification
 		// see coal composition helper spreadsheet
@@ -680,7 +702,10 @@ const ALLOY = {
 			Al: 0.0069,
 			S:  0.0040,
 			Ca: 0.0030,
-		}),
+		}, new AlloyProperties({
+			// graphite
+			density: (2090+2230)/2,
+		})),
 		new Alloy('Coal (Anthracite, Mid-)', {
 			C:  0.8380,
 			O:  0.0995,
@@ -754,7 +779,18 @@ const ALLOY = {
 		new Alloy('Constantan', {
 			Cu: 0.55,
 			Ni: 0.45,
-		}),
+		}, new AlloyProperties({
+			curie_temperature: 35,
+			density: 8885,
+			elastic_modulus: 162e9,
+			electrical_conductivity: 1/0.56e-6,
+			elongation: 0.45,
+			melt: 1210+CONSTANTS.celsius,
+			specific_heat_capacity: 390,
+			tensile_strength: 450e6,
+			thermal_expansion_coefficient: 14.9e-6,
+			youngs_modulus: 162e9,
+		})),
 		new Alloy('Cunife', {
 			Cu: 0.6,
 			Ni: 0.2,
@@ -768,11 +804,25 @@ const ALLOY = {
 			Ni: 0.1,
 			Fe: 0.014,
 			Mn: 0.01
-		}),
+		}, new AlloyProperties({
+			density: 8900,
+			elastic_modulus: 135e9,
+			electrical_conductivity: 1/(19e-6*1e-2),
+			melt: (1100+1145)/2+CONSTANTS.celsius,
+			specific_heat_capacity: 377,
+			tensile_strength: 275e6,
+			thermal_conductivity: 40,
+			thermal_expansion_coefficient: 17e-6,
+			yield_strength: 105e-6,
+		})),
 		new Alloy('CuSil', {
 			Ag: 0.72,
 			Cu: 0.28,
-		}),
+		}, new AlloyProperties({
+			density: 10000,
+			melt: 1050,
+			thermal_conductivity: 371,
+		})),
 		new Alloy('Dymalloy', {
 			Ag: 0.8,
 			Cu: 0.2,
@@ -803,11 +853,15 @@ const ALLOY = {
 			Co: 0.17,
 			Mn: 0.003,
 			Si: 0.002,
-		}),
+		}, new AlloyProperties({
+			thermal_expansion_coefficient: 6.5e-6,
+		})),
 		new Alloy('Ferroaluminum', {
 			Fe: 0.5,
 			Al: 0.5,
-		}),
+		}, new AlloyProperties({
+			melt: (1160+1250)/2 + CONSTANTS.celsius,
+		})),
 		new Alloy('Ferrochrome', {
 			Fe: 0.4,
 			Cr: 0.6,
@@ -815,17 +869,25 @@ const ALLOY = {
 		new Alloy('Ferrovanadium', {
 			Fe: 0.4,
 			V: 0.6,
-		}),
+		}, new AlloyProperties({
+			melt: 1750,
+		})),
 		new Alloy('Field\'s metal', {
 			In: 0.51,
 			Bi: 0.325,
 			Sn: 0.165,
-		}),
+		}, new AlloyProperties({
+			melt: 62 + CONSTANTS.celsius,
+		})),
 		new Alloy('Galinstan', {
 			Ga: 0.685,
 			In: 0.215,
 			Sn: 0.1,
-		}),
+		}, new AlloyProperties({
+			density: 6440,
+			melt: -19 + CONSTANTS.celsius,
+			specific_heat_capacity: 296,
+		})),
 		new Alloy('Gold (American Bullion Coin)', {
 			Au: 0.9167,
 			Cu: 0.0533,
@@ -899,7 +961,13 @@ const ALLOY = {
 			Mn: 0.016,
 			C: 0.002,
 			Be: 0.0005,
-		}),
+		}, new AlloyProperties({
+			density: 8300,
+			elastic_modulus: 205e9,
+			melt: 1480 + CONSTANTS.celsius,
+			tensile_strength: 965e6,
+			thermal_conductivity: 13,
+		})),
 		new Alloy('Hepatizon', {
 			Cu: 0.84,
 			Ag: 0.08,
@@ -914,11 +982,18 @@ const ALLOY = {
 			Mo: 0.0305,
 			Ti: 0.009,
 			Al: 0.005,
-		}),
+		}, new AlloyProperties({
+			melt: 1260 + CONSTANTS.celsius,
+		})),
 		new Alloy('Invar', {
 			Fe: 0.64,
 			Ni: 0.36,
-		}),
+		}, new AlloyProperties({
+			density: 8050,
+			electrical_conductivity: 1/(8.2e-5*1e-2),
+			melt: 1427 + CONSTANTS.celsius,
+			thermal_expansion_coefficient: 1.2e-6,
+		})),
 		new Alloy('Irogane (Karakane)', {
 			Cu: 0.85,
 			Pb: 0.1,
@@ -945,19 +1020,41 @@ const ALLOY = {
 			Fe: 0.6925,
 			Cr: 0.25,
 			Al: 0.0575,
-		}),
+		}, new AlloyProperties({
+			electrical_conductivity: 1/(1.4e-6),
+			melt: 1425 + CONSTANTS.celsius,
+			thermal_expansion_coefficient: 49e-6,
+		})),
 		new Alloy('Kovar', {
 			Fe: 0.535,
 			Ni: 0.29,
 			Co: 0.17,
 			Mn: 0.003,
 			Si: 0.002,
-		}),
+		}, new AlloyProperties({
+			curie_temperature: 435+CONSTANTS.celsius,
+			density: 8000,
+			electrical_conductivity: 1/(0.49e-6),
+			specific_heat_capacity: 0.46,
+			thermal_conductivity: 17,
+			thermal_expansion_coefficient: 5.5e-6,
+			yield_strength: 270e6,
+			youngs_modulus: 138e9,
+		})),
 		new Alloy('Manganin', {
 			Cu: 0.842,
 			Mn: 0.121,
 			Ni: 0.037,
-		}),
+		}, new AlloyProperties({
+			density: 8400,
+			electrical_conductivity: 1/(45.5e-6*1e-2),
+			elongation: 0.5,
+			melt: 1020+CONSTANTS.celsius,
+			specific_heat_capacity: 405.8,
+			tensile_strength: 450e6,
+			thermal_conductivity: 22,
+			thermal_expansion_coefficient: 16.5e-6,
+		})),
 		new Alloy('Melchior', {
 			Cu: 0.682,
 			Ni: 0.3,
@@ -981,7 +1078,9 @@ const ALLOY = {
 		new Alloy('Meteoric Iron (Awaruite)', {
 			Fe: 0.7,
 			Ni: 0.3,
-		}),
+		}, new AlloyProperties({
+			density: 8.225*CONSTANTS.water_density,
+		})),
 		new Alloy('Meteoric Iron (Earth\'s core)', {
 			// based primarily on
 			// https://en.wikipedia.org/wiki/Planetary_core#Determining_primary_composition_%E2%80%93_Earth
@@ -1000,11 +1099,15 @@ const ALLOY = {
 			Fe: 0.895,
 			Ni: 0.1,
 			Co: 0.005,
-		}),
+		}, new AlloyProperties({
+			density: 7.9*CONSTANTS.water_density,
+		})),
 		new Alloy('Meteoric Iron (Taenite)', {
 			Ni: 0.51,
 			Fe: 0.49,
-		}),
+		}, new AlloyProperties({
+			density: 8.01*CONSTANTS.water_density,
+		})),
 		new Alloy('Meteoric Iron (Venus\'s core)', {
 			// https://en.wikipedia.org/wiki/Planetary_core#Venus
 			Fe: 0.886,
@@ -1027,7 +1130,11 @@ const ALLOY = {
 			Fe: 0.0125,
 			Mn: 0.01,
 			Si: 0.0025
-		}),
+		}, new AlloyProperties({
+			density: 8.8*CONSTANTS.water_density,
+			electrical_conductivity: 0.34*CONSTANTS.iacs,
+			melt: (1300+1350)/2+CONSTANTS.celsius,
+		})),
 		new Alloy('Mu-metal', {
 			Ni: 0.77,
 			Fe: 0.16,
@@ -1043,11 +1150,16 @@ const ALLOY = {
 			Bi: 8/16,
 			Pb: 5/16,
 			Sn: 3/16,
-		}),
+		}, new AlloyProperties({
+			melt: 97+CONSTANTS.celsius,
+		})),
 		new Alloy('Nichrome', {
 			Ni: 0.8,
 			Cr: 0.2,
-		}),
+		}, new AlloyProperties({
+			electrical_conductivity: 1/(1.12e-6),
+			melt: 1400+CONSTANTS.celsius,
+		})),
 		new Alloy('Niello', {
 			// https://www.researchgate.net/figure/Elemental-composition-of-the-niello-inlays-based-on-the-SEM-EDX-measurements-The-results_tbl2_351438672
 			Ag: 0.567,
@@ -1102,7 +1214,9 @@ const ALLOY = {
 			Sn: 0.905,
 			Sb: 0.075,
 			Cu: 0.02,
-		}),
+		}, new AlloyProperties({
+			melt: (170+230)/2+CONSTANTS.celsius,
+		})),
 		new Alloy('Pewter (Queen\'s metal)', {
 			Sn: 9/12,
 			Sb: 1/12,
@@ -1134,7 +1248,9 @@ const ALLOY = {
 			Bi: 0.5,
 			Pb: 0.265,
 			Sn: 0.235,
-		}),
+		}, new AlloyProperties({
+			melt: 98+CONSTANTS.celsius,
+		})),
 		new Alloy('Samarium-Cobalt magnet', {
 			Co: 0.66,
 			Sm: 0.34,
@@ -1162,19 +1278,29 @@ const ALLOY = {
 		new Alloy('Sodium-Potassium alloy (Eutectic)', {
 			K: 0.77,
 			Na: 0.23,
-		}),
+		}, new AlloyProperties({
+			density: 866,
+			electrical_conductivity: 1/(52.75e-6*1e-2),
+			melt: -12.6+CONSTANTS.celsius,
+			specific_heat_capacity: 982,
+			thermal_conductivity: 22.4,
+		})),
 		new Alloy('Solder (Lead)', {
 			// typical
 			Sn: 0.6,
 			Pb: 0.4,
-		}),
+		}, new AlloyProperties({
+			melt: 183+CONSTANTS.celsius,
+		})),
 		new Alloy('Solder (Lead-free)', {
 			// typical
 			Ag: 0.64,
 			Sn: 0.18,
 			Cu: 0.14,
 			Zn: 0.04,
-		}),
+		}, new AlloyProperties({
+			melt: 217+CONSTANTS.celsius,
+		})),
 		new Alloy('Steel', {
 			Fe: 0.9892,
 			C: 0.0108,
@@ -1235,7 +1361,11 @@ const ALLOY = {
 			Ni: 0.095,
 			// my impression is that this is a "medium" carbon amt
 			C: 0.0006,
-		}),
+		}, new AlloyProperties({
+			density: 7750,
+			melt: 1427.5+CONSTANTS.celsius,
+			yield_strength: 210e6,
+		})),
 		new Alloy('Steel (Stainless, Marine)', {
 			// https://en.wikipedia.org/wiki/SAE_316L_stainless_steel
 			Fe: 0.6944,
@@ -1281,13 +1411,21 @@ const ALLOY = {
 			Pb: 0.68,
 			Sb: 0.205,
 			Sn: 0.115,
-		}),
+		}, new AlloyProperties({
+			// "Type 3" in table
+			melt: 286+CONSTANTS.celsius,
+		})),
 		new Alloy('Wood\'s metal', {
 			Bi: 0.5,
 			Pb: 0.267,
 			Sn: 0.133,
 			Cd: 0.1,
-		}),
+		}, new AlloyProperties({
+			elastic_modulus: 12.7e9,
+			melt: 70+CONSTANTS.celsius,
+			yield_strength: 26.2e6,
+		})),
+		// continue properties from here
 		new Alloy('Wrought Iron', {
 			Fe: 0.995,
 			C: 0.0015,
@@ -1295,7 +1433,12 @@ const ALLOY = {
 			Si: 0.0011,
 			S: 0.0006,
 			Mn: 0.00055,
-		}),
+		}, new AlloyProperties({
+			density: (7.6+7.9)/2*CONSTANTS.water_density,
+			melt: 1540+CONSTANTS.celsius,
+			tensile_strength: 303e6,
+			yield_strength: 190e6,
+		})),
 		// pure metals
 		new Alloy('Copper', {Cu: 1}, new AlloyProperties({
 			boil: 2835,
@@ -1319,6 +1462,20 @@ const ALLOY = {
 			thermal_conductivity: 318,
 			thermal_expansion_coefficient: 14.13e-6,
 			youngs_modulus: 79e9,
+		})),
+		new Alloy('Iron', {Fe: 1}, new AlloyProperties({
+			boil: 3134,
+			curie_temperature: 1043,
+			electrical_conductivity: 1/96.1e-9,
+			density: 7874,
+			melt: 1811,
+			poissons_ratio: 0.29,
+			specific_heat_capacity: 449.458,
+			tensile_strength: 350e6,
+			thermal_conductivity: 80.4,
+			thermal_expansion_coefficient: 12.07e-6,
+			yield_strength: 90e6,
+			youngs_modulus: 211e9,
 		})),
 		new Alloy('Silver', {Ag: 1}, new AlloyProperties({
 			boil: 2435,
