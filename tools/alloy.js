@@ -359,7 +359,12 @@ const ALLOY = {
 			Mg: 0.011,
 			Cu: 0.01,
 			Mn: 0.008,
-		}),
+		}, new AlloyProperties({
+			// 6061
+			density: 2700,
+			tensile_strength: 300e6,
+			yield_strength: 241e6,
+		})),
 		new Alloy('Aluminum (7075)', {
 			Al: 0.9,
 			Zn: 0.056,
@@ -457,7 +462,12 @@ const ALLOY = {
 		new Alloy('Brass (Common)', {
 			Cu: 0.63,
 			Zn: 0.37,
-		}),
+		}, new AlloyProperties({
+			// Ultimate tensile strength article
+			density: 8730,
+			tensile_strength: 500e6,
+			yield_strength: 200e6,
+		})),
 		new Alloy('Brass (Devarda\'s alloy)', {
 			Cu: 0.5,
 			Al: 0.45,
@@ -1339,7 +1349,11 @@ const ALLOY = {
 			Mo: 0.0325,
 			Ti: 0.002,
 			Al: 0.001,
-		}),
+		}, new AlloyProperties({
+			density: 8000,
+			tensile_strength: 2693e6,
+			yield_strength: 2617e6,
+		})),
 		new Alloy('Steel (Razorblade)', {
 			Fe: 0.8615,
 			Cr: 0.1325,
@@ -1364,6 +1378,7 @@ const ALLOY = {
 		}, new AlloyProperties({
 			density: 7750,
 			melt: 1427.5+CONSTANTS.celsius,
+			tensile_strength: 620e6,
 			yield_strength: 210e6,
 		})),
 		new Alloy('Steel (Stainless, Marine)', {
