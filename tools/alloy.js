@@ -1804,8 +1804,7 @@ const ALLOY = {
 			thermal_expansion_coefficient: 18.92e-6,
 			youngs_modulus: 83e9,
 		})),
-		new Alloy('Tin', {Sn: 1}, new AlloyProperties({
-			// white tin unless otherwise specified
+		new Alloy('Tin (White)', {Sn: 1}, new AlloyProperties({
 			boil: 2875,
 			bulk_modulus: 58e9,
 			electrical_conductivity: 1/115e-9,
