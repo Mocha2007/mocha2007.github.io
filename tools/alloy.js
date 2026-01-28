@@ -546,6 +546,8 @@ const ALLOY = {
 			density: 8730,
 			tensile_strength: 500e6,
 			yield_strength: 200e6,
+			// https://phys.libretexts.org/Bookshelves/University_Physics/University_Physics_(OpenStax)/Book%3A_University_Physics_I_-_Mechanics_Sound_Oscillations_and_Waves_(OpenStax)/12%3A_Static_Equilibrium_and_Elasticity/12.04%3A_Stress_Strain_and_Elastic_Modulus_(Part_1)
+			youngs_modulus: 9e10,
 		})),
 		new Alloy('Brass (Devarda\'s alloy)', {
 			Cu: 0.5,
@@ -1554,6 +1556,8 @@ const ALLOY = {
 			thermal_conductivity: 45,
 			// thermal expansion article
 			thermal_expansion_coefficient: 12e-6,
+			// https://phys.libretexts.org/Bookshelves/University_Physics/University_Physics_(OpenStax)/Book%3A_University_Physics_I_-_Mechanics_Sound_Oscillations_and_Waves_(OpenStax)/12%3A_Static_Equilibrium_and_Elasticity/12.04%3A_Stress_Strain_and_Elastic_Modulus_(Part_1)
+			youngs_modulus: 20e10,
 		})),
 		new Alloy('Steel (Acmonital)', {
 			Fe: 0.799,
