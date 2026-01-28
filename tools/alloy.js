@@ -1398,6 +1398,9 @@ const ALLOY = {
 		new AlloyCategory('Steel', c => 0.5 < c.Fe && 0.0002 <= c.C && c.C <= 0.0214),
 	],
 	config: {
+		estimation: {
+			exponent: 2,
+		},
 		exponent: 2,
 		phaseDiagrams: {
 			size: "50vh",
@@ -1577,10 +1580,17 @@ const ALLOY = {
 				if (matches.length === 0){
 					return;
 				}
-				/** @type {Alloy} */
-				const best_fit = matches[0][0];
-				o[name] = `${best_fit.properties[name]} ${unit}`;
-				o[name+'_source'] = best_fit;
+				// Inverse distance weighting
+				let weights = 0;
+				let values = 0;
+				matches.forEach(match => {
+					const [alloy, dist] = match;
+					const weight = Math.pow(dist, -this.config.estimation.exponent);
+					weights += weight;
+					values += alloy.properties[name] * weight;
+				});
+				o[name] = values/weights;
+				o[name+'_source'] = matches[0][0];
 			});
 		return o;
 	},
@@ -1640,10 +1650,10 @@ const ALLOY = {
 		AlloyProperties.PROPERTY_LIST.forEach(x => {
 			const [unit, name] = x;
 			const td = document.getElementById(`propertyTable_${name}`);
-			td.innerHTML = properties[name];
+			td.innerHTML = `${properties[name]} ${unit}`;
 			/** @type {Alloy} */
 			const src = properties[`${name}_source`];
-			td.title = `source of estimate: ${src && src.name}`;
+			td.title = `primary source of estimate (full estimate uses IDW): ${src && src.name}`;
 		});
 	},
 	setSliders(composition = {}){
