@@ -77,6 +77,7 @@ class AlloyProperties {
 		// ['T', 'saturation_flux_density'],
 		['Pa', 'shear_modulus'],
 		['J/kg·K', 'specific_heat_capacity'],
+		['m/s', 'speed_of_sound'],
 		['Pa', 'tensile_strength'],
 		['W/m·K', 'thermal_conductivity'],
 		['K<sup>-1</sup>', 'thermal_expansion_coefficient'],
@@ -113,6 +114,12 @@ class AlloyProperties {
 			const [E, v] = [this.youngs_modulus, this.poissons_ratio];
 			this.bulk_modulus ||= E/(3-6*v);
 			this.shear_modulus ||= E/(2*(1+v));
+			// if we know the density, we can additionally compute the speed of sound
+			if (this.density){
+				const rho = this.density;
+				// https://en.wikipedia.org/wiki/Speed_of_sound#Three-dimensional_solids
+				this.speed_of_sound = Math.sqrt(E*(1-v)/(rho*(1+v)*(1-2*v)));
+			}
 		}
 	}
 }
