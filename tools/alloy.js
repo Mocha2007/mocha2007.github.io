@@ -574,6 +574,10 @@ const ALLOY = {
 			// Ultimate tensile strength article
 			density: 8730,
 			tensile_strength: 500e6,
+			// https://en.wikipedia.org/wiki/List_of_thermal_conductivities
+			thermal_conductivity: 125,
+			// https://en.wikipedia.org/wiki/Thermal_expansion#Coefficient_of_thermal_expansion
+			thermal_expansion_coefficient: 19e-6,
 			yield_strength: 200e6,
 			// https://phys.libretexts.org/Bookshelves/University_Physics/University_Physics_(OpenStax)/Book%3A_University_Physics_I_-_Mechanics_Sound_Oscillations_and_Waves_(OpenStax)/12%3A_Static_Equilibrium_and_Elasticity/12.04%3A_Stress_Strain_and_Elastic_Modulus_(Part_1)
 			youngs_modulus: 9e10,
@@ -706,6 +710,9 @@ const ALLOY = {
 			density: (7400+8900)/2,
 			// https://www.engineeringtoolbox.com/metals-poissons-ratio-d_1268.html
 			poissons_ratio: 0.34,
+			// https://en.wikipedia.org/wiki/List_of_thermal_conductivities
+			electrical_conductivity: (5882000+7143000)/2,
+			thermal_conductivity: (26+50)/2,
 			// https://www.engineeringtoolbox.com/young-modulus-d_417.html
 			youngs_modulus: 108e9,
 		})),
@@ -935,6 +942,8 @@ const ALLOY = {
 		}, new AlloyProperties({
 			elongation: 0,
 			tensile_strength: 172e6,
+			// https://en.wikipedia.org/wiki/List_of_thermal_conductivities
+			thermal_conductivity: 12.8,
 		})),
 		new Alloy('Cerrolow', {
 			// 136
@@ -1702,6 +1711,8 @@ const ALLOY = {
 			// Poisson's ratio article
 			poissons_ratio: 0.305,
 			tensile_strength: 620e6,
+			// https://en.wikipedia.org/wiki/List_of_thermal_conductivities
+			thermal_conductivity: (16.3+24)/2,
 			// thermal expansion article
 			thermal_expansion_coefficient: 13.7e-6,
 			yield_strength: 210e6,
@@ -2144,6 +2155,11 @@ const ALLOY = {
 			size: "50vh",
 		},
 		slider_notches: 100,
+	},
+	debug: {
+		alloysMissing(property_name){
+			console.debug(ALLOY.alloys.filter(a => !a.properties[property_name]));
+		}
 	},
 	elem: {
 		/** @type {HTMLUListElement} */
