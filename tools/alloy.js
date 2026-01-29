@@ -1777,6 +1777,38 @@ const ALLOY = {
 			youngs_modulus: 180e9
 		})),
 		// pure metals
+		new Alloy('Aluminum', {Al: 1}, new AlloyProperties({
+			boil: 2743,
+			bulk_modulus: 76e9,
+			electrical_conductivity: 1/26.5e-9,
+			density: 2699,
+			// https://www.engineeringtoolbox.com/permeability-d_1923.html
+			magnetic_permeability: 1.256665e-6,
+			melt: 933.47,
+			poissons_ratio: 0.35,
+			shear_modulus: 26e9,
+			specific_heat_capacity: 896.894,
+			tensile_strength: 45e6,
+			thermal_conductivity: 237,
+			thermal_expansion_coefficient: 22.87e-6,
+			yield_strength: 17.5e6,
+			youngs_modulus: 70e9,
+		})),
+		new Alloy('Bismuth', {Bi: 1}, new AlloyProperties({
+			boil: 1837,
+			bulk_modulus: 31e9,
+			electrical_conductivity: 1/1.29e-6,
+			density: 9807,
+			// https://www.engineeringtoolbox.com/permeability-d_1923.html
+			magnetic_permeability: 1.25643e-6,
+			melt: 544.7,
+			poissons_ratio: 0.33,
+			shear_modulus: 12e9,
+			specific_heat_capacity: 122.117,
+			thermal_conductivity: 7.97,
+			thermal_expansion_coefficient: 13.09e-6,
+			youngs_modulus: 32e9,
+		})),
 		new Alloy('Carbon (Graphite)', {C: 1}, new AlloyProperties({
 			boil: 3915,
 			// https://en.wikipedia.org/wiki/Bulk_modulus#Selected_values
@@ -1879,6 +1911,22 @@ const ALLOY = {
 			thermal_expansion_coefficient: 12.83e-6,
 			youngs_modulus: 200e9,
 		})),
+		new Alloy('Platinum', {Pt: 1}, new AlloyProperties({
+			boil: 4098,
+			bulk_modulus: 230e9,
+			electrical_conductivity: 1/105e-9,
+			density: 21452,
+			// https://www.engineeringtoolbox.com/permeability-d_1923.html
+			magnetic_permeability: 1.256970e-6,
+			melt: 2041.4,
+			poissons_ratio: 0.38,
+			shear_modulus: 61e9,
+			specific_heat_capacity: 132.561,
+			tensile_strength: (125e6+240e6)/2,
+			thermal_conductivity: 71.6,
+			thermal_expansion_coefficient: 8.93e-6,
+			youngs_modulus: 168e9,
+		})),
 		new Alloy('Silver', {Ag: 1}, new AlloyProperties({
 			boil: 2435,
 			bulk_modulus: 100e9,
@@ -1903,6 +1951,21 @@ const ALLOY = {
 			thermal_conductivity: 66.8,
 			thermal_expansion_coefficient: 21.76e-6,
 			youngs_modulus: 50e9,
+		})),
+		new Alloy('Zinc', {Zn: 1}, new AlloyProperties({
+			boil: 1180,
+			bulk_modulus: 70e9,
+			electrical_conductivity: 1/59e-9,
+			density: 7140,
+			melt: 692.68,
+			poissons_ratio: 0.25,
+			shear_modulus: 43e9,
+			specific_heat_capacity: 389.569,
+			tensile_strength: 300e6,
+			thermal_conductivity: 116,
+			thermal_expansion_coefficient: 30.08e-6,
+			yield_strength: 300e6,
+			youngs_modulus: 108e9,
 		})),
 	],
 	categories: [
