@@ -1133,6 +1133,22 @@ const ALLOY = {
 			// https://www.engineeringtoolbox.com/metal-alloys-densities-d_50.html
 			density: (12500+15000)/2,
 		})),
+		new Alloy('Elgiloy', {
+			Co: 0.4,
+			Cr: 0.2,
+			Fe: 0.16,
+			Ni: 0.15,
+			Mo: 0.07,
+			Mn: 0.02,
+		}, new AlloyProperties({
+			// https://www.elgiloy.com/strip-elgiloy-alloy
+			electrical_conductivity: 1/(99.6e-6*1e-2),
+			density: 8300,
+			shear_modulus: 11e3*CONSTANTS.ksi,
+			tensile_strength: 2100,
+			thermal_conductivity: 12.5,
+			youngs_modulus: 28e3*CONSTANTS.ksi,
+		})),
 		new Alloy('Elinvar', {
 			Fe: 0.52,
 			Ni: 0.36,
@@ -1230,6 +1246,12 @@ const ALLOY = {
 			Au: 0.75,
 			Cu: 0.25,
 		}),
+		new Alloy('Gold (Rhodian)', {
+			Au: 0.615,
+			Rh: 0.385,
+		}, new AlloyProperties({
+			density: (15500+16800)/2,
+		})),
 		new Alloy('Gold (Rose)', {
 			Au: 0.75,
 			Cu: 0.2225,
@@ -1710,6 +1732,15 @@ const ALLOY = {
 			S: 0.00018,
 			P: 0.00014,
 		}),
+		new Alloy('Steel (Staballoy)', {
+			Fe: 0.6212,
+			Mn: 0.2,
+			Cr: 0.17,
+			N: 0.005,
+			Si: 0.003,
+			Mo: 0.0005,
+			C: 0.0003,
+		}),
 		new Alloy('Steel (Stainless)', {
 			// https://en.wikipedia.org/wiki/SAE_304_stainless_steel#Chemical_composition
 			Fe: 0.7144,
@@ -1779,6 +1810,10 @@ const ALLOY = {
 		new Alloy('Tellurium copper', {
 			Cu: 0.994,
 			Te: 0.006,
+		}),
+		new Alloy('Terne', {
+			Pb: 0.85,
+			Sn: 0.15,
 		}),
 		new Alloy('Tumbaga', {
 			Cu: 0.8,
@@ -2369,7 +2404,7 @@ const ALLOY = {
 				}
 				if (matches[0][1] === 0){
 					// exact match
-					o[name] = alloy.properties[name];
+					o[name] = matches[0][0].properties[name];
 				}
 				else {
 					// Inverse distance weighting
