@@ -2327,13 +2327,17 @@ const ALLOY = {
 					// Inverse distance weighting
 					let weights = 0;
 					let values = 0;
-					matches.forEach(match => {
+					matches.forEach((match, i) => {
 						const [alloy, dist] = match;
 						const weight = Math.pow(dist, -this.config.estimation.exponent);
 						weights += weight;
 						values += alloy.properties[name] * weight;
+						if (i === 0){
+							o[name+'_source_weight'] = weight;
+						}
 					});
 					o[name] = values/weights;
+					o[name+'_source_weight'] /= weights;
 				}
 				o[name+'_source'] = matches[0][0];
 			});
@@ -2398,7 +2402,8 @@ const ALLOY = {
 			td.innerHTML = `${properties[name]} ${unit}`;
 			/** @type {Alloy} */
 			const src = properties[`${name}_source`];
-			td.title = `primary source of estimate (full estimate uses IDW): ${src && src.name}`;
+			const src_weight = properties[`${name}_source_weight`] || 1;
+			td.title = `primary source of estimate (full estimate uses IDW): ${src && src.name} (weight: ${Math.round(100*src_weight)}%)`;
 		});
 	},
 	setSliders(composition = {}){
