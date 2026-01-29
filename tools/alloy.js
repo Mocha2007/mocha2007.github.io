@@ -1152,8 +1152,8 @@ const ALLOY = {
 		}, new AlloyProperties({
 			boil: 1300+CONSTANTS.celsius,
 			density: 6440,
-			// https://www.jayteealloys.com/file/TDS-Galinstan.pdf
-			electrical_conductivity: 3.4e6,
+			// https://en.wikipedia.org/wiki/Electrical_resistivity_and_conductivity
+			electrical_conductivity: 3.46e6,
 			melt: -19 + CONSTANTS.celsius,
 			specific_heat_capacity: 296,
 			thermal_conductivity: 16.5,
