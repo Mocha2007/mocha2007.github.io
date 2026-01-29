@@ -90,6 +90,7 @@ class AlloyProperties {
 	static ROUNDING_RULES = {
 		default: 0,
 		elongation: 2,
+		magnetic_permeability: 9,
 		poissons_ratio: 2,
 		thermal_expansion_coefficient: 6,
 	};
