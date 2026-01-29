@@ -86,6 +86,12 @@ class AlloyProperties {
 		['Pa', 'yield_strength'],
 		['Pa', 'youngs_modulus'],
 	];
+	// properties default to 0
+	static ROUNDING_RULES = {
+		default: 0,
+		elongation: 2,
+		poissons_ratio: 2,
+	};
 	constructor(o = {}){
 		this.boil = o.boil;
 		this.bulk_modulus = o.bulk_modulus;
@@ -2610,7 +2616,7 @@ const ALLOY = {
 		AlloyProperties.PROPERTY_LIST.forEach(x => {
 			const [unit, name] = x;
 			const td = document.getElementById(`propertyTable_${name}`);
-			td.innerHTML = `${properties[name]} ${unit}`;
+			td.innerHTML = `${properties[name].toFixed(AlloyProperties.ROUNDING_RULES[name] || AlloyProperties.ROUNDING_RULES.default)} ${unit}`;
 			const conversion = AlloyProperties.conversion(properties[name], unit);
 			if (0 < conversion.conversions.length) {
 				td.innerHTML += ` (${conversion.conversions})`;
