@@ -1765,6 +1765,17 @@ const ALLOY = {
 			Si: 0.0004,
 			As: 0.0003,
 		}),
+		new Alloy('Stellite', {
+			Co: 0.725,
+			Cr: 0.165,
+			W: 0.09,
+			C: 0.02, // "most have fairly high carbon content compared to carbon steels"
+		}),
+		new Alloy('Stellite (Vitallium)', {
+			Co: 0.65,
+			Cr: 0.3,
+			Mo: 0.05,
+		}),
 		new Alloy('Tellurium copper', {
 			Cu: 0.994,
 			Te: 0.006,
