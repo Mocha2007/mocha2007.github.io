@@ -533,6 +533,12 @@ const ALLOY = {
 			Ag: 0.35,
 			Mn: 0.09,
 		}),
+		new Alloy('Bismanol', {
+			Bi: 0.79,
+			Mn: 0.21,
+		}, new AlloyProperties({
+			melt: 262+CONSTANTS.celsius,
+		})),
 		new Alloy('Brass (Admiralty)', {
 			Cu: 0.69,
 			Zn: 0.3,
