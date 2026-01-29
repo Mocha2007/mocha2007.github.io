@@ -323,6 +323,21 @@ const ALLOY = {
 			magnetic_permeability: 55e3,
 			saturation_flux_density: 0.8,
 		})),
+		new Alloy('Alumel', {
+			Ni: 0.95,
+			Al: 0.02,
+			Mn: 0.02,
+			Si: 0.01,
+		}, new AlloyProperties({
+			curie_temperature: 152+CONSTANTS.celsius,
+			density: 8610,
+			electrical_conductivity: 1/0.294e-6,
+			melt: 1399+CONSTANTS.celsius,
+			specific_heat_capacity: 0.523,
+			tensile_strength: (586e6+1170e6)/2,
+			thermal_conductivity: 29.7,
+			thermal_expansion_coefficient: 12e-6,
+		})),
 		new Alloy('Aluminum (Aludur)', {
 			Al: 0.985,
 			Si: 0.007,
@@ -978,6 +993,19 @@ const ALLOY = {
 		}, new AlloyProperties({
 			melt: 74+CONSTANTS.celsius,
 		})),
+		new Alloy('Chromel', {
+			Ni: 0.9,
+			Cr: 0.1,
+		}, new AlloyProperties({
+			density: 8500,
+			electrical_conductivity: 1/0.706e-6,
+			elongation: 0.44,
+			melt: 1420+CONSTANTS.celsius,
+			tensile_strength: (620e6+780e6)/2,
+			thermal_conductivity: 19,
+			thermal_expansion_coefficient: 12.8e-6,
+			youngs_modulus: 186e9,
+		})),
 		// for coal ash, see
 		// https://en.wikipedia.org/wiki/Coal_combustion_products#Chemical_composition_and_classification
 		// see coal composition helper spreadsheet
@@ -1133,6 +1161,16 @@ const ALLOY = {
 			// https://www.engineeringtoolbox.com/metal-alloys-densities-d_50.html
 			density: (12500+15000)/2,
 		})),
+		new Alloy('Elektron', {
+			Mg: 0.8625,
+			Y: 0.0525,
+			Nd: 0.027,
+			Ag: 0.025,
+			Gd: 0.013,
+			Zn: 0.009,
+			Zr: 0.006,
+			Mn: 0.005,
+		}),
 		new Alloy('Elgiloy', {
 			Co: 0.4,
 			Cr: 0.2,
@@ -1271,6 +1309,16 @@ const ALLOY = {
 			Cu: 8/32,
 			Ag: 6/32,
 		}),
+		new Alloy('Gum Metal', {
+			Ti: 0.733,
+			Nb: 0.23,
+			Zr: 0.02,
+			O: 0.01,
+			Ta: 0.007,
+		}, new AlloyProperties({
+			shear_modulus: 20e9,
+			yield_strength: 2000e6,
+		})),
 		new Alloy('Havar', {
 			Co: 0.42,
 			Cr: 0.195,
@@ -1490,7 +1538,7 @@ const ALLOY = {
 		}, new AlloyProperties({
 			melt: 97+CONSTANTS.celsius,
 		})),
-		new Alloy('Nichrome', {
+		new Alloy('Nichrome', { // AKA Brightray
 			Ni: 0.8,
 			Cr: 0.2,
 		}, new AlloyProperties({
@@ -1499,6 +1547,12 @@ const ALLOY = {
 			electrical_conductivity: 1/(1.12e-6),
 			melt: 1400+CONSTANTS.celsius,
 		})),
+		new Alloy('Nicrosil', {
+			Ni: 0.841,
+			Cr: 0.144,
+			Si: 0.014,
+			Mg: 0.001,
+		}),
 		new Alloy('Niello', {
 			// https://www.researchgate.net/figure/Elemental-composition-of-the-niello-inlays-based-on-the-SEM-EDX-measurements-The-results_tbl2_351438672
 			Ag: 0.567,
@@ -1506,6 +1560,29 @@ const ALLOY = {
 			S: 0.092,
 			Hg: 0.046,
 		}),
+		new Alloy('Nisil', {
+			Ni: 0.955,
+			Si: 0.044,
+			Mg: 0.001,
+		}, new AlloyProperties({
+			density: 8580,
+			electrical_conductivity: 1/0.3651e-6,
+			melt: (1341+1420)/2 + CONSTANTS.celsius,
+		})),
+		new Alloy('Nitinol', {
+			Ni: 0.55,
+			Ti: 0.45,
+		}, new AlloyProperties({
+			density: 6450,
+			electrical_conductivity: 1/(82e-6*1e-2),
+			magnetic_permeability: 1.002,
+			melt: 1310 + CONSTANTS.celsius,
+			poissons_ratio: 0.33,
+			thermal_conductivity: 0.18,
+			thermal_expansion_coefficient: 11e-6,
+			yield_strength: (195e6+690e6)/2,
+			youngs_modulus: (75e9+83e9)/2,
+		})),
 		new Alloy('Nivaflex', {
 			// https://generaleressorts.com/wp-content/uploads/2018/03/generale-ressorts-bienne-nivaflex-plus.pdf
 			Co: 0.47, // the composition leaves 2% unspecified; I have allocated this to Co
@@ -1623,6 +1700,16 @@ const ALLOY = {
 		new Alloy('Silver (Decoplata)', {
 			Ag: 0.72,
 			Cu: 0.28,
+		}),
+		new Alloy('Silver (Platinum Sterling)', {
+			Ag: 0.905,
+			Pt: 0.0325/1.3,
+			Cu: 0.0235/1.3,
+			Zn: 0.0225/1.3,
+			Sn: 0.02/1.3,
+			Ge: 0.0175/1.3,
+			Ga: 0.0105/1.3,
+			Si: 0.0015/1.3,
 		}),
 		new Alloy('Silver (Scandinavian)', {
 			Ag: 0.83,
@@ -1855,6 +1942,25 @@ const ALLOY = {
 			yield_strength: 190e6,
 			// Young's modulus article
 			youngs_modulus: 180e9
+		})),
+		new Alloy('Zamak', {
+			// ASTM B240
+			Zn: 0.931125,
+			Al: 0.041,
+			Cu: 0.0275,
+			Mg: 0.000375,
+		}, new AlloyProperties({
+			density: 6800,
+			electrical_conductivity: 1/(6.85e-6*1e-2),
+			elongation: 0.06,
+			melt: 384.5+CONSTANTS.celsius,
+			shear_modulus: 317e6,
+			specific_heat_capacity: 419,
+			tensile_strength: 397e6,
+			thermal_conductivity: 105,
+			thermal_expansion_coefficient: 27.8e-6,
+			yield_strength: 361e6,
+			youngs_modulus: 96e9,
 		})),
 		// pure metals
 		new Alloy('Aluminum', {Al: 1}, new AlloyProperties({
