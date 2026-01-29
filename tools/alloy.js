@@ -122,6 +122,18 @@ class AlloyProperties {
 			}
 		}
 	}
+	static conversion(amt, unit){
+		const o = {conversions:""};
+		switch (unit){
+			case 'K': {
+				// We'd like to see celsius and fahrenheit in the tooltip.
+				const c = amt-CONSTANTS.celsius;
+				const f = c*9/5+32;
+				o.conversions = `${c.toFixed(0)}°C, ${f.toFixed(0)}°F`;
+			}
+		}
+		return o;
+	}
 }
 
 class AlloyCategory {
@@ -2599,6 +2611,10 @@ const ALLOY = {
 			const [unit, name] = x;
 			const td = document.getElementById(`propertyTable_${name}`);
 			td.innerHTML = `${properties[name]} ${unit}`;
+			const conversion = AlloyProperties.conversion(properties[name], unit);
+			if (0 < conversion.conversions.length) {
+				td.innerHTML += ` (${conversion.conversions})`;
+			}
 			/** @type {Alloy} */
 			const src = properties[`${name}_source`];
 			const src_weight = properties[`${name}_source_weight`] || 1;
