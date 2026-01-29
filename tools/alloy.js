@@ -91,6 +91,7 @@ class AlloyProperties {
 		default: 0,
 		elongation: 2,
 		poissons_ratio: 2,
+		thermal_expansion_coefficient: 6,
 	};
 	constructor(o = {}){
 		this.boil = o.boil;
@@ -131,11 +132,23 @@ class AlloyProperties {
 	static conversion(amt, unit){
 		const o = {conversions:""};
 		switch (unit){
+			case 'Pa': {
+				o.conversions = `${(amt/CONSTANTS.ksi).toFixed(0)} ksi`;
+				break;
+			}
 			case 'K': {
 				// We'd like to see celsius and fahrenheit in the tooltip.
 				const c = amt-CONSTANTS.celsius;
 				const f = c*9/5+32;
 				o.conversions = `${c.toFixed(0)}°C, ${f.toFixed(0)}°F`;
+				break;
+			}
+			case 'm/s': {
+				// We'd like to see celsius and fahrenheit in the tooltip.
+				const metric = 3.6*amt; // m/s -> km/h
+				const imperial = metric/1.609344; // km/h -> mi/h
+				o.conversions = `${metric.toFixed(0)} km/h, ${imperial.toFixed(0)} mi/h`;
+				break;
 			}
 		}
 		return o;
@@ -470,7 +483,7 @@ const ALLOY = {
 			melt: 560+CONSTANTS.celsius,
 			specific_heat_capacity: 890,
 			thermal_conductivity: 150,
-			thermal_expansion_coefficient: 23e6,
+			thermal_expansion_coefficient: 23e-6,
 			youngs_modulus: 70e6,
 		})),
 		new Alloy('Aluminum (7075)', {
@@ -803,7 +816,7 @@ const ALLOY = {
 			poissons_ratio: 0.34,
 			specific_heat_capacity: 360,
 			tensile_strength: 240e6,
-			thermal_expansion_coefficient: 18e6,
+			thermal_expansion_coefficient: 18e-6,
 			yield_strength: 210e6,
 			youngs_modulus: 100e9,
 		})),
