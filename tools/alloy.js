@@ -2080,7 +2080,17 @@ const ALLOY = {
 			thermal_conductivity: 35.3,
 			thermal_expansion_coefficient: 28.73e-6,
 			youngs_modulus: 16e9,
-			//
+		})),
+		new Alloy('Mercury', {Hg: 1}, new AlloyProperties({
+			boil: 629.88,
+			// derived from the speed of sound in the liquid
+			bulk_modulus: Math.pow(1451.4, 2)*13546,
+			density: 13546,
+			electrical_conductivity: 1/961e-9,
+			melt: 234.3210,
+			specific_heat_capacity: 139.503,
+			thermal_conductivity: 8.3,
+			thermal_expansion_coefficient: 60.4e-6,
 		})),
 		new Alloy('Nickel', {Ni: 1}, new AlloyProperties({
 			boil: 3003,
