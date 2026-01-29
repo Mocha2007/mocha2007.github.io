@@ -282,6 +282,12 @@ const CONSTANTS = {
 	celsius: 273.15,
 	/** in Ohms */
 	iacs: 0.15292,
+	/** in Pascals */
+	get ksi(){
+		return this.psi*1e3;
+	},
+	/** in Pascals */
+	psi: 6894.757,
 	/** in kg/m^3, at 20 Celsius */
 	water_density: 998.2,
 };
@@ -602,6 +608,7 @@ const ALLOY = {
 			Zn: 0.08,
 		}),
 		new Alloy('Brass (Gunmetal)', {
+			// AKA "Red Brass"
 			Cu: 0.88,
 			Zn: 0.1,
 			Sn: 0.02,
@@ -625,7 +632,12 @@ const ALLOY = {
 			Zn: 0.12,
 			Mn: 0.07,
 			Ni: 0.04,
-		}),
+		}, new AlloyProperties({
+			// https://www.nationalbronze.com/pdfs/spec_reference.pdf
+			elongation: 0.18,
+			tensile_strength: 119*CONSTANTS.ksi,
+			yield_strength: 83*CONSTANTS.ksi,
+		})),
 		new Alloy('Brass (Muntz metal)', {
 			Cu: 0.6,
 			Zn: 0.4,
@@ -652,6 +664,10 @@ const ALLOY = {
 			density: (8400+8900)/2,
 			// https://www.engineeringtoolbox.com/young-modulus-d_417.html
 			youngs_modulus: 128,
+			// https://www.nationalbronze.com/pdfs/spec_reference.pdf
+			elongation: 0.18,
+			tensile_strength: (35+55)/2*CONSTANTS.ksi,
+			yield_strength: (17+30)/2*CONSTANTS.ksi,
 		})),
 		new Alloy('Brass (Nordic gold)', {
 			Cu: 0.89,
