@@ -2175,7 +2175,12 @@ const ALLOY = {
 	debug: {
 		alloysMissing(property_name){
 			console.debug(ALLOY.alloys.filter(a => !a.properties[property_name]));
-		}
+		},
+		alloysSortedBy(property_name){
+			const clone = ALLOY.alloys.filter(a => a.properties[property_name]);
+			clone.sort((a, b) => b.properties[property_name] - a.properties[property_name]);
+			console.debug(clone);
+		},
 	},
 	elem: {
 		/** @type {HTMLUListElement} */
