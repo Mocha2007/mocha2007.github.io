@@ -2106,7 +2106,7 @@ const elementData = [
 		z: 40,
 		name: 'Zirconium',
 		symbol: 'Zr',
-		mass: 91.224,
+		mass: 91.222,
 		group: 4,
 		period: 5,
 		properties: {
@@ -3367,7 +3367,7 @@ const elementData = [
 		z: 64,
 		name: 'Gadolinium',
 		symbol: 'Gd',
-		mass: 157.25,
+		mass: 157.249,
 		period: 6,
 		properties: {
 			abundance: {
@@ -3707,7 +3707,7 @@ const elementData = [
 		z: 71,
 		name: 'Lutetium',
 		symbol: 'Lu',
-		mass: 174.9668,
+		mass: 174.96669,
 		group: 3,
 		period: 6,
 		properties: {
