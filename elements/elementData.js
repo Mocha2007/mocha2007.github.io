@@ -3722,7 +3722,6 @@ const elementData = [
 			appearance: 'silvery white',
 			bulkModulus: 47.6e9,
 			categories: {
-				lanthanide: true,
 				rem: true,
 				tech: 0.5,
 			},
@@ -5160,9 +5159,6 @@ const elementData = [
 		period: 7,
 		properties: {
 			appearance: 'silvery',
-			categories: {
-				actinide: true,
-			},
 			covalentRadius: 161e-12,
 			crystal: 'hP',
 			density: 14400,

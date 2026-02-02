@@ -258,9 +258,9 @@ class ChemElement {
 			return 'Noble gas';
 		if (11 < this.group) // disputed
 			return 'Post-transition metal';
-		if (this.period === 6 && this.z < 72)
+		if (this.period === 6 && this.z < 71)
 			return 'Lanthanide';
-		if (this.period === 7 && this.z < 104)
+		if (this.period === 7 && this.z < 103)
 			return 'Actinide';
 		if (this.period === 8 && this.z < 158)
 			return 'Superactinide';
