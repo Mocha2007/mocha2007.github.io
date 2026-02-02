@@ -336,6 +336,7 @@ const elementData = [
 		group: 14,
 		period: 2,
 		properties: {
+			// try to stick to graphite if possible since diamond is technically only metastable at stp
 			abundance: {
 				earth: 1.6e-3,
 				human: 0.12,
@@ -350,8 +351,8 @@ const elementData = [
 				rockForming: 0.5,
 			},
 			covalentRadius: 70e-12,
-			crystal: 'hP',
-			density: 2267,
+			crystal: 'hP', // graphite
+			density: 2267, // graphite
 			discovery: -3750,
 			electronAffinity: 122e3,
 			electronegativity: 2.55,
@@ -371,7 +372,7 @@ const elementData = [
 				covalent: (77e-12 + 73e-12 + 69e-12)/3,
 				vanDerWaals: 170e-12,
 			},
-			resistivity: 7.837e-6,
+			resistivity: 7.837e-6, // graphite
 			speedOfSound: 1470, // graphite
 			temperatures: {
 				boil: 3915,
