@@ -23,6 +23,7 @@ const decayArrows = {
 	'b-': [corner, -corner, 2*r-corner, corner-2*r],
 	'b-b-': [corner, -corner, 4*r-corner, corner-4*r],
 	'sf': [r, 0, r+8, 0],
+	'cd': [corner, corner, corner+6, corner+6],
 };
 decayArrows.ec = decayArrows['b+'];
 decayArrows.ecec = decayArrows['b+b+'];
@@ -1082,6 +1083,7 @@ class Decay {
 			'ec': 'EC',
 			'ecec': 'Double EC',
 			'sf': 'SF',
+			'cd': 'CD',
 		}[this.name];
 	}
 	/** @param {number} p - probability */
@@ -1153,6 +1155,7 @@ new Decay('b-b-', 2, -2); // Double Beta- Decay
 new Decay('ec', -1, 1); // Electron Capture
 new Decay('ecec', -2, 2); // Double Electron Capture
 const sf = new Decay('sf'); // Spontaneous Fission
+const cd = new Decay('cd'); // Cluster Decay
 
 /** @type {Isotope[]} */
 const isotopes = [];
@@ -1189,7 +1192,7 @@ class Isotope {
 		return 10.7 * Math.pow(x, 0.0294);
 	}
 	get daughters(){
-		return this.decayTypes.map(d => d[0]).filter(d => d !== sf).map(d => Isotope.find(
+		return this.decayTypes.map(d => d[0]).filter(d => d !== sf && d !== cd).map(d => Isotope.find(
 			ChemElement.fromZ(this.element.z + d.deltaZ).symbol
 				+ '-' + (this.mass + d.deltaA))
 		);
