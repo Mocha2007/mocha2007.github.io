@@ -354,7 +354,7 @@ const elementData = [
 			covalentRadius: 70e-12,
 			crystal: 'hP', // graphite
 			density: 2267, // graphite
-			discovery: -3750,
+			discovery: -9000, // 28 kya
 			electronAffinity: 122e3,
 			electronegativity: 2.55,
 			ionization: [1086.5e3, 2352.6e3, 4620.5e3, 6222.7e3, 37831e3, 47277e3],
@@ -1771,7 +1771,7 @@ const elementData = [
 			covalentRadius: 115e-12,
 			crystal: 'hR',
 			density: 5776,
-			discovery: 815,
+			discovery: 300,
 			electronAffinity: 78e3,
 			electronegativity: 2.18,
 			ionization: [947e3, 1798e3, 2735e3, 4837e3, 6043e3, 12310e3],
@@ -2739,7 +2739,7 @@ const elementData = [
 			covalentRadius: 145e-12,
 			crystal: 'hR',
 			density: 6685,
-			discovery: 815,
+			discovery: -3000,
 			electronAffinity: 101e3,
 			electronegativity: 2.05,
 			ionization: [834e3, 1594.9e3, 2440e3, 4260e3, 5400e3, 10400e3],
@@ -4105,7 +4105,7 @@ const elementData = [
 			covalentRadius: 135e-12,
 			crystal: 'cF',
 			density: 21460,
-			discovery: 1735,
+			discovery: -200, // b/w 600 BCE and 200 CE
 			electronAffinity: 205e3,
 			electronConfiguration: '[Xe] 4f14 5d9 6s1',
 			electronegativity: 2.28,
@@ -4165,7 +4165,7 @@ const elementData = [
 			covalentRadius: 135e-12,
 			crystal: 'cF',
 			density: 19282,
-			discovery: -6000,
+			discovery: -9000, // 42 kya
 			electronAffinity: 223e3,
 			electronConfiguration: '[Xe] 4f14 5d10 6s1',
 			electronegativity: 2.54,
@@ -4380,7 +4380,7 @@ const elementData = [
 			covalentRadius: 160e-12,
 			crystal: 'hR',
 			density: 9807,
-			discovery: 1000,
+			discovery: 1500,
 			electronAffinity: 91e3,
 			electronegativity: 2.02,
 			ionization: [703e3, 1610e3, 2466e3, 4370e3, 5400e3, 8520e3],
