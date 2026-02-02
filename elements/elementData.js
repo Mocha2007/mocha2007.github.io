@@ -347,6 +347,7 @@ const elementData = [
 			bulkModulus: 33e9, // diamond is 442; graphite is 33 https://periodictable.com/Properties/A/BulkModulus.al.html
 			categories: {
 				coinageMetal: 0.5, // various russian coins
+				df: true, // coal, graphite, diamond
 				reactiveNonmetal: true,
 				rockForming: 0.5,
 			},
@@ -856,6 +857,7 @@ const elementData = [
 			bulkModulus: 7.7e9,
 			categories: {
 				chalcogen: true,
+				df: true, // brimstone
 				reactiveNonmetal: true,
 				rockForming: 0.5,
 			},
