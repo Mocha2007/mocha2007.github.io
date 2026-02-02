@@ -786,23 +786,17 @@ class ChemElement {
 				break;
 			case 'msi%4':
 				if (this.stable){
-					if (new Set(this.isotopes.filter(i => i.stable).map(
-						i => i.mass % 4)).size === 1){
-						c = c4[this.isotopes.filter(i => i.stable)[0].mass % 4];
-					}
-					// otherwise multiple options
-					else if (new Set(this.isotopes.filter(i => i.stable && i.n % 2 === 0).map(
-						i => i.mass % 4)).size === 1){ // only one stable isotope with even # of neutrons?
-						c = c4[this.isotopes.filter(i => i.stable && i.n % 2 === 0)[0].mass % 4];
-					}
-					else
-						c = 'grey';
+					const stable = this.isotopes.filter(i => i.stable);
+					// out of the stable isotopes, get the one with the HIGHEST binding energy per nucleon
+					stable.sort((a, b) => b.nuclearBindingEnergy/b.mass - a.nuclearBindingEnergy/a.mass);
+					c = c4[stable[0].mass % 4]
 				}
 				else {
-					const isotopeMasses = this.isotopes.map(i => i.mass);
-					c = c4[this.isotopes[isotopeMasses.indexOf(
-						Math.max(...isotopeMasses))].mass % 4];
+					const isotopes = this.isotopes.map(i => [i.mass, i.halfLife]);
+					isotopes.sort((a, b) => b[1] - a[1]);
+					c = c4[isotopes[0][0] % 4];
 				}
+				// c = 'grey';
 				break;
 			case 'naming':
 				c = elemGoldschmidtColors[elemNaming[this.z-1]];
