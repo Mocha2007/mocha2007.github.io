@@ -710,6 +710,7 @@ const elementData = [
 			nucleosynthesis: {
 				neonBurningProcess: 1,
 			},
+			nutrition: 4,
 			oxidation: [3],
 			prices: {
 				2026: 3.0231, // 2 Jan 2026
@@ -1273,7 +1274,6 @@ const elementData = [
 			nucleosynthesis: {
 				alphaProcess: 1,
 			},
-			nutrition: 3,
 			oxidation: [2, 3, 6],
 			prices: {
 				2021: 5.65/pound,
@@ -1777,7 +1777,7 @@ const elementData = [
 			nucleosynthesis: {
 				rProcess: 1,
 			},
-			nutrition: 3,
+			nutrition: 4,
 			oxidation: [-3, 3, 5],
 			prices: {
 				2021: 1.11,
@@ -1885,7 +1885,7 @@ const elementData = [
 			nucleosynthesis: {
 				rProcess: 1,
 			},
-			nutrition: 3,
+			nutrition: 2,
 			oxidation: [-1, 1, 3, 5],
 			prices: {
 				2019: 4.39,
@@ -1981,6 +1981,7 @@ const elementData = [
 				rProcess: 0.7217, // Rb-85
 				sProcess: 0.2783, // Rb-87
 			},
+			nutrition: 4,
 			oxidation: [1],
 			prices: {
 				2018: 15500,
@@ -2745,6 +2746,7 @@ const elementData = [
 				sProcess: 0.25,
 				rProcess: 0.75,
 			},
+			nutrition: 4,
 			oxidation: [-3, 3, 5],
 			prices: {
 				2022: 11.3,
@@ -2799,6 +2801,7 @@ const elementData = [
 				sProcess: 0.57,
 				rProcess: 0.43,
 			},
+			nutrition: 4,
 			oxidation: [-2, 2, 4, 6],
 			prices: {
 				2026: 104.51, // 5 Jan 2026
@@ -3001,6 +3004,7 @@ const elementData = [
 				sProcess: 0.82,
 				rProcess: 0.18,
 			},
+			nutrition: 4,
 			oxidation: [2],
 			prices: {
 				2016: 0.261,
@@ -4777,6 +4781,7 @@ const elementData = [
 			nucleosynthesis: {
 				rProcess: 1,
 			},
+			nutrition: 4,
 			oxidation: [4, 6],
 			prices: {
 				2022: 48.1/pound,
