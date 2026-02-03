@@ -2473,5 +2473,47 @@ const blogData = [
 		<li>Silver: Lead >> Molybdenum > Tungsten > Uranium > Mercury > Thorium > Tantalum</li>
 	</ul>
 	`,
+	`
+	@title Dwarf Fortress Material Properties
+	@date 1770111170837
+	@tags dwarf_fortress
+	Information you will need:
+	<ul class="list2">
+		<li>At least <strong>two</strong> of the following:
+		<ul class="list2">
+			<li>Bulk Modulus (in GPa)</li>
+			<li>Shear Modulus (in GPa)</li>
+			<li>Young's Modulus (in GPa)</li>
+		</ul>
+		You can use the formulas on <a href="https://en.wikipedia.org/wiki/Template:Elastic_moduli">this page</a> to find the third property from any two.
+		</li>
+		<li>Ultimate Tensile Strength (in kPa)
+		<ul class="list2">
+			<li>Can be approximated as 0.0015 x Young's Modulus if you don't have this information</li>
+		</ul>
+		</li>
+	</ul>
+	@p
+	<code>
+		IMPACT_YIELD: TENSILE_YIELD * 3.5<br>
+		IMPACT_FRACTURE: TENSILE_FRACTURE * 3.5<br>
+		IMPACT_STRAIN_AT_YIELD: IMPACT_YIELD / (Bulk Modulus (in GPa) * 10)<br>
+		COMPRESSIVE_YIELD: IMPACT_YIELD<br>
+		COMPRESSIVE_FRACTURE IMPACT_FRACTURE<br>
+		COMPRESSIVE_STRAIN_AT_YIELD: IMPACT_STRAIN_AT_YIELD<br>
+		TENSILE_YIELD: Ultimate Tensile Strength (in kPa)<br>
+		TENSILE_FRACTURE: TENSILE_FRACTURE * 2<br>
+		TENSILE_STRAIN_AT_YIELD: TENSILE_YIELD / (Young's Modulus (in GPa) * 10)<br>
+		TORSION_YIELD: TENSILE_YIELD<br>
+		TORSION_FRACTURE: TENSILE_FRACTURE<br>
+		TORSION_STRAIN_AT_YIELD: TENSILE_STRAIN_AT_YIELD<br>
+		SHEAR_YIELD: TENSILE_YIELD<br>
+		SHEAR_FRACTURE: TENSILE_FRACTURE<br>
+		SHEAR_STRAIN_AT_YIELD: TENSILE_YIELD / (Shear Modulus (in GPa) * 10)<br>
+		BENDING_YIELD: TENSILE_YIELD<br>
+		BENDING_FRACTURE: TENSILE_FRACTURE<br>
+		BENDING_STRAIN_AT_YIELD: SHEAR_STRAIN_AT_YIELD<br>
+	</code>
+	`,
 ];
 // don't forget, run blog.timestamp to get the timestamp!
