@@ -2433,6 +2433,12 @@ const ALLOY = {
 		normalize.innerHTML = 'Normalize';
 		normalize.onclick = () => this.normalize();
 		this.elem.container.appendChild(normalize);
+		// random button
+		const random = document.createElement('span');
+		random.classList.add('button');
+		random.innerHTML = 'Surprise me!';
+		random.onclick = () => this.random();
+		this.elem.container.appendChild(random);
 		// top row
 		this.initSliders();
 		const layoutTable = document.createElement('table');
@@ -2581,6 +2587,11 @@ const ALLOY = {
 			e.updateSliderNumber();
 		});
 		this.refresh();
+	},
+	random(){
+		// ALLOY.setSliders(this.composition)
+		const i = Math.floor(this.alloys.length * Math.random());
+		this.setSliders(this.alloys[i].composition);
 	},
 	/** @param {number} f */
 	rarityColor(f){
