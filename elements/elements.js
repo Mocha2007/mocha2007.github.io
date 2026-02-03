@@ -1358,7 +1358,7 @@ function redrawDiagrams(){
  * @param {number} ystart - default = 94, max = 118
  * @param {number} xstart - default = 0, min = -2
  */
-function setDecayChainLength(width=14, height=14, ystart=94, xstart=0){
+function setDecayChainLength(width=11, height=14, ystart=94, xstart=0){
 	const svgs = document.getElementsByClassName('decay');
 	Array.from(svgs).forEach(svg => {
 		svg.style.width = `${width*r*2}px`;
