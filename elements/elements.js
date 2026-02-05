@@ -671,9 +671,9 @@ class ChemElement {
 			}
 			case 'discovery':{
 				const ages = elements.filter(e => isFinite(e.discovery))
-					.map(e => Math.log(new Date().getFullYear() - e.discovery));
+					.map(e => Math.log(new Date().getFullYear() - Math.max(-4000, e.discovery)));
 				c = gradient1(remap(
-					Math.log(new Date().getFullYear() - this.discovery),
+					Math.log(new Date().getFullYear() - Math.max(-4000, this.discovery)),
 					[Math.min(...ages), Math.max(...ages)], [0, 1]));
 				break;
 			}

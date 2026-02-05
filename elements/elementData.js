@@ -354,7 +354,7 @@ const elementData = [
 			covalentRadius: 70e-12,
 			crystal: 'hP', // graphite
 			density: 2267, // graphite
-			discovery: -9000, // 28 kya
+			discovery: -26000,
 			electronAffinity: 122e3,
 			electronegativity: 2.55,
 			ionization: [1086.5e3, 2352.6e3, 4620.5e3, 6222.7e3, 37831e3, 47277e3],
@@ -4166,7 +4166,7 @@ const elementData = [
 			covalentRadius: 135e-12,
 			crystal: 'cF',
 			density: 19282,
-			discovery: -9000, // 42 kya
+			discovery: -40000,
 			electronAffinity: 223e3,
 			electronConfiguration: '[Xe] 4f14 5d10 6s1',
 			electronegativity: 2.54,
