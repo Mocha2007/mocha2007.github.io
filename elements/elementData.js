@@ -795,6 +795,7 @@ const elementData = [
 		group: 15,
 		period: 3,
 		properties: {
+			// make sure you use the WHITE allotrope!
 			abundance: {
 				earth: 1.02e-3,
 				human: 0.0022,
@@ -811,7 +812,7 @@ const elementData = [
 			covalentRadius: 100e-12,
 			crystal: 'cI',
 			// 1155 d according to http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/biohalf.html
-			density: 1820,
+			density: 1823,
 			discovery: 1669,
 			electronAffinity: 72e3,
 			electronegativity: 2.19,
@@ -832,7 +833,7 @@ const elementData = [
 			},
 			resistivity: 1e-7, // https://periodictable.com/Elements/015/data.html
 			temperatures: {
-				boil: 550,
+				boil: 553.7,
 				melt: 317.3,
 			},
 			toxicity: 1.25e-3 / human_weight * over_nutrition, // double the daily intake, a wild guess. (see <https://en.wikipedia.org/wiki/Hyperphosphatemia>)
