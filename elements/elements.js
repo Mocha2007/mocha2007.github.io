@@ -42,6 +42,14 @@ const elemCatColors = {
 	'Superactinide': '#f7a',
 };
 
+const elemMagnetismColors = {
+	diamagnetic: '#bff',
+	paramagnetic: '#ff8',
+	antiferromagnetic: '#fb7',
+	ferromagnetic: '#fde',
+	nonmagnetic: '#ccc', // todo
+};
+
 const elemGoldschmidtColors = [
 	'#bff', // atmophile
 	'#ff8', // chalcophile
@@ -170,6 +178,8 @@ class ChemElement {
 			this.electronegativity = properties.electronegativity;
 			/** @type {number[]} - J/mol */
 			this.ionization = properties.ionization;
+			/** @type {string} */
+			this.magnetism = properties.magnetism;
 			/** @type {string} - color used in models */
 			this.modelColor = properties.modelColor;
 			/** @type {boolean} - used to override elements with stable nuclear isomers (currently only tantalum) */
@@ -762,6 +772,9 @@ class ChemElement {
 							.map(e => e.biologicalHalfLife)));
 					c = gradient1(x);
 				}
+				break;
+			case 'magnetism':
+				c = elemMagnetismColors[this.magnetism] || '#ccc';
 				break;
 			case 'melt':
 				if (!this.temperatures)

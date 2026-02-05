@@ -103,6 +103,7 @@ const elementData = [
 			electronAffinity: 73e3,
 			electronegativity: 2.2,
 			ionization: [1312e3],
+			magnetism: 'diamagnetic',
 			modelColor: 'white',
 			nucleosynthesis: {
 				bigBang: 1,
@@ -148,6 +149,7 @@ const elementData = [
 			discovery: 1895,
 			electronAffinity: -50e3,
 			ionization: [2372.3e3, 5230.5e3],
+			magnetism: 'diamagnetic',
 			modelColor: 'rgb(217, 255, 255)',
 			nucleosynthesis: {
 				bigBang: 0.91,
@@ -197,6 +199,7 @@ const elementData = [
 			electronAffinity: 60e3,
 			electronegativity: 0.98,
 			ionization: [520.2e3, 7298.1e3, 11815e3],
+			magnetism: 'paramagnetic',
 			modelColor: 'rgb(204, 128, 255)',
 			nucleosynthesis: {
 				bigBang: 0.23,
@@ -253,6 +256,7 @@ const elementData = [
 			electronAffinity: -50e3,
 			electronegativity: 1.57,
 			ionization: [899.5e3, 1757.1e3, 14848.70e3, 21006.60e3],
+			magnetism: 'diamagnetic',
 			modelColor: 'rgb(194, 255, 0)',
 			nucleosynthesis: {
 				spallation: 1,
@@ -303,6 +307,7 @@ const elementData = [
 			electronAffinity: 27e3,
 			electronegativity: 2.04,
 			ionization: [800.6e3, 2427.1e3, 3659.7e3, 25025.80e3, 32826.70e3],
+			magnetism: 'diamagnetic',
 			modelColor: 'rgb(255, 181, 181)',
 			nucleosynthesis: {
 				spallation: 1,
@@ -358,6 +363,7 @@ const elementData = [
 			electronAffinity: 122e3,
 			electronegativity: 2.55,
 			ionization: [1086.5e3, 2352.6e3, 4620.5e3, 6222.7e3, 37831e3, 47277e3],
+			magnetism: 'diamagnetic',
 			modelColor: 'rgb(144, 144, 144)',
 			nucleosynthesis: {
 				tripleAlphaProcess: 0.989, // C-12
@@ -407,6 +413,7 @@ const elementData = [
 			electronAffinity: -7e3,
 			electronegativity: 3.04,
 			ionization: [1402.3e3, 2856e3, 4578.1e3, 7475e3, 9444.9e3, 53266.60e3, 64360e3],
+			magnetism: 'diamagnetic',
 			modelColor: 'rgb(48, 80, 248)',
 			nucleosynthesis: {
 				cnoCycle: 1,
@@ -456,6 +463,7 @@ const elementData = [
 			electronAffinity: 141e3,
 			electronegativity: 3.44,
 			ionization: [1313.9e3, 3388.3e3, 5300.5e3, 7469.2e3, 10989.50e3, 13326.50e3, 71330e3, 84078e3],
+			magnetism: 'paramagnetic',
 			modelColor: 'rgb(255, 13, 13)',
 			nucleosynthesis: {
 				alphaProcess: 0.9996, // O-16, O-18
@@ -506,6 +514,7 @@ const elementData = [
 			electronAffinity: 328e3,
 			electronegativity: 3.98,
 			ionization: [1681e3, 3374.2e3, 6050.4e3, 8407.7e3, 11022.70e3, 15164.10e3, 17868e3, 92038.10e3, 106434.30e3],
+			magnetism: 'diamagnetic',
 			modelColor: 'rgb(144, 224, 80)',
 			nucleosynthesis: {
 				cnoCycle: 1,
@@ -550,6 +559,7 @@ const elementData = [
 			discovery: 1898,
 			electronAffinity: -120e3,
 			ionization: [2080.7e3, 3952.3e3, 6122e3, 9371e3, 12177e3, 15238.90e3, 19999e3, 23069.50e3, 115379.50e3, 131432e3],
+			magnetism: 'diamagnetic',
 			modelColor: 'rgb(179, 227, 245)',
 			nucleosynthesis: {
 				carbonBurningProcess: 0.9075, // Ne-20, Ne-21
@@ -600,6 +610,7 @@ const elementData = [
 			electronAffinity: 53e3,
 			electronegativity: 0.93,
 			ionization: [495.8e3, 4562e3, 6910.3e3, 9543e3, 13354e3, 16613e3, 20117e3, 25496e3, 28932e3, 141362e3, 159076e3],
+			magnetism: 'paramagnetic',
 			modelColor: 'rgb(171, 92, 242)',
 			nucleosynthesis: {
 				carbonBurningProcess: 1, // guess
@@ -653,6 +664,7 @@ const elementData = [
 			electronAffinity: -40e3,
 			electronegativity: 1.31,
 			ionization: [737.7e3, 1450.7e3, 7732.7e3, 10542.50e3, 13630e3, 18020e3, 21711e3, 25661e3, 31653e3, 35458e3, 169988e3, 189368e3],
+			magnetism: 'paramagnetic',
 			modelColor: 'rgb(138, 255, 0)',
 			nucleosynthesis: {
 				alphaProcess: 0.79, // Mg-24
@@ -708,6 +720,7 @@ const elementData = [
 			electronAffinity: 42e3,
 			electronegativity: 1.61,
 			ionization: [577.5e3, 1816.7e3, 2744.8e3, 11577e3, 14842e3, 18379e3, 23326e3, 27465e3, 31853e3, 38473e3, 42647e3, 201266e3, 222316e3],
+			magnetism: 'paramagnetic',
 			modelColor: 'rgb(191, 166, 166)',
 			nucleosynthesis: {
 				neonBurningProcess: 1,
@@ -762,6 +775,7 @@ const elementData = [
 			electronAffinity: 134e3,
 			electronegativity: 1.9,
 			ionization: [786.5e3, 1577.1e3, 3231.6e3, 4355.5e3, 16091e3, 19805e3, 23780e3, 29287e3, 33878e3, 38726e3, 45962e3, 50502e3, 235196e3, 257923e3],
+			magnetism: 'diamagnetic',
 			modelColor: 'rgb(240, 200, 160)',
 			nucleosynthesis: {
 				oxygenBurningProcess: 0.92,
@@ -817,6 +831,7 @@ const elementData = [
 			electronAffinity: 72e3,
 			electronegativity: 2.19,
 			ionization: [1011.8e3, 1907e3, 2914.1e3, 4963.6e3, 6273.9e3, 21267e3, 25431e3, 29872e3, 35905e3, 40950e3, 46261e3, 54110e3, 59024e3, 271791e3, 296195e3],
+			magnetism: 'diamagnetic',
 			modelColor: 'rgb(255, 128, 0)',
 			nucleosynthesis: {
 				neonBurningProcess: 1,
@@ -869,6 +884,7 @@ const elementData = [
 			electronAffinity: 200e3,
 			electronegativity: 2.58,
 			ionization: [999.6e3, 2252e3, 3357e3, 4556e3, 7004.3e3, 8495.8e3, 27107e3, 31719e3, 36621e3, 43177e3, 48710e3, 54460e3, 62930e3, 68216e3, 311048e3, 337138e3],
+			magnetism: 'diamagnetic',
 			modelColor: 'rgb(255, 255, 48)',
 			nucleosynthesis: { // best guess
 				oxygenBurningProcess: 0.9924,
@@ -918,6 +934,7 @@ const elementData = [
 			electronAffinity: 349e3,
 			electronegativity: 3.16,
 			ionization: [1251.2e3, 2298e3, 3822e3, 5158.6e3, 6542e3, 9362e3, 11018e3, 33604e3, 38600e3, 43961e3, 51068e3, 57119e3, 63363e3, 72341e3, 78095e3, 352994e3, 380760e3],
+			magnetism: 'diamagnetic',
 			modelColor: 'rgb(31, 240, 31)',
 			nucleosynthesis: {
 				rpProcess: 1, // "explosive nucleosynthesis"
@@ -963,6 +980,7 @@ const elementData = [
 			discovery: 1894,
 			electronAffinity: -96e3,
 			ionization: [1520.6e3, 2665.8e3, 3931e3, 5771e3, 7238e3, 8781e3, 11995e3, 13842e3, 40760e3, 46186e3, 52002e3, 59653e3, 66199e3, 72918e3, 82473e3, 88576e3, 397605e3, 427066e3],
+			magnetism: 'diamagnetic',
 			modelColor: 'rgb(128, 209, 227)',
 			nucleosynthesis: {
 				oxygenBurningProcess: 0.00063, // Ar-36
@@ -1012,6 +1030,7 @@ const elementData = [
 			electronAffinity: 48e3,
 			electronegativity: 0.82,
 			ionization: [418.8e3, 3052e3, 4420e3, 5877e3, 7975e3, 9590e3, 11343e3, 14944e3, 16963.70e3, 48610e3, 54490e3, 60730e3, 68950e3, 75900e3, 83080e3, 93400e3, 99710e3, 444880e3, 476063e3],
+			magnetism: 'paramagnetic',
 			modelColor: 'rgb(143, 64, 212)',
 			nucleosynthesis: {
 				rpProcess: 1, // guess; K-39, K-41
@@ -1065,6 +1084,7 @@ const elementData = [
 			electronAffinity: 2e3,
 			electronegativity: 1,
 			ionization: [589.8e3, 1145.4e3, 4912.4e3, 6491e3, 8153e3, 10496e3, 12270e3, 14206e3, 18191e3, 20385e3, 57110e3, 63410e3, 70110e3, 78890e3, 86310e3, 94000e3, 104900e3, 111711e3, 494850e3, 527762e3],
+			magnetism: 'diamagnetic',
 			modelColor: 'rgb(61, 255, 0)',
 			nucleosynthesis: {
 				alphaProcess: 1,
@@ -1116,6 +1136,7 @@ const elementData = [
 			electronAffinity: 18e3,
 			electronegativity: 1.36,
 			ionization: [633.1e3, 1235e3, 2388.6e3, 7090.6e3, 8843e3, 10679e3, 13310e3, 15250e3, 17370e3, 21726e3, 24102e3, 66320e3, 73010e3, 80160e3, 89490e3, 97400e3, 105600e3, 117000e3, 124270e3, 547530e3, 582163e3],
+			magnetism: 'paramagnetic',
 			modelColor: 'rgb(230, 230, 230)',
 			nucleosynthesis: {
 				rpProcess: 1, // guess
@@ -1167,6 +1188,7 @@ const elementData = [
 			electronAffinity: 7e3,
 			electronegativity: 1.54,
 			ionization: [658.8e3, 1309.8e3, 2652.5e3, 4174.6e3, 9581e3, 11533e3, 13590e3, 16440e3, 18530e3, 20833e3, 25575e3, 28125e3, 76015e3, 83280e3, 90880e3, 100700e3, 109100e3, 117800e3, 129900e3, 137530e3, 602930e3, 639294e3],
+			magnetism: 'paramagnetic',
 			modelColor: 'rgb(191, 194, 199)',
 			nobleMetal: 0,
 			nucleosynthesis: {
@@ -1221,6 +1243,7 @@ const elementData = [
 			electronAffinity: 51e3,
 			electronegativity: 1.63,
 			ionization: [650.9e3, 1414e3, 2830e3, 4507e3, 6298.7e3, 12363e3, 14530e3, 16730e3, 19860e3, 22240e3, 24670e3, 29730e3, 32446e3, 86450e3, 94170e3, 102300e3, 112700e3, 121600e3, 130700e3, 143400e3, 151440e3, 661050e3, 699144e3],
+			magnetism: 'paramagnetic',
 			modelColor: 'rgb(166, 166, 171)',
 			nobleMetal: 0,
 			nucleosynthesis: {
@@ -1277,6 +1300,7 @@ const elementData = [
 			electronConfiguration: '[Ar] 3d5 4s1',
 			electronegativity: 1.66,
 			ionization: [652.9e3, 1590.6e3, 2987e3, 4743e3, 6702e3, 8744.9e3, 15455e3, 17820e3, 20190e3, 23580e3, 26130e3, 28750e3, 34230e3, 37066e3, 97510e3, 105800e3, 114300e3, 125300e3, 134700e3, 144300e3, 157700e3, 166090e3, 721870e3, 761733e3],
+			magnetism: 'antiferromagnetic',
 			modelColor: 'rgb(138, 153, 199)',
 			nobleMetal: 0,
 			nucleosynthesis: {
@@ -1333,6 +1357,7 @@ const elementData = [
 			electronAffinity: -50e3,
 			electronegativity: 1.55,
 			ionization: [717.3e3, 1509e3, 3248e3, 4940e3, 6990e3, 9220e3, 11500e3, 18770e3, 21400e3, 23960e3, 27590e3, 30330e3, 33150e3, 38880e3, 41987e3, 109480e3, 118100e3, 127100e3, 138600e3, 148500e3, 158600e3, 172500e3, 181380e3, 785450e3, 827067e3],
+			magnetism: 'paramagnetic',
 			modelColor: 'rgb(156, 122, 199)',
 			nucleosynthesis: {
 				rpProcess: 1, // guess
@@ -1389,6 +1414,7 @@ const elementData = [
 			electronAffinity: 15e3,
 			electronegativity: 1.83,
 			ionization: [762.5e3, 1561.9e3, 2957e3, 5290e3, 7240e3, 9560e3, 12060e3, 14580e3, 22540e3, 25290e3, 28000e3, 31920e3, 34830e3, 37840e3, 44100e3, 47206e3, 122200e3, 131000e3, 140500e3, 152600e3, 163000e3, 173600e3, 188100e3, 195200e3, 851800e3, 895161e3],
+			magnetism: 'ferromagnetic',
 			modelColor: 'rgb(224, 102, 51)',
 			nucleosynthesis: {
 				alphaProcess: 1,
@@ -1445,6 +1471,7 @@ const elementData = [
 			electronAffinity: 64e3,
 			electronegativity: 1.88,
 			ionization: [760.4e3, 1648e3, 3232e3, 4950e3, 7670e3, 9840e3, 12440e3, 15230e3, 17959e3, 26570e3, 29400e3, 32400e3, 36600e3, 39700e3, 42800e3, 49396e3, 52737e3, 134810e3, 145170e3, 154700e3, 167400e3, 178100e3, 189300e3, 204500e3, 214100e3, 920870e3, 966023e3],
+			magnetism: 'ferromagnetic',
 			modelColor: 'rgb(240, 144, 160)',
 			nucleosynthesis: {
 				rpProcess: 1, // guess
@@ -1501,6 +1528,7 @@ const elementData = [
 			electronAffinity: 112e3,
 			electronegativity: 1.91,
 			ionization: [737.1e3, 1753e3, 3395e3, 5300e3, 7339e3, 10400e3, 12800e3, 15600e3, 18600e3, 21670e3, 30970e3, 34000e3, 37100e3, 41500e3, 44800e3, 48100e3, 55101e3, 58570e3, 148700e3, 159000e3, 169400e3, 182700e3, 194000e3, 205600e3, 221400e3, 231490e3, 992718e3, 1039668e3],
+			magnetism: 'ferromagnetic',
 			modelColor: 'rgb(80, 208, 80)',
 			nucleosynthesis: {
 				alphaProcess: 1,
@@ -1562,6 +1590,7 @@ const elementData = [
 			electronConfiguration: '[Ar] 3d10 4s1',
 			electronegativity: 1.9,
 			ionization: [745.5e3, 1957.9e3, 3555e3, 5536e3, 7700e3, 9900e3, 13400e3, 16000e3, 19200e3, 22400e3, 25600e3, 35600e3, 38700e3, 42000e3, 46700e3, 50200e3, 53700e3, 61100e3, 64702e3, 163700e3, 174100e3, 184900e3, 198800e3, 210500e3, 222700e3, 239100e3, 249660e3, 1067358e3, 1116105e3],
+			magnetism: 'diamagnetic',
 			modelColor: 'rgb(200, 128, 51)',
 			nobleMetal: 2,
 			nucleosynthesis: {
@@ -1620,6 +1649,7 @@ const elementData = [
 			electronAffinity: -60e3,
 			electronegativity: 1.65,
 			ionization: [906.4e3, 1733.3e3, 3833e3, 5731e3, 7970e3, 10400e3, 12900e3, 16800e3, 19600e3, 23000e3, 26400e3, 29990e3, 40490e3, 43800e3, 47300e3, 52300e3, 55900e3, 59700e3, 67300e3, 71200e3, 179100e3],
+			magnetism: 'diamagnetic',
 			modelColor: 'rgb(125, 128, 176)',
 			nucleosynthesis: {
 				alphaProcess: 1, // unsure
@@ -1675,6 +1705,7 @@ const elementData = [
 			electronAffinity: 29e3,
 			electronegativity: 1.81,
 			ionization: [578.8e3, 1979.3e3, 2963e3, 6180e3],
+			magnetism: 'diamagnetic',
 			modelColor: 'rgb(194, 143, 143)',
 			nucleosynthesis: {
 				sProcess: 1,
@@ -1727,6 +1758,7 @@ const elementData = [
 			electronAffinity: 119e3,
 			electronegativity: 2.01,
 			ionization: [762e3, 1537.5e3, 3302.1e3, 4411e3, 9020e3],
+			magnetism: 'diamagnetic',
 			modelColor: 'rgb(102, 143, 143)',
 			nucleosynthesis: {
 				rpProcess: 0.5203, // guess; Ge-73, Ge-74, Ge-76
@@ -1780,6 +1812,7 @@ const elementData = [
 			electronAffinity: 78e3,
 			electronegativity: 2.18,
 			ionization: [947e3, 1798e3, 2735e3, 4837e3, 6043e3, 12310e3],
+			magnetism: 'diamagnetic',
 			modelColor: 'rgb(189, 128, 227)',
 			nobleMetal: 3,
 			nucleosynthesis: {
@@ -1835,6 +1868,7 @@ const elementData = [
 			electronAffinity: 195e3,
 			electronegativity: 2.55,
 			ionization: [941e3, 2045e3, 2973.7e3, 4144e3, 6590e3, 7880e3, 14990e3],
+			magnetism: 'diamagnetic',
 			modelColor: 'rgb(255, 161, 0)',
 			nobleMetal: 3,
 			nucleosynthesis: {
@@ -1889,6 +1923,7 @@ const elementData = [
 			electronAffinity: 325e3,
 			electronegativity: 2.96,
 			ionization: [1139.9e3, 2103e3, 3470e3, 4560e3, 5760e3, 8550e3, 9940e3, 18600e3],
+			magnetism: 'diamagnetic',
 			modelColor: 'rgb(166, 41, 41)',
 			nucleosynthesis: {
 				rProcess: 1,
@@ -1936,6 +1971,7 @@ const elementData = [
 			electronAffinity: -96e3,
 			electronegativity: 3,
 			ionization: [1350.8e3, 2350.4e3, 3565e3, 5070e3, 6240e3, 7570e3, 10710e3, 12138e3, 22274e3, 25880e3, 29700e3, 33800e3, 37700e3, 43100e3, 47500e3, 52200e3, 57100e3, 61800e3, 75800e3, 80400e3, 85300e3, 90400e3, 96300e3, 101400e3, 111100e3, 116290e3, 282500e3, 296200e3, 311400e3, 326200e3],
+			magnetism: 'diamagnetic',
 			modelColor: 'rgb(92, 184, 209)',
 			nucleosynthesis: {
 				pProcess: 0.0036, // Kr-78
@@ -1984,6 +2020,7 @@ const elementData = [
 			electronAffinity: 47e3,
 			electronegativity: 0.82,
 			ionization: [403e3, 2633e3, 3860e3, 5080e3, 6850e3, 8140e3, 9570e3, 13120e3, 14500e3, 26740e3],
+			magnetism: 'paramagnetic',
 			modelColor: 'rgb(112, 46, 176)',
 			nucleosynthesis: {
 				rProcess: 0.7217, // Rb-85
@@ -2036,6 +2073,7 @@ const elementData = [
 			electronAffinity: 5e3,
 			electronegativity: 0.95,
 			ionization: [549.5e3, 1064.2e3, 4138e3, 5500e3, 6910e3, 8760e3, 10230e3, 11800e3, 15600e3, 17100e3, 31270e3],
+			magnetism: 'paramagnetic',
 			modelColor: 'rgb(0, 255, 0)',
 			nucleosynthesis: {
 				pProcess: 0.0056, // Sr-84
@@ -2087,6 +2125,7 @@ const elementData = [
 			electronAffinity: 30e3,
 			electronegativity: 1.22,
 			ionization: [600e3, 1180e3, 1980e3, 5847e3, 7430e3, 8970e3, 11190e3, 12450e3, 14110e3, 18400e3, 19900e3, 36090e3],
+			magnetism: 'paramagnetic',
 			modelColor: 'rgb(148, 255, 255)',
 			nucleosynthesis: {
 				sProcess: 1,
@@ -2137,6 +2176,7 @@ const elementData = [
 			electronAffinity: 42e3,
 			electronegativity: 1.33,
 			ionization: [640.1e3, 1270e3, 2218e3, 3313e3, 7752e3, 9500e3],
+			magnetism: 'paramagnetic',
 			modelColor: 'rgb(148, 224, 224)',
 			nobleMetal: 0,
 			nucleosynthesis: {
@@ -2190,6 +2230,7 @@ const elementData = [
 			electronConfiguration: '[Kr] 4d4 4s1',
 			electronegativity: 1.6,
 			ionization: [652.1e3, 1380e3, 2416e3, 3700e3, 4877e3, 9847e3, 12100e3],
+			magnetism: 'paramagnetic',
 			modelColor: 'rgb(115, 194, 201)',
 			nobleMetal: 0,
 			nucleosynthesis: {
@@ -2246,6 +2287,7 @@ const elementData = [
 			electronConfiguration: '[Kr] 4d5 4s1',
 			electronegativity: 2.16,
 			ionization: [684.3e3, 1560e3, 2618e3, 4480e3, 5257e3, 6640.8e3, 12125e3, 13860e3, 15835e3, 17980e3, 20190e3, 22219e3, 26930e3, 29196e3, 52490e3, 55000e3, 61400e3, 67700e3, 74000e3, 80400e3, 87000e3, 93400e3, 98420e3, 104400e3, 121900e3, 127700e3, 133800e3, 139800e3, 148100e3, 154500e3],
+			magnetism: 'paramagnetic',
 			modelColor: 'rgb(84, 181, 181)',
 			nobleMetal: 0,
 			nucleosynthesis: {
@@ -2299,6 +2341,7 @@ const elementData = [
 			electronAffinity: 53e3,
 			electronegativity: 1.9,
 			ionization: [702e3, 1470e3, 2850e3],
+			magnetism: 'paramagnetic',
 			modelColor: 'rgb(59, 158, 158)',
 			nobleMetal: 4,
 			oxidation: [4, 7],
@@ -2349,6 +2392,7 @@ const elementData = [
 			electronConfiguration: '[Kr] 4d7 4s1',
 			electronegativity: 2.2,
 			ionization: [710.2e3, 1620e3, 2747e3],
+			magnetism: 'paramagnetic',
 			modelColor: 'rgb(36, 143, 143)',
 			nobleMetal: 1,
 			nucleosynthesis: {
@@ -2406,6 +2450,7 @@ const elementData = [
 			electronConfiguration: '[Kr] 4d8 4s1',
 			electronegativity: 2.28,
 			ionization: [719.7e3, 1740e3, 2997e3],
+			magnetism: 'paramagnetic',
 			modelColor: 'rgb(10, 125, 140)',
 			nobleMetal: 1,
 			nucleosynthesis: {
@@ -2464,6 +2509,7 @@ const elementData = [
 			electronConfiguration: '[Kr] 4d10',
 			electronegativity: 2.2,
 			ionization: [804.4e3, 1870e3, 3177e3],
+			magnetism: 'paramagnetic',
 			modelColor: 'rgb(0, 105, 133)',
 			nobleMetal: 1,
 			nucleosynthesis: {
@@ -2525,6 +2571,7 @@ const elementData = [
 			electronConfiguration: '[Kr] 4d10 5s1',
 			electronegativity: 1.93,
 			ionization: [731e3, 2070e3, 3361e3],
+			magnetism: 'diamagnetic',
 			modelColor: 'rgb(192, 192, 192)',
 			nobleMetal: 2,
 			nucleosynthesis: {
@@ -2581,6 +2628,7 @@ const elementData = [
 			electronAffinity: -70e3,
 			electronegativity: 1.69,
 			ionization: [867.8e3, 1631.4e3, 3616e3],
+			magnetism: 'diamagnetic',
 			modelColor: 'rgb(255, 217, 143)',
 			nucleosynthesis: {
 				sProcess: 0.52,
@@ -2636,6 +2684,7 @@ const elementData = [
 			electronAffinity: 37e3,
 			electronegativity: 1.78,
 			ionization: [558.3e3, 1820.7e3, 2704e3, 5210e3],
+			magnetism: 'diamagnetic',
 			modelColor: 'rgb(166, 117, 115)',
 			nucleosynthesis: {
 				sProcess: 0.36,
@@ -2692,6 +2741,7 @@ const elementData = [
 			electronAffinity: 107e3,
 			electronegativity: 1.96,
 			ionization: [708.6e3, 1411.8e3, 2943e3, 3930.3e3, 7456e3],
+			magnetism: 'paramagnetic',
 			modelColor: 'rgb(102, 128, 128)',
 			nucleosynthesis: {
 				sProcess: 0.69,
@@ -2748,6 +2798,7 @@ const elementData = [
 			electronAffinity: 101e3,
 			electronegativity: 2.05,
 			ionization: [834e3, 1594.9e3, 2440e3, 4260e3, 5400e3, 10400e3],
+			magnetism: 'diamagnetic',
 			modelColor: 'rgb(158, 99, 181)',
 			nobleMetal: 3,
 			nucleosynthesis: {
@@ -2803,6 +2854,7 @@ const elementData = [
 			electronAffinity: 190e3,
 			electronegativity: 2.1,
 			ionization: [869.3e3, 1790e3, 2698e3, 3610e3, 5668e3, 6820e3, 13200e3],
+			magnetism: 'diamagnetic',
 			modelColor: 'rgb(212, 122, 0)',
 			nobleMetal: 3,
 			nucleosynthesis: {
@@ -2858,6 +2910,7 @@ const elementData = [
 			electronAffinity: 295e3,
 			electronegativity: 2.66,
 			ionization: [1008.4e3, 1845.9e3, 3180e3],
+			magnetism: 'diamagnetic',
 			modelColor: 'rgb(148, 0, 148)',
 			nucleosynthesis: {
 				sProcess: 0.05,
@@ -2906,6 +2959,7 @@ const elementData = [
 			electronAffinity: -80e3,
 			electronegativity: 2.6,
 			ionization: [1170.4e3, 2046.4e3, 3099.4e3],
+			magnetism: 'diamagnetic',
 			modelColor: 'rgb(66, 158, 176)',
 			nucleosynthesis: {
 				sProcess: 0.17,
@@ -2956,6 +3010,7 @@ const elementData = [
 			electronegativity: 0.79,
 			electronAffinity: 46e3,
 			ionization: [375.7e3, 2234.3e3, 3400e3],
+			magnetism: 'paramagnetic',
 			modelColor: 'rgb(87, 23, 143)',
 			nucleosynthesis: {
 				sProcess: 0.15,
@@ -3007,6 +3062,7 @@ const elementData = [
 			electronAffinity: 14e3,
 			electronegativity: 0.89,
 			ionization: [502.9e3, 965.2e3, 3600e3],
+			magnetism: 'paramagnetic',
 			modelColor: 'rgb(0, 201, 0)',
 			nucleosynthesis: {
 				sProcess: 0.82,
@@ -3059,6 +3115,7 @@ const elementData = [
 			electronConfiguration: '[Xe] 5d1 6s2',
 			electronegativity: 1.1,
 			ionization: [538.1e3, 1067e3, 1850.3e3, 4819e3, 5940e3],
+			magnetism: 'paramagnetic',
 			modelColor: 'rgb(112, 212, 255)',
 			nucleosynthesis: {
 				sProcess: 0.62,
@@ -3111,6 +3168,7 @@ const elementData = [
 			electronConfiguration: '[Xe] 4f1 5d1 6s2',
 			electronegativity: 1.12,
 			ionization: [534.4e3, 1050e3, 1949e3, 3547e3, 6325e3, 7490e3],
+			magnetism: 'paramagnetic',
 			modelColor: 'rgb(255, 255, 199)',
 			nucleosynthesis: {
 				sProcess: 0.76,
@@ -3160,6 +3218,7 @@ const elementData = [
 			electronAffinity: 11e3,
 			electronegativity: 1.13,
 			ionization: [527e3, 1020e3, 2086e3, 3761e3, 5551e3],
+			magnetism: 'paramagnetic',
 			modelColor: 'rgb(217, 255, 199)',
 			nucleosynthesis: {
 				sProcess: 0.52,
@@ -3211,6 +3270,7 @@ const elementData = [
 			electronAffinity: 9e3,
 			electronegativity: 1.14,
 			ionization: [533.1e3, 1040e3, 2130e3, 3900e3],
+			magnetism: 'paramagnetic',
 			modelColor: 'rgb(199, 255, 199)',
 			nucleosynthesis: {
 				sProcess: 0.60,
@@ -3262,6 +3322,7 @@ const elementData = [
 			electronAffinity: 12e3,
 			electronegativity: 1.15,
 			ionization: [540e3, 1050e3, 2150e3, 3970e3],
+			magnetism: 'paramagnetic',
 			modelColor: 'rgb(163, 255, 199)',
 			oxidation: [3],
 			prices: {
@@ -3306,6 +3367,7 @@ const elementData = [
 			electronAffinity: 16e3,
 			electronegativity: 1.17,
 			ionization: [544.5e3, 1070e3, 2260e3, 3990e3],
+			magnetism: 'paramagnetic',
 			modelColor: 'rgb(143, 255, 199)',
 			nucleosynthesis: {
 				sProcess: 0.29,
@@ -3356,6 +3418,7 @@ const elementData = [
 			electronAffinity: 11e3,
 			electronegativity: 1.15,
 			ionization: [547.1e3, 1085e3, 2404e3, 4120e3],
+			magnetism: 'paramagnetic',
 			modelColor: 'rgb(97, 255, 199)',
 			nucleosynthesis: {
 				sProcess: 0.05,
@@ -3406,6 +3469,7 @@ const elementData = [
 			electronConfiguration: '[Xe] 4f7 5d1 6s2',
 			electronegativity: 1.2,
 			ionization: [593.4e3, 1170e3, 1990e3, 4250e3],
+			magnetism: 'ferromagnetic',
 			modelColor: 'rgb(69, 255, 199)',
 			nucleosynthesis: {
 				sProcess: 0.15,
@@ -3456,6 +3520,7 @@ const elementData = [
 			electronAffinity: 13e3,
 			electronegativity: 1.1,
 			ionization: [565.8e3, 1110e3, 2114e3, 3839e3],
+			magnetism: 'paramagnetic',
 			modelColor: 'rgb(48, 255, 199)',
 			nucleosynthesis: {
 				sProcess: 0.07,
@@ -3505,6 +3570,7 @@ const elementData = [
 			electronAffinity: 34e3,
 			electronegativity: 1.22,
 			ionization: [573e3, 1130e3, 2200e3, 3990e3],
+			magnetism: 'paramagnetic',
 			modelColor: 'rgb(31, 255, 199)',
 			nucleosynthesis: {
 				sProcess: 0.14,
@@ -3556,6 +3622,7 @@ const elementData = [
 			electronAffinity: 33e3,
 			electronegativity: 1.23,
 			ionization: [581e3, 1140e3, 2204e3, 4100e3],
+			magnetism: 'paramagnetic',
 			modelColor: 'rgb(0, 255, 156)',
 			nucleosynthesis: {
 				sProcess: 0.07,
@@ -3604,6 +3671,7 @@ const elementData = [
 			electronAffinity: 30e3,
 			electronegativity: 1.24,
 			ionization: [589.3e3, 1150e3, 2194e3, 4120e3],
+			magnetism: 'paramagnetic',
 			modelColor: 'rgb(0, 230, 117)',
 			nucleosynthesis: {
 				sProcess: 0.16,
@@ -3653,6 +3721,7 @@ const elementData = [
 			electronAffinity: 90e3,
 			electronegativity: 1.25,
 			ionization: [596.7e3, 1160e3, 2285e3, 4120e3],
+			magnetism: 'paramagnetic',
 			modelColor: 'rgb(0, 212, 82)',
 			nucleosynthesis: {
 				sProcess: 0.12,
@@ -3700,6 +3769,7 @@ const elementData = [
 			electronAffinity: -2e3,
 			electronegativity: 1.15,
 			ionization: [603.4e3, 1174.8e3, 2417e3, 4203e3],
+			magnetism: 'paramagnetic',
 			modelColor: 'rgb(0, 191, 56)',
 			nucleosynthesis: {
 				sProcess: 0.32,
@@ -3748,6 +3818,7 @@ const elementData = [
 			electronAffinity: 23e3,
 			electronegativity: 1.27,
 			ionization: [523.5e3, 1340e3, 2022.3e3, 4370e3, 6445e3],
+			magnetism: 'paramagnetic',
 			modelColor: 'rgb(0, 171, 36)',
 			nucleosynthesis: {
 				sProcess: 0.20,
@@ -3794,6 +3865,7 @@ const elementData = [
 			electronAffinity: 17e3,
 			electronegativity: 1.3,
 			ionization: [658.5e3, 1440e3, 2250e3, 3216e3],
+			magnetism: 'paramagnetic',
 			modelColor: 'rgb(77, 194, 255)',
 			nobleMetal: 0,
 			nucleosynthesis: {
@@ -3846,6 +3918,7 @@ const elementData = [
 			electronAffinity: 31e3,
 			electronegativity: 1.5,
 			ionization: [761e3, 1500e3],
+			magnetism: 'paramagnetic',
 			modelColor: 'rgb(77, 166, 255)',
 			monoisotopic: false,
 			nobleMetal: 0,
@@ -3900,6 +3973,7 @@ const elementData = [
 			electronAffinity: 79e3,
 			electronegativity: 2.36,
 			ionization: [770e3, 1700e3],
+			magnetism: 'paramagnetic',
 			modelColor: 'rgb(33, 148, 214)',
 			nobleMetal: 0,
 			nucleosynthesis: {
@@ -3955,6 +4029,7 @@ const elementData = [
 			electronAffinity: 6e3,
 			electronegativity: 1.9,
 			ionization: [760e3, 1260e3, 2510e3, 3640e3],
+			magnetism: 'paramagnetic',
 			modelColor: 'rgb(38, 125, 171)',
 			nobleMetal: 2,
 			nucleosynthesis: {
@@ -4010,6 +4085,7 @@ const elementData = [
 			electronAffinity: 104e3,
 			electronegativity: 2.2,
 			ionization: [840e3, 1600e3],
+			magnetism: 'paramagnetic',
 			modelColor: 'rgb(38, 102, 150)',
 			nobleMetal: 1,
 			nucleosynthesis: {
@@ -4065,6 +4141,7 @@ const elementData = [
 			electronAffinity: 151e3,
 			electronegativity: 2.2,
 			ionization: [880e3, 1600e3],
+			magnetism: 'paramagnetic',
 			modelColor: 'rgb(22, 84, 135)',
 			nobleMetal: 1,
 			nucleosynthesis: {
@@ -4122,6 +4199,7 @@ const elementData = [
 			electronConfiguration: '[Xe] 4f14 5d9 6s1',
 			electronegativity: 2.28,
 			ionization: [870e3, 1791e3],
+			magnetism: 'paramagnetic',
 			modelColor: 'rgb(208, 208, 224)',
 			nobleMetal: 1,
 			nucleosynthesis: {
@@ -4182,6 +4260,7 @@ const elementData = [
 			electronConfiguration: '[Xe] 4f14 5d10 6s1',
 			electronegativity: 2.54,
 			ionization: [890.1e3, 1980e3],
+			magnetism: 'diamagnetic',
 			modelColor: 'rgb(255, 209, 35)',
 			nobleMetal: 2,
 			nucleosynthesis: {
@@ -4237,6 +4316,7 @@ const elementData = [
 			electronAffinity: -50e3,
 			electronegativity: 2,
 			ionization: [1007.1e3, 1810e3, 3300e3],
+			magnetism: 'diamagnetic',
 			modelColor: 'rgb(184, 184, 208)',
 			nobleMetal: 2,
 			nucleosynthesis: {
@@ -4285,6 +4365,7 @@ const elementData = [
 			electronAffinity: 31e3,
 			electronegativity: 1.62,
 			ionization: [589.4e3, 1971e3, 2878e3],
+			magnetism: 'diamagnetic',
 			modelColor: 'rgb(166, 84, 77)',
 			nucleosynthesis: {
 				sProcess: 0.77,
@@ -4339,6 +4420,7 @@ const elementData = [
 			electronAffinity: 34e3,
 			electronegativity: 1.87,
 			ionization: [715.6e3, 1450.5e3, 3081.5e3, 4083e3, 6640e3],
+			magnetism: 'diamagnetic',
 			modelColor: 'rgb(87, 89, 97)',
 			nucleosynthesis: {
 				sProcess: 0.47,
@@ -4396,6 +4478,7 @@ const elementData = [
 			electronAffinity: 91e3,
 			electronegativity: 2.02,
 			ionization: [703e3, 1610e3, 2466e3, 4370e3, 5400e3, 8520e3],
+			magnetism: 'diamagnetic',
 			modelColor: 'rgb(158, 79, 181)',
 			nobleMetal: 3,
 			nucleosynthesis: {
@@ -4447,6 +4530,7 @@ const elementData = [
 			electronAffinity: 136e3,
 			electronegativity: 2,
 			ionization: [812.1e3],
+			magnetism: 'nonmagnetic',
 			modelColor: 'rgb(171, 92, 0)',
 			nobleMetal: 4,
 			nucleosynthesis: {
@@ -4533,6 +4617,7 @@ const elementData = [
 			electronAffinity: -70e3,
 			electronegativity: 2.2,
 			ionization: [1037e3],
+			magnetism: 'nonmagnetic',
 			modelColor: 'rgb(66, 130, 150)',
 			nucleosynthesis: {
 				decay: 1,
@@ -4572,6 +4657,7 @@ const elementData = [
 			electronAffinity: 47e3,
 			electronegativity: 0.8,
 			ionization: [393e3],
+			magnetism: 'paramagnetic',
 			modelColor: 'rgb(66, 0, 102)',
 			nucleosynthesis: {
 				decay: 1,
@@ -4614,6 +4700,7 @@ const elementData = [
 			electronAffinity: 10e3,
 			electronegativity: 0.9,
 			ionization: [509.3e3, 979e3],
+			magnetism: 'nonmagnetic',
 			modelColor: 'rgb(0, 125, 0)',
 			nucleosynthesis: {
 				decay: 1,
@@ -4696,6 +4783,7 @@ const elementData = [
 			electronConfiguration: '[Rn] 6d2 7s2',
 			electronegativity: 1.3,
 			ionization: [587e3, 1110e3, 1978e3, 2780e3],
+			magnetism: 'paramagnetic',
 			modelColor: 'rgb(0, 185, 255)',
 			nucleosynthesis: {
 				rProcess: 1,
@@ -4746,6 +4834,7 @@ const elementData = [
 			electronConfiguration: '[Rn] 5f2 6d1 7s2',
 			electronegativity: 1.5,
 			ionization: [568e3, 1128e3, 1814e3, 2991e3],
+			magnetism: 'paramagnetic',
 			modelColor: 'rgb(0, 161, 255)',
 			nucleosynthesis: {
 				decay: 1,
@@ -4792,6 +4881,7 @@ const elementData = [
 			electronConfiguration: '[Rn] 5f3 6d1 7s2',
 			electronegativity: 1.38,
 			ionization: [597.6e3, 1420e3, 1900e3, 3145e3],
+			magnetism: 'paramagnetic',
 			modelColor: 'rgb(0, 143, 255)',
 			nucleosynthesis: {
 				rProcess: 1,
@@ -4840,6 +4930,7 @@ const elementData = [
 			electronConfiguration: '[Rn] 5f4 6d1 7s2',
 			electronegativity: 1.36,
 			ionization: [604.5e3, 1128e3, 1997e3, 3242e3],
+			magnetism: 'paramagnetic',
 			modelColor: 'rgb(0, 128, 255)',
 			nucleosynthesis: {
 				rProcess: 1,
@@ -4887,6 +4978,7 @@ const elementData = [
 			electronAffinity: -48e3,
 			electronegativity: 1.28,
 			ionization: [584.7e3, 1128e3, 2084e3, 3338e3],
+			magnetism: 'paramagnetic',
 			modelColor: 'rgb(0, 107, 255)',
 			nucleosynthesis: {
 				rProcess: 1,
@@ -4926,6 +5018,7 @@ const elementData = [
 			electronAffinity: 10e3,
 			electronegativity: 1.13,
 			ionization: [578e3, 1158e3, 2132e3, 3493e3],
+			magnetism: 'paramagnetic',
 			modelColor: 'rgb(84, 92, 242)',
 			prices: {
 				2004: 750e3,
@@ -4963,6 +5056,7 @@ const elementData = [
 			electronConfiguration: '[Rn] 5f7 6d1 7s2',
 			electronegativity: 1.28,
 			ionization: [581e3, 1196e3, 2026e3, 3550e3],
+			magnetism: 'antiferromagnetic',
 			modelColor: 'rgb(120, 92, 227)',
 			oxidation: [3],
 			prices: {
@@ -4998,6 +5092,7 @@ const elementData = [
 			electronAffinity: -165e3,
 			electronegativity: 1.3,
 			ionization: [601e3, 1186e3, 2152e3, 3434e3],
+			magnetism: 'paramagnetic',
 			modelColor: 'rgb(138, 79, 227)',
 			oxidation: [3],
 			prices: {
@@ -5067,6 +5162,7 @@ const elementData = [
 			electronAffinity: -29e3,
 			electronegativity: 1.3,
 			ionization: [619e3, 1216e3, 2334e3, 3734e3],
+			magnetism: 'paramagnetic',
 			modelColor: 'rgb(179, 31, 212)',
 			oxidation: [3],
 			// https://www.knowledgedoor.com/2/elements_handbook/einsteinium.html
@@ -5322,6 +5418,7 @@ const elementData = [
 			density: 27500,
 			discovery: 1982,
 			ionization: [800e3, 1820e3, 2900e3, 3900e3, 4900e3],
+			magnetism: 'paramagnetic',
 			modelColor: 'rgb(235, 0, 38)',
 			nobleMetal: 5,
 			oxidation: [1, 3, 6],
