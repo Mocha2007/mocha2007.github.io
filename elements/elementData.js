@@ -878,7 +878,7 @@ const elementData = [
 			prices: {
 				2019: 0.0926,
 			},
-			production: 69e6,
+			production: 69.3e6,
 			radius: {
 				covalent: 105e-12,
 				vanDerWaals: 180e-12,
@@ -926,6 +926,7 @@ const elementData = [
 			prices: {
 				2013: 0.082,
 			},
+			production: 71.25e6,
 			radius: {
 				covalent: 102e-12,
 				vanDerWaals: 175e-12,
@@ -1020,6 +1021,7 @@ const elementData = [
 			prices: {
 				2020: 12.85,
 			},
+			production: 53.2e6,
 			radius: {
 				atomic: 227e-12,
 				covalent: 203e-12,
@@ -1071,6 +1073,7 @@ const elementData = [
 			prices: {
 				2020: 2.28,
 			},
+			production: 18e3,
 			radius: {
 				atomic: 197e-12,
 				covalent: 176e-12,
@@ -3013,6 +3016,7 @@ const elementData = [
 			prices: {
 				2016: 0.261,
 			},
+			production: 6e6,
 			radius: {
 				atomic: 222e-12,
 				covalent: 215e-12,
@@ -3065,6 +3069,7 @@ const elementData = [
 				2022: 5.09,
 				2020: 4.85,
 			},
+			production: 12.5e3,
 			radius: {
 				atomic: 187e-12,
 				covalent: 207e-12,
@@ -3115,6 +3120,7 @@ const elementData = [
 			prices: {
 				2020: 31.4,
 			},
+			production: 24e3,
 			radius: {
 				atomic: 181.8e-12,
 				covalent: 204e-12,
@@ -3165,6 +3171,7 @@ const elementData = [
 				2021: 112.23,
 				2019: 103,
 			},
+			production: 2.5e3,
 			radius: {
 				atomic: 182e-12,
 				covalent: 203e-12,
@@ -3358,6 +3365,7 @@ const elementData = [
 			prices: {
 				2020: 31.4,
 			},
+			production: 35.8,
 			radius: {
 				atomic: 180e-12,
 				covalent: 198e-12,
@@ -3407,6 +3415,7 @@ const elementData = [
 			prices: {
 				2020: 28.6,
 			},
+			production: 400,
 			radius: {
 				atomic: 180e-12,
 				covalent: 196e-12,
@@ -3506,7 +3515,7 @@ const elementData = [
 				2021: 518.12,
 				2019: 307,
 			},
-			production: 100,
+			production: 0.2,
 			radius: {
 				atomic: 178e-12,
 				covalent: 192e-12,
@@ -3604,6 +3613,7 @@ const elementData = [
 				2022: 21,
 				2020: 26.4,
 			},
+			production: 500,
 			radius: {
 				atomic: 176e-12,
 				covalent: 189e-12,
