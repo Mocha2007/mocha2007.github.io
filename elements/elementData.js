@@ -930,6 +930,7 @@ const elementData = [
 				covalent: 102e-12,
 				vanDerWaals: 175e-12,
 			},
+			resistivity: 10,
 			speedOfSound: 206,
 			temperatures: {
 				boil: 239.11,
