@@ -863,9 +863,8 @@ class ChemElement {
 				if (!this.poissonRatio)
 					c = 'silver';
 				else {
-					const ee = elements.filter(e => e.poissonRatio).map(e => e.poissonRatio);
 					c = gradient1(remap(this.poissonRatio,
-						[Math.min(...ee), Math.max(...ee)], [0, 1]));
+						[0, 0.5], [0, 1]));
 				}
 				break;
 			case 'price':
