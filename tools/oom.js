@@ -97,6 +97,7 @@ class MassRange {
 		e.style.lineHeight = e.style.height = `${top-bottom}%`;
 		e.style.backgroundColor = this.color;
 		e.style.left = `${50+50/3*(i%3)}vw`;
+		e.title = this.name;
 		const inner = document.createElement('span');
 		inner.innerHTML = this.name.replaceAll(' ', '&nbsp;');
 		e.appendChild(inner);
@@ -218,6 +219,7 @@ const OOM = {
 		// new MassDatum("Upsilon Boson", 9460.30*CONSTANT.MeVc2),
 		new MassDatum("W Boson", 80.3692e3*CONSTANT.MeVc2),
 		new MassDatum("Z Boson", 91.1880e3*CONSTANT.MeVc2),
+		// new MassDatum("WIMP (hypothetical)", 100e3*CONSTANT.MeVc2),
 		new MassDatum("Higgs Boson", 125.11e3*CONSTANT.MeVc2, "https://home.cern/news/news/physics/atlas-sets-record-precision-higgs-bosons-mass"),
 		new MassDatum("Top quark", 172.76e3*CONSTANT.MeVc2),
 		// Atoms
