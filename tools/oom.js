@@ -127,6 +127,9 @@ const CONSTANT = {
 	get oz(){
 		return this.lb/16;
 	},
+	get short_ton(){
+		return 2000*this.lb;
+	},
 	si_prefix: "qryzafpnμm kMGTPEZYRQ",
 	si_prefix_offset: 10,
 	solar_mass: 1988475000e21,
@@ -204,8 +207,11 @@ const OOM = {
 		new MassDatum("Whale (Blue)", 150e3, "https://hypertextbook.com/facts/2003/MichaelShmukler.shtml"),
 		// Vehicles
 		new MassDatum("Car", 2e3, "https://hypertextbook.com/facts/2000/YanaZorina.shtml"),
+		new MassDatum("Tank (M1 Abrams)", 60*CONSTANT.short_ton, "https://en.wikipedia.org/wiki/M1_Abrams"),
 		new MassDatum("Locomotive (EMD GP9)", 117.7e3, "https://en.wikipedia.org/wiki/EMD_GP9"),
 		new MassDatum("Large aircraft (A380, MTOW)", 575e3, "https://en.wikipedia.org/wiki/Airbus_A380#Specifications"),
+		new MassDatum("Destroyer (Arleigh Burke-class)", 9e3*CONSTANT.long_ton, "https://en.wikipedia.org/wiki/Arleigh_Burke-class_destroyer"),
+		new MassDatum("Titanic", 52.31e3*CONSTANT.long_ton, "https://en.wikipedia.org/wiki/Titanic"),
 		new MassDatum("Aircraft carrier (Gerald R. Ford-class)", 100e3*CONSTANT.long_ton, "https://en.wikipedia.org/wiki/Gerald_R._Ford-class_aircraft_carrier"),
 		// misc big things
 		new MassDatum("Earth's biosphere", 1841e15, "https://hypertextbook.com/facts/2001/AmandaMeyer.shtml"),
