@@ -98,7 +98,7 @@ const CONSTANT = {
 
 const OOM = {
 	config: {
-		vscale: 13,
+		vscale: 20,
 	},
 	data: [
 		// Subatomic particles
@@ -168,6 +168,7 @@ const OOM = {
 		new MassDatum("Saturn", 5.68317e26),
 		new MassDatum("Jupiter", 1.898125e27),
 		new MassDatum("Sun", CONSTANT.solar_mass),
+		new MassDatum("Milky Way", 1.15e12*CONSTANT.solar_mass),
 	],
 	elem: {
 		/** @returns {HTMLDivElement} */
