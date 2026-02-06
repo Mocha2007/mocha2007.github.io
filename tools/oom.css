@@ -1,0 +1,32 @@
+body {
+	margin-bottom: 1vh;
+	margin-top: 1vh;
+	overflow-x: hidden;
+}
+#main {
+	position: relative;
+	width: 100vw;
+}
+.datum, .scale {
+	position: absolute;
+}
+.datum {
+	transform: translate(10vw, -50%);
+}
+.datum::before {
+	content: "←";
+}
+.scale {
+	color: red;
+	transform: translate(0, -50%); /* center vertically */
+	user-select: none;
+}
+.scale::before, .scale::after {
+	content: "—";
+}
+.permalink::before {
+	content: "*";
+}
+.permalink {
+	text-decoration: none;
+}
