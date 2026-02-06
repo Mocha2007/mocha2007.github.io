@@ -59,7 +59,10 @@ class MassDatum {
 		permalink.classList.add('permalink');
 		permalink.href = `#${this.id}`;
 		e.appendChild(permalink);
-		e.innerHTML += `${this.mass.pretty}: ${this.name} <sup><a href="${this.source}">src</a></sup>`;
+		e.innerHTML += `${this.mass.pretty}: ${this.name}`;
+		if (this.source){
+			e.innerHTML += `<sup><a href="${this.source}">src</a></sup>`;
+		}
 		e.style.top = `${100*e2y(Math.log10(this.mass.x))}%`;
 		e.id = this.id;
 		return e;
