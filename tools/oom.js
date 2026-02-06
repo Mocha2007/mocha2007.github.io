@@ -305,6 +305,8 @@ const OOM = {
 		new MassDatum("Dram (unit)", CONSTANT.dr),
 		new MassDatum("Golfball", 0.04593, "https://hypertextbook.com/facts/1999/ImranArif.shtml"),
 		new MassDatum("Baseball", 0.145, "https://hypertextbook.com/facts/1999/ChristinaLee.shtml"),
+		new MassDatum("Walnut", CONSTANT.oz/7, "https://www.urmc.rochester.edu/encyclopedia/content?contenttypeid=76&contentid=12155-6"),
+		new MassDatum("Apple", 0.25, "https://diabetesteachingcenter.ucsf.edu/living-diabetes/diet-nutrition/understanding-carbohydrates/weighing-food"),
 		new MassDatum("Soccerball", 0.43, "https://hypertextbook.com/facts/2002/LouiseHuang.shtml"),
 		new MassDatum("Grain of sand (medium)", 2e-9, "https://hypertextbook.com/facts/2003/MarinaTheodoris.shtml"),
 		new MassDatum("Ounce (unit)", CONSTANT.oz),
