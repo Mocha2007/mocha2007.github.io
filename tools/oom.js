@@ -134,7 +134,7 @@ const CONSTANT = {
 
 const OOM = {
 	config: {
-		vscale: 20,
+		vscale: 30,
 	},
 	data: [
 		// Subatomic particles
@@ -163,16 +163,28 @@ const OOM = {
 		new MassDatum("Uranium-238 atom", 238.05079*CONSTANT.da, "https://www.ciaaw.org/uranium.htm"),
 		// Molecules
 		new MassDatum("Ascorbic acid (Vitamin C)", 176.124*CONSTANT.da),
+		new MassDatum("Glucose", 180.156*CONSTANT.da),
 		new MassDatum("Caffeine molecule", 194.194*CONSTANT.da),
+		new MassDatum("Estradiol", 272.38*CONSTANT.da),
 		new MassDatum("Ergocalciferol (Vitamin D2)", 396.659*CONSTANT.da),
+		new MassDatum("ATP", 507.18*CONSTANT.da),
 		new MassDatum("β-Carotene (Vitamin A)", 536.888*CONSTANT.da),
+		new MassDatum("NADP", 744.4*CONSTANT.da),
+		new MassDatum("Chlorophyll a", 893.509*CONSTANT.da),
 		new MassDatum("Cobalamin (Vitamin B12)", 1355.388*CONSTANT.da),
+		new MassDatum("Humanin", 2687.27*CONSTANT.da),
 		// Proteins, Enzymes, ...
 		new MassDatum("Hemaglobin protein", 16e3*CONSTANT.da, "https://en.wikipedia.org/wiki/Hemoglobin#Diagnostic_uses"),
+		new MassDatum("Calcium channel (L-type)", ((170e3+240e3)/2 + 150e3 + (17e3+25e3)/2 + (50e3+78e3)/2 + 32e3)*CONSTANT.da, "https://en.wikipedia.org/wiki/L-type_calcium_channel#Structure"),
 		new MassDatum("Ribosome (Eukaryotic)", 3.2e6*CONSTANT.da, "https://en.wikipedia.org/wiki/Eukaryotic_ribosome#Composition"),
+		new MassDatum("Chloroplast genome", 105e6*CONSTANT.da, "https://en.wikipedia.org/wiki/Chloroplast#Molecular_structure"),
+		new MassDatum("COVID-19 virus", 4/3 * Math.PI * Math.pow((60e-9+140e-9)/4, 3) * CONSTANT.density.water, "https://en.wikipedia.org/wiki/SARS-CoV-2#Virus_structure"),
 		new MassDatum("Chromosome (Human 21)", 46944323*CONSTANT.bp),
 		new MassDatum("Chromosome (Human X)", 154913754*CONSTANT.bp),
 		new MassDatum("Chromosome (Human 1)", 248387328*CONSTANT.bp),
+		new MassDatum("Mitochondrion", 1.0754507267897768e-17*CONSTANT.density.water), // "Mitochondria are commonly between 0.75 and 3 μm2 in cross section,"
+		new MassDatum("Chloroplast", 20e-18*CONSTANT.density.water, "https://en.wikipedia.org/wiki/Chloroplast#Structure"), // "Corn seedling chloroplasts are ≈20 μm3 in volume"
+		new MassDatum("Nucleus (Human)", 4/3*Math.PI*Math.pow(3e-6,3)*CONSTANT.density.water, "https://en.wikipedia.org/wiki/Cell_nucleus#Nuclear_structures_and_landmarks"), // "In human cells, the diameter of the nucleus is approximately six micrometres (μm)"
 		// vaguely human-sized
 		new MassDatum("Penny (US)", 2.5e-6, "https://hypertextbook.com/facts/2002/MillicentOkereke.shtml"),
 		new MassDatum("Snowflake", 3e-6, "https://hypertextbook.com/facts/2001/JudyMoy.shtml"),
@@ -184,6 +196,9 @@ const OOM = {
 		new MassDatum("Pound", CONSTANT.lb),
 		// Organisms
 		new MassDatum("Escherichia coli cell", 0.65e-18*CONSTANT.density.water, "https://en.wikipedia.org/wiki/Escherichia_coli#Type_and_morphology"),
+		new MassDatum("Red blood cell (Human)", 90e-18*CONSTANT.density.water, "https://en.wikipedia.org/wiki/Red_blood_cell#Human"),
+		new MassDatum("White blood cell (Human Neutrophil)", 4/3 * Math.PI * Math.pow((12e-6+15e-6)/4, 3) * CONSTANT.density.water, "https://en.wikipedia.org/wiki/White_blood_cell#Overview"),
+		new MassDatum("Lysosome", 4/3 * Math.PI * Math.pow((0.1e-6+1.2e-6)/4, 3) * CONSTANT.density.water, "https://en.wikipedia.org/wiki/Lysosome#Function_and_structure"),
 		new MassDatum("Human", 70, "https://hypertextbook.com/facts/2003/AlexSchlessingerman.shtml"),
 		new MassDatum("Elephant (African)", (7e3+3.6e3)/2, "https://hypertextbook.com/facts/2003/EugeneShnayder.shtml"),
 		new MassDatum("Whale (Blue)", 150e3, "https://hypertextbook.com/facts/2003/MichaelShmukler.shtml"),
