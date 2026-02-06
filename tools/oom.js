@@ -245,7 +245,7 @@ const OOM = {
 		new MassDatum("Lysosome", 4/3 * Math.PI * Math.pow((0.1e-6+1.2e-6)/4, 3) * CONSTANT.density.water, "https://en.wikipedia.org/wiki/Lysosome#Function_and_structure"),
 		new MassDatum("Fruit Fly", (0.219e-6 + 0.304e-6)/2, "https://bionumbers.hms.harvard.edu/bionumber.aspx?id=102570"),
 		new MassDatum("Cat", 4.5, "https://en.wikipedia.org/wiki/Cat#Size"),
-		new MassDatum("Human", 70, "https://hypertextbook.com/facts/2003/AlexSchlessingerman.shtml"),
+		new MassDatum("Human (Global average)", 62, "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3408371"),
 		new MassDatum("Elephant (African)", (7e3+3.6e3)/2, "https://hypertextbook.com/facts/2003/EugeneShnayder.shtml"),
 		new MassDatum("Whale (Blue)", 150e3, "https://hypertextbook.com/facts/2003/MichaelShmukler.shtml"),
 		// Vehicles
