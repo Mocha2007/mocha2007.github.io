@@ -25,7 +25,7 @@ class Mass {
 		const q = Math.floor(Math.log10(this.x)/3);
 		const i = CONSTANT.si_prefix_offset + 1 + q;
 		const p = Math.pow(10, 3*q);
-		if (i < 0){
+		if (i < 0 || CONSTANT.si_prefix.length <= i){
 			return `${1e-3*Math.round(1e3*this.x/p)}&middot;10<sup>${3*q}</sup> kg`;
 		}
 		else {
@@ -82,6 +82,9 @@ const CONSTANT = {
 	eV: 1.602176634e-19,
 	/** in kg */
 	lb: 0.45359237,
+	get long_ton(){
+		return 2240*this.lb;
+	},
 	get MeVc2(){
 		return 1e6*this.eV/Math.pow(this.c, 2);
 	},
@@ -90,13 +93,15 @@ const CONSTANT = {
 	},
 	si_prefix: "qryzafpnμm kMGTPEZYRQ",
 	si_prefix_offset: 10,
+	solar_mass: 1988475000e21,
 };
 
 const OOM = {
 	config: {
-		vscale: 11,
+		vscale: 13,
 	},
 	data: [
+		// Subatomic particles
 		new MassDatum("Muon Neutrino (upper bound)", 0.17e-6*CONSTANT.MeVc2, "https://en.wikipedia.org/wiki/Neutrino#Flavor,_mass,_and_their_mixing"),
 		new MassDatum("Electron Neutrino (upper bound)", 0.80e-6*CONSTANT.MeVc2, "https://en.wikipedia.org/wiki/Neutrino#Flavor,_mass,_and_their_mixing"),
 		new MassDatum("Tau Neutrino (upper bound)", 18.2e-6*CONSTANT.MeVc2, "https://en.wikipedia.org/wiki/Neutrino#Flavor,_mass,_and_their_mixing"),
@@ -107,24 +112,62 @@ const OOM = {
 		new MassDatum("Muon", 1.883531627e-28, "https://physics.nist.gov/cgi-bin/cuu/Value?mmu"),
 		new MassDatum("Proton", 1.67262192595e-27, "https://physics.nist.gov/cgi-bin/cuu/Value?mp"),
 		new MassDatum("Neutron", 1.67492750056e-27, "https://physics.nist.gov/cgi-bin/cuu/Value?mn"),
-		new MassDatum("Hydrogen-1 atom", 1.0078250322*CONSTANT.da, "https://www.ciaaw.org/hydrogen.htm"),
 		new MassDatum("Charm quark", 1.27e3*CONSTANT.MeVc2),
 		new MassDatum("Tauon", 3.16754e-27, "https://physics.nist.gov/cgi-bin/cuu/Value?mtau"),
 		new MassDatum("Bottom quark", 4.18e3*CONSTANT.MeVc2),
-		new MassDatum("Carbon-12 atom", 12*CONSTANT.da, "https://www.ciaaw.org/carbon.htm"),
-		new MassDatum("Iron-56 atom", 55.934936*CONSTANT.da, "https://www.ciaaw.org/iron.htm"),
 		new MassDatum("W Boson", 80.3692e3*CONSTANT.MeVc2),
 		new MassDatum("Z Boson", 91.1880e3*CONSTANT.MeVc2),
 		new MassDatum("Higgs Boson", 125.11e3*CONSTANT.MeVc2, "https://home.cern/news/news/physics/atlas-sets-record-precision-higgs-bosons-mass"),
 		new MassDatum("Top quark", 172.76e3*CONSTANT.MeVc2),
-		new MassDatum("Caffeine molecule", 194.194*CONSTANT.da),
+		// Atoms
+		new MassDatum("Hydrogen-1 atom", 1.0078250322*CONSTANT.da, "https://www.ciaaw.org/hydrogen.htm"),
+		new MassDatum("Carbon-12 atom", 12*CONSTANT.da, "https://www.ciaaw.org/carbon.htm"),
+		new MassDatum("Iron-56 atom", 55.934936*CONSTANT.da, "https://www.ciaaw.org/iron.htm"),
 		new MassDatum("Lead-206 atom", 205.974465*CONSTANT.da, "https://www.ciaaw.org/lead.htm"),
 		new MassDatum("Uranium-238 atom", 238.05079*CONSTANT.da, "https://www.ciaaw.org/uranium.htm"),
+		// Molecules
+		new MassDatum("Caffeine molecule", 194.194*CONSTANT.da),
+		// Proteins, Enzymes, ...
 		new MassDatum("Hemaglobin protein", 16e3*CONSTANT.da, "https://en.wikipedia.org/wiki/Hemoglobin#Diagnostic_uses"),
 		new MassDatum("Ribosome (Eukaryotic)", 3.2e6*CONSTANT.da, "https://en.wikipedia.org/wiki/Eukaryotic_ribosome#Composition"),
-		new MassDatum("Escherichia coli cell", 0.65e-18*CONSTANT.density.water, "https://en.wikipedia.org/wiki/Escherichia_coli#Type_and_morphology"),
+		// vaguely human-sized
+		new MassDatum("Penny (US)", 2.5e-6, "https://hypertextbook.com/facts/2002/MillicentOkereke.shtml"),
+		new MassDatum("Snowflake", 3e-6, "https://hypertextbook.com/facts/2001/JudyMoy.shtml"),
+		new MassDatum("Golfball", 0.04593, "https://hypertextbook.com/facts/1999/ImranArif.shtml"),
+		new MassDatum("Baseball", 0.145, "https://hypertextbook.com/facts/1999/ChristinaLee.shtml"),
+		new MassDatum("Soccerball", 0.43, "https://hypertextbook.com/facts/2002/LouiseHuang.shtml"),
+		new MassDatum("Grain of sand (medium)", 2e-9, "https://hypertextbook.com/facts/2003/MarinaTheodoris.shtml"),
 		new MassDatum("Ounce", CONSTANT.oz),
 		new MassDatum("Pound", CONSTANT.lb),
+		// Organisms
+		new MassDatum("Escherichia coli cell", 0.65e-18*CONSTANT.density.water, "https://en.wikipedia.org/wiki/Escherichia_coli#Type_and_morphology"),
+		new MassDatum("Human", 70, "https://hypertextbook.com/facts/2003/AlexSchlessingerman.shtml"),
+		new MassDatum("Elephant (African)", (7e3+3.6e3)/2, "https://hypertextbook.com/facts/2003/EugeneShnayder.shtml"),
+		new MassDatum("Whale (Blue)", 150e3, "https://hypertextbook.com/facts/2003/MichaelShmukler.shtml"),
+		// Vehicles
+		new MassDatum("Car", 2e3, "https://hypertextbook.com/facts/2000/YanaZorina.shtml"),
+		new MassDatum("Locomotive (EMD GP9)", 117.7e3, "https://en.wikipedia.org/wiki/EMD_GP9"),
+		new MassDatum("Large aircraft (A380, MTOW)", 575e3, "https://en.wikipedia.org/wiki/Airbus_A380#Specifications"),
+		new MassDatum("Aircraft carrier (Gerald R. Ford-class)", 100e3*CONSTANT.long_ton, "https://en.wikipedia.org/wiki/Gerald_R._Ford-class_aircraft_carrier"),
+		// misc big things
+		new MassDatum("Earth's biosphere", 1841e15, "https://hypertextbook.com/facts/2001/AmandaMeyer.shtml"),
+		new MassDatum("Earth's atmosphere", 5e18, "https://hypertextbook.com/facts/1999/LouiseLiu.shtml"),
+		new MassDatum("Earth's oceans", 1.4e21, "https://hypertextbook.com/facts/1998/AvijeetDut.shtml"),
+		// Astro
+		new MassDatum("Pallas", 2.04e20),
+		new MassDatum("Vesta", 2.590271e20),
+		new MassDatum("Ceres", 9.3839e20),
+		new MassDatum("Pluto", 1.3025e22),
+		new MassDatum("Moon", 7.346e22),
+		new MassDatum("Mercury", 3.3011e23),
+		new MassDatum("Mars", 6.4171e23),
+		new MassDatum("Venus", 4.86731e24),
+		new MassDatum("Earth", 5.9722e24),
+		new MassDatum("Uranus", 8.68099e25),
+		new MassDatum("Neptune", 1.024092e26),
+		new MassDatum("Saturn", 5.68317e26),
+		new MassDatum("Jupiter", 1.898125e27),
+		new MassDatum("Sun", CONSTANT.solar_mass),
 	],
 	elem: {
 		/** @returns {HTMLDivElement} */
