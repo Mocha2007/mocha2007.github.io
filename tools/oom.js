@@ -160,6 +160,7 @@ const OOM = {
 		new MassDatum("Top quark", 172.76e3*CONSTANT.MeVc2),
 		// Atoms
 		new MassDatum("Hydrogen-1 atom", 1.0078250322*CONSTANT.da, "https://www.ciaaw.org/hydrogen.htm"),
+		new MassDatum("Helium-4 atom", 6.6446573450e-27, "https://physics.nist.gov/cgi-bin/cuu/Value?mal"),
 		new MassDatum("Carbon-12 atom", 12*CONSTANT.da, "https://www.ciaaw.org/carbon.htm"),
 		new MassDatum("Iron-56 atom", 55.934936*CONSTANT.da, "https://www.ciaaw.org/iron.htm"),
 		new MassDatum("Lead-206 atom", 205.974465*CONSTANT.da, "https://www.ciaaw.org/lead.htm"),
