@@ -96,7 +96,7 @@ class MassRange {
 		e.style.top = `${bottom}%`;
 		e.style.lineHeight = e.style.height = `${top-bottom}%`;
 		e.style.backgroundColor = this.color;
-		e.style.left = `${50+25*(i%2)}vw`;
+		e.style.left = `${50+50/3*(i%3)}vw`;
 		const inner = document.createElement('span');
 		inner.innerHTML = this.name;
 		e.appendChild(inner);
@@ -250,8 +250,8 @@ const OOM = {
 		new MassDatum("Hemaglobin", 16e3*CONSTANT.da, "https://en.wikipedia.org/wiki/Hemoglobin#Diagnostic_uses"),
 		new MassDatum("Calcium channel (L-type)", ((170e3+240e3)/2 + 150e3 + (17e3+25e3)/2 + (50e3+78e3)/2 + 32e3)*CONSTANT.da, "https://en.wikipedia.org/wiki/L-type_calcium_channel#Structure"),
 		new MassDatum("Ribosome (Eukaryotic)", 3.2e6*CONSTANT.da, "https://en.wikipedia.org/wiki/Eukaryotic_ribosome#Composition"),
+		new MassDatum("Titin", 4200e3*CONSTANT.da, "https://en.wikipedia.org/wiki/Titin"),
 		new MassDatum("Chloroplast genome", 105e6*CONSTANT.da, "https://en.wikipedia.org/wiki/Chloroplast#Molecular_structure"),
-		new MassDatum("COVID-19 virus", 4/3 * Math.PI * Math.pow((60e-9+140e-9)/4, 3) * CONSTANT.density.water, "https://en.wikipedia.org/wiki/SARS-CoV-2#Virus_structure"),
 		new MassDatum("Escherichia coli genome", 4.6e6*CONSTANT.bp, "https://en.wikipedia.org/wiki/Escherichia_coli#Genomics"),
 		new MassDatum("Chromosome (Human 21)", 46944323*CONSTANT.bp),
 		new MassDatum("Lysosome", 4/3 * Math.PI * Math.pow((0.1e-6+1.2e-6)/4, 3) * CONSTANT.density.water, "https://en.wikipedia.org/wiki/Lysosome#Function_and_structure"),
@@ -260,6 +260,10 @@ const OOM = {
 		new MassDatum("Mitochondrion", 1.0754507267897768e-17*CONSTANT.density.water), // "Mitochondria are commonly between 0.75 and 3 μm2 in cross section,"
 		new MassDatum("Chloroplast", 20e-18*CONSTANT.density.water, "https://en.wikipedia.org/wiki/Chloroplast#Structure"), // "Corn seedling chloroplasts are ≈20 μm3 in volume"
 		new MassDatum("Nucleus (Human)", 4/3*Math.PI*Math.pow(3e-6,3)*CONSTANT.density.water, "https://en.wikipedia.org/wiki/Cell_nucleus#Nuclear_structures_and_landmarks"), // "In human cells, the diameter of the nucleus is approximately six micrometres (μm)"
+		// Viruses
+		new MassDatum("Porcine circovirus", 4/3 * Math.PI * Math.pow(17e-9/2, 3) * CONSTANT.density.water, "https://en.wikipedia.org/wiki/SARS-CoV-2#Virus_structure"),
+		new MassDatum("COVID-19 virus", 4/3 * Math.PI * Math.pow((60e-9+140e-9)/4, 3) * CONSTANT.density.water, "https://en.wikipedia.org/wiki/SARS-CoV-2#Virus_structure"),
+		new MassDatum("Megaklothovirus horridgei", 3.9e-6 * Math.PI*Math.pow(500e-9/2, 2) * CONSTANT.density.water, "https://en.wikipedia.org/wiki/Megaklothovirus_horridgei"),
 		// Body parts
 		new MassDatum("Heart (Human)", 0.3, "https://en.wikipedia.org/wiki/Heart#Location_and_shape"),
 		new MassDatum("Liver (Human)", 1.5, "https://en.wikipedia.org/wiki/Liver#Structure"),
@@ -448,7 +452,9 @@ const OOM = {
 	},
 	ranges: [
 		new MassRange("Atoms", CONSTANT.da, 294*CONSTANT.da, 'pink'),
-		new MassRange("Molecules", 2*CONSTANT.da, 200e6*CONSTANT.da, 'beige'),
+		new MassRange("Molecules", 2*CONSTANT.da, 3e-24, 'beige'),
+		new MassRange("Proteins", 2*75.06714*CONSTANT.da, 7e-21, 'orange'),
+		new MassRange("Viruses", 3e-21, 8e-16, 'magenta'),
 		new MassRange("Bacteria", 1.3e-17, 1.6e-8, 'cyan'),
 		new MassRange("Coins", 2e-6, 12e-6, 'gold'),
 		new MassRange("Planets", 3e23, 13*CONSTANT.jupiter_mass, 'skyblue'),
