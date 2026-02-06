@@ -93,7 +93,7 @@ class MassRange {
 		e.style.top = `${bottom}%`;
 		e.style.lineHeight = e.style.height = `${top-bottom}%`;
 		e.style.backgroundColor = this.color;
-		e.style.left = `${50+40*(i/(a.length-0.9))}vw`;
+		e.style.left = `${50+25*(i%2)}vw`;
 		const inner = document.createElement('span');
 		inner.innerHTML = this.name;
 		e.appendChild(inner);
@@ -244,6 +244,7 @@ const OOM = {
 		new MassDatum("White blood cell (Human Neutrophil)", 4/3 * Math.PI * Math.pow((12e-6+15e-6)/4, 3) * CONSTANT.density.water, "https://en.wikipedia.org/wiki/White_blood_cell#Overview"),
 		new MassDatum("Lysosome", 4/3 * Math.PI * Math.pow((0.1e-6+1.2e-6)/4, 3) * CONSTANT.density.water, "https://en.wikipedia.org/wiki/Lysosome#Function_and_structure"),
 		new MassDatum("Fruit Fly", (0.219e-6 + 0.304e-6)/2, "https://bionumbers.hms.harvard.edu/bionumber.aspx?id=102570"),
+		new MassDatum("Cat", 4.5, "https://en.wikipedia.org/wiki/Cat#Size"),
 		new MassDatum("Human", 70, "https://hypertextbook.com/facts/2003/AlexSchlessingerman.shtml"),
 		new MassDatum("Elephant (African)", (7e3+3.6e3)/2, "https://hypertextbook.com/facts/2003/EugeneShnayder.shtml"),
 		new MassDatum("Whale (Blue)", 150e3, "https://hypertextbook.com/facts/2003/MichaelShmukler.shtml"),
@@ -314,6 +315,7 @@ const OOM = {
 	ranges: [
 		new MassRange("Atoms", CONSTANT.da, 294*CONSTANT.da, 'pink'),
 		new MassRange("Molecules", 2*CONSTANT.da, 200e6*CONSTANT.da, 'beige'),
+		new MassRange("Coins", 2e-6, 12e-6, 'gold'),
 	],
 };
 
