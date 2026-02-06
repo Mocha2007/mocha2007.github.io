@@ -126,6 +126,8 @@ const CONSTANT = {
 		return this.lb/7000;
 	},
 	/** in kg */
+	jupiter_mass: 1.898125e27,
+	/** in kg */
 	lb: 0.45359237,
 	get long_ton(){
 		return 2240*this.lb;
@@ -320,7 +322,7 @@ const OOM = {
 		new MassDatum("Uranus", 8.68099e25),
 		new MassDatum("Neptune", 1.024092e26),
 		new MassDatum("Saturn", 5.68317e26),
-		new MassDatum("Jupiter", 1.898125e27),
+		new MassDatum("Jupiter", CONSTANT.jupiter_mass),
 		// Stars
 		new MassDatum("Proxima Centauri", 0.1221*CONSTANT.solar_mass),
 		new MassDatum("Sun", CONSTANT.solar_mass),
@@ -383,6 +385,8 @@ const OOM = {
 		new MassRange("Atoms", CONSTANT.da, 294*CONSTANT.da, 'pink'),
 		new MassRange("Molecules", 2*CONSTANT.da, 200e6*CONSTANT.da, 'beige'),
 		new MassRange("Coins", 2e-6, 12e-6, 'gold'),
+		new MassRange("Planets", 3e23, 13*CONSTANT.jupiter_mass, 'skyblue'),
+		new MassRange("Stars", 0.08*CONSTANT.solar_mass, 300*CONSTANT.solar_mass, 'yellow'),
 	],
 };
 
