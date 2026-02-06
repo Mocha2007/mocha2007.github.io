@@ -254,6 +254,7 @@ const OOM = {
 		new MassDatum("COVID-19 virus", 4/3 * Math.PI * Math.pow((60e-9+140e-9)/4, 3) * CONSTANT.density.water, "https://en.wikipedia.org/wiki/SARS-CoV-2#Virus_structure"),
 		new MassDatum("Escherichia coli genome", 4.6e6*CONSTANT.bp, "https://en.wikipedia.org/wiki/Escherichia_coli#Genomics"),
 		new MassDatum("Chromosome (Human 21)", 46944323*CONSTANT.bp),
+		new MassDatum("Lysosome", 4/3 * Math.PI * Math.pow((0.1e-6+1.2e-6)/4, 3) * CONSTANT.density.water, "https://en.wikipedia.org/wiki/Lysosome#Function_and_structure"),
 		new MassDatum("Chromosome (Human X)", 154913754*CONSTANT.bp),
 		new MassDatum("Chromosome (Human 1)", 248387328*CONSTANT.bp),
 		new MassDatum("Mitochondrion", 1.0754507267897768e-17*CONSTANT.density.water), // "Mitochondria are commonly between 0.75 and 3 μm2 in cross section,"
@@ -287,10 +288,11 @@ const OOM = {
 		new MassDatum("Cup of tea", 227.3e-6*CONSTANT.density.water50c, "https://en.wikipedia.org/wiki/Breakfast_cup"),
 		new MassDatum("Gold bar", 12.4, "https://en.wikipedia.org/wiki/Gold_bar"),
 		// Organisms
+		new MassDatum("Pelagibacter communis cell", (0.37e-6+0.89e-6)/2 * Math.PI*Math.pow((0.12e-6+0.2e-6)/4, 2) * CONSTANT.density.water, "https://en.wikipedia.org/wiki/Pelagibacter_communis"),
 		new MassDatum("Escherichia coli cell", 0.65e-18*CONSTANT.density.water, "https://en.wikipedia.org/wiki/Escherichia_coli#Type_and_morphology"),
 		new MassDatum("Red blood cell (Human)", 90e-18*CONSTANT.density.water, "https://en.wikipedia.org/wiki/Red_blood_cell#Human"),
 		new MassDatum("White blood cell (Human Neutrophil)", 4/3 * Math.PI * Math.pow((12e-6+15e-6)/4, 3) * CONSTANT.density.water, "https://en.wikipedia.org/wiki/White_blood_cell#Overview"),
-		new MassDatum("Lysosome", 4/3 * Math.PI * Math.pow((0.1e-6+1.2e-6)/4, 3) * CONSTANT.density.water, "https://en.wikipedia.org/wiki/Lysosome#Function_and_structure"),
+		new MassDatum("Thiomargarita magnifica cell", 1e-2 * Math.PI*Math.pow(45e-6/2, 2) * CONSTANT.density.water, "https://en.wikipedia.org/wiki/Thiomargarita_magnifica"),
 		new MassDatum("Fruit Fly", (0.219e-6 + 0.304e-6)/2, "https://bionumbers.hms.harvard.edu/bionumber.aspx?id=102570"),
 		new MassDatum("Mouse", (11e-3+30e-3)/2, "https://en.wikipedia.org/wiki/House_mouse#Characteristics"),
 		new MassDatum("Sparrow", (24e-3+39.5e-3)/2, "https://en.wikipedia.org/wiki/House_sparrow"),
@@ -447,6 +449,7 @@ const OOM = {
 	ranges: [
 		new MassRange("Atoms", CONSTANT.da, 294*CONSTANT.da, 'pink'),
 		new MassRange("Molecules", 2*CONSTANT.da, 200e6*CONSTANT.da, 'beige'),
+		new MassRange("Bacteria", 1.3e-17, 1.6e-8, 'cyan'),
 		new MassRange("Coins", 2e-6, 12e-6, 'gold'),
 		new MassRange("Planets", 3e23, 13*CONSTANT.jupiter_mass, 'skyblue'),
 		new MassRange("Stars", 0.08*CONSTANT.solar_mass, 300*CONSTANT.solar_mass, 'yellow'),
