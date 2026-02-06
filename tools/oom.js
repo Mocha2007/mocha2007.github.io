@@ -105,10 +105,14 @@ class MassRange {
 }
 
 const CONSTANT = {
-	/** DNA base pair */
-	get bp(){
+	/** in kg, DNA base pair */
+	get bp_dna(){
 		return 618*this.da;
-	} ,
+	},
+	/** in kg, RNA base pair */
+	get bp_rna(){
+		return 643*this.da;
+	},
 	/** in kg */
 	da: 1.66053906892e-27,
 	density: {
@@ -246,20 +250,24 @@ const OOM = {
 		new MassDatum("NADP", 744.4*CONSTANT.da),
 		new MassDatum("Chlorophyll a", 893.509*CONSTANT.da),
 		new MassDatum("Cobalamin (Vitamin B12)", 1355.388*CONSTANT.da),
-		new MassDatum("Humanin", 2687.27*CONSTANT.da),
 		// Proteins, Enzymes, ...
+		new MassDatum("Humanin", 2687.27*CONSTANT.da),
+		new MassDatum("Insulin", 5808*CONSTANT.da, "https://en.wikipedia.org/wiki/Insulin"),
 		new MassDatum("Ubiquitin", 8.6e3*CONSTANT.da, "https://en.wikipedia.org/wiki/Ubiquitin"),
 		new MassDatum("Hemaglobin", 16e3*CONSTANT.da, "https://en.wikipedia.org/wiki/Hemoglobin#Diagnostic_uses"),
+		new MassDatum("tRNA", (76+90)/2*CONSTANT.bp_rna),
 		new MassDatum("Chaperonin", 60e3*CONSTANT.da, "https://en.wikipedia.org/wiki/Chaperonin"),
+		new MassDatum("Immunoglobulin G", 150e3*CONSTANT.da, "https://en.wikipedia.org/wiki/Immunoglobulin_G#Structure"),
 		new MassDatum("Calcium channel (L-type)", ((170e3+240e3)/2 + 150e3 + (17e3+25e3)/2 + (50e3+78e3)/2 + 32e3)*CONSTANT.da, "https://en.wikipedia.org/wiki/L-type_calcium_channel#Structure"),
+		// new MassDatum("Dynein", 1.5e6*CONSTANT.da),
 		new MassDatum("Ribosome (Eukaryotic)", 3.2e6*CONSTANT.da, "https://en.wikipedia.org/wiki/Eukaryotic_ribosome#Composition"),
 		new MassDatum("Titin", 4200e3*CONSTANT.da, "https://en.wikipedia.org/wiki/Titin"),
 		new MassDatum("Chloroplast genome", 105e6*CONSTANT.da, "https://en.wikipedia.org/wiki/Chloroplast#Molecular_structure"),
-		new MassDatum("Escherichia coli genome", 4.6e6*CONSTANT.bp, "https://en.wikipedia.org/wiki/Escherichia_coli#Genomics"),
-		new MassDatum("Chromosome (Human 21)", 46944323*CONSTANT.bp),
+		new MassDatum("Escherichia coli genome", 4.6e6*CONSTANT.bp_dna, "https://en.wikipedia.org/wiki/Escherichia_coli#Genomics"),
+		new MassDatum("Chromosome (Human 21)", 46944323*CONSTANT.bp_dna),
 		new MassDatum("Lysosome", 4/3 * Math.PI * Math.pow((0.1e-6+1.2e-6)/4, 3) * CONSTANT.density.water, "https://en.wikipedia.org/wiki/Lysosome#Function_and_structure"),
-		new MassDatum("Chromosome (Human X)", 154913754*CONSTANT.bp),
-		new MassDatum("Chromosome (Human 1)", 248387328*CONSTANT.bp),
+		new MassDatum("Chromosome (Human X)", 154913754*CONSTANT.bp_dna),
+		new MassDatum("Chromosome (Human 1)", 248387328*CONSTANT.bp_dna),
 		new MassDatum("Mitochondrion", 1.0754507267897768e-17*CONSTANT.density.water), // "Mitochondria are commonly between 0.75 and 3 μm2 in cross section,"
 		new MassDatum("Chloroplast", 20e-18*CONSTANT.density.water, "https://en.wikipedia.org/wiki/Chloroplast#Structure"), // "Corn seedling chloroplasts are ≈20 μm3 in volume"
 		new MassDatum("Nucleus (Human)", 4/3*Math.PI*Math.pow(3e-6,3)*CONSTANT.density.water, "https://en.wikipedia.org/wiki/Cell_nucleus#Nuclear_structures_and_landmarks"), // "In human cells, the diameter of the nucleus is approximately six micrometres (μm)"
