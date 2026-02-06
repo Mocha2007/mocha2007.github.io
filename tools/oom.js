@@ -114,8 +114,14 @@ const CONSTANT = {
 	},
 	/** in m/s https://physics.nist.gov/cgi-bin/cuu/Value?c */
 	c: 299792458,
+	get dr(){
+		return this.lb/256;
+	},
 	/** in J */
 	eV: 1.602176634e-19,
+	get gr(){
+		return this.lb/7000;
+	},
 	/** in kg */
 	lb: 0.45359237,
 	get long_ton(){
@@ -198,11 +204,13 @@ const OOM = {
 		new MassDatum("Cobalamin (Vitamin B12)", 1355.388*CONSTANT.da),
 		new MassDatum("Humanin", 2687.27*CONSTANT.da),
 		// Proteins, Enzymes, ...
-		new MassDatum("Hemaglobin protein", 16e3*CONSTANT.da, "https://en.wikipedia.org/wiki/Hemoglobin#Diagnostic_uses"),
+		new MassDatum("Ubiquitin", 8.6e3*CONSTANT.da, "https://en.wikipedia.org/wiki/Ubiquitin"),
+		new MassDatum("Hemaglobin", 16e3*CONSTANT.da, "https://en.wikipedia.org/wiki/Hemoglobin#Diagnostic_uses"),
 		new MassDatum("Calcium channel (L-type)", ((170e3+240e3)/2 + 150e3 + (17e3+25e3)/2 + (50e3+78e3)/2 + 32e3)*CONSTANT.da, "https://en.wikipedia.org/wiki/L-type_calcium_channel#Structure"),
 		new MassDatum("Ribosome (Eukaryotic)", 3.2e6*CONSTANT.da, "https://en.wikipedia.org/wiki/Eukaryotic_ribosome#Composition"),
 		new MassDatum("Chloroplast genome", 105e6*CONSTANT.da, "https://en.wikipedia.org/wiki/Chloroplast#Molecular_structure"),
 		new MassDatum("COVID-19 virus", 4/3 * Math.PI * Math.pow((60e-9+140e-9)/4, 3) * CONSTANT.density.water, "https://en.wikipedia.org/wiki/SARS-CoV-2#Virus_structure"),
+		new MassDatum("Escherichia coli genome", 4.6e6*CONSTANT.bp, "https://en.wikipedia.org/wiki/Escherichia_coli#Genomics"),
 		new MassDatum("Chromosome (Human 21)", 46944323*CONSTANT.bp),
 		new MassDatum("Chromosome (Human X)", 154913754*CONSTANT.bp),
 		new MassDatum("Chromosome (Human 1)", 248387328*CONSTANT.bp),
@@ -210,14 +218,19 @@ const OOM = {
 		new MassDatum("Chloroplast", 20e-18*CONSTANT.density.water, "https://en.wikipedia.org/wiki/Chloroplast#Structure"), // "Corn seedling chloroplasts are ≈20 μm3 in volume"
 		new MassDatum("Nucleus (Human)", 4/3*Math.PI*Math.pow(3e-6,3)*CONSTANT.density.water, "https://en.wikipedia.org/wiki/Cell_nucleus#Nuclear_structures_and_landmarks"), // "In human cells, the diameter of the nucleus is approximately six micrometres (μm)"
 		// vaguely human-sized
+		new MassDatum("Planck mass", 2.176434e-8, "https://en.wikipedia.org/wiki/Planck_units"),
 		new MassDatum("Penny (US)", 2.5e-6, "https://hypertextbook.com/facts/2002/MillicentOkereke.shtml"),
 		new MassDatum("Snowflake", 3e-6, "https://hypertextbook.com/facts/2001/JudyMoy.shtml"),
+		new MassDatum("Grain (wheat)", 50e-6, "https://en.wikipedia.org/wiki/Grain_(unit)#History"),
+		new MassDatum("Grain (unit)", CONSTANT.gr),
+		new MassDatum("Dram (unit)", CONSTANT.dr),
 		new MassDatum("Golfball", 0.04593, "https://hypertextbook.com/facts/1999/ImranArif.shtml"),
 		new MassDatum("Baseball", 0.145, "https://hypertextbook.com/facts/1999/ChristinaLee.shtml"),
 		new MassDatum("Soccerball", 0.43, "https://hypertextbook.com/facts/2002/LouiseHuang.shtml"),
 		new MassDatum("Grain of sand (medium)", 2e-9, "https://hypertextbook.com/facts/2003/MarinaTheodoris.shtml"),
-		new MassDatum("Ounce", CONSTANT.oz),
-		new MassDatum("Pound", CONSTANT.lb),
+		new MassDatum("Ounce (unit)", CONSTANT.oz),
+		new MassDatum("Pound (unit)", CONSTANT.lb),
+		new MassDatum("Stone (unit)", 14*CONSTANT.lb),
 		// Organisms
 		new MassDatum("Escherichia coli cell", 0.65e-18*CONSTANT.density.water, "https://en.wikipedia.org/wiki/Escherichia_coli#Type_and_morphology"),
 		new MassDatum("Red blood cell (Human)", 90e-18*CONSTANT.density.water, "https://en.wikipedia.org/wiki/Red_blood_cell#Human"),
