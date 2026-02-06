@@ -231,9 +231,11 @@ const OOM = {
 		// Molecules
 		new MassDatum("Water", 18.01528*CONSTANT.da),
 		new MassDatum("Ethanol", 46.069*CONSTANT.da),
+		new MassDatum("Glycine", 75.06714*CONSTANT.da),
 		// new MassDatum("Ascorbic acid (Vitamin C)", 176.124*CONSTANT.da),
 		// new MassDatum("Glucose", 180.156*CONSTANT.da),
 		// new MassDatum("Caffeine", 194.194*CONSTANT.da),
+		// new MassDatum("Pyrrolysine", 255.31 *CONSTANT.da),
 		new MassDatum("Estradiol", 272.38*CONSTANT.da),
 		// new MassDatum("Psilocybin", 284.252*CONSTANT.da),
 		new MassDatum("THC", 314.469*CONSTANT.da),
@@ -248,6 +250,7 @@ const OOM = {
 		// Proteins, Enzymes, ...
 		new MassDatum("Ubiquitin", 8.6e3*CONSTANT.da, "https://en.wikipedia.org/wiki/Ubiquitin"),
 		new MassDatum("Hemaglobin", 16e3*CONSTANT.da, "https://en.wikipedia.org/wiki/Hemoglobin#Diagnostic_uses"),
+		new MassDatum("Chaperonin", 60e3*CONSTANT.da, "https://en.wikipedia.org/wiki/Chaperonin"),
 		new MassDatum("Calcium channel (L-type)", ((170e3+240e3)/2 + 150e3 + (17e3+25e3)/2 + (50e3+78e3)/2 + 32e3)*CONSTANT.da, "https://en.wikipedia.org/wiki/L-type_calcium_channel#Structure"),
 		new MassDatum("Ribosome (Eukaryotic)", 3.2e6*CONSTANT.da, "https://en.wikipedia.org/wiki/Eukaryotic_ribosome#Composition"),
 		new MassDatum("Titin", 4200e3*CONSTANT.da, "https://en.wikipedia.org/wiki/Titin"),
@@ -292,6 +295,7 @@ const OOM = {
 		new MassDatum("Cup of tea", 227.3e-6*CONSTANT.density.water50c, "https://en.wikipedia.org/wiki/Breakfast_cup"),
 		new MassDatum("Gold bar", 12.4, "https://en.wikipedia.org/wiki/Gold_bar"),
 		// Organisms
+		new MassDatum("Myxozoa", 300e-6 * Math.PI*Math.pow(10e-6/2, 2) * CONSTANT.density.water, "https://en.wikipedia.org/wiki/https://en.wikipedia.org/wiki/Myxozoa#Anatomy"),
 		new MassDatum("Pelagibacter communis cell", (0.37e-6+0.89e-6)/2 * Math.PI*Math.pow((0.12e-6+0.2e-6)/4, 2) * CONSTANT.density.water, "https://en.wikipedia.org/wiki/Pelagibacter_communis"),
 		new MassDatum("Escherichia coli cell", 0.65e-18*CONSTANT.density.water, "https://en.wikipedia.org/wiki/Escherichia_coli#Type_and_morphology"),
 		new MassDatum("Red blood cell (Human)", 90e-18*CONSTANT.density.water, "https://en.wikipedia.org/wiki/Red_blood_cell#Human"),
@@ -453,9 +457,10 @@ const OOM = {
 	ranges: [
 		new MassRange("Atoms", CONSTANT.da, 294*CONSTANT.da, 'pink'),
 		new MassRange("Molecules", 2*CONSTANT.da, 3e-24, 'beige'),
-		new MassRange("Proteins", 2*75.06714*CONSTANT.da, 7e-21, 'orange'),
+		new MassRange("Proteins", 10*75.06714*CONSTANT.da, 7e-21, 'orange'),
 		new MassRange("Viruses", 3e-21, 8e-16, 'magenta'),
 		new MassRange("Bacteria", 1.3e-17, 1.6e-8, 'cyan'),
+		new MassRange("Animals", 2e-11, 1.5e5, 'purple'),
 		new MassRange("Coins", 2e-6, 12e-6, 'gold'),
 		new MassRange("Planets", 3e23, 13*CONSTANT.jupiter_mass, 'skyblue'),
 		new MassRange("Stars", 0.08*CONSTANT.solar_mass, 300*CONSTANT.solar_mass, 'yellow'),
