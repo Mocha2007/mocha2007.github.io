@@ -72,6 +72,10 @@ class MassDatum {
 const CONSTANT = {
 	/** in kg */
 	da: 1.66053906892e-27,
+	density: {
+		/** kg/m^3, at 25 C */
+		water: 997.04702,
+	},
 	/** in m/s https://physics.nist.gov/cgi-bin/cuu/Value?c */
 	c: 299792458,
 	/** in J */
@@ -118,6 +122,7 @@ const OOM = {
 		new MassDatum("Uranium-238 atom", 238.05079*CONSTANT.da, "https://www.ciaaw.org/uranium.htm"),
 		new MassDatum("Hemaglobin protein", 16e3*CONSTANT.da, "https://en.wikipedia.org/wiki/Hemoglobin#Diagnostic_uses"),
 		new MassDatum("Ribosome (Eukaryotic)", 3.2e6*CONSTANT.da, "https://en.wikipedia.org/wiki/Eukaryotic_ribosome#Composition"),
+		new MassDatum("Escherichia coli cell", 0.65e-18*CONSTANT.density.water, "https://en.wikipedia.org/wiki/Escherichia_coli#Type_and_morphology"),
 		new MassDatum("Ounce", CONSTANT.oz),
 		new MassDatum("Pound", CONSTANT.lb),
 	],
