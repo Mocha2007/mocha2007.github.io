@@ -7,7 +7,7 @@ body {
 	position: relative;
 	width: 100vw;
 }
-.datum, .scale {
+.datum, .scale, .range {
 	position: absolute;
 }
 .datum {
@@ -29,4 +29,14 @@ body {
 }
 .permalink {
 	text-decoration: none;
+}
+.range {
+	align-items: center;
+	color: black;
+	display: flex;
+	justify-content: center;
+	opacity: 0.5;
+	text-align: center;
+	user-select: none;
+	width: 10vw;
 }

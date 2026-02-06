@@ -69,6 +69,38 @@ class MassDatum {
 	}
 }
 
+class MassRange {
+	/**
+	 * @param {string} name 
+	 * @param {Mass} min 
+	 * @param {Mass} max 
+	 * @param {string} color 
+	 */
+	constructor(name, min, max, color){
+		/** @type {string} */
+		this.name = name;
+		/** @type {Mass} */
+		this.min = typeof min === "number" ? new Mass(min) : min;
+		/** @type {Mass} */
+		this.max = typeof max === "number" ? new Mass(max) : max;
+		/** @type {string} */
+		this.color = color;
+	}
+	elem(e2y, i, a){
+		const e = document.createElement('div');
+		e.classList.add('range');
+		const [bottom, top] = [100*e2y(Math.log10(this.min.min)), 100*e2y(Math.log10(this.max.max))];
+		e.style.top = `${bottom}%`;
+		e.style.lineHeight = e.style.height = `${top-bottom}%`;
+		e.style.backgroundColor = this.color;
+		e.style.left = `${50+40*(i/(a.length-0.9))}vw`;
+		const inner = document.createElement('span');
+		inner.innerHTML = this.name;
+		e.appendChild(inner);
+		return e;
+	}
+}
+
 const CONSTANT = {
 	/** in kg */
 	da: 1.66053906892e-27,
@@ -127,6 +159,7 @@ const OOM = {
 		new MassDatum("Uranium-238 atom", 238.05079*CONSTANT.da, "https://www.ciaaw.org/uranium.htm"),
 		// Molecules
 		new MassDatum("Caffeine molecule", 194.194*CONSTANT.da),
+		new MassDatum("Cobalamin (Vitamin B12)", 1355.388*CONSTANT.da),
 		// Proteins, Enzymes, ...
 		new MassDatum("Hemaglobin protein", 16e3*CONSTANT.da, "https://en.wikipedia.org/wiki/Hemoglobin#Diagnostic_uses"),
 		new MassDatum("Ribosome (Eukaryotic)", 3.2e6*CONSTANT.da, "https://en.wikipedia.org/wiki/Eukaryotic_ribosome#Composition"),
@@ -181,6 +214,7 @@ const OOM = {
 		main.style.height = `${this.config.vscale*100}vh`;
 		const e2y = this.initScale();
 		this.data.forEach(datum => main.appendChild(datum.elem(e2y)));
+		this.ranges.forEach((range, i, a) => main.appendChild(range.elem(e2y, i, a)));
 		console.info('oom.js initialized.');
 	},
 	initScale(){
@@ -204,6 +238,10 @@ const OOM = {
 		const [min, max] = [sorted[0].mass.x, sorted[sorted.length-1].mass.x];
 		return {min, max};
 	},
+	ranges: [
+		new MassRange("Atoms", CONSTANT.da, 294*CONSTANT.da, 'pink'),
+		new MassRange("Molecules", 2*CONSTANT.da, 200e6*CONSTANT.da, 'beige'),
+	],
 };
 
 OOM.init();
