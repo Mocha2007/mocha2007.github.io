@@ -98,7 +98,7 @@ class MassRange {
 		e.style.backgroundColor = this.color;
 		e.style.left = `${50+50/3*(i%3)}vw`;
 		const inner = document.createElement('span');
-		inner.innerHTML = this.name;
+		inner.innerHTML = this.name.replaceAll(' ', '&nbsp;');
 		e.appendChild(inner);
 		return e;
 	}
@@ -463,6 +463,7 @@ const OOM = {
 		return {min, max};
 	},
 	ranges: [
+		new MassRange("Elementary Particles", 9e-31, 172.76e3*CONSTANT.MeVc2, 'green'),
 		new MassRange("Atoms", CONSTANT.da, 294*CONSTANT.da, 'pink'),
 		new MassRange("Molecules", 2*CONSTANT.da, 3e-24, 'beige'),
 		new MassRange("Proteins", 10*75.06714*CONSTANT.da, 7e-21, 'orange'),
