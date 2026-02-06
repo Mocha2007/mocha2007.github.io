@@ -102,6 +102,10 @@ class MassRange {
 }
 
 const CONSTANT = {
+	/** DNA base pair */
+	get bp(){
+		return 618*this.da;
+	} ,
 	/** in kg */
 	da: 1.66053906892e-27,
 	density: {
@@ -158,11 +162,17 @@ const OOM = {
 		new MassDatum("Lead-206 atom", 205.974465*CONSTANT.da, "https://www.ciaaw.org/lead.htm"),
 		new MassDatum("Uranium-238 atom", 238.05079*CONSTANT.da, "https://www.ciaaw.org/uranium.htm"),
 		// Molecules
+		new MassDatum("Ascorbic acid (Vitamin C)", 176.124*CONSTANT.da),
 		new MassDatum("Caffeine molecule", 194.194*CONSTANT.da),
+		new MassDatum("Ergocalciferol (Vitamin D2)", 396.659*CONSTANT.da),
+		new MassDatum("β-Carotene (Vitamin A)", 536.888*CONSTANT.da),
 		new MassDatum("Cobalamin (Vitamin B12)", 1355.388*CONSTANT.da),
 		// Proteins, Enzymes, ...
 		new MassDatum("Hemaglobin protein", 16e3*CONSTANT.da, "https://en.wikipedia.org/wiki/Hemoglobin#Diagnostic_uses"),
 		new MassDatum("Ribosome (Eukaryotic)", 3.2e6*CONSTANT.da, "https://en.wikipedia.org/wiki/Eukaryotic_ribosome#Composition"),
+		new MassDatum("Chromosome (Human 21)", 46944323*CONSTANT.bp),
+		new MassDatum("Chromosome (Human X)", 154913754*CONSTANT.bp),
+		new MassDatum("Chromosome (Human 1)", 248387328*CONSTANT.bp),
 		// vaguely human-sized
 		new MassDatum("Penny (US)", 2.5e-6, "https://hypertextbook.com/facts/2002/MillicentOkereke.shtml"),
 		new MassDatum("Snowflake", 3e-6, "https://hypertextbook.com/facts/2001/JudyMoy.shtml"),
