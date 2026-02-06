@@ -111,6 +111,7 @@ const CONSTANT = {
 	density: {
 		/** kg/m^3, at 25 C */
 		water: 997.04702,
+		water50c: 987.5,
 	},
 	/** in m/s https://physics.nist.gov/cgi-bin/cuu/Value?c */
 	c: 299792458,
@@ -238,13 +239,17 @@ const OOM = {
 		new MassDatum("Ounce (unit)", CONSTANT.oz),
 		new MassDatum("Pound (unit)", CONSTANT.lb),
 		new MassDatum("Stone (unit)", 14*CONSTANT.lb),
+		new MassDatum("Phone (iPhone 17)", 117e-3, "https://en.wikipedia.org/wiki/IPhone_17"),
+		new MassDatum("Cup of tea", 227.3e-6*CONSTANT.density.water50c, "https://en.wikipedia.org/wiki/Breakfast_cup"),
 		// Organisms
 		new MassDatum("Escherichia coli cell", 0.65e-18*CONSTANT.density.water, "https://en.wikipedia.org/wiki/Escherichia_coli#Type_and_morphology"),
 		new MassDatum("Red blood cell (Human)", 90e-18*CONSTANT.density.water, "https://en.wikipedia.org/wiki/Red_blood_cell#Human"),
 		new MassDatum("White blood cell (Human Neutrophil)", 4/3 * Math.PI * Math.pow((12e-6+15e-6)/4, 3) * CONSTANT.density.water, "https://en.wikipedia.org/wiki/White_blood_cell#Overview"),
 		new MassDatum("Lysosome", 4/3 * Math.PI * Math.pow((0.1e-6+1.2e-6)/4, 3) * CONSTANT.density.water, "https://en.wikipedia.org/wiki/Lysosome#Function_and_structure"),
 		new MassDatum("Fruit Fly", (0.219e-6 + 0.304e-6)/2, "https://bionumbers.hms.harvard.edu/bionumber.aspx?id=102570"),
+		new MassDatum("Sparrow", (24e-3+39.5e-3)/2, "https://en.wikipedia.org/wiki/House_sparrow"),
 		new MassDatum("Cat", 4.5, "https://en.wikipedia.org/wiki/Cat#Size"),
+		new MassDatum("Human (Infant)", 3.5, "https://en.wikipedia.org/wiki/Birth_weight"),
 		new MassDatum("Human (Global average)", 62, "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3408371"),
 		new MassDatum("Elephant (African)", (7e3+3.6e3)/2, "https://hypertextbook.com/facts/2003/EugeneShnayder.shtml"),
 		new MassDatum("Whale (Blue)", 150e3, "https://hypertextbook.com/facts/2003/MichaelShmukler.shtml"),
