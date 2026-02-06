@@ -296,6 +296,7 @@ const OOM = {
 		new MassDatum("Dollar coin (US)", 8.100e-6),
 		new MassDatum("Half-Dollar (US)", 11.340e-6),
 		new MassDatum("Snowflake", 3e-6, "https://hypertextbook.com/facts/2001/JudyMoy.shtml"),
+		new MassDatum("Grain (rice, medium-grain)", 0.4e-2 * Math.PI*Math.pow(0.25e-2, 2) * CONSTANT.density.water, "https://scaleofuniverse.com/en/universe/grain-of-rice"),
 		new MassDatum("Grain (wheat)", 50e-6, "https://en.wikipedia.org/wiki/Grain_(unit)#History"),
 		new MassDatum("Grain (unit)", CONSTANT.gr),
 		new MassDatum("Carat (unit)", 200e-6),
