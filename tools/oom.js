@@ -138,6 +138,8 @@ const CONSTANT = {
 	get oz(){
 		return this.lb/16;
 	},
+	/** in J*s */
+	planck: 6.62607015e-34,
 	get short_ton(){
 		return 2000*this.lb;
 	},
@@ -151,6 +153,15 @@ const OOM = {
 		vscale: 30,
 	},
 	data: [
+		// Photon energies
+		new MassDatum("Infrared (far) mass equivalence", 300e9*CONSTANT.planck/Math.pow(CONSTANT.c, 2)),
+		new MassDatum("Infrared (near) mass equivalence", 380e12*CONSTANT.planck/Math.pow(CONSTANT.c, 2)),
+		new MassDatum("Visible light (Red) mass equivalence", 440e12*CONSTANT.planck/Math.pow(CONSTANT.c, 2)),
+		new MassDatum("Visible light (Green) mass equivalence", 550e12*CONSTANT.planck/Math.pow(CONSTANT.c, 2)),
+		new MassDatum("Visible light (Blue) mass equivalence", 640e12*CONSTANT.planck/Math.pow(CONSTANT.c, 2)),
+		new MassDatum("Ultraviolet mass equivalence", 6e-6*CONSTANT.MeVc2),
+		new MassDatum("X-ray (soft) mass equivalence", 100e-6*CONSTANT.MeVc2),
+		new MassDatum("Gamma ray (minimum) mass equivalence", 10e-3*CONSTANT.MeVc2),
 		// Subatomic particles
 		new MassDatum("Muon Neutrino (upper bound)", 0.17e-6*CONSTANT.MeVc2, "https://en.wikipedia.org/wiki/Neutrino#Flavor,_mass,_and_their_mixing"),
 		new MassDatum("Electron Neutrino (upper bound)", 0.80e-6*CONSTANT.MeVc2, "https://en.wikipedia.org/wiki/Neutrino#Flavor,_mass,_and_their_mixing"),
@@ -279,6 +290,7 @@ const OOM = {
 		new MassDatum("Earth's biosphere", 1841e15, "https://hypertextbook.com/facts/2001/AmandaMeyer.shtml"),
 		new MassDatum("Earth's atmosphere", 5e18, "https://hypertextbook.com/facts/1999/LouiseLiu.shtml"),
 		new MassDatum("Earth's oceans", 1.4e21, "https://hypertextbook.com/facts/1998/AvijeetDut.shtml"),
+		new MassDatum("Earth's core", 1e23, "https://en.wikipedia.org/wiki/Earth%27s_inner_core#Density_and_mass"),
 		// Astro
 		new MassDatum("Tunguska meteor", 4/3 * Math.PI * Math.pow(55/2, 3) * CONSTANT.density.rock),
 		new MassDatum("Barringer impactor", 4/3 * Math.PI * Math.pow(50/2, 3) * CONSTANT.density.iron),
