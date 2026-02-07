@@ -359,6 +359,7 @@ const OOM = {
 		new MassDatum("Coffee Bean (Ethiopian Arabica)", 0.155e-3, "https://www.academia.edu/92088616/Physical_and_Mechanical_Properties_of_Coffee_Cherries_and_Beans_in_Africa_Review_and_the_State_of_Arts"),
 		new MassDatum("Blueberry", 0.3e-3, "https://en.wikipedia.org/wiki/Blueberry#Description"),
 		new MassDatum("Paperclip (large)", 1.2e-3, "https://inquiryproject.terc.edu/curriculum/curriculum3/standard-measures/investigation1/index.html"),
+		new MassDatum("Tic Tac", 16.5e-3/38, "https://en.wikipedia.org/wiki/Tic_Tac#Ingredients"),
 		new MassDatum("Grape", 1.6e-3, "http://www.hort.cornell.edu/reisch/grapegenetics/bulletin/table/tabletext3.html"),
 		new MassDatum("Dime (US)", 2.268e-3),
 		new MassDatum("Penny (US)", 2.5e-3, "https://hypertextbook.com/facts/2002/MillicentOkereke.shtml"),
