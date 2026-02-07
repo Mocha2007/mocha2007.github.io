@@ -322,6 +322,7 @@ const OOM = {
 		new MassDatum("Ounce (unit)", CONSTANT.oz),
 		new MassDatum("Pound (unit)", CONSTANT.lb),
 		new MassDatum("Stone (unit)", 14*CONSTANT.lb),
+		new MassDatum("Blåhaj (Big)", 0.66, "https://www.reddit.com/r/BLAHAJ/comments/10x33so/whats_the_volume_and_weight_of_a_blahaj/j7q4h5r/"),
 		new MassDatum("Phone (iPhone 17)", 117e-3, "https://en.wikipedia.org/wiki/IPhone_17"),
 		new MassDatum("Cup of tea", 227.3e-6*CONSTANT.density.water50c, "https://en.wikipedia.org/wiki/Breakfast_cup"),
 		new MassDatum("Gold bar", 12.4, "https://en.wikipedia.org/wiki/Gold_bar"),
