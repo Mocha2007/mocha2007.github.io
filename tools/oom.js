@@ -117,6 +117,10 @@ const CONSTANT = {
 	/** in kg */
 	da: 1.66053906892e-27,
 	density: {
+		crust: {
+			/** kg/m^3 https://en.wikipedia.org/wiki/Earth%27s_crust#Composition */
+			continental: 2835,
+		},
 		ice: 916.75,
 		iron: 7874,
 		/** in kg/m^3 https://en.wikipedia.org/wiki/List_of_largest_monoliths#Density */
@@ -173,6 +177,13 @@ const CONSTANT = {
 	si_prefix_offset: 10,
 	/** in kg */
 	solar_mass: 1988475000e21,
+	thickness: {
+		/** https://en.wikipedia.org/wiki/Earth%27s_crust#Composition */
+		crust: {
+			continental: (25e3+70e3)/2,
+			oceanic: (5e3+10e3)/2,
+		}
+	},
 	volume: {
 		/** a, b, c are major axes (diameters) */
 		ellipsoid(a, b, c){
@@ -346,21 +357,29 @@ const OOM = {
 		// AA battery dimensions implies a density of ~2946 kg/m^3
 		new MassDatum("C Battery (Alkaline)", 2946*0.05*Math.PI*Math.pow(0.0262/2, 2), "https://en.wikipedia.org/wiki/C_battery#Properties"),
 		new MassDatum("D Battery (Alkaline)", 2946*0.0615*Math.PI*Math.pow(0.0332/2, 2), "https://en.wikipedia.org/wiki/C_battery#Properties"),
+		// fruits/seeds
+		new MassDatum("Sesame seed", CONSTANT.oz/1e3, "https://corn.agronomy.wisc.edu/Crops/Sesame.aspx"),
+		new MassDatum("Grain (wheat)", 50e-6, "https://en.wikipedia.org/wiki/Grain_(unit)#History"),
+		new MassDatum("Grain (rice, medium-grain)", 0.4e-2 * Math.PI*Math.pow(0.25e-2, 2) * CONSTANT.density.water, "https://scaleofuniverse.com/en/universe/grain-of-rice"),
+		new MassDatum("Coffee Bean (Ethiopian Arabica)", 0.155e-3, "https://www.academia.edu/92088616/Physical_and_Mechanical_Properties_of_Coffee_Cherries_and_Beans_in_Africa_Review_and_the_State_of_Arts"),
+		new MassDatum("Pea", new Mass({min:100e-6,max:360e-6}), "https://en.wikipedia.org/wiki/Pea"),
+		new MassDatum("Blueberry", 0.3e-3, "https://en.wikipedia.org/wiki/Blueberry#Description"),
+		new MassDatum("Tic Tac", 16.5e-3/38, "https://en.wikipedia.org/wiki/Tic_Tac#Ingredients"),
+		new MassDatum("Raspberry", new Mass({min:3e-3,max:5e-3}), "https://en.wikipedia.org/wiki/Raspberry#Description"),
+		new MassDatum("Grape", 1.6e-3, "http://www.hort.cornell.edu/reisch/grapegenetics/bulletin/table/tabletext3.html"),
+		new MassDatum("Kumquat", new Mass({min:11e-3,max:20e-3}), "https://en.wikipedia.org/wiki/Kumquat#Varieties"),
+		new MassDatum("Walnut", CONSTANT.oz/7, "https://www.urmc.rochester.edu/encyclopedia/content?contenttypeid=76&contentid=12155-6"),
+		new MassDatum("Peanut (Pod, Virginia)", 1.8e-3, "https://precisionag.sites.clemson.edu/Calculators/EstimatePeanutYield/"),
+		new MassDatum("Apple", 0.25, "https://diabetesteachingcenter.ucsf.edu/living-diabetes/diet-nutrition/understanding-carbohydrates/weighing-food"),
+		new MassDatum("Cabbage", new Mass({min:0.5,max:1}), "https://en.wikipedia.org/wiki/Cabbage"),
+		new MassDatum("Durian", new Mass({min:1,max:3}), "https://en.wikipedia.org/wiki/Durian"),
 		// vaguely human-sized
 		new MassDatum("Planck mass", 2.176434e-8, "https://en.wikipedia.org/wiki/Planck_units"),
 		new MassDatum("Snowflake", 3e-6, "https://hypertextbook.com/facts/2001/JudyMoy.shtml"),
-		new MassDatum("Sesame seed", CONSTANT.oz/1e3, "https://corn.agronomy.wisc.edu/Crops/Sesame.aspx"),
-		new MassDatum("Grain (wheat)", 50e-6, "https://en.wikipedia.org/wiki/Grain_(unit)#History"),
 		new MassDatum("Grain (unit)", CONSTANT.gr),
-		new MassDatum("Grain (rice, medium-grain)", 0.4e-2 * Math.PI*Math.pow(0.25e-2, 2) * CONSTANT.density.water, "https://scaleofuniverse.com/en/universe/grain-of-rice"),
 		new MassDatum("Carat (unit)", 200e-6),
 		new MassDatum("Paperclip (small)", 0.25e-3, "https://howthingsfly.si.edu/sites/default/files/attachment/LighterThanAir.pdf"),
-		new MassDatum("Coffee Bean (Ethiopian Arabica)", 0.155e-3, "https://www.academia.edu/92088616/Physical_and_Mechanical_Properties_of_Coffee_Cherries_and_Beans_in_Africa_Review_and_the_State_of_Arts"),
-		new MassDatum("Blueberry", 0.3e-3, "https://en.wikipedia.org/wiki/Blueberry#Description"),
 		new MassDatum("Paperclip (large)", 1.2e-3, "https://inquiryproject.terc.edu/curriculum/curriculum3/standard-measures/investigation1/index.html"),
-		new MassDatum("Tic Tac", 16.5e-3/38, "https://en.wikipedia.org/wiki/Tic_Tac#Ingredients"),
-		new MassDatum("Pea", new Mass({min:100e-6,max:360e-6}), "https://en.wikipedia.org/wiki/Pea"),
-		new MassDatum("Grape", 1.6e-3, "http://www.hort.cornell.edu/reisch/grapegenetics/bulletin/table/tabletext3.html"),
 		new MassDatum("Dime (US)", 2.268e-3),
 		new MassDatum("Penny (US)", 2.5e-3, "https://hypertextbook.com/facts/2002/MillicentOkereke.shtml"),
 		new MassDatum("Nickel (US)", 5e-3),
@@ -384,9 +403,6 @@ const OOM = {
 		new MassDatum("Shuttlecock", new Mass({min: 0.00475,max:0.0055}), "https://en.wikipedia.org/wiki/Shuttlecock#Specifications"),
 		new MassDatum("Golfball", 0.04593, "https://hypertextbook.com/facts/1999/ImranArif.shtml"),
 		new MassDatum("Baseball", 0.145, "https://hypertextbook.com/facts/1999/ChristinaLee.shtml"),
-		new MassDatum("Peanut (Pod, Virginia)", 1.8e-3, "https://precisionag.sites.clemson.edu/Calculators/EstimatePeanutYield/"),
-		new MassDatum("Walnut", CONSTANT.oz/7, "https://www.urmc.rochester.edu/encyclopedia/content?contenttypeid=76&contentid=12155-6"),
-		new MassDatum("Apple", 0.25, "https://diabetesteachingcenter.ucsf.edu/living-diabetes/diet-nutrition/understanding-carbohydrates/weighing-food"),
 		new MassDatum("Soccerball", 0.43, "https://hypertextbook.com/facts/2002/LouiseHuang.shtml"),
 		new MassDatum("Phone (iPhone 17)", 117e-3, "https://en.wikipedia.org/wiki/IPhone_17"),
 		new MassDatum("Ounce (unit)", CONSTANT.oz),
@@ -394,12 +410,11 @@ const OOM = {
 		new MassDatum("Physics Textbook", 1.65, "https://hypertextbook.com/facts/2003/BettyTan.shtml"),
 		new MassDatum("Hitachi Magic Wand", 1.2*CONSTANT.lb, "https://en.wikipedia.org/wiki/Hitachi_Magic_Wand"),
 		new MassDatum("Blåhaj (Big)", 0.66, "https://www.reddit.com/r/BLAHAJ/comments/10x33so/whats_the_volume_and_weight_of_a_blahaj/j7q4h5r/"),
-		new MassDatum("Cabbage", new Mass({min:0.5,max:1}), "https://en.wikipedia.org/wiki/Cabbage"),
-		new MassDatum("Durian", new Mass({min:1,max:3}), "https://en.wikipedia.org/wiki/Durian"),
 		new MassDatum("Stone (unit)", 14*CONSTANT.lb),
 		new MassDatum("Cup of tea", 227.3e-6*CONSTANT.density.water50c, "https://en.wikipedia.org/wiki/Breakfast_cup"),
 		new MassDatum("Gold bar", 12.4, "https://en.wikipedia.org/wiki/Gold_bar"),
 		new MassDatum("Electric Scooter", 40.8*CONSTANT.lb, "https://www.amazon.com/Electric-Inflatable-Electronic-Capacity-eScooter/dp/B0BV88TGYY?th=1"),
+		new MassDatum("Canadarm", 450, "https://en.wikipedia.org/wiki/Canadarm"),
 		new MassDatum("Olmec colossal head", new Mass({min:5e3,max:45e3}), "https://en.wikipedia.org/wiki/Olmec_colossal_heads"),
 		// Organisms
 		new MassDatum("Myxozoa", 300e-6 * Math.PI*Math.pow(10e-6/2, 2) * CONSTANT.density.water, "https://en.wikipedia.org/wiki/https://en.wikipedia.org/wiki/Myxozoa#Anatomy"),
@@ -479,6 +494,14 @@ const OOM = {
 		new MassDatum("Antarctic ice sheet", 14e6*1e6*2200*CONSTANT.density.ice, "https://en.wikipedia.org/wiki/Antarctic_ice_sheet"),
 		new MassDatum("Earth's oceans", 1.4e21, "https://hypertextbook.com/facts/1998/AvijeetDut.shtml"),
 		new MassDatum("Earth's core", 1e23, "https://en.wikipedia.org/wiki/Earth%27s_inner_core#Density_and_mass"),
+		new MassDatum("Vatican City (Crust)", 0.49e6*CONSTANT.thickness.crust.continental*CONSTANT.density.crust.continental),
+		new MassDatum("Australia (Crust)", 7688287e6*CONSTANT.thickness.crust.continental*CONSTANT.density.crust.continental),
+		new MassDatum("Europe (Crust)", 10186000e6*CONSTANT.thickness.crust.continental*CONSTANT.density.crust.continental),
+		new MassDatum("Antarctica (Crust)", 14200000e6*CONSTANT.thickness.crust.continental*CONSTANT.density.crust.continental),
+		new MassDatum("South America (Crust)", 17840000e6*CONSTANT.thickness.crust.continental*CONSTANT.density.crust.continental),
+		new MassDatum("North America (Crust)", 24709000e6*CONSTANT.thickness.crust.continental*CONSTANT.density.crust.continental),
+		new MassDatum("Africa (Crust)", 30370000e6*CONSTANT.thickness.crust.continental*CONSTANT.density.crust.continental),
+		new MassDatum("Asia (Crust)", 44579000e6*CONSTANT.thickness.crust.continental*CONSTANT.density.crust.continental),
 		// Astro
 		new MassDatum("Tunguska meteor", 4/3 * Math.PI * Math.pow(55/2, 3) * CONSTANT.density.rock),
 		new MassDatum("Barringer impactor", 4/3 * Math.PI * Math.pow(50/2, 3) * CONSTANT.density.iron),
@@ -536,8 +559,10 @@ const OOM = {
 		new MassDatum("Polaris A", 5.13*CONSTANT.solar_mass),
 		new MassDatum("Betelgeuse", (14+19)/2*CONSTANT.solar_mass),
 		new MassDatum("R136a1", 291*CONSTANT.solar_mass),
+		// Clusters
 		new MassDatum("Pleiades", 800*CONSTANT.solar_mass),
 		new MassDatum("M2", 1.04e5*CONSTANT.solar_mass),
+		// Galaxies
 		new MassDatum("Sagittarius A*", 4.297e6*CONSTANT.solar_mass),
 		new MassDatum("Sagittarius Dwarf Galaxy", 4e8*CONSTANT.solar_mass),
 		new MassDatum("Small Magellanic Cloud", 7e9*CONSTANT.solar_mass),
@@ -550,6 +575,7 @@ const OOM = {
 		new MassDatum("Virgo Supercluster", 1.48e15*CONSTANT.solar_mass),
 		new MassDatum("Laniakea Supercluster", 1e17*CONSTANT.solar_mass),
 		new MassDatum("Pisces-Cetus Supercluster Complex", 1e18*CONSTANT.solar_mass),
+		new MassDatum("Huge-LQG", 6.1e18*CONSTANT.solar_mass),
 		new MassDatum("Observable universe", 1.5e53),
 	],
 	elem: {
