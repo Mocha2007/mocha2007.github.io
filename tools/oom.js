@@ -355,6 +355,7 @@ const OOM = {
 		new MassDatum("Grain (rice, medium-grain)", 0.4e-2 * Math.PI*Math.pow(0.25e-2, 2) * CONSTANT.density.water, "https://scaleofuniverse.com/en/universe/grain-of-rice"),
 		new MassDatum("Carat (unit)", 200e-6),
 		new MassDatum("Paperclip (small)", 0.25e-3, "https://howthingsfly.si.edu/sites/default/files/attachment/LighterThanAir.pdf"),
+		new MassDatum("Coffee Bean (Ethiopian Arabica)", 0.155e-3, "https://www.academia.edu/92088616/Physical_and_Mechanical_Properties_of_Coffee_Cherries_and_Beans_in_Africa_Review_and_the_State_of_Arts"),
 		new MassDatum("Blueberry", 0.3e-3, "https://en.wikipedia.org/wiki/Blueberry#Description"),
 		new MassDatum("Paperclip (large)", 1.2e-3, "https://inquiryproject.terc.edu/curriculum/curriculum3/standard-measures/investigation1/index.html"),
 		new MassDatum("Grape", 1.6e-3, "http://www.hort.cornell.edu/reisch/grapegenetics/bulletin/table/tabletext3.html"),
