@@ -117,6 +117,8 @@ const CONSTANT = {
 	/** in kg */
 	da: 1.66053906892e-27,
 	density: {
+		/** in kg/m^3 https://www.engineeringtoolbox.com/concrete-properties-d_1223.html */
+		concrete: (2240+2400)/2,
 		crust: {
 			/** kg/m^3 https://en.wikipedia.org/wiki/Earth%27s_crust#Composition */
 			continental: 2835,
@@ -487,13 +489,24 @@ const OOM = {
 		new MassDatum("Great Bell of Dhammazedi", 294e3, "https://en.wikipedia.org/wiki/Great_Bell_of_Dhammazedi"),
 		new MassDatum("Pando", 6e6, "https://en.wikipedia.org/wiki/Pando_(tree)"),
 		new MassDatum("Space Needle", 9550*CONSTANT.short_ton, "https://en.wikipedia.org/wiki/Space_Needle"),
+		new MassDatum("Eiffel Tower", 10100e3, "https://en.wikipedia.org/wiki/Eiffel_Tower"),
 		new MassDatum("Empire State Building", 365e3*CONSTANT.short_ton, "https://en.wikipedia.org/wiki/Empire_State_Building#Interior"),
 		new MassDatum("Burj Khalifa", 450e6, "https://en.wikipedia.org/wiki/Burj_Khalifa#Construction"),
 		new MassDatum("Bent Pyramid", 1237040*2323, "https://en.wikipedia.org/wiki/List_of_Egyptian_pyramids"),
 		new MassDatum("Red Pyramid", 1694000*2323, "https://en.wikipedia.org/wiki/List_of_Egyptian_pyramids"),
 		new MassDatum("Pyramid of Khafre", 2211096*2323, "https://en.wikipedia.org/wiki/List_of_Egyptian_pyramids"),
+		// the 3.43 m model weighs 125 kg.
+		// according to https://www.trekbbs.com/threads/actual-size-of-ships-in-star-trek.254521/
+		// the actual ship is 288.6 m.
+		new MassDatum("Enterprise (NCC-1701, estimate)", 125 * Math.pow(288.6/3.43,3)),
+		new MassDatum("Imperial Star Destroyer", 40e9, "https://en.wikipedia.org/wiki/Star_Destroyer#Concept_and_design"),
+		new MassDatum("Dyson Sphere (estimate)", 1.5*0.959e23, "../dyson.html#Sun_Reasonable"), // original concept was 3m thickness, I used a 2m estimate originally, hence x1.5
 		// Giza density ~2323
 		new MassDatum("Great Pyramid of Giza", 6e9, "https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza"),
+		new MassDatum("Three Gorges Dam (estimate)", 27.2e6*CONSTANT.density.concrete + 463e6, "https://en.wikipedia.org/wiki/Three_Gorges_Dam#Composition_and_dimensions"),
+		new MassDatum("Great Wall of China (estimate)", 21196.18e3*6.5*5.5 *CONSTANT.density.rock), // "There it runs 11 km (7 mi) long, ranges from 5 to 8 m (16 ft 5 in to 26 ft 3 in) in height, and 6 m (19 ft 8 in) across the bottom, narrowing up to 5 m (16 ft 5 in) across the top."
+		new MassDatum("Atlantropa (Gibraltar, estimate)", (27.2e6*CONSTANT.density.concrete + 463e6)*14.2/2.335*300/185),
+		new MassDatum("Large Hadron Collider (estimate)", 26.7e3*Math.PI*Math.pow(3.8/2,2)*CONSTANT.density.concrete, "https://en.wikipedia.org/wiki/Large_Hadron_Collider#Design"),
 		new MassDatum("Danube annual discharge", 6452*CONSTANT.density.water*CONSTANT.yr, "https://en.wikipedia.org/wiki/Danube"),
 		new MassDatum("Earth's biosphere", 1841e15, "https://hypertextbook.com/facts/2001/AmandaMeyer.shtml"),
 		new MassDatum("Greenland ice sheet", 1710000e6*1673*CONSTANT.density.ice, "https://en.wikipedia.org/wiki/Greenland_ice_sheet"),
