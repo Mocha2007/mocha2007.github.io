@@ -366,6 +366,15 @@ const OOM = {
 		new MassDatum("Dollar coin (US)", 8.100e-3),
 		new MassDatum("Half-Dollar (US)", 11.340e-3),
 		new MassDatum("Dram (unit)", CONSTANT.dr),
+		// a regulation standard shuttlecock weighs between 4.75 and 5.5 g, has 16 feathers, and a cork w/ diam. b/w 25 and 28 mm
+		// src: https://en.wikipedia.org/wiki/Shuttlecock#Specifications
+		// cork density is b/w 200 and 250 kg/m^3
+		// src: https://www.engineeringtoolbox.com/density-solids-d_1265.html
+		// cork max mass: 250 * 4/3 * pi * 14e-3**3 = 2.8735100804834646 g
+		// cork min mass: 200 * 4/3 * pi * 12.5e-3**3 = 1.6362461737446845 g
+		// 16 feathers weigh between 1.8764899195165352 and 3.8637538262553157 g
+		new MassDatum("Feather (Shuttlecock)", new Mass({min: 1.8764899195165352e-3/16,max:3.8637538262553157e-3/16}), "https://en.wikipedia.org/wiki/Shuttlecock#Specifications"),
+		new MassDatum("Shuttlecock", new Mass({min: 0.00475,max:0.0055}), "https://en.wikipedia.org/wiki/Shuttlecock#Specifications"),
 		new MassDatum("Golfball", 0.04593, "https://hypertextbook.com/facts/1999/ImranArif.shtml"),
 		new MassDatum("Baseball", 0.145, "https://hypertextbook.com/facts/1999/ChristinaLee.shtml"),
 		new MassDatum("Peanut (Pod, Virginia)", 1.8e-3, "https://precisionag.sites.clemson.edu/Calculators/EstimatePeanutYield/"),
@@ -379,6 +388,7 @@ const OOM = {
 		new MassDatum("Blåhaj (Big)", 0.66, "https://www.reddit.com/r/BLAHAJ/comments/10x33so/whats_the_volume_and_weight_of_a_blahaj/j7q4h5r/"),
 		new MassDatum("Phone (iPhone 17)", 117e-3, "https://en.wikipedia.org/wiki/IPhone_17"),
 		new MassDatum("Cup of tea", 227.3e-6*CONSTANT.density.water50c, "https://en.wikipedia.org/wiki/Breakfast_cup"),
+		new MassDatum("Electric Scooter", 40.8*CONSTANT.lb, "https://www.amazon.com/Electric-Inflatable-Electronic-Capacity-eScooter/dp/B0BV88TGYY?th=1"),
 		new MassDatum("Gold bar", 12.4, "https://en.wikipedia.org/wiki/Gold_bar"),
 		// Organisms
 		new MassDatum("Myxozoa", 300e-6 * Math.PI*Math.pow(10e-6/2, 2) * CONSTANT.density.water, "https://en.wikipedia.org/wiki/https://en.wikipedia.org/wiki/Myxozoa#Anatomy"),
@@ -406,16 +416,27 @@ const OOM = {
 		new MassDatum("Spirit/Opportunity", 185, "https://en.wikipedia.org/wiki/Opportunity_(rover)"),
 		new MassDatum("Curiosity/Perseverence", 899, "https://en.wikipedia.org/wiki/Curiosity_(rover)"),
 		new MassDatum("Car", 2e3, "https://hypertextbook.com/facts/2000/YanaZorina.shtml"),
+		new MassDatum("Soyuz MS", 7290, "https://en.wikipedia.org/wiki/Soyuz_MS"),
+		new MassDatum("Double-decker bus (New Routemaster)", 12.65e3, "https://en.wikipedia.org/wiki/New_Routemaster"),
+		new MassDatum("Semi (Max weight)", 40e3, "https://en.wikipedia.org/wiki/Semi-trailer_truck"),
 		new MassDatum("Tank (M1 Abrams)", 60*CONSTANT.short_ton, "https://en.wikipedia.org/wiki/M1_Abrams"),
 		new MassDatum("Aircraft (A320, MTOW)", 78e3, "https://en.wikipedia.org/wiki/Airbus_A320_family#Specifications"),
-		new MassDatum("Locomotive (EMD GP9)", 117.7e3, "https://en.wikipedia.org/wiki/EMD_GP9"),
+		new MassDatum("Steam Locomotive (Union Pacific 4014)", 1477000*CONSTANT.lb, "https://en.wikipedia.org/wiki/Union_Pacific_4014"),
+		new MassDatum("Diesel Locomotive (EMD GP9)", 117.7e3, "https://en.wikipedia.org/wiki/EMD_GP9"),
+		new MassDatum("Soyuz-2", 312000, "https://en.wikipedia.org/wiki/Soyuz-2"),
 		new MassDatum("ISS", 450e3, "https://en.wikipedia.org/wiki/International_Space_Station"),
 		new MassDatum("Large aircraft (A380, MTOW)", 575e3, "https://en.wikipedia.org/wiki/Airbus_A380#Specifications"),
+		new MassDatum("Space Shuttle", 2030000, "https://en.wikipedia.org/wiki/Space_Shuttle"),
+		new MassDatum("SLS Rocket", 2610000, "https://en.wikipedia.org/wiki/Space_Launch_System"),
+		new MassDatum("N1", 2750000, "https://en.wikipedia.org/wiki/N1_(rocket)"),
 		new MassDatum("Saturn V", (2822171+2965241)/2, "https://en.wikipedia.org/wiki/Saturn_V"),
 		new MassDatum("Destroyer (Arleigh Burke-class)", 9e3*CONSTANT.long_ton, "https://en.wikipedia.org/wiki/Arleigh_Burke-class_destroyer"),
+		new MassDatum("Battleship (Yamato-class)", 65027e3, "https://en.wikipedia.org/wiki/Japanese_battleship_Yamato"),
 		new MassDatum("Titanic", 52.31e3*CONSTANT.long_ton, "https://en.wikipedia.org/wiki/Titanic"),
 		new MassDatum("Aircraft carrier (Gerald R. Ford-class)", 100e3*CONSTANT.long_ton, "https://en.wikipedia.org/wiki/Gerald_R._Ford-class_aircraft_carrier"),
-		new MassDatum("Seawise Giant", 646642*CONSTANT.long_ton, "https://en.wikipedia.org/wiki/Seawise_Giant"),
+		new MassDatum("Queen Mary 2", 149215e3, "https://en.wikipedia.org/wiki/Queen_Mary_2"),
+		new MassDatum("Pioneering Spirit", 403342e3, "https://en.wikipedia.org/wiki/Pioneering_Spirit"),
+		new MassDatum("Seawise Giant (full load)", 646642*CONSTANT.long_ton, "https://en.wikipedia.org/wiki/Seawise_Giant"),
 		// mineral production
 		new MassDatum("Annual global palladium production (2022)", 190e3, "https://en.wikipedia.org/wiki/List_of_countries_by_palladium_production"),
 		new MassDatum("Annual global gold production (2024)", 3300e3, "https://en.wikipedia.org/wiki/Lists_of_countries_by_mineral_production#Gold"),
@@ -430,6 +451,12 @@ const OOM = {
 		// misc big things
 		new MassDatum("Great Bell of Dhammazedi", 294e3, "https://en.wikipedia.org/wiki/Great_Bell_of_Dhammazedi"),
 		new MassDatum("Pando", 6e6, "https://en.wikipedia.org/wiki/Pando_(tree)"),
+		new MassDatum("Empire State Building", 365e3*CONSTANT.short_ton, "https://en.wikipedia.org/wiki/Empire_State_Building#Interior"),
+		new MassDatum("Burj Khalifa", 450e6, "https://en.wikipedia.org/wiki/Burj_Khalifa#Construction"),
+		new MassDatum("Bent Pyramid", 1237040*2323, "https://en.wikipedia.org/wiki/List_of_Egyptian_pyramids"),
+		new MassDatum("Red Pyramid", 1694000*2323, "https://en.wikipedia.org/wiki/List_of_Egyptian_pyramids"),
+		new MassDatum("Pyramid of Khafre", 2211096*2323, "https://en.wikipedia.org/wiki/List_of_Egyptian_pyramids"),
+		// Giza density ~2323
 		new MassDatum("Great Pyramid of Giza", 6e9, "https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza"),
 		new MassDatum("Danube annual discharge", 6452*CONSTANT.density.water*CONSTANT.yr, "https://en.wikipedia.org/wiki/Danube"),
 		new MassDatum("Earth's biosphere", 1841e15, "https://hypertextbook.com/facts/2001/AmandaMeyer.shtml"),
