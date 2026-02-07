@@ -119,9 +119,8 @@ const CONSTANT = {
 	density: {
 		ice: 916.75,
 		iron: 7874,
+		/** in kg/m^3 https://en.wikipedia.org/wiki/List_of_largest_monoliths#Density */
 		rock: 2500,
-		/** amorphous */
-		silica: 2196,
 		/** kg/m^3, at 25 C */
 		water: 997.04702,
 		water50c: 987.5,
@@ -365,12 +364,14 @@ const OOM = {
 		new MassDatum("Penny (US)", 2.5e-3, "https://hypertextbook.com/facts/2002/MillicentOkereke.shtml"),
 		new MassDatum("Nickel (US)", 5e-3),
 		new MassDatum("Ducat", 3.5e-3),
+		new MassDatum("Bullet (5.56 NATO Cartridge)", 62*CONSTANT.gr, "https://en.wikipedia.org/wiki/5.56%C3%9745mm_NATO#Performance"),
 		new MassDatum("Quarter (US)", 5.67e-3),
 		new MassDatum("Dollar coin (US)", 8.100e-3),
 		new MassDatum("Half-Dollar (US)", 11.340e-3),
 		new MassDatum("Scruple (unit)", CONSTANT.gr*20),
 		new MassDatum("Pennyweight (unit)", CONSTANT.gr*24),
 		new MassDatum("Dram (unit)", CONSTANT.dr),
+		new MassDatum("Paper (A4 sheet)", 0.08*0.21*0.297, "https://en.wikipedia.org/wiki/Letter_(paper_size)#Details"),
 		// a regulation standard shuttlecock weighs between 4.75 and 5.5 g, has 16 feathers, and a cork w/ diam. b/w 25 and 28 mm
 		// src: https://en.wikipedia.org/wiki/Shuttlecock#Specifications
 		// cork density is b/w 200 and 250 kg/m^3
@@ -386,15 +387,19 @@ const OOM = {
 		new MassDatum("Walnut", CONSTANT.oz/7, "https://www.urmc.rochester.edu/encyclopedia/content?contenttypeid=76&contentid=12155-6"),
 		new MassDatum("Apple", 0.25, "https://diabetesteachingcenter.ucsf.edu/living-diabetes/diet-nutrition/understanding-carbohydrates/weighing-food"),
 		new MassDatum("Soccerball", 0.43, "https://hypertextbook.com/facts/2002/LouiseHuang.shtml"),
+		new MassDatum("Phone (iPhone 17)", 117e-3, "https://en.wikipedia.org/wiki/IPhone_17"),
 		new MassDatum("Ounce (unit)", CONSTANT.oz),
 		new MassDatum("Pound (unit)", CONSTANT.lb),
 		new MassDatum("Physics Textbook", 1.65, "https://hypertextbook.com/facts/2003/BettyTan.shtml"),
-		new MassDatum("Stone (unit)", 14*CONSTANT.lb),
+		new MassDatum("Pea", new Mass({min:100e-6,max:360e-6}), "https://en.wikipedia.org/wiki/Pea"),
 		new MassDatum("Blåhaj (Big)", 0.66, "https://www.reddit.com/r/BLAHAJ/comments/10x33so/whats_the_volume_and_weight_of_a_blahaj/j7q4h5r/"),
-		new MassDatum("Phone (iPhone 17)", 117e-3, "https://en.wikipedia.org/wiki/IPhone_17"),
+		new MassDatum("Cabbage", new Mass({min:0.5,max:1}), "https://en.wikipedia.org/wiki/Cabbage"),
+		new MassDatum("Durian", new Mass({min:1,max:3}), "https://en.wikipedia.org/wiki/Durian"),
+		new MassDatum("Stone (unit)", 14*CONSTANT.lb),
 		new MassDatum("Cup of tea", 227.3e-6*CONSTANT.density.water50c, "https://en.wikipedia.org/wiki/Breakfast_cup"),
-		new MassDatum("Electric Scooter", 40.8*CONSTANT.lb, "https://www.amazon.com/Electric-Inflatable-Electronic-Capacity-eScooter/dp/B0BV88TGYY?th=1"),
 		new MassDatum("Gold bar", 12.4, "https://en.wikipedia.org/wiki/Gold_bar"),
+		new MassDatum("Electric Scooter", 40.8*CONSTANT.lb, "https://www.amazon.com/Electric-Inflatable-Electronic-Capacity-eScooter/dp/B0BV88TGYY?th=1"),
+		new MassDatum("Olmec colossal head", new Mass({min:5e3,max:45e3}), "https://en.wikipedia.org/wiki/Olmec_colossal_heads"),
 		// Organisms
 		new MassDatum("Myxozoa", 300e-6 * Math.PI*Math.pow(10e-6/2, 2) * CONSTANT.density.water, "https://en.wikipedia.org/wiki/https://en.wikipedia.org/wiki/Myxozoa#Anatomy"),
 		new MassDatum("Pelagibacter communis cell", (0.37e-6+0.89e-6)/2 * Math.PI*Math.pow((0.12e-6+0.2e-6)/4, 2) * CONSTANT.density.water, "https://en.wikipedia.org/wiki/Pelagibacter_communis"),
@@ -408,6 +413,7 @@ const OOM = {
 		new MassDatum("Smallest Frog (Paedophryne amauensis)", 10e-6, "https://en.wikipedia.org/wiki/Paedophryne_amauensis#Characteristics"),
 		new MassDatum("Dwarf Pygmy Goby", 425e-6, "https://en.wikipedia.org/wiki/Dwarf_pygmy_goby"),
 		new MassDatum("Siamese Fighting Fish", CONSTANT.volume.ellipsoid(7e-2, 121/350*7e-2, 121/350*7e-2/2)*CONSTANT.density.water, "https://en.wikipedia.org/wiki/Siamese_fighting_fish#Description"),
+		new MassDatum("Antarctic krill", 2e-3, "https://en.wikipedia.org/wiki/Antarctic_krill"),
 		new MassDatum("Mouse", (11e-3+30e-3)/2, "https://en.wikipedia.org/wiki/House_mouse#Characteristics"),
 		new MassDatum("Sparrow", (24e-3+39.5e-3)/2, "https://en.wikipedia.org/wiki/House_sparrow"),
 		new MassDatum("Cat", 4.5, "https://en.wikipedia.org/wiki/Cat#Size"),
@@ -454,8 +460,10 @@ const OOM = {
 		new MassDatum("Annual global copper production (2024)", 980e9, "https://en.wikipedia.org/wiki/Lists_of_countries_by_mineral_production#Copper"),
 		new MassDatum("Annual global iron ore production (2024)", 2500000*1e6, "https://en.wikipedia.org/wiki/Iron_ore#Production_and_consumption"),
 		// misc big things
+		new MassDatum("Statue of Ahimsa", 8712e3, "https://en.wikipedia.org/wiki/List_of_largest_monoliths"),
 		new MassDatum("Great Bell of Dhammazedi", 294e3, "https://en.wikipedia.org/wiki/Great_Bell_of_Dhammazedi"),
 		new MassDatum("Pando", 6e6, "https://en.wikipedia.org/wiki/Pando_(tree)"),
+		new MassDatum("Space Needle", 9550*CONSTANT.short_ton, "https://en.wikipedia.org/wiki/Space_Needle"),
 		new MassDatum("Empire State Building", 365e3*CONSTANT.short_ton, "https://en.wikipedia.org/wiki/Empire_State_Building#Interior"),
 		new MassDatum("Burj Khalifa", 450e6, "https://en.wikipedia.org/wiki/Burj_Khalifa#Construction"),
 		new MassDatum("Bent Pyramid", 1237040*2323, "https://en.wikipedia.org/wiki/List_of_Egyptian_pyramids"),
@@ -520,6 +528,7 @@ const OOM = {
 		new MassDatum("Luhman 16 system", (35.4+29.4)*CONSTANT.jupiter_mass),
 		new MassDatum("Proxima Centauri", 0.1221*CONSTANT.solar_mass),
 		new MassDatum("Barnard's Star", 0.162*CONSTANT.solar_mass),
+		new MassDatum("Solar core", 0.34*CONSTANT.solar_mass, "https://en.wikipedia.org/wiki/Solar_core"),
 		new MassDatum("Sun", CONSTANT.solar_mass),
 		new MassDatum("Chandrasekhar limit", 1.44*CONSTANT.solar_mass),
 		new MassDatum("Sirius A", 2.063*CONSTANT.solar_mass),
