@@ -341,7 +341,13 @@ const OOM = {
 		new MassDatum("Grain of sand (medium)", 1e-6/13, "https://upload.wikimedia.org/wikipedia/commons/a/a0/Wentworth_scale.png"),
 		new MassDatum("Grain of sand (coarse)", 1e-6/1.5, "https://upload.wikimedia.org/wikipedia/commons/a/a0/Wentworth_scale.png"),
 		new MassDatum("Gravel (medium)", 1/532.487, "https://upload.wikimedia.org/wikipedia/commons/a/a0/Wentworth_scale.png"),
-				// vaguely human-sized
+		// Batteries
+		new MassDatum("AAA Battery (Alkaline)", 0.0115, "https://en.wikipedia.org/wiki/AAA_battery"),
+		new MassDatum("AA Battery (Alkaline)", 0.023, "https://en.wikipedia.org/wiki/AA_battery#Dimensions"),
+		// AA battery dimensions implies a density of ~2946 kg/m^3
+		new MassDatum("C Battery (Alkaline)", 2946*0.05*Math.PI*Math.pow(0.0262/2, 2), "https://en.wikipedia.org/wiki/C_battery#Properties"),
+		new MassDatum("D Battery (Alkaline)", 2946*0.0615*Math.PI*Math.pow(0.0332/2, 2), "https://en.wikipedia.org/wiki/C_battery#Properties"),
+		// vaguely human-sized
 		new MassDatum("Planck mass", 2.176434e-8, "https://en.wikipedia.org/wiki/Planck_units"),
 		new MassDatum("Snowflake", 3e-6, "https://hypertextbook.com/facts/2001/JudyMoy.shtml"),
 		new MassDatum("Grain (wheat)", 50e-6, "https://en.wikipedia.org/wiki/Grain_(unit)#History"),
