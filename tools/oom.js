@@ -350,6 +350,7 @@ const OOM = {
 		// vaguely human-sized
 		new MassDatum("Planck mass", 2.176434e-8, "https://en.wikipedia.org/wiki/Planck_units"),
 		new MassDatum("Snowflake", 3e-6, "https://hypertextbook.com/facts/2001/JudyMoy.shtml"),
+		new MassDatum("Sesame seed", CONSTANT.oz/1e3, "https://corn.agronomy.wisc.edu/Crops/Sesame.aspx"),
 		new MassDatum("Grain (wheat)", 50e-6, "https://en.wikipedia.org/wiki/Grain_(unit)#History"),
 		new MassDatum("Grain (unit)", CONSTANT.gr),
 		new MassDatum("Grain (rice, medium-grain)", 0.4e-2 * Math.PI*Math.pow(0.25e-2, 2) * CONSTANT.density.water, "https://scaleofuniverse.com/en/universe/grain-of-rice"),
