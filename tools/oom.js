@@ -120,6 +120,8 @@ const CONSTANT = {
 		ice: 916.75,
 		iron: 7874,
 		rock: 2500,
+		/** amorphous */
+		silica: 2196,
 		/** kg/m^3, at 25 C */
 		water: 997.04702,
 		water50c: 987.5,
@@ -328,7 +330,18 @@ const OOM = {
 		new MassDatum("Folate DRV", 200e-9, "https://en.wikipedia.org/wiki/Dietary_Reference_Value"),
 		new MassDatum("Vitamin E DRV", 115e-9, "https://en.wikipedia.org/wiki/Vitamin_K#Dietary_recommendations"),
 		new MassDatum("Vitamin D DRV", 15e-9, "https://en.wikipedia.org/wiki/Vitamin_D#European_Union"),
-		// vaguely human-sized
+		// sand/gravel/etc
+		// using "number of grains per mg"
+		new MassDatum("Grain of clay (fine)", 1e-6/86716444.444444444, "https://upload.wikimedia.org/wikipedia/commons/a/a0/Wentworth_scale.png"),
+		new MassDatum("Grain of clay (coarse)", 1e-6/11902984.948002813, "https://upload.wikimedia.org/wikipedia/commons/a/a0/Wentworth_scale.png"),
+		new MassDatum("Grain of silt (fine)", 1e-6/224266.666666667, "https://upload.wikimedia.org/wikipedia/commons/a/a0/Wentworth_scale.png"),
+		new MassDatum("Grain of silt (medium)", 1e-6/30783.581762076, "https://upload.wikimedia.org/wikipedia/commons/a/a0/Wentworth_scale.png"),
+		new MassDatum("Grain of silt (coarse)", 1e-6/4225.455883334, "https://upload.wikimedia.org/wikipedia/commons/a/a0/Wentworth_scale.png"),
+		new MassDatum("Grain of sand (fine)", 1e-6/91, "https://upload.wikimedia.org/wikipedia/commons/a/a0/Wentworth_scale.png"),
+		new MassDatum("Grain of sand (medium)", 1e-6/13, "https://upload.wikimedia.org/wikipedia/commons/a/a0/Wentworth_scale.png"),
+		new MassDatum("Grain of sand (coarse)", 1e-6/1.5, "https://upload.wikimedia.org/wikipedia/commons/a/a0/Wentworth_scale.png"),
+		new MassDatum("Gravel (medium)", 1/532.487, "https://upload.wikimedia.org/wikipedia/commons/a/a0/Wentworth_scale.png"),
+				// vaguely human-sized
 		new MassDatum("Planck mass", 2.176434e-8, "https://en.wikipedia.org/wiki/Planck_units"),
 		new MassDatum("Snowflake", 3e-6, "https://hypertextbook.com/facts/2001/JudyMoy.shtml"),
 		new MassDatum("Grain (wheat)", 50e-6, "https://en.wikipedia.org/wiki/Grain_(unit)#History"),
@@ -353,9 +366,9 @@ const OOM = {
 		new MassDatum("Walnut", CONSTANT.oz/7, "https://www.urmc.rochester.edu/encyclopedia/content?contenttypeid=76&contentid=12155-6"),
 		new MassDatum("Apple", 0.25, "https://diabetesteachingcenter.ucsf.edu/living-diabetes/diet-nutrition/understanding-carbohydrates/weighing-food"),
 		new MassDatum("Soccerball", 0.43, "https://hypertextbook.com/facts/2002/LouiseHuang.shtml"),
-		new MassDatum("Grain of sand (medium)", 2e-9, "https://hypertextbook.com/facts/2003/MarinaTheodoris.shtml"),
 		new MassDatum("Ounce (unit)", CONSTANT.oz),
 		new MassDatum("Pound (unit)", CONSTANT.lb),
+		new MassDatum("Physics Textbook", 1.65, "https://hypertextbook.com/facts/2003/BettyTan.shtml"),
 		new MassDatum("Stone (unit)", 14*CONSTANT.lb),
 		new MassDatum("Blåhaj (Big)", 0.66, "https://www.reddit.com/r/BLAHAJ/comments/10x33so/whats_the_volume_and_weight_of_a_blahaj/j7q4h5r/"),
 		new MassDatum("Phone (iPhone 17)", 117e-3, "https://en.wikipedia.org/wiki/IPhone_17"),
