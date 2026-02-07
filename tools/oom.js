@@ -172,6 +172,15 @@ const CONSTANT = {
 	si_prefix_offset: 10,
 	/** in kg */
 	solar_mass: 1988475000e21,
+	volume: {
+		/** a, b, c are major axes (diameters) */
+		ellipsoid(a, b, c){
+			b ||= a;
+			c ||= b;
+			// https://en.wikipedia.org/wiki/Ellipsoid#Volume
+			return Math.PI/6 * a * b * c;
+		}
+	},
 	/** in s */
 	get yr(){
 		return this.d*365.2425;
@@ -305,6 +314,7 @@ const OOM = {
 		new MassDatum("Dram (unit)", CONSTANT.dr),
 		new MassDatum("Golfball", 0.04593, "https://hypertextbook.com/facts/1999/ImranArif.shtml"),
 		new MassDatum("Baseball", 0.145, "https://hypertextbook.com/facts/1999/ChristinaLee.shtml"),
+		new MassDatum("Peanut (Pod, Virginia)", 1.8e-3, "https://precisionag.sites.clemson.edu/Calculators/EstimatePeanutYield/"),
 		new MassDatum("Walnut", CONSTANT.oz/7, "https://www.urmc.rochester.edu/encyclopedia/content?contenttypeid=76&contentid=12155-6"),
 		new MassDatum("Apple", 0.25, "https://diabetesteachingcenter.ucsf.edu/living-diabetes/diet-nutrition/understanding-carbohydrates/weighing-food"),
 		new MassDatum("Soccerball", 0.43, "https://hypertextbook.com/facts/2002/LouiseHuang.shtml"),
@@ -323,6 +333,11 @@ const OOM = {
 		new MassDatum("White blood cell (Human Neutrophil)", 4/3 * Math.PI * Math.pow((12e-6+15e-6)/4, 3) * CONSTANT.density.water, "https://en.wikipedia.org/wiki/White_blood_cell#Overview"),
 		new MassDatum("Thiomargarita magnifica cell", 1e-2 * Math.PI*Math.pow(45e-6/2, 2) * CONSTANT.density.water, "https://en.wikipedia.org/wiki/Thiomargarita_magnifica"),
 		new MassDatum("Fruit Fly", (0.219e-6 + 0.304e-6)/2, "https://bionumbers.hms.harvard.edu/bionumber.aspx?id=102570"),
+		new MassDatum("Stout Infantfish", 2e-6, "https://en.wikipedia.org/wiki/Paedophryne_amauensis#Characteristics"),
+		new MassDatum("Mosquito", 96e6*CONSTANT.lb/17489393939393, "https://www.uaf.edu/news/pound-for-pound-alaska-mosquito-packs-punch.php"),
+		new MassDatum("Smallest Frog (Paedophryne amauensis)", 10e-6, "https://en.wikipedia.org/wiki/Paedophryne_amauensis#Characteristics"),
+		new MassDatum("Dwarf Pygmy Goby", 425e-6, "https://en.wikipedia.org/wiki/Dwarf_pygmy_goby"),
+		new MassDatum("Siamese Fighting Fish", CONSTANT.volume.ellipsoid(7e-2, 121/350*7e-2, 121/350*7e-2/2)*CONSTANT.density.water, "https://en.wikipedia.org/wiki/Siamese_fighting_fish#Description"),
 		new MassDatum("Mouse", (11e-3+30e-3)/2, "https://en.wikipedia.org/wiki/House_mouse#Characteristics"),
 		new MassDatum("Sparrow", (24e-3+39.5e-3)/2, "https://en.wikipedia.org/wiki/House_sparrow"),
 		new MassDatum("Cat", 4.5, "https://en.wikipedia.org/wiki/Cat#Size"),
