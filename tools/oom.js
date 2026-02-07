@@ -298,7 +298,10 @@ const OOM = {
 		new MassDatum("Chloroplast", 20e-18*CONSTANT.density.water, "https://en.wikipedia.org/wiki/Chloroplast#Structure"), // "Corn seedling chloroplasts are ≈20 μm3 in volume"
 		new MassDatum("Nucleus (Human)", 4/3*Math.PI*Math.pow(3e-6,3)*CONSTANT.density.water, "https://en.wikipedia.org/wiki/Cell_nucleus#Nuclear_structures_and_landmarks"), // "In human cells, the diameter of the nucleus is approximately six micrometres (μm)"
 		// Viruses
+		new MassDatum("Potato spindle tuber viroid", 359*CONSTANT.bp_rna, "https://en.wikipedia.org/wiki/Potato_spindle_tuber_viroid#Primary_and_secondary_structure_of_PSTVd"),
 		new MassDatum("Porcine circovirus", 4/3 * Math.PI * Math.pow(17e-9/2, 3) * CONSTANT.density.water, "https://en.wikipedia.org/wiki/SARS-CoV-2#Virus_structure"),
+		new MassDatum("Rhinovirus Genome", new Mass({min: 7200*CONSTANT.bp_rna, max: 8500*CONSTANT.bp_rna}), "https://en.wikipedia.org/wiki/Rhinovirus#Structure"),
+		new MassDatum("Adenovirus Genome", new Mass({min: 35e3*CONSTANT.bp_rna, max: 36e3*CONSTANT.bp_rna}), "https://en.wikipedia.org/wiki/Mastadenovirus#Structure"),
 		new MassDatum("COVID-19 virus", 4/3 * Math.PI * Math.pow((60e-9+140e-9)/4, 3) * CONSTANT.density.water, "https://en.wikipedia.org/wiki/SARS-CoV-2#Virus_structure"),
 		new MassDatum("Megaklothovirus horridgei", 3.9e-6 * Math.PI*Math.pow(500e-9/2, 2) * CONSTANT.density.water, "https://en.wikipedia.org/wiki/Megaklothovirus_horridgei"),
 		// Body parts
@@ -520,6 +523,7 @@ const OOM = {
 		new MassRange("Atoms", CONSTANT.da, 294*CONSTANT.da, 'pink'),
 		new MassRange("Molecules", 2*CONSTANT.da, 3e-24, 'beige'),
 		new MassRange("Proteins", 10*75.06714*CONSTANT.da, 7e-21, 'orange'),
+		new MassRange("Viroids", 246*CONSTANT.bp_rna, 467*CONSTANT.bp_rna, 'maroon'),
 		new MassRange("Viruses", 3e-21, 8e-16, 'magenta'),
 		new MassRange("Bacteria", 1.3e-17, 1.6e-8, 'cyan'),
 		new MassRange("Animals", 2e-11, 1.5e5, 'purple'),
