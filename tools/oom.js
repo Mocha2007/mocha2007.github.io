@@ -134,7 +134,7 @@ const CONSTANT = {
 	},
 	/** in kg */
 	get dr(){
-		return this.lb/256;
+		return this.oz/16;
 	},
 	/** in J */
 	eV: 1.602176634e-19,
@@ -366,6 +366,8 @@ const OOM = {
 		new MassDatum("Quarter (US)", 5.67e-3),
 		new MassDatum("Dollar coin (US)", 8.100e-3),
 		new MassDatum("Half-Dollar (US)", 11.340e-3),
+		new MassDatum("Scruple (unit)", CONSTANT.gr*20),
+		new MassDatum("Pennyweight (unit)", CONSTANT.gr*24),
 		new MassDatum("Dram (unit)", CONSTANT.dr),
 		// a regulation standard shuttlecock weighs between 4.75 and 5.5 g, has 16 feathers, and a cork w/ diam. b/w 25 and 28 mm
 		// src: https://en.wikipedia.org/wiki/Shuttlecock#Specifications
