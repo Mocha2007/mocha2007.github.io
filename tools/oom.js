@@ -106,6 +106,20 @@ class MassRange {
 }
 
 const CONSTANT = {
+	/** in Pa */
+	atm: 101325,
+	/**
+	 * total mass of atmosphere
+	 * @param {number} r Planet's radius (m)
+	 * @param {number} m Planet's mass (kg)
+	 * @param {number} sp Surface pressure (Pa)
+	 */
+	atmosphere_mass(r, m, sp){
+		// see mochalib mochaastro-body.py
+		const sa = 4*Math.PI*Math.pow(r, 2);
+		const g = this.G*m/Math.pow(r, 2);
+		return sp * sa / g;
+	},
 	/** in kg, DNA base pair */
 	get bp_dna(){
 		return 618*this.da;
@@ -141,8 +155,14 @@ const CONSTANT = {
 	get dr(){
 		return this.oz/16;
 	},
+	/** in kg */
+	earth_mass: 5.9722e24,
+	/** in m, mean */
+	earth_radius: 6371e3,
 	/** in J */
 	eV: 1.602176634e-19,
+	/** m^3/(kg*s^2) */
+	G: 6.67430e-11,
 	/** in kg */
 	get gr(){
 		return this.lb/7000;
@@ -510,7 +530,6 @@ const OOM = {
 		new MassDatum("Danube annual discharge", 6452*CONSTANT.density.water*CONSTANT.yr, "https://en.wikipedia.org/wiki/Danube"),
 		new MassDatum("Earth's biosphere", 1841e15, "https://hypertextbook.com/facts/2001/AmandaMeyer.shtml"),
 		new MassDatum("Greenland ice sheet", 1710000e6*1673*CONSTANT.density.ice, "https://en.wikipedia.org/wiki/Greenland_ice_sheet"),
-		new MassDatum("Earth's atmosphere", 5e18, "https://hypertextbook.com/facts/1999/LouiseLiu.shtml"),
 		new MassDatum("Antarctic ice sheet", 14e6*1e6*2200*CONSTANT.density.ice, "https://en.wikipedia.org/wiki/Antarctic_ice_sheet"),
 		new MassDatum("Earth's oceans", 1.4e21, "https://hypertextbook.com/facts/1998/AvijeetDut.shtml"),
 		new MassDatum("Earth's core", 1e23, "https://en.wikipedia.org/wiki/Earth%27s_inner_core#Density_and_mass"),
@@ -522,6 +541,19 @@ const OOM = {
 		new MassDatum("North America (Crust)", 24709000e6*CONSTANT.thickness.crust.continental*CONSTANT.density.crust.continental),
 		new MassDatum("Africa (Crust)", 30370000e6*CONSTANT.thickness.crust.continental*CONSTANT.density.crust.continental),
 		new MassDatum("Asia (Crust)", 44579000e6*CONSTANT.thickness.crust.continental*CONSTANT.density.crust.continental),
+		// Atmospheres
+		new MassDatum("Mercury's atmosphere", CONSTANT.atmosphere_mass(2439.7e3, 3.3011e23, 0.5e-9)),
+		new MassDatum("Moon's atmosphere", CONSTANT.atmosphere_mass(1737.4e3, 7.346e22, (1e-7 + 1e-10)/2)),
+		new MassDatum("Europa's atmosphere", CONSTANT.atmosphere_mass(1560.8e3, 4.79984e22, 0.5e-6)),
+		new MassDatum("Ganymede's atmosphere", CONSTANT.atmosphere_mass(2634.1e3, 1.4819e23, (0.2e-6+1.2e-6)/2)),
+		new MassDatum("Callisto's atmosphere", CONSTANT.atmosphere_mass(2410.3e3, 1.075938e23, 0.75e-6)),
+		new MassDatum("Io's atmosphere", CONSTANT.atmosphere_mass(1821.6e3, 8.931938e22, (0.5e-3+4e-3)/2)),
+		new MassDatum("Pluto's atmosphere", CONSTANT.atmosphere_mass(1188.3e3, 1.3025e22, 1)),
+		new MassDatum("Triton's atmosphere", CONSTANT.atmosphere_mass(1353.4e3, 2.1389e22, 1.454)),
+		new MassDatum("Mars's atmosphere", CONSTANT.atmosphere_mass(3389.5e3, 6.4171e23, 636)),
+		new MassDatum("Earth's atmosphere", CONSTANT.atmosphere_mass(CONSTANT.earth_radius, CONSTANT.earth_mass, CONSTANT.atm)),
+		new MassDatum("Titan's atmosphere", CONSTANT.atmosphere_mass(2574.73e3, 1.34518e23, 146.7e3)),
+		new MassDatum("Venus's atmosphere", CONSTANT.atmosphere_mass(6051.8e3, 4.86731e24, 92*CONSTANT.atm)),
 		// Astro
 		new MassDatum("Tunguska meteor", 4/3 * Math.PI * Math.pow(55/2, 3) * CONSTANT.density.rock),
 		new MassDatum("Barringer impactor", 4/3 * Math.PI * Math.pow(50/2, 3) * CONSTANT.density.iron),
@@ -562,7 +594,7 @@ const OOM = {
 		new MassDatum("Mercury", 3.3011e23),
 		new MassDatum("Mars", 6.4171e23),
 		new MassDatum("Venus", 4.86731e24),
-		new MassDatum("Earth", 5.9722e24),
+		new MassDatum("Earth", CONSTANT.earth_mass),
 		new MassDatum("Uranus", 8.68099e25),
 		new MassDatum("Neptune", 1.024092e26),
 		new MassDatum("Saturn", 5.68317e26),
