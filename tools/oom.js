@@ -265,6 +265,9 @@ const OOM = {
 		return Object.keys(Category).filter(c => document.getElementById(`cat_${c}`).checked);
 	},
 	config: {
+		default_categories: [
+			Category.COIN,
+		],
 		get vscale(){
 			return this._vscale;
 		},
@@ -466,6 +469,12 @@ const OOM = {
 		new MassDatum("Ounce (unit)", CONSTANT.oz, null, [Category.UNIT]),
 		new MassDatum("Pound (unit)", CONSTANT.lb, null, [Category.UNIT]),
 		new MassDatum("Stone (unit)", 14*CONSTANT.lb, null, [Category.UNIT]),
+		// verdurian units
+		new MassDatum("Ris (Verdurian unit)", 60.71e-6, "https://www.zompist.com/thematic.htm#07", [Category.FICTIONAL, Category.UNIT]),
+		new MassDatum("Hecur (Verdurian unit)", 6.071e-3, "https://www.zompist.com/thematic.htm#07", [Category.FICTIONAL, Category.UNIT]),
+		new MassDatum("Süro (Verdurian unit)", 0.6071, "https://www.zompist.com/thematic.htm#07", [Category.FICTIONAL, Category.UNIT]),
+		new MassDatum("Cucuri (Verdurian unit)", 6.071, "https://www.zompist.com/thematic.htm#07", [Category.FICTIONAL, Category.UNIT]),
+		new MassDatum("Pavona (Verdurian unit)", 288*6.071, "https://www.zompist.com/thematic.htm#07", [Category.FICTIONAL, Category.UNIT]),
 		// vaguely human-sized
 		new MassDatum("Snowflake", 3e-6, "https://hypertextbook.com/facts/2001/JudyMoy.shtml"),
 		new MassDatum("Paperclip (small)", 0.25e-3, "https://howthingsfly.si.edu/sites/default/files/attachment/LighterThanAir.pdf"),
@@ -716,12 +725,14 @@ const OOM = {
 		const container = this.elem.cat_container = document.createElement('div');
 		container.id = "cat_container";
 		this.elem.main.appendChild(container);
+		this.initScaler();
 		Object.keys(Category).forEach(c => {
 			const label = document.createElement('label');
 			container.appendChild(label);
 			const cat = document.createElement('input');
 			cat.type = 'checkbox';
-			cat.checked = true;
+			cat.checked = this.config.default_categories.includes(Category[c]);
+			// console.debug(cat.checked, this.config.default_categories, c, Category[c]);
 			label.for = cat.name = cat.id = `cat_${c}`;
 			label.appendChild(cat);
 			label.onmouseup = () => {
@@ -735,16 +746,11 @@ const OOM = {
 				else {
 					active.push(Category[c]); // we must add it
 				}
-				// console.debug(`active = `, active);
-				OOM.data.forEach(datum => {
-					datum.elem_cache.style.display
-						= datum.categories.every(c => active.includes(c))
-						? "" : "none";
-				});
+				OOM.refreshCats(active);
 			};
 			label.appendChild(document.createTextNode(Category[c]));
 		});
-		this.initScaler();
+		OOM.refreshCats(this.config.default_categories);
 	},
 	initScale(){
 		const range = this.range;
@@ -802,6 +808,15 @@ const OOM = {
 		new MassRange("Planets", 3e23, 13*CONSTANT.jupiter_mass, 'skyblue'),
 		new MassRange("Stars", 0.08*CONSTANT.solar_mass, 300*CONSTANT.solar_mass, 'yellow'),
 	],
+	/** @param {string[]} active */
+	refreshCats(active){
+		// console.debug(`active = `, active);
+		OOM.data.forEach(datum => {
+			datum.elem_cache.style.display
+				= datum.categories.every(c => active.includes(c))
+				? "" : "none";
+		});
+	},
 };
 
 OOM.init();
