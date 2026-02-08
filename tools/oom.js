@@ -471,6 +471,7 @@ const OOM = {
 		new MassDatum("Half-Dollar (US)", 11.340e-3, null, [Category.COIN]),
 		// units
 		new MassDatum("Planck mass", 2.176434e-8, "https://en.wikipedia.org/wiki/Planck_units"),
+		new MassDatum("eV (unit)", CONSTANT.MeVc2/1e6, null, [Category.UNIT]),
 		new MassDatum("Dalton (unit)", CONSTANT.da, null, [Category.UNIT]),
 		new MassDatum("RNA Base Pair (unit)", CONSTANT.bp_rna, null, [Category.UNIT]),
 		new MassDatum("Grain (unit)", CONSTANT.gr, null, [Category.UNIT]),
@@ -481,6 +482,7 @@ const OOM = {
 		new MassDatum("Ounce (unit)", CONSTANT.oz, null, [Category.UNIT]),
 		new MassDatum("Pound (unit)", CONSTANT.lb, null, [Category.UNIT]),
 		new MassDatum("Stone (unit)", 14*CONSTANT.lb, null, [Category.UNIT]),
+		new MassDatum("Slug (unit)", CONSTANT.lb*9.80665/0.3048, null, [Category.UNIT]),
 		// verdurian units
 		new MassDatum("Ris (Verdurian unit)", 60.71e-6, "https://www.zompist.com/thematic.htm#07", [Category.FICTIONAL, Category.UNIT]),
 		new MassDatum("Hecur (Verdurian unit)", 6.071e-3, "https://www.zompist.com/thematic.htm#07", [Category.FICTIONAL, Category.UNIT]),
