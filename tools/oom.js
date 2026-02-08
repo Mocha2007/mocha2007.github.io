@@ -64,9 +64,10 @@ class MassDatum {
 	/**
 	 * @param {string} name
 	 * @param {number|Mass} mass
-	 * @param {string} source
+	 * @param {string?} source
+	 * @param {Category[]?} categories
 	 */
-	constructor(name, mass, source){
+	constructor(name, mass, source, categories){
 		/** @type {string} */
 		this.name = name;
 		/** @type {Mass} */
@@ -76,6 +77,8 @@ class MassDatum {
 		if (!source){
 			console.warn(`no source for |${name}|, mass |${mass}|`);
 		}
+		/** @type {Category[]} */
+		this.categories = categories || [];
 	}
 	elem(e2y){
 		const e = document.createElement('span');
@@ -130,7 +133,15 @@ class MassRange {
 	}
 }
 
+class Category {
+	static HYPOTHETICAL = "Hypothetical";
+	static FICTIONAL = "Fictional";
+}
+
 const CONSTANT = {
+	get active_categories(){
+		return Object.keys(Category).filter(c => document.getElementById(`cat_${c}`).checked);
+	},
 	/** in Pa */
 	atm: 101325,
 	/**
@@ -287,7 +298,7 @@ const OOM = {
 		// new MassDatum("Upsilon Boson", 9460.30*CONSTANT.MeVc2),
 		new MassDatum("W Boson", 80.3692e3*CONSTANT.MeVc2),
 		new MassDatum("Z Boson", 91.1880e3*CONSTANT.MeVc2),
-		// new MassDatum("WIMP (hypothetical)", 100e3*CONSTANT.MeVc2),
+		new MassDatum("WIMP", 100e3*CONSTANT.MeVc2, null, [Category.HYPOTHETICAL]),
 		new MassDatum("Higgs Boson", 125.11e3*CONSTANT.MeVc2, "https://home.cern/news/news/physics/atlas-sets-record-precision-higgs-bosons-mass"),
 		new MassDatum("Top quark", 172.76e3*CONSTANT.MeVc2),
 		// Atoms
@@ -449,6 +460,7 @@ const OOM = {
 		// 16 feathers weigh between 1.8764899195165352 and 3.8637538262553157 g
 		new MassDatum("Feather (Shuttlecock)", new Mass({min: 1.8764899195165352e-3/16,max:3.8637538262553157e-3/16}), "https://en.wikipedia.org/wiki/Shuttlecock#Specifications"),
 		new MassDatum("Shuttlecock", new Mass({min: 0.00475,max:0.0055}), "https://en.wikipedia.org/wiki/Shuttlecock#Specifications"),
+		new MassDatum("Soul (according to the 21-gram experiment)", 0.021, "https://en.wikipedia.org/wiki/21_grams_experiment"),
 		new MassDatum("Golfball", 0.04593, "https://hypertextbook.com/facts/1999/ImranArif.shtml"),
 		new MassDatum("Baseball", 0.145, "https://hypertextbook.com/facts/1999/ChristinaLee.shtml"),
 		new MassDatum("Soccerball", 0.43, "https://hypertextbook.com/facts/2002/LouiseHuang.shtml"),
@@ -485,7 +497,7 @@ const OOM = {
 		new MassDatum("Human (Infant)", 3.5, "https://en.wikipedia.org/wiki/Birth_weight"),
 		new MassDatum("Human (Global average)", 62, "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3408371"),
 		new MassDatum("Human biomass", 62*8.165e9, "https://www.census.gov/popclock/world"),
-		new MassDatum("Troll (D&D)", 500*CONSTANT.lb, "https://en.wikipedia.org/wiki/Troll_(Dungeons_%26_Dragons)#Typical_physical_characteristics"),
+		new MassDatum("Troll (D&D)", 500*CONSTANT.lb, "https://en.wikipedia.org/wiki/Troll_(Dungeons_%26_Dragons)#Typical_physical_characteristics", [Category.FICTIONAL]),
 		new MassDatum("Elephant (African)", (7e3+3.6e3)/2, "https://hypertextbook.com/facts/2003/EugeneShnayder.shtml"),
 		new MassDatum("Whale (Blue)", 150e3, "https://hypertextbook.com/facts/2003/MichaelShmukler.shtml"),
 		// Vehicles
@@ -544,14 +556,14 @@ const OOM = {
 		// according to https://www.trekbbs.com/threads/actual-size-of-ships-in-star-trek.254521/
 		// the actual ship is 288.6 m.
 		new MassDatum("Enterprise (NCC-1701, estimate)", 125 * Math.pow(288.6/3.43,3)),
-		new MassDatum("Imperial Star Destroyer", 40e9, "https://en.wikipedia.org/wiki/Star_Destroyer#Concept_and_design"),
-		new MassDatum("Dyson Sphere (estimate)", 1.5*0.959e23, "../dyson.html#Sun_Reasonable"), // original concept was 3m thickness, I used a 2m estimate originally, hence x1.5
-		new MassDatum("Death Star (estimate)", CONSTANT.volume.ellipsoid(160e3/2)*CONSTANT.density.iron/4),
+		new MassDatum("Imperial Star Destroyer", 40e9, "https://en.wikipedia.org/wiki/Star_Destroyer#Concept_and_design", [Category.FICTIONAL]),
+		new MassDatum("Dyson Sphere (estimate)", 1.5*0.959e23, "../dyson.html#Sun_Reasonable", [Category.HYPOTHETICAL]), // original concept was 3m thickness, I used a 2m estimate originally, hence x1.5
+		new MassDatum("Death Star (estimate)", CONSTANT.volume.ellipsoid(160e3/2)*CONSTANT.density.iron/4, [Category.FICTIONAL]),
 		// Giza density ~2323
 		new MassDatum("Great Pyramid of Giza", 6e9, "https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza"),
 		new MassDatum("Three Gorges Dam (estimate)", 27.2e6*CONSTANT.density.concrete + 463e6, "https://en.wikipedia.org/wiki/Three_Gorges_Dam#Composition_and_dimensions"),
 		new MassDatum("Great Wall of China (estimate)", 21196.18e3*6.5*5.5 *CONSTANT.density.rock), // "There it runs 11 km (7 mi) long, ranges from 5 to 8 m (16 ft 5 in to 26 ft 3 in) in height, and 6 m (19 ft 8 in) across the bottom, narrowing up to 5 m (16 ft 5 in) across the top."
-		new MassDatum("Atlantropa (Gibraltar, estimate)", (27.2e6*CONSTANT.density.concrete + 463e6)*14.2/2.335*300/185),
+		new MassDatum("Atlantropa (Gibraltar, estimate)", (27.2e6*CONSTANT.density.concrete + 463e6)*14.2/2.335*300/185, [Category.HYPOTHETICAL]),
 		new MassDatum("Large Hadron Collider (estimate)", 26.7e3*Math.PI*Math.pow(3.8/2,2)*CONSTANT.density.concrete, "https://en.wikipedia.org/wiki/Large_Hadron_Collider#Design"),
 		new MassDatum("Danube annual discharge", 6452*CONSTANT.density.water*CONSTANT.yr, "https://en.wikipedia.org/wiki/Danube"),
 		new MassDatum("Earth's biosphere", 1841e15, "https://hypertextbook.com/facts/2001/AmandaMeyer.shtml"),
@@ -659,6 +671,8 @@ const OOM = {
 	],
 	elem: {
 		/** @returns {HTMLDivElement} */
+		cat_container: undefined,
+		/** @returns {HTMLDivElement} */
 		get main(){
 			return document.getElementById('main');
 		}
@@ -669,7 +683,30 @@ const OOM = {
 		const e2y = this.initScale();
 		this.data.forEach(datum => main.appendChild(datum.elem(e2y)));
 		this.ranges.forEach((range, i, a) => main.appendChild(range.elem(e2y, i, a)));
+		this.initCats();
 		console.info('oom.js initialized.');
+	},
+	initCats(){
+		const container = this.elem.cat_container = document.createElement('div');
+		container.id = "cat_container";
+		this.elem.main.appendChild(container);
+		Object.keys(Category).forEach(c => {
+			const label = document.createElement('label');
+			label.innerHTML = Category[c];
+			container.appendChild(label);
+			const cat = document.createElement('input');
+			cat.type = 'checkbox';
+			cat.checked = true;
+			label.for = cat.name = cat.id = `cat_${c}`;
+			label.appendChild(cat);
+			label.onmouseup = () => {
+				// toggle visibility of all data with this tag
+				console.debug(`toggling category |${c}|...`);
+				const style = cat.checked ? 0 : 1;
+				OOM.data.filter(datum => datum.categories.includes(Category[c]))
+					.forEach(datum => document.getElementById(datum.id).style.opacity = style);
+			};
+		});
 	},
 	initScale(){
 		const range = this.range;

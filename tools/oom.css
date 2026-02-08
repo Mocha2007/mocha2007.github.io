@@ -49,3 +49,15 @@ body {
 	text-align:right;
 	vertical-align:-0.2em;
 }
+#cat_container {
+	background-color: #222;
+	border: 1px solid silver;
+	border-bottom-left-radius: 1vw;
+	padding: 1vw;
+	position: fixed;
+	right: 0;
+	top: 0;
+}
+#cat_container > * {
+	display: block; /* force each element to be on a new line */
+}
