@@ -377,22 +377,22 @@ const OOM = {
 		new MassDatum("Chromosome (Human 1)", 248387328*CONSTANT.bp_dna),
 		new MassDatum("Mitochondrion", 1.0754507267897768e-17*CONSTANT.density.water), // "Mitochondria are commonly between 0.75 and 3 μm2 in cross section,"
 		new MassDatum("Chloroplast", 20e-18*CONSTANT.density.water, "https://en.wikipedia.org/wiki/Chloroplast#Structure"), // "Corn seedling chloroplasts are ≈20 μm3 in volume"
-		new MassDatum("Nucleus (Human)", 4/3*Math.PI*Math.pow(3e-6,3)*CONSTANT.density.water, "https://en.wikipedia.org/wiki/Cell_nucleus#Nuclear_structures_and_landmarks"), // "In human cells, the diameter of the nucleus is approximately six micrometres (μm)"
+		new MassDatum("Nucleus (Human)", CONSTANT.volume.ellipsoid(6e-6)*CONSTANT.density.water, "https://en.wikipedia.org/wiki/Cell_nucleus#Nuclear_structures_and_landmarks"), // "In human cells, the diameter of the nucleus is approximately six micrometres (μm)"
 		// Viruses
 		new MassDatum("Potato spindle tuber viroid", 359*CONSTANT.bp_rna, "https://en.wikipedia.org/wiki/Potato_spindle_tuber_viroid#Primary_and_secondary_structure_of_PSTVd"),
-		new MassDatum("Porcine circovirus", 4/3 * Math.PI * Math.pow(17e-9/2, 3) * CONSTANT.density.water, "https://en.wikipedia.org/wiki/SARS-CoV-2#Virus_structure"),
+		new MassDatum("Porcine circovirus", CONSTANT.volume.ellipsoid(6e-6) * CONSTANT.density.water, "https://en.wikipedia.org/wiki/SARS-CoV-2#Virus_structure"),
 		new MassDatum("Rhinovirus Genome", new Mass({min: 7200*CONSTANT.bp_rna, max: 8500*CONSTANT.bp_rna}), "https://en.wikipedia.org/wiki/Rhinovirus#Structure"),
 		new MassDatum("Adenovirus Genome", new Mass({min: 35e3*CONSTANT.bp_rna, max: 36e3*CONSTANT.bp_rna}), "https://en.wikipedia.org/wiki/Mastadenovirus#Structure"),
-		new MassDatum("COVID-19 virus", 4/3 * Math.PI * Math.pow((60e-9+140e-9)/4, 3) * CONSTANT.density.water, "https://en.wikipedia.org/wiki/SARS-CoV-2#Virus_structure"),
+		new MassDatum("COVID-19 virus", CONSTANT.volume.ellipsoid((60e-9+140e-9)/2) * CONSTANT.density.water, "https://en.wikipedia.org/wiki/SARS-CoV-2#Virus_structure"),
 		new MassDatum("Megaklothovirus horridgei", 3.9e-6 * Math.PI*Math.pow(500e-9/2, 2) * CONSTANT.density.water, "https://en.wikipedia.org/wiki/Megaklothovirus_horridgei"),
 		// Pollen
-		new MassDatum("Forget-me-not pollen", new Mass({min:4/3 * Math.PI * Math.pow(2.5e-6/2, 3) * CONSTANT.density.water, max:4/3 * Math.PI * Math.pow(5e-6/2, 3) * CONSTANT.density.water}), "https://en.wikipedia.org/wiki/Pollen#Structure_and_formation"),
-		new MassDatum("Grass pollen", new Mass({min:4/3 * Math.PI * Math.pow(20e-6/2, 3) * CONSTANT.density.water, max:4/3 * Math.PI * Math.pow(25e-6/2, 3) * CONSTANT.density.water}), "https://en.wikipedia.org/wiki/Pollen#Structure_and_formation"),
-		new MassDatum("Maize pollen", new Mass({min:4/3 * Math.PI * Math.pow(90e-6/2, 3) * CONSTANT.density.water, max:4/3 * Math.PI * Math.pow(100e-6/2, 3) * CONSTANT.density.water}), "https://en.wikipedia.org/wiki/Pollen#Structure_and_formation"),
-		new MassDatum("Pine pollen", new Mass({min:4/3 * Math.PI * Math.pow(50e-6/2, 3) * CONSTANT.density.water, max:4/3 * Math.PI * Math.pow(150e-6/2, 3) * CONSTANT.density.water}), "https://www.unlv.edu/sites/default/files/page_files/27/PublicHealth_Lied-PollenLecture2019.pdf"),
-		new MassDatum("Mulberry pollen", new Mass({min:4/3 * Math.PI * Math.pow(14e-6/2, 3) * CONSTANT.density.water, max:4/3 * Math.PI * Math.pow(22e-6/2, 3) * CONSTANT.density.water}), "https://www.unlv.edu/sites/default/files/page_files/27/PublicHealth_Lied-PollenLecture2019.pdf"),
-		new MassDatum("Ash pollen", new Mass({min:4/3 * Math.PI * Math.pow(19e-6/2, 3) * CONSTANT.density.water, max:4/3 * Math.PI * Math.pow(33e-6/2, 3) * CONSTANT.density.water}), "https://www.unlv.edu/sites/default/files/page_files/27/PublicHealth_Lied-PollenLecture2019.pdf"),
-		new MassDatum("Ragweed pollen", new Mass({min:4/3 * Math.PI * Math.pow(15e-6/2, 3) * CONSTANT.density.water, max:4/3 * Math.PI * Math.pow(28e-6/2, 3) * CONSTANT.density.water}), "https://www.unlv.edu/sites/default/files/page_files/27/PublicHealth_Lied-PollenLecture2019.pdf"),
+		new MassDatum("Forget-me-not pollen", new Mass({min:CONSTANT.volume.ellipsoid(2.5e-6) * CONSTANT.density.water, max:CONSTANT.volume.ellipsoid(5e-6) * CONSTANT.density.water}), "https://en.wikipedia.org/wiki/Pollen#Structure_and_formation"),
+		new MassDatum("Grass pollen", new Mass({min:CONSTANT.volume.ellipsoid(20e-6) * CONSTANT.density.water, max:CONSTANT.volume.ellipsoid(25e-6) * CONSTANT.density.water}), "https://en.wikipedia.org/wiki/Pollen#Structure_and_formation"),
+		new MassDatum("Maize pollen", new Mass({min:CONSTANT.volume.ellipsoid(90e-6) * CONSTANT.density.water, max:CONSTANT.volume.ellipsoid(100e-6) * CONSTANT.density.water}), "https://en.wikipedia.org/wiki/Pollen#Structure_and_formation"),
+		new MassDatum("Pine pollen", new Mass({min:CONSTANT.volume.ellipsoid(50e-6) * CONSTANT.density.water, max:CONSTANT.volume.ellipsoid(150e-6) * CONSTANT.density.water}), "https://www.unlv.edu/sites/default/files/page_files/27/PublicHealth_Lied-PollenLecture2019.pdf"),
+		new MassDatum("Mulberry pollen", new Mass({min:CONSTANT.volume.ellipsoid(14e-6) * CONSTANT.density.water, max:CONSTANT.volume.ellipsoid(22e-6) * CONSTANT.density.water}), "https://www.unlv.edu/sites/default/files/page_files/27/PublicHealth_Lied-PollenLecture2019.pdf"),
+		new MassDatum("Ash pollen", new Mass({min:CONSTANT.volume.ellipsoid(19e-6) * CONSTANT.density.water, max:CONSTANT.volume.ellipsoid(33e-6) * CONSTANT.density.water}), "https://www.unlv.edu/sites/default/files/page_files/27/PublicHealth_Lied-PollenLecture2019.pdf"),
+		new MassDatum("Ragweed pollen", new Mass({min:CONSTANT.volume.ellipsoid(15e-6) * CONSTANT.density.water, max:CONSTANT.volume.ellipsoid(28e-6) * CONSTANT.density.water}), "https://www.unlv.edu/sites/default/files/page_files/27/PublicHealth_Lied-PollenLecture2019.pdf"),
 		// Body parts
 		new MassDatum("Heart (Human)", 0.3, "https://en.wikipedia.org/wiki/Heart#Location_and_shape"),
 		new MassDatum("Liver (Human)", 1.5, "https://en.wikipedia.org/wiki/Liver#Structure"),
@@ -498,7 +498,7 @@ const OOM = {
 		new MassDatum("Pelagibacter communis cell", (0.37e-6+0.89e-6)/2 * Math.PI*Math.pow((0.12e-6+0.2e-6)/4, 2) * CONSTANT.density.water, "https://en.wikipedia.org/wiki/Pelagibacter_communis"),
 		new MassDatum("Escherichia coli cell", 0.65e-18*CONSTANT.density.water, "https://en.wikipedia.org/wiki/Escherichia_coli#Type_and_morphology"),
 		new MassDatum("Red blood cell (Human)", 90e-18*CONSTANT.density.water, "https://en.wikipedia.org/wiki/Red_blood_cell#Human"),
-		new MassDatum("White blood cell (Human Neutrophil)", 4/3 * Math.PI * Math.pow((12e-6+15e-6)/4, 3) * CONSTANT.density.water, "https://en.wikipedia.org/wiki/White_blood_cell#Overview"),
+		new MassDatum("White blood cell (Human Neutrophil)", CONSTANT.volume.ellipsoid((12e-6+15e-6)/2) * CONSTANT.density.water, "https://en.wikipedia.org/wiki/White_blood_cell#Overview"),
 		new MassDatum("Thiomargarita magnifica cell", 1e-2 * Math.PI*Math.pow(45e-6/2, 2) * CONSTANT.density.water, "https://en.wikipedia.org/wiki/Thiomargarita_magnifica"),
 		new MassDatum("Fruit Fly", (0.219e-6 + 0.304e-6)/2, "https://bionumbers.hms.harvard.edu/bionumber.aspx?id=102570"),
 		new MassDatum("Stout Infantfish", 2e-6, "https://en.wikipedia.org/wiki/Paedophryne_amauensis#Characteristics"),
@@ -615,10 +615,11 @@ const OOM = {
 		new MassDatum("Titan's atmosphere", CONSTANT.atmosphere_mass(2574.73e3, 1.34518e23, 146.7e3)),
 		new MassDatum("Venus's atmosphere", CONSTANT.atmosphere_mass(6051.8e3, 4.86731e24, 92*CONSTANT.atm)),
 		// Astro
-		new MassDatum("Tunguska meteor", 4/3 * Math.PI * Math.pow(55/2, 3) * CONSTANT.density.rock),
-		new MassDatum("Barringer impactor", 4/3 * Math.PI * Math.pow(50/2, 3) * CONSTANT.density.iron),
-		new MassDatum("Manicouagan impactor", 4/3 * Math.PI * Math.pow(5e3/2, 3) * CONSTANT.density.rock),
-		new MassDatum("Chicxulub impactor", 4/3 * Math.PI * Math.pow(12.5e3/2, 3) * CONSTANT.density.rock),
+		new MassDatum("Tunguska meteor", CONSTANT.volume.ellipsoid(55) * CONSTANT.density.rock),
+		new MassDatum("Barringer impactor", CONSTANT.volume.ellipsoid(50) * CONSTANT.density.iron),
+		// new MassDatum("Siljan impactor", CONSTANT.volume.ellipsoid(5e3) * CONSTANT.density.rock, "https://en.wikipedia.org/wiki/Siljan_Ring#Geology"),
+		new MassDatum("Manicouagan impactor", CONSTANT.volume.ellipsoid(5e3) * CONSTANT.density.rock),
+		new MassDatum("Chicxulub impactor", CONSTANT.volume.ellipsoid(12.5e3) * CONSTANT.density.rock),
 		new MassDatum("Halley's Comet", 2.2e14),
 		// new MassDatum("16 Psyche", 22.9e18),
 		new MassDatum("52 Europa", 24e18),
