@@ -1,6 +1,6 @@
 body {
-	margin-bottom: 1vh;
-	margin-top: 1vh;
+	margin-bottom: 1em;
+	margin-top: 1em;
 	overflow-x: hidden;
 }
 #main {
@@ -11,7 +11,7 @@ body {
 	position: absolute;
 }
 .datum {
-	transform: translate(10vw, -50%);
+	transform: translate(6em, -50%);
 }
 .datum::before {
 	content: "←";
