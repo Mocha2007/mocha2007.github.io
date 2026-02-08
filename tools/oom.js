@@ -483,6 +483,7 @@ const OOM = {
 		new MassDatum("Pound (unit)", CONSTANT.lb, null, [Category.UNIT]),
 		new MassDatum("Stone (unit)", 14*CONSTANT.lb, null, [Category.UNIT]),
 		new MassDatum("Slug (unit)", CONSTANT.lb*9.80665/0.3048, null, [Category.UNIT]),
+		new MassDatum("Firkin (unit)", 90*CONSTANT.lb, null, [Category.UNIT]),
 		// verdurian units
 		new MassDatum("Ris (Verdurian unit)", 60.71e-6, "https://www.zompist.com/thematic.htm#07", [Category.FICTIONAL, Category.UNIT]),
 		new MassDatum("Hecur (Verdurian unit)", 6.071e-3, "https://www.zompist.com/thematic.htm#07", [Category.FICTIONAL, Category.UNIT]),
