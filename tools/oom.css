@@ -74,3 +74,10 @@ body {
 #cat_container > * {
 	display: block; /* force each element to be on a new line */
 }
+a {
+	white-space: nowrap;
+}
+a[href^="https://en.wikipedia.org"] {
+	background: transparent url('../img/wp.png') no-repeat right center/25%;
+	padding-right: 10px;
+}
