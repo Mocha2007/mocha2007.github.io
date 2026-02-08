@@ -262,7 +262,13 @@ const CONSTANT = {
 
 const OOM = {
 	config: {
-		vscale: 30,
+		get vscale(){
+			return this._vscale;
+		},
+		set vscale(x){
+			OOM.elem.main.style.height = `${(this._vscale = x)*100}vh`;
+		},
+		_vscale: 30,
 	},
 	data: [
 		// Photon energies
@@ -674,7 +680,7 @@ const OOM = {
 		new MassDatum("Observable universe", 1.5e53),
 	],
 	elem: {
-		/** @returns {HTMLDivElement} */
+		/** @type {HTMLDivElement} */
 		cat_container: undefined,
 		/** @returns {HTMLDivElement} */
 		get main(){
@@ -683,7 +689,7 @@ const OOM = {
 	},
 	init(){
 		const main = this.elem.main;
-		main.style.height = `${this.config.vscale*100}vh`;
+		this.config.vscale = 30;
 		const e2y = this.initScale();
 		this.data.forEach(datum => main.appendChild(datum.elem(e2y)));
 		this.ranges.forEach((range, i, a) => main.appendChild(range.elem(e2y, i, a)));
@@ -711,6 +717,7 @@ const OOM = {
 			};
 			label.appendChild(document.createTextNode(Category[c]));
 		});
+		this.initScaler();
 	},
 	initScale(){
 		const range = this.range;
@@ -726,6 +733,28 @@ const OOM = {
 			main.appendChild(elem);
 		}
 		return e2y;
+	},
+	initScaler(){
+		const scaler = document.createElement('span');
+		this.elem.cat_container.appendChild(scaler);
+		// reduce
+		const reduce = document.createElement('span');
+		reduce.classList.add('button');
+		reduce.innerHTML = '-';
+		reduce.onmouseup = () => scale.innerHTML = --this.config.vscale;
+		scaler.appendChild(reduce);
+		// label
+		scaler.appendChild(document.createTextNode('Scale: '));
+		// number
+		const scale = document.createElement('span');
+		scale.innerHTML = this.config.vscale;
+		scaler.appendChild(scale);
+		// increase
+		const increase = document.createElement('span');
+		increase.classList.add('button');
+		increase.innerHTML = '+';
+		increase.onmouseup = () => scale.innerHTML = ++this.config.vscale;
+		scaler.appendChild(increase);
 	},
 	get range(){
 		const sorted = this.data.map(x => x);
