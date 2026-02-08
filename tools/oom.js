@@ -545,6 +545,7 @@ const OOM = {
 		// Vehicles
 		new MassDatum("Sojourner", 11.5, "https://en.wikipedia.org/wiki/Sojourner_(rover)"),
 		new MassDatum("Spirit/Opportunity", 185, "https://en.wikipedia.org/wiki/Opportunity_(rover)"),
+		new MassDatum("New Horizons", 478, "https://en.wikipedia.org/wiki/New_Horizons"),
 		new MassDatum("Curiosity/Perseverence", 899, "https://en.wikipedia.org/wiki/Curiosity_(rover)"),
 		new MassDatum("Ferrari 250 GT California Spyder", 1100, "https://en.wikipedia.org/wiki/Ferrari_250_GT_California_Spyder"),
 		new MassDatum("DMC DeLorean", 1233, "https://en.wikipedia.org/wiki/DMC_DeLorean"),
