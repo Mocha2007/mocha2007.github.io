@@ -849,7 +849,8 @@ const OOM = {
 		new MassRange("Bacteria", 1.3e-17, 1.6e-8, 'cyan'),
 		new MassRange("Animals", 2e-11, 1.5e5, 'purple'),
 		new MassRange("Coins", 2e-3, 12e-3, 'gold'),
-		new MassRange("Planets", 3e23, 13*CONSTANT.jupiter_mass, 'skyblue'),
+		// min is geometric mean between Eris and Mercury
+		new MassRange("Planets", 7e22, 13*CONSTANT.jupiter_mass, 'skyblue'),
 		new MassRange("Stars", 0.08*CONSTANT.solar_mass, 300*CONSTANT.solar_mass, 'yellow'),
 	],
 	/** @param {string[]} active */
