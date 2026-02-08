@@ -728,6 +728,7 @@ const OOM = {
 		new MassDatum("Sun", CONSTANT.solar_mass),
 		new MassDatum("Chandrasekhar limit", 1.44*CONSTANT.solar_mass),
 		new MassDatum("Sirius A", 2.063*CONSTANT.solar_mass),
+		new MassDatum("Tolman-Oppenheimer-Volkoff limit", new Mass({min:1.97*CONSTANT.solar_mass,max:2.33*CONSTANT.solar_mass}), "https://iopscience.iop.org/article/10.3847/2041-8213/aaa401"),
 		new MassDatum("Polaris A", 5.13*CONSTANT.solar_mass),
 		new MassDatum("Betelgeuse", (14+19)/2*CONSTANT.solar_mass),
 		new MassDatum("R136a1", 291*CONSTANT.solar_mass),
