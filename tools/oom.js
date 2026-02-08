@@ -79,9 +79,12 @@ class MassDatum {
 		}
 		/** @type {Category[]} */
 		this.categories = categories || [];
+		/** @type {HTMLSpanElement} */
+		this.elem_cache;
 	}
 	elem(e2y){
 		const e = document.createElement('span');
+		this.elem_cache = e;
 		e.classList.add('datum');
 		const permalink = document.createElement('a');
 		permalink.classList.add('permalink');
@@ -728,7 +731,7 @@ const OOM = {
 				console.debug(`toggling category |${c}|...`);
 				const style = cat.checked ? "none" : "";
 				OOM.data.filter(datum => datum.categories.includes(Category[c]))
-					.forEach(datum => document.getElementById(datum.id).style.display = style);
+					.forEach(datum => datum.elem_cache.style.display = style);
 			};
 			label.appendChild(document.createTextNode(Category[c]));
 		});
