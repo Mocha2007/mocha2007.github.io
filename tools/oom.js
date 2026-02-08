@@ -274,11 +274,11 @@ const OOM = {
 		set vscale(x){
 			OOM.elem.main.style.height = `${(this._vscale = x)*100}vh`;
 		},
-		_vscale: 30,
+		_vscale: 29,
 	},
 	data: [
 		// Photon energies
-		new MassDatum("Infrared (far) mass equivalence", 300e9*CONSTANT.planck/Math.pow(CONSTANT.c, 2)),
+		// new MassDatum("Infrared (far) mass equivalence", 300e9*CONSTANT.planck/Math.pow(CONSTANT.c, 2)), too small
 		new MassDatum("Infrared (near) mass equivalence", 380e12*CONSTANT.planck/Math.pow(CONSTANT.c, 2)),
 		new MassDatum("Visible light (Red) mass equivalence", 440e12*CONSTANT.planck/Math.pow(CONSTANT.c, 2)),
 		new MassDatum("Visible light (Green) mass equivalence", 550e12*CONSTANT.planck/Math.pow(CONSTANT.c, 2)),
@@ -714,7 +714,7 @@ const OOM = {
 	},
 	init(){
 		const main = this.elem.main = document.getElementById('main');
-		this.config.vscale = 30;
+		this.config.vscale = this.config._vscale;
 		const e2y = this.initScale();
 		this.data.forEach(datum => main.appendChild(datum.elem(e2y)));
 		this.ranges.forEach((range, i, a) => main.appendChild(range.elem(e2y, i, a)));
