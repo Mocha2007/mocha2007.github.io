@@ -694,7 +694,6 @@ const OOM = {
 		this.elem.main.appendChild(container);
 		Object.keys(Category).forEach(c => {
 			const label = document.createElement('label');
-			label.innerHTML = Category[c];
 			container.appendChild(label);
 			const cat = document.createElement('input');
 			cat.type = 'checkbox';
@@ -708,6 +707,7 @@ const OOM = {
 				OOM.data.filter(datum => datum.categories.includes(Category[c]))
 					.forEach(datum => document.getElementById(datum.id).style.opacity = style);
 			};
+			label.appendChild(document.createTextNode(Category[c]));
 		});
 	},
 	initScale(){
