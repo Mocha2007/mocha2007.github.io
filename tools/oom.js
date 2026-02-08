@@ -9,7 +9,7 @@ class Mass {
 		else {
 			this.min = x.min;
 			this.max = x.max;
-			this.x = (this.min + this.max)/2;
+			this.x = x.x || (this.min + this.max)/2;
 		}
 		// if uncertainty is a single number, we interpret it as +/- x
 		if (typeof uncertainty === "number"){
@@ -357,12 +357,14 @@ const OOM = {
 		new MassDatum("Insulin", 5808*CONSTANT.da, "https://en.wikipedia.org/wiki/Insulin"),
 		new MassDatum("Ubiquitin", 8.6e3*CONSTANT.da, "https://en.wikipedia.org/wiki/Ubiquitin"),
 		new MassDatum("Hemoglobin", 16e3*CONSTANT.da, "https://en.wikipedia.org/wiki/Hemoglobin#Diagnostic_uses"),
+		new MassDatum("Lectin", 71e3*CONSTANT.da, "https://bionumbers.hms.harvard.edu/bionumber.aspx?id=104340&ver=2&trm=mass&org="),
 		new MassDatum("tRNA", (76+90)/2*CONSTANT.bp_rna),
 		new MassDatum("Chaperonin", 60e3*CONSTANT.da, "https://en.wikipedia.org/wiki/Chaperonin"),
 		new MassDatum("Hemerythrin", 8*13.5e3*CONSTANT.da, "https://en.wikipedia.org/wiki/Hemerythrin#Quaternary_structure_and_cooperativity"),
 		new MassDatum("Immunoglobulin G", 150e3*CONSTANT.da, "https://en.wikipedia.org/wiki/Immunoglobulin_G#Structure"),
 		new MassDatum("Calcium channel (L-type)", ((170e3+240e3)/2 + 150e3 + (17e3+25e3)/2 + (50e3+78e3)/2 + 32e3)*CONSTANT.da, "https://en.wikipedia.org/wiki/L-type_calcium_channel#Structure"),
 		// new MassDatum("Dynein", 1.5e6*CONSTANT.da),
+		new MassDatum("Ribosome (Bacterial)", 2.5e6*CONSTANT.da, "https://bionumbers.hms.harvard.edu/bionumber.aspx?id=106864&ver=3&trm=mass&org="),
 		new MassDatum("Ribosome (Eukaryotic)", 3.2e6*CONSTANT.da, "https://en.wikipedia.org/wiki/Eukaryotic_ribosome#Composition"),
 		// new MassDatum("Erythrocruorin", 3600e3*CONSTANT.da, "https://en.wikipedia.org/wiki/Erythrocruorin"),
 		new MassDatum("Hemocyanin (Japanese Flying Squid)", 3.8e6*CONSTANT.da, "https://en.wikipedia.org/wiki/Hemocyanin#Structure_and_mechanism"),
@@ -370,7 +372,7 @@ const OOM = {
 		new MassDatum("Chloroplast genome", 105e6*CONSTANT.da, "https://en.wikipedia.org/wiki/Chloroplast#Molecular_structure"),
 		new MassDatum("Escherichia coli genome", 4.6e6*CONSTANT.bp_dna, "https://en.wikipedia.org/wiki/Escherichia_coli#Genomics"),
 		new MassDatum("Chromosome (Human 21)", 46944323*CONSTANT.bp_dna),
-		new MassDatum("Lysosome", 4/3 * Math.PI * Math.pow((0.1e-6+1.2e-6)/4, 3) * CONSTANT.density.water, "https://en.wikipedia.org/wiki/Lysosome#Function_and_structure"),
+		new MassDatum("Lysosome (Animal)", new Mass({x:CONSTANT.volume.ellipsoid(300e-9)*CONSTANT.density.water,min:CONSTANT.volume.ellipsoid(100e-9)*CONSTANT.density.water,max:CONSTANT.volume.ellipsoid(500e-9)*CONSTANT.density.water}), "https://bionumbers.hms.harvard.edu/bionumber.aspx?id=117093&ver=2&trm=lysosome&org="),
 		new MassDatum("Chromosome (Human X)", 154913754*CONSTANT.bp_dna),
 		new MassDatum("Chromosome (Human 1)", 248387328*CONSTANT.bp_dna),
 		new MassDatum("Mitochondrion", 1.0754507267897768e-17*CONSTANT.density.water), // "Mitochondria are commonly between 0.75 and 3 μm2 in cross section,"
@@ -449,16 +451,22 @@ const OOM = {
 		new MassDatum("Quarter (US)", 5.67e-3, null, [Category.COIN]),
 		new MassDatum("Dollar coin (US)", 8.100e-3, null, [Category.COIN]),
 		new MassDatum("Half-Dollar (US)", 11.340e-3, null, [Category.COIN]),
-		// vaguely human-sized
+		// units
 		new MassDatum("Planck mass", 2.176434e-8, "https://en.wikipedia.org/wiki/Planck_units"),
-		new MassDatum("Snowflake", 3e-6, "https://hypertextbook.com/facts/2001/JudyMoy.shtml"),
+		new MassDatum("Dalton (unit)", CONSTANT.da, null, [Category.UNIT]),
+		new MassDatum("RNA Base Pair (unit)", CONSTANT.bp_rna, null, [Category.UNIT]),
 		new MassDatum("Grain (unit)", CONSTANT.gr, null, [Category.UNIT]),
 		new MassDatum("Carat (unit)", 200e-6, null, [Category.UNIT]),
+		new MassDatum("Scruple (unit)", CONSTANT.gr*20, null, [Category.UNIT]),
+		new MassDatum("Dram (unit)", CONSTANT.dr, null, [Category.UNIT]),
+		new MassDatum("Pennyweight (unit)", CONSTANT.gr*24, null, [Category.UNIT]),
+		new MassDatum("Ounce (unit)", CONSTANT.oz, null, [Category.UNIT]),
+		new MassDatum("Pound (unit)", CONSTANT.lb, null, [Category.UNIT]),
+		new MassDatum("Stone (unit)", 14*CONSTANT.lb, null, [Category.UNIT]),
+		// vaguely human-sized
+		new MassDatum("Snowflake", 3e-6, "https://hypertextbook.com/facts/2001/JudyMoy.shtml"),
 		new MassDatum("Paperclip (small)", 0.25e-3, "https://howthingsfly.si.edu/sites/default/files/attachment/LighterThanAir.pdf"),
 		new MassDatum("Paperclip (large)", 1.2e-3, "https://inquiryproject.terc.edu/curriculum/curriculum3/standard-measures/investigation1/index.html"),
-		new MassDatum("Scruple (unit)", CONSTANT.gr*20, null, [Category.UNIT]),
-		new MassDatum("Pennyweight (unit)", CONSTANT.gr*24, null, [Category.UNIT]),
-		new MassDatum("Dram (unit)", CONSTANT.dr, null, [Category.UNIT]),
 		new MassDatum("Bullet (5.56 NATO Cartridge)", 62*CONSTANT.gr, "https://en.wikipedia.org/wiki/5.56%C3%9745mm_NATO#Performance"),
 		new MassDatum("Paper (A4 sheet)", 0.08*0.21*0.297, "https://en.wikipedia.org/wiki/Letter_(paper_size)#Details"),
 		// a regulation standard shuttlecock weighs between 4.75 and 5.5 g, has 16 feathers, and a cork w/ diam. b/w 25 and 28 mm
@@ -475,18 +483,17 @@ const OOM = {
 		new MassDatum("Baseball", 0.145, "https://hypertextbook.com/facts/1999/ChristinaLee.shtml"),
 		new MassDatum("Soccerball", 0.43, "https://hypertextbook.com/facts/2002/LouiseHuang.shtml"),
 		new MassDatum("Phone (iPhone 17)", 117e-3, "https://en.wikipedia.org/wiki/IPhone_17"),
-		new MassDatum("Ounce (unit)", CONSTANT.oz, null, [Category.UNIT]),
-		new MassDatum("Pound (unit)", CONSTANT.lb, null, [Category.UNIT]),
 		new MassDatum("Physics Textbook", 1.65, "https://hypertextbook.com/facts/2003/BettyTan.shtml"),
 		new MassDatum("Hitachi Magic Wand", 1.2*CONSTANT.lb, "https://en.wikipedia.org/wiki/Hitachi_Magic_Wand"),
 		new MassDatum("Blåhaj (Big)", 0.66, "https://www.reddit.com/r/BLAHAJ/comments/10x33so/whats_the_volume_and_weight_of_a_blahaj/j7q4h5r/"),
-		new MassDatum("Stone (unit)", 14*CONSTANT.lb, null, [Category.UNIT]),
 		new MassDatum("Cup of tea", 227.3e-6*CONSTANT.density.water50c, "https://en.wikipedia.org/wiki/Breakfast_cup"),
 		new MassDatum("Gold bar", 12.4, "https://en.wikipedia.org/wiki/Gold_bar"),
 		new MassDatum("Electric Scooter", 40.8*CONSTANT.lb, "https://www.amazon.com/Electric-Inflatable-Electronic-Capacity-eScooter/dp/B0BV88TGYY?th=1"),
 		new MassDatum("Canadarm", 450, "https://en.wikipedia.org/wiki/Canadarm"),
 		new MassDatum("Olmec colossal head", new Mass({min:5e3,max:45e3}), "https://en.wikipedia.org/wiki/Olmec_colossal_heads"),
 		// Organisms
+		new MassDatum("Yeast (Saccharomyces cerevisiae)", 60e-15, "https://bionumbers.hms.harvard.edu/bionumber.aspx?id=101795&ver=6&trm=mass&org="),
+		new MassDatum("Common bean cell", 8e-11, "https://bionumbers.hms.harvard.edu/bionumber.aspx?id=107824&ver=0&trm=mass&org="),
 		new MassDatum("Myxozoa", 300e-6 * Math.PI*Math.pow(10e-6/2, 2) * CONSTANT.density.water, "https://en.wikipedia.org/wiki/https://en.wikipedia.org/wiki/Myxozoa#Anatomy"),
 		new MassDatum("Pelagibacter communis cell", (0.37e-6+0.89e-6)/2 * Math.PI*Math.pow((0.12e-6+0.2e-6)/4, 2) * CONSTANT.density.water, "https://en.wikipedia.org/wiki/Pelagibacter_communis"),
 		new MassDatum("Escherichia coli cell", 0.65e-18*CONSTANT.density.water, "https://en.wikipedia.org/wiki/Escherichia_coli#Type_and_morphology"),
@@ -501,6 +508,7 @@ const OOM = {
 		new MassDatum("Siamese Fighting Fish", CONSTANT.volume.ellipsoid(7e-2, 121/350*7e-2, 121/350*7e-2/2)*CONSTANT.density.water, "https://en.wikipedia.org/wiki/Siamese_fighting_fish#Description"),
 		new MassDatum("Antarctic krill", 2e-3, "https://en.wikipedia.org/wiki/Antarctic_krill"),
 		new MassDatum("Bee Hummingbird", new Mass({min:1.95e-3,max:2.6e-3}), "https://en.wikipedia.org/wiki/Bee_hummingbird#Description"),
+		new MassDatum("Zebrafish", new Mass({min:0.18e-3,max:0.73e-3}), "https://bionumbers.hms.harvard.edu/bionumber.aspx?id=102573&ver=1&trm=mass&org="),
 		new MassDatum("Mouse", (11e-3+30e-3)/2, "https://en.wikipedia.org/wiki/House_mouse#Characteristics"),
 		new MassDatum("Sparrow", (24e-3+39.5e-3)/2, "https://en.wikipedia.org/wiki/House_sparrow"),
 		new MassDatum("Cat", 4.5, "https://en.wikipedia.org/wiki/Cat#Size"),
@@ -551,6 +559,7 @@ const OOM = {
 		new MassDatum("Annual global aluminum production (2024)", 72000*1e6, "https://en.wikipedia.org/wiki/Aluminium#Production_and_refinement"),
 		new MassDatum("Annual global copper production (2024)", 980e9, "https://en.wikipedia.org/wiki/Lists_of_countries_by_mineral_production#Copper"),
 		new MassDatum("Annual global iron ore production (2024)", 2500000*1e6, "https://en.wikipedia.org/wiki/Iron_ore#Production_and_consumption"),
+		new MassDatum("CO2 emitted by training GPT-3", 502e6, "https://news.climate.columbia.edu/2023/06/09/ais-growing-carbon-footprint/"),
 		// misc big things
 		new MassDatum("Statue of Ahimsa", 8712e3, "https://en.wikipedia.org/wiki/List_of_largest_monoliths"),
 		new MassDatum("Great Bell of Dhammazedi", 294e3, "https://en.wikipedia.org/wiki/Great_Bell_of_Dhammazedi"),
@@ -568,7 +577,7 @@ const OOM = {
 		new MassDatum("Enterprise (NCC-1701, estimate)", 125 * Math.pow(288.6/3.43,3)),
 		new MassDatum("Imperial Star Destroyer", 40e9, "https://en.wikipedia.org/wiki/Star_Destroyer#Concept_and_design", [Category.FICTIONAL]),
 		new MassDatum("Dyson Sphere (estimate)", 1.5*0.959e23, "../dyson.html#Sun_Reasonable", [Category.HYPOTHETICAL]), // original concept was 3m thickness, I used a 2m estimate originally, hence x1.5
-		new MassDatum("Death Star (estimate)", CONSTANT.volume.ellipsoid(160e3/2)*CONSTANT.density.iron/4, [Category.FICTIONAL]),
+		new MassDatum("Death Star (estimate)", CONSTANT.volume.ellipsoid(160e3)*CONSTANT.density.iron/4, [Category.FICTIONAL]),
 		// Giza density ~2323
 		new MassDatum("Great Pyramid of Giza", 6e9, "https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza"),
 		new MassDatum("Three Gorges Dam (estimate)", 27.2e6*CONSTANT.density.concrete + 463e6, "https://en.wikipedia.org/wiki/Three_Gorges_Dam#Composition_and_dimensions"),
@@ -711,9 +720,9 @@ const OOM = {
 			label.onmouseup = () => {
 				// toggle visibility of all data with this tag
 				console.debug(`toggling category |${c}|...`);
-				const style = cat.checked ? 0 : 1;
+				const style = cat.checked ? "none" : "";
 				OOM.data.filter(datum => datum.categories.includes(Category[c]))
-					.forEach(datum => document.getElementById(datum.id).style.opacity = style);
+					.forEach(datum => document.getElementById(datum.id).style.display = style);
 			};
 			label.appendChild(document.createTextNode(Category[c]));
 		});

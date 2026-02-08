@@ -13,6 +13,16 @@ body {
 .datum {
 	transform: translate(6em, -50%);
 }
+@media (hover: hover) { /* opposite: hover: none */
+	.datum:hover {
+		color: white;
+		opacity: 1;
+		text-shadow:0 0 1em white;
+	}
+	#main:has(.datum:hover) .datum:not(:hover) {
+		opacity: 0.25;
+	}
+}
 .datum::before {
 	content: "←";
 }
