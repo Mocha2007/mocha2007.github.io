@@ -81,3 +81,7 @@ a[href^="https://en.wikipedia.org"] {
 	background: transparent url('https://upload.wikimedia.org/wikipedia/en/8/80/Wikipedia-logo-v2.svg') no-repeat right center/30%;
 	padding-right: 15px;
 }
+.amount {
+	color: grey;
+	font-size: 75%;
+}

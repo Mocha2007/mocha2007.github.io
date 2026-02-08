@@ -29,7 +29,7 @@ class Mass {
 				return `<span class='errors'>+${plus}<br>-${minus}</span>`;
 			}
 			else {
-				return `&plusmn;${plus}`;
+				return ` &plusmn; ${plus}`;
 			}
 		}
 		else {
@@ -90,7 +90,7 @@ class MassDatum {
 		permalink.classList.add('permalink');
 		permalink.href = `#${this.id}`;
 		e.appendChild(permalink);
-		e.innerHTML += `${this.mass.pretty}: ${this.name}`;
+		e.innerHTML += `<span class="amount">${this.mass.pretty}</span>: ${this.name}`;
 		if (this.source){
 			e.innerHTML += `<sup><a href="${this.source}">src</a></sup>`;
 		}
@@ -141,6 +141,7 @@ class Category {
 	static DRV = "DRV";
 	static HYPOTHETICAL = "Hypothetical";
 	static FICTIONAL = "Fictional";
+	static MINORPLANET = "Minor Planet"; // (or comet)
 	static UNIT = "Unit of Measurement";
 }
 
@@ -170,6 +171,16 @@ const CONSTANT = {
 	/** in kg */
 	da: 1.66053906892e-27,
 	density: {
+		asteroid: {
+			/** https://en.wikipedia.org/wiki/C-type_asteroid */
+			c: 1700,
+			/** https://en.wikipedia.org/wiki/64_Angelina */
+			e: 2000,
+			/** https://en.wikipedia.org/wiki/S-type_asteroid#Characteristics */
+			s: 3000,
+		},
+		/** in kg/m^3, avg. https://en.wikipedia.org/wiki/Comet */
+		comet: 600,
 		/** in kg/m^3 https://www.engineeringtoolbox.com/concrete-properties-d_1223.html */
 		concrete: (2240+2400)/2,
 		crust: {
@@ -267,6 +278,7 @@ const OOM = {
 	config: {
 		default_categories: [
 			Category.COIN,
+			Category.MINORPLANET,
 		],
 		get vscale(){
 			return this._vscale;
@@ -629,36 +641,64 @@ const OOM = {
 		new MassDatum("Titan's atmosphere", CONSTANT.atmosphere_mass(2574.73e3, 1.34518e23, 146.7e3)),
 		new MassDatum("Venus's atmosphere", CONSTANT.atmosphere_mass(6051.8e3, 4.86731e24, 92*CONSTANT.atm)),
 		// Astro
-		new MassDatum("Tunguska meteor", CONSTANT.volume.ellipsoid(55) * CONSTANT.density.rock),
-		new MassDatum("Barringer impactor", CONSTANT.volume.ellipsoid(50) * CONSTANT.density.iron),
-		// new MassDatum("Siljan impactor", CONSTANT.volume.ellipsoid(5e3) * CONSTANT.density.rock, "https://en.wikipedia.org/wiki/Siljan_Ring#Geology"),
-		new MassDatum("Manicouagan impactor", CONSTANT.volume.ellipsoid(5e3) * CONSTANT.density.rock),
-		new MassDatum("Chicxulub impactor", CONSTANT.volume.ellipsoid(12.5e3) * CONSTANT.density.rock),
-		new MassDatum("Halley's Comet", 2.2e14),
-		// new MassDatum("16 Psyche", 22.9e18),
-		new MassDatum("52 Europa", 24e18),
-		// new MassDatum("511 Davida", 26.6e18),
-		new MassDatum("3 Juno", 27e18),
-		new MassDatum("15 Eunomia", 30.5e18),
-		new MassDatum("704 Interamnia", 35e18),
-		new MassDatum("10 Hygiea", 8.74e19),
-		new MassDatum("2 Pallas", 2.04e20),
-		new MassDatum("4 Vesta", 2.590271e20),
-		new MassDatum("1 Ceres", 9.3839e20),
-		new MassDatum("Dione", 1.0954868e21),
+		new MassDatum("Tunguska meteor", CONSTANT.volume.ellipsoid(55) * CONSTANT.density.rock, null, [Category.MINORPLANET]),
+		new MassDatum("Barringer impactor", CONSTANT.volume.ellipsoid(50) * CONSTANT.density.iron, null, [Category.MINORPLANET]),
+		// new MassDatum("Siljan impactor", CONSTANT.volume.ellipsoid(5e3) * CONSTANT.density.rock, "https://en.wikipedia.org/wiki/Siljan_Ring#Geology", [Category.MINORPLANET]),
+		new MassDatum("Manicouagan impactor", CONSTANT.volume.ellipsoid(5e3) * CONSTANT.density.rock, null, [Category.MINORPLANET]),
+		new MassDatum("Chicxulub impactor", CONSTANT.volume.ellipsoid(12.5e3) * CONSTANT.density.rock, null, [Category.MINORPLANET]),
+		new MassDatum("1I/ʻOumuamua", CONSTANT.volume.ellipsoid(115,111,19) * CONSTANT.density.rock, "https://en.wikipedia.org/wiki/1I/%CA%BBOumuamua", [Category.MINORPLANET]),
+		new MassDatum("3I/ATLAS", 4.4e10, "https://en.wikipedia.org/wiki/3I/ATLAS", [Category.MINORPLANET]),
+		new MassDatum("2I/Borisov", CONSTANT.volume.ellipsoid(400) * CONSTANT.density.rock, "https://en.wikipedia.org/wiki/2I/Borisov", [Category.MINORPLANET]),
+		new MassDatum("Comet Shoemaker-Levy 9", CONSTANT.volume.ellipsoid(1.8e3) * CONSTANT.density.comet, "https://en.wikipedia.org/wiki/Comet_Shoemaker%E2%80%93Levy_9", [Category.MINORPLANET]),
+		new MassDatum("Comet Hale-Bopp", new Mass(1.9e14, 1.9e14*0.13*2), "https://academic.oup.com/mnras/article-pdf/416/1/767/4051800/mnras0416-0767.pdf", [Category.MINORPLANET]),
+		new MassDatum("Great Comet of 1843", 7.3e17, "https://iopscience.iop.org/article/10.1088/0004-6256/139/3/926", [Category.MINORPLANET]),
+		new MassDatum("Great Southern Comet of 1880", 2e15, "https://iopscience.iop.org/article/10.1088/0004-6256/139/3/926", [Category.MINORPLANET]),
+		new MassDatum("Great Comet of 1882", 4.2e19, "https://iopscience.iop.org/article/10.1088/0004-6256/139/3/926", [Category.MINORPLANET]),
+		new MassDatum("Comet du Toit", 3.9e14, "https://iopscience.iop.org/article/10.1088/0004-6256/139/3/926", [Category.MINORPLANET]),
+		new MassDatum("Comet Pereyra", 3.8e18, "https://iopscience.iop.org/article/10.1088/0004-6256/139/3/926", [Category.MINORPLANET]),
+		new MassDatum("Comet Ikeya-Seki", 1.2e17, "https://iopscience.iop.org/article/10.1088/0004-6256/139/3/926", [Category.MINORPLANET]),
+		new MassDatum("Halley's Comet", 2.2e14, null, [Category.MINORPLANET]),
+		new MassDatum("486958 Arrokoth", 7.485e14, null, [Category.MINORPLANET]),
+		new MassDatum("162173 Ryugu", new Mass(4.5e11,0.06e11), null, [Category.MINORPLANET]),
+		new MassDatum("152830 Dinkinesh", 4.67e11, null, [Category.MINORPLANET]),
+		new MassDatum("101955 Bennu", new Mass(7.329e10,0.009e10), null, [Category.MINORPLANET]),
+		new MassDatum("99942 Apophis", 6.1e10, null, [Category.MINORPLANET]),
+		new MassDatum("65803 Didymos", new Mass(5.4e11,0.4e11), null, [Category.MINORPLANET]),
+		new MassDatum("52246 Donaldjohanson", CONSTANT.volume.ellipsoid(8.8e3,4.4e3,3.1e3)*CONSTANT.density.asteroid.c, null, [Category.MINORPLANET]),
+		new MassDatum("25143 Itokawa", new Mass(3.51e10,0.105e10), null, [Category.MINORPLANET]),
+		new MassDatum("9969 Braille", 7.8e12, null, [Category.MINORPLANET]),
+		new MassDatum("5535 Annefrank", CONSTANT.volume.ellipsoid(6.6e3,5e3,3.4e3)*CONSTANT.density.asteroid.s, null, [Category.MINORPLANET]),
+		new MassDatum("4179 Touatis", 1.9e13, null, [Category.MINORPLANET]),
+		new MassDatum("2867 Šteins", CONSTANT.volume.ellipsoid(6.83e3,5.7e3,4.42e3)*CONSTANT.density.asteroid.e, null, [Category.MINORPLANET]),
+		new MassDatum("951 Gaspra", new Mass({min:2e15,max:3e15}), null, [Category.MINORPLANET]),
+		new MassDatum("704 Interamnia", 35e18, null, [Category.MINORPLANET]),
+		// new MassDatum("511 Davida", 26.6e18, null, [Category.MINORPLANET]),
+		new MassDatum("433 Eros", new Mass(6.687e15, 0.003e15), null, [Category.MINORPLANET]),
+		new MassDatum("253 Mathilde", new Mass(1.033e17, 0.044e17), null, [Category.MINORPLANET]),
+		new MassDatum("243 Ida", new Mass(4.2e16, 0.6e16), null, [Category.MINORPLANET]),
+		new MassDatum("52 Europa", 24e18, null, [Category.MINORPLANET]),
+		new MassDatum("21 Lutetia", new Mass(1.7e18, 0.017e18), null, [Category.MINORPLANET]),
+		// new MassDatum("16 Psyche", 22.9e18, null, [Category.MINORPLANET]),
+		new MassDatum("15 Eunomia", 30.5e18, null, [Category.MINORPLANET]),
+		new MassDatum("10 Hygiea", 8.74e19, null, [Category.MINORPLANET]),
+		new MassDatum("4 Vesta", 2.590271e20, null, [Category.MINORPLANET]),
+		new MassDatum("3 Juno", 27e18, null, [Category.MINORPLANET]),
+		new MassDatum("2 Pallas", 2.04e20, null, [Category.MINORPLANET]),
+		new MassDatum("1 Ceres", 9.3839e20, null, [Category.MINORPLANET]),
+		new MassDatum("Dione", 1.0954868e21, null, [Category.MINORPLANET]),
 		// new MassDatum("Ariel", 1.2331e21),
 		new MassDatum("Umbriel", 1.2885e21),
 		new MassDatum("Charon", 1.5897e21),
-		// new MassDatum("Gonggong", 1.75e21),
+		// new MassDatum("Gonggong", 1.75e21, null, [Category.MINORPLANET]),
 		new MassDatum("Iapetus", 1.8056591e21),
 		// new MassDatum("Rhea", 2.3064854e21),
-		new MassDatum("Asteroid Belt", 9.3839e20/.392, "https://en.wikipedia.org/wiki/Asteroid_belt#Characteristics"),
+		new MassDatum("Asteroid Belt", 9.3839e20/.392, "https://en.wikipedia.org/wiki/Asteroid_belt#Characteristics", [Category.MINORPLANET]),
 		new MassDatum("Makemake", 2.69e21),
 		new MassDatum("Oberon", 3.1104e21),
 		new MassDatum("Titania", 3.4550e21),
-		new MassDatum("Haumea", 3.95244e21),
-		new MassDatum("Pluto", 1.3025e22),
-		new MassDatum("Eris", 1.6466e22),
+		new MassDatum("Haumea", 3.95244e21, null, [Category.MINORPLANET]),
+		new MassDatum("Pluto", 1.3025e22, null, [Category.MINORPLANET]),
+		new MassDatum("Eris", 1.6466e22, null, [Category.MINORPLANET]),
 		new MassDatum("Triton", 2.1389e22),
 		new MassDatum("Europa", 4.79984e22),
 		new MassDatum("Moon", 7.346e22),
