@@ -21,18 +21,43 @@ class Mass {
 			this.max += uncertainty.max;
 		}
 	}
+	error_elem(p){
+		if (this.min !== this.x || this.max !== this.x){
+			const plus = round((this.max - this.x)/p, 3);
+			const minus = round((this.x - this.min)/p, 3);
+			if (plus !== minus){
+				return `<span class='errors'>+${plus}<br>-${minus}</span>`;
+			}
+			else {
+				return `&plusmn;${plus}`;
+			}
+		}
+		else {
+			return ``;
+		}
+	}
 	get pretty(){
 		const q = Math.floor(Math.log10(this.x)/3);
 		const i = CONSTANT.si_prefix_offset + 1 + q;
 		const p = Math.pow(10, 3*q);
+		const error_elem = this.error_elem(p);
 		if (i < 0 || CONSTANT.si_prefix.length <= i){
-			return `${1e-3*Math.round(1e3*this.x/p)}&middot;10<sup>${3*q}</sup> kg`;
+			return `${round(this.x/p, 3)}${error_elem}&middot;10<sup>${3*q}</sup> kg`;
 		}
 		else {
 			const prefix = CONSTANT.si_prefix[i];
-			return `${Math.round(this.x/p)} ${prefix}g`;
+			return `${round(this.x/p, 3)}${error_elem} ${prefix}g`;
 		}
 	}
+}
+
+/**
+ * @param {number} x 
+ * @param {number} n max digits
+ * @returns string rep of that number, rounded to AT MOST n digits
+ */
+const round = (x, n) => {
+	return x.toFixed(n || 0).replace(/\.?0+$/, '');
 }
 
 class MassDatum {
@@ -594,6 +619,7 @@ const OOM = {
 		new MassDatum("Ganymede", 1.4819e23),
 		new MassDatum("Mercury", 3.3011e23),
 		new MassDatum("Mars", 6.4171e23),
+		new MassDatum("Theia", new Mass({min:0.1*CONSTANT.earth_mass,max:0.45*CONSTANT.earth_mass}),"https://en.wikipedia.org/wiki/Theia_(hypothetical_planet)"),
 		new MassDatum("Venus", 4.86731e24),
 		new MassDatum("Earth", CONSTANT.earth_mass),
 		new MassDatum("Uranus", 8.68099e25),

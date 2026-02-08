@@ -43,3 +43,9 @@ body {
 .range span {
 	transform: rotate(90deg);
 }
+.errors {
+	display:inline-block;
+	font-size:50%;
+	text-align:right;
+	vertical-align:-0.2em;
+}
