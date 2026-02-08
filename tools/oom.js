@@ -701,12 +701,10 @@ const OOM = {
 		/** @type {HTMLDivElement} */
 		cat_container: undefined,
 		/** @returns {HTMLDivElement} */
-		get main(){
-			return document.getElementById('main');
-		}
+		main: undefined,
 	},
 	init(){
-		const main = this.elem.main;
+		const main = this.elem.main = document.getElementById('main');
 		this.config.vscale = 30;
 		const e2y = this.initScale();
 		this.data.forEach(datum => main.appendChild(datum.elem(e2y)));
