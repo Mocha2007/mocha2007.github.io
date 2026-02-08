@@ -145,9 +145,6 @@ class Category {
 }
 
 const CONSTANT = {
-	get active_categories(){
-		return Object.keys(Category).filter(c => document.getElementById(`cat_${c}`).checked);
-	},
 	/** in Pa */
 	atm: 101325,
 	/**
@@ -264,6 +261,9 @@ const CONSTANT = {
 };
 
 const OOM = {
+	get active_categories(){
+		return Object.keys(Category).filter(c => document.getElementById(`cat_${c}`).checked);
+	},
 	config: {
 		get vscale(){
 			return this._vscale;
@@ -727,9 +727,20 @@ const OOM = {
 			label.onmouseup = () => {
 				// toggle visibility of all data with this tag
 				console.debug(`toggling category |${c}|...`);
-				const style = cat.checked ? "none" : "";
-				OOM.data.filter(datum => datum.categories.includes(Category[c]))
-					.forEach(datum => datum.elem_cache.style.display = style);
+				// console.debug(`this category is now ${cat.checked}`);
+				const active = OOM.active_categories.map(c => Category[c]);
+				if (cat.checked) { // was checked, now we are unchecking it
+					active.splice(active.indexOf(Category[c]), 1); // we must remove it
+				}
+				else {
+					active.push(Category[c]); // we must add it
+				}
+				// console.debug(`active = `, active);
+				OOM.data.forEach(datum => {
+					datum.elem_cache.style.display
+						= datum.categories.every(c => active.includes(c))
+						? "" : "none";
+				});
 			};
 			label.appendChild(document.createTextNode(Category[c]));
 		});
