@@ -51,7 +51,8 @@ body {
 }
 #cat_container {
 	background-color: #222;
-	border: 1px solid silver;
+	border-left: 0.5vw solid silver;
+	border-bottom: 0.5vw solid silver;
 	border-bottom-left-radius: 1vw;
 	padding: 1vw;
 	position: fixed;
