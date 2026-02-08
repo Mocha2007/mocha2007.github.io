@@ -134,6 +134,7 @@ class MassRange {
 }
 
 class Category {
+	static COIN = "Coin";
 	static DRV = "DRV";
 	static HYPOTHETICAL = "Hypothetical";
 	static FICTIONAL = "Fictional";
@@ -434,6 +435,14 @@ const OOM = {
 		new MassDatum("Apple", 0.25, "https://diabetesteachingcenter.ucsf.edu/living-diabetes/diet-nutrition/understanding-carbohydrates/weighing-food"),
 		new MassDatum("Cabbage", new Mass({min:0.5,max:1}), "https://en.wikipedia.org/wiki/Cabbage"),
 		new MassDatum("Durian", new Mass({min:1,max:3}), "https://en.wikipedia.org/wiki/Durian"),
+		// coins
+		new MassDatum("Dime (US)", 2.268e-3, null, [Category.COIN]),
+		new MassDatum("Penny (US)", 2.5e-3, "https://hypertextbook.com/facts/2002/MillicentOkereke.shtml", [Category.COIN]),
+		new MassDatum("Nickel (US)", 5e-3, null, [Category.COIN]),
+		new MassDatum("Ducat", 3.5e-3, null, [Category.COIN]),
+		new MassDatum("Quarter (US)", 5.67e-3, null, [Category.COIN]),
+		new MassDatum("Dollar coin (US)", 8.100e-3, null, [Category.COIN]),
+		new MassDatum("Half-Dollar (US)", 11.340e-3, null, [Category.COIN]),
 		// vaguely human-sized
 		new MassDatum("Planck mass", 2.176434e-8, "https://en.wikipedia.org/wiki/Planck_units"),
 		new MassDatum("Snowflake", 3e-6, "https://hypertextbook.com/facts/2001/JudyMoy.shtml"),
@@ -441,17 +450,10 @@ const OOM = {
 		new MassDatum("Carat (unit)", 200e-6, null, [Category.UNIT]),
 		new MassDatum("Paperclip (small)", 0.25e-3, "https://howthingsfly.si.edu/sites/default/files/attachment/LighterThanAir.pdf"),
 		new MassDatum("Paperclip (large)", 1.2e-3, "https://inquiryproject.terc.edu/curriculum/curriculum3/standard-measures/investigation1/index.html"),
-		new MassDatum("Dime (US)", 2.268e-3),
-		new MassDatum("Penny (US)", 2.5e-3, "https://hypertextbook.com/facts/2002/MillicentOkereke.shtml"),
-		new MassDatum("Nickel (US)", 5e-3),
-		new MassDatum("Ducat", 3.5e-3),
-		new MassDatum("Bullet (5.56 NATO Cartridge)", 62*CONSTANT.gr, "https://en.wikipedia.org/wiki/5.56%C3%9745mm_NATO#Performance"),
-		new MassDatum("Quarter (US)", 5.67e-3),
-		new MassDatum("Dollar coin (US)", 8.100e-3),
-		new MassDatum("Half-Dollar (US)", 11.340e-3),
 		new MassDatum("Scruple (unit)", CONSTANT.gr*20, null, [Category.UNIT]),
 		new MassDatum("Pennyweight (unit)", CONSTANT.gr*24, null, [Category.UNIT]),
 		new MassDatum("Dram (unit)", CONSTANT.dr, null, [Category.UNIT]),
+		new MassDatum("Bullet (5.56 NATO Cartridge)", 62*CONSTANT.gr, "https://en.wikipedia.org/wiki/5.56%C3%9745mm_NATO#Performance"),
 		new MassDatum("Paper (A4 sheet)", 0.08*0.21*0.297, "https://en.wikipedia.org/wiki/Letter_(paper_size)#Details"),
 		// a regulation standard shuttlecock weighs between 4.75 and 5.5 g, has 16 feathers, and a cork w/ diam. b/w 25 and 28 mm
 		// src: https://en.wikipedia.org/wiki/Shuttlecock#Specifications
