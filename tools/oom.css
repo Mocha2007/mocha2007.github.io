@@ -78,6 +78,6 @@ a {
 	white-space: nowrap;
 }
 a[href^="https://en.wikipedia.org"] {
-	background: transparent url('../img/wp.png') no-repeat right center/25%;
-	padding-right: 10px;
+	background: transparent url('https://upload.wikimedia.org/wikipedia/en/8/80/Wikipedia-logo-v2.svg') no-repeat right center/30%;
+	padding-right: 15px;
 }
