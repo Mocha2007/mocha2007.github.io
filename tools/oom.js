@@ -134,6 +134,7 @@ class MassRange {
 }
 
 class Category {
+	static DRV = "DRV";
 	static HYPOTHETICAL = "Hypothetical";
 	static FICTIONAL = "Fictional";
 	static UNIT = "Unit of Measurement";
@@ -387,18 +388,18 @@ const OOM = {
 		new MassDatum("Heart (Human)", 0.3, "https://en.wikipedia.org/wiki/Heart#Location_and_shape"),
 		new MassDatum("Liver (Human)", 1.5, "https://en.wikipedia.org/wiki/Liver#Structure"),
 		// DRV
-		new MassDatum("Water DRV", 2.25e-3*CONSTANT.density.water, "https://en.wikipedia.org/wiki/Dietary_Reference_Value"),
-		new MassDatum("Carbohydrate DRV", 2000*0.5/4 * 1e-3, "https://en.wikipedia.org/wiki/Dietary_Reference_Value"),
-		new MassDatum("Protein DRV", 55e-3, "https://en.wikipedia.org/wiki/Dietary_Reference_Value"),
-		new MassDatum("Salt DRV", 6e-3, "https://en.wikipedia.org/wiki/Dietary_Reference_Value"),
-		new MassDatum("Vitamin C DRV", 40e-6, "https://en.wikipedia.org/wiki/Dietary_Reference_Value"),
-		new MassDatum("Vitamin E DRV", 15e-6, "https://en.wikipedia.org/wiki/Vitamin_E#Dietary_recommendations"),
-		// new MassDatum("Iron DRV", 14.8e-6, "https://en.wikipedia.org/wiki/Dietary_Reference_Value"),
-		new MassDatum("Zinc DRV", 9.5e-6, "https://en.wikipedia.org/wiki/Dietary_Reference_Value"),
-		new MassDatum("Vitamin A DRV", 700e-9, "https://en.wikipedia.org/wiki/Dietary_Reference_Value"),
-		new MassDatum("Folate DRV", 200e-9, "https://en.wikipedia.org/wiki/Dietary_Reference_Value"),
-		new MassDatum("Vitamin E DRV", 115e-9, "https://en.wikipedia.org/wiki/Vitamin_K#Dietary_recommendations"),
-		new MassDatum("Vitamin D DRV", 15e-9, "https://en.wikipedia.org/wiki/Vitamin_D#European_Union"),
+		new MassDatum("Water DRV", 2.25e-3*CONSTANT.density.water, "https://en.wikipedia.org/wiki/Dietary_Reference_Value", [Category.DRV]),
+		new MassDatum("Carbohydrate DRV", 2000*0.5/4 * 1e-3, "https://en.wikipedia.org/wiki/Dietary_Reference_Value", [Category.DRV]),
+		new MassDatum("Protein DRV", 55e-3, "https://en.wikipedia.org/wiki/Dietary_Reference_Value", [Category.DRV]),
+		new MassDatum("Salt DRV", 6e-3, "https://en.wikipedia.org/wiki/Dietary_Reference_Value", [Category.DRV]),
+		new MassDatum("Vitamin C DRV", 40e-6, "https://en.wikipedia.org/wiki/Dietary_Reference_Value", [Category.DRV]),
+		new MassDatum("Vitamin E DRV", 15e-6, "https://en.wikipedia.org/wiki/Vitamin_E#Dietary_recommendations", [Category.DRV]),
+		new MassDatum("Iron DRV", 14.8e-6, "https://en.wikipedia.org/wiki/Dietary_Reference_Value", [Category.DRV]),
+		new MassDatum("Zinc DRV", 9.5e-6, "https://en.wikipedia.org/wiki/Dietary_Reference_Value", [Category.DRV]),
+		new MassDatum("Vitamin A DRV", 700e-9, "https://en.wikipedia.org/wiki/Dietary_Reference_Value", [Category.DRV]),
+		new MassDatum("Folate DRV", 200e-9, "https://en.wikipedia.org/wiki/Dietary_Reference_Value", [Category.DRV]),
+		new MassDatum("Vitamin E DRV", 115e-9, "https://en.wikipedia.org/wiki/Vitamin_K#Dietary_recommendations", [Category.DRV]),
+		new MassDatum("Vitamin D DRV", 15e-9, "https://en.wikipedia.org/wiki/Vitamin_D#European_Union", [Category.DRV]),
 		// sand/gravel/etc
 		// using "number of grains per mg"
 		new MassDatum("Grain of clay (fine)", 1e-6/86716444.444444444, "https://upload.wikimedia.org/wikipedia/commons/a/a0/Wentworth_scale.png"),
