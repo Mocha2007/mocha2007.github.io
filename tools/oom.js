@@ -560,6 +560,9 @@ const OOM = {
 		new MassDatum("Annual global copper production (2024)", 980e9, "https://en.wikipedia.org/wiki/Lists_of_countries_by_mineral_production#Copper"),
 		new MassDatum("Annual global iron ore production (2024)", 2500000*1e6, "https://en.wikipedia.org/wiki/Iron_ore#Production_and_consumption"),
 		new MassDatum("CO2 emitted by training GPT-3", 502e6, "https://news.climate.columbia.edu/2023/06/09/ais-growing-carbon-footprint/"),
+		new MassDatum("CO2 emitted annually by training AI", 102e9, "https://scienceblog.com/ais-hidden-environmental-cost-china-study-reveals-massive-carbon-footprint/"),
+		new MassDatum("Annual CO2 emissions (2024)", 54.43e12, "https://ourworldindata.org/greenhouse-gas-emissions"),
+		new MassDatum("Cumulative CO2 emissions (1870-2022)", 2575e12, "https://en.wikipedia.org/wiki/Greenhouse_gas_emissions"),
 		// misc big things
 		new MassDatum("Statue of Ahimsa", 8712e3, "https://en.wikipedia.org/wiki/List_of_largest_monoliths"),
 		new MassDatum("Great Bell of Dhammazedi", 294e3, "https://en.wikipedia.org/wiki/Great_Bell_of_Dhammazedi"),
