@@ -136,6 +136,7 @@ class MassRange {
 class Category {
 	static HYPOTHETICAL = "Hypothetical";
 	static FICTIONAL = "Fictional";
+	static UNIT = "Unit of Measurement";
 }
 
 const CONSTANT = {
@@ -435,8 +436,8 @@ const OOM = {
 		// vaguely human-sized
 		new MassDatum("Planck mass", 2.176434e-8, "https://en.wikipedia.org/wiki/Planck_units"),
 		new MassDatum("Snowflake", 3e-6, "https://hypertextbook.com/facts/2001/JudyMoy.shtml"),
-		new MassDatum("Grain (unit)", CONSTANT.gr),
-		new MassDatum("Carat (unit)", 200e-6),
+		new MassDatum("Grain (unit)", CONSTANT.gr, null, [Category.UNIT]),
+		new MassDatum("Carat (unit)", 200e-6, null, [Category.UNIT]),
 		new MassDatum("Paperclip (small)", 0.25e-3, "https://howthingsfly.si.edu/sites/default/files/attachment/LighterThanAir.pdf"),
 		new MassDatum("Paperclip (large)", 1.2e-3, "https://inquiryproject.terc.edu/curriculum/curriculum3/standard-measures/investigation1/index.html"),
 		new MassDatum("Dime (US)", 2.268e-3),
@@ -447,9 +448,9 @@ const OOM = {
 		new MassDatum("Quarter (US)", 5.67e-3),
 		new MassDatum("Dollar coin (US)", 8.100e-3),
 		new MassDatum("Half-Dollar (US)", 11.340e-3),
-		new MassDatum("Scruple (unit)", CONSTANT.gr*20),
-		new MassDatum("Pennyweight (unit)", CONSTANT.gr*24),
-		new MassDatum("Dram (unit)", CONSTANT.dr),
+		new MassDatum("Scruple (unit)", CONSTANT.gr*20, null, [Category.UNIT]),
+		new MassDatum("Pennyweight (unit)", CONSTANT.gr*24, null, [Category.UNIT]),
+		new MassDatum("Dram (unit)", CONSTANT.dr, null, [Category.UNIT]),
 		new MassDatum("Paper (A4 sheet)", 0.08*0.21*0.297, "https://en.wikipedia.org/wiki/Letter_(paper_size)#Details"),
 		// a regulation standard shuttlecock weighs between 4.75 and 5.5 g, has 16 feathers, and a cork w/ diam. b/w 25 and 28 mm
 		// src: https://en.wikipedia.org/wiki/Shuttlecock#Specifications
@@ -465,12 +466,12 @@ const OOM = {
 		new MassDatum("Baseball", 0.145, "https://hypertextbook.com/facts/1999/ChristinaLee.shtml"),
 		new MassDatum("Soccerball", 0.43, "https://hypertextbook.com/facts/2002/LouiseHuang.shtml"),
 		new MassDatum("Phone (iPhone 17)", 117e-3, "https://en.wikipedia.org/wiki/IPhone_17"),
-		new MassDatum("Ounce (unit)", CONSTANT.oz),
-		new MassDatum("Pound (unit)", CONSTANT.lb),
+		new MassDatum("Ounce (unit)", CONSTANT.oz, null, [Category.UNIT]),
+		new MassDatum("Pound (unit)", CONSTANT.lb, null, [Category.UNIT]),
 		new MassDatum("Physics Textbook", 1.65, "https://hypertextbook.com/facts/2003/BettyTan.shtml"),
 		new MassDatum("Hitachi Magic Wand", 1.2*CONSTANT.lb, "https://en.wikipedia.org/wiki/Hitachi_Magic_Wand"),
 		new MassDatum("Blåhaj (Big)", 0.66, "https://www.reddit.com/r/BLAHAJ/comments/10x33so/whats_the_volume_and_weight_of_a_blahaj/j7q4h5r/"),
-		new MassDatum("Stone (unit)", 14*CONSTANT.lb),
+		new MassDatum("Stone (unit)", 14*CONSTANT.lb, null, [Category.UNIT]),
 		new MassDatum("Cup of tea", 227.3e-6*CONSTANT.density.water50c, "https://en.wikipedia.org/wiki/Breakfast_cup"),
 		new MassDatum("Gold bar", 12.4, "https://en.wikipedia.org/wiki/Gold_bar"),
 		new MassDatum("Electric Scooter", 40.8*CONSTANT.lb, "https://www.amazon.com/Electric-Inflatable-Electronic-Capacity-eScooter/dp/B0BV88TGYY?th=1"),
