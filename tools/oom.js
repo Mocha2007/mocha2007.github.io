@@ -924,6 +924,10 @@ const OOM = {
 		main: undefined,
 		/** @returns {HTMLDivElement} */
 		mainEnergy: undefined,
+		/** @returns {HTMLDivElement[]} */
+		get tabs(){
+			return [this.main, this.mainEnergy];
+		}
 	},
 	init(){
 		const main = this.elem.main = document.getElementById('main');
@@ -1051,8 +1055,9 @@ const OOM = {
 	toggleShift(shiftTo){
 		this.config.shifted = !this.config.shifted;
 		console.debug('toggleShift -> ', this.config.shifted);
-		[this.elem.main, this.elem[shiftTo]].forEach(elem => {
+		this.elem.tabs.forEach(elem => {
 			elem.style.transform = this.config.shifted ? 'translate(50vw, 0)' : '';
+			elem.style.display = elem.id === 'main' || (this.config.shifted && elem.id === shiftTo) ? '' : 'none';
 		});
 	},
 };
