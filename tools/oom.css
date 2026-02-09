@@ -23,7 +23,7 @@ body {
 		opacity: 1;
 		text-shadow:0 0 1em white;
 	}
-	.main:has(.datum:hover) .datum:not(:hover) {
+	body:has(.datum:hover) .datum:not(:hover) {
 		opacity: 0.25;
 	}
 }

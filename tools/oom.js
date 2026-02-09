@@ -81,6 +81,12 @@ class Time extends Dimension {
 	}
 }
 
+class Length extends Dimension {
+	constructor(x, uncertainty){
+		super("m", 0, Math.pow(CONSTANT.c, 2)/CONSTANT.G, x, uncertainty);
+	}
+}
+
 class Datum {
 	/**
 	 * @param {string} name
@@ -176,6 +182,18 @@ class TimeDatum extends Datum {
 	 */
 	constructor(name, amt, source, categories){
 		super(Time, name, amt, source, categories);
+	}
+}
+
+class LengthDatum extends Datum {
+	/**
+	 * @param {string} name
+	 * @param {number|Length} amt
+	 * @param {string?} source
+	 * @param {Category[]?} categories
+	 */
+	constructor(name, amt, source, categories){
+		super(Length, name, amt, source, categories);
 	}
 }
 
@@ -289,6 +307,8 @@ const CONSTANT = {
 	earth_radius: 6371e3,
 	/** in J */
 	eV: 1.602176634e-19,
+	/** in m */
+	ft: 0.3048,
 	/** m^3/(kg*s^2) */
 	G: 6.67430e-11,
 	/** in kg */
@@ -565,7 +585,7 @@ const OOM = {
 		new MassDatum("Pound (unit)", CONSTANT.lb, null, [Category.UNIT]),
 		new MassDatum("Stone (unit)", 14*CONSTANT.lb, null, [Category.UNIT]),
 		new MassDatum("Quarter (unit)", 28*CONSTANT.lb, null, [Category.UNIT]),
-		new MassDatum("Slug (unit)", CONSTANT.lb*9.80665/0.3048, null, [Category.UNIT]),
+		new MassDatum("Slug (unit)", CONSTANT.lb*9.80665/CONSTANT.ft, null, [Category.UNIT]),
 		new MassDatum("Firkin (unit)", 90*CONSTANT.lb, null, [Category.UNIT]),
 		new MassDatum("Hundredweight (unit)", 112*CONSTANT.lb, null, [Category.UNIT]),
 		new MassDatum("Short ton (unit)", 2000*CONSTANT.lb, null, [Category.UNIT]),
@@ -963,6 +983,19 @@ const OOM = {
 		// misc
 		new TimeDatum("Caesium frequency", 1/9192631770, "https://www.bipm.org/documents/20126/41483022/SI-Brochure-9.pdf/fcf090b2-04e6-88cc-1149-c3e029ad8232")
 	],
+	dataLength: [
+		// units
+		new LengthDatum("Planck Length", 1.616255e-35, null, [Category.UNIT]),
+		new LengthDatum("Inch", CONSTANT.ft/12, null, [Category.UNIT]),
+		new LengthDatum("Foot", CONSTANT.ft, null, [Category.UNIT]),
+		new LengthDatum("Yard", CONSTANT.ft*3, null, [Category.UNIT]),
+		new LengthDatum("Mile", CONSTANT.ft*5280, null, [Category.UNIT]),
+		new LengthDatum("Nautical Mile", CONSTANT.nmi, null, [Category.UNIT]),
+		new LengthDatum("Meter", 1, null, [Category.UNIT]),
+		// misc
+		new LengthDatum("Earth Radius", CONSTANT.earth_radius, null),
+		new LengthDatum("Observable Universe (Radius)", 4.4e26, null),
+	],
 	elem: {
 		/** @type {HTMLDivElement} */
 		cat_container: undefined,
@@ -971,10 +1004,12 @@ const OOM = {
 		/** @returns {HTMLDivElement} */
 		mainEnergy: undefined,
 		/** @returns {HTMLDivElement} */
+		mainLength: undefined,
+		/** @returns {HTMLDivElement} */
 		mainTime: undefined,
 		/** @returns {HTMLDivElement[]} */
 		get tabs(){
-			return [this.main, this.mainEnergy, this.mainTime];
+			return [this.main, this.mainEnergy, this.mainLength, this.mainTime];
 		}
 	},
 	init(){
@@ -983,7 +1018,7 @@ const OOM = {
 		this.data.forEach(datum => main.appendChild(datum.elem(e2y)));
 		this.ranges.forEach((range, i, a) => main.appendChild(range.elem(e2y, i, a)));
 		// now for energy
-		['Energy', 'Time'].forEach(s => {
+		['Energy', 'Length', 'Time'].forEach(s => {
 			const mainX = this.elem[`main${s}`] = document.createElement('div');
 			mainX.id = `main${s}`;
 			mainX.classList.add('main');
@@ -993,6 +1028,9 @@ const OOM = {
 		this.config.vscale = this.config._vscale;
 		this.initCats();
 		this.initTabs();
+		// i need to toggle shift twice to unbreak hover for some reason?
+		this.toggleShift();
+		this.toggleShift();
 		console.info('oom.js initialized.');
 	},
 	initCats(){
@@ -1067,7 +1105,7 @@ const OOM = {
 		const tabContainer = document.createElement('div');
 		tabContainer.id = 'tabContainer';
 		document.body.appendChild(tabContainer);
-		[['E', 'Energy'], ['T', 'Time']].forEach(x => {
+		[['E', 'Energy'], ['L', 'Length'], ['T', 'Time']].forEach(x => {
 			const [abbr, tabName] = x;
 			const button = document.createElement('div');
 			button.innerHTML = abbr;
