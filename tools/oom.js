@@ -842,7 +842,20 @@ const OOM = {
 		// CH4 + 2O2 -> CO2 + 2H20
 		new EnergyDatum("Combustion of one hydrogen molecule", 285.83e3/CONSTANT.avogadro),
 		new EnergyDatum("Combustion of one carbon atom", 393.5e3/CONSTANT.avogadro),
+		new EnergyDatum("Combustion of one formic acid molecule", (393.5e3+285.83e3)/CONSTANT.avogadro),
 		new EnergyDatum("Combustion of one methane molecule", (393.5e3+2*285.83e3)/CONSTANT.avogadro),
+		new EnergyDatum("Combustion of one ethanol molecule", (2*393.5e3+3*285.83e3)/CONSTANT.avogadro),
+		new EnergyDatum("Combustion of one isopropyl alcohol molecule", (3*393.5e3+4*285.83e3)/CONSTANT.avogadro),
+		new EnergyDatum("Combustion of one diethyl ether molecule", (4*393.5e3+5*285.83e3)/CONSTANT.avogadro),
+		new EnergyDatum("Combustion of one benzene molecule", (6*393.5e3+3*285.83e3)/CONSTANT.avogadro),
+		new EnergyDatum("Combustion of one naphthalene molecule", (10*393.5e3+4*285.83e3)/CONSTANT.avogadro),
+		new EnergyDatum("Combustion of one octane molecule", (8*393.5e3+9*285.83e3)/CONSTANT.avogadro),
+		new EnergyDatum("Combustion of one turpentine molecule", (10*393.5e3+8*285.83e3)/CONSTANT.avogadro),
+		new EnergyDatum("Combustion of one oleic acid molecule", (18*393.5e3+17*285.83e3)/CONSTANT.avogadro),
+		new EnergyDatum("Combustion of one buckyball", 60*393.5e3/CONSTANT.avogadro),
+		// (heat of combustion)
+		new EnergyDatum("Combustion of one TNT molecule", 14.5e6/0.227132/CONSTANT.avogadro),
+		new EnergyDatum("Combustion of one nitroglycerin molecule", 1.529e6/CONSTANT.avogadro),
 		// fusion (sort by smaller-larger nuclei):
 		new EnergyDatum("Proton-Proton fusion", 1.442e6*CONSTANT.eV, "https://en.wikipedia.org/wiki/Proton%E2%80%93proton_chain#The_proton%E2%80%93proton_chain"),
 		new EnergyDatum("Proton-Deuterium fusion", 5.493e6*CONSTANT.eV, "https://en.wikipedia.org/wiki/Proton%E2%80%93proton_chain#The_proton%E2%80%93proton_chain"),
@@ -862,6 +875,7 @@ const OOM = {
 		new EnergyDatum("Airbus A380 kinetic energy (Cruise)", 0.5*575e3*Math.pow(488*CONSTANT.kt,2), "https://en.wikipedia.org/wiki/Airbus_A380#Specifications"),
 		new EnergyDatum("SR-71 Blackbird kinetic energy (Max)", 0.5*78018*Math.pow(1910*CONSTANT.kt,2), "https://en.wikipedia.org/wiki/Lockheed_SR-71_Blackbird#Specifications_(SR-71A)"),
 		new EnergyDatum("MOAB", 46e9, "https://en.wikipedia.org/wiki/GBU-43/B_MOAB"),
+		new EnergyDatum("Kori nuclear power plant annual output", 43148e9*CONSTANT.h, "https://en.wikipedia.org/wiki/Kori_Nuclear_Power_Plant"),
 		new EnergyDatum("Little Boy", new Energy({min:13e3*CONSTANT.tTNT,max:16e3*CONSTANT.tTNT}), "https://en.wikipedia.org/wiki/Little_Boy"),
 		new EnergyDatum("Fat Man", 21e3*CONSTANT.tTNT, "https://en.wikipedia.org/wiki/Fat_Man"),
 		new EnergyDatum("Trinity test", new Energy(24.8e3*CONSTANT.tTNT,2e3*CONSTANT.tTNT), "https://en.wikipedia.org/wiki/Trinity_(nuclear_test)"),
