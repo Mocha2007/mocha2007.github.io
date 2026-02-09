@@ -77,7 +77,7 @@ class Energy extends Dimension {
 
 class Time extends Dimension {
 	constructor(x, uncertainty){
-		super("s", 0, CONSTANT.G/Math.pow(CONSTANT.c, 3), x, uncertainty);
+		super("s", 0, Math.pow(CONSTANT.c, 3)/CONSTANT.G, x, uncertainty);
 	}
 }
 
@@ -938,7 +938,28 @@ const OOM = {
 	],
 	dataTime: [
 		// units
+		new TimeDatum("Planck Time", 5.391247e-44, null, [Category.UNIT]),
 		new TimeDatum("Second", 1, null, [Category.UNIT]),
+		new TimeDatum("Minute", CONSTANT.min, null, [Category.UNIT]),
+		new TimeDatum("Hour", CONSTANT.h, null, [Category.UNIT]),
+		new TimeDatum("Day", CONSTANT.d, null, [Category.UNIT]),
+		new TimeDatum("Week", 7*CONSTANT.d, null, [Category.UNIT]),
+		new TimeDatum("Fortnight", 14*CONSTANT.d, null, [Category.UNIT]),
+		new TimeDatum("Month", CONSTANT.yr/12, null, [Category.UNIT]),
+		new TimeDatum("Year", CONSTANT.yr, null, [Category.UNIT]),
+		new TimeDatum("Decade", 10*CONSTANT.yr, null, [Category.UNIT]),
+		new TimeDatum("Century", 100*CONSTANT.yr, null, [Category.UNIT]),
+		new TimeDatum("Millennium", 1e3*CONSTANT.yr, null, [Category.UNIT]),
+		// orbits
+		new TimeDatum("Lunar synodic month", 29.530588861*CONSTANT.d),
+		// half-lives
+		new TimeDatum("Plutonium-244 half-life", 8.13e7*CONSTANT.yr),
+		new TimeDatum("Uranium-235 half-life", 7.04e8*CONSTANT.yr),
+		new TimeDatum("Uranium-238 half-life", 4.463e9*CONSTANT.yr),
+		new TimeDatum("Thorium-232 half-life", 1.40e10*CONSTANT.yr),
+		// ages
+		new TimeDatum("Age of the Earth", 4.54e9*CONSTANT.yr),
+		new TimeDatum("Age of the Universe", 13.79e9*CONSTANT.yr),
 	],
 	elem: {
 		/** @type {HTMLDivElement} */
