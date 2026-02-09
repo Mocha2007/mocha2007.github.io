@@ -1005,6 +1005,8 @@ const OOM = {
 		new LengthDatum("Cable (unit)", CONSTANT.nmi/10, null, [Category.UNIT]),
 		new LengthDatum("Nautical Mile", CONSTANT.nmi, null, [Category.UNIT]),
 		new LengthDatum("League (unit)", CONSTANT.ft*15840, null, [Category.UNIT]),
+		new LengthDatum("Light-year", CONSTANT.c*CONSTANT.yr, null, [Category.UNIT]),
+		new LengthDatum("Parsec", 3.0857e16, null, [Category.UNIT]),
 		// misc
 		new LengthDatum("Earth Radius", CONSTANT.earth_radius, null),
 		new LengthDatum("Observable Universe (Radius)", 4.4e26, null),
