@@ -960,6 +960,8 @@ const OOM = {
 		// ages
 		new TimeDatum("Age of the Earth", 4.54e9*CONSTANT.yr),
 		new TimeDatum("Age of the Universe", 13.79e9*CONSTANT.yr),
+		// misc
+		new TimeDatum("Caesium frequency", 1/9192631770, "https://www.bipm.org/documents/20126/41483022/SI-Brochure-9.pdf/fcf090b2-04e6-88cc-1149-c3e029ad8232")
 	],
 	elem: {
 		/** @type {HTMLDivElement} */
