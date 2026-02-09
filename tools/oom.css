@@ -1,30 +1,36 @@
 body {
-	margin-bottom: 1em;
-	margin-top: 1em;
+	margin: 1em 0;
 	overflow-x: hidden;
 }
-#main {
+.main {
 	position: relative;
 	width: 100vw;
 }
 .datum, .scale, .range {
 	position: absolute;
 }
-.datum {
+.datum.larr {
 	transform: translate(6em, -50%);
 }
+.datum.rarr {
+	text-align: right;
+	transform: translate(-100%, -50%);
+}
 @media (hover: hover) { /* opposite: hover: none */
-	.datum:hover {
+	#tabContainer > *:hover, .datum:hover {
 		color: white;
 		opacity: 1;
 		text-shadow:0 0 1em white;
 	}
-	#main:has(.datum:hover) .datum:not(:hover) {
+	.main:has(.datum:hover) .datum:not(:hover) {
 		opacity: 0.25;
 	}
 }
-.datum::before {
+.datum.larr::before {
 	content: "←";
+}
+.datum.rarr::after {
+	content: "→";
 }
 .scale {
 	color: red;
@@ -84,4 +90,24 @@ a[href^="https://en.wikipedia.org"] {
 .amount {
 	color: grey;
 	font-size: 75%;
+}
+#tabContainer {
+	background-color: #222;
+	border-bottom: 0.5vw solid silver;
+	border-bottom-right-radius: 1vw;
+	border-top: 0.5vw solid silver;
+	border-top-right-radius: 1vw;
+	border-right: 0.5vw solid silver;
+	position: fixed;
+	left: 0;
+	top: 1em;
+	z-index: 1;
+}
+#tabContainer > * {
+	cursor: pointer;
+	padding: 1vw;
+	user-select: none;
+}
+#tabContainer > *:not(:first-child) {
+	border-bottom: 0.5vw solid silver;
 }

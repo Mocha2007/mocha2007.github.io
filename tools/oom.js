@@ -1,5 +1,17 @@
-class Mass {
-	constructor(x, uncertainty){
+/**
+ * @param {number} x 
+ * @param {number} n max digits
+ * @returns string rep of that number, rounded to AT MOST n digits
+ */
+const round = (x, n) => {
+	return x.toFixed(n || 0).replace(/\.?0+$/, '');
+}
+
+class Dimension {
+	constructor(unit, si_pref_off, scale_factor, x, uncertainty){
+		this.unit = unit;
+		this.si_pref_off = si_pref_off;
+		this.scale_factor = scale_factor;
 		// if x is a single number, we interpret it as the mean/reference value
 		// otherwise, it must be a range with {min} and {max}
 		if (typeof x === "number") {
@@ -38,44 +50,48 @@ class Mass {
 	}
 	get pretty(){
 		const q = Math.floor(Math.log10(this.x)/3);
-		const i = CONSTANT.si_prefix_offset + 1 + q;
+		const i = CONSTANT.si_prefix_offset + this.si_pref_off + q;
 		const p = Math.pow(10, 3*q);
 		const error_elem = this.error_elem(p);
 		if (i < 0 || CONSTANT.si_prefix.length <= i){
-			return `${round(this.x/p, 3)}${error_elem}&middot;10<sup>${3*q}</sup> kg`;
+			return `${round(this.x/p, 3)}${error_elem}&middot;10<sup>${3*q}</sup> ${CONSTANT.si_prefix[CONSTANT.si_prefix_offset+this.si_pref_off]}${this.unit}`;
 		}
 		else {
 			const prefix = CONSTANT.si_prefix[i];
-			return `${round(this.x/p, 3)}${error_elem} ${prefix}g`;
+			return `${round(this.x/p, 3)}${error_elem} ${prefix}${this.unit}`;
 		}
 	}
 }
 
-/**
- * @param {number} x 
- * @param {number} n max digits
- * @returns string rep of that number, rounded to AT MOST n digits
- */
-const round = (x, n) => {
-	return x.toFixed(n || 0).replace(/\.?0+$/, '');
+class Mass extends Dimension {
+	constructor(x, uncertainty){
+		super("g", 1, 1, x, uncertainty);
+	}
 }
 
-class MassDatum {
+class Energy extends Dimension {
+	constructor(x, uncertainty){
+		super("J", 0, Math.pow(CONSTANT.c, -2), x, uncertainty);
+	}
+}
+
+class Datum {
 	/**
 	 * @param {string} name
-	 * @param {number|Mass} mass
+	 * @param {number|Dimension} amt
 	 * @param {string?} source
 	 * @param {Category[]?} categories
 	 */
-	constructor(name, mass, source, categories){
+	constructor(dimension, name, amt, source, categories){
+		this.dimension = dimension;
 		/** @type {string} */
 		this.name = name;
 		/** @type {Mass} */
-		this.mass = typeof mass === "number" ? new Mass(mass) : mass;
+		this.mass = typeof amt === "number" ? new dimension(amt) : amt;
 		/** @type {string} */
 		this.source = source;
 		if (!source){
-			console.warn(`no source for |${name}|, mass |${mass}|`);
+			console.warn(`no source for |${name}|, mass |${amt}|`);
 		}
 		/** @type {Category[]} */
 		this.categories = categories || [];
@@ -86,20 +102,62 @@ class MassDatum {
 		const e = document.createElement('span');
 		this.elem_cache = e;
 		e.classList.add('datum');
+		e.classList.add(this.dimension === Mass ? 'larr' : 'rarr');
 		const permalink = document.createElement('a');
 		permalink.classList.add('permalink');
 		permalink.href = `#${this.id}`;
-		e.appendChild(permalink);
-		e.innerHTML += `<span class="amount">${this.mass.pretty}</span>: ${this.name}`;
-		if (this.source){
-			e.innerHTML += `<sup><a href="${this.source}">src</a></sup>`;
-		}
-		e.style.top = `${100*e2y(Math.log10(this.mass.x))}%`;
+		const amount = document.createElement('span');
+		amount.classList.add('amount');
+		amount.innerHTML = this.mass.pretty;
+		const src = document.createElement('sup');
+		src.innerHTML = `<a href="${this.source}">src</a>`;
+		e.style.top = `${100*e2y(Math.log10(this.mass.x*this.mass.scale_factor))}%`;
 		e.id = this.id;
+		// ok now we combine everything depending on arrow direction
+		if (this.dimension === Mass) {
+			e.appendChild(permalink);
+			e.appendChild(amount);
+			e.innerHTML += `: ${this.name}`;
+			if (this.source){
+				e.appendChild(src);
+			}
+		}
+		else {
+			if (this.source){
+				e.appendChild(src);
+			}
+			e.innerHTML += `${this.name}: `;
+			e.appendChild(amount);
+			e.appendChild(permalink);
+		}
 		return e;
 	}
 	get id(){
 		return this.name.replaceAll(' ', '_');
+	}
+}
+
+class MassDatum extends Datum {
+	/**
+	 * @param {string} name
+	 * @param {number|Dimension} amt
+	 * @param {string?} source
+	 * @param {Category[]?} categories
+	 */
+	constructor(name, amt, source, categories){
+		super(Mass, name, amt, source, categories);
+	}
+}
+
+class EnergyDatum extends Datum {
+	/**
+	 * @param {string} name
+	 * @param {number|Dimension} amt
+	 * @param {string?} source
+	 * @param {Category[]?} categories
+	 */
+	constructor(name, amt, source, categories){
+		super(Energy, name, amt, source, categories);
 	}
 }
 
@@ -280,6 +338,7 @@ const OOM = {
 			Category.COIN,
 			Category.MINORPLANET,
 		],
+		shifted: false,
 		get vscale(){
 			return this._vscale;
 		},
@@ -289,16 +348,6 @@ const OOM = {
 		_vscale: 29,
 	},
 	data: [
-		// Photon energies
-		// new MassDatum("Infrared (far) mass equivalence", 300e9*CONSTANT.planck/Math.pow(CONSTANT.c, 2)), too small
-		new MassDatum("Infrared (near) mass equivalence", 380e12*CONSTANT.planck/Math.pow(CONSTANT.c, 2)),
-		new MassDatum("Visible light (Red) mass equivalence", 440e12*CONSTANT.planck/Math.pow(CONSTANT.c, 2)),
-		new MassDatum("Visible light (Green) mass equivalence", 550e12*CONSTANT.planck/Math.pow(CONSTANT.c, 2)),
-		new MassDatum("Visible light (Blue) mass equivalence", 640e12*CONSTANT.planck/Math.pow(CONSTANT.c, 2)),
-		new MassDatum("Ultraviolet mass equivalence", 6e-6*CONSTANT.MeVc2),
-		new MassDatum("X-ray (soft) mass equivalence", 100e-6*CONSTANT.MeVc2),
-		new MassDatum("Gamma ray (minimum) mass equivalence", 10e-3*CONSTANT.MeVc2),
-		new MassDatum("Joule mass equivalence", 1/Math.pow(CONSTANT.c, 2)),
 		// Subatomic particles
 		new MassDatum("Muon Neutrino (upper bound)", 0.17e-6*CONSTANT.MeVc2, "https://en.wikipedia.org/wiki/Neutrino#Flavor,_mass,_and_their_mixing"),
 		new MassDatum("Electron Neutrino (upper bound)", 0.80e-6*CONSTANT.MeVc2, "https://en.wikipedia.org/wiki/Neutrino#Flavor,_mass,_and_their_mixing"),
@@ -471,7 +520,6 @@ const OOM = {
 		new MassDatum("Half-Dollar (US)", 11.340e-3, null, [Category.COIN]),
 		// units
 		new MassDatum("Planck mass", 2.176434e-8, "https://en.wikipedia.org/wiki/Planck_units"),
-		new MassDatum("eV (unit)", CONSTANT.MeVc2/1e6, null, [Category.UNIT]),
 		new MassDatum("Dalton (unit)", CONSTANT.da, null, [Category.UNIT]),
 		new MassDatum("RNA Base Pair (unit)", CONSTANT.bp_rna, null, [Category.UNIT]),
 		new MassDatum("Grain (unit)", CONSTANT.gr, null, [Category.UNIT]),
@@ -758,25 +806,44 @@ const OOM = {
 		new MassDatum("Huge-LQG", 6.1e18*CONSTANT.solar_mass),
 		new MassDatum("Observable universe", 1.5e53),
 	],
+	dataEnergy: [
+		// Photon energies
+		// new EnergyDatum("Infrared (far)", 300e9*CONSTANT.planck), too small
+		new EnergyDatum("Infrared (near)", 380e12*CONSTANT.planck),
+		new EnergyDatum("Visible light (Red)", 440e12*CONSTANT.planck),
+		new EnergyDatum("Visible light (Green)", 550e12*CONSTANT.planck),
+		new EnergyDatum("Visible light (Blue)", 640e12*CONSTANT.planck),
+		new EnergyDatum("Ultraviolet", 6*CONSTANT.eV),
+		new EnergyDatum("X-ray (soft)", 100*CONSTANT.eV),
+		new EnergyDatum("Gamma ray (minimum)", 10e3*CONSTANT.eV),
+		new EnergyDatum("Electronvolt", CONSTANT.eV, null, [Category.UNIT]),
+		new EnergyDatum("Joule", 1, null, [Category.UNIT]),
+	],
 	elem: {
 		/** @type {HTMLDivElement} */
 		cat_container: undefined,
 		/** @returns {HTMLDivElement} */
 		main: undefined,
+		/** @returns {HTMLDivElement} */
+		mainEnergy: undefined,
 	},
 	init(){
 		const main = this.elem.main = document.getElementById('main');
 		this.config.vscale = this.config._vscale;
 		const e2y = this.initScale();
 		this.data.forEach(datum => main.appendChild(datum.elem(e2y)));
+		this.dataEnergy.forEach(datum => main.appendChild(datum.elem(e2y)));
 		this.ranges.forEach((range, i, a) => main.appendChild(range.elem(e2y, i, a)));
 		this.initCats();
+		// now for energy
+		const mainEnergy = this.elem.mainEnergy = document.getElementById('mainEnergy');
+		this.initTabs();
 		console.info('oom.js initialized.');
 	},
 	initCats(){
 		const container = this.elem.cat_container = document.createElement('div');
 		container.id = "cat_container";
-		this.elem.main.appendChild(container);
+		document.body.appendChild(container);
 		this.initScaler();
 		Object.keys(Category).forEach(c => {
 			const label = document.createElement('label');
@@ -841,6 +908,19 @@ const OOM = {
 		increase.onmouseup = () => scale.innerHTML = ++this.config.vscale;
 		scaler.appendChild(increase);
 	},
+	initTabs(){
+		const tabContainer = document.createElement('div');
+		tabContainer.id = 'tabContainer';
+		document.body.appendChild(tabContainer);
+		[['E', 'Energy']].forEach(x => {
+			const [abbr, tabName] = x;
+			const button = document.createElement('div');
+			button.innerHTML = abbr;
+			button.title = tabName;
+			tabContainer.appendChild(button);
+			button.onclick = () => this.toggleShift();
+		});
+	},
 	get range(){
 		const sorted = this.data.map(x => x);
 		sorted.sort((a, b) => a.mass.x - b.mass.x);
@@ -864,10 +944,17 @@ const OOM = {
 	/** @param {string[]} active */
 	refreshCats(active){
 		// console.debug(`active = `, active);
-		OOM.data.forEach(datum => {
+		OOM.data.concat(...OOM.dataEnergy).forEach(datum => {
 			datum.elem_cache.style.display
 				= datum.categories.every(c => active.includes(c))
 				? "" : "none";
+		});
+	},
+	toggleShift(){
+		this.config.shifted = !this.config.shifted;
+		console.debug('toggleShift -> ', this.config.shifted);
+		[this.elem.main, this.elem.mainEnergy].forEach(elem => {
+			elem.style.transform = this.config.shifted ? 'translate(50vw, 0)' : '';
 		});
 	},
 };
