@@ -3,7 +3,8 @@ body {
 	overflow-x: hidden;
 }
 .main {
-	position: relative;
+	position: absolute;
+	top: 0;
 	width: 100vw;
 }
 .datum, .scale, .range {
@@ -108,6 +109,6 @@ a[href^="https://en.wikipedia.org"] {
 	padding: 1vw;
 	user-select: none;
 }
-#tabContainer > *:not(:first-child) {
+#tabContainer > *:not(:last-child) {
 	border-bottom: 0.5vw solid silver;
 }

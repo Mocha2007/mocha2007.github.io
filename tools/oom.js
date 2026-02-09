@@ -75,6 +75,12 @@ class Energy extends Dimension {
 	}
 }
 
+class Time extends Dimension {
+	constructor(x, uncertainty){
+		super("s", 0, CONSTANT.G/Math.pow(CONSTANT.c, 3), x, uncertainty);
+	}
+}
+
 class Datum {
 	/**
 	 * @param {string} name
@@ -140,7 +146,7 @@ class Datum {
 class MassDatum extends Datum {
 	/**
 	 * @param {string} name
-	 * @param {number|Dimension} amt
+	 * @param {number|Mass} amt
 	 * @param {string?} source
 	 * @param {Category[]?} categories
 	 */
@@ -152,12 +158,24 @@ class MassDatum extends Datum {
 class EnergyDatum extends Datum {
 	/**
 	 * @param {string} name
-	 * @param {number|Dimension} amt
+	 * @param {number|Energy} amt
 	 * @param {string?} source
 	 * @param {Category[]?} categories
 	 */
 	constructor(name, amt, source, categories){
 		super(Energy, name, amt, source, categories);
+	}
+}
+
+class TimeDatum extends Datum {
+	/**
+	 * @param {string} name
+	 * @param {number|Time} amt
+	 * @param {string?} source
+	 * @param {Category[]?} categories
+	 */
+	constructor(name, amt, source, categories){
+		super(Time, name, amt, source, categories);
 	}
 }
 
@@ -358,7 +376,8 @@ const OOM = {
 			return this._vscale;
 		},
 		set vscale(x){
-			OOM.elem.main.style.height = `${(this._vscale = x)*100}vh`;
+			this._vscale = x;
+			OOM.elem.tabs.forEach(elem => elem.style.height = `${x*100}vh`);
 		},
 		_vscale: 29,
 	},
@@ -917,6 +936,10 @@ const OOM = {
 		new EnergyDatum("Gamma-ray burst (typical)", 3e44, "https://iopscience.iop.org/article/10.1086/338119/meta"),
 		new EnergyDatum("Hypernova (min)", 1e45, "https://en.wikipedia.org/wiki/Hypernova#Properties"),
 	],
+	dataTime: [
+		// units
+		new TimeDatum("Second", 1, null, [Category.UNIT]),
+	],
 	elem: {
 		/** @type {HTMLDivElement} */
 		cat_container: undefined,
@@ -924,21 +947,28 @@ const OOM = {
 		main: undefined,
 		/** @returns {HTMLDivElement} */
 		mainEnergy: undefined,
+		/** @returns {HTMLDivElement} */
+		mainTime: undefined,
 		/** @returns {HTMLDivElement[]} */
 		get tabs(){
-			return [this.main, this.mainEnergy];
+			return [this.main, this.mainEnergy, this.mainTime];
 		}
 	},
 	init(){
 		const main = this.elem.main = document.getElementById('main');
-		this.config.vscale = this.config._vscale;
 		const e2y = this.initScale();
 		this.data.forEach(datum => main.appendChild(datum.elem(e2y)));
-		this.dataEnergy.forEach(datum => main.appendChild(datum.elem(e2y)));
 		this.ranges.forEach((range, i, a) => main.appendChild(range.elem(e2y, i, a)));
-		this.initCats();
 		// now for energy
-		const mainEnergy = this.elem.mainEnergy = document.getElementById('mainEnergy');
+		['Energy', 'Time'].forEach(s => {
+			const mainX = this.elem[`main${s}`] = document.createElement('div');
+			mainX.id = `main${s}`;
+			mainX.classList.add('main');
+			document.body.appendChild(mainX);
+			this[`data${s}`].forEach(datum => mainX.appendChild(datum.elem(e2y)));
+		})
+		this.config.vscale = this.config._vscale;
+		this.initCats();
 		this.initTabs();
 		console.info('oom.js initialized.');
 	},
@@ -1014,7 +1044,7 @@ const OOM = {
 		const tabContainer = document.createElement('div');
 		tabContainer.id = 'tabContainer';
 		document.body.appendChild(tabContainer);
-		[['E', 'Energy']].forEach(x => {
+		[['E', 'Energy'], ['T', 'Time']].forEach(x => {
 			const [abbr, tabName] = x;
 			const button = document.createElement('div');
 			button.innerHTML = abbr;
@@ -1046,7 +1076,7 @@ const OOM = {
 	/** @param {string[]} active */
 	refreshCats(active){
 		// console.debug(`active = `, active);
-		OOM.data.concat(...OOM.dataEnergy).forEach(datum => {
+		OOM.data.concat(...OOM.dataEnergy).concat(...OOM.dataTime).forEach(datum => {
 			datum.elem_cache.style.display
 				= datum.categories.every(c => active.includes(c))
 				? "" : "none";
@@ -1054,7 +1084,7 @@ const OOM = {
 	},
 	toggleShift(shiftTo){
 		this.config.shifted = !this.config.shifted;
-		console.debug('toggleShift -> ', this.config.shifted);
+		console.debug(`toggleShift(|${shiftTo}|) -> `, this.config.shifted);
 		this.elem.tabs.forEach(elem => {
 			elem.style.transform = this.config.shifted ? 'translate(50vw, 0)' : '';
 			elem.style.display = elem.id === 'main' || (this.config.shifted && elem.id === shiftTo) ? '' : 'none';
