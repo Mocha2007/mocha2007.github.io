@@ -218,6 +218,8 @@ const CONSTANT = {
 		const g = this.G*m/Math.pow(r, 2);
 		return sp * sa / g;
 	},
+	/** in mol^-1 */
+	avogadro: 6.02214076e23,
 	/** in kg, DNA base pair */
 	get bp_dna(){
 		return 618*this.da;
@@ -281,6 +283,10 @@ const CONSTANT = {
 	},
 	/** in kg */
 	jupiter_mass: 1.898125e27,
+	/** in m/s (knot) */
+	get kt(){
+		return this.nmi/this.h;
+	},
 	/** in kg */
 	lb: 0.45359237,
 	/** in kg */
@@ -293,6 +299,8 @@ const CONSTANT = {
 	},
 	/** in s */
 	min: 60,
+	/** in m https://en.wikipedia.org/wiki/Nautical_mile */
+	nmi: 1852,
 	/** in kg */
 	get oz(){
 		return this.lb/16;
@@ -314,6 +322,8 @@ const CONSTANT = {
 			oceanic: (5e3+10e3)/2,
 		}
 	},
+	/** in J: tons of TNT equivalent */
+	tTNT: 4.184e9,
 	volume: {
 		/** a, b, c are major axes (diameters) */
 		ellipsoid(a, b, c){
@@ -817,7 +827,69 @@ const OOM = {
 		new EnergyDatum("X-ray (soft)", 100*CONSTANT.eV),
 		new EnergyDatum("Gamma ray (minimum)", 10e3*CONSTANT.eV),
 		new EnergyDatum("Electronvolt", CONSTANT.eV, null, [Category.UNIT]),
+		new EnergyDatum("Erg", 1e-7, null, [Category.UNIT]),
 		new EnergyDatum("Joule", 1, null, [Category.UNIT]),
+		new EnergyDatum("Watt-hour", 60*60, null, [Category.UNIT]),
+		new EnergyDatum("Nutritional calorie", 4184, "https://en.wikipedia.org/wiki/Calorie", [Category.UNIT]),
+		new EnergyDatum("kg TNT equivalent", 4.184e6, "https://en.wikipedia.org/wiki/TNT_equivalent", [Category.UNIT]),
+		new EnergyDatum("Therm", 105e6, "https://en.wikipedia.org/wiki/Therm", [Category.UNIT]),
+		new EnergyDatum("Planck Energy", 1.9561e9, "https://en.wikipedia.org/wiki/Planck_units", [Category.UNIT]),
+		new EnergyDatum("Barrel of oil equivalent", 6e9, "https://en.wikipedia.org/wiki/Barrel_of_oil_equivalent", [Category.UNIT]),
+		// new EnergyDatum("Enthalpy of formation of water", 285.83e3/CONSTANT.avogadro),
+		// CH4 + 2O2 -> CO2 + 2H20
+		new EnergyDatum("Combustion of one hydrogen molecule", 285.83e3/CONSTANT.avogadro),
+		new EnergyDatum("Combustion of one carbon atom", 393.5e3/CONSTANT.avogadro),
+		new EnergyDatum("Combustion of one methane molecule", (393.5e3+2*285.83e3)/CONSTANT.avogadro),
+		// fusion (sort by smaller-larger nuclei):
+		new EnergyDatum("Proton-Proton fusion", 1.442e6*CONSTANT.eV, "https://en.wikipedia.org/wiki/Proton%E2%80%93proton_chain#The_proton%E2%80%93proton_chain"),
+		new EnergyDatum("Proton-Deuterium fusion", 5.493e6*CONSTANT.eV, "https://en.wikipedia.org/wiki/Proton%E2%80%93proton_chain#The_proton%E2%80%93proton_chain"),
+		new EnergyDatum("Proton-Helium-3 fusion", 19.795e6*CONSTANT.eV, "https://en.wikipedia.org/wiki/Proton%E2%80%93proton_chain#The_proton%E2%80%93proton_chain"),
+		new EnergyDatum("Proton-Lithium-7 fusion", 17.35e6*CONSTANT.eV, "https://en.wikipedia.org/wiki/Proton%E2%80%93proton_chain#The_proton%E2%80%93proton_chain"),
+		new EnergyDatum("Deuterium-Deuterium fusion", new Energy({min:2.45e6*CONSTANT.eV,max:3.02e6*CONSTANT.eV}), "https://en.wikipedia.org/wiki/Deuterium_fusion#Other_reactions"),
+		new EnergyDatum("Deuterium-Tritium fusion", 17.6e6*CONSTANT.eV, "https://en.wikipedia.org/wiki/Deuterium%E2%80%93tritium_fusion"),
+		new EnergyDatum("Deuterium-Helium-3 fusion", 14.7e6*CONSTANT.eV, "https://en.wikipedia.org/wiki/Deuterium_fusion#Other_reactions"),
+		new EnergyDatum("Helium-3-Helium-3 fusion", 12.859e6*CONSTANT.eV, "https://en.wikipedia.org/wiki/Proton%E2%80%93proton_chain#The_proton%E2%80%93proton_chain"),
+		new EnergyDatum("Helium-3-Helium-4 fusion", 1.59e6*CONSTANT.eV, "https://en.wikipedia.org/wiki/Proton%E2%80%93proton_chain#The_proton%E2%80%93proton_chain"),
+		new EnergyDatum("Triple-alpha fusion", 7.275e6*CONSTANT.eV, "https://en.wikipedia.org/wiki/Triple-alpha_process"),
+		new EnergyDatum("Uranium-235 fission", 215e6*CONSTANT.eV, "http://hyperphysics.phy-astr.gsu.edu/hbase/NucEne/U235chn.html#c3"),
+		// MORE
+		new EnergyDatum("Stick of dynamite", 1e6, "https://en.wikipedia.org/wiki/Dynamite#Form"),
+		new EnergyDatum("Oh-My-God particle", 3.2e20*CONSTANT.eV, "https://en.wikipedia.org/wiki/Oh-My-God_particle"),
+		new EnergyDatum("Lightning", new Energy({min:1e9,max:10e9}), "https://www.thenakedscientists.com/articles/science-features/how-do-thunderstorms-and-lightning-work"),
+		new EnergyDatum("Airbus A380 kinetic energy (Cruise)", 0.5*575e3*Math.pow(488*CONSTANT.kt,2), "https://en.wikipedia.org/wiki/Airbus_A380#Specifications"),
+		new EnergyDatum("SR-71 Blackbird kinetic energy (Max)", 0.5*78018*Math.pow(1910*CONSTANT.kt,2), "https://en.wikipedia.org/wiki/Lockheed_SR-71_Blackbird#Specifications_(SR-71A)"),
+		new EnergyDatum("MOAB", 46e9, "https://en.wikipedia.org/wiki/GBU-43/B_MOAB"),
+		new EnergyDatum("Little Boy", new Energy({min:13e3*CONSTANT.tTNT,max:16e3*CONSTANT.tTNT}), "https://en.wikipedia.org/wiki/Little_Boy"),
+		new EnergyDatum("Fat Man", 21e3*CONSTANT.tTNT, "https://en.wikipedia.org/wiki/Fat_Man"),
+		new EnergyDatum("Trinity test", new Energy(24.8e3*CONSTANT.tTNT,2e3*CONSTANT.tTNT), "https://en.wikipedia.org/wiki/Trinity_(nuclear_test)"),
+		new EnergyDatum("Castle Bravo", 15e6*CONSTANT.tTNT, "https://en.wikipedia.org/wiki/Castle_Bravo"),
+		new EnergyDatum("Tsar Bomba", new Energy({min:50e6*CONSTANT.tTNT,max:58e6*CONSTANT.tTNT}), "https://en.wikipedia.org/wiki/Tsar_Bomba"),
+		new EnergyDatum("Chelyabinsk meteor", 2100e12, "https://en.wikipedia.org/wiki/Chelyabinsk_meteor#Atmospheric_entry"),
+		new EnergyDatum("2004 Indian Ocean earthquake", 1.1e17, "https://en.wikipedia.org/wiki/2004_Indian_Ocean_earthquake_and_tsunami#Energy_released"),
+		new EnergyDatum("2022 Hunga Tonga eruption", new Energy({min:100e6*CONSTANT.tTNT,max:200e6*CONSTANT.tTNT}), "https://en.wikipedia.org/wiki/2022_Hunga_Tonga%E2%80%93Hunga_Ha%CA%BBapai_eruption_and_tsunami#Academic_research"),
+		new EnergyDatum("1883 Krakatoa eruption", 200e6*CONSTANT.tTNT, "https://en.wikipedia.org/wiki/1883_eruption_of_Krakatoa"),
+		new EnergyDatum("Daily hurricane energy release", 5.2e19, "https://www.aoml.noaa.gov/hrd-faq/#hurricane-energy-production"),
+		new EnergyDatum("Chicxulub impact", 300e21, "https://en.wikipedia.org/wiki/Chicxulub_crater#Effects"),
+		new EnergyDatum("Carrington event", 4e25, "https://www.annualreviews.org/doi/10.1146/annurev-astro-112420-023324"),
+		new EnergyDatum("Energy needed to boil Earth's oceans", 5.19e27, "https://en.wikipedia.org/wiki/Orders_of_magnitude_(energy)"),
+		// Planet info
+		new EnergyDatum("Mercury kinetic energy", 0.5*3.3011e23*Math.pow(47360,2), "https://en.wikipedia.org/wiki/Mercury_(planet)"),
+		new EnergyDatum("Venus kinetic energy", 0.5*4.86731e24*Math.pow(35020,2), "https://en.wikipedia.org/wiki/Venus"),
+		new EnergyDatum("Earth gravitational binding energy", 0.6*CONSTANT.G*Math.pow(CONSTANT.earth_mass,2)/CONSTANT.earth_radius, "https://en.wikipedia.org/wiki/Earth"),
+		new EnergyDatum("Earth kinetic energy", 0.5*CONSTANT.earth_mass*Math.pow(29782.7,2), "https://en.wikipedia.org/wiki/Earth"),
+		new EnergyDatum("Earth rotational energy", 0.5*8.04e37*Math.pow(7.29e-5,2), "https://en.wikipedia.org/wiki/Rotational_energy"),
+		new EnergyDatum("Mars kinetic energy", 0.5*6.4171e23*Math.pow(24070,2), "https://en.wikipedia.org/wiki/Mars"),
+		new EnergyDatum("Ceres kinetic energy", 0.5*9.3839e20*Math.pow(17900,2), "https://en.wikipedia.org/wiki/Mars"),
+		new EnergyDatum("Jupiter kinetic energy", 0.5*1.898125e27*Math.pow(13060,2), "https://en.wikipedia.org/wiki/Jupiter"),
+		new EnergyDatum("Saturn kinetic energy", 0.5*5.68317e26*Math.pow(9680,2), "https://en.wikipedia.org/wiki/Saturn"),
+		new EnergyDatum("Uranus kinetic energy", 0.5*8.68099e25*Math.pow(6800,2), "https://en.wikipedia.org/wiki/Uranus"),
+		new EnergyDatum("Neptune kinetic energy", 0.5*1.024092e26*Math.pow(5450,2), "https://en.wikipedia.org/wiki/Neptune"),
+		new EnergyDatum("Pluto kinetic energy", 0.5*1.3025e22*Math.pow(4743,2), "https://en.wikipedia.org/wiki/Pluto"),
+		// faint young sun https://en.wikipedia.org/wiki/Faint_young_Sun_paradox
+		// means that the sun started out 0.7x wattage, gradually increased to 1x,
+		// so avg. 0.85x overall about
+		new EnergyDatum("Energy produced by the sun each second", 3.828e26, "https://en.wikipedia.org/wiki/Sun"),
+		new EnergyDatum("Cumulative energy produced by the sun", 0.85*3.828e26*4.6e9*CONSTANT.yr, "https://en.wikipedia.org/wiki/Sun"),
 	],
 	elem: {
 		/** @type {HTMLDivElement} */
