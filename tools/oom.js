@@ -351,6 +351,8 @@ const OOM = {
 			Category.COIN,
 			Category.MINORPLANET,
 		],
+		/** @type {string?} */
+		shiftTo: null,
 		shifted: false,
 		get vscale(){
 			return this._vscale;
@@ -1014,7 +1016,7 @@ const OOM = {
 			button.innerHTML = abbr;
 			button.title = tabName;
 			tabContainer.appendChild(button);
-			button.onclick = () => this.toggleShift();
+			button.onclick = () => this.toggleShift(`main${tabName}`);
 		});
 	},
 	get range(){
@@ -1046,10 +1048,10 @@ const OOM = {
 				? "" : "none";
 		});
 	},
-	toggleShift(){
+	toggleShift(shiftTo){
 		this.config.shifted = !this.config.shifted;
 		console.debug('toggleShift -> ', this.config.shifted);
-		[this.elem.main, this.elem.mainEnergy].forEach(elem => {
+		[this.elem.main, this.elem[shiftTo]].forEach(elem => {
 			elem.style.transform = this.config.shifted ? 'translate(50vw, 0)' : '';
 		});
 	},
