@@ -259,7 +259,7 @@ const CONSTANT = {
 	c: 299792458,
 	/** in s */
 	get d(){
-		return this.h*60;
+		return this.h*24;
 	},
 	/** in kg */
 	get dr(){
@@ -292,6 +292,9 @@ const CONSTANT = {
 	/** in kg */
 	get long_ton(){
 		return 2240*this.lb;
+	},
+	get ly(){
+		return this.c*this.yr;
 	},
 	/** in kg */
 	get MeVc2(){
@@ -877,7 +880,7 @@ const OOM = {
 		new EnergyDatum("Venus kinetic energy", 0.5*4.86731e24*Math.pow(35020,2), "https://en.wikipedia.org/wiki/Venus"),
 		new EnergyDatum("Earth gravitational binding energy", 0.6*CONSTANT.G*Math.pow(CONSTANT.earth_mass,2)/CONSTANT.earth_radius, "https://en.wikipedia.org/wiki/Earth"),
 		new EnergyDatum("Earth kinetic energy", 0.5*CONSTANT.earth_mass*Math.pow(29782.7,2), "https://en.wikipedia.org/wiki/Earth"),
-		new EnergyDatum("Earth rotational energy", 0.5*8.04e37*Math.pow(7.29e-5,2), "https://en.wikipedia.org/wiki/Rotational_energy"),
+		new EnergyDatum("Earth rotational energy", 0.5*Math.pow(2*Math.PI / (0.99726968*CONSTANT.d), 2) * 0.3307 * CONSTANT.earth_mass * Math.pow(CONSTANT.earth_radius, 2), "https://en.wikipedia.org/wiki/Earth"),
 		new EnergyDatum("Mars kinetic energy", 0.5*6.4171e23*Math.pow(24070,2), "https://en.wikipedia.org/wiki/Mars"),
 		new EnergyDatum("Ceres kinetic energy", 0.5*9.3839e20*Math.pow(17900,2), "https://en.wikipedia.org/wiki/Mars"),
 		new EnergyDatum("Jupiter kinetic energy", 0.5*1.898125e27*Math.pow(13060,2), "https://en.wikipedia.org/wiki/Jupiter"),
@@ -890,6 +893,9 @@ const OOM = {
 		// so avg. 0.85x overall about
 		new EnergyDatum("Energy produced by the sun each second", 3.828e26, "https://en.wikipedia.org/wiki/Sun"),
 		new EnergyDatum("Cumulative energy produced by the sun", 0.85*3.828e26*4.6e9*CONSTANT.yr, "https://en.wikipedia.org/wiki/Sun"),
+		new EnergyDatum("Sun kinetic energy (about Milky Way)", 0.5*CONSTANT.solar_mass*Math.pow(2*Math.PI*26e3*CONSTANT.ly/(237.5e6*CONSTANT.yr),2), "https://en.wikipedia.org/wiki/Sun"),
+		new EnergyDatum("Sun gravitational binding energy", 0.6*CONSTANT.G*Math.pow(CONSTANT.solar_mass,2)/695700e3, "https://en.wikipedia.org/wiki/Earth"),
+		new EnergyDatum("Sun rotational energy", 0.5*Math.pow(2*Math.PI / (30*CONSTANT.d), 2) * 0.059 * CONSTANT.solar_mass * Math.pow(695700e3, 2), "https://en.wikipedia.org/wiki/Sun"),
 	],
 	elem: {
 		/** @type {HTMLDivElement} */
