@@ -896,6 +896,10 @@ const OOM = {
 		new EnergyDatum("Sun kinetic energy (about Milky Way)", 0.5*CONSTANT.solar_mass*Math.pow(2*Math.PI*26e3*CONSTANT.ly/(237.5e6*CONSTANT.yr),2), "https://en.wikipedia.org/wiki/Sun"),
 		new EnergyDatum("Sun gravitational binding energy", 0.6*CONSTANT.G*Math.pow(CONSTANT.solar_mass,2)/695700e3, "https://en.wikipedia.org/wiki/Earth"),
 		new EnergyDatum("Sun rotational energy", 0.5*Math.pow(2*Math.PI / (30*CONSTANT.d), 2) * 0.059 * CONSTANT.solar_mass * Math.pow(695700e3, 2), "https://en.wikipedia.org/wiki/Sun"),
+		new EnergyDatum("Fast optical blue transient (min)", 1e43, "https://academic.oup.com/mnras/article/515/2/2293/6612740?__cf_chl_tk=3C.zhiXCiZ91h7QXYMQtMMDPcPHvRYHUCwSOn23.blk-1770640010-1.0.1.1-t_72S2lwEhqPpqyRpukA_Z4eiRoc2Q_9z5OVvmd82mU"),
+		new EnergyDatum("Supernova", 1e44, "https://en.wikipedia.org/wiki/Foe_(unit)"),
+		new EnergyDatum("Gamma-ray burst (typical)", 3e44, "https://iopscience.iop.org/article/10.1086/338119/meta"),
+		new EnergyDatum("Hypernova (min)", 1e45, "https://en.wikipedia.org/wiki/Hypernova#Properties"),
 	],
 	elem: {
 		/** @type {HTMLDivElement} */
