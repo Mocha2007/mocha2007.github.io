@@ -986,6 +986,7 @@ const OOM = {
 	dataLength: [
 		// units
 		new LengthDatum("Planck Length", 1.616255e-35, null, [Category.UNIT]),
+		new LengthDatum("Ångström", 1e-10, null, [Category.UNIT]),
 		new LengthDatum("Twip", CONSTANT.ft/17280, null, [Category.UNIT]),
 		new LengthDatum("Thou", CONSTANT.ft/12000, null, [Category.UNIT]),
 		new LengthDatum("Point (unit)", CONSTANT.ft/864, null, [Category.UNIT]),
@@ -1005,11 +1006,37 @@ const OOM = {
 		new LengthDatum("Cable (unit)", CONSTANT.nmi/10, null, [Category.UNIT]),
 		new LengthDatum("Nautical Mile", CONSTANT.nmi, null, [Category.UNIT]),
 		new LengthDatum("League (unit)", CONSTANT.ft*15840, null, [Category.UNIT]),
+		new LengthDatum("Lunar distance", 384399e3, null, [Category.UNIT]),
+		new LengthDatum("Astronomical unit", 149597870700, null, [Category.UNIT]),
 		new LengthDatum("Light-year", CONSTANT.c*CONSTANT.yr, null, [Category.UNIT]),
 		new LengthDatum("Parsec", 3.0857e16, null, [Category.UNIT]),
-		// misc
-		new LengthDatum("Earth Radius", CONSTANT.earth_radius, null),
-		new LengthDatum("Observable Universe (Radius)", 4.4e26, null),
+		// misc tiny
+		new LengthDatum("Range of the weak force", 1e-16, "https://en.wikipedia.org/wiki/Weak_interaction#Properties"),
+		new LengthDatum("Proton (charge radius)", 8.4075e-16, "https://physics.nist.gov/cgi-bin/cuu/Value?rp"),
+		new LengthDatum("Range of the strong force", 1e-15, "https://en.wikipedia.org/wiki/Strong_interaction"),
+		new LengthDatum("Classical electron radius", 2.8179403205e-15, "https://physics.nist.gov/cgi-bin/cuu/Value?re"),
+		new LengthDatum("Uranium nucleus (diameter)", 11.7e-15, "https://en.wikipedia.org/wiki/Atomic_nucleus"),
+		new LengthDatum("Hydrogen (atomic radius)", 25e-12, "https://en.wikipedia.org/wiki/Hydrogen"),
+		new LengthDatum("Bohr radius", 5.29177210544e-11, "https://en.wikipedia.org/wiki/Bohr_radius"),
+		new LengthDatum("Uranium (atomic radius)", 156e-12, "https://en.wikipedia.org/wiki/Uranium"),
+		new LengthDatum("Water molecule (diameter)", 152e-12+2*25e-12, "https://commons.wikimedia.org/wiki/File:H2O_2D_labelled.svg"),
+		new LengthDatum("DNA (width)", new Length({min: 22e-10,max:26e-10}), "https://en.wikipedia.org/wiki/DNA#Properties"),
+		new LengthDatum("Ribosome (eukaryotic, diameter)", new Length({min: 25e-9,max:30e-9}), "https://en.wikipedia.org/wiki/Ribosome#Bacteria"),
+		new LengthDatum("COVID virus (diameter)", new Length({min: 60e-9,max:140e-9}), "https://en.wikipedia.org/wiki/SARS-CoV-2"),
+		// light
+		new LengthDatum("Blue light wavelength", new Length({min: 450e-9,max:495e-9}), "https://en.wikipedia.org/wiki/Blue"),
+		new LengthDatum("Green light wavelength", new Length({min: 495e-9,max:570e-9}), "https://en.wikipedia.org/wiki/Green"),
+		new LengthDatum("Red light wavelength", new Length({min: 625e-9,max:740e-9}), "https://en.wikipedia.org/wiki/Red"),
+		// misc big
+		new LengthDatum("Nucleus (human, diameter)", 6e-6, "https://en.wikipedia.org/wiki/Cell_nucleus#Nuclear_structures_and_landmarks"),
+		new LengthDatum("Human hair (width)", 50e-6, "https://en.wikipedia.org/wiki/Micrometre"),
+		new LengthDatum("Human (height, avg., Poland, 2010)", 1.719, "https://en.wikipedia.org/wiki/Average_human_height_by_country"),
+		new LengthDatum("Marathon", 42195, "https://en.wikipedia.org/wiki/Marathon"),
+		new LengthDatum("Earth Radius", CONSTANT.earth_radius, "https://en.wikipedia.org/wiki/Earth"),
+		new LengthDatum("Jupiter Radius", 69886e3, "https://en.wikipedia.org/wiki/Jupiter"),
+		new LengthDatum("Solar Radius", 695700e3, "https://en.wikipedia.org/wiki/Sun"),
+		new LengthDatum("Distance from the sun to Proxima Centauri", 4.2465*CONSTANT.c*CONSTANT.yr, "https://en.wikipedia.org/wiki/Proxima_Centauri"),
+		new LengthDatum("Observable Universe (radius)", 4.4e26, null),
 	],
 	elem: {
 		/** @type {HTMLDivElement} */
