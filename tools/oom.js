@@ -986,12 +986,23 @@ const OOM = {
 	dataLength: [
 		// units
 		new LengthDatum("Planck Length", 1.616255e-35, null, [Category.UNIT]),
+		new LengthDatum("Twip", CONSTANT.ft/17280, null, [Category.UNIT]),
+		new LengthDatum("Thou", CONSTANT.ft/12000, null, [Category.UNIT]),
+		new LengthDatum("Barleycorn", CONSTANT.ft/36, null, [Category.UNIT]),
 		new LengthDatum("Inch", CONSTANT.ft/12, null, [Category.UNIT]),
-		new LengthDatum("Foot", CONSTANT.ft, null, [Category.UNIT]),
-		new LengthDatum("Yard", CONSTANT.ft*3, null, [Category.UNIT]),
-		new LengthDatum("Mile", CONSTANT.ft*5280, null, [Category.UNIT]),
-		new LengthDatum("Nautical Mile", CONSTANT.nmi, null, [Category.UNIT]),
+		new LengthDatum("Hand (unit)", CONSTANT.ft/3, null, [Category.UNIT]),
+		new LengthDatum("Link (unit)", CONSTANT.ft*33/50, null, [Category.UNIT]),
+		new LengthDatum("Foot (unit)", CONSTANT.ft, null, [Category.UNIT]),
+		new LengthDatum("Yard (unit)", CONSTANT.ft*3, null, [Category.UNIT]),
 		new LengthDatum("Meter", 1, null, [Category.UNIT]),
+		new LengthDatum("Rod (unit)", CONSTANT.ft*33/2, null, [Category.UNIT]),
+		new LengthDatum("Chain (unit)", CONSTANT.ft*66, null, [Category.UNIT]),
+		new LengthDatum("Furlong", CONSTANT.ft*660, null, [Category.UNIT]),
+		new LengthDatum("Mile", CONSTANT.ft*5280, null, [Category.UNIT]),
+		new LengthDatum("Fathom (unit)", CONSTANT.nmi/1000, null, [Category.UNIT]),
+		new LengthDatum("Cable (unit)", CONSTANT.nmi/10, null, [Category.UNIT]),
+		new LengthDatum("Nautical Mile", CONSTANT.nmi, null, [Category.UNIT]),
+		new LengthDatum("League (unit)", CONSTANT.ft*15840, null, [Category.UNIT]),
 		// misc
 		new LengthDatum("Earth Radius", CONSTANT.earth_radius, null),
 		new LengthDatum("Observable Universe (Radius)", 4.4e26, null),
@@ -1137,7 +1148,7 @@ const OOM = {
 	/** @param {string[]} active */
 	refreshCats(active){
 		// console.debug(`active = `, active);
-		OOM.data.concat(...OOM.dataEnergy).concat(...OOM.dataTime).forEach(datum => {
+		OOM.data.concat(...OOM.dataEnergy).concat(...OOM.dataLength).concat(...OOM.dataTime).forEach(datum => {
 			datum.elem_cache.style.display
 				= datum.categories.every(c => active.includes(c))
 				? "" : "none";
