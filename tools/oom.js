@@ -988,6 +988,8 @@ const OOM = {
 		new LengthDatum("Planck Length", 1.616255e-35, null, [Category.UNIT]),
 		new LengthDatum("Twip", CONSTANT.ft/17280, null, [Category.UNIT]),
 		new LengthDatum("Thou", CONSTANT.ft/12000, null, [Category.UNIT]),
+		new LengthDatum("Point (unit)", CONSTANT.ft/864, null, [Category.UNIT]),
+		new LengthDatum("Pica", CONSTANT.ft/72, null, [Category.UNIT]),
 		new LengthDatum("Barleycorn", CONSTANT.ft/36, null, [Category.UNIT]),
 		new LengthDatum("Inch", CONSTANT.ft/12, null, [Category.UNIT]),
 		new LengthDatum("Hand (unit)", CONSTANT.ft/3, null, [Category.UNIT]),
