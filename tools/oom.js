@@ -625,10 +625,11 @@ const OOM = {
 		new MassDatum("Canadarm", 450, "https://en.wikipedia.org/wiki/Canadarm"),
 		new MassDatum("Olmec colossal head", new Mass({min:5e3,max:45e3}), "https://en.wikipedia.org/wiki/Olmec_colossal_heads"),
 		// Organisms
+		new MassDatum("Pelagibacter communis cell", (0.37e-6+0.89e-6)/2 * Math.PI*Math.pow((0.12e-6+0.2e-6)/4, 2) * CONSTANT.density.water, "https://en.wikipedia.org/wiki/Pelagibacter_communis"),
+		new MassDatum("Mycoplasma pneumoniae", new Mass({x:CONSTANT.volume.ellipsoid(1.5e-6,0.15e-6)*CONSTANT.density.water,min:CONSTANT.volume.ellipsoid(1e-6,0.1e-6)*CONSTANT.density.water,max:CONSTANT.volume.ellipsoid(2e-6,0.2e-6)*CONSTANT.density.water}), "https://en.wikipedia.org/wiki/Mycoplasma_pneumoniae#Cell_biology"),
 		new MassDatum("Yeast (Saccharomyces cerevisiae)", 60e-15, "https://bionumbers.hms.harvard.edu/bionumber.aspx?id=101795&ver=6&trm=mass&org="),
 		new MassDatum("Common bean cell", 8e-11, "https://bionumbers.hms.harvard.edu/bionumber.aspx?id=107824&ver=0&trm=mass&org="),
 		new MassDatum("Myxozoa", 300e-6 * Math.PI*Math.pow(10e-6/2, 2) * CONSTANT.density.water, "https://en.wikipedia.org/wiki/https://en.wikipedia.org/wiki/Myxozoa#Anatomy"),
-		new MassDatum("Pelagibacter communis cell", (0.37e-6+0.89e-6)/2 * Math.PI*Math.pow((0.12e-6+0.2e-6)/4, 2) * CONSTANT.density.water, "https://en.wikipedia.org/wiki/Pelagibacter_communis"),
 		new MassDatum("Escherichia coli cell", 0.65e-18*CONSTANT.density.water, "https://en.wikipedia.org/wiki/Escherichia_coli#Type_and_morphology"),
 		new MassDatum("Red blood cell (Human)", 90e-18*CONSTANT.density.water, "https://en.wikipedia.org/wiki/Red_blood_cell#Human"),
 		new MassDatum("White blood cell (Human Neutrophil)", CONSTANT.volume.ellipsoid((12e-6+15e-6)/2) * CONSTANT.density.water, "https://en.wikipedia.org/wiki/White_blood_cell#Overview"),
