@@ -420,7 +420,7 @@ const OOM = {
 			this._vscale = x;
 			OOM.elem.tabs.forEach(elem => elem.style.height = `${x*100}vh`);
 		},
-		_vscale: 29,
+		_vscale: 30,
 	},
 	data: [
 		// Subatomic particles
