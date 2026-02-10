@@ -139,6 +139,7 @@ var subtitles =	[
 	'Eam vīdī!',
 	'Ōvum frēgit!',
 	'Es puella, fac puellam.',
+	'Delivering high-quality lunacy since 2017.',
 ];
 subtitles.push(subtitles.length+1 + ' unique subtitles - collect them all!');
 
