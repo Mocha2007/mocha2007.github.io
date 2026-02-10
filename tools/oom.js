@@ -648,6 +648,7 @@ const OOM = {
 		// Organisms
 		new MassDatum("Pelagibacter communis", (0.37e-6+0.89e-6)/2 * Math.PI*Math.pow((0.12e-6+0.2e-6)/4, 2) * CONSTANT.density.water, "https://en.wikipedia.org/wiki/Pelagibacter_communis"),
 		new MassDatum("Mycoplasma pneumoniae", new Mass({x:CONSTANT.volume.ellipsoid(1.5e-6,0.15e-6)*CONSTANT.density.water,min:CONSTANT.volume.ellipsoid(1e-6,0.1e-6)*CONSTANT.density.water,max:CONSTANT.volume.ellipsoid(2e-6,0.2e-6)*CONSTANT.density.water}), "https://en.wikipedia.org/wiki/Mycoplasma_pneumoniae#Cell_biology"),
+		new MassDatum("Nanoarchaeum equitans", new Mass({x:CONSTANT.volume.ellipsoid(350e-9)*CONSTANT.density.water,min:CONSTANT.volume.ellipsoid(200e-9)*CONSTANT.density.water,max:CONSTANT.volume.ellipsoid(500e-9)*CONSTANT.density.water}), "https://en.wikipedia.org/wiki/Nanoarchaeum_equitans"),
 		new MassDatum("Yeast (Saccharomyces cerevisiae)", 60e-15, "https://bionumbers.hms.harvard.edu/bionumber.aspx?id=101795&ver=6&trm=mass&org="),
 		new MassDatum("Common bean cell", 8e-11, "https://bionumbers.hms.harvard.edu/bionumber.aspx?id=107824&ver=0&trm=mass&org="),
 		new MassDatum("Myxozoa", 300e-6 * Math.PI*Math.pow(10e-6/2, 2) * CONSTANT.density.water, "https://en.wikipedia.org/wiki/https://en.wikipedia.org/wiki/Myxozoa#Anatomy"),
