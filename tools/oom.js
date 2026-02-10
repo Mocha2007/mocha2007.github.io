@@ -87,6 +87,12 @@ class Length extends Dimension {
 	}
 }
 
+class Temperature extends Dimension {
+	constructor(x, uncertainty){
+		super("K", 0, CONSTANT.kB/Math.pow(CONSTANT.c, 2), x, uncertainty);
+	}
+}
+
 class Datum {
 	/**
 	 * @param {string} name
@@ -197,6 +203,18 @@ class LengthDatum extends Datum {
 	}
 }
 
+class TemperatureDatum extends Datum {
+	/**
+	 * @param {string} name
+	 * @param {number|Temperature} amt
+	 * @param {string?} source
+	 * @param {Category[]?} categories
+	 */
+	constructor(name, amt, source, categories){
+		super(Temperature, name, amt, source, categories);
+	}
+}
+
 class MassRange {
 	/**
 	 * @param {string} name 
@@ -293,6 +311,7 @@ const CONSTANT = {
 	},
 	/** in m/s https://physics.nist.gov/cgi-bin/cuu/Value?c */
 	c: 299792458,
+	c2k: 273.15,
 	/** in s */
 	get d(){
 		return this.h*24;
@@ -321,6 +340,8 @@ const CONSTANT = {
 	},
 	/** in kg */
 	jupiter_mass: 1.898125e27,
+	/** in J/K */
+	kB: 1.380649e-23,
 	/** in m/s (knot) */
 	get kt(){
 		return this.nmi/this.h;
@@ -573,7 +594,7 @@ const OOM = {
 		new MassDatum("Dollar coin (US)", 8.100e-3, null, [Category.COIN]),
 		new MassDatum("Half-Dollar (US)", 11.340e-3, null, [Category.COIN]),
 		// units
-		new MassDatum("Planck mass", 2.176434e-8, "https://en.wikipedia.org/wiki/Planck_units"),
+		new MassDatum("Planck mass", 2.176434e-8, "https://en.wikipedia.org/wiki/Planck_units", [Category.UNIT]),
 		new MassDatum("Dalton (unit)", CONSTANT.da, null, [Category.UNIT]),
 		new MassDatum("RNA Base Pair (unit)", CONSTANT.bp_rna, null, [Category.UNIT]),
 		new MassDatum("Grain (unit)", CONSTANT.gr, null, [Category.UNIT]),
@@ -938,12 +959,12 @@ const OOM = {
 		new EnergyDatum("Earth kinetic energy", 0.5*CONSTANT.earth_mass*Math.pow(29782.7,2), "https://en.wikipedia.org/wiki/Earth"),
 		new EnergyDatum("Earth rotational energy", 0.5*Math.pow(2*Math.PI / (0.99726968*CONSTANT.d), 2) * 0.3307 * CONSTANT.earth_mass * Math.pow(CONSTANT.earth_radius, 2), "https://en.wikipedia.org/wiki/Earth"),
 		new EnergyDatum("Mars kinetic energy", 0.5*6.4171e23*Math.pow(24070,2), "https://en.wikipedia.org/wiki/Mars"),
-		new EnergyDatum("Ceres kinetic energy", 0.5*9.3839e20*Math.pow(17900,2), "https://en.wikipedia.org/wiki/Mars"),
+		new EnergyDatum("Ceres kinetic energy", 0.5*9.3839e20*Math.pow(17900,2), "https://en.wikipedia.org/wiki/Ceres", [Category.MINORPLANET]),
 		new EnergyDatum("Jupiter kinetic energy", 0.5*1.898125e27*Math.pow(13060,2), "https://en.wikipedia.org/wiki/Jupiter"),
 		new EnergyDatum("Saturn kinetic energy", 0.5*5.68317e26*Math.pow(9680,2), "https://en.wikipedia.org/wiki/Saturn"),
 		new EnergyDatum("Uranus kinetic energy", 0.5*8.68099e25*Math.pow(6800,2), "https://en.wikipedia.org/wiki/Uranus"),
 		new EnergyDatum("Neptune kinetic energy", 0.5*1.024092e26*Math.pow(5450,2), "https://en.wikipedia.org/wiki/Neptune"),
-		new EnergyDatum("Pluto kinetic energy", 0.5*1.3025e22*Math.pow(4743,2), "https://en.wikipedia.org/wiki/Pluto"),
+		new EnergyDatum("Pluto kinetic energy", 0.5*1.3025e22*Math.pow(4743,2), "https://en.wikipedia.org/wiki/Pluto", [Category.MINORPLANET]),
 		// faint young sun https://en.wikipedia.org/wiki/Faint_young_Sun_paradox
 		// means that the sun started out 0.7x wattage, gradually increased to 1x,
 		// so avg. 0.85x overall about
@@ -1043,6 +1064,35 @@ const OOM = {
 		new LengthDatum("Distance from the sun to Proxima Centauri", 4.2465*CONSTANT.c*CONSTANT.yr, "https://en.wikipedia.org/wiki/Proxima_Centauri"),
 		new LengthDatum("Observable Universe (radius)", 4.4e26, null),
 	],
+	dataTemperature: [
+		new TemperatureDatum("Rankine", 5/9, null, [Category.UNIT]),
+		new TemperatureDatum("Kelvin", 1, null, [Category.UNIT]),
+		new TemperatureDatum("Planck Temperature", 1.416784e32, null, [Category.UNIT]),
+		// misc
+		new TemperatureDatum("Room temperature", 294, "https://en.wikipedia.org/wiki/Room_temperature"),
+		new TemperatureDatum("Human body temperature", new Temperature({min:36.5+CONSTANT.c2k,max:37.5+CONSTANT.c2k}), "https://en.wikipedia.org/wiki/Human_body_temperature"),
+		new TemperatureDatum("Draper point", 798, "https://en.wikipedia.org/wiki/Draper_point"),
+		new TemperatureDatum("Lava", new Temperature({min:800+CONSTANT.c2k,max:1200+CONSTANT.c2k}), "https://en.wikipedia.org/wiki/Lava"),
+		new TemperatureDatum("Dragonfire (Dwarf Fortress)", 200e3/9+CONSTANT.c2k, "https://dwarffortresswiki.org/index.php/Dragonfire", [Category.FICTIONAL]),
+		new TemperatureDatum("Hagedorn temperature", 1.7e12, "https://en.wikipedia.org/wiki/Hagedorn_temperature"),
+		// chemistry
+		new TemperatureDatum("Melting point of water (1 atm)", CONSTANT.c2k, "https://en.wikipedia.org/wiki/Water"),
+		new TemperatureDatum("Melting point of iron", 1811, "https://en.wikipedia.org/wiki/Iron"),
+		new TemperatureDatum("Sublimation of carbon", 3915, "https://en.wikipedia.org/wiki/Carbon"),
+		new TemperatureDatum("Boiling point of tungsten", 6203, "https://en.wikipedia.org/wiki/Tungsten"),
+		// space
+		new TemperatureDatum("Y-type Brown Dwarf (max)", 600, "https://en.wikipedia.org/wiki/Brown_dwarf"),
+		new TemperatureDatum("Venus", 737, "https://en.wikipedia.org/wiki/Venus"),
+		new TemperatureDatum("T-type Brown Dwarf", new Temperature({min:600,max:1300}), "https://en.wikipedia.org/wiki/Brown_dwarf"),
+		new TemperatureDatum("L-type Brown Dwarf", new Temperature({min:1300,max:2100}), "https://en.wikipedia.org/wiki/Brown_dwarf"),
+		new TemperatureDatum("Red Dwarf", new Temperature({min:2380,max:3850}), "https://en.wikipedia.org/wiki/Red_dwarf"),
+		new TemperatureDatum("Earth (Core)", 5700, "https://en.wikipedia.org/wiki/Earth%27s_inner_core"),
+		new TemperatureDatum("Sun (Photosphere)", 5772, "https://en.wikipedia.org/wiki/Sun"),
+		new TemperatureDatum("Sirius B", new Temperature(25000, 200), "https://en.wikipedia.org/wiki/Sirius"),
+		new TemperatureDatum("WR 142", 200000, "https://en.wikipedia.org/wiki/WR_142"),
+		new TemperatureDatum("Sun (Corona)", 5e6, "https://en.wikipedia.org/wiki/Sun"),
+		new TemperatureDatum("Sun (Core)", 15.7e6, "https://en.wikipedia.org/wiki/Sun"),
+	],
 	elem: {
 		/** @type {HTMLDivElement} */
 		cat_container: undefined,
@@ -1053,10 +1103,12 @@ const OOM = {
 		/** @returns {HTMLDivElement} */
 		mainLength: undefined,
 		/** @returns {HTMLDivElement} */
+		mainTemperature: undefined,
+		/** @returns {HTMLDivElement} */
 		mainTime: undefined,
 		/** @returns {HTMLDivElement[]} */
 		get tabs(){
-			return [this.main, this.mainEnergy, this.mainLength, this.mainTime];
+			return [this.main, this.mainEnergy, this.mainLength, this.mainTemperature, this.mainTime];
 		}
 	},
 	init(){
@@ -1065,7 +1117,7 @@ const OOM = {
 		this.data.forEach(datum => main.appendChild(datum.elem(e2y)));
 		this.ranges.forEach((range, i, a) => main.appendChild(range.elem(e2y, i, a)));
 		// now for energy
-		['Energy', 'Length', 'Time'].forEach(s => {
+		['Energy', 'Length', 'Temperature', 'Time'].forEach(s => {
 			const mainX = this.elem[`main${s}`] = document.createElement('div');
 			mainX.id = `main${s}`;
 			mainX.classList.add('main');
@@ -1152,7 +1204,7 @@ const OOM = {
 		const tabContainer = document.createElement('div');
 		tabContainer.id = 'tabContainer';
 		document.body.appendChild(tabContainer);
-		[['E', 'Energy'], ['L', 'Length'], ['T', 'Time']].forEach(x => {
+		[['E', 'Energy'], ['L', 'Length'], ['Θ', 'Temperature'], ['T', 'Time']].forEach(x => {
 			const [abbr, tabName] = x;
 			const button = document.createElement('div');
 			button.innerHTML = abbr;
@@ -1184,7 +1236,12 @@ const OOM = {
 	/** @param {string[]} active */
 	refreshCats(active){
 		// console.debug(`active = `, active);
-		OOM.data.concat(...OOM.dataEnergy).concat(...OOM.dataLength).concat(...OOM.dataTime).forEach(datum => {
+		OOM.data
+			.concat(...OOM.dataEnergy)
+			.concat(...OOM.dataLength)
+			.concat(...OOM.dataTemperature)
+			.concat(...OOM.dataTime)
+			.forEach(datum => {
 			datum.elem_cache.style.display
 				= datum.categories.every(c => active.includes(c))
 				? "" : "none";
