@@ -973,6 +973,8 @@ const OOM = {
 		// orbits
 		new TimeDatum("Lunar synodic month", 29.530588861*CONSTANT.d),
 		// half-lives
+		new TimeDatum("W and Z boson half-life", 3e-25),
+		new TimeDatum("Hydrogen-5 half-life", 86e-24),
 		new TimeDatum("Plutonium-244 half-life", 8.13e7*CONSTANT.yr),
 		new TimeDatum("Uranium-235 half-life", 7.04e8*CONSTANT.yr),
 		new TimeDatum("Uranium-238 half-life", 4.463e9*CONSTANT.yr),
