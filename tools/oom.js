@@ -441,6 +441,13 @@ const CONSTANT = {
 	get yr(){
 		return this.d*365.2425;
 	},
+	$: {
+		// as of 2026-02-12
+		eur: 1.18652700,
+		gbp: 1.36221831,
+		jpy: 0.00655999,
+		pln: 0.28161289,
+	},
 };
 
 const OOM = {
@@ -1111,8 +1118,11 @@ const OOM = {
 		new LengthDatum("Observable Universe (radius)", 4.4e26, null),
 	],
 	dataMoney: [
-		new MoneyDatum('Złoty (2026-02-12)', 0.28161289),
+		new MoneyDatum('Yen (2026-02-12)', CONSTANT.$.jpy),
+		new MoneyDatum('Złoty (2026-02-12)', CONSTANT.$.pln),
 		new MoneyDatum('Dollar', 1),
+		new MoneyDatum('Euro (2026-02-12)', CONSTANT.$.eur),
+		new MoneyDatum('Pound (2026-02-12)', CONSTANT.$.gbp),
 	],
 	dataPower: [
 		// stars/astronomy
