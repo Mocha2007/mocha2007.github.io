@@ -1063,7 +1063,9 @@ const OOM = {
 		// misc
 		new TimeDatum("Time since the creation of this webtool", (new Date() - new Date("2026-02-06T12:49:19.000Z"))/1e3, "https://github.com/Mocha2007/mocha2007.github.io/commit/d901d1ae1d29255cb2bba470393e7c4ede485fef"),
 		new TimeDatum("Time since the creation of this website", (new Date() - new Date("2017-05-17T01:50:57.000Z"))/1e3, "https://github.com/Mocha2007/mocha2007.github.io/commit/4e1bbc0bc41c4f75681c539cd09e164594e6ba7c"),
-		new TimeDatum("Caesium frequency", 1/9192631770, "https://www.bipm.org/documents/20126/41483022/SI-Brochure-9.pdf/fcf090b2-04e6-88cc-1149-c3e029ad8232")
+		new TimeDatum("Caesium frequency", 1/9192631770, "https://www.bipm.org/documents/20126/41483022/SI-Brochure-9.pdf/fcf090b2-04e6-88cc-1149-c3e029ad8232"),
+		new TimeDatum("Generation", new Time({min:20*CONSTANT.yr,max:30*CONSTANT.yr}), "https://en.wikipedia.org/wiki/Generation"),
+		new TimeDatum("Life Expectancy (World)", (72.6+73.2)/2*CONSTANT.yr, "https://en.wikipedia.org/wiki/Life_expectancy#Variation_over_time"),
 	],
 	dataLength: [
 		// units
