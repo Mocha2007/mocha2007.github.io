@@ -403,6 +403,9 @@ const CONSTANT = {
 	get oz(){
 		return this.lb/16;
 	},
+	get ozt(){
+		return this.gr*480;
+	},
 	/** in J*s */
 	planck: 6.62607015e-34,
 	/** in J*s */
@@ -1127,6 +1130,13 @@ const OOM = {
 		// min wage
 		new MoneyDatum('Minimum Wage (Annual, US, since 2007)', 8*7.25*5*52, "https://en.wikipedia.org/wiki/Fair_Minimum_Wage_Act_of_2007"),
 		new MoneyDatum('Minimum Wage (Annual, Poland, 2026)', 4806*12*CONSTANT.$.pln, "https://en.wikipedia.org/wiki/Minimum_wage_in_Poland"),
+		// metals (2026-02-12)
+		new MoneyDatum('Steel (1 kg, 2026)', 439.85e-3, "https://www.dailymetalprice.com/metaltables.php"),
+		new MoneyDatum('Lead (1 kg, 2026)', 0.9053/CONSTANT.lb, "https://www.dailymetalprice.com/metaltables.php"),
+		new MoneyDatum('Copper (1 kg, 2026)', 5.9599/CONSTANT.lb, "https://www.dailymetalprice.com/metaltables.php"),
+		new MoneyDatum('Silver (1 kg, 2026)', 84.029/CONSTANT.ozt, "https://www.dailymetalprice.com/metaltables.php"),
+		new MoneyDatum('Platinum (1 kg, 2026)', 2139.30/CONSTANT.ozt, "https://www.dailymetalprice.com/metaltables.php"),
+		new MoneyDatum('Gold (1 kg, 2026)', 5081.77/CONSTANT.ozt, "https://www.dailymetalprice.com/metaltables.php"),
 		// items
 		new MoneyDatum('Apple (Gala, US, 2026)', 0.68, "https://www.walmart.com/ip/Fresh-Gala-Apple-Each/44390953?classType=REGULAR&from=/search"),
 	],
