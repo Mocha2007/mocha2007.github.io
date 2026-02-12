@@ -99,6 +99,12 @@ class Time extends Dimension {
 	}
 }
 
+class Money extends Dimension {
+	constructor(x, uncertainty){
+		super("$", 0, 1, x, uncertainty);
+	}
+}
+
 class Datum {
 	/**
 	 * @param {string} name
@@ -194,6 +200,18 @@ class TimeDatum extends Datum {
 	 */
 	constructor(name, amt, source, categories){
 		super(Time, name, amt, source, categories);
+	}
+}
+
+class MoneyDatum extends Datum {
+	/**
+	 * @param {string} name
+	 * @param {number|Money} amt
+	 * @param {string?} source
+	 * @param {Category[]?} categories
+	 */
+	constructor(name, amt, source, categories){
+		super(Money, name, amt, source, categories);
 	}
 }
 
@@ -1092,6 +1110,10 @@ const OOM = {
 		new LengthDatum("Distance from the sun to Proxima Centauri", 4.2465*CONSTANT.c*CONSTANT.yr, "https://en.wikipedia.org/wiki/Proxima_Centauri"),
 		new LengthDatum("Observable Universe (radius)", 4.4e26, null),
 	],
+	dataMoney: [
+		new MoneyDatum('Złoty (2026-02-12)', 0.28161289),
+		new MoneyDatum('Dollar', 1),
+	],
 	dataPower: [
 		// stars/astronomy
 		new PowerDatum("Luhman 16 (L7.5+T0.5)", (2.2e-5+2.1e-5)*CONSTANT.solar_luminosity, "https://en.wikipedia.org/wiki/Luhman_16"),
@@ -1160,6 +1182,8 @@ const OOM = {
 		/** @returns {HTMLDivElement} */
 		mainLength: undefined,
 		/** @returns {HTMLDivElement} */
+		mainMoney: undefined,
+		/** @returns {HTMLDivElement} */
 		mainPower: undefined,
 		/** @returns {HTMLDivElement} */
 		mainTemperature: undefined,
@@ -1167,7 +1191,7 @@ const OOM = {
 		mainTime: undefined,
 		/** @returns {HTMLDivElement[]} */
 		get tabs(){
-			return [this.main, this.mainEnergy, this.mainLength, this.mainPower, this.mainTemperature, this.mainTime];
+			return [this.main, this.mainEnergy, this.mainLength, this.mainMoney, this.mainPower, this.mainTemperature, this.mainTime];
 		}
 	},
 	init(){
@@ -1176,7 +1200,7 @@ const OOM = {
 		this.data.forEach(datum => main.appendChild(datum.elem(e2y)));
 		this.ranges.forEach((range, i, a) => main.appendChild(range.elem(e2y, i, a)));
 		// now for energy
-		['Energy', 'Length', 'Power', 'Temperature', 'Time'].forEach(s => {
+		['Energy', 'Length', 'Money', 'Power', 'Temperature', 'Time'].forEach(s => {
 			const mainX = this.elem[`main${s}`] = document.createElement('div');
 			mainX.id = `main${s}`;
 			mainX.classList.add('main');
@@ -1263,7 +1287,7 @@ const OOM = {
 		const tabContainer = document.createElement('div');
 		tabContainer.id = 'tabContainer';
 		document.body.appendChild(tabContainer);
-		[['E', 'Energy'], ['L', 'Length'], ['P', 'Power'], ['Θ', 'Temperature'], ['T', 'Time']].forEach(x => {
+		[['E', 'Energy'], ['L', 'Length'], ['$', 'Money'], ['P', 'Power'], ['Θ', 'Temperature'], ['T', 'Time']].forEach(x => {
 			const [abbr, tabName] = x;
 			const button = document.createElement('div');
 			button.innerHTML = abbr;
@@ -1298,6 +1322,7 @@ const OOM = {
 		OOM.data
 			.concat(...OOM.dataEnergy)
 			.concat(...OOM.dataLength)
+			.concat(...OOM.dataMoney)
 			.concat(...OOM.dataPower)
 			.concat(...OOM.dataTemperature)
 			.concat(...OOM.dataTime)
