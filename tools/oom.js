@@ -1118,11 +1118,17 @@ const OOM = {
 		new LengthDatum("Observable Universe (radius)", 4.4e26, null),
 	],
 	dataMoney: [
+		// currencies
 		new MoneyDatum('Yen (2026-02-12)', CONSTANT.$.jpy),
 		new MoneyDatum('Złoty (2026-02-12)', CONSTANT.$.pln),
 		new MoneyDatum('Dollar', 1),
 		new MoneyDatum('Euro (2026-02-12)', CONSTANT.$.eur),
 		new MoneyDatum('Pound (2026-02-12)', CONSTANT.$.gbp),
+		// min wage
+		new MoneyDatum('Minimum Wage (Annual, US, since 2007)', 8*7.25*5*52, "https://en.wikipedia.org/wiki/Fair_Minimum_Wage_Act_of_2007"),
+		new MoneyDatum('Minimum Wage (Annual, Poland, 2026)', 4806*12*CONSTANT.$.pln, "https://en.wikipedia.org/wiki/Minimum_wage_in_Poland"),
+		// items
+		new MoneyDatum('Apple (Gala, US, 2026)', 0.68, "https://www.walmart.com/ip/Fresh-Gala-Apple-Each/44390953?classType=REGULAR&from=/search"),
 	],
 	dataPower: [
 		// stars/astronomy
