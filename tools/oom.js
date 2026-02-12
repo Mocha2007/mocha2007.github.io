@@ -63,21 +63,9 @@ class Dimension {
 	}
 }
 
-class Mass extends Dimension {
-	constructor(x, uncertainty){
-		super("g", 1, 1, x, uncertainty);
-	}
-}
-
 class Energy extends Dimension {
 	constructor(x, uncertainty){
 		super("J", 0, Math.pow(CONSTANT.c, -2), x, uncertainty);
-	}
-}
-
-class Time extends Dimension {
-	constructor(x, uncertainty){
-		super("s", 0, Math.pow(CONSTANT.c, 3)/CONSTANT.G, x, uncertainty);
 	}
 }
 
@@ -87,9 +75,27 @@ class Length extends Dimension {
 	}
 }
 
+class Mass extends Dimension {
+	constructor(x, uncertainty){
+		super("g", 1, 1, x, uncertainty);
+	}
+}
+
+class Power extends Dimension {
+	constructor(x, uncertainty){
+		super("W", 0, 1/Math.sqrt(Math.pow(CONSTANT.c,9)/(CONSTANT.planck_reduced*CONSTANT.G)), x, uncertainty);
+	}
+}
+
 class Temperature extends Dimension {
 	constructor(x, uncertainty){
 		super("K", 0, CONSTANT.kB/Math.pow(CONSTANT.c, 2), x, uncertainty);
+	}
+}
+
+class Time extends Dimension {
+	constructor(x, uncertainty){
+		super("s", 0, Math.pow(CONSTANT.c, 3)/CONSTANT.G, x, uncertainty);
 	}
 }
 
@@ -200,6 +206,18 @@ class LengthDatum extends Datum {
 	 */
 	constructor(name, amt, source, categories){
 		super(Length, name, amt, source, categories);
+	}
+}
+
+class PowerDatum extends Datum {
+	/**
+	 * @param {string} name
+	 * @param {number|Power} amt
+	 * @param {string?} source
+	 * @param {Category[]?} categories
+	 */
+	constructor(name, amt, source, categories){
+		super(Power, name, amt, source, categories);
 	}
 }
 
@@ -369,12 +387,18 @@ const CONSTANT = {
 	},
 	/** in J*s */
 	planck: 6.62607015e-34,
+	/** in J*s */
+	get planck_reduced(){
+		return this.planck / (2*Math.PI);
+	},
 	/** in kg */
 	get short_ton(){
 		return 2000*this.lb;
 	},
 	si_prefix: "qryzafpnμm kMGTPEZYRQ",
 	si_prefix_offset: 10,
+	/** in W */
+	solar_luminosity: 3.828e26,
 	/** in kg */
 	solar_mass: 1988475000e21,
 	thickness: {
@@ -971,14 +995,15 @@ const OOM = {
 		// faint young sun https://en.wikipedia.org/wiki/Faint_young_Sun_paradox
 		// means that the sun started out 0.7x wattage, gradually increased to 1x,
 		// so avg. 0.85x overall about
-		new EnergyDatum("Energy produced by the sun each second", 3.828e26, "https://en.wikipedia.org/wiki/Sun"),
-		new EnergyDatum("Cumulative energy produced by the sun", 0.85*3.828e26*4.6e9*CONSTANT.yr, "https://en.wikipedia.org/wiki/Sun"),
+		new EnergyDatum("Energy produced by the sun each second", CONSTANT.solar_luminosity, "https://en.wikipedia.org/wiki/Sun"),
+		new EnergyDatum("Cumulative energy produced by the sun", 0.85*CONSTANT.solar_luminosity*4.6e9*CONSTANT.yr, "https://en.wikipedia.org/wiki/Sun"),
 		new EnergyDatum("Sun kinetic energy (about Milky Way)", 0.5*CONSTANT.solar_mass*Math.pow(2*Math.PI*26e3*CONSTANT.ly/(237.5e6*CONSTANT.yr),2), "https://en.wikipedia.org/wiki/Sun"),
 		new EnergyDatum("Sun gravitational binding energy", 0.6*CONSTANT.G*Math.pow(CONSTANT.solar_mass,2)/695700e3, "https://en.wikipedia.org/wiki/Earth"),
 		new EnergyDatum("Sun rotational energy", 0.5*Math.pow(2*Math.PI / (30*CONSTANT.d), 2) * 0.059 * CONSTANT.solar_mass * Math.pow(695700e3, 2), "https://en.wikipedia.org/wiki/Sun"),
 		new EnergyDatum("Fast optical blue transient (min)", 1e43, "https://academic.oup.com/mnras/article/515/2/2293/6612740?__cf_chl_tk=3C.zhiXCiZ91h7QXYMQtMMDPcPHvRYHUCwSOn23.blk-1770640010-1.0.1.1-t_72S2lwEhqPpqyRpukA_Z4eiRoc2Q_9z5OVvmd82mU"),
 		new EnergyDatum("Supernova", 1e44, "https://en.wikipedia.org/wiki/Foe_(unit)"),
 		new EnergyDatum("Gamma-ray burst (typical)", 3e44, "https://iopscience.iop.org/article/10.1086/338119/meta"),
+		new EnergyDatum("Helium Flash", 5e41, "https://en.wikipedia.org/wiki/Helium_flash"),
 		new EnergyDatum("Hypernova (min)", 1e45, "https://en.wikipedia.org/wiki/Hypernova#Properties"),
 	],
 	dataTime: [
@@ -1067,6 +1092,35 @@ const OOM = {
 		new LengthDatum("Distance from the sun to Proxima Centauri", 4.2465*CONSTANT.c*CONSTANT.yr, "https://en.wikipedia.org/wiki/Proxima_Centauri"),
 		new LengthDatum("Observable Universe (radius)", 4.4e26, null),
 	],
+	dataPower: [
+		// stars/astronomy
+		new PowerDatum("Luhman 16 (L7.5+T0.5)", (2.2e-5+2.1e-5)*CONSTANT.solar_luminosity, "https://en.wikipedia.org/wiki/Luhman_16"),
+		new PowerDatum("DX Cancri (M6.5V)", 0.00073*CONSTANT.solar_luminosity, "https://en.wikipedia.org/wiki/DX_Cancri"),
+		new PowerDatum("Wolf 359 (M6V)", 0.00106*CONSTANT.solar_luminosity, "https://en.wikipedia.org/wiki/Wolf_359"),
+		new PowerDatum("Proxima Centauri (M5.5Ve)", 0.001567*CONSTANT.solar_luminosity, "https://en.wikipedia.org/wiki/Proxima_Centauri"),
+		new PowerDatum("Barnard's Star (M4.0V)", 0.0034*CONSTANT.solar_luminosity, "https://en.wikipedia.org/wiki/Barnard's_Star"),
+		new PowerDatum("ε Eridani (K2V)", 0.32*CONSTANT.solar_luminosity, "https://en.wikipedia.org/wiki/Epsilon_Eridani"),
+		new PowerDatum("τ Ceti (G8V)", 0.488*CONSTANT.solar_luminosity, "https://en.wikipedia.org/wiki/Tau_Ceti"),
+		new PowerDatum("Sun", CONSTANT.solar_luminosity, "https://en.wikipedia.org/wiki/Sun"),
+		new PowerDatum("α Centauri A (G2V)", 1.5059*CONSTANT.solar_luminosity, "https://en.wikipedia.org/wiki/Alpha_Centauri"),
+		new PowerDatum("Sirius A (A0mA1 Va)", 24.74*CONSTANT.solar_luminosity, "https://en.wikipedia.org/wiki/Sirius"),
+		new PowerDatum("Arcturus (K1.5IIIFe)", 170*CONSTANT.solar_luminosity, "https://en.wikipedia.org/wiki/Arcturus"),
+		new PowerDatum("Betelgeuse (M1-M2 Ia-ab)", 65e3*CONSTANT.solar_luminosity, "https://en.wikipedia.org/wiki/Betelgeuse"),
+		new PowerDatum("R136a1 (WN5h)", 7244e3*CONSTANT.solar_luminosity, "https://en.wikipedia.org/wiki/R136a1"),
+		new PowerDatum("Eddington limit", 1.2e31, "https://en.wikipedia.org/wiki/Eddington_luminosity"),
+		new PowerDatum("Milky Way", 5.7e36),
+		new PowerDatum("Local Group", 2e37),
+		new PowerDatum("Observable universe", 9.5e48),
+		// this lasts MAYBE an hour avg??? (wild guess)
+		new PowerDatum("Helium Flash", 5e41/CONSTANT.h, "https://en.wikipedia.org/wiki/Helium_flash"),
+		new PowerDatum("3C 273", 1.27e39, "https://en.wikipedia.org/wiki/3C_273"),
+		new PowerDatum("SMSS J215728.21–360215.1", 2.66e41, "https://en.wikipedia.org/wiki/SMSS_J215728.21%E2%80%93360215.1"),
+		// etc
+		new PowerDatum("Kardashev Type I", 1e16, "https://commons.wikimedia.org/wiki/File:Consommations_%C3%A9nerg%C3%A9tiques_des_trois_types_de_l%27%C3%A9chelle_de_Kardashev.svg"),
+		new PowerDatum("Kardashev Type II", 1e26, "https://commons.wikimedia.org/wiki/File:Consommations_%C3%A9nerg%C3%A9tiques_des_trois_types_de_l%27%C3%A9chelle_de_Kardashev.svg"),
+		new PowerDatum("Kardashev Type III", 1e36, "https://commons.wikimedia.org/wiki/File:Consommations_%C3%A9nerg%C3%A9tiques_des_trois_types_de_l%27%C3%A9chelle_de_Kardashev.svg"),
+		new PowerDatum("Planck power", Math.pow(CONSTANT.c,5)/CONSTANT.G, "https://en.wikipedia.org/wiki/Planck_units", [Category.UNIT]),
+	],
 	dataTemperature: [
 		new TemperatureDatum("Rankine", 5/9, null, [Category.UNIT]),
 		new TemperatureDatum("Kelvin", 1, null, [Category.UNIT]),
@@ -1106,12 +1160,14 @@ const OOM = {
 		/** @returns {HTMLDivElement} */
 		mainLength: undefined,
 		/** @returns {HTMLDivElement} */
+		mainPower: undefined,
+		/** @returns {HTMLDivElement} */
 		mainTemperature: undefined,
 		/** @returns {HTMLDivElement} */
 		mainTime: undefined,
 		/** @returns {HTMLDivElement[]} */
 		get tabs(){
-			return [this.main, this.mainEnergy, this.mainLength, this.mainTemperature, this.mainTime];
+			return [this.main, this.mainEnergy, this.mainLength, this.mainPower, this.mainTemperature, this.mainTime];
 		}
 	},
 	init(){
@@ -1120,7 +1176,7 @@ const OOM = {
 		this.data.forEach(datum => main.appendChild(datum.elem(e2y)));
 		this.ranges.forEach((range, i, a) => main.appendChild(range.elem(e2y, i, a)));
 		// now for energy
-		['Energy', 'Length', 'Temperature', 'Time'].forEach(s => {
+		['Energy', 'Length', 'Power', 'Temperature', 'Time'].forEach(s => {
 			const mainX = this.elem[`main${s}`] = document.createElement('div');
 			mainX.id = `main${s}`;
 			mainX.classList.add('main');
@@ -1207,7 +1263,7 @@ const OOM = {
 		const tabContainer = document.createElement('div');
 		tabContainer.id = 'tabContainer';
 		document.body.appendChild(tabContainer);
-		[['E', 'Energy'], ['L', 'Length'], ['Θ', 'Temperature'], ['T', 'Time']].forEach(x => {
+		[['E', 'Energy'], ['L', 'Length'], ['P', 'Power'], ['Θ', 'Temperature'], ['T', 'Time']].forEach(x => {
 			const [abbr, tabName] = x;
 			const button = document.createElement('div');
 			button.innerHTML = abbr;
@@ -1242,6 +1298,7 @@ const OOM = {
 		OOM.data
 			.concat(...OOM.dataEnergy)
 			.concat(...OOM.dataLength)
+			.concat(...OOM.dataPower)
 			.concat(...OOM.dataTemperature)
 			.concat(...OOM.dataTime)
 			.forEach(datum => {
