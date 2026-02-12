@@ -1139,6 +1139,8 @@ const OOM = {
 		new MoneyDatum('Gold (1 kg, 2026)', 5081.77/CONSTANT.ozt, "https://www.dailymetalprice.com/metaltables.php"),
 		// items
 		new MoneyDatum('Apple (Gala, US, 2026)', 0.68, "https://www.walmart.com/ip/Fresh-Gala-Apple-Each/44390953?classType=REGULAR&from=/search"),
+		new MoneyDatum('Raspberry Pi 5 (Base model, US, 2026)', 45, "https://www.raspberrypi.com/products/"),
+		new MoneyDatum('iPhone 17 (US, 2026)', 799, "https://www.apple.com/iphone-17/"),
 	],
 	dataPower: [
 		// stars/astronomy
