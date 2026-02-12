@@ -1529,4 +1529,13 @@ const data = [
 	},
 	// todo
 	// https://en.wikipedia.org/wiki/List_of_nearest_galaxies
+	{
+		name: 'MoM-z14',
+		type: 'dwarf galaxy',
+		dist: 33.8e9*ly,
+		ra: [10, 0, 22.4],
+		dec: [2, 16, 23.19],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/a/ae/MoM-z14_in_the_COSMOS_Legacy_Field_as_seen_by_the_NIRCam_instrument_aboard_the_JWST.png',
+		radius: 120*ly,
+	},
 ];
