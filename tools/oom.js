@@ -1145,6 +1145,17 @@ const OOM = {
 		new MoneyDatum('iPhone 17 (US, 2026)', 799, "https://www.apple.com/iphone-17/"),
 	],
 	dataPower: [
+		// abs magnitude units
+		new PowerDatum("Absolute Magnitude +10", 0.8550667e-2*CONSTANT.solar_luminosity, null),
+		new PowerDatum("Absolute Magnitude +5", 0.8550667*CONSTANT.solar_luminosity, null),
+		new PowerDatum("Absolute Magnitude 0", 85.50667*CONSTANT.solar_luminosity, null),
+		new PowerDatum("Absolute Magnitude -5", 8550.667*CONSTANT.solar_luminosity, null),
+		new PowerDatum("Absolute Magnitude -10", 855066.7*CONSTANT.solar_luminosity, null),
+		new PowerDatum("Absolute Magnitude -15", 8550667e1*CONSTANT.solar_luminosity, null),
+		new PowerDatum("Absolute Magnitude -20", 8550667e3*CONSTANT.solar_luminosity, null),
+		new PowerDatum("Absolute Magnitude -25", 8550667e5*CONSTANT.solar_luminosity, null),
+		new PowerDatum("Absolute Magnitude -30", 8550667e7*CONSTANT.solar_luminosity, null),
+		new PowerDatum("Absolute Magnitude -35", 8550667e9*CONSTANT.solar_luminosity, null),
 		// stars/astronomy
 		new PowerDatum("Luhman 16 (L7.5+T0.5)", (2.2e-5+2.1e-5)*CONSTANT.solar_luminosity, "https://en.wikipedia.org/wiki/Luhman_16"),
 		new PowerDatum("DX Cancri (M6.5V)", 0.00073*CONSTANT.solar_luminosity, "https://en.wikipedia.org/wiki/DX_Cancri"),
