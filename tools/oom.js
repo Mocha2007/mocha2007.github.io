@@ -1159,6 +1159,7 @@ const OOM = {
 		new PowerDatum("Arcturus (K1.5IIIFe)", 170*CONSTANT.solar_luminosity, "https://en.wikipedia.org/wiki/Arcturus"),
 		new PowerDatum("Betelgeuse (M1-M2 Ia-ab)", 65e3*CONSTANT.solar_luminosity, "https://en.wikipedia.org/wiki/Betelgeuse"),
 		new PowerDatum("R136a1 (WN5h)", 7244e3*CONSTANT.solar_luminosity, "https://en.wikipedia.org/wiki/R136a1"),
+		new PowerDatum("η Carinae (1845)", 11.362023208e6*CONSTANT.solar_luminosity, "https://en.wikipedia.org/wiki/Eta_Carinae"),
 		new PowerDatum("Eddington limit", 1.2e31, "https://en.wikipedia.org/wiki/Eddington_luminosity"),
 		new PowerDatum("Milky Way", 5.7e36),
 		new PowerDatum("Local Group", 2e37),
