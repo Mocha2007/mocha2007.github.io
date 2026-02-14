@@ -47,10 +47,17 @@ const UNITS = {
 	derived: [
 		// constants
 		new Derived('', 'c', {length:1,time:-1}, 299792458),
+		new Derived('', 'e', {current:1,time:1}, 1.602176634e-19),
 		new Derived('', 'G', {length:3,mass:-1,time:-2}, 6.67430e-11),
 		new Derived('', 'ħ', {length:2,mass:1,time:-1}, 1.054571817e-34),
 		new Derived('', 'k<sub>B</sub>', {mass:1,length:2,time:-2,temperature:-1}, 1.380649e-23),
-		new Derived('', 'e', {current:1,time:1}, 1.602176634e-19),
+		new Derived('', 'm<sub>e</sub>', {mass:1}, 9.1093837139e-31),
+		new Derived('', 'm<sub>p</sub>', {mass:1}, 1.67262192595e-27),
+		new Derived('', 'r<sub>e</sub>', {length:1}, 2.8179403205e-15),
+		new Derived('', 'R<sub>∞</sub>', {length:-1}, 10973731.568157),
+		new Derived('', 'ε<sub>0</sub>', {mass:-1,length:-3,time:4,current:2}, 8.8541878188e-12),
+		new Derived('', 'ƛ<sub>e</sub>', {length:1}, 1.054571817e-34/(9.1093837139e-31*299792458)),
+		new Derived('', 'μ<sub>B</sub>', {length:2,current:1}, 9.2740100657e-24),
 		// dimensions
 		new Derived('C', 'electric charge', {current:1,time:1}),
 		new Derived('F', 'capacitance', {mass:-1,length:-2,time:4,current:2}),
@@ -67,6 +74,7 @@ const UNITS = {
 		new Derived('W', 'power', {mass:1,length:2,time:-3}),
 		new Derived('Wb', 'magnetic flux', {mass:1,length:2,time:-2,current:-1}),
 		new Derived('Ω', 'electrical resistance', {mass:1,length:2,time:-3,current:-2}),
+		new Derived('m<sup>3</sup>', 'volume', {length:3}),
 	],
 	elem: {
 		create_dim_input(name, sym){
@@ -154,6 +162,19 @@ const UNITS = {
 			mass: 2.176434e-8,
 			current: 5.290818e-19,
 			temperature: 1.416784e32,
+		},
+		stoney: {
+			time: 4.6054e-45,
+			length: 1.3807e-36,
+			mass: 1.8592e-9,
+			current: 1.602176634e-19,
+			temperature: 1.416784e32/11.705686242420583, // ???
+		},
+		atomic: {
+			time: 2.4188843265864e-17,
+			length: 5.29177210544e-11,
+			mass: 9.1093837139e-31,
+			current: 6.6236182375082e-3,
 		},
 		eremoran: {
 			time: 29.33*60*60, // rilm
