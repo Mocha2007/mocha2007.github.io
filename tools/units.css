@@ -1,10 +1,20 @@
 #main > div {
 	columns: 4;
-	padding: 1em 0;
+	padding: 1em 3vw;
 	&:not(:first-child) {
 		border-top: 0.2em solid silver;
 	}
 }
 label {
 	display: inline-block;
+}
+#outputs > div {
+	font-size: 1.1vw;
+	text-wrap-mode: nowrap;
+}
+.out_const > span {
+	color: gold;
+}
+.out_dim > span {
+	color: red;
 }

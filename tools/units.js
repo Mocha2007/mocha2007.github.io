@@ -9,10 +9,14 @@ class Dimension {
 }
 
 class Derived {
-	constructor(sym, name, dimensions){
+	constructor(sym, name, dimensions, base = 1){
+		/** @type {string} */
 		this.sym = sym;
+		/** @type {string} */
 		this.name = name;
 		this.dimensions = dimensions;
+		/** @type {number} */
+		this.base = base;
 	}
 	/** @returns {HTMLSpanElement} */
 	get elem(){
@@ -41,7 +45,16 @@ const UNITS = {
 		"luminous intensity": "cd",
 	},
 	derived: [
+		// constants
+		new Derived('', 'c', {length:1,time:-1}, 299792458),
+		new Derived('', 'G', {length:3,mass:-1,time:-2}, 6.67430e-11),
+		new Derived('', 'ħ', {length:2,mass:1,time:-1}, 1.054571817e-34),
+		new Derived('', 'kB', {mass:1,length:2,time:-2,temperature:-1}, 1.380649e-23),
+		// dimensions
+		new Derived('J', 'energy', {mass:1,length:2,time:-2}),
 		new Derived('N', 'force', {mass:1,length:1,time:-2}),
+		new Derived('Pa', 'pressure', {mass:1,length:-1,time:-2}),
+		new Derived('W', 'power', {mass:1,length:2,time:-3}),
 	],
 	elem: {
 		create_dim_input(name, sym){
@@ -56,9 +69,10 @@ const UNITS = {
 			label.onmouseup = label.onkeyup = () => UNITS.update();
 			return label;
 		},
-		create_dim_output(name, sym){
+		create_dim_output(name, sym, divider = ':'){
 			const container = document.createElement('div');
-			container.innerHTML = `${name}: `;
+			container.innerHTML = `${name}${divider} `;
+			container.classList.add(divider === ':' ? 'out_dim' : 'out_const');
 			const printout = document.createElement('span');
 			printout.id = `output_${name}`;
 			container.appendChild(printout);
@@ -75,6 +89,7 @@ const UNITS = {
 		const cont_in = document.createElement('div');
 		main.appendChild(cont_in);
 		const cont_out = document.createElement('div');
+		cont_out.id = 'outputs';
 		main.appendChild(cont_out);
 		// we need preset buttons
 		Object.keys(this.preset).forEach(system => {
@@ -98,7 +113,7 @@ const UNITS = {
 		});
 		// ... and then output info for each derived unit!
 		this.derived.forEach(d => {
-			const elem = this.elem.create_dim_output(d.name, d.sym);
+			const elem = this.elem.create_dim_output(d.name, d.sym, d.base !== 1 ? ' =' : ':');
 			cont_out.appendChild(elem);
 		});
 		this.update(); // update once
@@ -124,7 +139,7 @@ const UNITS = {
 			length: 1.616255e-35,
 			mass: 2.176434e-8,
 			current: 5.290818e-19,
-			temperature: 1.416784e-32,
+			temperature: 1.416784e32,
 		},
 	},
 	update(){
@@ -135,9 +150,10 @@ const UNITS = {
 		});
 		// console.debug(`update -> `, base_unit_values);
 		this.derived.forEach(d => {
-			let product = 1.;
+			console.debug(d);
+			let product = d.base;
 			for (let key in d.dimensions){
-				product *= Math.pow(base_unit_values[key], d.dimensions[key]);
+				product /= Math.pow(base_unit_values[key], d.dimensions[key]);
 			}
 			d.elem.innerHTML = product;
 		});
