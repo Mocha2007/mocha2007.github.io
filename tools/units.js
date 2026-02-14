@@ -169,7 +169,7 @@ const UNITS = {
 			time: 0.99726968*24*60*60,
 			length: 6371e3,
 			mass: 5.97217e24,
-			current: 1,
+			current: 36198615448.59541, // for 45 mcT
 			temperature: 255,
 		},
 	},
