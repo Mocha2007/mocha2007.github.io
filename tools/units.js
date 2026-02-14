@@ -141,6 +141,23 @@ const UNITS = {
 			current: 5.290818e-19,
 			temperature: 1.416784e32,
 		},
+		eremoran: {
+			time: 29.33*60*60, // rilm
+			length: 0.25125, // ki
+			mass: 0.4041, // kuril
+		},
+		verdurian: {
+			time: 24.5*60*60/24/10/120, // a verdurian "moment" - The Almean day is slightly longer than ours (by about half an hour).
+			length: 0.758, // chima
+			mass: 6.071, // cucuri
+		},
+		earth: {
+			time: 0.99726968*24*60*60,
+			length: 6371e3,
+			mass: 5.97217e24,
+			current: 1,
+			temperature: 255,
+		},
 	},
 	update(){
 		const base_unit_values = {};
