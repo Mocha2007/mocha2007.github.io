@@ -1127,7 +1127,7 @@ const OOM = {
 	],
 	dataMoney: [
 		// currencies
-		new MoneyDatum('Iranian Real (2026-02-14)', CONSTANT.$.irr),
+		new MoneyDatum('Iranian Rial (2026-02-14)', CONSTANT.$.irr),
 		new MoneyDatum('Vietnamese Đồng (2026-02-14)', CONSTANT.$.vnd),
 		new MoneyDatum('Yen (2026-02-12)', CONSTANT.$.jpy),
 		new MoneyDatum('Złoty (2026-02-12)', CONSTANT.$.pln),
