@@ -49,12 +49,24 @@ const UNITS = {
 		new Derived('', 'c', {length:1,time:-1}, 299792458),
 		new Derived('', 'G', {length:3,mass:-1,time:-2}, 6.67430e-11),
 		new Derived('', 'ħ', {length:2,mass:1,time:-1}, 1.054571817e-34),
-		new Derived('', 'kB', {mass:1,length:2,time:-2,temperature:-1}, 1.380649e-23),
+		new Derived('', 'k<sub>B</sub>', {mass:1,length:2,time:-2,temperature:-1}, 1.380649e-23),
+		new Derived('', 'e', {current:1,time:1}, 1.602176634e-19),
 		// dimensions
+		new Derived('C', 'electric charge', {current:1,time:1}),
+		new Derived('F', 'capacitance', {mass:-1,length:-2,time:4,current:2}),
+		new Derived('Gy', 'absorbed dose', {length:-2,time:-2}),
+		new Derived('H', 'inductance', {mass:1,length:2,time:-2,current:-2}),
+		new Derived('Hz', 'frequency', {time:-1}),
 		new Derived('J', 'energy', {mass:1,length:2,time:-2}),
+		new Derived('kat', 'catalytic activity', {amount:1,length:-1}),
 		new Derived('N', 'force', {mass:1,length:1,time:-2}),
 		new Derived('Pa', 'pressure', {mass:1,length:-1,time:-2}),
+		new Derived('S', 'electrical conductance', {mass:-1,length:-2,time:3,current:2}),
+		new Derived('T', 'magnetic flux density', {mass:1,time:-2,current:-1}),
+		new Derived('V', 'electric potential difference', {mass:1,length:2,time:-3,current:-1}),
 		new Derived('W', 'power', {mass:1,length:2,time:-3}),
+		new Derived('Wb', 'magnetic flux', {mass:1,length:2,time:-2,current:-1}),
+		new Derived('Ω', 'electrical resistance', {mass:1,length:2,time:-3,current:-2}),
 	],
 	elem: {
 		create_dim_input(name, sym){
@@ -65,7 +77,7 @@ const UNITS = {
 			input.placeholder = 1;
 			label.for = input.name = input.id = `input_${name}`;
 			label.appendChild(input);
-			label.innerHTML += sym;
+			label.innerHTML += ` ${sym}`;
 			label.onmouseup = label.onkeyup = () => UNITS.update();
 			return label;
 		},
@@ -85,8 +97,10 @@ const UNITS = {
 	init(){
 		const main = this.elem.main = document.getElementById('main');
 		const cont_pre = document.createElement('div');
+		cont_pre.id = 'presets';
 		main.appendChild(cont_pre);
 		const cont_in = document.createElement('div');
+		cont_in.id = 'inputs';
 		main.appendChild(cont_in);
 		const cont_out = document.createElement('div');
 		cont_out.id = 'outputs';
