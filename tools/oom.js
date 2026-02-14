@@ -450,6 +450,9 @@ const CONSTANT = {
 		gbp: 1.36221831,
 		jpy: 0.00655999,
 		pln: 0.28161289,
+		// as of 2026-02-14
+		irr: 0.0000007815,
+		vnd: 0.00003900,
 	},
 };
 
@@ -1124,6 +1127,8 @@ const OOM = {
 	],
 	dataMoney: [
 		// currencies
+		new MoneyDatum('Iranian Real (2026-02-14)', CONSTANT.$.irr),
+		new MoneyDatum('Vietnamese Đồng (2026-02-14)', CONSTANT.$.vnd),
 		new MoneyDatum('Yen (2026-02-12)', CONSTANT.$.jpy),
 		new MoneyDatum('Złoty (2026-02-12)', CONSTANT.$.pln),
 		new MoneyDatum('Dollar', 1),
