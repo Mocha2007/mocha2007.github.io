@@ -1,0 +1,10 @@
+#main > div {
+	columns: 4;
+	padding: 1em 0;
+	&:not(:first-child) {
+		border-top: 0.2em solid silver;
+	}
+}
+label {
+	display: inline-block;
+}
