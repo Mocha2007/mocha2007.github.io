@@ -225,6 +225,13 @@ const UNITS = {
 			current: 36198615448.59541, // for 45 mcT
 			temperature: 255,
 		},
+		FFF: {
+			time: 14*24*60*60, // fortnight
+			length: 201.168, // furlong
+			mass: 40.8233133, // firkin
+			// current: 36198615448.59541, // for 45 mcT
+			temperature: 5/9, // fahrenheit, though technically rankine
+		},
 	},
 	update(){
 		const base_unit_values = {};
@@ -237,7 +244,13 @@ const UNITS = {
 			console.debug(d);
 			let product = d.base;
 			for (let key in d.dimensions){
-				product /= Math.pow(base_unit_values[key], d.dimensions[key]);
+				const x = Math.pow(base_unit_values[key], d.dimensions[key]);
+				if (d.base !== 1) {
+					product /= x;
+				}
+				else {
+					product *= x;
+				}
 			}
 			d.elem.innerHTML = product;
 		});
