@@ -1178,6 +1178,7 @@ const OOM = {
 		new PowerDatum("R136a1 (WN5h)", 7244e3*CONSTANT.solar_luminosity, "https://en.wikipedia.org/wiki/R136a1"),
 		new PowerDatum("η Carinae (1845)", 11.362023208e6*CONSTANT.solar_luminosity, "https://en.wikipedia.org/wiki/Eta_Carinae"),
 		new PowerDatum("Eddington limit", 1.2e31, "https://en.wikipedia.org/wiki/Eddington_luminosity"),
+		new PowerDatum("Type Ia supernova (Peak)", 1.718e36, "https://users.physics.unc.edu/~reichart/ASTR101L-5.pdf"), // p. 10
 		new PowerDatum("Milky Way", 5.7e36),
 		new PowerDatum("Local Group", 2e37),
 		new PowerDatum("Observable universe", 9.5e48),
