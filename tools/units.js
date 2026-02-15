@@ -46,18 +46,21 @@ const UNITS = {
 	},
 	derived: [
 		// constants
-		new Derived('', 'c', {length:1,time:-1}, 299792458),
-		new Derived('', 'e', {current:1,time:1}, 1.602176634e-19),
-		new Derived('', 'G', {length:3,mass:-1,time:-2}, 6.67430e-11),
-		new Derived('', 'ħ', {length:2,mass:1,time:-1}, 1.054571817e-34),
-		new Derived('', 'k<sub>B</sub>', {mass:1,length:2,time:-2,temperature:-1}, 1.380649e-23),
-		new Derived('', 'm<sub>e</sub>', {mass:1}, 9.1093837139e-31),
-		new Derived('', 'm<sub>p</sub>', {mass:1}, 1.67262192595e-27),
-		new Derived('', 'r<sub>e</sub>', {length:1}, 2.8179403205e-15),
-		new Derived('', 'R<sub>∞</sub>', {length:-1}, 10973731.568157),
-		new Derived('', 'ε<sub>0</sub>', {mass:-1,length:-3,time:4,current:2}, 8.8541878188e-12),
-		new Derived('', 'ƛ<sub>e</sub>', {length:1}, 1.054571817e-34/(9.1093837139e-31*299792458)),
-		new Derived('', 'μ<sub>B</sub>', {length:2,current:1}, 9.2740100657e-24),
+		new Derived('speed of light', 'c', {length:1,time:-1}, 299792458),
+		new Derived('elementary charge', 'e', {current:1,time:1}, 1.602176634e-19),
+		new Derived('gravitational constant', 'G', {length:3,mass:-1,time:-2}, 6.67430e-11),
+		new Derived('reduced planck constant', 'ħ', {length:2,mass:1,time:-1}, 1.054571817e-34),
+		new Derived('boltzmann constant', 'k<sub>B</sub>', {mass:1,length:2,time:-2,temperature:-1}, 1.380649e-23),
+		new Derived('electron mass', 'm<sub>e</sub>', {mass:1}, 9.1093837139e-31),
+		new Derived('proton mass', 'm<sub>p</sub>', {mass:1}, 1.67262192595e-27),
+		new Derived('classical electron radius', 'r<sub>e</sub>', {length:1}, 2.8179403205e-15),
+		new Derived('Rydberg constant', 'R<sub>∞</sub>', {length:-1}, 10973731.568157),
+		new Derived('vacuum electric permittivity', 'ε<sub>0</sub>', {mass:-1,length:-3,time:4,current:2}, 8.8541878188e-12),
+		new Derived('cosmological constant', 'Λ', {length:-2}, 1.089e-52),
+		new Derived('electron compton wavelength', 'ƛ<sub>e</sub>', {length:1}, 1.054571817e-34/(9.1093837139e-31*299792458)),
+		new Derived('vacuum magnetic permeability', 'μ<sub>0</sub>', {mass:1,length:1,time:-2,current:-2}, 1.25663706127e-6),
+		new Derived('Bohr magneton', 'μ<sub>B</sub>', {length:2,current:1}, 9.2740100657e-24),
+		new Derived('stefan-boltzmann constant', 'σ', {mass:1,time:-3,temperature:-4}, 5.670374419e-8),
 		// dimensions
 		new Derived('C', 'electric charge', {current:1,time:1}),
 		new Derived('F', 'capacitance', {mass:-1,length:-2,time:4,current:2}),
@@ -96,7 +99,12 @@ const UNITS = {
 			const printout = document.createElement('span');
 			printout.id = `output_${name}`;
 			container.appendChild(printout);
-			container.innerHTML += ` ${sym}`;
+			if (divider === ':') {
+				container.innerHTML += ` ${sym}`;
+			}
+			else {
+				container.title = sym;
+			}
 			return container;
 		},
 		/** @type {HTMLDivElement} */

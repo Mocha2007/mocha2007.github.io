@@ -24,3 +24,8 @@ label {
 .out_dim > span {
 	color: red;
 }
+@media (hover: hover) { /* opposite: hover: none */
+	#outputs:has(div:hover) > div:not(:hover) {
+		opacity: 0.5;
+	}
+}
