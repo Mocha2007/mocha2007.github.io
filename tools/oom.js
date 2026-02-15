@@ -957,6 +957,7 @@ const OOM = {
 		new MassDatum("Local Group", 2.47e12*CONSTANT.solar_mass),
 		new MassDatum("Local Sheet", 1.6e13*CONSTANT.solar_mass),
 		new MassDatum("Virgo Supercluster", 1.48e15*CONSTANT.solar_mass),
+		new MassDatum("Great Attractor", 1e16*CONSTANT.solar_mass, "https://en.wikipedia.org/wiki/Great_Attractor"),
 		new MassDatum("Laniakea Supercluster", 1e17*CONSTANT.solar_mass),
 		new MassDatum("Pisces-Cetus Supercluster Complex", 1e18*CONSTANT.solar_mass),
 		new MassDatum("Huge-LQG", 6.1e18*CONSTANT.solar_mass),
