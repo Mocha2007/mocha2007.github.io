@@ -1213,6 +1213,7 @@ const OOM = {
 		new PowerDatum("Type Ia supernova (Peak)", 1.718e36, "https://users.physics.unc.edu/~reichart/ASTR101L-5.pdf"), // p. 10
 		new PowerDatum("Milky Way", 5.7e36),
 		new PowerDatum("Local Group", 2e37),
+		new PowerDatum("ESO 383-76", 4.157e38, "https://en.wikipedia.org/wiki/ESO_383-76"),
 		new PowerDatum("Observable universe", 9.5e48),
 		// this lasts MAYBE an hour avg??? (wild guess)
 		new PowerDatum("Helium Flash", 5e41/CONSTANT.h, "https://en.wikipedia.org/wiki/Helium_flash"),
