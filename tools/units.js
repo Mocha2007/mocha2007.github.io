@@ -226,7 +226,8 @@ const UNITS = {
 			// ... and so G = 1
 			time: 3.0857e22/73e3,
 			length: 1/Math.sqrt(1.089e-52),
-			mass: 7.378885577966343e+52,
+			mass: 7.378885577966343e+52, // also = mass of observable universe, within MOE
+			temperature: 2.72548, // CMB
 		},
 		FFF: {
 			time: 14*24*60*60, // fortnight
@@ -254,7 +255,7 @@ const UNITS = {
 		});
 		// console.debug(`update -> `, base_unit_values);
 		this.derived.forEach(d => {
-			console.debug(d);
+			// console.debug(d);
 			let product = d.base;
 			for (let key in d.dimensions){
 				const x = Math.pow(base_unit_values[key], d.dimensions[key]);
