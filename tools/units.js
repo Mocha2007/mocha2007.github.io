@@ -47,7 +47,11 @@ const UNITS = {
 	derived: [
 		// constants
 		// new Derived('earth semimajor axis', 'a<sub>🜨</sub>', {length:1}, 149597870700),
+		new Derived('wien wavelength displacement law constant', 'b', {length:1,temperature:1}, 2.897771955e-3),
+		new Derived('wien wavelength displacement law constant', 'b′', {time:-1,temperature:-1}, 5.878925757e10),
 		new Derived('speed of light', 'c', {length:1,time:-1}, 299792458),
+		new Derived('first radiation constant', 'c<sub>1</sub>', {mass:1,length:4,time:-3}, 3.741771852e-16),
+		new Derived('second radiation constant', 'c<sub>2</sub>', {length:1,temperature:1}, 1.438776877e-2),
 		new Derived('elementary charge', 'e', {current:1,time:1}, 1.602176634e-19),
 		new Derived('gravitational constant', 'G', {length:3,mass:-1,time:-2}, 6.67430e-11),
 		new Derived('reduced planck constant', 'ħ', {length:2,mass:1,time:-1}, 1.054571817e-34),
@@ -85,12 +89,17 @@ const UNITS = {
 		new Derived('W', 'power', {mass:1,length:2,time:-3}),
 		new Derived('Wb', 'magnetic flux', {mass:1,length:2,time:-2,current:-1}),
 		new Derived('Ω', 'electrical resistance', {mass:1,length:2,time:-3,current:-2}),
+		new Derived('cd/m<sup>2</sup>', 'luminance', {length:-2,"luminous intensity":1}),
 		new Derived('J/K', 'heat capacity', {mass:1,length:2,time:-2,temperature:-1}),
 		new Derived('kg⋅m<sup>2</sup>', 'moment of inertia', {mass:1,length:2}),
 		new Derived('kg/m<sup>3</sup>', 'density', {mass:1,length:-3}),
 		new Derived('m<sup>3</sup>', 'volume', {length:3}),
+		new Derived('m/s', 'speed', {length:1,time:-1}),
+		new Derived('m/s<sup>2</sup>', 'acceleration', {length:1,time:-2}),
+		new Derived('N⋅m', 'torque', {mass:1,length:2,time:-2}),
+		new Derived('Pa⋅s', 'viscosity', {mass:1,length:-1,time:-1}),
 		new Derived('S/m', 'electrical conductivity', {mass:-1,length:-3,time:3,current:2}),
-		new Derived('W/m<sup>2</sup>', 'irradiance', {mass:1,time:-3}),
+		new Derived('W/m<sup>2</sup>', 'intensity', {mass:1,time:-3}),
 	],
 	elem: {
 		create_dim_input(name, sym){
