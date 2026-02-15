@@ -208,6 +208,26 @@ const UNITS = {
 			mass: 9.1093837139e-31,
 			current: 6.6236182375082e-3,
 		},
+		earth: {
+			time: 0.99726968*24*60*60,
+			length: 6371e3,
+			mass: 5.97217e24,
+			current: 17875859480787857000, // for 45 mcT
+			temperature: 255,
+		},
+		sun: {
+			time: (25.05+34.4)/2*24*60*60,
+			length: 6957e5,
+			mass: 1.988475e30,
+			temperature: 5772,
+		},
+		FFF: {
+			time: 14*24*60*60, // fortnight
+			length: 201.168, // furlong
+			mass: 40.8233133, // firkin
+			// current: 36198615448.59541, // for 45 mcT
+			temperature: 5/9, // fahrenheit, though technically rankine
+		},
 		eremoran: {
 			time: 29.33*60*60, // rilm
 			length: 0.25125, // ki
@@ -217,20 +237,6 @@ const UNITS = {
 			time: 24.5*60*60/24/10/120, // a verdurian "moment" - The Almean day is slightly longer than ours (by about half an hour).
 			length: 0.758, // chima
 			mass: 6.071, // cucuri
-		},
-		earth: {
-			time: 0.99726968*24*60*60,
-			length: 6371e3,
-			mass: 5.97217e24,
-			current: 17875859480787857000, // for 45 mcT
-			temperature: 255,
-		},
-		FFF: {
-			time: 14*24*60*60, // fortnight
-			length: 201.168, // furlong
-			mass: 40.8233133, // firkin
-			// current: 36198615448.59541, // for 45 mcT
-			temperature: 5/9, // fahrenheit, though technically rankine
 		},
 	},
 	update(){
