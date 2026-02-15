@@ -63,6 +63,12 @@ class Dimension {
 	}
 }
 
+class Charge extends Dimension {
+	constructor(x, uncertainty){
+		super("C", 0, 1/Math.sqrt(CONSTANT.e0*CONSTANT.G), x, uncertainty);
+	}
+}
+
 class Energy extends Dimension {
 	constructor(x, uncertainty){
 		super("J", 0, Math.pow(CONSTANT.c, -2), x, uncertainty);
@@ -81,6 +87,12 @@ class Mass extends Dimension {
 	}
 }
 
+class Money extends Dimension {
+	constructor(x, uncertainty){
+		super("$", 0, 1, x, uncertainty);
+	}
+}
+
 class Power extends Dimension {
 	constructor(x, uncertainty){
 		super("W", 0, 1/Math.sqrt(Math.pow(CONSTANT.c,9)/(CONSTANT.planck_reduced*CONSTANT.G)), x, uncertainty);
@@ -96,12 +108,6 @@ class Temperature extends Dimension {
 class Time extends Dimension {
 	constructor(x, uncertainty){
 		super("s", 0, Math.pow(CONSTANT.c, 3)/CONSTANT.G, x, uncertainty);
-	}
-}
-
-class Money extends Dimension {
-	constructor(x, uncertainty){
-		super("$", 0, 1, x, uncertainty);
 	}
 }
 
@@ -167,15 +173,15 @@ class Datum {
 	}
 }
 
-class MassDatum extends Datum {
+class ChargeDatum extends Datum {
 	/**
 	 * @param {string} name
-	 * @param {number|Mass} amt
+	 * @param {number|Charge} amt
 	 * @param {string?} source
 	 * @param {Category[]?} categories
 	 */
 	constructor(name, amt, source, categories){
-		super(Mass, name, amt, source, categories);
+		super(Charge, name, amt, source, categories);
 	}
 }
 
@@ -191,15 +197,27 @@ class EnergyDatum extends Datum {
 	}
 }
 
-class TimeDatum extends Datum {
+class LengthDatum extends Datum {
 	/**
 	 * @param {string} name
-	 * @param {number|Time} amt
+	 * @param {number|Length} amt
 	 * @param {string?} source
 	 * @param {Category[]?} categories
 	 */
 	constructor(name, amt, source, categories){
-		super(Time, name, amt, source, categories);
+		super(Length, name, amt, source, categories);
+	}
+}
+
+class MassDatum extends Datum {
+	/**
+	 * @param {string} name
+	 * @param {number|Mass} amt
+	 * @param {string?} source
+	 * @param {Category[]?} categories
+	 */
+	constructor(name, amt, source, categories){
+		super(Mass, name, amt, source, categories);
 	}
 }
 
@@ -212,18 +230,6 @@ class MoneyDatum extends Datum {
 	 */
 	constructor(name, amt, source, categories){
 		super(Money, name, amt, source, categories);
-	}
-}
-
-class LengthDatum extends Datum {
-	/**
-	 * @param {string} name
-	 * @param {number|Length} amt
-	 * @param {string?} source
-	 * @param {Category[]?} categories
-	 */
-	constructor(name, amt, source, categories){
-		super(Length, name, amt, source, categories);
 	}
 }
 
@@ -248,6 +254,18 @@ class TemperatureDatum extends Datum {
 	 */
 	constructor(name, amt, source, categories){
 		super(Temperature, name, amt, source, categories);
+	}
+}
+
+class TimeDatum extends Datum {
+	/**
+	 * @param {string} name
+	 * @param {number|Time} amt
+	 * @param {string?} source
+	 * @param {Category[]?} categories
+	 */
+	constructor(name, amt, source, categories){
+		super(Time, name, amt, source, categories);
 	}
 }
 
@@ -356,10 +374,14 @@ const CONSTANT = {
 	get dr(){
 		return this.oz/16;
 	},
+	/** in F/m https://en.wikipedia.org/wiki/Vacuum_permittivity */
+	e0: 8.8541878188e-12,
 	/** in kg */
 	earth_mass: 5.9722e24,
 	/** in m, mean */
 	earth_radius: 6371e3,
+	/** in C, https://en.wikipedia.org/wiki/Elementary_charge */
+	electron: 1.602176634e-19,
 	/** in J */
 	eV: 1.602176634e-19,
 	/** in m */
@@ -940,6 +962,15 @@ const OOM = {
 		new MassDatum("Huge-LQG", 6.1e18*CONSTANT.solar_mass),
 		new MassDatum("Observable universe", 1.5e53),
 	],
+	dataCharge: [
+		// units
+		new ChargeDatum("Planck charge", Math.sqrt(CONSTANT.e0*CONSTANT.planck_reduced*CONSTANT.c), null, [Category.UNIT]),
+		new ChargeDatum("Coulomb", 1, null, [Category.UNIT]),
+		// misc
+		new ChargeDatum("Down quark", CONSTANT.electron/3, null, [Category.UNIT]),
+		new ChargeDatum("Up quark", 2*CONSTANT.electron/3, null, [Category.UNIT]),
+		new ChargeDatum("Electron", CONSTANT.electron, null, [Category.UNIT]),
+	],
 	dataEnergy: [
 		// Photon energies
 		// new EnergyDatum("Infrared (far)", 300e9*CONSTANT.planck), too small
@@ -1227,6 +1258,8 @@ const OOM = {
 		/** @returns {HTMLDivElement} */
 		main: undefined,
 		/** @returns {HTMLDivElement} */
+		mainCharge: undefined,
+		/** @returns {HTMLDivElement} */
 		mainEnergy: undefined,
 		/** @returns {HTMLDivElement} */
 		mainLength: undefined,
@@ -1240,7 +1273,7 @@ const OOM = {
 		mainTime: undefined,
 		/** @returns {HTMLDivElement[]} */
 		get tabs(){
-			return [this.main, this.mainEnergy, this.mainLength, this.mainMoney, this.mainPower, this.mainTemperature, this.mainTime];
+			return [this.main, this.mainCharge, this.mainEnergy, this.mainLength, this.mainMoney, this.mainPower, this.mainTemperature, this.mainTime];
 		}
 	},
 	init(){
@@ -1249,7 +1282,7 @@ const OOM = {
 		this.data.forEach(datum => main.appendChild(datum.elem(e2y)));
 		this.ranges.forEach((range, i, a) => main.appendChild(range.elem(e2y, i, a)));
 		// now for energy
-		['Energy', 'Length', 'Money', 'Power', 'Temperature', 'Time'].forEach(s => {
+		['Energy', 'Charge', 'Length', 'Money', 'Power', 'Temperature', 'Time'].forEach(s => {
 			const mainX = this.elem[`main${s}`] = document.createElement('div');
 			mainX.id = `main${s}`;
 			mainX.classList.add('main');
@@ -1336,7 +1369,7 @@ const OOM = {
 		const tabContainer = document.createElement('div');
 		tabContainer.id = 'tabContainer';
 		document.body.appendChild(tabContainer);
-		[['E', 'Energy'], ['L', 'Length'], ['$', 'Money'], ['P', 'Power'], ['Θ', 'Temperature'], ['T', 'Time']].forEach(x => {
+		[['E', 'Energy'], ['L', 'Length'], ['P', 'Power'], ['q', 'Charge'], ['$', 'Money'], ['Θ', 'Temperature'], ['T', 'Time']].forEach(x => {
 			const [abbr, tabName] = x;
 			const button = document.createElement('div');
 			button.innerHTML = abbr;
@@ -1370,6 +1403,7 @@ const OOM = {
 		// console.debug(`active = `, active);
 		OOM.data
 			.concat(...OOM.dataEnergy)
+			.concat(...OOM.dataCharge)
 			.concat(...OOM.dataLength)
 			.concat(...OOM.dataMoney)
 			.concat(...OOM.dataPower)
