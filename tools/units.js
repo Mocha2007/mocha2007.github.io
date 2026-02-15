@@ -55,7 +55,7 @@ const UNITS = {
 		new Derived('electron mass', 'm<sub>e</sub>', {mass:1}, 9.1093837139e-31),
 		new Derived('neutron mass', 'm<sub>n</sub>', {mass:1}, 1.67492750056e-27),
 		new Derived('proton mass', 'm<sub>p</sub>', {mass:1}, 1.67262192595e-27),
-		new Derived('atomic mass constant', 'm<sub>u</sub>', {mass:1,amount:-1}, 1.66053906892e-27),
+		new Derived('atomic mass constant', 'm<sub>u</sub>', {mass:1}, 1.66053906892e-27),
 		// new Derived('earth mass', 'M<sub>🜨</sub>', {mass:1}, 5.97217e24),
 		new Derived('avogadro constant', 'N<sub>A</sub>', {amount:-1}, 6.02214076e23),
 		new Derived('molar gas constant', 'R', {mass:1,length:2,time:-2,amount:-1,temperature:-1}, 8.31446261815324),
