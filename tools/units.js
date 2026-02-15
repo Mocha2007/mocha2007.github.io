@@ -183,6 +183,7 @@ const UNITS = {
 			mass: 2.176434e-8,
 			current: 5.290818e-19,
 			temperature: 1.416784e32,
+			amount: 1/6.02214076e23,
 		},
 		stoney: {
 			time: 4.6054e-45,
