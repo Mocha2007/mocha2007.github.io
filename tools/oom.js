@@ -1172,6 +1172,7 @@ const OOM = {
 		new PowerDatum("Sun", CONSTANT.solar_luminosity, "https://en.wikipedia.org/wiki/Sun"),
 		new PowerDatum("α Centauri A (G2V)", 1.5059*CONSTANT.solar_luminosity, "https://en.wikipedia.org/wiki/Alpha_Centauri"),
 		new PowerDatum("Sirius A (A0mA1 Va)", 24.74*CONSTANT.solar_luminosity, "https://en.wikipedia.org/wiki/Sirius"),
+		new PowerDatum("RR Lyrae variable (Average)", 45*CONSTANT.solar_luminosity, "https://en.wikipedia.org/wiki/RR_Lyrae_variable#Properties"),
 		new PowerDatum("Arcturus (K1.5IIIFe)", 170*CONSTANT.solar_luminosity, "https://en.wikipedia.org/wiki/Arcturus"),
 		new PowerDatum("Betelgeuse (M1-M2 Ia-ab)", 65e3*CONSTANT.solar_luminosity, "https://en.wikipedia.org/wiki/Betelgeuse"),
 		new PowerDatum("R136a1 (WN5h)", 7244e3*CONSTANT.solar_luminosity, "https://en.wikipedia.org/wiki/R136a1"),
