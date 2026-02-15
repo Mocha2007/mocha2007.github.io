@@ -221,6 +221,13 @@ const UNITS = {
 			mass: 1.988475e30,
 			temperature: 5772,
 		},
+		cosmic: {
+			// defined such that the cosmological constant and hubble constant are 1
+			// ... and so G = 1
+			time: 3.0857e22/73e3,
+			length: 1/Math.sqrt(1.089e-52),
+			mass: 7.378885577966343e+52,
+		},
 		FFF: {
 			time: 14*24*60*60, // fortnight
 			length: 201.168, // furlong
