@@ -236,6 +236,12 @@ const UNITS = {
 			// current: 36198615448.59541, // for 45 mcT
 			temperature: 5/9, // fahrenheit, though technically rankine
 		},
+		DF: {
+			time: 72, // fortress tick
+			length: 2.4, // horizontal tile size
+			mass: 1, // Γ = kg
+			temperature: 5/9, // Urist
+		},
 		eremoran: {
 			time: 29.33*60*60, // rilm
 			length: 0.25125, // ki

@@ -2,10 +2,10 @@ body {
 	overflow-x: hidden;
 }
 #main > div {
-	columns: 4;
 	padding: 1em 3vw;
 	&:not(:first-child) {
 		border-top: 0.2em solid silver;
+		columns: 4;
 	}
 }
 label {
@@ -23,6 +23,9 @@ label {
 }
 .out_dim > span {
 	color: red;
+}
+#presets > span {
+	display: inline-block;
 }
 @media (hover: hover) { /* opposite: hover: none */
 	#outputs:has(div:hover) > div:not(:hover) {
