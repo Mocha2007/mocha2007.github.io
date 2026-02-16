@@ -1401,6 +1401,10 @@ const OOM = {
 		new MassRange("Planets", 7e22, 13*CONSTANT.jupiter_mass, 'skyblue'),
 		new MassRange("Brown Dwarfs", 13*CONSTANT.jupiter_mass, 80*CONSTANT.jupiter_mass, 'brown'),
 		new MassRange("Stars", 80*CONSTANT.jupiter_mass, 300*CONSTANT.solar_mass, 'yellow'),
+		new MassRange("Globular Clusters", 1e3*CONSTANT.solar_mass, 1e6*CONSTANT.solar_mass, 'lavender'),
+		new MassRange("Dwarf Galaxies", 142*CONSTANT.solar_mass, Math.sqrt(5)*1e10*CONSTANT.solar_mass, 'tan'),
+		// min is geometric mean between LMC and Triangulum
+		new MassRange("Galaxies", Math.sqrt(5)*1e10*CONSTANT.solar_mass, 27e12*CONSTANT.solar_mass, 'silver'),
 	],
 	/** @param {string[]} active */
 	refreshCats(active){
