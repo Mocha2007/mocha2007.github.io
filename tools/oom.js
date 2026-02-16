@@ -897,7 +897,7 @@ const OOM = {
 		new MassDatum("3 Juno", 27e18, null, [Category.MINORPLANET]),
 		new MassDatum("2 Pallas", 2.04e20, null, [Category.MINORPLANET]),
 		new MassDatum("1 Ceres", 9.3839e20, null, [Category.MINORPLANET]),
-		new MassDatum("Dione", 1.0954868e21, null, [Category.MINORPLANET]),
+		new MassDatum("Dione", 1.0954868e21),
 		// new MassDatum("Ariel", 1.2331e21),
 		new MassDatum("Umbriel", 1.2885e21),
 		new MassDatum("Charon", 1.5897e21),
@@ -1396,9 +1396,11 @@ const OOM = {
 		new MassRange("Bacteria", 1.3e-17, 1.6e-8, 'cyan'),
 		new MassRange("Animals", 2e-11, 1.5e5, 'purple'),
 		new MassRange("Coins", 2e-3, 12e-3, 'gold'),
+		new MassRange("Dwarf Planets", 5e20, 7e22, '#CD7F32'),
 		// min is geometric mean between Eris and Mercury
 		new MassRange("Planets", 7e22, 13*CONSTANT.jupiter_mass, 'skyblue'),
-		new MassRange("Stars", 0.08*CONSTANT.solar_mass, 300*CONSTANT.solar_mass, 'yellow'),
+		new MassRange("Brown Dwarfs", 13*CONSTANT.jupiter_mass, 80*CONSTANT.jupiter_mass, 'brown'),
+		new MassRange("Stars", 80*CONSTANT.jupiter_mass, 300*CONSTANT.solar_mass, 'yellow'),
 	],
 	/** @param {string[]} active */
 	refreshCats(active){
