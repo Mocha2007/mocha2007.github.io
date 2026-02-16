@@ -233,7 +233,6 @@ const UNITS = {
 			time: 14*24*60*60, // fortnight
 			length: 201.168, // furlong
 			mass: 40.8233133, // firkin
-			// current: 36198615448.59541, // for 45 mcT
 			temperature: 5/9, // fahrenheit, though technically rankine
 		},
 		DF: {
