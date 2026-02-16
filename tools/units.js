@@ -256,6 +256,20 @@ const UNITS = {
 			length: 0.758, // chima
 			mass: 6.071, // cucuri
 		},
+		potrzebie: {
+			// https://madcoversite.com/mad033_36.jpg
+			// https://www.linkedin.com/pulse/potrzebie-system-weights-measures-fran%C3%A7ois-chaplais-phd-rzmye
+			time: 24*60*60, // "Clarke" (cl) = 1 day
+			length: 2.2633484517438173216473e-3, // "potrebie" (p)
+			mass: 1.1594559712158604e-5*Math.PI, // "blintz" (b)
+			temperature: 3, // 100 Smurdley = 27 Celsius = 300 K
+			amount: 48/6.02214076e23, // "MAD"
+			// 1 faraday = 122300 blobs/blintz equivalent weight.
+			// therefore, a blob must have dimension L^-2 * T^4 * I^2
+			// 1.1594559712158604e-5*Math.PI = 122300 * 2.2633484517438173216473e-3^-2 * (24*60*60)^4 * I^2
+			// 0.00001725793538389937 = I * (24*60*60)^2 / 2.2633484517438173216473e-3
+			current: 5.232542616630696e-18,
+		},
 	},
 	update(){
 		const base_unit_values = {};
