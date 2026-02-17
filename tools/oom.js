@@ -62,6 +62,9 @@ class Dimension {
 		}
 	}
 }
+// good future choices:
+// specific heat capacity?
+// velocity?
 
 class Charge extends Dimension {
 	constructor(x, uncertainty){
@@ -96,6 +99,12 @@ class Money extends Dimension {
 class Power extends Dimension {
 	constructor(x, uncertainty){
 		super("W", 0, 1/Math.sqrt(Math.pow(CONSTANT.c,9)/(CONSTANT.planck_reduced*CONSTANT.G)), x, uncertainty);
+	}
+}
+
+class Speed extends Dimension {
+	constructor(x, uncertainty){
+		super("m/s", 0, 1/Math.sqrt(CONSTANT.c*CONSTANT.G/CONSTANT.planck_reduced), x, uncertainty);
 	}
 }
 
@@ -242,6 +251,18 @@ class PowerDatum extends Datum {
 	 */
 	constructor(name, amt, source, categories){
 		super(Power, name, amt, source, categories);
+	}
+}
+
+class SpeedDatum extends Datum {
+	/**
+	 * @param {string} name
+	 * @param {number|Speed} amt
+	 * @param {string?} source
+	 * @param {Category[]?} categories
+	 */
+	constructor(name, amt, source, categories){
+		super(Speed, name, amt, source, categories);
 	}
 }
 
@@ -400,6 +421,8 @@ const CONSTANT = {
 	jupiter_mass: 1.898125e27,
 	/** in J/K */
 	kB: 1.380649e-23,
+	/** in N*m^2/C^2 */
+	ke: 8.987551785972e9,
 	/** in m/s (knot) */
 	get kt(){
 		return this.nmi/this.h;
@@ -417,8 +440,14 @@ const CONSTANT = {
 	get MeVc2(){
 		return 1e6*this.eV/Math.pow(this.c, 2);
 	},
+	get mi(){
+		return 5280*this.ft;
+	},
 	/** in s */
 	min: 60,
+	get mo(){
+		return this.yr / 12;
+	},
 	/** in m https://en.wikipedia.org/wiki/Nautical_mile */
 	nmi: 1852,
 	/** in kg */
@@ -1072,39 +1101,6 @@ const OOM = {
 		new EnergyDatum("Helium Flash", 5e41, "https://en.wikipedia.org/wiki/Helium_flash"),
 		new EnergyDatum("Hypernova (min)", 1e45, "https://en.wikipedia.org/wiki/Hypernova#Properties"),
 	],
-	dataTime: [
-		// units
-		new TimeDatum("Planck Time", 5.391247e-44, null, [Category.UNIT]),
-		new TimeDatum("Second", 1, null, [Category.UNIT]),
-		new TimeDatum("Minute", CONSTANT.min, null, [Category.UNIT]),
-		new TimeDatum("Hour", CONSTANT.h, null, [Category.UNIT]),
-		new TimeDatum("Day", CONSTANT.d, null, [Category.UNIT]),
-		new TimeDatum("Week", 7*CONSTANT.d, null, [Category.UNIT]),
-		new TimeDatum("Fortnight", 14*CONSTANT.d, null, [Category.UNIT]),
-		new TimeDatum("Month", CONSTANT.yr/12, null, [Category.UNIT]),
-		new TimeDatum("Year", CONSTANT.yr, null, [Category.UNIT]),
-		new TimeDatum("Decade", 10*CONSTANT.yr, null, [Category.UNIT]),
-		new TimeDatum("Century", 100*CONSTANT.yr, null, [Category.UNIT]),
-		new TimeDatum("Millennium", 1e3*CONSTANT.yr, null, [Category.UNIT]),
-		// orbits
-		new TimeDatum("Lunar synodic month", 29.530588861*CONSTANT.d),
-		// half-lives
-		new TimeDatum("W and Z boson half-life", 3e-25),
-		new TimeDatum("Hydrogen-5 half-life", 86e-24),
-		new TimeDatum("Plutonium-244 half-life", 8.13e7*CONSTANT.yr),
-		new TimeDatum("Uranium-235 half-life", 7.04e8*CONSTANT.yr),
-		new TimeDatum("Uranium-238 half-life", 4.463e9*CONSTANT.yr),
-		new TimeDatum("Thorium-232 half-life", 1.40e10*CONSTANT.yr),
-		// ages
-		new TimeDatum("Age of the Earth", 4.54e9*CONSTANT.yr),
-		new TimeDatum("Age of the Universe", 13.79e9*CONSTANT.yr),
-		// misc
-		new TimeDatum("Time since the creation of this webtool", (new Date() - new Date("2026-02-06T12:49:19.000Z"))/1e3, "https://github.com/Mocha2007/mocha2007.github.io/commit/d901d1ae1d29255cb2bba470393e7c4ede485fef"),
-		new TimeDatum("Time since the creation of this website", (new Date() - new Date("2017-05-17T01:50:57.000Z"))/1e3, "https://github.com/Mocha2007/mocha2007.github.io/commit/4e1bbc0bc41c4f75681c539cd09e164594e6ba7c"),
-		new TimeDatum("Caesium frequency", 1/9192631770, "https://www.bipm.org/documents/20126/41483022/SI-Brochure-9.pdf/fcf090b2-04e6-88cc-1149-c3e029ad8232"),
-		new TimeDatum("Generation", new Time({min:20*CONSTANT.yr,max:30*CONSTANT.yr}), "https://en.wikipedia.org/wiki/Generation"),
-		new TimeDatum("Life Expectancy (World)", (72.6+73.2)/2*CONSTANT.yr, "https://en.wikipedia.org/wiki/Life_expectancy#Variation_over_time"),
-	],
 	dataLength: [
 		// units
 		new LengthDatum("Planck Length", 1.616255e-35, null, [Category.UNIT]),
@@ -1238,6 +1234,45 @@ const OOM = {
 		new PowerDatum("Kardashev Type III", 1e36, "https://commons.wikimedia.org/wiki/File:Consommations_%C3%A9nerg%C3%A9tiques_des_trois_types_de_l%27%C3%A9chelle_de_Kardashev.svg"),
 		new PowerDatum("Planck power", Math.pow(CONSTANT.c,5)/CONSTANT.G, "https://en.wikipedia.org/wiki/Planck_units", [Category.UNIT]),
 	],
+	dataSpeed: [
+		// units
+		new SpeedDatum("Kilometer per hour", 1e3/CONSTANT.h),
+		new SpeedDatum("Mile per hour", CONSTANT.mi/CONSTANT.h),
+		new SpeedDatum("Knot (unit)", CONSTANT.nmi/CONSTANT.h, "https://en.wikipedia.org/wiki/Knot_(unit)"),
+		new SpeedDatum("Meter per second", 1),
+		// continental drift
+		new SpeedDatum("Eurasian plate", new Speed({min:7e-3/CONSTANT.yr,max:14e-3/CONSTANT.yr}), "https://en.wikipedia.org/wiki/Eurasian_plate"),
+		new SpeedDatum("Antarctic plate", new Speed({min:12e-3/CONSTANT.yr,max:14e-3/CONSTANT.yr}), "https://en.wikipedia.org/wiki/Antarctic_plate"),
+		new SpeedDatum("North American plate", new Speed({min:15e-3/CONSTANT.yr,max:25e-3/CONSTANT.yr}), "https://en.wikipedia.org/wiki/North_American_plate"),
+		new SpeedDatum("South American plate", new Speed({min:27e-3/CONSTANT.yr,max:34e-3/CONSTANT.yr}), "https://en.wikipedia.org/wiki/South_American_plate"),
+		new SpeedDatum("Indian plate", new Speed({min:26e-3/CONSTANT.yr,max:36e-3/CONSTANT.yr}), "https://en.wikipedia.org/wiki/Indian_plate"),
+		new SpeedDatum("Australian plate", new Speed({min:62e-3/CONSTANT.yr,max:70e-3/CONSTANT.yr}), "https://en.wikipedia.org/wiki/Australian_plate"),
+		new SpeedDatum("Pacific plate", new Speed({min:56e-3/CONSTANT.yr,max:102e-3/CONSTANT.yr}), "https://en.wikipedia.org/wiki/Pacific_plate"),
+		// misc
+		new SpeedDatum("Phobian procession", 2e-2/CONSTANT.yr, "https://en.wikipedia.org/wiki/Phobos_(moon)"),
+		new SpeedDatum("Lunar recession", 3.83e-2/CONSTANT.yr, "https://www.pnas.org/doi/10.1073/pnas.2317051121"),
+		// in 3.6 Gyr, Triton (a=354.759 Mm) will advance to Neptune's roche limit (a=28.735050237 Mm)
+		new SpeedDatum("Triton procession", (354.759e6 - 28.735050237e6)/(3.6e9 * CONSTANT.yr), "https://en.wikipedia.org/wiki/Triton_(moon)#Orbit_and_rotation"),
+		new SpeedDatum("Human hair growth", new Speed({min:7.6e-3/CONSTANT.mo,max:11.4e-3/CONSTANT.mo}), "https://en.wikipedia.org/wiki/Human_hair_growth#Growth_cycle"),
+		new SpeedDatum("Bamboo growth (max)", 91e-2/CONSTANT.d, "https://en.wikipedia.org/wiki/Bamboo"),
+		new SpeedDatum("Argon particle speed (STP)", 350, "https://en.wikipedia.org/wiki/File:MaxwellBoltzmann-en.svg"),
+		new SpeedDatum("Helium particle speed (STP)", 1.1e3, "https://en.wikipedia.org/wiki/File:MaxwellBoltzmann-en.svg"),
+		// space orbital speeds
+		new SpeedDatum("Earth equatorial rotation speed", 1674.4e3/CONSTANT.h, "https://en.wikipedia.org/wiki/Earth"),
+		new SpeedDatum("Satellite orbital speed (max)", Math.sqrt(CONSTANT.G*CONSTANT.earth_mass/CONSTANT.earth_radius), "https://en.wikipedia.org/wiki/Earth"),
+		new SpeedDatum("Earth escape velocity", Math.sqrt(2*CONSTANT.G*CONSTANT.earth_mass/CONSTANT.earth_radius), "https://en.wikipedia.org/wiki/Earth"),
+		new SpeedDatum("Earth orbital speed", 29.7827e3, "https://en.wikipedia.org/wiki/Earth"),
+		new SpeedDatum("Sun orbital speed", 251e3, "https://en.wikipedia.org/wiki/Sun"),
+		new SpeedDatum("Andromeda galaxy approach", 301e3, "https://en.wikipedia.org/wiki/Andromeda_Galaxy"),
+		new SpeedDatum("Our speed relative to the CMB", 370e3, "https://en.wikipedia.org/wiki/Sun"),
+		new SpeedDatum("S2 periapsis speed", 5e6, "https://en.wikipedia.org/wiki/S2_(star)"),
+		new SpeedDatum("Uranium-235 fission neutron", 20e6, "https://en.wikipedia.org/wiki/Neutron_temperature#Fast"),
+		new SpeedDatum("D-T fusion neutron", 52e6, "https://en.wikipedia.org/wiki/Neutron_temperature#Fast"),
+		// electron """orbital speed""", derived from centripetal force equation + coulomb's law
+		// last two values are electron mass and hydrogen "atomic radius"
+		new SpeedDatum("Hydrogen electron orbital speed (Bohr model)", Math.sqrt((CONSTANT.ke * Math.pow(CONSTANT.electron, 2))/(9.1093837139e-31 * 25e-12))),
+		new SpeedDatum("Speed of light", CONSTANT.c, "https://en.wikipedia.org/wiki/Speed_of_light"),
+	],
 	dataTemperature: [
 		new TemperatureDatum("Rankine", 5/9, "https://en.wikipedia.org/wiki/Rankine_scale", [Category.UNIT]),
 		new TemperatureDatum("Kelvin", 1, "https://en.wikipedia.org/wiki/Kelvin", [Category.UNIT]),
@@ -1267,6 +1302,39 @@ const OOM = {
 		new TemperatureDatum("Sun (Corona)", 5e6, "https://en.wikipedia.org/wiki/Sun"),
 		new TemperatureDatum("Sun (Core)", 15.7e6, "https://en.wikipedia.org/wiki/Sun"),
 	],
+	dataTime: [
+		// units
+		new TimeDatum("Planck Time", 5.391247e-44, null, [Category.UNIT]),
+		new TimeDatum("Second", 1, null, [Category.UNIT]),
+		new TimeDatum("Minute", CONSTANT.min, null, [Category.UNIT]),
+		new TimeDatum("Hour", CONSTANT.h, null, [Category.UNIT]),
+		new TimeDatum("Day", CONSTANT.d, null, [Category.UNIT]),
+		new TimeDatum("Week", 7*CONSTANT.d, null, [Category.UNIT]),
+		new TimeDatum("Fortnight", 14*CONSTANT.d, null, [Category.UNIT]),
+		new TimeDatum("Month", CONSTANT.mo, null, [Category.UNIT]),
+		new TimeDatum("Year", CONSTANT.yr, null, [Category.UNIT]),
+		new TimeDatum("Decade", 10*CONSTANT.yr, null, [Category.UNIT]),
+		new TimeDatum("Century", 100*CONSTANT.yr, null, [Category.UNIT]),
+		new TimeDatum("Millennium", 1e3*CONSTANT.yr, null, [Category.UNIT]),
+		// orbits
+		new TimeDatum("Lunar synodic month", 29.530588861*CONSTANT.d),
+		// half-lives
+		new TimeDatum("W and Z boson half-life", 3e-25),
+		new TimeDatum("Hydrogen-5 half-life", 86e-24),
+		new TimeDatum("Plutonium-244 half-life", 8.13e7*CONSTANT.yr),
+		new TimeDatum("Uranium-235 half-life", 7.04e8*CONSTANT.yr),
+		new TimeDatum("Uranium-238 half-life", 4.463e9*CONSTANT.yr),
+		new TimeDatum("Thorium-232 half-life", 1.40e10*CONSTANT.yr),
+		// ages
+		new TimeDatum("Age of the Earth", 4.54e9*CONSTANT.yr),
+		new TimeDatum("Age of the Universe", 13.79e9*CONSTANT.yr),
+		// misc
+		new TimeDatum("Time since the creation of this webtool", (new Date() - new Date("2026-02-06T12:49:19.000Z"))/1e3, "https://github.com/Mocha2007/mocha2007.github.io/commit/d901d1ae1d29255cb2bba470393e7c4ede485fef"),
+		new TimeDatum("Time since the creation of this website", (new Date() - new Date("2017-05-17T01:50:57.000Z"))/1e3, "https://github.com/Mocha2007/mocha2007.github.io/commit/4e1bbc0bc41c4f75681c539cd09e164594e6ba7c"),
+		new TimeDatum("Caesium frequency", 1/9192631770, "https://www.bipm.org/documents/20126/41483022/SI-Brochure-9.pdf/fcf090b2-04e6-88cc-1149-c3e029ad8232"),
+		new TimeDatum("Generation", new Time({min:20*CONSTANT.yr,max:30*CONSTANT.yr}), "https://en.wikipedia.org/wiki/Generation"),
+		new TimeDatum("Life Expectancy (World)", (72.6+73.2)/2*CONSTANT.yr, "https://en.wikipedia.org/wiki/Life_expectancy#Variation_over_time"),
+	],
 	elem: {
 		/** @type {HTMLDivElement} */
 		cat_container: undefined,
@@ -1283,12 +1351,14 @@ const OOM = {
 		/** @returns {HTMLDivElement} */
 		mainPower: undefined,
 		/** @returns {HTMLDivElement} */
+		mainSpeed: undefined,
+		/** @returns {HTMLDivElement} */
 		mainTemperature: undefined,
 		/** @returns {HTMLDivElement} */
 		mainTime: undefined,
 		/** @returns {HTMLDivElement[]} */
 		get tabs(){
-			return [this.main, this.mainCharge, this.mainEnergy, this.mainLength, this.mainMoney, this.mainPower, this.mainTemperature, this.mainTime];
+			return [this.main, this.mainCharge, this.mainEnergy, this.mainLength, this.mainMoney, this.mainPower, this.mainSpeed, this.mainTemperature, this.mainTime];
 		}
 	},
 	init(){
@@ -1297,7 +1367,7 @@ const OOM = {
 		this.data.forEach(datum => main.appendChild(datum.elem(e2y)));
 		this.ranges.forEach((range, i, a) => main.appendChild(range.elem(e2y, i, a)));
 		// now for energy
-		['Energy', 'Charge', 'Length', 'Money', 'Power', 'Temperature', 'Time'].forEach(s => {
+		['Energy', 'Charge', 'Length', 'Money', 'Power', 'Speed', 'Temperature', 'Time'].forEach(s => {
 			const mainX = this.elem[`main${s}`] = document.createElement('div');
 			mainX.id = `main${s}`;
 			mainX.classList.add('main');
@@ -1384,7 +1454,7 @@ const OOM = {
 		const tabContainer = document.createElement('div');
 		tabContainer.id = 'tabContainer';
 		document.body.appendChild(tabContainer);
-		[['E', 'Energy'], ['L', 'Length'], ['P', 'Power'], ['q', 'Charge'], ['$', 'Money'], ['Θ', 'Temperature'], ['T', 'Time']].forEach(x => {
+		[['E', 'Energy'], ['L', 'Length'], ['P', 'Power'], ['q', 'Charge'], ['$', 'Money'], ['Θ', 'Temperature'], ['T', 'Time'], ['v', 'Speed']].forEach(x => {
 			const [abbr, tabName] = x;
 			const button = document.createElement('div');
 			button.innerHTML = abbr;
@@ -1428,6 +1498,7 @@ const OOM = {
 			.concat(...OOM.dataLength)
 			.concat(...OOM.dataMoney)
 			.concat(...OOM.dataPower)
+			.concat(...OOM.dataSpeed)
 			.concat(...OOM.dataTemperature)
 			.concat(...OOM.dataTime)
 			.forEach(datum => {
