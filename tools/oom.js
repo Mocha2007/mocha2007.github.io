@@ -547,9 +547,11 @@ const OOM = {
 		new MassDatum("Iron-56 atom", 55.934936*CONSTANT.da, "https://www.ciaaw.org/iron.htm"),
 		new MassDatum("Copper-63 atom", 62.929597*CONSTANT.da, "https://www.ciaaw.org/copper.htm"),
 		new MassDatum("Silver-107 atom", 106.90509*CONSTANT.da, "https://www.ciaaw.org/silver.htm"),
+		new MassDatum("Gadolinium-158 atom", 157.924112*CONSTANT.da, "https://www.ciaaw.org/gadolinium.htm"),
 		// new MassDatum("Gold-197 atom", 196.966570*CONSTANT.da, "https://www.ciaaw.org/gold.htm"),
 		new MassDatum("Lead-208 atom", 207.976652*CONSTANT.da, "https://www.ciaaw.org/lead.htm"),
 		new MassDatum("Uranium-238 atom", 238.05079*CONSTANT.da, "https://www.ciaaw.org/uranium.htm"),
+		new MassDatum("Oganesson-294 atom", 294.21398*CONSTANT.da),
 		// Molecules
 		new MassDatum("Water", 18.01528*CONSTANT.da),
 		new MassDatum("Ethanol", 46.069*CONSTANT.da),
