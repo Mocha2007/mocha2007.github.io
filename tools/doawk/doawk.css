@@ -1,0 +1,32 @@
+:root {
+	/* 100vmin (min viewport dimension); 16 px; body 8 px padding; 66 2px table cell borders; also a random 140 px off???; over 67 rows. */
+	--n: 28;
+	--cellSize: calc((100vmin - 2*8px - var(--n)*2px - 140px) / calc(var(--n) + 1));
+}
+
+html, body {
+	background-color: black;
+	font-family: Consolas, 'Courier New', monospace;
+	user-select: none;
+}
+
+td {
+	color: white;
+	font-size: calc(0.6 * var(--cellSize));
+	font-weight: bold;
+	height: var(--cellSize);
+	text-align: center;
+	text-decoration: none;
+	-webkit-text-stroke: calc(0.5 * var(--cellSize)) cyan;
+	width: var(--cellSize);
+}
+
+td:hover {
+	box-shadow: 0 0 40px 20px black;
+	position: relative;
+	z-index: 999;
+}
+
+#container table {
+	margin: auto;
+}

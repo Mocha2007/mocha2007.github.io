@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<script src="doawk.js" async></script>
+<link href="doawk.css" type="text/css" rel="stylesheet">
+<link rel="shortcut icon" href="../../img/favicon.ico">
+<title>DOAWK chronology</title>
+<div id="container"></div>
+<script>
+const LOAD = () => {
+	if (typeof LUNALIFE_LOADED === 'undefined')
+		setTimeout(LOAD, 100);
+	else
+		LUNALIFE.main();
+}
+LOAD();
+</script>
