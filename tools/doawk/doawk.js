@@ -280,7 +280,7 @@ const LUNALIFE = {
 		new LunaEvent(new Date(DOAWK_EPOCH+2, 0), 'Rodrick Rules', '#159'),
 		new LunaEvent(new Date(DOAWK_EPOCH+2, 5, 7), 'The Last Straw', '#483'),
 		new LunaEvent(new Date(DOAWK_EPOCH+2, 8), 'Dog Days', '#fd1'),
-		new LunaEvent(new Date(DOAWK_EPOCH+3, 0), 'The Ugly Truth', '#737'),
+		new LunaEvent(new Date(DOAWK_EPOCH+2, 10, 10), 'The Ugly Truth', '#737'),
 		new LunaEvent(new Date(9e99, 0), 'Future', 'rgba(224, 192, 255, 0.15)'),
 	],
 	/** converting the class to the new order... */
