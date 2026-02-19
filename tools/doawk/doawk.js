@@ -52,6 +52,8 @@ const LUNALIFE = {
 		"The Third Wheel",
 		"Hard Luck",
 		"The Long Haul",
+		"Old School",
+		"Double Down",
 	],
 	CONFIG: {
 		LIFESPAN: 18,
@@ -92,6 +94,7 @@ const LUNALIFE = {
 		new LunaEvent(new Date(DOAWK_EPOCH-5, 6), 'Greg goes to the beach for summer, and "loses" Tickles.', 8),
 		new LunaEvent(new Date(DOAWK_EPOCH-RODRICK_AGE_GAP, 8), 'When Rodrick was in middle school, he had a seventeen-year-old girl from Holland as his pen pal.', 2),
 		new LunaEvent(new Date(DOAWK_EPOCH-5, 8), 'Greg\'s favorite book series is the Underpants Bandits.', 9),
+		new LunaEvent(new Date(DOAWK_EPOCH-4, 6), '"When Greg was on the swim team in first grade, he\'d catch minnows in the creek.', 10),
 		new LunaEvent(new Date(DOAWK_EPOCH-4, 8), 'Greg reads Flat Stanley in second grade.', 9),
 		new LunaEvent(new Date(DOAWK_EPOCH-4, 11, 25), 'Greg receives a doll, Alfrendo, for christmas from his mother to "practice taking care of Manny" when he\'s born.', 1),
 		// exact time unknown
@@ -109,6 +112,7 @@ const LUNALIFE = {
 		// this happened two years before Manny can speak
 		new LunaEvent(new Date(DOAWK_EPOCH-2, 8), 'Greg throws a rock through the sliding glass door, but won\'t get caught for another two years.', 2),
 		new LunaEvent(new Date(DOAWK_EPOCH-2, 8), 'Greg\'s mother gets him Sportzerz shoes.', 8),
+		new LunaEvent(new Date(DOAWK_EPOCH+3-RODRICK_AGE_GAP, 9), 'Rodrick suffers at a trip to Hardscrabble Farms.', 10),
 		// 4th grade
 		new LunaEvent(new Date(DOAWK_EPOCH-1, 0), 'Manny starts calling Greg Bubby.', 1),
 		new LunaEvent(new Date(DOAWK_EPOCH-1, 0), 'Tingy becomes so degraded it turns into a couple pieces of yarn held together by raisins.', 3),
@@ -292,6 +296,7 @@ const LUNALIFE = {
 		new LunaEvent(new Date(DOAWK_EPOCH+2, 9), 'Francis Knott flies off the school swingset and lands on the see-saw.', 6),
 		new LunaEvent(new Date(DOAWK_EPOCH+2, 9), 'Greg and his mother get lost in a corn maze in the fall.', 7),
 		new LunaEvent(new Date(DOAWK_EPOCH+2, 9, 9), 'Greg tries a new alarm clock to help prevent sleeping in. He accidentally sets of the school fire alarm.', 5),
+		new LunaEvent(new Date(DOAWK_EPOCH+2, 9, 12), 'Greg goes to the Old-Timey Ice Cream Parlour for Rowley\'s birthday party.', 10),
 		new LunaEvent(new Date(DOAWK_EPOCH+2, 9, 14), 'Greg starts "The Facts of Life" health class unit.', 5),
 		new LunaEvent(new Date(DOAWK_EPOCH+2, 9, 17), 'Greg visits his new dentist, Dr. Kagan.', 5),
 		new LunaEvent(new Date(DOAWK_EPOCH+2, 9, 19), 'Greg has to take care of an Egg.', 5),
@@ -366,6 +371,8 @@ const LUNALIFE = {
 		new LunaEvent(new Date(DOAWK_EPOCH+3, 3, 21), 'Abigail dumps Rowley.', 8),
 		new LunaEvent(new Date(DOAWK_EPOCH+3, 3, 22), 'Greg presents his science fair project. Greg find\'s meemaw\'s ring.', 8),
 		new LunaEvent(new Date(DOAWK_EPOCH+3, 3, 26), 'Greg and Rowley are friends again.', 8),
+		// "a few months ago"
+		new LunaEvent(new Date(DOAWK_EPOCH+3, 5), 'Greg accidentally pisses off a lady while trying to use his phone\'s camera as a mirror.', 10),
 		// 8th grade, summer = book 9
 		new LunaEvent(new Date(DOAWK_EPOCH+3, 5, 4), 'Greg starts his ninth diary.', 9),
 		new LunaEvent(new Date(DOAWK_EPOCH+3, 5, 5), 'Greg\'s family embarks on a road trip.', 9),
@@ -373,6 +380,27 @@ const LUNALIFE = {
 		new LunaEvent(new Date(DOAWK_EPOCH+3, 5, 8), 'The Heffleys give the baby pig away to a petting zoo. Greg gets taken to a vet.', 9),
 		new LunaEvent(new Date(DOAWK_EPOCH+3, 5, 9), 'The Heffleys\' car breaks down and they have to get a ride. The Heffleys get the pig back.', 9),
 		new LunaEvent(new Date(DOAWK_EPOCH+3, 5, 13), 'The Heffleys get new phones and credit cards to replace their "stolen" ones. Greg discovers the missing key in his clothes.', 9),
+		// 9th grade = book 10
+		new LunaEvent(new Date(DOAWK_EPOCH+3, 6), 'Greg spends July and August at film camp.', 10),
+		new LunaEvent(new Date(DOAWK_EPOCH+3, 6), 'This summer when getting out of the pool, Greg\'s pants slip down, and people take photos and post them onto the internet.', 10),
+		new LunaEvent(new Date(DOAWK_EPOCH+3, 8), 'Rodrick\'s friend Billy Rotner gets caught stealing a pack of sour gummy worms at the convenience store.', 10),
+		new LunaEvent(new Date(DOAWK_EPOCH+3, 8, 4), 'Greg starts his tenth diary.', 10),
+		new LunaEvent(new Date(DOAWK_EPOCH+3, 8, 8), 'Greg\'s grandfather moves in with the Heffleys, and Darlene breaks up with him.', 10),
+		new LunaEvent(new Date(DOAWK_EPOCH+3, 8, 11), 'Rodrick gets a job at the Old Timey Ice Cream Parlour.', 10),
+		new LunaEvent(new Date(DOAWK_EPOCH+3, 8, 13), 'Greg\'s grandfather tells him about his childhood.', 10),
+		new LunaEvent(new Date(DOAWK_EPOCH+3, 8, 15), 'Greg\'s recommends online dating to his grandfather.', 10),
+		new LunaEvent(new Date(DOAWK_EPOCH+3, 8, 17), 'Greg gets put into harder classes due to Frew\'s homework help. Rodrick gets pulled over and his van gets towed. Greg\'s grandfather holds a party.', 10),
+		new LunaEvent(new Date(DOAWK_EPOCH+3, 8, 24), 'The town cleans up the town park.', 10),
+		new LunaEvent(new Date(DOAWK_EPOCH+3, 8, 25), '"Electronics-free weekend". Greg and Rowley try selling lemonade.', 10),
+		new LunaEvent(new Date(DOAWK_EPOCH+3, 9, 1), 'Greg tries his hand at plumbing and makes a mess. Grandpa and Greg wreck the car.', 10),
+		new LunaEvent(new Date(DOAWK_EPOCH+3, 9, 4), 'Greg goes to Hardscrabble Farms.', 10),
+		new LunaEvent(new Date(DOAWK_EPOCH+3, 9, 5), 'Greg spends his day moving hay bales.', 10),
+		new LunaEvent(new Date(DOAWK_EPOCH+3, 9, 6), 'Greg\'s cabinmates catch a fish. Greg gets letters from his family.', 10),
+		new LunaEvent(new Date(DOAWK_EPOCH+3, 9, 7), 'Children at the camp try to get sick to go home.', 10),
+		new LunaEvent(new Date(DOAWK_EPOCH+3, 9, 8), 'Rowley returns to camp with an infection from Gareth\'s tooth.', 10),
+		new LunaEvent(new Date(DOAWK_EPOCH+3, 9, 9), 'Mr. Jefferson gets sick from inhaling poison ivy fumes. The boys\' cabin raids the girls\' cabin at night.', 10),
+		new LunaEvent(new Date(DOAWK_EPOCH+3, 9, 10), 'Greg discovers Silas Scratch\'s shack.', 10),
+		new LunaEvent(new Date(DOAWK_EPOCH+3, 9, 11), 'Leaves the camp and returns home.', 10),
 	],
 	ZONE_CURRENT: 0,
 	ZONES: [
@@ -386,6 +414,8 @@ const LUNALIFE = {
 		new LunaEvent(new Date(DOAWK_EPOCH+3, 1, 18), 'The Third Wheel', '#941'),
 		new LunaEvent(new Date(DOAWK_EPOCH+3, 3, 27), 'Hard Luck', '#bd3'),
 		new LunaEvent(new Date(DOAWK_EPOCH+3, 5, 14), 'The Long Haul', '#f82'),
+		new LunaEvent(new Date(DOAWK_EPOCH+3, 9, 12), 'Old School', '#222'),
+		new LunaEvent(new Date(DOAWK_EPOCH+4, 6), 'Double Down', '#d31'),
 		new LunaEvent(new Date(9e99, 0), 'Future', 'rgba(224, 192, 255, 0.15)'),
 	],
 	/** converting the class to the new order... */
