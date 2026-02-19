@@ -80,9 +80,11 @@ const LUNALIFE = {
 	EVENTS: [
 		new LunaEvent(LunaEvent.epoch, 'Greg is born 3 weeks early. At birth he is 5 lb., 7 oz.', 7),
 		new LunaEvent(new Date(+LunaEvent.epoch+_1w), 'Greg meets his older brother Rodrick a few days after he is born.', 7),
+		new LunaEvent(new Date(DOAWK_EPOCH-8, 6), 'Greg\'s mother convinces him to eat broccoli by tricking him into thinking it tastes like candy.', 11),
 		new LunaEvent(new Date(DOAWK_EPOCH-8, 8), 'When Rodrick was in first grade, he\'d try running away repeatedly.', 9),
-		new LunaEvent(new Date(DOAWK_EPOCH-7, 0), 'According to Greg\'s mother, Holly Hills was the only preschooler in her class that wasn\'t potty trained.', 3),
-		new LunaEvent(new Date(DOAWK_EPOCH-7, 0), 'In preschool, Greg wouldn\'t actually clean toys up.', 4),
+		new LunaEvent(new Date(DOAWK_EPOCH-7, 8), 'Rodrick tells Greg if his belly button gets untied, his butt will fall off.', 11),
+		new LunaEvent(new Date(DOAWK_EPOCH-6, 0), 'According to Greg\'s mother, Holly Hills was the only preschooler in her class that wasn\'t potty trained.', 3),
+		new LunaEvent(new Date(DOAWK_EPOCH-6, 0), 'In preschool, Greg wouldn\'t actually clean toys up.', 4),
 		new LunaEvent(new Date(DOAWK_EPOCH-6, 0), 'Greg\'s parents go off on a vacation and leave his grandfather to watch over them, leaving behind a manual on how to take care of Greg and Rodrick.', 5),
 		new LunaEvent(new Date(DOAWK_EPOCH-6, 8), 'When Greg was in kindergarten, he had a stuffed animal called Tickles he slept with every night.', 8),
 		new LunaEvent(new Date(DOAWK_EPOCH-6, 11), 'Greg and Rodrick visit Santa\'s village.', 5),
@@ -96,12 +98,14 @@ const LUNALIFE = {
 		new LunaEvent(new Date(DOAWK_EPOCH-5, 8), 'Greg\'s favorite book series is the Underpants Bandits.', 9),
 		new LunaEvent(new Date(DOAWK_EPOCH-4, 6), '"When Greg was on the swim team in first grade, he\'d catch minnows in the creek.', 10),
 		new LunaEvent(new Date(DOAWK_EPOCH-4, 8), 'Greg reads Flat Stanley in second grade.', 9),
+		new LunaEvent(new Date(DOAWK_EPOCH-4, 8), 'Rodrick tells Greg camouflage makes you invisible.', 11),
 		new LunaEvent(new Date(DOAWK_EPOCH-4, 11, 25), 'Greg receives a doll, Alfrendo, for christmas from his mother to "practice taking care of Manny" when he\'s born.', 1),
 		// exact time unknown
 		new LunaEvent(new Date(DOAWK_EPOCH-3, 0), 'Manny is born.', 1),
 		new LunaEvent(new Date(DOAWK_EPOCH-3, 0), 'Gammie gives the Heffleys a "spoon carousel" "five or six" years ago. Since this time, the only foreign country they visit is Canada.', 6),
 		new LunaEvent(new Date(DOAWK_EPOCH-3, 6), 'Rodrick convinces Greg to jump off the diving board in the deep end of the pool.', 4),
 		new LunaEvent(new Date(DOAWK_EPOCH-3, 7), 'When Greg was 8, he borrowed a book from the library, and forgot it behind his desk.', 4),
+		new LunaEvent(new Date(DOAWK_EPOCH-3, 8), 'In third grade, Greg has a poetry unit at school and his poem is put into a book.', 11),
 		new LunaEvent(new Date(DOAWK_EPOCH-2, 0), 'Greg\'s mom knits a blue blanket, Tingy, for Manny\'s first birthday.', 3),
 		new LunaEvent(new Date(DOAWK_EPOCH-2, 2), 'Greg buys a rabbit\'s foot on a camping trip.', 8),
 		// this event acutually has an illustration with an exact date
@@ -112,6 +116,7 @@ const LUNALIFE = {
 		// this happened two years before Manny can speak
 		new LunaEvent(new Date(DOAWK_EPOCH-2, 8), 'Greg throws a rock through the sliding glass door, but won\'t get caught for another two years.', 2),
 		new LunaEvent(new Date(DOAWK_EPOCH-2, 8), 'Greg\'s mother gets him Sportzerz shoes.', 8),
+		new LunaEvent(new Date(DOAWK_EPOCH-2, 8), 'Greg lies about a bully named Curtis Litz.', 11),
 		new LunaEvent(new Date(DOAWK_EPOCH+3-RODRICK_AGE_GAP, 9), 'Rodrick suffers at a trip to Hardscrabble Farms.', 10),
 		// 4th grade
 		new LunaEvent(new Date(DOAWK_EPOCH-1, 0), 'Manny starts calling Greg Bubby.', 1),
@@ -221,6 +226,7 @@ const LUNALIFE = {
 		new LunaEvent(new Date(DOAWK_EPOCH+1, 11, 16), 'Rodrick starts working on his "Zero G" science project.', 2),
 		new LunaEvent(new Date(DOAWK_EPOCH+1, 11, 22), 'Greg and Scotty fail talent show tryouts.', 2),
 		new LunaEvent(new Date(DOAWK_EPOCH+1, 11, 24), 'Winter talent show.', 2),
+		new LunaEvent(new Date(DOAWK_EPOCH+1, 11, 24), 'The Heffleys buy a piano for Greg.', 11),
 		new LunaEvent(new Date(DOAWK_EPOCH+1, 11, 25), 'Greg receives a hand-knit blanket for christmas.', 6),
 		new LunaEvent(new Date(DOAWK_EPOCH+1, 11, 25), 'Jared Pyle gets a dirt bike for christmas.', 6),
 		// 7th grade, spring semester = book 3
@@ -235,6 +241,7 @@ const LUNALIFE = {
 		new LunaEvent(new Date(DOAWK_EPOCH+2, 1, 9), 'Greg gets detention.', 3),
 		new LunaEvent(new Date(DOAWK_EPOCH+2, 1, 10), 'Greg catches his father stealing the snacks.', 3),
 		new LunaEvent(new Date(DOAWK_EPOCH+2, 1, 14), 'Greg gives valentines to everyone in his class.', 3),
+		new LunaEvent(new Date(DOAWK_EPOCH+2, 2), 'Greg stops getting piano lessons from Mrs. French.', 11),
 		new LunaEvent(new Date(DOAWK_EPOCH+2, 2, 5), 'Greg\'s father throws Tingy away.', 3),
 		new LunaEvent(new Date(DOAWK_EPOCH+2, 2, 7), 'Manny starts calling Greg "Ploopy".', 3),
 		// "easter", which is March 22 at earliest
@@ -305,6 +312,7 @@ const LUNALIFE = {
 		// should be a friday, but must be the first entry in november :/ 
 		new LunaEvent(new Date(DOAWK_EPOCH+2, 9, 30), 'Greg attends the school\'s "lock-in" event.', 5),
 		new LunaEvent(new Date(DOAWK_EPOCH+2, 9, 31), 'Greg\'s dad meets Mr. Alexander, and thinks his teeth aren\'t real.', 6),
+		new LunaEvent(new Date(DOAWK_EPOCH+2, 9, 31), 'Rodrick buys an electronic witch for halloween.', 11),
 		new LunaEvent(new Date(DOAWK_EPOCH+2, 10), 'Amazing Andrew visits the school during a school assembly.', 7),
 		new LunaEvent(new Date(DOAWK_EPOCH+2, 10, 2), 'Greg gets sick. Isabella is fired.', 5),
 		new LunaEvent(new Date(DOAWK_EPOCH+2, 10, 3), 'Rowley gets a zit.', 5),
@@ -316,6 +324,7 @@ const LUNALIFE = {
 		new LunaEvent(new Date(DOAWK_EPOCH+2, 10, 16), 'Anti-bullying slogan contest.', 6),
 		new LunaEvent(new Date(DOAWK_EPOCH+2, 10, 21), 'Rowley has a sleepover with Greg.', 6),
 		new LunaEvent(new Date(DOAWK_EPOCH+2, 10, 30), 'Greg\'s school replaces the soda machine with a bottled water machine.', 6),
+		new LunaEvent(new Date(DOAWK_EPOCH+2, 11), 'Greg\'s mother tells Manny the gingerbread house will turn into spiders if he eats it, causing Manny to spray it with bug spray.', 11),
 		new LunaEvent(new Date(DOAWK_EPOCH+2, 11, 2), 'Greg tries to sell his snow-shovelling service.', 6),
 		new LunaEvent(new Date(DOAWK_EPOCH+2, 11, 7), 'Greg watches "Nutritionauts vs. the Greasy Grimelicks" at a school assembly.', 6),
 		// "A few weeks back"
@@ -383,6 +392,7 @@ const LUNALIFE = {
 		// 9th grade = book 10
 		new LunaEvent(new Date(DOAWK_EPOCH+3, 6), 'Greg spends July and August at film camp.', 10),
 		new LunaEvent(new Date(DOAWK_EPOCH+3, 6), 'This summer when getting out of the pool, Greg\'s pants slip down, and people take photos and post them onto the internet.', 10),
+		new LunaEvent(new Date(DOAWK_EPOCH+3, 6), 'Mrs. Fredericks fed stray cats this summer.', 11),
 		new LunaEvent(new Date(DOAWK_EPOCH+3, 8), 'Rodrick\'s friend Billy Rotner gets caught stealing a pack of sour gummy worms at the convenience store.', 10),
 		new LunaEvent(new Date(DOAWK_EPOCH+3, 8, 4), 'Greg starts his tenth diary.', 10),
 		new LunaEvent(new Date(DOAWK_EPOCH+3, 8, 8), 'Greg\'s grandfather moves in with the Heffleys, and Darlene breaks up with him.', 10),
@@ -401,6 +411,22 @@ const LUNALIFE = {
 		new LunaEvent(new Date(DOAWK_EPOCH+3, 9, 9), 'Mr. Jefferson gets sick from inhaling poison ivy fumes. The boys\' cabin raids the girls\' cabin at night.', 10),
 		new LunaEvent(new Date(DOAWK_EPOCH+3, 9, 10), 'Greg discovers Silas Scratch\'s shack.', 10),
 		new LunaEvent(new Date(DOAWK_EPOCH+3, 9, 11), 'Leaves the camp and returns home.', 10),
+		// 9th grade = book 11
+		new LunaEvent(new Date(DOAWK_EPOCH+3, 9, 13), 'Greg starts his eleventh diary.', 11),
+		new LunaEvent(new Date(DOAWK_EPOCH+3, 9, 14), 'Greg goes to the school book fair, and buys a giant pencil with googly eyes.', 11),
+		new LunaEvent(new Date(DOAWK_EPOCH+3, 9, 17), 'Geese destroy the Heffley\'s jack-o\'-lanterns.', 11),
+		new LunaEvent(new Date(DOAWK_EPOCH+3, 9, 18), 'Greg launches his Balloon Brigade balloon.', 11),
+		new LunaEvent(new Date(DOAWK_EPOCH+3, 9, 21), 'Greg meets the family who caught his balloon.', 11),
+		new LunaEvent(new Date(DOAWK_EPOCH+3, 9, 23), 'Greg hangs out with Maddox.', 11),
+		new LunaEvent(new Date(DOAWK_EPOCH+3, 9, 24), 'Greg\'s mother ends her experiment wherein she sees if Greg or Rodrick will take the trash out on their own.', 11),
+		new LunaEvent(new Date(DOAWK_EPOCH+3, 9, 25), 'The pig eats all the candy corn and gets sick.', 11),
+		new LunaEvent(new Date(DOAWK_EPOCH+3, 9, 26), 'Greg starts learning the french horn.', 11),
+		new LunaEvent(new Date(DOAWK_EPOCH+3, 9, 27), 'Greg lies about knowing psychology to try to pick up a girl.', 11),
+		new LunaEvent(new Date(DOAWK_EPOCH+3, 9, 31), 'Mariana Mendoza\'s halloween party.', 11),
+		new LunaEvent(new Date(DOAWK_EPOCH+3, 10, 1), 'Greg gets bullied by his male bandmates, causing him to want to drop band.', 11),
+		new LunaEvent(new Date(DOAWK_EPOCH+3, 10, 10), 'Fall concert.', 11),
+		new LunaEvent(new Date(DOAWK_EPOCH+3, 10, 11), 'Greg eats a shitton of chocolate chips.', 11),
+		new LunaEvent(new Date(DOAWK_EPOCH+3, 10, 25), 'Greg\'s father has been busy fixing the mess Greg and Rowley left in the furnace room.', 11),
 	],
 	ZONE_CURRENT: 0,
 	ZONES: [
@@ -415,7 +441,7 @@ const LUNALIFE = {
 		new LunaEvent(new Date(DOAWK_EPOCH+3, 3, 27), 'Hard Luck', '#bd3'),
 		new LunaEvent(new Date(DOAWK_EPOCH+3, 5, 14), 'The Long Haul', '#f82'),
 		new LunaEvent(new Date(DOAWK_EPOCH+3, 9, 12), 'Old School', '#222'),
-		new LunaEvent(new Date(DOAWK_EPOCH+4, 6), 'Double Down', '#d31'),
+		new LunaEvent(new Date(DOAWK_EPOCH+3, 10, 26), 'Double Down', '#d31'),
 		new LunaEvent(new Date(9e99, 0), 'Future', 'rgba(224, 192, 255, 0.15)'),
 	],
 	/** converting the class to the new order... */
