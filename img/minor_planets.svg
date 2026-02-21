@@ -1,6 +1,7 @@
 <?xml version="1.0" standalone="no"?>
 <!--Distance Scale: 100 Pixels = 1 Au-->
 <!--Size Scale: Pixels = ln(radius in meters) -->
+<!-- The three things that need to be annually updated: (0) Lucy (1) Halley (2) Oumuamua (3) New Horizons -->
 <svg width="8000" height="200" version="1.1" xmlns="http://www.w3.org/2000/svg">
 	<desc>Solar System</desc>
 	<defs>
@@ -474,6 +475,11 @@
 		</animateMotion>
 	</a>
 
+	<a href="https://en.wikipedia.org/wiki/Lucy_(spacecraft)"><!-- New Horizons @ 2026 https://whereislucy.space/ -->
+		<text x="419" y="120" font-size="8" fill="white">Lucy</text>
+		<image href="https://upload.wikimedia.org/wikipedia/commons/0/0f/Lucy-PatroclusMenoetius-art.png" x="419" y="88" height="24"/>
+	</a>
+
 	<circle class='po' r="520"/><!-- Jupiter orbit -->
 	<a class='gas' href='https://en.wikipedia.org/wiki/Jupiter'><!-- Jupiter -->
 		<text x="550" y="110">Jupiter</text>
@@ -677,14 +683,9 @@
 
 	<!-- TNOs -->
 	<g id='tnos'>
-		<a href="https://en.wikipedia.org/wiki/Halley's_Comet"><!-- Halley's Comet @ 2024 --> <!-- https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?des=1P -->
-			<text x="3528" y="120">Halley's Comet</text>
-			<image href="https://upload.wikimedia.org/wikipedia/commons/2/2a/Lspn_comet_halley.jpg" x="3526" y="88" height="24"/>
-		</a>
-
-		<a href="https://en.wikipedia.org/wiki/ʻOumuamua"><!-- ʻOumuamua @ 2024 --> <!-- https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=1I%2F2017%20U1 -->
-			<text x="3944" y="107" font-size="8" fill="white">ʻOumuamua</text>
-			<image href="https://upload.wikimedia.org/wikipedia/commons/1/1c/Artist%27s_impression_of_%CA%BBOumuamua.jpg" x="3944" y="88" height="12"/>
+		<a href="https://en.wikipedia.org/wiki/Halley's_Comet"><!-- Halley's Comet @ 2026 --> <!-- https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?des=1P -->
+			<text x="3522" y="120">Halley's Comet</text>
+			<image href="https://upload.wikimedia.org/wikipedia/commons/2/2a/Lspn_comet_halley.jpg" x="3522" y="88" height="24"/>
 		</a>
 
 		<circle class='mo' r="3940"/><!-- Orcus orbit -->
@@ -759,9 +760,14 @@
 			</animateMotion>
 		</a>
 
+		<a href="https://en.wikipedia.org/wiki/ʻOumuamua"><!-- ʻOumuamua @ 2026 --> <!-- https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=1I%2F2017%20U1 -->
+			<text x="5130" y="107" font-size="8" fill="white">ʻOumuamua</text>
+			<image href="https://upload.wikimedia.org/wikipedia/commons/1/1c/Artist%27s_impression_of_%CA%BBOumuamua.jpg" x="5130" y="88" height="12"/>
+		</a>
+
 		<a href="https://en.wikipedia.org/wiki/New_Horizons"><!-- New Horizons @ 2024 http://pluto.jhuapl.edu/Mission/Where-is-New-Horizons.php -->
-			<text x="5808" y="120" font-size="8" fill="white">New Horizons</text>
-			<image href="https://upload.wikimedia.org/wikipedia/commons/e/ee/New_Horizons_spacecraft_model_1.png" x="5808" y="88" height="24"/>
+			<text x="6398" y="120" font-size="8" fill="white">New Horizons</text>
+			<image href="https://upload.wikimedia.org/wikipedia/commons/e/ee/New_Horizons_spacecraft_model_1.png" x="6398" y="88" height="24"/>
 		</a>
 
 		<circle class='mo' r="6706"/><!-- 2007 OR10 orbit -->
