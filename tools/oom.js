@@ -1038,6 +1038,9 @@ const OOM = {
 		new AngleDatum("Venus", CONSTANT.angular_diameter(6051.8e3, 0.718440, 0.728213)),
 		new AngleDatum("Mars", CONSTANT.angular_diameter(3389.5e3, 1.3814, 1.66621)),
 		new AngleDatum("Jupiter", CONSTANT.angular_diameter(69886e3, 4.9506, 5.4570)),
+		new AngleDatum("Saturn", CONSTANT.angular_diameter(58232e3, 9.0412, 10.1238)),
+		new AngleDatum("Uranus", CONSTANT.angular_diameter(25362e3, 18.2861, 20.0965)),
+		new AngleDatum("Neptune", CONSTANT.angular_diameter(24622e3, 29.81, 30.33)),
 	],
 	dataCharge: [
 		// units
