@@ -66,6 +66,12 @@ class Dimension {
 // specific heat capacity?
 // velocity?
 
+class Angle extends Dimension {
+	constructor(x, uncertainty){
+		super("rad", 0, Math.sqrt(CONSTANT.c * CONSTANT.planck_reduced / CONSTANT.G), x, uncertainty);
+	}
+}
+
 class Charge extends Dimension {
 	constructor(x, uncertainty){
 		super("C", 0, 1/Math.sqrt(CONSTANT.e0*CONSTANT.G), x, uncertainty);
@@ -179,6 +185,18 @@ class Datum {
 	}
 	get id(){
 		return this.name.replaceAll(' ', '_');
+	}
+}
+
+class AngleDatum extends Datum {
+	/**
+	 * @param {string} name
+	 * @param {number|Angle} amt
+	 * @param {string?} source
+	 * @param {Category[]?} categories
+	 */
+	constructor(name, amt, source, categories){
+		super(Angle, name, amt, source, categories);
 	}
 }
 
@@ -333,6 +351,10 @@ class Category {
 }
 
 const CONSTANT = {
+	/** a in au, r in m */
+	angular_diameter(r = 0, a = 0){
+		return Math.acos(1 - 2*Math.pow(r/Math.abs(this.au * (a - 1)), 2));
+	},
 	/** in Pa */
 	atm: 101325,
 	/**
@@ -347,6 +369,7 @@ const CONSTANT = {
 		const g = this.G*m/Math.pow(r, 2);
 		return sp * sa / g;
 	},
+	au: 149597870700,
 	/** in mol^-1 */
 	avogadro: 6.02214076e23,
 	/** in kg, DNA base pair */
@@ -995,6 +1018,13 @@ const OOM = {
 		new MassDatum("Huge-LQG", 6.1e18*CONSTANT.solar_mass),
 		new MassDatum("Observable universe", 1.5e53),
 	],
+	dataAngle: [
+		new AngleDatum("Arcsecond", Math.PI/180/60/60, null, [Category.UNIT]),
+		new AngleDatum("Arcminute", Math.PI/180/60, null, [Category.UNIT]),
+		new AngleDatum("Degree", Math.PI/180, null, [Category.UNIT]),
+		new AngleDatum("Radian", 1, null, [Category.UNIT]),
+		new AngleDatum("Turn", 2*Math.PI, null, [Category.UNIT]),
+	],
 	dataCharge: [
 		// units
 		new ChargeDatum("Planck charge", Math.sqrt(CONSTANT.e0*CONSTANT.planck_reduced*CONSTANT.c), null, [Category.UNIT]),
@@ -1135,7 +1165,7 @@ const OOM = {
 		new LengthDatum("Nautical Mile", CONSTANT.nmi, null, [Category.UNIT]),
 		new LengthDatum("League (unit)", CONSTANT.ft*15840, null, [Category.UNIT]),
 		new LengthDatum("Lunar distance", 384399e3, null, [Category.UNIT]),
-		new LengthDatum("Astronomical unit", 149597870700, null, [Category.UNIT]),
+		new LengthDatum("Astronomical unit", CONSTANT.au, null, [Category.UNIT]),
 		new LengthDatum("Light-year", CONSTANT.c*CONSTANT.yr, null, [Category.UNIT]),
 		new LengthDatum("Parsec", 3.0857e16, null, [Category.UNIT]),
 		// misc tiny
@@ -1341,6 +1371,8 @@ const OOM = {
 		/** @returns {HTMLDivElement} */
 		main: undefined,
 		/** @returns {HTMLDivElement} */
+		mainAngle: undefined,
+		/** @returns {HTMLDivElement} */
 		mainCharge: undefined,
 		/** @returns {HTMLDivElement} */
 		mainEnergy: undefined,
@@ -1358,7 +1390,7 @@ const OOM = {
 		mainTime: undefined,
 		/** @returns {HTMLDivElement[]} */
 		get tabs(){
-			return [this.main, this.mainCharge, this.mainEnergy, this.mainLength, this.mainMoney, this.mainPower, this.mainSpeed, this.mainTemperature, this.mainTime];
+			return [this.main, this.mainAngle, this.mainCharge, this.mainEnergy, this.mainLength, this.mainMoney, this.mainPower, this.mainSpeed, this.mainTemperature, this.mainTime];
 		}
 	},
 	init(){
@@ -1367,7 +1399,7 @@ const OOM = {
 		this.data.forEach(datum => main.appendChild(datum.elem(e2y)));
 		this.ranges.forEach((range, i, a) => main.appendChild(range.elem(e2y, i, a)));
 		// now for energy
-		['Energy', 'Charge', 'Length', 'Money', 'Power', 'Speed', 'Temperature', 'Time'].forEach(s => {
+		['Angle', 'Charge', 'Energy', 'Length', 'Money', 'Power', 'Speed', 'Temperature', 'Time'].forEach(s => {
 			const mainX = this.elem[`main${s}`] = document.createElement('div');
 			mainX.id = `main${s}`;
 			mainX.classList.add('main');
@@ -1454,7 +1486,7 @@ const OOM = {
 		const tabContainer = document.createElement('div');
 		tabContainer.id = 'tabContainer';
 		document.body.appendChild(tabContainer);
-		[['E', 'Energy'], ['L', 'Length'], ['P', 'Power'], ['q', 'Charge'], ['$', 'Money'], ['Θ', 'Temperature'], ['T', 'Time'], ['v', 'Speed']].forEach(x => {
+		[['E', 'Energy'], ['L', 'Length'], ['P', 'Power'], ['q', 'Charge'], ['$', 'Money'], ['Θ', 'Temperature'], ['θ', 'Angle'], ['T', 'Time'], ['v', 'Speed']].forEach(x => {
 			const [abbr, tabName] = x;
 			const button = document.createElement('div');
 			button.innerHTML = abbr;
@@ -1493,6 +1525,7 @@ const OOM = {
 	refreshCats(active){
 		// console.debug(`active = `, active);
 		OOM.data
+			.concat(...OOM.dataAngle)
 			.concat(...OOM.dataEnergy)
 			.concat(...OOM.dataCharge)
 			.concat(...OOM.dataLength)
