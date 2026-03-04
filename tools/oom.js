@@ -355,7 +355,7 @@ const CONSTANT = {
 	angular_diameter(r = 0, q = 0, Q = 0){
 		const a = new Angle({
 			// right angle
-			x: Math.acos(1 - 2*Math.pow(r, 2)/(this.au*this.au + this.au*(q + Q)/2)),
+			x: Math.acos(1 - 2*Math.pow(r, 2)/(this.au*this.au + Math.pow(this.au*(q + Q)/2, 2))),
 			// same side of sun
 			min: Math.acos(1 - 2*Math.pow(r/Math.abs(this.au * (Q + 1)), 2)),
 			// opposite sides of sun
@@ -1036,6 +1036,8 @@ const OOM = {
 		// Planet Angular Diamaters
 		new AngleDatum("Mercury", CONSTANT.angular_diameter(2439.7e3, 0.307499, 0.466697)),
 		new AngleDatum("Venus", CONSTANT.angular_diameter(6051.8e3, 0.718440, 0.728213)),
+		new AngleDatum("Mars", CONSTANT.angular_diameter(3389.5e3, 1.3814, 1.66621)),
+		new AngleDatum("Jupiter", CONSTANT.angular_diameter(69886e3, 4.9506, 5.4570)),
 	],
 	dataCharge: [
 		// units
