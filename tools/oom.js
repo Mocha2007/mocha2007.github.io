@@ -351,9 +351,17 @@ class Category {
 }
 
 const CONSTANT = {
-	/** a in au, r in m */
-	angular_diameter(r = 0, a = 0){
-		return Math.acos(1 - 2*Math.pow(r/Math.abs(this.au * (a - 1)), 2));
+	/** q, Q in au, r in m, assumes orbit does not cross */
+	angular_diameter(r = 0, q = 0, Q = 0){
+		const a = new Angle({
+			// right angle
+			x: Math.acos(1 - 2*Math.pow(r, 2)/(this.au*this.au + this.au*(q + Q)/2)),
+			// same side of sun
+			min: Math.acos(1 - 2*Math.pow(r/Math.abs(this.au * (Q + 1)), 2)),
+			// opposite sides of sun
+			max: Math.acos(1 - 2*Math.pow(r/Math.abs(this.au * ((Q < 1 ? Q : q) - 1)), 2)),
+		});
+		return a;
 	},
 	/** in Pa */
 	atm: 101325,
@@ -1019,11 +1027,15 @@ const OOM = {
 		new MassDatum("Observable universe", 1.5e53),
 	],
 	dataAngle: [
+		// Units
 		new AngleDatum("Arcsecond", Math.PI/180/60/60, null, [Category.UNIT]),
 		new AngleDatum("Arcminute", Math.PI/180/60, null, [Category.UNIT]),
 		new AngleDatum("Degree", Math.PI/180, null, [Category.UNIT]),
 		new AngleDatum("Radian", 1, null, [Category.UNIT]),
 		new AngleDatum("Turn", 2*Math.PI, null, [Category.UNIT]),
+		// Planet Angular Diamaters
+		new AngleDatum("Mercury", CONSTANT.angular_diameter(2439.7e3, 0.307499, 0.466697)),
+		new AngleDatum("Venus", CONSTANT.angular_diameter(6051.8e3, 0.718440, 0.728213)),
 	],
 	dataCharge: [
 		// units
