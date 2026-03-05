@@ -1093,8 +1093,11 @@ const OOM = {
 		new AngleDatum("Makemake", CONSTANT.angular_diameter_heliocentric_orbit(715e3, 38.201, 52.796), null, [Category.MINORPLANET]),
 		new AngleDatum("Quaoar", CONSTANT.angular_diameter_heliocentric_orbit(1097.6e3/2, 41.900, 45.488), null, [Category.MINORPLANET]),
 		new AngleDatum("Sedna", CONSTANT.angular_diameter_heliocentric_orbit(906e3/2, 76.19, 937), null, [Category.MINORPLANET]),
+		new AngleDatum("Planet Nine", CONSTANT.angular_diameter_heliocentric_orbit(Math.cbrt(4.4)*CONSTANT.earth_radius, 200, 370), "https://en.wikipedia.org/wiki/Planet_Nine", [Category.HYPOTHETICAL]),
 		// Moon Angular Diameters
 		new AngleDatum("Ganymede", CONSTANT.angular_diameter_heliocentric_orbit(2634.1e3, 4.9506, 5.4570)),
+		// Fictional Exoplanet Diameters
+		new AngleDatum("Planet Vulcan (Star Trek)", CONSTANT.angular_diameter(CONSTANT.earth_radius, 16.340*CONSTANT.ly), "https://en.wikipedia.org/wiki/Vulcan_(Star_Trek)#Homeworld", [Category.FICTIONAL]),
 		// Misc
 		new AngleDatum("Voyager 1 (From Earth, 2026)", CONSTANT.angular_diameter(3.7/2, 172.12*CONSTANT.au), "https://en.wikipedia.org/wiki/Voyager_1"),
 		new AngleDatum("JWST (From Earth)", CONSTANT.angular_diameter(21.197/2, 1.5e9), "https://en.wikipedia.org/wiki/James_Webb_Space_Telescope"),
