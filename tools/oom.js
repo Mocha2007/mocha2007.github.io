@@ -377,6 +377,10 @@ const CONSTANT = {
 		});
 		return a;
 	},
+	/** https://en.wikipedia.org/wiki/Angular_resolution, https://oeis.org/A245461, https://en.wikipedia.org/wiki/UBV_photometric_system */
+	angular_resolution(aperture, wavelength = 547e-9){
+		return 1.2196698912665045*wavelength/aperture;
+	},
 	/** in Pa */
 	atm: 101325,
 	/**
@@ -461,6 +465,9 @@ const CONSTANT = {
 	/** in s */
 	get h(){
 		return this.min*60;
+	},
+	get in(){
+		return this.ft/12;
 	},
 	/** in kg */
 	jupiter_mass: 1.898125e27,
@@ -1100,6 +1107,14 @@ const OOM = {
 		new AngleDatum("Tribble homeworld (Star Trek)", CONSTANT.angular_diameter(CONSTANT.earth_radius, 120.4*CONSTANT.ly), "https://en.wikipedia.org/wiki/Tribble", [Category.FICTIONAL]),
 		new AngleDatum("Qo'noS (Star Trek)", CONSTANT.angular_diameter(CONSTANT.earth_radius, 108*CONSTANT.ly), "https://en.wikipedia.org/wiki/Klingon#Homeworld", [Category.FICTIONAL]),
 		new AngleDatum("Vulcan homeworld (Star Trek)", CONSTANT.angular_diameter(CONSTANT.earth_radius, 16.340*CONSTANT.ly), "https://en.wikipedia.org/wiki/Vulcan_(Star_Trek)#Homeworld", [Category.FICTIONAL]),
+		// Resolutions
+		new AngleDatum("Solar gravitational lens resolution", 1e-10 * Math.PI/180/60/60, "https://en.wikipedia.org/wiki/Solar_gravitational_lens"),
+		new AngleDatum("JWST resolution", CONSTANT.angular_resolution(6.5, 600e-9)),
+		new AngleDatum("HST resolution", CONSTANT.angular_resolution(2.4)),
+		new AngleDatum("36\" Telescope resolution", CONSTANT.angular_resolution(36*CONSTANT.in)),
+		new AngleDatum("4\" Telescope resolution", CONSTANT.angular_resolution(4*CONSTANT.in)),
+		new AngleDatum("7x50 Binocular resolution", CONSTANT.angular_resolution(50e-3)),
+		new AngleDatum("Eye resolution", 562e-9/9e-3),
 		// Misc
 		new AngleDatum("Earth (From Andromeda)", CONSTANT.angular_diameter(CONSTANT.earth_radius, 2.5e6*CONSTANT.ly), "https://en.wikipedia.org/wiki/Andromeda_Galaxy"),
 		new AngleDatum("Voyager 1 (From Earth, 2026)", CONSTANT.angular_diameter(3.7/2, 172.12*CONSTANT.au), "https://en.wikipedia.org/wiki/Voyager_1"),
