@@ -1097,8 +1097,11 @@ const OOM = {
 		// Moon Angular Diameters
 		new AngleDatum("Ganymede", CONSTANT.angular_diameter_heliocentric_orbit(2634.1e3, 4.9506, 5.4570)),
 		// Fictional Exoplanet Diameters
-		new AngleDatum("Planet Vulcan (Star Trek)", CONSTANT.angular_diameter(CONSTANT.earth_radius, 16.340*CONSTANT.ly), "https://en.wikipedia.org/wiki/Vulcan_(Star_Trek)#Homeworld", [Category.FICTIONAL]),
+		new AngleDatum("Tribble homeworld (Star Trek)", CONSTANT.angular_diameter(CONSTANT.earth_radius, 120.4*CONSTANT.ly), "https://en.wikipedia.org/wiki/Tribble", [Category.FICTIONAL]),
+		new AngleDatum("Qo'noS (Star Trek)", CONSTANT.angular_diameter(CONSTANT.earth_radius, 108*CONSTANT.ly), "https://en.wikipedia.org/wiki/Klingon#Homeworld", [Category.FICTIONAL]),
+		new AngleDatum("Vulcan homeworld (Star Trek)", CONSTANT.angular_diameter(CONSTANT.earth_radius, 16.340*CONSTANT.ly), "https://en.wikipedia.org/wiki/Vulcan_(Star_Trek)#Homeworld", [Category.FICTIONAL]),
 		// Misc
+		new AngleDatum("Earth (From Andromeda)", CONSTANT.angular_diameter(CONSTANT.earth_radius, 2.5e6*CONSTANT.ly), "https://en.wikipedia.org/wiki/Andromeda_Galaxy"),
 		new AngleDatum("Voyager 1 (From Earth, 2026)", CONSTANT.angular_diameter(3.7/2, 172.12*CONSTANT.au), "https://en.wikipedia.org/wiki/Voyager_1"),
 		new AngleDatum("JWST (From Earth)", CONSTANT.angular_diameter(21.197/2, 1.5e9), "https://en.wikipedia.org/wiki/James_Webb_Space_Telescope"),
 		new AngleDatum("Geostationary Satellite (From Earth)", CONSTANT.angular_diameter_geocentric_orbit(2, 42164e3+CONSTANT.earth_radius)),
