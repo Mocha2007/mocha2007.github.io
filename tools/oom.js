@@ -352,7 +352,7 @@ class Category {
 
 const CONSTANT = {
 	angular_diameter(r = 0, d = 0){
-		return 2 * Math.asin(r/(2*d));
+		return 2 * Math.asin(r/d);
 	},
 	/** q, Q in au, r in m, assumes orbit does not cross */
 	angular_diameter_orbit(r = 0, q = 0, Q = 0){
@@ -1033,6 +1033,7 @@ const OOM = {
 		// Units
 		new AngleDatum("Arcsecond", Math.PI/180/60/60, null, [Category.UNIT]),
 		new AngleDatum("Arcminute", Math.PI/180/60, null, [Category.UNIT]),
+		new AngleDatum("Gradian", Math.PI/200, null, [Category.UNIT]),
 		new AngleDatum("Degree", Math.PI/180, null, [Category.UNIT]),
 		new AngleDatum("Radian", 1, null, [Category.UNIT]),
 		new AngleDatum("Turn", 2*Math.PI, null, [Category.UNIT]),
