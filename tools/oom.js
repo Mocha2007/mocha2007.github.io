@@ -1088,6 +1088,8 @@ const OOM = {
 		// Misc
 		new AngleDatum("A380 (From Surface, Cruise)", CONSTANT.angular_diameter(79.75/2, 11e3)),
 		new AngleDatum("ISS (From Surface, Closest)", CONSTANT.angular_diameter(109/2, 413e3)),
+		new AngleDatum("WTC (From Liberty Island)", CONSTANT.angular_diameter(546.2/2, 3740)),
+		new AngleDatum("Minecraft FOV (Default)", 70/180 * Math.PI),
 		// Snellen Chart
 		new AngleDatum("Snellen Chart, Smallest Letters (20/10)", CONSTANT.snellen(0.5), "https://en.wikipedia.org/wiki/Snellen_chart"),
 		new AngleDatum("Snellen Chart, Middle Letters (20/20)", CONSTANT.snellen(1), "https://en.wikipedia.org/wiki/Snellen_chart"),
