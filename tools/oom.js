@@ -1121,6 +1121,12 @@ const OOM = {
 		new AngleDatum("4\" Telescope resolution", CONSTANT.angular_resolution(4*CONSTANT.in)),
 		new AngleDatum("7x50 Binocular resolution", CONSTANT.angular_resolution(50e-3)),
 		new AngleDatum("Eye resolution", 562e-9/9e-3),
+		// Pythagorean triples
+		new AngleDatum("3-4-5 Triangle, Angle opposite 5", Math.asin(3/5)),
+		new AngleDatum("5-12-13 Triangle, Angle opposite 13", Math.asin(5/13)),
+		new AngleDatum("7-24-25 Triangle, Angle opposite 25", Math.asin(7/25)),
+		new AngleDatum("9-40-41 Triangle, Angle opposite 41", Math.asin(9/41)),
+		new AngleDatum("11-60-61 Triangle, Angle opposite 61", Math.asin(11/61)),
 		// Misc
 		new AngleDatum("Earth (From Andromeda)", CONSTANT.angular_diameter(CONSTANT.earth_radius, 2.5e6*CONSTANT.ly), "https://en.wikipedia.org/wiki/Andromeda_Galaxy"),
 		new AngleDatum("Voyager 1 (From Earth, 2026)", CONSTANT.angular_diameter(3.7/2, 172.12*CONSTANT.au), "https://en.wikipedia.org/wiki/Voyager_1"),
