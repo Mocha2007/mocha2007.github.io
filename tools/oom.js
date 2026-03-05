@@ -351,15 +351,18 @@ class Category {
 }
 
 const CONSTANT = {
+	angular_diameter(r = 0, d = 0){
+		return Math.acos(1 - r*r/(2*d*d));
+	},
 	/** q, Q in au, r in m, assumes orbit does not cross */
-	angular_diameter(r = 0, q = 0, Q = 0){
+	angular_diameter_orbit(r = 0, q = 0, Q = 0){
 		const a = new Angle({
 			// right angle
-			x: Math.acos(1 - 2*Math.pow(r, 2)/(this.au*this.au + Math.pow(this.au*(q + Q)/2, 2))),
-			// same side of sun
-			min: Math.acos(1 - 2*Math.pow(r/Math.abs(this.au * (Q + 1)), 2)),
+			x: this.angular_diameter(r, this.au * Math.hypot(1, (q + Q)/2)),
 			// opposite sides of sun
-			max: Math.acos(1 - 2*Math.pow(r/Math.abs(this.au * ((Q < 1 ? Q : q) - 1)), 2)),
+			min: this.angular_diameter(r, this.au * (Q + 1)),
+			// same side of sun
+			max: this.angular_diameter(r, this.au * ((Q < 1 ? Q : q) - 1)),
 		});
 		return a;
 	},
@@ -1034,13 +1037,13 @@ const OOM = {
 		new AngleDatum("Radian", 1, null, [Category.UNIT]),
 		new AngleDatum("Turn", 2*Math.PI, null, [Category.UNIT]),
 		// Planet Angular Diamaters
-		new AngleDatum("Mercury", CONSTANT.angular_diameter(2439.7e3, 0.307499, 0.466697)),
-		new AngleDatum("Venus", CONSTANT.angular_diameter(6051.8e3, 0.718440, 0.728213)),
-		new AngleDatum("Mars", CONSTANT.angular_diameter(3389.5e3, 1.3814, 1.66621)),
-		new AngleDatum("Jupiter", CONSTANT.angular_diameter(69886e3, 4.9506, 5.4570)),
-		new AngleDatum("Saturn", CONSTANT.angular_diameter(58232e3, 9.0412, 10.1238)),
-		new AngleDatum("Uranus", CONSTANT.angular_diameter(25362e3, 18.2861, 20.0965)),
-		new AngleDatum("Neptune", CONSTANT.angular_diameter(24622e3, 29.81, 30.33)),
+		new AngleDatum("Mercury", CONSTANT.angular_diameter_orbit(2439.7e3, 0.307499, 0.466697)),
+		new AngleDatum("Venus", CONSTANT.angular_diameter_orbit(6051.8e3, 0.718440, 0.728213)),
+		new AngleDatum("Mars", CONSTANT.angular_diameter_orbit(3389.5e3, 1.3814, 1.66621)),
+		new AngleDatum("Jupiter", CONSTANT.angular_diameter_orbit(69886e3, 4.9506, 5.4570)),
+		new AngleDatum("Saturn", CONSTANT.angular_diameter_orbit(58232e3, 9.0412, 10.1238)),
+		new AngleDatum("Uranus", CONSTANT.angular_diameter_orbit(25362e3, 18.2861, 20.0965)),
+		new AngleDatum("Neptune", CONSTANT.angular_diameter_orbit(24622e3, 29.81, 30.33)),
 	],
 	dataCharge: [
 		// units
