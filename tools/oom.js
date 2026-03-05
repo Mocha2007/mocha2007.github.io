@@ -1057,6 +1057,7 @@ const OOM = {
 		new AngleDatum("Canopus", CONSTANT.angular_diameter(73.3*CONSTANT.solar_radius, 310*CONSTANT.ly)),
 		new AngleDatum("Capella Aa", CONSTANT.angular_diameter(11.98*CONSTANT.solar_radius, 42.919*CONSTANT.ly)),
 		new AngleDatum("Procyon A", CONSTANT.angular_diameter(2.043*CONSTANT.solar_radius, 11.46*CONSTANT.ly)),
+		new AngleDatum("R Doradus", CONSTANT.angular_diameter(298*CONSTANT.solar_radius, 178*CONSTANT.ly)),
 		new AngleDatum("Rigel A", CONSTANT.angular_diameter(74.1*CONSTANT.solar_radius, 848*CONSTANT.ly)),
 		new AngleDatum("Sirius A", CONSTANT.angular_diameter(1.7144*CONSTANT.solar_radius, 8.61*CONSTANT.ly)),
 		new AngleDatum("Vega", CONSTANT.angular_diameter(2.726*CONSTANT.solar_radius, 25.04*CONSTANT.ly)),
