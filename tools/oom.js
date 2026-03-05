@@ -1050,11 +1050,14 @@ const OOM = {
 		new AngleDatum("Radian", 1, null, [Category.UNIT]),
 		new AngleDatum("Turn", 2*Math.PI, null, [Category.UNIT]),
 		// Star Angular Diameters
+		new AngleDatum("Achernar A", CONSTANT.angular_diameter(7.97*CONSTANT.solar_radius, 139*CONSTANT.ly)),
 		// new AngleDatum("Alpha Centauri A", CONSTANT.angular_diameter(0.8591*CONSTANT.solar_radius, 4.344*CONSTANT.ly)),
 		new AngleDatum("Arcturus", CONSTANT.angular_diameter(25.4*CONSTANT.solar_radius, 36.7*CONSTANT.ly)),
 		new AngleDatum("Betelgeuse", CONSTANT.angular_diameter(702*CONSTANT.solar_radius, 478*CONSTANT.ly)),
 		new AngleDatum("Canopus", CONSTANT.angular_diameter(73.3*CONSTANT.solar_radius, 310*CONSTANT.ly)),
 		new AngleDatum("Capella Aa", CONSTANT.angular_diameter(11.98*CONSTANT.solar_radius, 42.919*CONSTANT.ly)),
+		new AngleDatum("Procyon A", CONSTANT.angular_diameter(2.043*CONSTANT.solar_radius, 11.46*CONSTANT.ly)),
+		new AngleDatum("Rigel A", CONSTANT.angular_diameter(74.1*CONSTANT.solar_radius, 848*CONSTANT.ly)),
 		new AngleDatum("Sirius A", CONSTANT.angular_diameter(1.7144*CONSTANT.solar_radius, 8.61*CONSTANT.ly)),
 		new AngleDatum("Vega", CONSTANT.angular_diameter(2.726*CONSTANT.solar_radius, 25.04*CONSTANT.ly)),
 		// Planet Angular Diamaters
