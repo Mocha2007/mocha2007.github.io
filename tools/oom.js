@@ -1066,6 +1066,9 @@ const OOM = {
 		new AngleDatum("Makemake", CONSTANT.angular_diameter_heliocentric_orbit(715e3, 38.201, 52.796), null, [Category.MINORPLANET]),
 		new AngleDatum("Quaoar", CONSTANT.angular_diameter_heliocentric_orbit(1097.6e3/2, 41.900, 45.488), null, [Category.MINORPLANET]),
 		new AngleDatum("Sedna", CONSTANT.angular_diameter_heliocentric_orbit(906e3/2, 76.19, 937), null, [Category.MINORPLANET]),
+		// Misc
+		new AngleDatum("A380 (From Surface, Cruise)", CONSTANT.angular_diameter(79.75/2, 11e3)),
+		new AngleDatum("ISS (From Surface, Closest)", CONSTANT.angular_diameter(109/2, 413e3)),
 	],
 	dataCharge: [
 		// units
