@@ -351,11 +351,11 @@ class Category {
 }
 
 const CONSTANT = {
-	angular_diameter(r = 0, d = 0){
+	angular_diameter(r, d){
 		return 2 * Math.asin(r/d);
 	},
 	/** q, Q in au, r in m, assumes orbit does not cross */
-	angular_diameter_heliocentric_orbit(r = 0, q = 0, Q = 0, q_e = 0.9832924045756489, Q_E = 1.0167096382341758 ){
+	angular_diameter_heliocentric_orbit(r, q, Q = q, q_e = 0.9832924045756489, Q_E = 1.0167096382341758 ){
 		let a_e = (q_e + Q_E)/2;
 		const a = new Angle({
 			// right angle
@@ -368,7 +368,7 @@ const CONSTANT = {
 		return a;
 	},
 	/** q, Q in m, r in m, assumes orbit does not cross */
-	angular_diameter_geocentric_orbit(r = 0, q = 0, Q = 0, r_e=this.earth_radius){
+	angular_diameter_geocentric_orbit(r, q, Q = q, r_e=this.earth_radius){
 		const a = new Angle({
 			// apoapsis, right angle of earth
 			min: this.angular_diameter(r, Math.hypot(r_e, Q)),
@@ -1089,8 +1089,11 @@ const OOM = {
 		// Moon Angular Diameters
 		new AngleDatum("Ganymede", CONSTANT.angular_diameter_heliocentric_orbit(2634.1e3, 4.9506, 5.4570)),
 		// Misc
+		new AngleDatum("JWST (From Earth)", CONSTANT.angular_diameter(21.197/2, 1.5e9), "https://en.wikipedia.org/wiki/James_Webb_Space_Telescope"),
+		new AngleDatum("Geostationary Satellite (From Earth)", CONSTANT.angular_diameter_geocentric_orbit(2, 42164e3+CONSTANT.earth_radius)),
+		new AngleDatum("GPS Satellite (From Earth)", CONSTANT.angular_diameter_geocentric_orbit(3.4/2, 26600e3), "https://timeandnavigation.si.edu/multimedia-asset/gps-block-iii-satellite"),
+		new AngleDatum("ISS (Closest)", CONSTANT.angular_diameter(109/2, 413e3)),
 		new AngleDatum("A380 (From Surface, Cruise)", CONSTANT.angular_diameter(79.75/2, 11e3)),
-		new AngleDatum("ISS (From Surface, Closest)", CONSTANT.angular_diameter(109/2, 413e3)),
 		new AngleDatum("WTC (From Liberty Island)", CONSTANT.angular_diameter(546.2/2, 3740)),
 		new AngleDatum("Minecraft FOV (Default)", 70/180 * Math.PI),
 		// Snellen Chart
