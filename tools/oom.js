@@ -1113,6 +1113,8 @@ const OOM = {
 		new AngleDatum("HST resolution", CONSTANT.angular_resolution(2.4)),
 		new AngleDatum("IRAS resolution (12 μm)", CONSTANT.angular_resolution(0.57, 12e-6)),
 		new AngleDatum("IRAS resolution (100 μm)", CONSTANT.angular_resolution(0.57, 100e-6)),
+		new AngleDatum("Arecibo resolution (3 cm)", CONSTANT.angular_resolution(304.8, 0.03)),
+		new AngleDatum("Arecibo resolution (1 m)", CONSTANT.angular_resolution(304.8, 1)),
 		new AngleDatum("36\" Telescope resolution", CONSTANT.angular_resolution(36*CONSTANT.in)),
 		new AngleDatum("4\" Telescope resolution", CONSTANT.angular_resolution(4*CONSTANT.in)),
 		new AngleDatum("7x50 Binocular resolution", CONSTANT.angular_resolution(50e-3)),
