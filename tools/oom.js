@@ -1063,8 +1063,11 @@ const OOM = {
 		new AngleDatum("Procyon A", CONSTANT.angular_diameter(2.043*CONSTANT.solar_radius, 11.46*CONSTANT.ly)),
 		new AngleDatum("R Doradus", CONSTANT.angular_diameter(298*CONSTANT.solar_radius, 178*CONSTANT.ly)),
 		new AngleDatum("Rigel A", CONSTANT.angular_diameter(74.1*CONSTANT.solar_radius, 848*CONSTANT.ly)),
+		new AngleDatum("Sagittarius A* (Event Horizon)", CONSTANT.angular_diameter(260/3000*CONSTANT.au, 26996*CONSTANT.ly)),
 		new AngleDatum("Sirius A", CONSTANT.angular_diameter(1.7144*CONSTANT.solar_radius, 8.61*CONSTANT.ly)),
 		new AngleDatum("Vega", CONSTANT.angular_diameter(2.726*CONSTANT.solar_radius, 25.04*CONSTANT.ly)),
+		// Exoplanet Angular Diameters
+		new AngleDatum("Proxima Centauri b", CONSTANT.angular_diameter(1.17*CONSTANT.earth_radius, 4.2465*CONSTANT.ly)),
 		// Planet Angular Diamaters
 		new AngleDatum("Sun", CONSTANT.angular_diameter_geocentric_orbit(CONSTANT.solar_radius, 147098450e3, 152097597e3)),
 		new AngleDatum("Moon", CONSTANT.angular_diameter_geocentric_orbit(1737.4e3, 362600e3, 405400e3)),
