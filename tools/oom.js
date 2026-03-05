@@ -1115,6 +1115,8 @@ const OOM = {
 		new AngleDatum("IRAS resolution (100 μm)", CONSTANT.angular_resolution(0.57, 100e-6)),
 		new AngleDatum("Arecibo resolution (3 cm)", CONSTANT.angular_resolution(304.8, 0.03)),
 		new AngleDatum("Arecibo resolution (1 m)", CONSTANT.angular_resolution(304.8, 1)),
+		new AngleDatum("Tianyan resolution (10 cm)", CONSTANT.angular_resolution(500, 0.1)),
+		new AngleDatum("Tianyan resolution (4.3 m)", CONSTANT.angular_resolution(500, 4.3)),
 		new AngleDatum("36\" Telescope resolution", CONSTANT.angular_resolution(36*CONSTANT.in)),
 		new AngleDatum("4\" Telescope resolution", CONSTANT.angular_resolution(4*CONSTANT.in)),
 		new AngleDatum("7x50 Binocular resolution", CONSTANT.angular_resolution(50e-3)),
