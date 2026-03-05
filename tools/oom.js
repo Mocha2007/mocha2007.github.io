@@ -355,24 +355,25 @@ const CONSTANT = {
 		return 2 * Math.asin(r/d);
 	},
 	/** q, Q in au, r in m, assumes orbit does not cross */
-	angular_diameter_heliocentric_orbit(r = 0, q = 0, Q = 0){
+	angular_diameter_heliocentric_orbit(r = 0, q = 0, Q = 0, q_e = 0.9832924045756489, Q_E = 1.0167096382341758 ){
+		let a_e = (q_e + Q_E)/2;
 		const a = new Angle({
 			// right angle
-			x: this.angular_diameter(r, this.au * Math.hypot(1, (q + Q)/2)),
+			x: this.angular_diameter(r, this.au * Math.hypot(a_e, (q + Q)/2)),
 			// opposite sides of sun
-			min: this.angular_diameter(r, this.au * (Q + 1)),
+			min: this.angular_diameter(r, this.au * (Q + Q_E)),
 			// same side of sun
-			max: this.angular_diameter(r, this.au * (Q < 1 ? 1 - Q : q - 1)),
+			max: this.angular_diameter(r, this.au * (Q < a_e ? q_e - Q : q - Q_E)),
 		});
 		return a;
 	},
 	/** q, Q in m, r in m, assumes orbit does not cross */
-	angular_diameter_geocentric_orbit(r = 0, q = 0, Q = 0){
+	angular_diameter_geocentric_orbit(r = 0, q = 0, Q = 0, r_e=this.earth_radius){
 		const a = new Angle({
 			// apoapsis, right angle of earth
-			min: this.angular_diameter(r, Math.hypot(this.earth_radius, Q)),
+			min: this.angular_diameter(r, Math.hypot(r_e, Q)),
 			// periapsis, same side of earth
-			max: this.angular_diameter(r, q - this.earth_radius),
+			max: this.angular_diameter(r, q - r_e),
 		});
 		return a;
 	},
@@ -1067,6 +1068,8 @@ const OOM = {
 		// Planet Angular Diamaters
 		new AngleDatum("Sun", CONSTANT.angular_diameter_geocentric_orbit(CONSTANT.solar_radius, 147098450e3, 152097597e3)),
 		new AngleDatum("Moon", CONSTANT.angular_diameter_geocentric_orbit(1737.4e3, 362600e3, 405400e3)),
+		new AngleDatum("Earth (From Moon)", CONSTANT.angular_diameter_geocentric_orbit(CONSTANT.earth_radius, 362600e3, 405400e3, 1737.4e3)),
+		new AngleDatum("Earth (From Mars)", CONSTANT.angular_diameter_heliocentric_orbit(CONSTANT.earth_radius, 0.9832924045756489, 1.0167096382341758, 1.3814, 1.66621)),
 		new AngleDatum("Mercury", CONSTANT.angular_diameter_heliocentric_orbit(2439.7e3, 0.307499, 0.466697)),
 		new AngleDatum("Venus", CONSTANT.angular_diameter_heliocentric_orbit(6051.8e3, 0.718440, 0.728213)),
 		new AngleDatum("Mars", CONSTANT.angular_diameter_heliocentric_orbit(3389.5e3, 1.3814, 1.66621)),
