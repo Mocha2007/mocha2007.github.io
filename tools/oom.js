@@ -1344,8 +1344,12 @@ const OOM = {
 		new MoneyDatum('Shahed drone (2026)', new Money({min: 20e3, max: 50e3}), "https://www.seattletimes.com/nation-world/irans-drones-cost-a-fraction-of-the-u-s-weapons-shooting-them-down/"),
 		// misc
 		new MoneyDatum('Cost to maintain the Iran War for 6 months (2026)', 59.39e6*365/2, "https://ips-dc.org/how-much-is-the-war-in-iran-costing-american-taxpayers/"),
+		new MoneyDatum('US Cost of living (Annual, per capita, 2026)', 12*(1176.2+1352.97), "https://www.numbeo.com/cost-of-living/country_result.jsp?country=United+States"),
 		new MoneyDatum('US Military Budget (2026)', 892.6e9, "https://en.wikipedia.org/wiki/Military_budget_of_the_United_States#Budget_for_FY2026"),
+		new MoneyDatum('California GDP (2025)', 4.3e12, "https://en.wikipedia.org/wiki/California"),
 		new MoneyDatum('US Federal Budget (2024)', 6.8e12, "https://commons.wikimedia.org/wiki/File:Fy2024_federal_budget.png"),
+		new MoneyDatum('US GDP (2025)', 30.616e12, "https://en.wikipedia.org/wiki/United_States"),
+		new MoneyDatum('World GDP (2020)', 84.705e12, "https://en.wikipedia.org/wiki/Gross_world_product"),
 	],
 	dataPower: [
 		// abs magnitude units
