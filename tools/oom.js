@@ -1089,6 +1089,7 @@ const OOM = {
 		// Moon Angular Diameters
 		new AngleDatum("Ganymede", CONSTANT.angular_diameter_heliocentric_orbit(2634.1e3, 4.9506, 5.4570)),
 		// Misc
+		new AngleDatum("Voyager 1 (From Earth, 2026)", CONSTANT.angular_diameter(3.7/2, 172.12*CONSTANT.au), "https://en.wikipedia.org/wiki/Voyager_1"),
 		new AngleDatum("JWST (From Earth)", CONSTANT.angular_diameter(21.197/2, 1.5e9), "https://en.wikipedia.org/wiki/James_Webb_Space_Telescope"),
 		new AngleDatum("Geostationary Satellite (From Earth)", CONSTANT.angular_diameter_geocentric_orbit(2, 42164e3+CONSTANT.earth_radius)),
 		new AngleDatum("GPS Satellite (From Earth)", CONSTANT.angular_diameter_geocentric_orbit(3.4/2, 26600e3), "https://timeandnavigation.si.edu/multimedia-asset/gps-block-iii-satellite"),
