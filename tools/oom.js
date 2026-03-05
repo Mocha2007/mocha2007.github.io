@@ -1341,6 +1341,11 @@ const OOM = {
 		new MoneyDatum('Apple (Gala, US, 2026)', 0.68, "https://www.walmart.com/ip/Fresh-Gala-Apple-Each/44390953?classType=REGULAR&from=/search"),
 		new MoneyDatum('Raspberry Pi 5 (Base model, US, 2026)', 45, "https://www.raspberrypi.com/products/"),
 		new MoneyDatum('iPhone 17 (US, 2026)', 799, "https://www.apple.com/iphone-17/"),
+		new MoneyDatum('Shahed drone (2026)', new Money({min: 20e3, max: 50e3}), "https://www.seattletimes.com/nation-world/irans-drones-cost-a-fraction-of-the-u-s-weapons-shooting-them-down/"),
+		// misc
+		new MoneyDatum('Cost to maintain the Iran War for 6 months (2026)', 59.39e6*365/2, "https://ips-dc.org/how-much-is-the-war-in-iran-costing-american-taxpayers/"),
+		new MoneyDatum('US Military Budget (2026)', 892.6e9, "https://en.wikipedia.org/wiki/Military_budget_of_the_United_States#Budget_for_FY2026"),
+		new MoneyDatum('US Federal Budget (2024)', 6.8e12, "https://commons.wikimedia.org/wiki/File:Fy2024_federal_budget.png"),
 	],
 	dataPower: [
 		// abs magnitude units
