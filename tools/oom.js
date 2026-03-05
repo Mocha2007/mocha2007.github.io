@@ -513,6 +513,9 @@ const CONSTANT = {
 	},
 	si_prefix: "qryzafpnμm kMGTPEZYRQ",
 	si_prefix_offset: 10,
+	snellen(w, d=6){
+		return 2*Math.atan2(8.73e-3*w, d);
+	},
 	/** in W */
 	solar_luminosity: 3.828e26,
 	/** in kg */
@@ -1085,6 +1088,10 @@ const OOM = {
 		// Misc
 		new AngleDatum("A380 (From Surface, Cruise)", CONSTANT.angular_diameter(79.75/2, 11e3)),
 		new AngleDatum("ISS (From Surface, Closest)", CONSTANT.angular_diameter(109/2, 413e3)),
+		// Snellen Chart
+		new AngleDatum("Snellen Chart, Smallest Letter (20/200)", CONSTANT.snellen(0.5), "https://en.wikipedia.org/wiki/Snellen_chart"),
+		new AngleDatum("Snellen Chart, Largest Letter (20/200)", CONSTANT.snellen(10), "https://en.wikipedia.org/wiki/Snellen_chart"),
+		new AngleDatum("Snellen Chart, Middle Letters (20/20)", CONSTANT.snellen(1), "https://en.wikipedia.org/wiki/Snellen_chart"),
 	],
 	dataCharge: [
 		// units
