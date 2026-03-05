@@ -517,6 +517,8 @@ const CONSTANT = {
 	solar_luminosity: 3.828e26,
 	/** in kg */
 	solar_mass: 1988475000e21,
+	/** in kg */
+	solar_radius: 695700e3,
 	thickness: {
 		/** https://en.wikipedia.org/wiki/Earth%27s_crust#Composition */
 		crust: {
@@ -1047,8 +1049,16 @@ const OOM = {
 		new AngleDatum("Degree", Math.PI/180, null, [Category.UNIT]),
 		new AngleDatum("Radian", 1, null, [Category.UNIT]),
 		new AngleDatum("Turn", 2*Math.PI, null, [Category.UNIT]),
+		// Star Angular Diameters
+		// new AngleDatum("Alpha Centauri A", CONSTANT.angular_diameter(0.8591*CONSTANT.solar_radius, 4.344*CONSTANT.ly)),
+		new AngleDatum("Arcturus", CONSTANT.angular_diameter(25.4*CONSTANT.solar_radius, 36.7*CONSTANT.ly)),
+		new AngleDatum("Betelgeuse", CONSTANT.angular_diameter(702*CONSTANT.solar_radius, 478*CONSTANT.ly)),
+		new AngleDatum("Canopus", CONSTANT.angular_diameter(73.3*CONSTANT.solar_radius, 310*CONSTANT.ly)),
+		new AngleDatum("Capella Aa", CONSTANT.angular_diameter(11.98*CONSTANT.solar_radius, 42.919*CONSTANT.ly)),
+		new AngleDatum("Sirius A", CONSTANT.angular_diameter(1.7144*CONSTANT.solar_radius, 8.61*CONSTANT.ly)),
+		new AngleDatum("Vega", CONSTANT.angular_diameter(2.726*CONSTANT.solar_radius, 25.04*CONSTANT.ly)),
 		// Planet Angular Diamaters
-		new AngleDatum("Sun", CONSTANT.angular_diameter_geocentric_orbit(695700e3, 147098450e3, 152097597e3)),
+		new AngleDatum("Sun", CONSTANT.angular_diameter_geocentric_orbit(CONSTANT.solar_radius, 147098450e3, 152097597e3)),
 		new AngleDatum("Moon", CONSTANT.angular_diameter_geocentric_orbit(1737.4e3, 362600e3, 405400e3)),
 		new AngleDatum("Mercury", CONSTANT.angular_diameter_heliocentric_orbit(2439.7e3, 0.307499, 0.466697)),
 		new AngleDatum("Venus", CONSTANT.angular_diameter_heliocentric_orbit(6051.8e3, 0.718440, 0.728213)),
@@ -1168,8 +1178,8 @@ const OOM = {
 		new EnergyDatum("Energy produced by the sun each second", CONSTANT.solar_luminosity, "https://en.wikipedia.org/wiki/Sun"),
 		new EnergyDatum("Cumulative energy produced by the sun", 0.85*CONSTANT.solar_luminosity*4.6e9*CONSTANT.yr, "https://en.wikipedia.org/wiki/Sun"),
 		new EnergyDatum("Sun kinetic energy (about Milky Way)", 0.5*CONSTANT.solar_mass*Math.pow(2*Math.PI*26e3*CONSTANT.ly/(237.5e6*CONSTANT.yr),2), "https://en.wikipedia.org/wiki/Sun"),
-		new EnergyDatum("Sun gravitational binding energy", 0.6*CONSTANT.G*Math.pow(CONSTANT.solar_mass,2)/695700e3, "https://en.wikipedia.org/wiki/Earth"),
-		new EnergyDatum("Sun rotational energy", 0.5*Math.pow(2*Math.PI / (30*CONSTANT.d), 2) * 0.059 * CONSTANT.solar_mass * Math.pow(695700e3, 2), "https://en.wikipedia.org/wiki/Sun"),
+		new EnergyDatum("Sun gravitational binding energy", 0.6*CONSTANT.G*Math.pow(CONSTANT.solar_mass,2)/CONSTANT.solar_radius, "https://en.wikipedia.org/wiki/Earth"),
+		new EnergyDatum("Sun rotational energy", 0.5*Math.pow(2*Math.PI / (30*CONSTANT.d), 2) * 0.059 * CONSTANT.solar_mass * Math.pow(CONSTANT.solar_radius, 2), "https://en.wikipedia.org/wiki/Sun"),
 		new EnergyDatum("Fast optical blue transient (min)", 1e43, "https://academic.oup.com/mnras/article/515/2/2293/6612740?__cf_chl_tk=3C.zhiXCiZ91h7QXYMQtMMDPcPHvRYHUCwSOn23.blk-1770640010-1.0.1.1-t_72S2lwEhqPpqyRpukA_Z4eiRoc2Q_9z5OVvmd82mU"),
 		new EnergyDatum("Supernova", 1e44, "https://en.wikipedia.org/wiki/Foe_(unit)"),
 		new EnergyDatum("Gamma-ray burst (typical)", 3e44, "https://iopscience.iop.org/article/10.1086/338119/meta"),
@@ -1237,7 +1247,7 @@ const OOM = {
 		new LengthDatum("Marathon", 42195, "https://en.wikipedia.org/wiki/Marathon"),
 		new LengthDatum("Earth Radius", CONSTANT.earth_radius, "https://en.wikipedia.org/wiki/Earth"),
 		new LengthDatum("Jupiter Radius", 69886e3, "https://en.wikipedia.org/wiki/Jupiter"),
-		new LengthDatum("Solar Radius", 695700e3, "https://en.wikipedia.org/wiki/Sun"),
+		new LengthDatum("Solar Radius", CONSTANT.solar_radius, "https://en.wikipedia.org/wiki/Sun"),
 		new LengthDatum("Distance from the sun to Proxima Centauri", 4.2465*CONSTANT.c*CONSTANT.yr, "https://en.wikipedia.org/wiki/Proxima_Centauri"),
 		new LengthDatum("Observable Universe (radius)", 4.4e26, null),
 	],
