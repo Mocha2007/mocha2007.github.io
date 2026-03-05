@@ -548,6 +548,10 @@ const CONSTANT = {
 			return Math.PI/6 * a * b * c;
 		}
 	},
+	/** in m */
+	get yd(){
+		return this.ft*3;
+	},
 	/** in s */
 	get yr(){
 		return this.d*365.2425;
@@ -1137,6 +1141,7 @@ const OOM = {
 		new AngleDatum("A380 (From Surface, Cruise)", CONSTANT.angular_diameter(79.75/2, 11e3)),
 		new AngleDatum("WTC (From Liberty Island)", CONSTANT.angular_diameter(546.2/2, 3740)),
 		new AngleDatum("Minecraft FOV (Default)", 70/180 * Math.PI),
+		// new AngleDatum("A flea at 500 yards", CONSTANT.angular_diameter(3e-3/2, 500*CONSTANT.yd)), // as in BttF
 		// Snellen Chart
 		new AngleDatum("Snellen Chart, Smallest Letters (20/10)", CONSTANT.snellen(0.5), "https://en.wikipedia.org/wiki/Snellen_chart"),
 		new AngleDatum("Snellen Chart, Middle Letters (20/20)", CONSTANT.snellen(1), "https://en.wikipedia.org/wiki/Snellen_chart"),
