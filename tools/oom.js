@@ -352,7 +352,7 @@ class Category {
 
 const CONSTANT = {
 	angular_diameter(r = 0, d = 0){
-		return Math.acos(1 - r*r/(2*d*d));
+		return 2 * Math.asin(r/(2*d));
 	},
 	/** q, Q in au, r in m, assumes orbit does not cross */
 	angular_diameter_orbit(r = 0, q = 0, Q = 0){
@@ -362,7 +362,7 @@ const CONSTANT = {
 			// opposite sides of sun
 			min: this.angular_diameter(r, this.au * (Q + 1)),
 			// same side of sun
-			max: this.angular_diameter(r, this.au * ((Q < 1 ? Q : q) - 1)),
+			max: this.angular_diameter(r, this.au * (Q < 1 ? 1 - Q : q - 1)),
 		});
 		return a;
 	},
@@ -1037,13 +1037,16 @@ const OOM = {
 		new AngleDatum("Radian", 1, null, [Category.UNIT]),
 		new AngleDatum("Turn", 2*Math.PI, null, [Category.UNIT]),
 		// Planet Angular Diamaters
+		new AngleDatum("Moon", CONSTANT.angular_diameter(1737.4e3, 384399e3)),
 		new AngleDatum("Mercury", CONSTANT.angular_diameter_orbit(2439.7e3, 0.307499, 0.466697)),
 		new AngleDatum("Venus", CONSTANT.angular_diameter_orbit(6051.8e3, 0.718440, 0.728213)),
 		new AngleDatum("Mars", CONSTANT.angular_diameter_orbit(3389.5e3, 1.3814, 1.66621)),
+		new AngleDatum("Ceres", CONSTANT.angular_diameter_orbit(469.7e3, 2.55, 2.98), null, [Category.MINORPLANET]),
 		new AngleDatum("Jupiter", CONSTANT.angular_diameter_orbit(69886e3, 4.9506, 5.4570)),
 		new AngleDatum("Saturn", CONSTANT.angular_diameter_orbit(58232e3, 9.0412, 10.1238)),
 		new AngleDatum("Uranus", CONSTANT.angular_diameter_orbit(25362e3, 18.2861, 20.0965)),
 		new AngleDatum("Neptune", CONSTANT.angular_diameter_orbit(24622e3, 29.81, 30.33)),
+		new AngleDatum("Pluto", CONSTANT.angular_diameter_orbit(1188.3e3, 29.658, 49.305), null, [Category.MINORPLANET]),
 	],
 	dataCharge: [
 		// units
