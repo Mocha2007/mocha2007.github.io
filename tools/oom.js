@@ -1059,6 +1059,13 @@ const OOM = {
 		new AngleDatum("Uranus", CONSTANT.angular_diameter_heliocentric_orbit(25362e3, 18.2861, 20.0965)),
 		new AngleDatum("Neptune", CONSTANT.angular_diameter_heliocentric_orbit(24622e3, 29.81, 30.33)),
 		new AngleDatum("Pluto", CONSTANT.angular_diameter_heliocentric_orbit(1188.3e3, 29.658, 49.305), null, [Category.MINORPLANET]),
+		new AngleDatum("Orcus", CONSTANT.angular_diameter_heliocentric_orbit(910e3/2, 30.281, 48.067), null, [Category.MINORPLANET]),
+		new AngleDatum("Gonggong", CONSTANT.angular_diameter_heliocentric_orbit(615e3, 33.235, 100.555), null, [Category.MINORPLANET]),
+		new AngleDatum("Haumea", CONSTANT.angular_diameter_heliocentric_orbit(780e3, 34.647, 51.585), null, [Category.MINORPLANET]),
+		new AngleDatum("Eris", CONSTANT.angular_diameter_heliocentric_orbit(1163e3, 38.1, 97.49), null, [Category.MINORPLANET]),
+		new AngleDatum("Makemake", CONSTANT.angular_diameter_heliocentric_orbit(715e3, 38.201, 52.796), null, [Category.MINORPLANET]),
+		new AngleDatum("Quaoar", CONSTANT.angular_diameter_heliocentric_orbit(1097.6e3/2, 41.900, 45.488), null, [Category.MINORPLANET]),
+		new AngleDatum("Sedna", CONSTANT.angular_diameter_heliocentric_orbit(906e3/2, 76.19, 937), null, [Category.MINORPLANET]),
 	],
 	dataCharge: [
 		// units
