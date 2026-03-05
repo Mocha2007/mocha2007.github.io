@@ -1067,7 +1067,11 @@ const OOM = {
 		new AngleDatum("Sirius A", CONSTANT.angular_diameter(1.7144*CONSTANT.solar_radius, 8.61*CONSTANT.ly)),
 		new AngleDatum("Vega", CONSTANT.angular_diameter(2.726*CONSTANT.solar_radius, 25.04*CONSTANT.ly)),
 		// Exoplanet Angular Diameters
-		new AngleDatum("Proxima Centauri b", CONSTANT.angular_diameter(1.17*CONSTANT.earth_radius, 4.2465*CONSTANT.ly)),
+		new AngleDatum("GJ 1061 c", CONSTANT.angular_diameter(Math.cbrt(1.74)*CONSTANT.earth_radius, 11.984*CONSTANT.ly), "https://en.wikipedia.org/wiki/GJ_1061#GJ_1061_c"),
+		new AngleDatum("Gliese 887 d", CONSTANT.angular_diameter(Math.cbrt(6.1)*CONSTANT.earth_radius, 10.7241*CONSTANT.ly), "https://en.wikipedia.org/wiki/Gliese_887"),
+		new AngleDatum("Luyten b", CONSTANT.angular_diameter(Math.cbrt(2.89)*CONSTANT.earth_radius, 12.348*CONSTANT.ly), "https://en.wikipedia.org/wiki/Luyten_b"),
+		new AngleDatum("Proxima Centauri b", CONSTANT.angular_diameter(1.17*CONSTANT.earth_radius, 4.2465*CONSTANT.ly), "https://en.wikipedia.org/wiki/Proxima_Centauri_b"),
+		new AngleDatum("Ross 128 b", CONSTANT.angular_diameter(1.6*CONSTANT.earth_radius, 11.007*CONSTANT.ly), "https://en.wikipedia.org/wiki/Ross_128_b"),
 		// Planet Angular Diamaters
 		new AngleDatum("Sun", CONSTANT.angular_diameter_geocentric_orbit(CONSTANT.solar_radius, 147098450e3, 152097597e3)),
 		new AngleDatum("Moon", CONSTANT.angular_diameter_geocentric_orbit(1737.4e3, 362600e3, 405400e3)),
