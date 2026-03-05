@@ -1111,6 +1111,8 @@ const OOM = {
 		new AngleDatum("Solar gravitational lens resolution", 1e-10 * Math.PI/180/60/60, "https://en.wikipedia.org/wiki/Solar_gravitational_lens"),
 		new AngleDatum("JWST resolution", CONSTANT.angular_resolution(6.5, 600e-9)),
 		new AngleDatum("HST resolution", CONSTANT.angular_resolution(2.4)),
+		new AngleDatum("IRAS resolution (12 μm)", CONSTANT.angular_resolution(0.57, 12e-6)),
+		new AngleDatum("IRAS resolution (100 μm)", CONSTANT.angular_resolution(0.57, 100e-6)),
 		new AngleDatum("36\" Telescope resolution", CONSTANT.angular_resolution(36*CONSTANT.in)),
 		new AngleDatum("4\" Telescope resolution", CONSTANT.angular_resolution(4*CONSTANT.in)),
 		new AngleDatum("7x50 Binocular resolution", CONSTANT.angular_resolution(50e-3)),
