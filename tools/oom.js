@@ -1352,6 +1352,7 @@ const OOM = {
 		new MoneyDatum('Manhattan Project (2024 inflation-adjusted)', 28e9, "https://en.wikipedia.org/wiki/Manhattan_Project"),
 		new MoneyDatum('Three Gorges Dam (2026 inflation-adjusted)', 56.16e9, "https://en.wikipedia.org/wiki/Three_Gorges_Dam"),
 		new MoneyDatum('ISS (2010)', 150e9, "https://en.wikipedia.org/wiki/International_Space_Station"),
+		new MoneyDatum('Space Shuttle Project (2012)', 211e9, "https://en.wikipedia.org/wiki/Space_Shuttle"),
 		new MoneyDatum('Apollo Program (2020 inflation-adjusted)', 257e9, "https://en.wikipedia.org/wiki/Apollo_program"),
 		new MoneyDatum('US Military Budget (2026)', 892.6e9, "https://en.wikipedia.org/wiki/Military_budget_of_the_United_States#Budget_for_FY2026"),
 		new MoneyDatum('California GDP (2025)', 4.3e12, "https://en.wikipedia.org/wiki/California"),
