@@ -1359,6 +1359,7 @@ const OOM = {
 		new MoneyDatum('Manhattan Project (2024 inflation-adjusted)', 28e9, "https://en.wikipedia.org/wiki/Manhattan_Project"),
 		new MoneyDatum('Annual wage theft (US, 2026)', 50e9, "https://medium.com/@hrnews1/report-u-s-workers-lose-over-15-billion-every-year-from-wage-theft-0ce30bd60812"),
 		new MoneyDatum('Three Gorges Dam (2026 inflation-adjusted)', 56.16e9, "https://en.wikipedia.org/wiki/Three_Gorges_Dam"),
+		new MoneyDatum('Cost of Trump tariffs (2025)', 66.02e9, "https://taxfoundation.org/research/all/federal/trump-tariffs-trade-war/"),
 		new MoneyDatum('Economic cost of the 2025 Federal Shutdown (US, 2025)', 15e9*43/7, "https://thehill.com/business/economy/5541728-government-shutdown-costs-economy/"),
 		new MoneyDatum('American Tourism Boycots (2025)', 90e9, "https://www.thedailybeast.com/tourism-pullback-and-boycotts-could-cost-us-a-staggering-90-billion/"),
 		new MoneyDatum('ISS (2010)', 150e9, "https://en.wikipedia.org/wiki/International_Space_Station"),
