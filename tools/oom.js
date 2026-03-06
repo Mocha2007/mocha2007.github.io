@@ -1319,13 +1319,13 @@ const OOM = {
 	],
 	dataMoney: [
 		// currencies
-		new MoneyDatum('Iranian Rial (2026-02-14)', CONSTANT.$.irr),
-		new MoneyDatum('Vietnamese Đồng (2026-02-14)', CONSTANT.$.vnd),
-		new MoneyDatum('Yen (2026-02-12)', CONSTANT.$.jpy),
-		new MoneyDatum('Złoty (2026-02-12)', CONSTANT.$.pln),
+		new MoneyDatum('Iranian Rial (2026)', CONSTANT.$.irr),
+		new MoneyDatum('Vietnamese Đồng (2026)', CONSTANT.$.vnd),
+		new MoneyDatum('Yen (2026)', CONSTANT.$.jpy),
+		new MoneyDatum('Złoty (2026)', CONSTANT.$.pln),
 		new MoneyDatum('Dollar', 1),
-		new MoneyDatum('Euro (2026-02-12)', CONSTANT.$.eur),
-		new MoneyDatum('Pound (2026-02-12)', CONSTANT.$.gbp),
+		new MoneyDatum('Euro (2026)', CONSTANT.$.eur),
+		new MoneyDatum('Pound (2026)', CONSTANT.$.gbp),
 		// min wage
 		new MoneyDatum('Minimum Wage (Annual, US, since 2007)', 8*7.25*5*52, "https://en.wikipedia.org/wiki/Fair_Minimum_Wage_Act_of_2007"),
 		new MoneyDatum('Minimum Wage (Annual, Poland, 2026)', 4806*12*CONSTANT.$.pln, "https://en.wikipedia.org/wiki/Minimum_wage_in_Poland"),
