@@ -1083,6 +1083,8 @@ const OOM = {
 		new AccelerationDatum('Saturn\'s acceleration of Earth', CONSTANT.grav(5.68317e26, CONSTANT.au*Math.hypot(9.5826, 1))),
 		new AccelerationDatum('Jupiter\'s acceleration of Earth', CONSTANT.grav(1.898125e27, CONSTANT.au*Math.hypot(5.2038, 1))),
 		new AccelerationDatum('Sun\'s acceleration of Earth', CONSTANT.grav(CONSTANT.solar_mass, CONSTANT.au)),
+		new AccelerationDatum('White Dwarf Surface Gravity (Sirius B)', CONSTANT.grav(1.018*CONSTANT.solar_mass, 0.008098*CONSTANT.solar_radius)),
+		new AccelerationDatum('Neutron Star Surface Gravity', CONSTANT.grav(2*CONSTANT.solar_mass, 10e3)),
 		// misc
 		new AccelerationDatum('Bohr acceleration of an electron in H1', 9.149e21),
 	],
