@@ -479,6 +479,9 @@ const CONSTANT = {
 	get gr(){
 		return this.lb/7000;
 	},
+	grav(m, r){
+		return this.G * m / (r*r);
+	},
 	/** in s */
 	get h(){
 		return this.min*60;
@@ -1073,8 +1076,14 @@ const OOM = {
 		new MassDatum("Observable universe", 1.5e53),
 	],
 	dataAcceleration: [
+		// units
 		new AccelerationDatum('1 g', 9.80665, null, [Category.UNIT]),
 		new AccelerationDatum('Planck Acceleration', Math.sqrt(Math.pow(CONSTANT.c, 7)/(CONSTANT.planck_reduced*CONSTANT.G)), null, [Category.UNIT]),
+		// astro
+		new AccelerationDatum('Saturn\'s acceleration of Earth', CONSTANT.grav(5.68317e26, CONSTANT.au*Math.hypot(9.5826, 1))),
+		new AccelerationDatum('Jupiter\'s acceleration of Earth', CONSTANT.grav(1.898125e27, CONSTANT.au*Math.hypot(5.2038, 1))),
+		new AccelerationDatum('Sun\'s acceleration of Earth', CONSTANT.grav(CONSTANT.solar_mass, CONSTANT.au)),
+		// misc
 		new AccelerationDatum('Bohr acceleration of an electron in H1', 9.149e21),
 	],
 	dataAngle: [
