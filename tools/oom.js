@@ -1349,6 +1349,8 @@ const OOM = {
 		new MoneyDatum('Avatar worldwide gross (2026 inflation-adjusted)', 4432534971, "https://en.wikipedia.org/wiki/List_of_highest-grossing_films"),
 		new MoneyDatum('One WTC (2026 inflation-adjusted)', 5.52e9, "https://en.wikipedia.org/wiki/One_World_Trade_Center"),
 		new MoneyDatum('Cost to maintain the Iran War for 6 months (2026)', 59.39e6*365/2, "https://ips-dc.org/how-much-is-the-war-in-iran-costing-american-taxpayers/"),
+		new MoneyDatum('JWST (2022)', 10e9, "https://en.wikipedia.org/wiki/James_Webb_Space_Telescope"),
+		new MoneyDatum('Hubble Space Telescope (2015)', 11.3e9, "https://en.wikipedia.org/wiki/Hubble_Space_Telescope"),
 		new MoneyDatum('Manhattan Project (2024 inflation-adjusted)', 28e9, "https://en.wikipedia.org/wiki/Manhattan_Project"),
 		new MoneyDatum('Three Gorges Dam (2026 inflation-adjusted)', 56.16e9, "https://en.wikipedia.org/wiki/Three_Gorges_Dam"),
 		new MoneyDatum('ISS (2010)', 150e9, "https://en.wikipedia.org/wiki/International_Space_Station"),
