@@ -62,8 +62,6 @@ class Dimension {
 		}
 	}
 }
-// good future choices:
-// specific heat capacity?
 
 class Acceleration extends Dimension {
 	constructor(x, uncertainty){
@@ -110,6 +108,13 @@ class Money extends Dimension {
 class Power extends Dimension {
 	constructor(x, uncertainty){
 		super("W", 0, 1/Math.sqrt(Math.pow(CONSTANT.c,9)/(CONSTANT.planck_reduced*CONSTANT.G)), x, uncertainty);
+	}
+}
+
+/// specific heat capacity
+class SHC extends Dimension {
+	constructor(x, uncertainty){
+		super("J/(kg⋅K)", 0, (CONSTANT.planck_reduced*CONSTANT.c)/(CONSTANT.G*CONSTANT.kB), x, uncertainty);
 	}
 }
 
@@ -286,6 +291,18 @@ class PowerDatum extends Datum {
 	 */
 	constructor(name, amt, source, categories){
 		super(Power, name, amt, source, categories);
+	}
+}
+
+class SHCDatum extends Datum {
+	/**
+	 * @param {string} name
+	 * @param {number|SHC} amt
+	 * @param {string?} source
+	 * @param {Category[]?} categories
+	 */
+	constructor(name, amt, source, categories){
+		super(SHC, name, amt, source, categories);
 	}
 }
 
@@ -1457,6 +1474,9 @@ const OOM = {
 		new PowerDatum("Kardashev Type III", 1e36, "https://commons.wikimedia.org/wiki/File:Consommations_%C3%A9nerg%C3%A9tiques_des_trois_types_de_l%27%C3%A9chelle_de_Kardashev.svg"),
 		new PowerDatum("Planck power", Math.pow(CONSTANT.c,5)/CONSTANT.G, "https://en.wikipedia.org/wiki/Planck_units", [Category.UNIT]),
 	],
+	dataSHC: [
+		new SHCDatum('Planck Specific Heat Capacity', Math.sqrt(CONSTANT.G * Math.pow(CONSTANT.kB, 2)/(CONSTANT.planck_reduced*CONSTANT.c)), null, [Category.UNIT]),
+	],
 	dataSpeed: [
 		// units
 		new SpeedDatum("Kilometer per hour", 1e3/CONSTANT.h),
@@ -1578,6 +1598,8 @@ const OOM = {
 		/** @returns {HTMLDivElement} */
 		mainPower: undefined,
 		/** @returns {HTMLDivElement} */
+		mainSHC: undefined,
+		/** @returns {HTMLDivElement} */
 		mainSpeed: undefined,
 		/** @returns {HTMLDivElement} */
 		mainTemperature: undefined,
@@ -1585,7 +1607,7 @@ const OOM = {
 		mainTime: undefined,
 		/** @returns {HTMLDivElement[]} */
 		get tabs(){
-			return [this.main, this.mainAcceleration, this.mainAngle, this.mainCharge, this.mainEnergy, this.mainLength, this.mainMoney, this.mainPower, this.mainSpeed, this.mainTemperature, this.mainTime];
+			return [this.main, this.mainAcceleration, this.mainAngle, this.mainCharge, this.mainEnergy, this.mainLength, this.mainMoney, this.mainPower, this.mainSHC, this.mainSpeed, this.mainTemperature, this.mainTime];
 		}
 	},
 	init(){
@@ -1594,7 +1616,7 @@ const OOM = {
 		this.data.forEach(datum => main.appendChild(datum.elem(e2y)));
 		this.ranges.forEach((range, i, a) => main.appendChild(range.elem(e2y, i, a)));
 		// now for energy
-		['Acceleration', 'Angle', 'Charge', 'Energy', 'Length', 'Money', 'Power', 'Speed', 'Temperature', 'Time'].forEach(s => {
+		['Acceleration', 'Angle', 'Charge', 'Energy', 'Length', 'Money', 'Power', 'SHC', 'Speed', 'Temperature', 'Time'].forEach(s => {
 			const mainX = this.elem[`main${s}`] = document.createElement('div');
 			mainX.id = `main${s}`;
 			mainX.classList.add('main');
@@ -1681,7 +1703,7 @@ const OOM = {
 		const tabContainer = document.createElement('div');
 		tabContainer.id = 'tabContainer';
 		document.body.appendChild(tabContainer);
-		[['a', 'Acceleration'], ['E', 'Energy'], ['L', 'Length'], ['P', 'Power'], ['q', 'Charge'], ['$', 'Money'], ['Θ', 'Temperature'], ['θ', 'Angle'], ['T', 'Time'], ['v', 'Speed']].forEach(x => {
+		[['a', 'Acceleration'], ['c', 'SHC'], ['E', 'Energy'], ['L', 'Length'], ['P', 'Power'], ['q', 'Charge'], ['$', 'Money'], ['Θ', 'Temperature'], ['θ', 'Angle'], ['T', 'Time'], ['v', 'Speed']].forEach(x => {
 			const [abbr, tabName] = x;
 			const button = document.createElement('div');
 			button.innerHTML = abbr;
@@ -1727,6 +1749,7 @@ const OOM = {
 			.concat(...OOM.dataLength)
 			.concat(...OOM.dataMoney)
 			.concat(...OOM.dataPower)
+			.concat(...OOM.dataSHC)
 			.concat(...OOM.dataSpeed)
 			.concat(...OOM.dataTemperature)
 			.concat(...OOM.dataTime)
