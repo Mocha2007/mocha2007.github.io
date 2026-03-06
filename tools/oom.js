@@ -1075,6 +1075,7 @@ const OOM = {
 	dataAcceleration: [
 		new AccelerationDatum('1 g', 9.80665, null, [Category.UNIT]),
 		new AccelerationDatum('Planck Acceleration', Math.sqrt(Math.pow(CONSTANT.c, 7)/(CONSTANT.planck_reduced*CONSTANT.G)), null, [Category.UNIT]),
+		new AccelerationDatum('Bohr acceleration of an electron in H1', 9.149e21),
 	],
 	dataAngle: [
 		// Units
