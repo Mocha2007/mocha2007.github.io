@@ -1344,6 +1344,7 @@ const OOM = {
 		new MoneyDatum('Shahed drone (2026)', new Money({min: 20e3, max: 50e3}), "https://www.seattletimes.com/nation-world/irans-drones-cost-a-fraction-of-the-u-s-weapons-shooting-them-down/"),
 		new MoneyDatum('Car (2025, avg.)', 50e3, "https://www.npr.org/2025/10/29/nx-s1-5556935/cost-of-living-cars"),
 		new MoneyDatum('A Human Life (per HHS, 2024)', 13.1e6, "https://finance.yahoo.com/news/guess-much-government-says-human-193018854.html"),
+		new MoneyDatum('Year supply of Estradiol Valerate (2026)', 40*CONSTANT.$.eur/400*10*52), // Astrovials 40 EUR for 400 mg, 10 mg dose per week
 		// misc
 		new MoneyDatum('US Cost of living (Annual, per capita, 2026)', 12*(1176.2+1352.97), "https://www.numbeo.com/cost-of-living/country_result.jsp?country=United+States"),
 		new MoneyDatum('Alaska Purchase (2024 inflation-adjusted)', 132e6, "https://en.wikipedia.org/wiki/Alaska_Purchase"),
