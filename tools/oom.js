@@ -1479,6 +1479,7 @@ const OOM = {
 		new SHCDatum('Uranium', 116.225, "https://en.wikipedia.org/wiki/Uranium"),
 		new SHCDatum('Iron', 449.458, "https://en.wikipedia.org/wiki/Iron"),
 		new SHCDatum('Granite', 790, "https://www.engineeringtoolbox.com/specific-heat-capacity-d_391.html"),
+		new SHCDatum('Wood', new SHC({min: 1300, max: 2400}), "https://www.engineeringtoolbox.com/specific-heat-capacity-d_391.html"),
 		new SHCDatum('Water', 75.385/0.01801528, "https://en.wikipedia.org/wiki/Water"),
 		new SHCDatum('Helium', 5191.625, "https://en.wikipedia.org/wiki/Helium"),
 		new SHCDatum('Hydrogen', 14303.571, "https://en.wikipedia.org/wiki/Hydrogen"),
