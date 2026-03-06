@@ -1354,6 +1354,8 @@ const OOM = {
 		new MoneyDatum('Three Gorges Dam (2026 inflation-adjusted)', 56.16e9, "https://en.wikipedia.org/wiki/Three_Gorges_Dam"),
 		new MoneyDatum('ISS (2010)', 150e9, "https://en.wikipedia.org/wiki/International_Space_Station"),
 		// cf https://ips-dc.org/how-much-is-the-war-in-iran-costing-american-taxpayers/
+		// consistent with https://www.middleeasteye.net/live/live-us-and-israel-attack-iran
+		// which claims that "the first hundred hours have cost $3.7 B" ($0.888 B/d)
 		new MoneyDatum('Cost to maintain the Iran War for 6 months (2026)', 1e9*365/2, "https://www.commondreams.org/news/what-s-the-cost-of-iran-war"),
 		new MoneyDatum('Space Shuttle Project (2012)', 211e9, "https://en.wikipedia.org/wiki/Space_Shuttle"),
 		new MoneyDatum('Apollo Program (2020 inflation-adjusted)', 257e9, "https://en.wikipedia.org/wiki/Apollo_program"),
