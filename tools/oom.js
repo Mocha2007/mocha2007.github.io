@@ -1086,7 +1086,9 @@ const OOM = {
 		new AccelerationDatum('White Dwarf Surface Gravity (Sirius B)', CONSTANT.grav(1.018*CONSTANT.solar_mass, 0.008098*CONSTANT.solar_radius)),
 		new AccelerationDatum('Neutron Star Surface Gravity', CONSTANT.grav(2*CONSTANT.solar_mass, 10e3)),
 		// misc
-		new AccelerationDatum('Bohr acceleration of an electron in H1', 9.149e21),
+		new AccelerationDatum('Bohr acceleration of an electron in Hydrogen', 9.149e21),
+		new AccelerationDatum('Bohr acceleration of an electron in Carbon', 12*9.149e21),
+		new AccelerationDatum('Bohr acceleration of an electron in Uranium', 238*9.149e21),
 	],
 	dataAngle: [
 		// Units
