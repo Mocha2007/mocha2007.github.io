@@ -1346,12 +1346,15 @@ const OOM = {
 		// misc
 		new MoneyDatum('US Cost of living (Annual, per capita, 2026)', 12*(1176.2+1352.97), "https://www.numbeo.com/cost-of-living/country_result.jsp?country=United+States"),
 		new MoneyDatum('Alaska Purchase (2024 inflation-adjusted)', 132e6, "https://en.wikipedia.org/wiki/Alaska_Purchase"),
+		new MoneyDatum('Annual societal cost of measles (US, 2026)', 1.5e9, "https://www.nbcnews.com/health/kids-health/measles-cost-vaccine-rates-decline-billion-year-forecast-rcna260734"),
 		new MoneyDatum('Avatar worldwide gross (2026 inflation-adjusted)', 4432534971, "https://en.wikipedia.org/wiki/List_of_highest-grossing_films"),
 		new MoneyDatum('One WTC (2026 inflation-adjusted)', 5.52e9, "https://en.wikipedia.org/wiki/One_World_Trade_Center"),
 		new MoneyDatum('JWST (2022)', 10e9, "https://en.wikipedia.org/wiki/James_Webb_Space_Telescope"),
+		new MoneyDatum('Economic cost of the 2019 Federal Shutdown (US, 2019)', 11e9, "https://www.nbcnews.com/politics/politics-news/shutdown-cost-u-s-economy-11-billion-budget-office-says-n963531"),
 		new MoneyDatum('Hubble Space Telescope (2015)', 11.3e9, "https://en.wikipedia.org/wiki/Hubble_Space_Telescope"),
 		new MoneyDatum('Manhattan Project (2024 inflation-adjusted)', 28e9, "https://en.wikipedia.org/wiki/Manhattan_Project"),
 		new MoneyDatum('Three Gorges Dam (2026 inflation-adjusted)', 56.16e9, "https://en.wikipedia.org/wiki/Three_Gorges_Dam"),
+		new MoneyDatum('Economic cost of the 2025 Federal Shutdown (US, 2025)', 15e9*43/7, "https://thehill.com/business/economy/5541728-government-shutdown-costs-economy/"),
 		new MoneyDatum('ISS (2010)', 150e9, "https://en.wikipedia.org/wiki/International_Space_Station"),
 		// cf https://ips-dc.org/how-much-is-the-war-in-iran-costing-american-taxpayers/
 		// consistent with https://www.middleeasteye.net/live/live-us-and-israel-attack-iran
@@ -1360,6 +1363,7 @@ const OOM = {
 		new MoneyDatum('Space Shuttle Project (2012)', 211e9, "https://en.wikipedia.org/wiki/Space_Shuttle"),
 		new MoneyDatum('Apollo Program (2020 inflation-adjusted)', 257e9, "https://en.wikipedia.org/wiki/Apollo_program"),
 		new MoneyDatum('US Military Budget (2026)', 892.6e9, "https://en.wikipedia.org/wiki/Military_budget_of_the_United_States#Budget_for_FY2026"),
+		new MoneyDatum('Annual societal cost of systemic racism (US, 2020)', 1e12, "https://www.cbsnews.com/news/us-gdp-growth-missed-16-trillion-systemic-racism-inequality-report/"),
 		new MoneyDatum('California GDP (2025)', 4.3e12, "https://en.wikipedia.org/wiki/California"),
 		new MoneyDatum('US Federal Budget (2024)', 6.8e12, "https://commons.wikimedia.org/wiki/File:Fy2024_federal_budget.png"),
 		new MoneyDatum('US GDP (2025)', 30.616e12, "https://en.wikipedia.org/wiki/United_States"),
