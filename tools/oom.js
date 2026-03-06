@@ -1476,6 +1476,7 @@ const OOM = {
 	],
 	dataSHC: [
 		new SHCDatum('Planck Specific Heat Capacity', Math.sqrt(CONSTANT.G * Math.pow(CONSTANT.kB, 2)/(CONSTANT.planck_reduced*CONSTANT.c)), null, [Category.UNIT]),
+		new SHCDatum('Water', 75.385/0.01801528),
 	],
 	dataSpeed: [
 		// units
