@@ -1347,6 +1347,9 @@ const OOM = {
 		// misc
 		new MoneyDatum('US Cost of living (Annual, per capita, 2026)', 12*(1176.2+1352.97), "https://www.numbeo.com/cost-of-living/country_result.jsp?country=United+States"),
 		new MoneyDatum('Alaska Purchase (2024 inflation-adjusted)', 132e6, "https://en.wikipedia.org/wiki/Alaska_Purchase"),
+		new MoneyDatum('Cost of Trump\'s golfing during his first term (2021)', 151.5e6, "https://www.huffpost.com/entry/donald-trump-golf18-million_n_67cb892fe4b02f3ad1f4b2bb"),
+		new MoneyDatum('Kristi Noem\'s government-funded private jets (2025)', 172e6, "https://www.nytimes.com/2025/10/18/us/politics/kristi-noem-dhs-gulfstream.html"),
+		new MoneyDatum('Cost to demolish the east wing (2025)', 300e6, "https://www.cbsnews.com/news/demolish-white-house-east-wing-ballroom-trump-cost/"),
 		new MoneyDatum('Annual societal cost of measles (US, 2026)', 1.5e9, "https://www.nbcnews.com/health/kids-health/measles-cost-vaccine-rates-decline-billion-year-forecast-rcna260734"),
 		new MoneyDatum('Avatar worldwide gross (2026 inflation-adjusted)', 4432534971, "https://en.wikipedia.org/wiki/List_of_highest-grossing_films"),
 		new MoneyDatum('One WTC (2026 inflation-adjusted)', 5.52e9, "https://en.wikipedia.org/wiki/One_World_Trade_Center"),
@@ -1357,6 +1360,7 @@ const OOM = {
 		new MoneyDatum('Annual wage theft (US, 2026)', 50e9, "https://medium.com/@hrnews1/report-u-s-workers-lose-over-15-billion-every-year-from-wage-theft-0ce30bd60812"),
 		new MoneyDatum('Three Gorges Dam (2026 inflation-adjusted)', 56.16e9, "https://en.wikipedia.org/wiki/Three_Gorges_Dam"),
 		new MoneyDatum('Economic cost of the 2025 Federal Shutdown (US, 2025)', 15e9*43/7, "https://thehill.com/business/economy/5541728-government-shutdown-costs-economy/"),
+		new MoneyDatum('American Tourism Boycots (2025)', 90e9, "https://www.thedailybeast.com/tourism-pullback-and-boycotts-could-cost-us-a-staggering-90-billion/"),
 		new MoneyDatum('ISS (2010)', 150e9, "https://en.wikipedia.org/wiki/International_Space_Station"),
 		// cf https://ips-dc.org/how-much-is-the-war-in-iran-costing-american-taxpayers/
 		// consistent with https://www.middleeasteye.net/live/live-us-and-israel-attack-iran
@@ -1368,6 +1372,7 @@ const OOM = {
 		new MoneyDatum('US Military Budget (2026)', 892.6e9, "https://en.wikipedia.org/wiki/Military_budget_of_the_United_States#Budget_for_FY2026"),
 		new MoneyDatum('Annual societal cost of systemic racism (US, 2020)', 1e12, "https://www.cbsnews.com/news/us-gdp-growth-missed-16-trillion-systemic-racism-inequality-report/"),
 		new MoneyDatum('California GDP (2025)', 4.3e12, "https://en.wikipedia.org/wiki/California"),
+		new MoneyDatum('Cost of the Trump tax cuts (2025)', 4.5e12, "https://www.newsweek.com/republicans-reveal-trump-tax-plan-will-cost-us-45-trillion-2030024"),
 		new MoneyDatum('US Federal Budget (2024)', 6.8e12, "https://commons.wikimedia.org/wiki/File:Fy2024_federal_budget.png"),
 		new MoneyDatum('US GDP (2025)', 30.616e12, "https://en.wikipedia.org/wiki/United_States"),
 		new MoneyDatum('World GDP (2020)', 84.705e12, "https://en.wikipedia.org/wiki/Gross_world_product"),
