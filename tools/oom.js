@@ -1424,6 +1424,7 @@ const OOM = {
 		new MoneyDatum('Cost of DOGE due to lost taxes (2025)', 510e9, "https://web.archive.org/web/20250323115010/https://www.washingtonpost.com/business/2025/03/22/irs-tax-revenue-loss-federal-budget/"),
 		new MoneyDatum('US Military Budget (2026)', 892.6e9, "https://en.wikipedia.org/wiki/Military_budget_of_the_United_States#Budget_for_FY2026"),
 		new MoneyDatum('Annual societal cost of systemic racism (US, 2020)', 1e12, "https://www.cbsnews.com/news/us-gdp-growth-missed-16-trillion-systemic-racism-inequality-report/"),
+		new MoneyDatum('Iraq War (US, 2008)', 3e12, "https://en.wikipedia.org/wiki/Financial_cost_of_the_Iraq_War"),
 		new MoneyDatum('California GDP (2025)', 4.3e12, "https://en.wikipedia.org/wiki/California"),
 		new MoneyDatum('Cost of the Trump tax cuts (2025)', 4.5e12, "https://www.newsweek.com/republicans-reveal-trump-tax-plan-will-cost-us-45-trillion-2030024"),
 		new MoneyDatum('US Federal Budget (2024)', 6.8e12, "https://commons.wikimedia.org/wiki/File:Fy2024_federal_budget.png"),
