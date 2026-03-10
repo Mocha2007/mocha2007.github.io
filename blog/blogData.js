@@ -2519,7 +2519,7 @@ const blogData = [
 	@title Extrasolar Astrology: Part 1
 	@date 1773134741819
 	@tags astrology math
-	Minimum apoapsides of inferior planet to achieve an aspect with the parent star,
+	Minimum apoapsides of inferior planet to achieve an <a href="https://en.wikipedia.org/wiki/Astrological_aspect">aspect</a> with the parent star,
 	relative to observer planet:
 	<table style="text-align:center">
 		<tr>
