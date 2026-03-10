@@ -2586,6 +2586,11 @@ const blogData = [
 	</table>
 	Realistically speaking, in a stable system, the last three configurations
 	will never happen.
+	@p
+	The formula is Q<sub>min</sub> = arcsin(&theta;<sub>min</sub>) and can be derived from the law of sines,
+	following construction of a triangle with points A (representing the star), B (representing the inferior planet),
+	and C (representing the superior planet), such that AB is the radius of a circle that BC is tangent to
+	(making AC = 1 and &ang;B = 90&deg).
 	`,
 ];
 // don't forget, run blog.timestamp to get the timestamp!
