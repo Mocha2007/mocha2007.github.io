@@ -2563,7 +2563,7 @@ const blogData = [
 		<tr>
 			<td>Semisextile</td>
 			<td>30&deg;</td>
-			<td><1.5&deg</td>
+			<td>&lt;1.5&deg</td>
 			<td>28.5&deg;</td>
 			<td>~0.47715876</td>
 		</tr>
@@ -2572,10 +2572,15 @@ const blogData = [
 			<td>~31.814556&deg;</td>
 			<td>Q<sub>venus</sub>/q<sub>mars</sub></td>
 		</tr>
+		<tr style="background-color:#221;font-style:italic;">
+			<td colspan="3">(for reference)</td>
+			<td>~40.512099&deg;</td>
+			<td>Q<sub>mercury</sub>/q<sub>venus</sub></td>
+		</tr>
 		<tr>
 			<td>Octile</td>
 			<td>45&deg;</td>
-			<td><3&deg</td>
+			<td>&lt;3&deg</td>
 			<td>42&deg;</td>
 			<td>~0.669130606</td>
 		</tr>
@@ -2592,21 +2597,21 @@ const blogData = [
 		<tr>
 			<td>Sextile</td>
 			<td>60&deg;</td>
-			<td><5&deg</td>
+			<td>&lt;5&deg</td>
 			<td>55&deg;</td>
 			<td>~0.819152044</td>
 		</tr>
 		<tr>
 			<td>Quintile</td>
 			<td>72&deg;</td>
-			<td><1&deg</td>
+			<td>&lt;1&deg</td>
 			<td>71&deg;</td>
 			<td>~0.945518576</td>
 		</tr>
 		<tr>
 			<td>Square</td>
 			<td>90&deg;</td>
-			<td><9&deg</td>
+			<td><abbr title="The sun's orb is 9, and the largest planetary orb is 9, (9+9)/2=9">&lt;9&deg</abbr></td>
 			<td>81&deg;</td>
 			<td>~0.987688341</td>
 		</tr>
