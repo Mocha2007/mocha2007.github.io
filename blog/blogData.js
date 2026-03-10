@@ -2589,6 +2589,8 @@ const blogData = [
 			<td>~0.987688341</td>
 		</tr>
 	</table>
+	(cf. maximum elongation values given <a href="https://earthsky.org/astronomy-essentials/greatest-elongation-definition-venus-mercury/">here</a>)
+	<br>
 	Realistically speaking, in a stable system, the last three configurations
 	will never happen.
 	@p
