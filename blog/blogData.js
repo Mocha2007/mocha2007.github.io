@@ -2629,7 +2629,7 @@ const blogData = [
 		</tr>
 		<tr>
 			<td>⛢</td>
-			<td>-</td>
+			<td>⚳</td>
 			<td>-</td>
 			<td>☿ ♀ 🜨 ♂</td>
 		</tr>
@@ -2637,7 +2637,7 @@ const blogData = [
 			<td>♆</td>
 			<td>♃</td>
 			<td>-</td>
-			<td>☿ ♀ 🜨 ♂</td>
+			<td>☿ ♀ 🜨 ♂ ⚳</td>
 		</tr>
 	</table>
 	`,
