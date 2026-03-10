@@ -2532,9 +2532,9 @@ const blogData = [
 		<tr>
 			<td>(not in conjunction)</td>
 			<td>0&deg;</td>
-			<td>>5&deg</td>
-			<td>5&deg;</td>
-			<td>~0.087155743</td>
+			<td><abbr title="The sun's orb is 9, and the smallest planetary orb is 5, (9+5)/2=7">>7&deg</abbr></td>
+			<td>7&deg;</td>
+			<td>~0.122479038</td>
 		</tr>
 		<tr>
 			<td>(free from combustion)</td>
@@ -2605,6 +2605,41 @@ const blogData = [
 	following construction of a triangle with points A (representing the star), B (representing the inferior planet),
 	and C (representing the superior planet), such that AB is the radius of a circle that BC is tangent to
 	(making AC = 1 and &ang;B = 90&deg).
+	@p
+	In our own solar system, from the following perspectives, some planets are always in a specific state:
+	<table style="text-align:center">
+		<tr style="background-color:#444;">
+			<th>Perspective</th>
+			<th>Always in the sunbeams</th>
+			<th>Always combust</th>
+			<!-- rocky planets' orb is 7, so their min ratio has to be 0.140084048, jup/sat are 0.157732876 min -->
+			<th>Always ☉ ☌ X</th>
+		</tr>
+		<tr>
+			<td>♃</td>
+			<td>🜨</td>
+			<td>♀</td>
+			<td>☿</td>
+		</tr>
+		<tr>
+			<td>♄</td>
+			<td>♂</td>
+			<td>-</td>
+			<td>☿ ♀ 🜨</td>
+		</tr>
+		<tr>
+			<td>⛢</td>
+			<td>-</td>
+			<td>-</td>
+			<td>☿ ♀ 🜨 ♂</td>
+		</tr>
+		<tr>
+			<td>♆</td>
+			<td>♃</td>
+			<td>-</td>
+			<td>☿ ♀ 🜨 ♂</td>
+		</tr>
+	</table>
 	`,
 ];
 // don't forget, run blog.timestamp to get the timestamp!
