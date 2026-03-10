@@ -2522,7 +2522,7 @@ const blogData = [
 	Minimum apoapsides of inferior planet to achieve an <a href="https://en.wikipedia.org/wiki/Astrological_aspect">aspect</a> with the parent star,
 	relative to observer planet:
 	<table style="text-align:center">
-		<tr>
+		<tr style="background-color:#444;">
 			<th>Aspect</th>
 			<th>Angle</th>
 			<th>Max Orb</th>
@@ -2556,6 +2556,11 @@ const blogData = [
 			<td>3&deg</td>
 			<td>42&deg;</td>
 			<td>~0.669130606</td>
+		</tr>
+		<tr style="background-color:#222;font-style:italic;">
+			<td colspan="3">(for reference)</td>
+			<td>~47.781458&deg;</td>
+			<td>Q<sub>venus</sub>/q<sub>earth</sub></td>
 		</tr>
 		<tr>
 			<td>Sextile</td>
