@@ -2550,7 +2550,12 @@ const blogData = [
 			<td>17&deg;</td>
 			<td>~0.292371705</td>
 		</tr>
-		<tr style="background-color:#222;font-style:italic;">
+		<tr style="background-color:#211;font-style:italic;">
+			<td colspan="3">(for reference)</td>
+			<td>~19.7456382&deg;</td>
+			<td>Q<sub>mercury</sub>/q<sub>mars</sub></td>
+		</tr>
+		<tr style="background-color:#112;font-style:italic;">
 			<td colspan="3">(for reference)</td>
 			<td>~28.335105&deg;</td>
 			<td>Q<sub>mercury</sub>/q<sub>earth</sub></td>
@@ -2562,6 +2567,11 @@ const blogData = [
 			<td>28.5&deg;</td>
 			<td>~0.47715876</td>
 		</tr>
+		<tr style="background-color:#211;font-style:italic;">
+			<td colspan="3">(for reference)</td>
+			<td>~31.814556&deg;</td>
+			<td>Q<sub>venus</sub>/q<sub>mars</sub></td>
+		</tr>
 		<tr>
 			<td>Octile</td>
 			<td>45&deg;</td>
@@ -2569,7 +2579,12 @@ const blogData = [
 			<td>42&deg;</td>
 			<td>~0.669130606</td>
 		</tr>
-		<tr style="background-color:#222;font-style:italic;">
+		<tr style="background-color:#211;font-style:italic;">
+			<td colspan="3">(for reference)</td>
+			<td>~47.391780&deg;</td>
+			<td>Q<sub>earth</sub>/q<sub>mars</sub></td>
+		</tr>
+		<tr style="background-color:#112;font-style:italic;">
 			<td colspan="3">(for reference)</td>
 			<td>~47.781458&deg;</td>
 			<td>Q<sub>venus</sub>/q<sub>earth</sub></td>
