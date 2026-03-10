@@ -2543,6 +2543,11 @@ const blogData = [
 			<td>17&deg;</td>
 			<td>~0.292371705</td>
 		</tr>
+		<tr style="background-color:#222;font-style:italic;">
+			<td colspan="3">(for reference)</td>
+			<td>~28.335105&deg;</td>
+			<td>Q<sub>mercury</sub>/q<sub>earth</sub></td>
+		</tr>
 		<tr>
 			<td>Semisextile</td>
 			<td>30&deg;</td>
