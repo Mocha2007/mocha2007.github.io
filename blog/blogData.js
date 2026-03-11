@@ -2662,7 +2662,7 @@ const blogData = [
 	</table>
 	`,
 	`
-	@title Planets Besieged in the 2020s and the next 30 years
+	@title Planets Besieged in the first half of the 21st century
 	@date 1773239481210
 	@tags astrology
 	I needed to compute these values by hand to test my astrology software, so I'm leaving this table of the nearest besiegements
@@ -2674,6 +2674,405 @@ const blogData = [
 			<th>Duration</th>
 			<th>Besieged Planet</th>
 			<th>Position (mid)</th>
+		</tr>
+		<tr>
+			<td>1986 February 3, 6 AM</td>
+			<td>1986 February 3, 6 PM</td>
+			<td>12 h</td>
+			<td>☾</td>
+			<td>♐ 4&deg; 20&prime;</td>
+		</tr>
+		<tr>
+			<td>1986 March 3, 2 AM</td>
+			<td>1986 March 3, 2 PM</td>
+			<td>12 h</td>
+			<td>☾</td>
+			<td>♐ 22&deg; 36&prime;</td>
+		</tr>
+		<tr>
+			<td>1986 March 13, 6 AM</td>
+			<td>1986 March 27, 10 PM</td>
+			<td>14 d, 16 h</td>
+			<td>⛢</td>
+			<td>♐ 22&deg; 21&prime;</td>
+		</tr>
+		<tr>
+			<td>1988 February 13, 4 AM</td>
+			<td>1988 February 13, 2 PM</td>
+			<td>10 h</td>
+			<td>☾</td>
+			<td>♐ 16&deg; 40&prime;</td>
+		</tr>
+		<tr>
+			<td>1988 February 13, 2 PM</td>
+			<td>1988 February 13, 6 PM</td>
+			<td>4 h</td>
+			<td>⛢</td>
+			<td>♐ 29&deg; 57&prime;</td>
+		</tr>
+		<tr>
+			<td>1988 February 22, 6 AM</td>
+			<td>1988 February 22, 4 PM</td>
+			<td>10 h</td>
+			<td>⛢</td>
+			<td>♑ 0&deg; 17&prime;</td>
+		</tr>
+		<tr>
+			<td>1988 March 7, 10 PM</td>
+			<td>1988 March 12, 12 AM</td>
+			<td>4 d, 2 h</td>
+			<td>♆</td>
+			<td>♑ 9&deg; 54&prime;</td>
+		</tr>
+		<tr style="color:grey;font-style:italic;">
+			<td>1988 March 12, 12 AM</td>
+			<td>1988 March 12, 10 PM</td>
+			<td>22 h</td>
+			<td>☾<abbr title="Only if you ignore the nonclassical planet Uranus.">*</abbr></td>
+			<td>♑ 7&deg; 29&prime;</td>
+		</tr>
+		<tr>
+			<td>1988 March 12, 10 PM</td>
+			<td>1988 April 6, 6 PM</td>
+			<td>24 d, 20 h</td>
+			<td>♆</td>
+			<td>♑ 10&deg; 6&prime;</td>
+		</tr>
+		<tr style="color:grey;font-style:italic;">
+			<td>1990 January 29, 10 AM</td>
+			<td>1990 February 3, 10 AM</td>
+			<td>5 d</td>
+			<td>☿<abbr title="Only if you ignore the nonclassical planets Uranus and Neptune.">*</abbr></td>
+			<td>♑ 16&deg; 52&prime;</td>
+		</tr>
+		<tr>
+			<td>1990 February 9, 10 AM</td>
+			<td>1990 February 17, 6 AM</td>
+			<td>7 d, 20 h</td>
+			<td>♆</td>
+			<td>♑ 13&deg; 34&prime;</td>
+		</tr>
+		<tr>
+			<td>1990 February 21, 12 PM</td>
+			<td>1990 February 21, 8 PM</td>
+			<td>8 h</td>
+			<td>☾</td>
+			<td>♑ 19&deg; 15&prime;</td>
+		</tr>
+		<tr>
+			<td>1992 February 19, 8 AM</td>
+			<td>1992 February 28, 8 PM</td>
+			<td>9 d, 12 h</td>
+			<td>♀</td>
+			<td>♒ 6&deg; 48&prime;</td>
+		</tr>
+		<tr>
+			<td>1992 March 1, 12 PM</td>
+			<td>1992 March 1, 6 PM</td>
+			<td>6 h</td>
+			<td>☾</td>
+			<td>♒ 11&deg; 13&prime;</td>
+		</tr>
+		<tr>
+			<td>1994 March 10, 2 PM</td>
+			<td>1994 March 10, 6 PM</td>
+			<td>4 h</td>
+			<td>☾</td>
+			<td>♓ 3&deg; 41&prime;</td>
+		</tr>
+		<tr>
+			<td>1994 March 24, 5 AM</td>
+			<td>1994 April 4, 4 PM</td>
+			<td>11 d, 11 h</td>
+			<td>☿</td>
+			<td>♓ 14&deg; 1&prime;</td>
+		</tr>
+		<tr>
+			<td>1994 April 7, 8 AM</td>
+			<td>1994 April 8, 6 PM</td>
+			<td>1 d, 10 h</td>
+			<td>☾</td>
+			<td>♓ 17&deg; 33&prime;</td>
+		</tr>
+		<tr>
+			<td>1996 February 19, 12 AM</td>
+			<td>1996 February 20, 12 PM</td>
+			<td>1 d, 12 h</td>
+			<td>☾</td>
+			<td>♓ 13&deg; 32&prime;</td>
+		</tr>
+		<tr>
+			<td>1996 March 4, 8 AM</td>
+			<td>1996 March 17, 2 PM</td>
+			<td>13 d, 6 h</td>
+			<td>☉</td>
+			<td>♓ 21&deg; 14&prime;</td>
+		</tr>
+		<tr>
+			<td>1996 March 18, 11 PM</td>
+			<td>1996 March 19, 3 AM</td>
+			<td>4 h</td>
+			<td>☾</td>
+			<td>♓ 26&deg; 34&prime;</td>
+		</tr>
+		<tr>
+			<td>1996 March 23, 4 AM</td>
+			<td>1996 March 23, 10 PM</td>
+			<td>18 h</td>
+			<td>☿</td>
+			<td>♓ 28&deg; 52&prime;</td>
+		</tr>
+		<tr>
+			<td>1996 April 15, 6 PM</td>
+			<td>1996 April 17, 12 AM</td>
+			<td>1 d, 6 h</td>
+			<td>☾</td>
+			<td>♈ 8&deg; 35&prime;</td>
+		</tr>
+		<tr>
+			<td>1998 March 10, 10 PM</td>
+			<td>1998 March 24, 10 AM</td>
+			<td>13 d, 12 h</td>
+			<td>☿</td>
+			<td>♈ 15&deg; 31&prime;</td>
+		</tr>
+		<tr>
+			<td>1998 March 28, 5 PM</td>
+			<td>1998 March 28, 8 PM</td>
+			<td>3 h</td>
+			<td>☾</td>
+			<td>♈ 20&deg; 9&prime;</td>
+		</tr>
+		<tr>
+			<td>1998 March 28, 10 PM</td>
+			<td>1998 March 31, 10 AM</td>
+			<td>2 d, 12 h</td>
+			<td>☿</td>
+			<td>♈ 21&deg; 8&prime;</td>
+		</tr>
+		<tr>
+			<td>2000 March 22, 8 PM</td>
+			<td>2000 April 6, 2 AM</td>
+			<td>14 d, 6 h</td>
+			<td>♃</td>
+			<td>♉ 8&deg; 46&prime;</td>
+		</tr>
+		<tr>
+			<td>2000 April 6, 10 AM</td>
+			<td>2000 April 6, 8 PM</td>
+			<td>10 h</td>
+			<td>☾</td>
+			<td>♉ 13&deg; 6&prime;</td>
+		</tr>
+		<tr>
+			<td>2002 April 15, 9 PM</td>
+			<td>2002 April 16, 5 PM</td>
+			<td>20 h</td>
+			<td>☾</td>
+			<td>♊ 7&deg; 34&prime;</td>
+		</tr>
+		<tr>
+			<td>2002 May 7, 8 AM</td>
+			<td>2002 May 10, 4 PM</td>
+			<td>3 d, 8 h</td>
+			<td>♀</td>
+			<td>♊ 16&deg; 17&prime;</td>
+		</tr>
+		<tr>
+			<td>2002 May 13, 3 AM</td>
+			<td>2002 May 14, 4 PM</td>
+			<td>13 h</td>
+			<td>☾</td>
+			<td>♊ 17&deg; 47&prime;</td>
+		</tr>
+		<tr>
+			<td>2004 May 22, 1 PM</td>
+			<td>2004 May 22, 4 PM</td>
+			<td>3 h</td>
+			<td>☾</td>
+			<td>♋ 10&deg; 34&prime;</td>
+		</tr>
+		<tr>
+			<td>2004 June 19, 2 AM</td>
+			<td>2004 June 20, 6 AM</td>
+			<td>1 d, 4 h</td>
+			<td>☾</td>
+			<td>♋ 20&deg; 5&prime;</td>
+		</tr>
+		<tr>
+			<td>2008 June 28, 7 AM</td>
+			<td>2006 June 28, 7 PM</td>
+			<td>12 h</td>
+			<td>☾</td>
+			<td>♌ 12&deg; 0&prime;</td>
+		</tr>
+		<tr>
+			<td>2008 July 6, 12 PM</td>
+			<td>2008 July 6, 4 PM</td>
+			<td>4 h</td>
+			<td>☾</td>
+			<td>♍ 3&deg; 44&prime;</td>
+		</tr>
+		<tr>
+			<td>2008 August 3, 6 AM</td>
+			<td>2008 August 4, 4 AM</td>
+			<td>22 h</td>
+			<td>☾</td>
+			<td>♍ 13&deg; 31&prime;</td>
+		</tr>
+		<tr>
+			<td>2008 August 13, 1 PM</td>
+			<td>2008 August 15, 4 PM</td>
+			<td>2 d, 3 h</td>
+			<td>♀</td>
+			<td>♍ 7&deg; 32&prime;</td>
+		</tr>
+		<tr>
+			<td>2010 June 17, 10 AM</td>
+			<td>2010 June 19, 12 AM</td>
+			<td>1 d, 14 h</td>
+			<td>☾</td>
+			<td>♍ 17&deg; 8&prime;</td>
+		</tr>
+		<tr>
+			<td>2010 July 15, 10 PM</td>
+			<td>2010 July 16, 8 AM</td>
+			<td>10 h</td>
+			<td>☾</td>
+			<td>♍ 24&deg; 56&prime;</td>
+		</tr>
+		<tr>
+			<td>2010 August 8, 2 PM</td>
+			<td>2010 August 12, 10 PM</td>
+			<td>4 d, 8 h</td>
+			<td>♀</td>
+			<td>♎ 3&deg; 51&prime;</td>
+		</tr>
+		<tr>
+			<td>2010 August 13, 8 AM</td>
+			<td>2010 August 20, 4 PM</td>
+			<td>7 d, 8 h</td>
+			<td>♀</td>
+			<td>♎ 10&deg; 5&prime;</td>
+		</tr>
+		<tr>
+			<td>2010 September 9, 2 PM</td>
+			<td>2010 September 11, 12 AM</td>
+			<td>1 d, 10 h</td>
+			<td>☾</td>
+			<td>♎ 16&deg; 53&prime;</td>
+		</tr>
+		<tr>
+			<td>2012 July 24, 4 PM</td>
+			<td>2012 July 25, 10 AM</td>
+			<td>18 h</td>
+			<td>☾</td>
+			<td>♎ 17&deg; 55&prime;</td>
+		</tr>
+		<tr>
+			<td>2012 August 21, 8 PM</td>
+			<td>2012 August 22, 2 AM</td>
+			<td>6 h</td>
+			<td>☾</td>
+			<td>♎ 27&deg; 25&prime;</td>
+		</tr>
+		<tr>
+			<td>2012 October 5, 5 PM</td>
+			<td>2012 October 6, 11 PM</td>
+			<td>1 d, 6 h</td>
+			<td>☿</td>
+			<td>♏ 1&deg; 34&prime;</td>
+		</tr>
+		<tr>
+			<td>2014 August 3, 6 AM</td>
+			<td>2014 August 4, 6 AM</td>
+			<td>1 d</td>
+			<td>☾</td>
+			<td>♏ 9&deg; 46&prime;</td>
+		</tr>
+		<tr>
+			<td>2016 August 31, 4 PM</td>
+			<td>2014 August 31, 10 PM</td>
+			<td>6 h</td>
+			<td>☾</td>
+			<td>♏ 19&deg; 45&prime;</td>
+		</tr>
+		<tr>
+			<td>2016 March 28, 3 PM</td>
+			<td>2016 March 29, 12 PM</td>
+			<td>21 h</td>
+			<td>☾</td>
+			<td>♐ 11&deg; 1&prime;</td>
+		</tr>
+		<tr>
+			<td>2016 April 25, 2 AM</td>
+			<td>2016 April 25, 2 PM</td>
+			<td>12 h</td>
+			<td>☾</td>
+			<td>♐ 11&deg; 33&prime;</td>
+		</tr>
+		<tr>
+			<td>2016 May 21, 6 PM</td>
+			<td>2016 May 22, 6 PM</td>
+			<td>1 d</td>
+			<td>☾</td>
+			<td>♐ 7&deg; 34&prime;</td>
+		</tr>
+		<tr>
+			<td>2016 August 11, 10 PM</td>
+			<td>2016 August 12, 8 AM</td>
+			<td>10 h</td>
+			<td>☾</td>
+			<td>♐ 7&deg; 4&prime;</td>
+		</tr>
+		<tr>
+			<td>2016 September 8, 6 PM</td>
+			<td>2016 September 9, 10 AM</td>
+			<td>16 h</td>
+			<td>☾</td>
+			<td>♐ 14&deg; 33&prime;</td>
+		</tr>
+		<tr>
+			<td>2018 April 7, 9 AM</td>
+			<td>2018 April 7, 2 PM</td>
+			<td>5 h</td>
+			<td>☾</td>
+			<td>♑ 10&deg; 7&prime;</td>
+		</tr>
+		<tr>
+			<td>2018 May 4, 3 PM</td>
+			<td>2018 May 6, 4 AM</td>
+			<td>1 d, 13 h</td>
+			<td>☾</td>
+			<td>♑ 16&deg; 56&prime;</td>
+		</tr>
+		<tr>
+			<td>2018 August 21, 6 AM</td>
+			<td>2018 August 23, 10 AM</td>
+			<td>2 d, 4 h</td>
+			<td>☾</td>
+			<td>♑ 16&deg; 12&prime;</td>
+		</tr>
+		<tr>
+			<td>2020 February 16, 7 AM</td>
+			<td>2020 February 18, 9 AM</td>
+			<td>2 d, 2 h</td>
+			<td>♃</td>
+			<td>♑ 17&deg; 8&prime;</td>
+		</tr>
+		<tr>
+			<td>2020 February 20, 10 AM</td>
+			<td>2020 March 18, 6 AM</td>
+			<td>25 d, 20 h</td>
+			<td>♃</td>
+			<td>♑ 20&deg; 19&prime;</td>
+		</tr>
+		<tr>
+			<td>2020 March 18, 8 PM</td>
+			<td>2020 March 20, 8 AM</td>
+			<td>1 d, 12 h</td>
+			<td>♃</td>
+			<td>♑ 22&deg; 42&prime;</td>
 		</tr>
 		<tr>
 			<td>2020 April 15, 8 AM</td>
