@@ -2836,6 +2836,167 @@ const blogData = [
 			<td>⛢</td>
 			<td>♊ 26&deg; 57&prime;</td>
 		</tr>
+		<tr>
+			<td>2032 July 26, 10 AM</td>
+			<td>2032 July 27, 6 AM</td>
+			<td>20 h</td>
+			<td>☿</td>
+			<td>♋ 29&deg; 15&prime;</td>
+		</tr>
+		<tr style="color:grey;font-style:italic;">
+			<td>2034 May 23, 11 AM</td>
+			<td>2034 June 3, 7 PM</td>
+			<td>11 d, 8 h</td>
+			<td>♀<abbr title="Only if you ignore the nonclassical planet Uranus (or start May 30, 11 AM).">*</abbr></td>
+			<td>♋ 13&deg; 33&prime;</td>
+		</tr>
+		<tr>
+			<td>2034 June 17, 6 PM</td>
+			<td>2034 June 18, 12 AM</td>
+			<td>6 h</td>
+			<td>☾</td>
+			<td>♋ 19&deg; 8&prime;</td>
+		</tr>
+		<tr>
+			<td>2036 June 26, 12 AM</td>
+			<td>2036 June 26, 9 PM</td>
+			<td>21 h</td>
+			<td>☾</td>
+			<td>♌ 10&deg; 26&prime;</td>
+		</tr>
+		<tr>
+			<td>2036 July 22, 7 AM</td>
+			<td>2036 July 23, 11 AM</td>
+			<td>1 d, 4 h</td>
+			<td>☿</td>
+			<td>♌ 20&deg; 45&prime;</td>
+		</tr>
+		<tr>
+			<td>2036 July 24, 1 PM</td>
+			<td>2036 July 24, 5 PM</td>
+			<td>4 h</td>
+			<td>☾</td>
+			<td>♌ 21&deg; 29&prime;</td>
+		</tr>
+		<tr>
+			<td>2038 August 3, 1 AM</td>
+			<td>2038 August 3, 10 AM</td>
+			<td>9 h</td>
+			<td>☾</td>
+			<td>♍ 12&deg; 20&prime;</td>
+		</tr>
+		<tr>
+			<td>2038 August 30, 11 PM</td>
+			<td>2038 August 31, 5 PM</td>
+			<td>18 h</td>
+			<td>☾</td>
+			<td>♍ 23&deg; 4&prime;</td>
+		</tr>
+		<tr>
+			<td>2040 August 14, 9 AM</td>
+			<td>2040 August 17, 11 PM</td>
+			<td>3 d, 14 h</td>
+			<td>♃</td>
+			<td>♎ 1&deg; 56&prime;</td>
+		</tr>
+		<tr>
+			<td>2040 September 6, 3 PM</td>
+			<td>2040 September 8, 3 PM</td>
+			<td>2 d</td>
+			<td>♀</td>
+			<td>♎ 12&deg; 34&prime;</td>
+		</tr>
+		<tr>
+			<td>2040 September 8, 11 PM</td>
+			<td>2040 September 11, 1 PM</td>
+			<td>2 d, 14 h</td>
+			<td>♀</td>
+			<td>♎ 15&deg; 46&prime;</td>
+		</tr>
+		<tr>
+			<td>2040 September 13, 12 AM</td>
+			<td>2040 September 21, 8 AM</td>
+			<td>8 d, 8 h</td>
+			<td>☿</td>
+			<td>♎ 19&deg; 27&prime;</td>
+		</tr>
+		<tr>
+			<td>2042 September 17, 7 PM</td>
+			<td>2042 September 17, 9 PM</td>
+			<td>2 h</td>
+			<td>☾</td>
+			<td>♏ 4&deg; 41&prime;</td>
+		</tr>
+		<tr>
+			<td>2042 October 15, 6 AM</td>
+			<td>2042 October 16, 8 PM</td>
+			<td>1 d, 14 h</td>
+			<td>☾</td>
+			<td>♏ 16&deg; 36&prime;</td>
+		</tr>
+		<tr>
+			<td>2044 August 27, 6 PM</td>
+			<td>2044 August 29, 2 AM</td>
+			<td>1 d, 8 h</td>
+			<td>☾</td>
+			<td>♏ 16&deg; 42&prime;</td>
+		</tr>
+		<tr>
+			<td>2044 September 25, 4 PM</td>
+			<td>2044 September 25, 5 PM</td>
+			<td>1 h</td>
+			<td>☾</td>
+			<td>♏ 26&deg; 10&prime;</td>
+		</tr>
+		<tr>
+			<td>2044 November 1, 12 AM</td>
+			<td>2044 November 11, 10 PM</td>
+			<td>10 d, 22 h</td>
+			<td>☿</td>
+			<td>♐ 7&deg; 6&prime;</td>
+		</tr>
+		<tr>
+			<td>2046 September 7, 2 AM</td>
+			<td>2046 September 7, 7 AM</td>
+			<td>5 h</td>
+			<td>☾</td>
+			<td>♐ 14&deg; 49&prime;</td>
+		</tr>
+		<tr>
+			<td>2046 October 4, 7 PM</td>
+			<td>2046 October 4, 8 PM</td>
+			<td>1 h</td>
+			<td>☾</td>
+			<td>♐ 18&deg; 25&prime;</td>
+		</tr>
+		<tr>
+			<td>2048 October 13, 12 PM</td>
+			<td>2048 October 14, 12 AM</td>
+			<td>12 h</td>
+			<td>☾</td>
+			<td>♑ 12&deg; 45&prime;</td>
+		</tr>
+		<tr>
+			<td>2050 May 12, 4 PM</td>
+			<td>2050 May 12, 6 PM</td>
+			<td>2 h</td>
+			<td>☾</td>
+			<td>♒ 7&deg; 49&prime;</td>
+		</tr>
+		<tr>
+			<td>2050 June 9, 2 AM</td>
+			<td>2050 June 9, 6 PM</td>
+			<td>16 h</td>
+			<td>☾</td>
+			<td>♒ 13&deg; 47&prime;</td>
+		</tr>
+		<tr>
+			<td>2050 July 6, 7 AM</td>
+			<td>2050 July 7, 1 PM</td>
+			<td>1 d, 6 h</td>
+			<td>☾</td>
+			<td>♒ 16&deg; 25&prime;</td>
+		</tr>
 	</table>
 	nb. A besieged planet is one which lies uninterrupted between Mars and Saturn in the same sign.
 	`,
