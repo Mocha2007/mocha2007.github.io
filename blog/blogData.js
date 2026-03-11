@@ -2662,7 +2662,7 @@ const blogData = [
 	</table>
 	`,
 	`
-	@title Planets Besieged in the 2020s and beyond
+	@title Planets Besieged in the 2020s and the next 30 years
 	@date 1773239481210
 	@tags astrology
 	I needed to compute these values by hand to test my astrology software, so I'm leaving this table of the nearest besiegements
@@ -2996,6 +2996,69 @@ const blogData = [
 			<td>1 d, 6 h</td>
 			<td>☾</td>
 			<td>♒ 16&deg; 25&prime;</td>
+		</tr>
+		<tr>
+			<td>2050 August 2, 12 PM</td>
+			<td>2050 August 3, 8 PM</td>
+			<td>1 d, 8 h</td>
+			<td>☾</td>
+			<td>♒ 13&deg; 55&prime;</td>
+		</tr>
+		<tr>
+			<td>2050 August 29, 10 PM</td>
+			<td>2050 August 30, 10 PM</td>
+			<td>1 d</td>
+			<td>☾</td>
+			<td>♒ 11&deg; 57&prime;</td>
+		</tr>
+		<tr>
+			<td>2050 September 26, 4 AM</td>
+			<td>2050 September 27, 6 AM</td>
+			<td>1 d, 2 h</td>
+			<td>☾</td>
+			<td>♒ 8&deg; 51&prime;</td>
+		</tr>
+		<tr>
+			<td>2050 October 23, 12 PM</td>
+			<td>2050 October 25, 6 AM</td>
+			<td>1 d, 18 h</td>
+			<td>☾</td>
+			<td>♒ 15&deg; 5&prime;</td>
+		</tr>
+		<tr>
+			<td>2052 March 25, 3 PM</td>
+			<td>2052 March 27, 4 PM</td>
+			<td>2 d, 1 h</td>
+			<td>☾</td>
+			<td>♒ 14&deg; 53&prime;</td>
+		</tr>
+		<tr>
+			<td>2052 May 21, 4 PM</td>
+			<td>2052 May 22, 11 AM</td>
+			<td>19 h</td>
+			<td>☾</td>
+			<td>♓ 7&deg; 30&prime;</td>
+		</tr>
+		<tr>
+			<td>2054 April 9, 10 AM</td>
+			<td>2054 April 24, 3 PM</td>
+			<td>15 d, 5 h</td>
+			<td>♀</td>
+			<td>♓ 14&deg; 8&prime;</td>
+		</tr>
+		<tr>
+			<td>2054 May 2, 9 PM</td>
+			<td>2054 May 3, 11 AM</td>
+			<td>14 h</td>
+			<td>☾</td>
+			<td>♓ 20&deg; 45&prime;</td>
+		</tr>
+		<tr>
+			<td>2056 May 10, 10 PM</td>
+			<td>2056 May 11, 10 AM</td>
+			<td>12 h</td>
+			<td>☾</td>
+			<td>♈ 14&deg; 48&prime;</td>
 		</tr>
 	</table>
 	nb. A besieged planet is one which lies uninterrupted between Mars and Saturn in the same sign.
