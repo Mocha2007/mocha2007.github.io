@@ -2661,5 +2661,78 @@ const blogData = [
 		</tr>
 	</table>
 	`,
+	`
+	@title Besieging in 2026+
+	@date 1773239481210
+	@tags astrology
+	I needed to compute these values by hand to test my astrology software, so I'm leaving this table of the nearest besiegements
+	here in case this is future useful (times UTC, rounded to nearest hour):
+	<table style="text-align:center">
+		<tr style="background-color:#444;">
+			<th>Start time</th>
+			<th>End time</th>
+			<th>Duration</th>
+			<th>Besieged Planet</th>
+			<th>Position (mid)</th>
+		</tr>
+		<tr>
+			<td>2024 April 29, 12 AM</td>
+			<td>2024 April 30, 12 PM</td>
+			<td>1 d, 12 h</td>
+			<td>♆</td>
+			<td>♓ 28&deg; 54&prime;</td>
+		</tr>
+		<tr>
+			<td>2026 April 20, 7 AM</td>
+			<td>2026 April 20, 5 PM</td>
+			<td>10 h</td>
+			<td>☿</td>
+			<td>♈ 8&deg; 14&prime;</td>
+		</tr>
+		<tr>
+			<td>2026 May 13, 3 PM</td>
+			<td>2026 May 14, 6 PM</td>
+			<td>1 d, 3 h</td>
+			<td>☾</td>
+			<td>♈ 18&deg; 35&prime;</td>
+		</tr>
+		<tr>
+			<td>2028 March 21, 12 AM</td>
+			<td>2028 March 25, 10 PM</td>
+			<td>4 d, 22 h</td>
+			<td>☉</td>
+			<td>♈ 3&deg; 6&prime;</td>
+		</tr>
+		<tr>
+			<td>2028 March 27, 8 PM</td>
+			<td>2024 April 8, 4 AM</td>
+			<td>11 d, 8h</td>
+			<td>☉</td>
+			<td>♈ 13&deg; 26&prime;</td>
+		</tr>
+		<tr>
+			<td>2028 May 21, 10 PM</td>
+			<td>2028 May 23, 12 AM</td>
+			<td>1 d, 2 h</td>
+			<td>☾</td>
+			<td>♉ 10&deg; 27&prime;</td>
+		</tr>
+		<tr>
+			<td>2030 April 8, 2 AM</td>
+			<td>2030 April 17, 8 AM</td>
+			<td>9 d, 6 h</td>
+			<td>☿</td>
+			<td>♉ 7&deg; 48&prime;</td>
+		</tr>
+		<tr>
+			<td>2030 May 2, 10 PM</td>
+			<td>2030 May 3, 4 PM</td>
+			<td>18 h</td>
+			<td>☾</td>
+			<td>♉ 22&deg; 26&prime;</td>
+		</tr>
+	</table>
+	nb. A besieged planet is one which lies uninterrupted between Mars and Saturn in the same sign.
+	`,
 ];
 // don't forget, run blog.timestamp to get the timestamp!
