@@ -2662,7 +2662,7 @@ const blogData = [
 	</table>
 	`,
 	`
-	@title Besieging in 2026+
+	@title Planets Besieged in the 2020s and beyond
 	@date 1773239481210
 	@tags astrology
 	I needed to compute these values by hand to test my astrology software, so I'm leaving this table of the nearest besiegements
@@ -2674,6 +2674,13 @@ const blogData = [
 			<th>Duration</th>
 			<th>Besieged Planet</th>
 			<th>Position (mid)</th>
+		</tr>
+		<tr>
+			<td>2020 April 15, 8 AM</td>
+			<td>2020 April 16, 2 AM</td>
+			<td>18 h</td>
+			<td>☾</td>
+			<td>♒ 7&deg; 12&prime;</td>
 		</tr>
 		<tr>
 			<td>2020 May 12, 2 PM</td>
