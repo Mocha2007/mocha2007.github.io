@@ -1419,7 +1419,7 @@ const OOM = {
 		// https://www.commondreams.org/news/what-s-the-cost-of-iran-war
 		// consistent with https://www.middleeasteye.net/live/live-us-and-israel-attack-iran
 		// which claims that "the first hundred hours have cost $3.7 B" ($0.888 B/d)
-		new MoneyDatum('Cost to maintain the Iran War for 6 months (2026)', 11.3e9/7*365/2, "https://www.nytimes.com/2026/03/11/world/middleeast/iran-war-costs-pentagon.html?unlocked_article_code=1.SVA.vsUF.0KCfGdZalz4Y"),
+		new MoneyDatum('Cost to maintain the Iran War for 6 months (2026)', 11.3e9/6*365/2, "https://www.nytimes.com/2026/03/11/world/middleeast/iran-war-costs-pentagon.html?unlocked_article_code=1.SVA.vsUF.0KCfGdZalz4Y"),
 		new MoneyDatum('Space Shuttle Project (2012)', 211e9, "https://en.wikipedia.org/wiki/Space_Shuttle"),
 		new MoneyDatum('Apollo Program (2020 inflation-adjusted)', 257e9, "https://en.wikipedia.org/wiki/Apollo_program"),
 		new MoneyDatum('Cost of DOGE due to lost taxes (2025)', 510e9, "https://web.archive.org/web/20250323115010/https://www.washingtonpost.com/business/2025/03/22/irs-tax-revenue-loss-federal-budget/"),
