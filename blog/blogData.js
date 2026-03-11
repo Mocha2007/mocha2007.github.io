@@ -2766,6 +2766,76 @@ const blogData = [
 			<td>☾</td>
 			<td>♉ 22&deg; 26&prime;</td>
 		</tr>
+		<tr>
+			<td>2030 May 19, 2 AM</td>
+			<td>2030 May 19, 6 AM</td>
+			<td>4 h</td>
+			<td>☉</td>
+			<td>♉ 28&deg; 25&prime;</td>
+		</tr>
+		<tr>
+			<td>2030 June 8, 4 PM</td>
+			<td>2030 June 15, 10 AM<abbr title="Interrupted by Uranus, a nonclassical planet. Ignoring this gives an end date of 10 PM on the 18th.">*</abbr></td>
+			<td>6 d, 18 h</td>
+			<td>☿</td>
+			<td>♊ 7&deg; 20&prime;</td>
+		</tr>
+		<tr>
+			<td>2030 June 18, 10 PM</td>
+			<td>2020 June 24, 8 PM</td>
+			<td>5 d, 22 h</td>
+			<td>⛢</td>
+			<td>♊ 19&deg; 24&prime;</td>
+		</tr>
+		<tr style="color:grey;font-style:italic;">
+			<td>2020 June 24, 8 PM</td>
+			<td>2020 June 27, 6 PM</td>
+			<td>2 d, 22 h</td>
+			<td>♀<abbr title="Only if you ignore the nonclassical planet Uranus.">*</abbr></td>
+			<td>♊ 4&deg; 42&prime;</td>
+		</tr>
+		<tr style="color:grey;font-style:italic;">
+			<td>2020 June 29, 10 PM</td>
+			<td>2020 July 1, 12 PM</td>
+			<td>1 d, 14 h</td>
+			<td>♀<abbr title="Only if you ignore the nonclassical planet Uranus.">*</abbr></td>
+			<td>♊ 9&deg; 59&prime;</td>
+		</tr>
+		<tr>
+			<td>2032 May 10, 8 PM</td>
+			<td>2032 May 11, 9 PM</td>
+			<td>1 d, 1 h</td>
+			<td>☾</td>
+			<td>♊ 15&deg; 43&prime;</td>
+		</tr>
+		<tr>
+			<td>2032 June 1, 4 PM</td>
+			<td>2032 June 2, 8 AM</td>
+			<td>16 h</td>
+			<td>☿</td>
+			<td>♊ 23&deg; 56&prime;</td>
+		</tr>
+		<tr>
+			<td>2032 June 6, 6 PM</td>
+			<td>2032 June 8, 1 PM</td>
+			<td>1 d, 19 h</td>
+			<td>⛢</td>
+			<td>♊ 26&deg; 47&prime;</td>
+		</tr>
+		<tr style="color:grey;font-style:italic;">
+			<td>2032 June 8, 1 PM</td>
+			<td>2032 June 8, 6 PM</td>
+			<td>5 h</td>
+			<td>☾<abbr title="Only if you ignore the nonclassical planet Uranus.">*</abbr></td>
+			<td>♊ 27&deg; 5&prime;</td>
+		</tr>
+		<tr>
+			<td>2032 June 8, 6 PM</td>
+			<td>2032 June 11, 4 PM</td>
+			<td>2 d, 22 h</td>
+			<td>⛢</td>
+			<td>♊ 26&deg; 57&prime;</td>
+		</tr>
 	</table>
 	nb. A besieged planet is one which lies uninterrupted between Mars and Saturn in the same sign.
 	`,
