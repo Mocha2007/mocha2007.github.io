@@ -388,6 +388,16 @@ const CONSTANT = {
 	angular_diameter(r, d){
 		return 2 * Math.asin(r/d);
 	},
+	/** q, Q in m, r in m, assumes orbit does not cross */
+	angular_diameter_geocentric_orbit(r, q, Q = q, r_e=this.earth_radius){
+		const a = new Angle({
+			// apoapsis, right angle of earth
+			min: this.angular_diameter(r, Math.hypot(r_e, Q)),
+			// periapsis, same side of earth
+			max: this.angular_diameter(r, q - r_e),
+		});
+		return a;
+	},
 	/** q, Q in au, r in m, assumes orbit does not cross */
 	angular_diameter_heliocentric_orbit(r, q, Q = q, q_e = 0.9832924045756489, Q_E = 1.0167096382341758 ){
 		let a_e = (q_e + Q_E)/2;
@@ -398,16 +408,6 @@ const CONSTANT = {
 			min: this.angular_diameter(r, this.au * (Q + Q_E)),
 			// same side of sun
 			max: this.angular_diameter(r, this.au * (Q < a_e ? q_e - Q : q - Q_E)),
-		});
-		return a;
-	},
-	/** q, Q in m, r in m, assumes orbit does not cross */
-	angular_diameter_geocentric_orbit(r, q, Q = q, r_e=this.earth_radius){
-		const a = new Angle({
-			// apoapsis, right angle of earth
-			min: this.angular_diameter(r, Math.hypot(r_e, Q)),
-			// periapsis, same side of earth
-			max: this.angular_diameter(r, q - r_e),
 		});
 		return a;
 	},
@@ -440,6 +440,13 @@ const CONSTANT = {
 	get bp_rna(){
 		return 643*this.da;
 	},
+	/** in m/s https://physics.nist.gov/cgi-bin/cuu/Value?c */
+	c: 299792458,
+	c2k: 273.15,
+	/** in s */
+	get d(){
+		return this.h*24;
+	},
 	/** in kg */
 	da: 1.66053906892e-27,
 	density: {
@@ -466,13 +473,6 @@ const CONSTANT = {
 		/** kg/m^3, at 25 C */
 		water: 997.04702,
 		water50c: 987.5,
-	},
-	/** in m/s https://physics.nist.gov/cgi-bin/cuu/Value?c */
-	c: 299792458,
-	c2k: 273.15,
-	/** in s */
-	get d(){
-		return this.h*24;
 	},
 	/** in kg */
 	get dr(){
