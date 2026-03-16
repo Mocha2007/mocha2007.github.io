@@ -111,7 +111,7 @@ const LUNALIFE = {
 		new LunaEvent(new Date(2014, 6, 1), 'Coming Out Simulator 2014 released. It was something I thought back to a lot when sorting out my identity.'),
 		new LunaEvent(new Date(2014, 6, 7), '(appx) Discovered Dwarf Fortress 0.40, which quickly became my favorite game EVER', 'I started playing IN 2014, but after 0.40 was released...'),
 		new LunaEvent(new Date(2014, 8), '(appx) About the time I started consistently getting gender envy'),
-		new LunaEvent(new Date(2015, 5, 8), 'Watched that vihart video on gender identity that made me question myself even more lmao', 'https://www.youtube.com/watch?v=hmKix-75dsg'),
+		new LunaEvent(new Date(2015, 5, 8), 'Watched that Vihart\'s "On Gender" video on gender identity that made me question myself even more lmao', 'https://www.youtube.com/watch?v=hmKix-75dsg'),
 		new LunaEvent(new Date(2015, 10, 8), 'Joined Discord after watching a JiggyWiggy video', 'I was using it like maybe a month or two prior as well'),
 		new LunaEvent(new Date(2016, 3, 6), 'I started playing Rimworld in... I think... Alpha 13?'),
 		new LunaEvent(new Date(2016, 4, 9), 'I started playing Stellaris on release. I remember being particularly excited for it, since I enjoyed other Paradox games, and was disappointed by the similar but worse Endless Space, released 4 years prior.'),
