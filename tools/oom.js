@@ -1062,7 +1062,11 @@ const OOM = {
 		new MassDatum("Eisen", 9.0586*CONSTANT.jupiter_mass, "../namei/namei.html#eisen", [Category.FICTIONAL]),
 		// Stars
 		new MassDatum("WISE 0855-0714", new Mass({min:3*CONSTANT.jupiter_mass,max:10*CONSTANT.jupiter_mass}), "https://en.wikipedia.org/wiki/WISE_0855%E2%88%920714"),
-		new MassDatum("Luhman 16 system", (35.4+29.4)*CONSTANT.jupiter_mass),
+		new MassDatum("SCR 1845-6357 B", new Mass({min:0.024*CONSTANT.solar_mass,max:0.062*CONSTANT.solar_mass}), "https://en.wikipedia.org/wiki/SCR_1845%E2%88%926357"),
+		new MassDatum("Luhman 16 B", new Mass(29.4*CONSTANT.jupiter_mass, 0.2*CONSTANT.jupiter_mass), "https://en.wikipedia.org/wiki/Luhman_16"),
+		new MassDatum("Luhman 16 A", new Mass(35.4*CONSTANT.jupiter_mass, 0.2*CONSTANT.jupiter_mass), "https://en.wikipedia.org/wiki/Luhman_16"),
+		new MassDatum("ε Indi Bb", new Mass({min:50*CONSTANT.jupiter_mass,max:54.5*CONSTANT.jupiter_mass}), "https://en.wikipedia.org/wiki/Epsilon_Indi"),
+		new MassDatum("ε Indi Ba", new Mass({min:67.6*CONSTANT.jupiter_mass,max:69.1*CONSTANT.jupiter_mass}), "https://en.wikipedia.org/wiki/Epsilon_Indi"),
 		new MassDatum("Proxima Centauri", 0.1221*CONSTANT.solar_mass),
 		new MassDatum("Barnard's Star", 0.162*CONSTANT.solar_mass),
 		new MassDatum("Solar core", 0.34*CONSTANT.solar_mass, "https://en.wikipedia.org/wiki/Solar_core"),
