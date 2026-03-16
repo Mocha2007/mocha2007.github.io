@@ -1052,6 +1052,7 @@ const OOM = {
 		new MassDatum("Theia", new Mass({min:0.1*CONSTANT.earth_mass,max:0.45*CONSTANT.earth_mass}),"https://en.wikipedia.org/wiki/Theia_(hypothetical_planet)"),
 		new MassDatum("Venus", 4.86731e24),
 		new MassDatum("Earth", CONSTANT.earth_mass),
+		new MassDatum("Planet Nine", new Mass(4.4*CONSTANT.earth_mass, 1.1*CONSTANT.earth_mass), "https://en.wikipedia.org/wiki/Planet_Nine", [Category.HYPOTHETICAL]),
 		new MassDatum("Uranus", 8.68099e25),
 		new MassDatum("Neptune", 1.024092e26),
 		new MassDatum("Saturn", 5.68317e26),
