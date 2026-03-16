@@ -1,11 +1,16 @@
 /**
+ * @param {number} x
+ * @param {number} min
+ * @param {number} max
+ */
+const clamp = (x, min, max) => Math.min(max, Math.max(min, x));
+
+/**
  * @param {number} x 
  * @param {number} n max digits
  * @returns string rep of that number, rounded to AT MOST n digits
  */
-const round = (x, n) => {
-	return x.toFixed(n || 0).replace(/\.?0+$/, '');
-}
+const round = (x, n) => x.toFixed(n || 0).replace(/\.?0+$/, '');
 
 class Dimension {
 	constructor(unit, si_pref_off, scale_factor, x, uncertainty){
@@ -33,10 +38,10 @@ class Dimension {
 			this.max += uncertainty.max;
 		}
 	}
-	error_elem(p){
+	error_elem(p, r = 3){
 		if (this.min !== this.x || this.max !== this.x){
-			const plus = round((this.max - this.x)/p, 3);
-			const minus = round((this.x - this.min)/p, 3);
+			const plus = round((this.max - this.x)/p, r);
+			const minus = round((this.x - this.min)/p, r);
 			if (plus !== minus){
 				return `<span class='errors'>+${plus}<br>-${minus}</span>`;
 			}
@@ -52,14 +57,18 @@ class Dimension {
 		const q = Math.floor(Math.log10(this.x)/3);
 		const i = CONSTANT.si_prefix_offset + this.si_pref_off + q;
 		const p = Math.pow(10, 3*q);
-		const error_elem = this.error_elem(p);
+		const r = clamp(Math.floor(Math.log10(this.x/this.uncertainty)), 0, 3);
+		const error_elem = this.error_elem(p, r);
 		if (i < 0 || CONSTANT.si_prefix.length <= i){
-			return `${round(this.x/p, 3)}${error_elem}&middot;10<sup>${3*q}</sup> ${CONSTANT.si_prefix[CONSTANT.si_prefix_offset+this.si_pref_off]}${this.unit}`;
+			return `${round(this.x/p, r)}${error_elem}&middot;10<sup>${3*q}</sup> ${CONSTANT.si_prefix[CONSTANT.si_prefix_offset+this.si_pref_off]}${this.unit}`;
 		}
 		else {
 			const prefix = CONSTANT.si_prefix[i];
-			return `${round(this.x/p, 3)}${error_elem} ${prefix}${this.unit}`;
+			return `${round(this.x/p, r)}${error_elem} ${prefix}${this.unit}`;
 		}
+	}
+	get uncertainty(){
+		return (this.max - this.min)/2;
 	}
 }
 
