@@ -953,10 +953,11 @@ const OOM = {
 		// the 3.43 m model weighs 125 kg.
 		// according to https://www.trekbbs.com/threads/actual-size-of-ships-in-star-trek.254521/
 		// the actual ship is 288.6 m.
-		new MassDatum("Enterprise (NCC-1701, estimate)", 125 * Math.pow(288.6/3.43,3)),
+		new MassDatum("Enterprise (NCC-1701, estimate)", 125 * Math.pow(288.6/3.43,3), [Category.FICTIONAL]),
 		new MassDatum("Imperial Star Destroyer", 40e9, "https://en.wikipedia.org/wiki/Star_Destroyer#Concept_and_design", [Category.FICTIONAL]),
-		new MassDatum("Dyson Sphere (estimate)", 1.5*0.959e23, "../dyson.html#Sun_Reasonable", [Category.HYPOTHETICAL]), // original concept was 3m thickness, I used a 2m estimate originally, hence x1.5
+		new MassDatum("Borg cube (estimate)", CONSTANT.density.iron/4 * Math.pow(3037,3), "https://memory-alpha.fandom.com/wiki/Borg_cube", [Category.FICTIONAL]),
 		new MassDatum("Death Star (estimate)", CONSTANT.volume.ellipsoid(160e3)*CONSTANT.density.iron/4, [Category.FICTIONAL]),
+		new MassDatum("Dyson Sphere (estimate)", 1.5*0.959e23, "../dyson.html#Sun_Reasonable", [Category.HYPOTHETICAL]), // original concept was 3m thickness, I used a 2m estimate originally, hence x1.5
 		// Giza density ~2323
 		new MassDatum("Great Pyramid of Giza", 6e9, "https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza"),
 		new MassDatum("Three Gorges Dam (estimate)", 27.2e6*CONSTANT.density.concrete + 463e6, "https://en.wikipedia.org/wiki/Three_Gorges_Dam#Composition_and_dimensions"),
