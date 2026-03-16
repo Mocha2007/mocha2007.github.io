@@ -1209,11 +1209,13 @@ const OOM = {
 	],
 	dataEnergy: [
 		// Photon energies
-		// new EnergyDatum("Infrared (far)", 300e9*CONSTANT.planck), too small
-		new EnergyDatum("Infrared (near)", 380e12*CONSTANT.planck),
-		new EnergyDatum("Visible light (Red)", 440e12*CONSTANT.planck),
-		new EnergyDatum("Visible light (Green)", 550e12*CONSTANT.planck),
-		new EnergyDatum("Visible light (Blue)", 640e12*CONSTANT.planck),
+		// new EnergyDatum("Infrared (far)", new Energy({min:0.3e12*CONSTANT.planck,max:20e12*CONSTANT.planck})), too small
+		new EnergyDatum("Infrared (IR-C)", new Energy({min:20e12*CONSTANT.planck,max:100e12*CONSTANT.planck})),
+		new EnergyDatum("Infrared (IR-B)", new Energy({min:100e12*CONSTANT.planck,max:214e12*CONSTANT.planck})),
+		new EnergyDatum("Infrared (near)", new Energy({min:214e12*CONSTANT.planck,max:400e12*CONSTANT.planck})),
+		new EnergyDatum("Visible light (Red)", new Energy({min:400e12*CONSTANT.planck,max:480e12*CONSTANT.planck})),
+		new EnergyDatum("Visible light (Green)", new Energy({min:530e12*CONSTANT.planck,max:600e12*CONSTANT.planck})),
+		new EnergyDatum("Visible light (Blue)", new Energy({min:620e12*CONSTANT.planck,max:670e12*CONSTANT.planck})),
 		new EnergyDatum("Ultraviolet", 6*CONSTANT.eV),
 		new EnergyDatum("X-ray (soft)", 100*CONSTANT.eV),
 		new EnergyDatum("Gamma ray (minimum)", 10e3*CONSTANT.eV),
