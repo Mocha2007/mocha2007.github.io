@@ -1088,7 +1088,8 @@ const OOM = {
 		new MassDatum("Eta Carinae A", 100*CONSTANT.solar_mass, "https://en.wikipedia.org/wiki/Eta_Carinae"),
 		new MassDatum("R136a1", 291*CONSTANT.solar_mass),
 		// Clusters
-		new MassDatum("Pleiades", 800*CONSTANT.solar_mass),
+		new MassDatum("Hyades", 400*CONSTANT.solar_mass, "https://en.wikipedia.org/wiki/Hyades_(star_cluster)"),
+		new MassDatum("Pleiades", 800*CONSTANT.solar_mass, "https://en.wikipedia.org/wiki/Pleiades"),
 		new MassDatum("M2", 1.04e5*CONSTANT.solar_mass),
 		// Galaxies
 		new MassDatum("Sagittarius A*", 4.297e6*CONSTANT.solar_mass),
