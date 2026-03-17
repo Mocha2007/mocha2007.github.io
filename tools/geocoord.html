@@ -21,7 +21,7 @@ const r_at_lat = lat => R_E * Math.cos(lat);
 const digits = s => s.includes('.') ? s.split('.')[1].length : 0;
 const moe = (r, n_digits) => Math.PI * r / (360 * Math.pow(10, n_digits));
 const len = x => x < 1e3 ? `${Math.round(x)} ` : `${Math.round(x)/1e3} k`;
-const area = x => x < 1e6 ? `${Math.round(x)} ` : `${Math.round(x)/1e6} k`;
+const area = x => x < 1e6 ? `${Math.round(x)} ` : `${(Math.round(x)/1e6).toLocaleString()} k`;
 
 function main(){
 	const INPUT_LAT = document.getElementById('lat').value;
