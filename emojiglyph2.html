@@ -6,7 +6,19 @@
 <link href=simple.css type="text/css" rel="stylesheet" title="Light">
 <link href=dark.css type="text/css" rel="alternate stylesheet" title="Dark">
 <style>
-.word > div {}
+.word * {
+	color: white;
+	font-family: monospace;
+}
+.word *:nth-child(1) {
+	background-color: #430;
+}
+.word *:nth-child(2) {
+	background-color: #044;
+}
+.word *:nth-child(3) {
+	background-color: #404;
+}
 </style>
 <script src="toc.js"></script>
 <title>Emojiglyphs 2</title>
@@ -29,6 +41,12 @@
 <h2 id="Sources">Symbol Sources</h2>
 <ul id="sources"></ul>
 <h2 id="Dictionary">Dictionary</h2>
+<p>
+	The mark types have color-coded backgrounds to indicate type.
+	Blue means "root symbol",
+	yellow means "semantic mark",
+	magenta means "syntactic mark".
+</p>
 <table id="dictionary">
 	<tr>
 		<th>Gloss</th>

@@ -3,7 +3,7 @@ class Word {
 		/** @type {string} */
 		this.gloss = gloss;
 		/** @type {string} */
-		this.root = root;
+		this.root = root || "";
 		/** @type {string[]} */
 		this.marks_semantic = marks_semantic || [];
 		/** @type {string[]} */
@@ -68,11 +68,15 @@ const EG2 = {
 		console.info('emojiglyph2.js loaded.');
 	},
 	lexicon: [
+		new Word('1', null, null, ['1'], null, 'I, me'),
+		new Word('2', null, null, ['2'], null, 'you'),
 		new Word('and', '&'),
 		new Word('at', '@'),
 		new Word('iron', '♂', ['🜃']),
 		new Word('Mars', '♂', ['🪐']),
 		new Word('red', '♂', ['🎨']),
+		new Word('that', '', null, ['↑']),
+		new Word('this', '', null, ['↓']),
 		new Word('Tuesday', '♂', ['☌']),
 	],
 	sources: [
