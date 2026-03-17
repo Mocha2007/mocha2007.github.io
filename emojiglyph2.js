@@ -51,7 +51,13 @@ class Word {
 		const root = mods.shift();
 		const o = EG2.lexicon.find(w => w.gloss == root).clone();
 		o.gloss = gloss;
-		mods.forEach(mod => EG2.lexicon.find(w => w.gloss == mod).marks_syntactic.forEach(syn => o.marks_syntactic.push(syn)));
+		mods.forEach(mod => {
+			const syn = EG2.lexicon.find(w => w.gloss == mod);
+			if (typeof syn === "undefined") {
+				console.debug(`mod ${mod} does not exist!`);
+			}
+			return syn.marks_syntactic.forEach(syn => o.marks_syntactic.push(syn));
+		});
 		return o;
 	}
 }
@@ -105,6 +111,7 @@ const EG2 = {
 		new Word('ADJ', null, null, ['≃'], '(subject to change)'),
 		new Word('ADV', null, null, ['≅'], '(subject to change)'),
 		new Word('AUG', null, null, ['⏫']),
+		new Word('CMP', null, null, ['+']),
 		new Word('DIM', null, null, ['⏬']),
 		new Word('DU', null, null, ['||']),
 		new Word('HYPER', null, null, ['↔'], 'interpret sign more broadly (hypernym)'),
@@ -126,6 +133,7 @@ const EG2 = {
 		new Word('ball', '⚽', null, ['↔']),
 		new Word('can', null, null, ['◇']),
 		new Word('cat', '🐱'),
+		new Word('eat', '🍽️', null, null, 'meal'),
 		new Word('fall', '👉', ['↓'], null, '(subject to change)'),
 		new Word('flower', '❀'),
 		new Word('fog', '≡', ['☁︎']),
@@ -220,6 +228,7 @@ const EG2 = {
 		new Sample("The two boys are working together", "man.DIM.DU work.together.PRES"),
 		new Sample("This mist will probably clear away", "mist.this go.from.FUT"), // todo: probably
 		new Sample("Lovely flowers are growing everywhere", "love.ADJ flower.PL grow.PRES place.all"),
+		new Sample("We should eat more slowly", "eat.must.1 slow.CMP.ADV"),
 	],
 	sources: [
 		'https://en.wikipedia.org/wiki/Alchemical_symbol',
