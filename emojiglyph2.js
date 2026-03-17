@@ -5,7 +5,7 @@ class Word {
 		/** @type {string} */
 		this.root = root || "";
 		/** @type {string[]} */
-		this.marks_semantic = marks_semantic || [];
+		this.marks_semantic = marks_semantic || ['&nbsp;'];
 		/** @type {string[]} */
 		this.marks_syntactic = marks_syntactic || [];
 		/** @type {string} */
@@ -112,13 +112,16 @@ const EG2 = {
 		new Word('all', null, null, ['∀'], 'each/every'),
 		new Word('and', '&'),
 		new Word('at', '@'),
+		new Word('go', '👉', null, null, '(subject to change)'),
 		new Word('iron', '♂', ['🜃']),
 		new Word('love', '♥'),
 		new Word('man', '☺︎', ['♂']),
 		new Word('mars', '♂', ['🪐']),
 		new Word('not', '¬'),
+		new Word('now', '▶'),
 		new Word('person', '☺︎'),
 		new Word('red', '♂', ['🎨']),
+		new Word('rise', '👉', ['↑'], null, '(subject to change)'),
 		new Word('shine', '🔆', null, null, 'be bright'),
 		new Word('sun', '☉'),
 		new Word('that', null, null, ['↑']),
@@ -138,6 +141,8 @@ const EG2 = {
 		new Sample("The sun is shining again", "sun shine.PRES again"),
 		new Sample("The sun will shine tomorrow", "sun shine.FUT tomorrow"),
 		new Sample("The sun shines brightly", "sun shine.PRES shine.ADV"),
+		new Sample("The bright sun shines", "shine.ADJ sun shine.PRES"),
+		new Sample("The sun is rising now", "sun rise.PRES now"),
 	],
 	sources: [
 		'https://en.wikipedia.org/wiki/Alchemical_symbol',
