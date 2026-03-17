@@ -27,12 +27,13 @@ function main(){
 	const MOE_LAT = moe(R_E, digits(INPUT_LAT));
 	const MOE_LON = moe(r_at_lat(+INPUT_LAT * Math.PI/180), digits(INPUT_LON));
 	const MOE_TOT = Math.hypot(MOE_LAT, MOE_LON);
+	const MOE_AREA = 4 * MOE_LAT * MOE_LON;
 	// output
 	document.getElementById('latmoe').innerHTML = len(MOE_LAT);
 	document.getElementById('lonmoe').innerHTML = len(MOE_LON);
 	document.getElementById('totmoe').innerHTML = len(MOE_TOT);
-	document.getElementById('area').innerHTML = area(4 * MOE_LAT * MOE_LON);
-	return {MOE_LAT, MOE_LON, MOE_TOT};
+	document.getElementById('area').innerHTML = area(MOE_AREA);
+	return {MOE_LAT, MOE_LON, MOE_TOT, MOE_AREA};
 }
 main();
 </script>
