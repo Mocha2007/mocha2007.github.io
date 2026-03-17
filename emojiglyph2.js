@@ -1,5 +1,5 @@
 class Word {
-	constructor(gloss, root, marks_semantic, marks_syntactic, alternates, notes){
+	constructor(gloss, root, marks_semantic, marks_syntactic, notes){
 		/** @type {string} */
 		this.gloss = gloss;
 		/** @type {string} */
@@ -8,8 +8,6 @@ class Word {
 		this.marks_semantic = marks_semantic || [];
 		/** @type {string[]} */
 		this.marks_syntactic = marks_syntactic || [];
-		/** @type {Word[]} */
-		this.alternates = alternates || [];
 		/** @type {string} */
 		this.notes = notes || "";
 	}
@@ -39,9 +37,6 @@ class Word {
 		const col1 = document.createElement('td');
 		col1.appendChild(this.elem());
 		o.appendChild(col1);
-		const col2 = document.createElement('td');
-		this.alternates.forEach(alt => col2.appendChild(alt.elem()));
-		o.appendChild(col2);
 		const notes = document.createElement('td');
 		notes.innerHTML = this.notes;
 		o.appendChild(notes);
@@ -68,8 +63,11 @@ const EG2 = {
 		console.info('emojiglyph2.js loaded.');
 	},
 	lexicon: [
-		new Word('1', null, null, ['1'], null, 'I, me'),
-		new Word('2', null, null, ['2'], null, 'you'),
+		new Word('1', null, null, ['1'], 'I/me/my'),
+		new Word('2', null, null, ['2'], 'you/your'),
+		new Word('3', null, null, ['3'], 'it/they/its/their'),
+		new Word('3.M', null, null, ['3', '♂'], 'he/him/his'),
+		new Word('3.F', null, null, ['3', '♀'], 'she/her'),
 		new Word('and', '&'),
 		new Word('at', '@'),
 		new Word('iron', '♂', ['🜃']),
@@ -77,6 +75,7 @@ const EG2 = {
 		new Word('red', '♂', ['🎨']),
 		new Word('that', '', null, ['↑']),
 		new Word('this', '', null, ['↓']),
+		new Word('what', '', null, ['↓', '?']),
 		new Word('Tuesday', '♂', ['☌']),
 	],
 	sources: [
