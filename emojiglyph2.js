@@ -49,13 +49,13 @@ class Word {
 	static fromGloss(gloss){
 		let mods = gloss.split('.');
 		const root = mods.shift();
-		const o = EG2.lexicon.find(w => w.gloss == root).clone();
+		const o_ = EG2.lexicon.find(w => w.gloss == root);
+		if (typeof o_ === "undefined") console.error(`root |${root}| does not exist!`);
+		const o = o_.clone();
 		o.gloss = gloss;
 		mods.forEach(mod => {
 			const syn = EG2.lexicon.find(w => w.gloss == mod);
-			if (typeof syn === "undefined") {
-				console.debug(`mod ${mod} does not exist!`);
-			}
+			if (typeof syn === "undefined") console.error(`mod |${mod}| does not exist!`);
 			return syn.marks_syntactic.forEach(syn => o.marks_syntactic.push(syn));
 		});
 		return o;
@@ -133,6 +133,7 @@ const EG2 = {
 		new Word('ball', '⚽', null, ['↔']),
 		new Word('can', null, null, ['◇']),
 		new Word('cat', '🐱'),
+		new Word('clean', '🧼', null, null, 'neat'),
 		new Word('eat', '🍽️', null, null, 'meal'),
 		new Word('fall', '👉', ['↓'], null, '(subject to change)'),
 		new Word('flower', '❀'),
@@ -157,7 +158,7 @@ const EG2 = {
 		new Word('not', '¬'),
 		new Word('now', '▶'),
 		new Word('of', null, null, ['✊']),
-		new Word('on', null, null, ['🔛']),
+		new Word('on', null, null, ['🔛'], 'above/over'),
 		new Word('one', '1'),
 		new Word('person', '☺︎'),
 		new Word('place', '🏠', null, ['↔']),
@@ -188,6 +189,7 @@ const EG2 = {
 		new Word('wild', '🤪', null, null, 'zany'),
 		new Word('woman', '☺︎', ['♀']),
 		new Word('work', '👷'),
+		new Word('write', '🖋️'),
 		new Word('tomorrow', '☌', ['⏩']),
 		new Word('tuesday', '♂', ['☌']),
 		new Word('yesterday', '☌', ['⏪']),
@@ -229,6 +231,8 @@ const EG2 = {
 		new Sample("This mist will probably clear away", "mist.this go.from.FUT"), // todo: probably
 		new Sample("Lovely flowers are growing everywhere", "love.ADJ flower.PL grow.PRES place.all"),
 		new Sample("We should eat more slowly", "eat.must.1 slow.CMP.ADV"),
+		new Sample("You have come too soon", "go.PST.2 soon.on"),
+		new Sample("You must write more neatly", "write.must.2 clean.CMP.ADV"),
 	],
 	sources: [
 		'https://en.wikipedia.org/wiki/Alchemical_symbol',
