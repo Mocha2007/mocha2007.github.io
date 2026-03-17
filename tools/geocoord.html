@@ -6,11 +6,11 @@
 <h1>Geocoord Margin of Error Calculator</h1>
 
 <div onkeyup="main()" onclick="main()">
-	Latitude (&phi;): <input id="lat" type="number" min="-90" max="90" value="0"> (MoE: &plusmn;<span id="latmoe">-</span>m)<br>
-	Longitude (&lambda;): <input id="lon" type="number" min="-180" max="360" value="0"> (MoE: &plusmn;<span id="lonmoe">-</span>m)
+	Latitude (&phi;): <input id="lat" type="number" min="-90" max="90" value="0"> (MoE: &plusmn;<span id="latmoe">-</span>)<br>
+	Longitude (&lambda;): <input id="lon" type="number" min="-180" max="360" value="0"> (MoE: &plusmn;<span id="lonmoe">-</span>)
 	<hr>
-	Total MoE: &plusmn;<span id="totmoe"></span>m<br>
-	Containing Rectangle Area: <span id="area">-</span>m&sup2;
+	Total MoE: &plusmn;<span id="totmoe"></span><br>
+	Containing Rectangle Area: <span id="area">-</span>
 </div>
 
 <script>
@@ -18,8 +18,8 @@ const R_E = 6371000; // todo account for oblateness
 const r_at_lat = lat => R_E * Math.cos(lat);
 const digits = s => s.includes('.') ? s.split('.')[1].length : 0;
 const moe = (r, n_digits) => Math.PI * r / (180 * Math.pow(10, n_digits));
-const len = x => x < 1e3 ? `${Math.round(x)} ` : `${Math.round(x)/1e3} k`;
-const area = x => x < 1e6 ? `${Math.round(x)} ` : `${(Math.round(x)/1e6).toLocaleString()} k`;
+const len = x => x < 1e3 ? `${Math.round(x)} m` : `${Math.round(x)/1e3} km`;
+const area = x => x < 1e6 ? `${Math.round(x)} m&sup2;` : `${(Math.round(x)/1e6).toLocaleString()} km&sup2;`;
 
 function main(){
 	const INPUT_LAT = document.getElementById('lat').value;
