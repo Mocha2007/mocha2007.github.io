@@ -113,7 +113,7 @@ const EG2 = {
 		new Word('and', '&'),
 		new Word('at', '@'),
 		new Word('iron', '♂', ['🜃']),
-		new Word('love', '♥', null, ['▶']),
+		new Word('love', '♥'),
 		new Word('man', '☺︎', ['♂']),
 		new Word('mars', '♂', ['🪐']),
 		new Word('not', '¬'),
@@ -130,7 +130,7 @@ const EG2 = {
 		new Word('yesterday', '☌', ['⏪']),
 	],
 	samples: [
-		new Sample("I love you", "love.1 PRON.2"),
+		new Sample("I love you", "love.PRES.1 PRON.2"),
 		// todo https://cofl.github.io/conlang/resources/mirror/conlang-syntax-test-cases.html
 		new Sample("The sun shines", "sun shine.PRES"),
 		new Sample("The sun shone", "sun shine.PST"),
