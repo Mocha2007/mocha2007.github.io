@@ -180,7 +180,7 @@ class Body {
 		this.element = div;
 		// tooltip
 		div.onmouseover = () => document.getElementById('tooltip').appendChild(this.tooltip);
-		div.onmouseout = () => document.getElementById('tooltip').innerHTML = '';
+		div.onmouseout = () => Game.resetTooltip();
 		// end
 		a.appendChild(div);
 		canvas.appendChild(a);
@@ -223,6 +223,9 @@ const Game = {
 		canvas.innerHTML = '';
 		Body.list.reverse().forEach(b => b.createElement());
 	},
+	resetTooltip(){
+		document.getElementById('tooltip').innerHTML = ''
+	},
 	rotate(direction=0){
 		const i = mod(rotations.map(x => x[0]).indexOf(xIndex) + direction, rotations.length);
 		[xIndex, yIndex, zIndex] = rotations[i];
@@ -246,12 +249,15 @@ function main(){
 	Game.zoom();
 	// set up keybinds
 	document.addEventListener('keydown', event => {
-		if (Game.keybinds[event.key])
+		if (Game.keybinds[event.key]){
+			Game.resetTooltip();
 			Game.keybinds[event.key]();
+		}
 	});
 	// scroll
 	// https://stackoverflow.com/a/51276012/2579798
 	document.addEventListener('wheel', event => {
+		Game.resetTooltip();
 		Game.keybinds[0 < Math.sign(event.deltaY) ? '-' : '+']();
 	});
 }
