@@ -546,6 +546,10 @@ const CONSTANT = {
 	get mo(){
 		return this.yr / 12;
 	},
+	/** assuming a cone with slope 45 deg */
+	mountain(h){
+		return Math.PI/3 * Math.pow(h, 3) * this.density.rock;
+	},
 	/** in m https://en.wikipedia.org/wiki/Nautical_mile */
 	nmi: 1852,
 	/** in kg */
@@ -964,6 +968,11 @@ const OOM = {
 		new MassDatum("Great Wall of China (estimate)", 21196.18e3*6.5*5.5 *CONSTANT.density.rock), // "There it runs 11 km (7 mi) long, ranges from 5 to 8 m (16 ft 5 in to 26 ft 3 in) in height, and 6 m (19 ft 8 in) across the bottom, narrowing up to 5 m (16 ft 5 in) across the top."
 		new MassDatum("Atlantropa (Gibraltar, estimate)", (27.2e6*CONSTANT.density.concrete + 463e6)*14.2/2.335*300/185, [Category.HYPOTHETICAL]),
 		new MassDatum("Large Hadron Collider (estimate)", 26.7e3*Math.PI*Math.pow(3.8/2,2)*CONSTANT.density.concrete, "https://en.wikipedia.org/wiki/Large_Hadron_Collider#Design"),
+		// mountains
+		new MassDatum("Mont Blanc (estimate)", CONSTANT.mountain(4805.59), "https://en.wikipedia.org/wiki/Mont_Blanc"),
+		new MassDatum("Denali (estimate)", CONSTANT.mountain(6190), "https://en.wikipedia.org/wiki/Denali"),
+		new MassDatum("Mt. Everest (estimate)", CONSTANT.mountain(8848.86), "https://en.wikipedia.org/wiki/Mount_Everest"),
+		// misc earth things
 		new MassDatum("Danube annual discharge", 6452*CONSTANT.density.water*CONSTANT.yr, "https://en.wikipedia.org/wiki/Danube"),
 		new MassDatum("Earth's biosphere", 1841e15, "https://hypertextbook.com/facts/2001/AmandaMeyer.shtml"),
 		new MassDatum("Greenland ice sheet", 1710000e6*1673*CONSTANT.density.ice, "https://en.wikipedia.org/wiki/Greenland_ice_sheet"),
