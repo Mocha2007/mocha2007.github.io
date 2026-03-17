@@ -51,6 +51,7 @@ const EG2 = {
 	},
 	init(){
 		const dict = document.getElementById('dictionary');
+		this.lexicon.sort((a, b) => a.gloss.toLowerCase() < b.gloss.toLowerCase() ? -1 : 1);
 		this.lexicon.forEach(w => dict.appendChild(w.tr()));
 		const sources = document.getElementById('sources');
 		this.sources.forEach(s => {
@@ -68,14 +69,19 @@ const EG2 = {
 		new Word('3', null, null, ['3'], 'it/they/its/their'),
 		new Word('3.M', null, null, ['3', '♂'], 'he/him/his'),
 		new Word('3.F', null, null, ['3', '♀'], 'she/her'),
+		new Word('all', null, null, ['∀'], 'each/every'),
 		new Word('and', '&'),
 		new Word('at', '@'),
 		new Word('iron', '♂', ['🜃']),
+		new Word('man', '☺︎', ['♂']),
 		new Word('Mars', '♂', ['🪐']),
+		new Word('not', '¬'),
+		new Word('person', '☺︎'),
 		new Word('red', '♂', ['🎨']),
-		new Word('that', '', null, ['↑']),
-		new Word('this', '', null, ['↓']),
-		new Word('what', '', null, ['↓', '?']),
+		new Word('that', null, null, ['↑']),
+		new Word('this', null, null, ['↓']),
+		new Word('what', null, null, ['↓', '?'], 'which'),
+		new Word('woman', '☺︎', ['♀']),
 		new Word('Tuesday', '♂', ['☌']),
 	],
 	sources: [
