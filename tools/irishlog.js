@@ -91,8 +91,9 @@ function create23Table(t2){
 	return table;
 }
 create23Table.colors = [
-	[17, '#c8c'],
-	[13, '#88f'],
+	[19, '#c8c'],
+	[17, '#88f'],
+	[13, '#8cc'],
 	[11, '#8f8'],
 	[7, '#ff8'],
 	[5, '#fc8'],
