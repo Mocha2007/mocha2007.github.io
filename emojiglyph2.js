@@ -123,6 +123,8 @@ const EG2 = {
 		new Word('red', '♂', ['🎨']),
 		new Word('rise', '👉', ['↑'], null, '(subject to change)'),
 		new Word('shine', '🔆', null, null, 'be bright'),
+		new Word('shout', '🗣️', ['🔊'], null, 'yell'),
+		new Word('speak', '🗣️', null, null, 'say/talk'),
 		new Word('sun', '☉'),
 		new Word('that', null, null, ['↑']),
 		new Word('this', null, null, ['↓']),
@@ -143,6 +145,7 @@ const EG2 = {
 		new Sample("The sun shines brightly", "sun shine.PRES shine.ADV"),
 		new Sample("The bright sun shines", "shine.ADJ sun shine.PRES"),
 		new Sample("The sun is rising now", "sun rise.PRES now"),
+		new Sample("All the people shouted", "person.all shout.PST"),
 	],
 	sources: [
 		'https://en.wikipedia.org/wiki/Alchemical_symbol',
