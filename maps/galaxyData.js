@@ -629,11 +629,11 @@ const data = [
 	{
 		name: 'IC 2602',
 		type: 'open cluster',
-		dist: 547*ly,
+		dist: 486*ly,
 		ra: [10, 42, 57.5],
 		dec: [-64, 23, 29],
 		img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/The_Southern_Pleiades_%28IC_2602%29.jpg/629px-The_Southern_Pleiades_%28IC_2602%29.jpg',
-		radius: 8*ly, // personal estimate
+		radius: Math.tan(25/60*Math.PI/180) * 486*ly,
 	},
 	{
 		name: 'Alpha Persei Cluster',
