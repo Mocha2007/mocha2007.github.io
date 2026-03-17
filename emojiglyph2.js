@@ -136,7 +136,7 @@ const EG2 = {
 		new Word('be_like', '≃'),
 		new Word('because', '∵'),
 		new Word('because_of', null, null, ['∵']),
-		new Word('black', '♄', ['🎨'], null, 'leaden'),
+		new Word('black', '♄', ['🎨']),
 		new Word('can', null, null, ['◇']),
 		new Word('castle', '🏰'),
 		new Word('cat', '🐱'),
