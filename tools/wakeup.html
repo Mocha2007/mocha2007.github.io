@@ -21,6 +21,7 @@
 					GEO.HEADING = gc.coords.heading;
 					GEO.LAT = gc.coords.latitude;
 					GEO.LON = gc.coords.longitude;
+					run();
 				},
 				e => {
 					console.debug(`Couldn't get geolocation due to ${e}`);
