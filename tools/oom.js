@@ -969,6 +969,8 @@ const OOM = {
 		new MassDatum("Atlantropa (Gibraltar, estimate)", (27.2e6*CONSTANT.density.concrete + 463e6)*14.2/2.335*300/185, [Category.HYPOTHETICAL]),
 		new MassDatum("Large Hadron Collider (estimate)", 26.7e3*Math.PI*Math.pow(3.8/2,2)*CONSTANT.density.concrete, "https://en.wikipedia.org/wiki/Large_Hadron_Collider#Design"),
 		// mountains
+		new MassDatum("Śnieżka (estimate)", CONSTANT.mountain(1603.3), "https://en.wikipedia.org/wiki/Sněžka"),
+		new MassDatum("Mt. Mitchell (estimate)", CONSTANT.mountain(2037), "https://en.wikipedia.org/wiki/Mount_Mitchell"),
 		new MassDatum("Mont Blanc (estimate)", CONSTANT.mountain(4805.59), "https://en.wikipedia.org/wiki/Mont_Blanc"),
 		new MassDatum("Denali (estimate)", CONSTANT.mountain(6190), "https://en.wikipedia.org/wiki/Denali"),
 		new MassDatum("Mt. Everest (estimate)", CONSTANT.mountain(8848.86), "https://en.wikipedia.org/wiki/Mount_Everest"),
