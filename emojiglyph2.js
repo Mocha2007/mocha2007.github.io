@@ -11,6 +11,9 @@ class Word {
 		/** @type {string} */
 		this.notes = notes || "";
 	}
+	clone(){
+		return new Word(this.gloss, this.root, this.marks_semantic.map(x => x), this.marks_syntactic.map(x => x), this.notes);
+	}
 	elem(){
 		const e = document.createElement('span');
 		e.classList.add('word');
@@ -44,7 +47,12 @@ class Word {
 	}
 	/** @param {string} gloss */
 	static fromGloss(gloss){
-		return EG2.lexicon.find(w => w.gloss == gloss);
+		let mods = gloss.split('.');
+		const root = mods.shift();
+		const o = EG2.lexicon.find(w => w.gloss == root).clone();
+		o.gloss = gloss;
+		mods.forEach(mod => EG2.lexicon.find(w => w.gloss == mod).marks_syntactic.forEach(syn => o.marks_syntactic.push(syn)));
+		return o;
 	}
 }
 
@@ -76,7 +84,7 @@ const EG2 = {
 	},
 	init(){
 		const dict = document.getElementById('dictionary');
-		this.lexicon.sort((a, b) => a.gloss.toLowerCase() < b.gloss.toLowerCase() ? -1 : 1);
+		this.lexicon.sort((a, b) => a.gloss < b.gloss ? -1 : 1);
 		this.lexicon.forEach(w => dict.appendChild(w.tr()));
 		const sources = document.getElementById('sources');
 		this.sources.forEach(s => {
@@ -94,35 +102,42 @@ const EG2 = {
 		new Word('1', null, null, ['1'], 'I/me/my'),
 		new Word('2', null, null, ['2'], 'you/your'),
 		new Word('3', null, null, ['3'], 'it/they/its/their'),
-		new Word('3.M', null, null, ['3', '♂'], 'he/him/his'),
-		new Word('3.F', null, null, ['3', '♀'], 'she/her'),
+		new Word('ADJ', null, null, ['~'], '(subject to change)'),
+		new Word('ADV', null, null, ['≈'], '(subject to change)'),
+		new Word('FUT', null, null, ['⏩']),
 		new Word('PRES', null, null, ['▶'], 'also indicates verbs'),
-		new Word('again', '🔁'),
+		new Word('PRON', '·', null, null, 'asemic carrier'),
+		new Word('PST', null, null, ['⏪']),
+		new Word('again', '🔂'),
 		new Word('all', null, null, ['∀'], 'each/every'),
 		new Word('and', '&'),
 		new Word('at', '@'),
 		new Word('iron', '♂', ['🜃']),
 		new Word('love', '♥', null, ['▶']),
 		new Word('man', '☺︎', ['♂']),
-		new Word('Mars', '♂', ['🪐']),
+		new Word('mars', '♂', ['🪐']),
 		new Word('not', '¬'),
 		new Word('person', '☺︎'),
 		new Word('red', '♂', ['🎨']),
-		new Word('shine', '🔆', null, ['▶']),
+		new Word('shine', '🔆', null, null, 'be bright'),
 		new Word('sun', '☉'),
 		new Word('that', null, null, ['↑']),
 		new Word('this', null, null, ['↓']),
 		new Word('what', null, null, ['↓', '?'], 'which'),
 		new Word('woman', '☺︎', ['♀']),
-		new Word('Tuesday', '♂', ['☌']),
+		new Word('tomorrow', '☌', ['⏩']),
+		new Word('tuesday', '♂', ['☌']),
+		new Word('yesterday', '☌', ['⏪']),
 	],
 	samples: [
-		new Sample("I love you", "love you", {love: new Word('love', '♥', null, ['▶', '1']), you:new Word('you', '·', null, ['2'])}),
+		new Sample("I love you", "love.1 PRON.2"),
 		// todo https://cofl.github.io/conlang/resources/mirror/conlang-syntax-test-cases.html
-		new Sample("The sun shines", "sun shine"),
-		new Sample("The sun shone", "sun shone", {shone:new Word('shone', '🔆', null, ['⏪'])}),
-		new Sample("The sun will shine", "sun shine.FUT", {'shine.FUT':new Word('will shine', '🔆', null, ['⏩'])}),
-		new Sample("The sun is shining again", "sun shine again"),
+		new Sample("The sun shines", "sun shine.PRES"),
+		new Sample("The sun shone", "sun shine.PST"),
+		new Sample("The sun will shine", "sun shine.FUT"),
+		new Sample("The sun is shining again", "sun shine.PRES again"),
+		new Sample("The sun will shine tomorrow", "sun shine.FUT tomorrow"),
+		new Sample("The sun shines brightly", "sun shine.PRES shine.ADV"),
 	],
 	sources: [
 		'https://en.wikipedia.org/wiki/Alchemical_symbol',
