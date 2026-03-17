@@ -144,7 +144,7 @@ class Complex {
 const plot = {
 	/** @type {Function<number, number>} */
 	f: Math.tan,
-	resolution: 1e4,
+	resolution: 1e3,
 	/** @type {[[number, number], [number, number]]} minx maxx miny maxy */
 	view: [[-1, 1], [-1, 1]],
 	/** @return {HTMLUnknownElement} */
