@@ -953,10 +953,10 @@ const OOM = {
 		// the 3.43 m model weighs 125 kg.
 		// according to https://www.trekbbs.com/threads/actual-size-of-ships-in-star-trek.254521/
 		// the actual ship is 288.6 m.
-		new MassDatum("Enterprise (NCC-1701, estimate)", 125 * Math.pow(288.6/3.43,3), [Category.FICTIONAL]),
+		new MassDatum("Enterprise (NCC-1701, estimate)", 125 * Math.pow(288.6/3.43,3), null, [Category.FICTIONAL]),
 		new MassDatum("Imperial Star Destroyer", 40e9, "https://en.wikipedia.org/wiki/Star_Destroyer#Concept_and_design", [Category.FICTIONAL]),
 		new MassDatum("Borg cube (estimate)", CONSTANT.density.iron/4 * Math.pow(3037,3), "https://memory-alpha.fandom.com/wiki/Borg_cube", [Category.FICTIONAL]),
-		new MassDatum("Death Star (estimate)", CONSTANT.volume.ellipsoid(160e3)*CONSTANT.density.iron/4, [Category.FICTIONAL]),
+		new MassDatum("Death Star (estimate)", CONSTANT.volume.ellipsoid(160e3)*CONSTANT.density.iron/4, null, [Category.FICTIONAL]),
 		new MassDatum("Dyson Sphere (estimate)", 1.5*0.959e23, "../dyson.html#Sun_Reasonable", [Category.HYPOTHETICAL]), // original concept was 3m thickness, I used a 2m estimate originally, hence x1.5
 		// Giza density ~2323
 		new MassDatum("Great Pyramid of Giza", 6e9, "https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza"),
@@ -985,7 +985,7 @@ const OOM = {
 		new MassDatum("Ganymede's atmosphere", CONSTANT.atmosphere_mass(2634.1e3, 1.4819e23, (0.2e-6+1.2e-6)/2)),
 		new MassDatum("Callisto's atmosphere", CONSTANT.atmosphere_mass(2410.3e3, 1.075938e23, 0.75e-6)),
 		new MassDatum("Io's atmosphere", CONSTANT.atmosphere_mass(1821.6e3, 8.931938e22, (0.5e-3+4e-3)/2)),
-		new MassDatum("Pluto's atmosphere", CONSTANT.atmosphere_mass(1188.3e3, 1.3025e22, 1)),
+		new MassDatum("Pluto's atmosphere", CONSTANT.atmosphere_mass(1188.3e3, 1.3025e22, 1), null, [Category.MINORPLANET]),
 		new MassDatum("Triton's atmosphere", CONSTANT.atmosphere_mass(1353.4e3, 2.1389e22, 1.454)),
 		new MassDatum("Mars's atmosphere", CONSTANT.atmosphere_mass(3389.5e3, 6.4171e23, 636)),
 		new MassDatum("Earth's atmosphere", CONSTANT.atmosphere_mass(CONSTANT.earth_radius, CONSTANT.earth_mass, CONSTANT.atm)),
