@@ -36,10 +36,10 @@ const data = [
 	{
 		name: 'Planet Nine',
 		type: 'planet',
-		dist: 630*au,
+		dist: 370*au,
 		ra: [2, 0, 0], // est.
 		dec: [-20, 0, 0],
-		img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Planet_nine_artistic_plain.png/640px-Planet_nine_artistic_plain.png',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/5/5a/Planet_nine_artistic_plain.png',
 	},
 	// main
 	// nearby stars (sort by dist)
