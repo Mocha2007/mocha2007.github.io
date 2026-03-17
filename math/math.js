@@ -144,7 +144,7 @@ class Complex {
 const plot = {
 	/** @type {Function<number, number>} */
 	f: Math.tan,
-	resolution: 1e3,
+	resolution: 1e4,
 	/** @type {[[number, number], [number, number]]} minx maxx miny maxy */
 	view: [[-1, 1], [-1, 1]],
 	/** @return {HTMLUnknownElement} */
@@ -244,6 +244,7 @@ const plot = {
 			remap(y, this.view[1], [this.screen[1], 0])];
 	},
 	update(){
+		const t_start = +new Date();
 		this.status('X');
 		// update values
 		this.view[0][0] = parseFloat(document.getElementById('xmin').value);
@@ -273,6 +274,8 @@ const plot = {
 		else {
 			this.plot(this.f);
 		}
+		const t_end = +new Date();
+		console.info(`plot.update took ${t_end - t_start} ms`)
 	},
 	uwu(){
 		const element = createSvgElement('text');
