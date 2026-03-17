@@ -29,9 +29,9 @@ const data = [
 		name: 'Neptune',
 		type: 'planet',
 		dist: 30.87*au,
-		ra: [23, 29, 50.3], // location on 29 Mar 2021
-		dec: [-4, 25, 23.8],
-		img: 'https://upload.wikimedia.org/wikipedia/commons/6/63/Neptune_-_Voyager_2_%2829347980845%29_flatten_crop.jpg',
+		ra: [0, 6, 47.41], // location on 17 Mar 2026
+		dec: [-0, 41, 16.12],
+		img: 'https://upload.wikimedia.org/wikipedia/commons/b/b9/Neptune_Voyager2_color_calibrated.png',
 	},
 	{
 		name: 'Planet Nine',
