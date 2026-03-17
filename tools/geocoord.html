@@ -7,7 +7,8 @@
 
 <div onkeyup="main()" onclick="main()">
 	Latitude (&phi;): <input id="lat" type="number" min="-90" max="90" value="0"> (MoE: &plusmn;<span id="latmoe">-</span>)<br>
-	Longitude (&lambda;): <input id="lon" type="number" min="-180" max="360" value="0"> (MoE: &plusmn;<span id="lonmoe">-</span>)
+	Longitude (&lambda;): <input id="lon" type="number" min="-180" max="360" value="0"> (MoE: &plusmn;<span id="lonmoe">-</span>)<br>
+	Approximate Location: <a id="continent"></a>
 	<hr>
 	Total MoE: &plusmn;<span id="totmoe"></span><br>
 	Containing Rectangle Area: <span id="area">-</span>
@@ -20,6 +21,19 @@ const digits = s => s.includes('.') ? s.split('.')[1].length : 0;
 const moe = (r, n_digits) => Math.PI * r / (180 * Math.pow(10, n_digits));
 const len = x => x < 1e3 ? `${Math.round(x)} m` : `${Math.round(x)/1e3} km`;
 const area = x => x < 1e6 ? `${Math.round(x)} m&sup2;` : `${(Math.round(x)/1e6).toLocaleString()} km&sup2;`;
+const continent = (lat, lon) => { // this is VERY approximate
+	if (lat < -58) return "Antarctica";
+	if (lon < -25){ // western hemisphere
+		if (11 < lat) return "North America";
+		if (-99 < lon) return "South America";
+		return "Oceania";
+	}
+	if (37 < lat && lon < 53) return "Europe";
+	if (34 < lat && 13 < lon) return "Asia";
+	if (65 < lon) return "Africa";
+	return "Oceania";
+};
+const contelem = document.getElementById('continent');
 
 function main(){
 	const INPUT_LAT = document.getElementById('lat').value;
@@ -33,6 +47,8 @@ function main(){
 	document.getElementById('lonmoe').innerHTML = len(MOE_LON);
 	document.getElementById('totmoe').innerHTML = len(MOE_TOT);
 	document.getElementById('area').innerHTML = area(MOE_AREA);
+	contelem.innerHTML = continent(+INPUT_LAT, +INPUT_LON);
+	contelem.href = `https://en.wikipedia.org/wiki/${contelem.innerHTML}`;
 	return {MOE_LAT, MOE_LON, MOE_TOT, MOE_AREA};
 }
 main();
