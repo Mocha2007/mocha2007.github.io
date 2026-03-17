@@ -97,6 +97,7 @@ const EG2 = {
 		new Word('3.M', null, null, ['3', '♂'], 'he/him/his'),
 		new Word('3.F', null, null, ['3', '♀'], 'she/her'),
 		new Word('PRES', null, null, ['▶'], 'also indicates verbs'),
+		new Word('again', '🔁'),
 		new Word('all', null, null, ['∀'], 'each/every'),
 		new Word('and', '&'),
 		new Word('at', '@'),
@@ -107,6 +108,8 @@ const EG2 = {
 		new Word('not', '¬'),
 		new Word('person', '☺︎'),
 		new Word('red', '♂', ['🎨']),
+		new Word('shine', '🔆', null, ['▶']),
+		new Word('sun', '☉'),
 		new Word('that', null, null, ['↑']),
 		new Word('this', null, null, ['↓']),
 		new Word('what', null, null, ['↓', '?'], 'which'),
@@ -115,9 +118,15 @@ const EG2 = {
 	],
 	samples: [
 		new Sample("I love you", "love you", {love: new Word('love', '♥', null, ['▶', '1']), you:new Word('you', '·', null, ['2'])}),
+		// todo https://cofl.github.io/conlang/resources/mirror/conlang-syntax-test-cases.html
+		new Sample("The sun shines", "sun shine"),
+		new Sample("The sun shone", "sun shone", {shone:new Word('shone', '🔆', null, ['⏪'])}),
+		new Sample("The sun will shine", "sun shine.FUT", {'shine.FUT':new Word('will shine', '🔆', null, ['⏩'])}),
+		new Sample("The sun is shining again", "sun shine again"),
 	],
 	sources: [
 		'https://en.wikipedia.org/wiki/Alchemical_symbol',
+		'https://en.wikipedia.org/wiki/Media_control_symbols',
 	],
 };
 
