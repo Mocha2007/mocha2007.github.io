@@ -166,6 +166,12 @@ const jp = {
 		},
 	},
 	init(){
+		let missing;
+		if ((typeof random !== 'object' && (missing = 'common')) || (typeof jpData !== 'object' && (missing = 'jpData'))){
+			// retry in 100 ms
+			console.log(`waiting on dependency ${missing}.js`);
+			return setTimeout(() => this.init(), 100);
+		}
 		console.log('Loading JP...');
 		// interpret json as js objects
 		jpData.forEach(o => Chapter.fromObject(o));
@@ -212,16 +218,4 @@ const jp = {
 	waitingOn: 0, // js modules
 };
 
-// wait for other modules to load first
-if (typeof random !== 'object'){
-	console.debug('Waiting on common.js');
-	jp.waitingOn++;
-	document.getElementById('common').onload = () => jp.wait();
-}
-if (typeof jpData !== 'object'){
-	console.debug('Waiting on jpData.js');
-	jp.waitingOn++;
-	document.getElementById('jpData').onload = () => jp.wait();
-}
-else if (jp.waitingOn === 0)
-	jp.init();
+jp.init();
