@@ -72,6 +72,8 @@ const EG2 = {
 		new Word('at', '@'),
 		new Word('iron', '♂', ['🜃']),
 		new Word('Mars', '♂', ['🪐']),
+		new Word('red', '♂', ['🎨']),
+		new Word('Tuesday', '♂', ['☌']),
 	],
 	sources: [
 		'https://en.wikipedia.org/wiki/Alchemical_symbol',
