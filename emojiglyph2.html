@@ -6,18 +6,27 @@
 <link href=simple.css type="text/css" rel="stylesheet" title="Light">
 <link href=dark.css type="text/css" rel="alternate stylesheet" title="Dark">
 <style>
-.word * {
-	color: white;
+.word {
+	display: inline-flex;
+	flex-direction: column;
+	margin: 0 0.2em;
+	text-align: center;
+}
+.sample, .word * {
+	background-color: black;
+	color: silver;
 	font-family: monospace;
 }
 .word *:nth-child(1) {
 	background-color: #430;
+	font-size: 50%;
 }
 .word *:nth-child(2) {
 	background-color: #044;
 }
 .word *:nth-child(3) {
 	background-color: #404;
+	font-size: 50%;
 }
 </style>
 <script src="toc.js"></script>
@@ -54,6 +63,8 @@
 		<th>Notes/Examples</th>
 	</tr>
 </table>
+<h2 id="Samples">Samples</h2>
+<div id="samples"></div>
 <div id="bottom"></div>
 <script src="emojiglyph2.js"></script>
 </html>

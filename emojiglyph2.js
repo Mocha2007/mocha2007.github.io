@@ -42,6 +42,31 @@ class Word {
 		o.appendChild(notes);
 		return o;
 	}
+	/** @param {string} gloss */
+	static fromGloss(gloss){
+		return EG2.lexicon.find(w => w.gloss == gloss);
+	}
+}
+
+class Sample {
+	constructor(meaning, gloss, define){
+		/** @type {string} */
+		this.meaning = meaning || "";
+		/** @type {string} */
+		this.gloss = gloss || "";
+		this.define = define || {};
+	}
+	elem(){
+		const div = document.createElement('div');
+		div.classList.add('sample');
+		div.innerHTML = `&ldquo;${this.meaning}&rdquo;<br>`;
+		this.words().forEach(w => div.appendChild(w.elem()));
+		return div;
+	}
+	/** @returns {Word[]} */
+	words(){
+		return this.gloss.split(' ').map(w => this.define[w] || Word.fromGloss(w));
+	}
 }
 
 const EG2 = {
@@ -61,6 +86,8 @@ const EG2 = {
 			li.appendChild(a);
 			sources.appendChild(li);
 		});
+		const samples = document.getElementById('samples');
+		this.samples.forEach(s => samples.appendChild(s.elem()));
 		console.info('emojiglyph2.js loaded.');
 	},
 	lexicon: [
@@ -69,10 +96,12 @@ const EG2 = {
 		new Word('3', null, null, ['3'], 'it/they/its/their'),
 		new Word('3.M', null, null, ['3', '♂'], 'he/him/his'),
 		new Word('3.F', null, null, ['3', '♀'], 'she/her'),
+		new Word('PRES', null, null, ['▶'], 'also indicates verbs'),
 		new Word('all', null, null, ['∀'], 'each/every'),
 		new Word('and', '&'),
 		new Word('at', '@'),
 		new Word('iron', '♂', ['🜃']),
+		new Word('love', '♥', null, ['▶']),
 		new Word('man', '☺︎', ['♂']),
 		new Word('Mars', '♂', ['🪐']),
 		new Word('not', '¬'),
@@ -83,6 +112,9 @@ const EG2 = {
 		new Word('what', null, null, ['↓', '?'], 'which'),
 		new Word('woman', '☺︎', ['♀']),
 		new Word('Tuesday', '♂', ['☌']),
+	],
+	samples: [
+		new Sample("I love you", "love you", {love: new Word('love', '♥', null, ['▶', '1']), you:new Word('you', '·', null, ['2'])}),
 	],
 	sources: [
 		'https://en.wikipedia.org/wiki/Alchemical_symbol',
