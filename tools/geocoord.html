@@ -28,9 +28,9 @@ function main(){
 	const MOE_LON = moe(r_at_lat(+INPUT_LAT * Math.PI/180), digits(INPUT_LON));
 	const MOE_TOT = Math.hypot(MOE_LAT, MOE_LON);
 	// output
-	document.getElementById('latmoe').innerHTML = Math.round(MOE_LAT);
-	document.getElementById('lonmoe').innerHTML = Math.round(MOE_LON);
-	document.getElementById('totmoe').innerHTML = Math.round(MOE_TOT);
+	document.getElementById('latmoe').innerHTML = Math.round(MOE_LAT).toLocaleString();
+	document.getElementById('lonmoe').innerHTML = Math.round(MOE_LON).toLocaleString();
+	document.getElementById('totmoe').innerHTML = Math.round(MOE_TOT).toLocaleString();
 	document.getElementById('area').innerHTML = Math.round(4 * MOE_LAT * MOE_LON).toLocaleString();
 	return {MOE_LAT, MOE_LON, MOE_TOT};
 }
