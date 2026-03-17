@@ -3,15 +3,13 @@
 <meta charset="utf-8">
 <link rel="shortcut icon" href="../img/favicon.ico">
 <title>Geocoord MoE Calc</title>
-<h1 id="Template">Geocoord Margin of Error Calculator</h1>
+<h1>Geocoord Margin of Error Calculator</h1>
 
 <div onkeyup="main()" onclick="main()">
-	Latitude: <input id="lat" type="number" min="-90" max="90" value="0"> (MoE: &plusmn;<span id="latmoe">-</span>m)
-	<br>
+	Latitude: <input id="lat" type="number" min="-90" max="90" value="0"> (MoE: &plusmn;<span id="latmoe">-</span>m)<br>
 	Longitude: <input id="lon" type="number" min="-180" max="360" value="0"> (MoE: &plusmn;<span id="lonmoe">-</span>m)
 	<hr>
-	Total MoE: &plusmn;<span id="totmoe"></span>m
-	<br>
+	Total MoE: &plusmn;<span id="totmoe"></span>m<br>
 	Containing Rectangle Area: <span id="area">-</span>m&sup2;
 </div>
 
