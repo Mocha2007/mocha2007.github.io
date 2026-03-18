@@ -1428,6 +1428,7 @@ const OOM = {
 		new MoneyDatum('Year supply of Estradiol Valerate (2026)', 40*CONSTANT.$.eur/400*10*52), // Astrovials 40 EUR for 400 mg, 10 mg dose per week
 		// misc
 		new MoneyDatum('US Cost of living (Annual, per capita, 2026)', 12*(1176.2+1352.97), "https://www.numbeo.com/cost-of-living/country_result.jsp?country=United+States"),
+		new MoneyDatum('Isabella Stewart Gardner Museum theft (2026 Inflation-Adjusted)', 914e6, "https://en.wikipedia.org/wiki/Isabella_Stewart_Gardner_Museum_theft"),
 		new MoneyDatum('Alaska Purchase (2024 inflation-adjusted)', 132e6, "https://en.wikipedia.org/wiki/Alaska_Purchase"),
 		new MoneyDatum('Cost of Trump\'s golfing during his first term (2021)', 151.5e6, "https://www.huffpost.com/entry/donald-trump-golf18-million_n_67cb892fe4b02f3ad1f4b2bb"),
 		new MoneyDatum('Kristi Noem\'s government-funded private jets (2025)', 172e6, "https://www.nytimes.com/2025/10/18/us/politics/kristi-noem-dhs-gulfstream.html"),
