@@ -242,7 +242,7 @@ const EG2 = {
 		new Sample("The clown makes me angry", "angry.PRES.1 clown.because_of"),
 		new Sample("Heat from fire, fire from heat", "heat fire.from fire heat.from"),
 		// One ring to rule them all, one ring to find them, One ring to bring them all, and in the darkness bind them.
-		new Sample("One ring to rule them all, one ring to find them, one ring to bring them all", "one ring rule.to PRON.3.all one ring find.to PRON.3 one ring bring.to PRON.3.all and shine.NEG.in tie.to PRON.3"),
+		new Sample("One ring to rule them all, one ring to find them, one ring to bring them all, and in the darkness bind them", "one ring rule.to PRON.3.all one ring find.to PRON.3 one ring bring.to PRON.3.all and shine.NEG.in tie.to PRON.3"),
 		// todo https://cofl.github.io/conlang/resources/mirror/conlang-syntax-test-cases.html
 		new Sample("The sun shines", "sun shine.PRES"),
 		new Sample("The sun is shining", "sun shine.PRES"),
