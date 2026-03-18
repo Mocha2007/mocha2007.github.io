@@ -974,6 +974,10 @@ const OOM = {
 		new MassDatum("Mont Blanc (estimate)", CONSTANT.mountain(4805.59), "https://en.wikipedia.org/wiki/Mont_Blanc"),
 		new MassDatum("Denali (estimate)", CONSTANT.mountain(6190), "https://en.wikipedia.org/wiki/Denali"),
 		new MassDatum("Mt. Everest (estimate)", CONSTANT.mountain(8848.86), "https://en.wikipedia.org/wiki/Mount_Everest"),
+		new MassDatum("Mauna Kea (estimate)", CONSTANT.mountain(9e3, 120e3), "https://en.wikipedia.org/wiki/Mauna_Kea"),
+		new MassDatum("Pavonis Mons (estimate)", CONSTANT.mountain(8.7e3, 240e3), "https://en.wikipedia.org/wiki/Pavonis_Mons"),
+		new MassDatum("Arsia Mons (estimate)", CONSTANT.mountain(11.7e3, 435e3/2), "https://en.wikipedia.org/wiki/Arsia_Mons"),
+		new MassDatum("Ascraeus Mons (estimate)", CONSTANT.mountain(15e3, 240e3), "https://en.wikipedia.org/wiki/Ascraeus_Mons"),
 		new MassDatum("Olympus Mons (estimate)", CONSTANT.mountain(21.287e3, 300e3), "https://en.wikipedia.org/wiki/Olympus_Mons"),
 		// misc earth things
 		new MassDatum("Danube annual discharge", 6452*CONSTANT.density.water*CONSTANT.yr, "https://en.wikipedia.org/wiki/Danube"),
