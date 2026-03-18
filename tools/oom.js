@@ -975,6 +975,7 @@ const OOM = {
 		new MassDatum("Denali (estimate)", CONSTANT.mountain(6190), "https://en.wikipedia.org/wiki/Denali"),
 		new MassDatum("Mt. Everest (estimate)", CONSTANT.mountain(8848.86), "https://en.wikipedia.org/wiki/Mount_Everest"),
 		new MassDatum("Mauna Kea (estimate)", CONSTANT.mountain(9e3, 120e3), "https://en.wikipedia.org/wiki/Mauna_Kea"),
+		new MassDatum("Maat Mons (estimate)", CONSTANT.mountain(4.9e3, 395e3/2), "https://en.wikipedia.org/wiki/Maat_Mons"),
 		new MassDatum("Pavonis Mons (estimate)", CONSTANT.mountain(8.7e3, 240e3), "https://en.wikipedia.org/wiki/Pavonis_Mons"),
 		new MassDatum("Arsia Mons (estimate)", CONSTANT.mountain(11.7e3, 435e3/2), "https://en.wikipedia.org/wiki/Arsia_Mons"),
 		new MassDatum("Ascraeus Mons (estimate)", CONSTANT.mountain(15e3, 240e3), "https://en.wikipedia.org/wiki/Ascraeus_Mons"),
