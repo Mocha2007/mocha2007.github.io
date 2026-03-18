@@ -170,7 +170,7 @@ const EG2 = {
 		new Word('love', '♥'),
 		new Word('man', '☺︎', ['♂']),
 		new Word('Mars', '♂', ['🪐']),
-		new Word('maybe', '🎲', ['🤷'], null, 'perhaps/possibly'),
+		new Word('maybe', '🎲', ['🤷'], null, 'perhaps/possibly, +CMP = probably'),
 		new Word('mist', '=', ['☁︎']),
 		new Word('month', '🝱'),
 		new Word('must', null, null, ['□'], 'should'),
@@ -266,7 +266,7 @@ const EG2 = {
 		new Sample("He will arrive soon", "go.to.FUT soon"),
 		new Sample("The baby's ball has rolled away", "person.DIM.of ball turn.from.PST"),
 		new Sample("The two boys are working together", "man.DIM.DU work.together.PRES"),
-		new Sample("This mist will probably clear away", "mist.this go.from.FUT maybe.ADV"), // todo: probably
+		new Sample("This mist will probably clear away", "mist.this go.from.FUT maybe.CMP.ADV"),
 		new Sample("Lovely flowers are growing everywhere", "love.ADJ flower.PL grow.PRES place.all"),
 		new Sample("We should eat more slowly", "eat.must.PRES.1 slow.CMP.ADV"),
 		new Sample("You have come too soon", "go.PST.2 soon.on"),
