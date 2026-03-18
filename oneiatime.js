@@ -61,7 +61,7 @@ var marsseasons = [ // appx
 
 /**
  * https://stackoverflow.com/questions/4467539/javascript-modulo-gives-a-negative-result-for-negative-numbers/17323608#17323608
- * Fixes a bug in javascript where the entire fucking language is retarded and should burn in hell for all eternity.
+ * Works like rem_euclid in Rust.
  * @param {number} n - dividend
  * @param {number} m - divisor
 */
