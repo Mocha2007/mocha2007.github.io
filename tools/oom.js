@@ -547,8 +547,8 @@ const CONSTANT = {
 		return this.yr / 12;
 	},
 	/** assuming a cone with slope 45 deg */
-	mountain(h){
-		return Math.PI/3 * Math.pow(h, 3) * this.density.rock;
+	mountain(h, r=h){
+		return Math.PI/3 * h * r * r * this.density.rock;
 	},
 	/** in m https://en.wikipedia.org/wiki/Nautical_mile */
 	nmi: 1852,
@@ -974,6 +974,7 @@ const OOM = {
 		new MassDatum("Mont Blanc (estimate)", CONSTANT.mountain(4805.59), "https://en.wikipedia.org/wiki/Mont_Blanc"),
 		new MassDatum("Denali (estimate)", CONSTANT.mountain(6190), "https://en.wikipedia.org/wiki/Denali"),
 		new MassDatum("Mt. Everest (estimate)", CONSTANT.mountain(8848.86), "https://en.wikipedia.org/wiki/Mount_Everest"),
+		new MassDatum("Olympus Mons (estimate)", CONSTANT.mountain(21.287e3, 300e3), "https://en.wikipedia.org/wiki/Olympus_Mons"),
 		// misc earth things
 		new MassDatum("Danube annual discharge", 6452*CONSTANT.density.water*CONSTANT.yr, "https://en.wikipedia.org/wiki/Danube"),
 		new MassDatum("Earth's biosphere", 1841e15, "https://hypertextbook.com/facts/2001/AmandaMeyer.shtml"),
