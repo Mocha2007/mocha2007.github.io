@@ -158,6 +158,7 @@ const EG2 = {
 		new Word('cat', '🐱'),
 		new Word('clean', '🧼', null, null, 'neat'),
 		new Word('clown', '🤡'),
+		new Word('country', '🏳️'),
 		new Word('dog', '🐶'),
 		new Word('eat', '🍽️', null, null, 'meal'),
 		new Word('exist', '∃'),
@@ -182,6 +183,7 @@ const EG2 = {
 		new Word('in', null, null, ['⊡']),
 		new Word('inhabit', '🏠', null, null, 'live'),
 		new Word('iron', '♂', ['🜃']),
+		new Word('Japan', '🏳️', ['☉', '↑']),
 		new Word('John', '😊', ['🕉️'], ['X'], '"God is gracious", +DIM = Jack'),
 		new Word('jump', '🤾', ['👉']),
 		new Word('less', null, null, ['<']),
@@ -194,6 +196,7 @@ const EG2 = {
 		new Word('month', '🝱'),
 		new Word('must', null, null, ['□'], 'should'),
 		new Word('name', null, null, ['X']), // from the use of X as a signature by the illiterate, and in forms to indicate where names should be signed
+		new Word('new', '*', null, null, 'young, be born???'),
 		new Word('nice', '😊', null, null, 'kind, gracious'),
 		new Word('not', '¬'),
 		new Word('now', '▶'),
