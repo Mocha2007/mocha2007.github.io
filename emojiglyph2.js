@@ -73,7 +73,10 @@ class Sample {
 	elem(){
 		const div = document.createElement('div');
 		div.classList.add('sample');
-		div.innerHTML = `&ldquo;${this.meaning}&rdquo;<br>`;
+		const gloss = document.createElement('span');
+		gloss.classList.add('gloss');
+		gloss.innerHTML = `&ldquo;${this.meaning}&rdquo;<br>`;
+		div.appendChild(gloss);
 		this.words().forEach(w => div.appendChild(w.elem()));
 		return div;
 	}
@@ -102,6 +105,14 @@ const EG2 = {
 		});
 		const samples = document.getElementById('samples');
 		this.samples.forEach(s => samples.appendChild(s.elem()));
+		// handle eg2parse
+		Array.from(document.getElementsByClassName('eg2parse')).forEach(elem => {
+			const gloss = elem.innerHTML;
+			elem.innerHTML = '';
+			const inner = new Sample('', gloss).elem();
+			inner.classList.add('inline');
+			elem.appendChild(inner);
+		});
 		console.info('emojiglyph2.js loaded.');
 	},
 	lexicon: [
