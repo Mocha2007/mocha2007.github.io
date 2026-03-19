@@ -10,11 +10,12 @@
 	color: silver;
 	font-family: monospace;
 }
-.inline {
-	display: inline-block;
-}
-.inline .gloss {
-	display: none;
+.sample2 {
+	border-radius: 2em;
+	text-align: center;
+	margin: auto;
+	max-width: fit-content;
+	padding: 0 1em;
 }
 .word *:nth-child(1) {
 	background-color: #430;

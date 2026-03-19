@@ -107,10 +107,10 @@ const EG2 = {
 		this.samples.forEach(s => samples.appendChild(s.elem()));
 		// handle eg2parse
 		Array.from(document.getElementsByClassName('eg2parse')).forEach(elem => {
-			const gloss = elem.innerHTML;
+			const [meaning, gloss] = elem.innerHTML.split('/');
 			elem.innerHTML = '';
-			const inner = new Sample('', gloss).elem();
-			inner.classList.add('inline');
+			const inner = new Sample(meaning, gloss).elem();
+			inner.classList.add('sample2');
 			elem.appendChild(inner);
 		});
 		console.info('emojiglyph2.js loaded.');
