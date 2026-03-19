@@ -56,7 +56,8 @@ class Word {
 		mods.forEach(mod => {
 			const syn = EG2.lexicon.find(w => w.gloss == mod);
 			if (typeof syn === "undefined") console.error(`mod |${mod}| does not exist!`);
-			return syn.marks_syntactic.forEach(syn => o.marks_syntactic.push(syn));
+			syn.marks_semantic.forEach(syn => o.marks_semantic.push(syn));
+			syn.marks_syntactic.forEach(syn => o.marks_syntactic.push(syn));
 		});
 		return o;
 	}
