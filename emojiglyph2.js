@@ -305,10 +305,11 @@ const EG2 = {
 	],
 	sources: [
 		'https://en.wikipedia.org/wiki/Alchemical_symbol',
+		'https://en.wikipedia.org/wiki/LGBTQ_symbols',
 		'https://en.wikipedia.org/wiki/List_of_logic_symbols',
+		'https://en.wikipedia.org/wiki/List_of_typographical_symbols_and_punctuation_marks',
 		'https://en.wikipedia.org/wiki/Media_control_symbols',
 		'https://en.wikipedia.org/wiki/Planetary_symbols',
-		'https://en.wikipedia.org/wiki/List_of_typographical_symbols_and_punctuation_marks',
 		'https://real-world-systems.com/docs/U2600.html',
 		'https://emojipedia.org/',
 	],
