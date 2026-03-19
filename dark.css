@@ -1,6 +1,175 @@
-body{font-family: "Open Sans", sans-serif;margin:40px auto;max-width:700px;line-height:1.6;font-size:18px;color:#ccc;padding:0 10px;background-color:#111;text-align:justify;}
-p{text-indent:45px;}
-a{color:#08f}
-table,th,td{border: 2px solid #ccc;border-collapse: collapse;text-align:center;margin: 0px auto;}
-nav{position:fixed;top:0px;left:0px;padding:10px;background:#333;border:2px solid #ccc;text-align:center;}
-#top,#bottom{text-align:center;}
+body{
+	font-family: "Open Sans", sans-serif;
+	margin: 40px auto;
+	max-width: 700px;
+	line-height: 1.6;
+	font-size: 18px;
+	color: #ccc;
+	padding: 0 10px;
+	background-color: #111;
+	text-align: justify;
+}
+p{
+	text-indent: 45px;
+}
+pre, .code{
+	/* code snippets */
+	font-family: monospace;
+	background-color: #004;
+	color: #ccc;
+	text-align: left;
+}
+table{
+	border-collapse: collapse;
+	margin: auto;
+}
+th, td{
+	border: 2px solid #ccc;
+	text-align: center;
+}
+td ul, th ul{
+	text-align: left;
+	padding-right: 20px;
+}
+nav details{
+	line-height: 17px;
+}
+nav details a{
+	font-size: 16px;
+}
+h1, h2, h3, #top, #bottom, .center, nav summary {
+	text-align: center;
+}
+q{
+	font-style: italic;
+	display: inline-block;
+	margin: 0em 3em;
+}
+q::before{
+	content: '“';
+}
+q::after{
+	content: '”';
+}
+abbr{
+	text-decoration: none;
+	animation: strobe 1s linear alternate infinite;
+	cursor: help;
+}
+/* special link images */
+a[href^="https://tvt"] {
+	background: transparent url('img/tvt.png') no-repeat right center;
+	padding-right: 20px;
+	white-space: nowrap;
+}
+a[href^="https://en.wiki"] {
+	background: transparent url('img/wp.png') no-repeat right center;
+	padding-right: 20px;
+	white-space: nowrap;
+}
+a[href^="https://en.wikt"] {
+	background: transparent url('img/wt.png') no-repeat right center;
+	padding-right: 20px;
+	white-space: nowrap;
+}
+/* classes */
+.also, .note{
+	/* see also: this
+	used for notes */
+	font-style: italic;
+	color: #999;
+}
+img.center{
+	/* used to center images horizontally */
+	display: block;
+	margin: 0 auto;
+}
+div.colorbar{
+	/* used to create a bar (to be colored by other tags) across a div */
+	color: white;
+	text-shadow: 1px 1px 2px black;
+	padding: 10px;
+}
+.dead::after{
+	content:'†';
+}
+.desc{
+	/* descriptions below images, charts, etc. */
+	text-align: center;
+	font-style: italic;
+}
+table.imagetable tr td{
+	border: none;
+}
+table.lefttable td{
+	text-align: left;
+}
+.invisible{
+	display: none;
+}
+.tintblue{
+	background-color: #ccf;
+	color: #006;
+	border: 1px solid #006;
+}
+.tintgreen{
+	background-color: #cfc;
+	color: #060;
+	border: 1px solid #060;
+}
+.tintred{
+	background-color: #fcc;
+	color: #a00;
+	border: 1px solid #a00;
+}
+.tintsky{
+	background-color: #cef;
+	color: #06c;
+	border: 1px solid #06c;
+}
+.tintyellow{
+	background-color: #ffc;
+	color: #660;
+	border: 1px solid #660;
+}
+td.tintblue, td.tintgreen, td.tintred, td.tintsky, td.tintyellow{
+	border-width: 2px;
+}
+.titlelinks a {
+	/* titles of books, films, etc. should ONLY be used if <cite> is impossible */
+	font-style: italic;
+}
+.nav2::before{content:'┕';}
+.nav3::before{content:'┃┕';}
+.nav4::before{content:'┃┃┕';}
+.nav5::before{content:'┃┃┃┕';}
+.nav6::before{content:'┃┃┃┃┕';}
+nav{
+	background: #333;
+	border: 2px solid #ccc;
+	color: #ccc;
+	max-height: 95vh;
+	left: 0;
+	overflow-y: auto;
+	padding: 1vh;
+	position: fixed;
+	text-align: left;
+	top: 0;
+	width: min(210px, calc(50% - 370px));
+}
+/* Text Animations */
+@keyframes strobe{
+	0% {border-bottom:1px solid transparent;}
+	100% {border-bottom:1px solid black;}
+}
+/* mobile */
+@media (max-width: 750px) {
+  nav{
+	width: 25%;
+  }
+}
+@media print {
+	nav{
+		display: none;
+	}
+}
