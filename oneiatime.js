@@ -772,6 +772,7 @@ mochaLunisolar.cyclesPerEpi = mochaLunisolar.eraStarts[11];
 mochaLunisolar.eraROffset = 4; // set to 7 for the original lengths
 mochaLunisolar.mansions = [
 	// starting 0 deg ecliptic long, ending 360, in intervals of 10 deg, visualize a box +/- 5 deg longitude +/- 6 deg latitude, choose brightest star
+	// lunatool ybsc -b -6 -B 6 -l 5 -L 15 -M 6
 	'ω Piscium', 'δ Piscium', 'ε Piscium', 'η Piscium', 'μ Ceti', '5 Tauri', 'Pleiades', 'Aldebaran', '119 Tauri', 'ζ Tauri',
 	'Tejat', 'Wasat', '81 Geminorum', 'Asellus Australis', 'Subra', 'Regulus', 'ρ Leonis', 'ν Virginis', 'Zavijava', 'Porrima',
 	'Spica', 'Kang', 'Khambalia', 'Zubenelgenubi', 'Dschubba', 'Antares', 'Garafsa', 'Polis', 'Nunki', 'Albaldah',
