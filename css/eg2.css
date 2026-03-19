@@ -30,3 +30,6 @@
 .sample .word * {
 	background-color: black;
 }
+#sources {
+	columns: 3;
+}

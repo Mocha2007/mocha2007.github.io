@@ -98,9 +98,11 @@ const EG2 = {
 		this.lexicon.forEach(w => dict.appendChild(w.tr()));
 		const sources = document.getElementById('sources');
 		this.sources.forEach(s => {
+			const [name, url] = s;
 			const li = document.createElement('li');
 			const a = document.createElement('a');
-			a.innerHTML = a.href = s;
+			a.href = url;
+			a.innerHTML = name;
 			li.appendChild(a);
 			sources.appendChild(li);
 		});
@@ -304,14 +306,14 @@ const EG2 = {
 		new Sample("I have been waiting for you", "wait.PST.1 PRON.2.to"), // todo: for
 	],
 	sources: [
-		'https://en.wikipedia.org/wiki/Alchemical_symbol',
-		'https://en.wikipedia.org/wiki/LGBTQ_symbols',
-		'https://en.wikipedia.org/wiki/List_of_logic_symbols',
-		'https://en.wikipedia.org/wiki/List_of_typographical_symbols_and_punctuation_marks',
-		'https://en.wikipedia.org/wiki/Media_control_symbols',
-		'https://en.wikipedia.org/wiki/Planetary_symbols',
-		'https://real-world-systems.com/docs/U2600.html',
-		'https://emojipedia.org/',
+		['Alchemy', 'https://en.wikipedia.org/wiki/Alchemical_symbol'],
+		['Emoji', 'https://emojipedia.org/'],
+		['LGBTQ', 'https://en.wikipedia.org/wiki/LGBTQ_symbols'],
+		['Logic', 'https://en.wikipedia.org/wiki/List_of_logic_symbols'],
+		['Media Control', 'https://en.wikipedia.org/wiki/Media_control_symbols'],
+		['Miscellaneous', 'https://real-world-systems.com/docs/U2600.html'],
+		['Planetary', 'https://en.wikipedia.org/wiki/Planetary_symbols'],
+		['Typographic', 'https://en.wikipedia.org/wiki/List_of_typographical_symbols_and_punctuation_marks'],
 	],
 };
 
