@@ -1436,6 +1436,7 @@ const OOM = {
 		new MoneyDatum('Car (2025, avg.)', 50e3, "https://www.npr.org/2025/10/29/nx-s1-5556935/cost-of-living-cars"),
 		new MoneyDatum('A Human Life (per HHS, 2024)', 13.1e6, "https://finance.yahoo.com/news/guess-much-government-says-human-193018854.html"),
 		new MoneyDatum('Year supply of Estradiol Valerate (2026)', 40*CONSTANT.$.eur/400*10*52), // Astrovials 40 EUR for 400 mg, 10 mg dose per week
+		new MoneyDatum('Year supply of Estradiol Valerate for every transfem American (2026)', 40*CONSTANT.$.eur/400*10*52 * 0.014/2*341784857),
 		// misc
 		new MoneyDatum('US Cost of living (Annual, per capita, 2026)', 12*(1176.2+1352.97), "https://www.numbeo.com/cost-of-living/country_result.jsp?country=United+States"),
 		new MoneyDatum('Isabella Stewart Gardner Museum theft (2026 Inflation-Adjusted)', 914e6, "https://en.wikipedia.org/wiki/Isabella_Stewart_Gardner_Museum_theft"),
