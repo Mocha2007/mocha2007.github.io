@@ -5,7 +5,7 @@ class Word {
 		/** @type {string} */
 		this.root = root || "";
 		/** @type {string[]} */
-		this.marks_semantic = marks_semantic || ['&nbsp;'];
+		this.marks_semantic = marks_semantic || [];
 		/** @type {string[]} */
 		this.marks_syntactic = marks_syntactic || [];
 		/** @type {string} */
@@ -166,6 +166,7 @@ const EG2 = {
 		new Word('fire', '🔥'),
 		new Word('flower', '❀'),
 		new Word('fog', '≡', ['☁︎']),
+		new Word('fox', '🦊'),
 		new Word('from', null, null, ['←'], 'away'),
 		new Word('game', '🎲', null, null, 'play'),
 		new Word('greet', '👋', null, null, 'hello, welcome'),
@@ -222,6 +223,7 @@ const EG2 = {
 		new Word('stop', '🛑'),
 		new Word('sun', '☉'),
 		new Word('table', '⛩'),
+		new Word('ten', '10'),
 		new Word('that', null, null, ['↑']),
 		new Word('think', '🤔', null, null, 'wonder'),
 		new Word('this', null, null, ['↓']),
