@@ -620,9 +620,10 @@ const CONSTANT = {
 			// https://www.census.gov/popclock/
 			// 2025-01-01 340,971,336
 			// 2026-01-01 342,278,051
-			const t = new Date() - new Date(2026, 0, 1);
+			// 2026-03-01 342,361,316 https://en.wikipedia.org/wiki/Economy_of_the_United_States
+			const t = new Date() - new Date(2026, 2, 1);
 			const p = new Date(2026, 0, 1) - new Date(2025, 0, 1);
-			return Math.round(342278051 * Math.pow(342278051/340971336, t/p));
+			return Math.round(342361316 * Math.pow(342278051/340971336, t/p));
 		},
 	},
 	volume: {
