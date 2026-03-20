@@ -1516,9 +1516,6 @@ const OOM = {
 		new MoneyDatum('US Federal Budget (2024)', 6.8e12, "https://commons.wikimedia.org/wiki/File:Fy2024_federal_budget.png"),
 		new MoneyDatum('US GDP (LIVE)', CONSTANT.us.gdp, "https://en.wikipedia.org/wiki/United_States"),
 		new MoneyDatum('US GDP per capita (LIVE)', CONSTANT.us.gdp_per_capita, "https://en.wikipedia.org/wiki/United_States"),
-		// 2025-12-12 https://gcn.com/u-s-national-debt-surpasses-38-trillion-milestone/15651/
-		// 2026-03-20 https://finance.yahoo.com/markets/currencies/articles/u-debt-passes-39-trillion-074129883.html
-		// $1T per 98 d
 		new MoneyDatum('US national debt (LIVE)', CONSTANT.us.debt, "https://finance.yahoo.com/markets/currencies/articles/u-debt-passes-39-trillion-074129883.html"),
 		new MoneyDatum('World GDP (2020)', 84.705e12, "https://en.wikipedia.org/wiki/Gross_world_product"),
 	],
