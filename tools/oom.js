@@ -601,7 +601,29 @@ const CONSTANT = {
 			const t = new Date() - new Date(2026, 2, 20);
 			const trillion_period = new Date(2026, 2, 20) - new Date(2025, 11, 12);
 			return 39e12 * Math.pow(39/38, t/trillion_period);
-		}
+		},
+		get debt_to_gdp(){
+			return this.debt / this.gdp;
+		},
+		get gdp(){
+			// https://fred.stlouisfed.org/series/GDP/#
+			// $30.042113 T 2025-01-01
+			// $31.442483 T 2025-01-01
+			const t = new Date() - new Date(2025, 9, 1);
+			const p = new Date(2025, 9, 1) - new Date(2025, 0, 1);
+			return 31.442483e12 * Math.pow(31.442483/30.042113, t/p);
+		},
+		get gdp_per_capita(){
+			return this.gdp / this.population;
+		},
+		get population(){
+			// https://www.census.gov/popclock/
+			// 2025-01-01 340,971,336
+			// 2026-01-01 342,278,051
+			const t = new Date() - new Date(2026, 0, 1);
+			const p = new Date(2026, 0, 1) - new Date(2025, 0, 1);
+			return Math.round(342278051 * Math.pow(342278051/340971336, t/p));
+		},
 	},
 	volume: {
 		/** a, b, c are major axes (diameters) */
@@ -1492,11 +1514,12 @@ const OOM = {
 		new MoneyDatum('California GDP (2025)', 4.3e12, "https://en.wikipedia.org/wiki/California"),
 		new MoneyDatum('Cost of the Trump tax cuts (2025)', 4.5e12, "https://www.newsweek.com/republicans-reveal-trump-tax-plan-will-cost-us-45-trillion-2030024"),
 		new MoneyDatum('US Federal Budget (2024)', 6.8e12, "https://commons.wikimedia.org/wiki/File:Fy2024_federal_budget.png"),
-		new MoneyDatum('US GDP (2025)', 30.616e12, "https://en.wikipedia.org/wiki/United_States"),
+		new MoneyDatum('US GDP (LIVE)', CONSTANT.us.gdp, "https://en.wikipedia.org/wiki/United_States"),
+		new MoneyDatum('US GDP per capita (LIVE)', CONSTANT.us.gdp_per_capita, "https://en.wikipedia.org/wiki/United_States"),
 		// 2025-12-12 https://gcn.com/u-s-national-debt-surpasses-38-trillion-milestone/15651/
 		// 2026-03-20 https://finance.yahoo.com/markets/currencies/articles/u-debt-passes-39-trillion-074129883.html
 		// $1T per 98 d
-		new MoneyDatum('US national debt (2026)', CONSTANT.us.debt, "https://finance.yahoo.com/markets/currencies/articles/u-debt-passes-39-trillion-074129883.html"),
+		new MoneyDatum('US national debt (LIVE)', CONSTANT.us.debt, "https://finance.yahoo.com/markets/currencies/articles/u-debt-passes-39-trillion-074129883.html"),
 		new MoneyDatum('World GDP (2020)', 84.705e12, "https://en.wikipedia.org/wiki/Gross_world_product"),
 	],
 	dataPower: [
