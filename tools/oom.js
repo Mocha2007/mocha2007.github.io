@@ -1433,6 +1433,7 @@ const OOM = {
 		new MoneyDatum('Platinum (1 kg, 2026)', 2139.30/CONSTANT.ozt, "https://www.dailymetalprice.com/metaltables.php"),
 		new MoneyDatum('Gold (1 kg, 2026)', 5081.77/CONSTANT.ozt, "https://www.dailymetalprice.com/metaltables.php"),
 		// items
+		new MoneyDatum('LEGO set, per piece (Avg, 2026)', new Money({x:Math.sqrt(0.048*0.482),min:0.048,max:0.482}), "https://brickset.com/sets/year-2026"),
 		new MoneyDatum('Coca-Cola (US, 6.5 fl oz, 1886-1959, inflation-adjusted)', 0.5615*CONSTANT.sales_tax.median, "https://en.wikipedia.org/wiki/Fixed_price_of_Coca-Cola_from_1886_to_1959"),
 		new MoneyDatum('Stick of Gum (US, 2026)', 1.86/15*CONSTANT.sales_tax.median, "https://www.walmart.com/ip/Extra-Gum-Spearmint-Sugar-Free-Chewing-Gum-Single-Pack-15-Pieces/20918405?classType=VARIANT&athbdg=L1600&from=/search"),
 		new MoneyDatum('Apple (Gala, US, 2026)', 0.68*CONSTANT.sales_tax.median, "https://www.walmart.com/ip/Fresh-Gala-Apple-Each/44390953?classType=REGULAR&from=/search"),
