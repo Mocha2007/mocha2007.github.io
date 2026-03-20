@@ -565,6 +565,10 @@ const CONSTANT = {
 	get planck_reduced(){
 		return this.planck / (2*Math.PI);
 	},
+	sales_tax: {
+		/** https://taxfoundation.org/data/all/state/sales-tax-rates/ */
+		median: 1.07,
+	},
 	/** in kg */
 	get short_ton(){
 		return 2000*this.lb;
@@ -1429,13 +1433,14 @@ const OOM = {
 		new MoneyDatum('Platinum (1 kg, 2026)', 2139.30/CONSTANT.ozt, "https://www.dailymetalprice.com/metaltables.php"),
 		new MoneyDatum('Gold (1 kg, 2026)', 5081.77/CONSTANT.ozt, "https://www.dailymetalprice.com/metaltables.php"),
 		// items
-		new MoneyDatum('Coca-Cola (US, 6.5 fl oz, 1886-1959, inflation-adjusted)', 0.5615, "https://en.wikipedia.org/wiki/Fixed_price_of_Coca-Cola_from_1886_to_1959"),
-		new MoneyDatum('Apple (Gala, US, 2026)', 0.68, "https://www.walmart.com/ip/Fresh-Gala-Apple-Each/44390953?classType=REGULAR&from=/search"),
-		new MoneyDatum('Costco Hot Dog (US, 1984-2026)', 1.5, "https://en.wikipedia.org/wiki/Costco_hot_dog"),
+		new MoneyDatum('Coca-Cola (US, 6.5 fl oz, 1886-1959, inflation-adjusted)', 0.5615*CONSTANT.sales_tax.median, "https://en.wikipedia.org/wiki/Fixed_price_of_Coca-Cola_from_1886_to_1959"),
+		new MoneyDatum('Stick of Gum (US, 2026)', 1.86/15*CONSTANT.sales_tax.median, "https://www.walmart.com/ip/Extra-Gum-Spearmint-Sugar-Free-Chewing-Gum-Single-Pack-15-Pieces/20918405?classType=VARIANT&athbdg=L1600&from=/search"),
+		new MoneyDatum('Apple (Gala, US, 2026)', 0.68*CONSTANT.sales_tax.median, "https://www.walmart.com/ip/Fresh-Gala-Apple-Each/44390953?classType=REGULAR&from=/search"),
+		new MoneyDatum('Costco Hot Dog (US, 1984-2026)', 1.5*CONSTANT.sales_tax.median, "https://en.wikipedia.org/wiki/Costco_hot_dog"),
 		new MoneyDatum('Gas (US, 1 gal, 2026-03-19)', 3.884, "https://gasprices.aaa.com/todays-state-averages/"),
 		new MoneyDatum('Tank of Gas (US, 14 gal, 2026-03-19)', new Money({min:12*3.884, max:16*3.884}) , "https://gasprices.aaa.com/todays-state-averages/"),
 		new MoneyDatum('Raspberry Pi 5 (Base model, US, 2026)', 45, "https://www.raspberrypi.com/products/"),
-		new MoneyDatum('iPhone 17 (US, 2026)', 799, "https://www.apple.com/iphone-17/"),
+		new MoneyDatum('iPhone 17 (US, 2026)', 799*CONSTANT.sales_tax.median, "https://www.apple.com/iphone-17/"),
 		new MoneyDatum('Shahed drone (2026)', new Money({min: 20e3, max: 50e3}), "https://www.seattletimes.com/nation-world/irans-drones-cost-a-fraction-of-the-u-s-weapons-shooting-them-down/"),
 		new MoneyDatum('Car (2025, avg.)', 50e3, "https://www.npr.org/2025/10/29/nx-s1-5556935/cost-of-living-cars"),
 		new MoneyDatum('A Human Life (per HHS, 2024)', 13.1e6, "https://finance.yahoo.com/news/guess-much-government-says-human-193018854.html"),
