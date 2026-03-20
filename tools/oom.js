@@ -593,6 +593,16 @@ const CONSTANT = {
 	},
 	/** in J: tons of TNT equivalent */
 	tTNT: 4.184e9,
+	us: {
+		get debt(){
+			// $38T 2025-12-12 https://gcn.com/u-s-national-debt-surpasses-38-trillion-milestone/15651/
+			// $39T 2026-03-20 https://finance.yahoo.com/markets/currencies/articles/u-debt-passes-39-trillion-074129883.html
+			// $1T per 98 d
+			const t = new Date() - new Date(2026, 2, 20);
+			const trillion_period = new Date(2026, 2, 20) - new Date(2025, 11, 12);
+			return 39e12 * Math.pow(39/38, t/trillion_period);
+		}
+	},
 	volume: {
 		/** a, b, c are major axes (diameters) */
 		ellipsoid(a, b, c){
@@ -1433,6 +1443,7 @@ const OOM = {
 		new MoneyDatum('Platinum (1 kg, 2026)', 2139.30/CONSTANT.ozt, "https://www.dailymetalprice.com/metaltables.php"),
 		new MoneyDatum('Gold (1 kg, 2026)', 5081.77/CONSTANT.ozt, "https://www.dailymetalprice.com/metaltables.php"),
 		// items
+		new MoneyDatum('LEGO set, per piece (Avg, 2006)', new Money({min:0.075,max:0.093}), "https://brickset.com/sets/year-2006"),
 		new MoneyDatum('LEGO set, per piece (Avg, 2026)', new Money({x:Math.sqrt(0.048*0.482),min:0.048,max:0.482}), "https://brickset.com/sets/year-2026"),
 		new MoneyDatum('Coca-Cola (US, 6.5 fl oz, 1886-1959, inflation-adjusted)', 0.5615*CONSTANT.sales_tax.median, "https://en.wikipedia.org/wiki/Fixed_price_of_Coca-Cola_from_1886_to_1959"),
 		new MoneyDatum('Stick of Gum (US, 2026)', 1.86/15*CONSTANT.sales_tax.median, "https://www.walmart.com/ip/Extra-Gum-Spearmint-Sugar-Free-Chewing-Gum-Single-Pack-15-Pieces/20918405?classType=VARIANT&athbdg=L1600&from=/search"),
@@ -1482,6 +1493,10 @@ const OOM = {
 		new MoneyDatum('Cost of the Trump tax cuts (2025)', 4.5e12, "https://www.newsweek.com/republicans-reveal-trump-tax-plan-will-cost-us-45-trillion-2030024"),
 		new MoneyDatum('US Federal Budget (2024)', 6.8e12, "https://commons.wikimedia.org/wiki/File:Fy2024_federal_budget.png"),
 		new MoneyDatum('US GDP (2025)', 30.616e12, "https://en.wikipedia.org/wiki/United_States"),
+		// 2025-12-12 https://gcn.com/u-s-national-debt-surpasses-38-trillion-milestone/15651/
+		// 2026-03-20 https://finance.yahoo.com/markets/currencies/articles/u-debt-passes-39-trillion-074129883.html
+		// $1T per 98 d
+		new MoneyDatum('US national debt (2026)', CONSTANT.us.debt, "https://finance.yahoo.com/markets/currencies/articles/u-debt-passes-39-trillion-074129883.html"),
 		new MoneyDatum('World GDP (2020)', 84.705e12, "https://en.wikipedia.org/wiki/Gross_world_product"),
 	],
 	dataPower: [
