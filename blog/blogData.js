@@ -3474,13 +3474,23 @@ const blogData = [
 			<th>Notes</th>
 		</tr>
 		<tr>
+			<td>&lt;7&deg;</td>
+			<td><a href="https://en.wikipedia.org/wiki/Orbital_inclination">inclination</a</td>
+			<td>Mercury's would be the upper bound</td>
+		</tr>
+		<tr>
+			<td>&asymp;5&deg;</td>
+			<td><a href="https://en.wikipedia.org/wiki/Orbital_eccentricity">eccentricity</a></td>
+			<td>estimated from Mars</td>
+		</tr>
+		<tr>
 			<td>1&deg; 0&prime; 24&Prime;</td>
-			<td>lunar diurnal parallax</td>
+			<td><a href="https://en.wikipedia.org/wiki/Parallax_in_astronomy#Lunar_parallax">lunar diurnal parallax</a></td>
 			<td>lunar perigee, observer located on equator while moon is at horizon</td>
 		</tr>
 		<tr>
 			<td>35.4&prime;</td>
-			<td>atmospheric refraction</td>
+			<td><a href="https://en.wikipedia.org/wiki/Atmospheric_refraction">atmospheric refraction</a></td>
 			<td>at horizon, typical conditions</td>
 		</tr>
 		<tr>
@@ -3490,7 +3500,7 @@ const blogData = [
 		</tr>
 		<tr>
 			<td>33&Prime;</td>
-			<td>planetary diurnal parallax</td>
+			<td>planetary <a href="https://en.wikipedia.org/wiki/Parallax_in_astronomy#Diurnal_parallax">diurnal parallax</a></td>
 			<td>Venus at closest approach</td>
 		</tr>
 		<tr>
@@ -3500,12 +3510,12 @@ const blogData = [
 		</tr>
 		<tr>
 			<td>9&Prime;</td>
-			<td>solar diurnal parallax</td>
+			<td>solar <a href="https://en.wikipedia.org/wiki/Parallax_in_astronomy#Diurnal_parallax">diurnal parallax</a></td>
 			<td>-</td>
 		</tr>
 		<tr>
 			<td>1.8&Prime;</td>
-			<td>solar gravitational lensing</td>
+			<td><a href="https://en.wikipedia.org/wiki/Solar_gravitational_lens">solar gravitational lensing</a></td>
 			<td>Light travelling tangent to Sun's surface</td>
 		</tr>
 		<tr>
@@ -3515,12 +3525,12 @@ const blogData = [
 		</tr>
 		<tr>
 			<td>0.073&Prime;</td>
-			<td>observer altitude</td>
+			<td>observer <a href="https://en.wikipedia.org/wiki/Altitude">altitude</a></td>
 			<td>Mt. Everest, moon at perigee</td>
 		</tr>
 		<tr>
 			<td>0.071&Prime;</td>
-			<td>Earth's oblateness</td>
+			<td><a href="https://en.wikipedia.org/wiki/Figure_of_the_Earth">Earth's oblateness</a></td>
 			<td>moon at perigee</td>
 		</tr>
 	</table>
