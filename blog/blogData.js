@@ -3554,6 +3554,11 @@ const blogData = [
 			<td>assuming &le; 6 m error</td>
 		</tr>
 		<tr>
+			<td>0.15&Prime;</td>
+			<td><a href="https://en.wikipedia.org/wiki/Chandler_wobble">Chandler wobble</a></td>
+			<td>-</td>
+		</tr>
+		<tr>
 			<td>0.11&Prime;</td>
 			<td><a href="https://en.wikipedia.org/wiki/Floating-point_arithmetic#Accuracy_problems">32-bit floating point rounding error</a></td>
 			<td>|&theta;| &ge; 256&deg;</td>
