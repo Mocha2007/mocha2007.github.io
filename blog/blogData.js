@@ -3484,6 +3484,11 @@ const blogData = [
 			<td>Venus at closest approach</td>
 		</tr>
 		<tr>
+			<td>20&Prime;</td>
+			<td>Light travel time (sun)</td>
+			<td>-</td>
+		</tr>
+		<tr>
 			<td>9&Prime;</td>
 			<td>Solar Diurnal Parallax</td>
 			<td>-</td>
@@ -3494,7 +3499,7 @@ const blogData = [
 			<td>Light travelling tangent to Sun's surface</td>
 		</tr>
 		<tr>
-			<td>0.55&Prime;</td>
+			<td>&asymp;0.55&Prime;</td>
 			<td>Light travel time (moon)</td>
 			<td>-</td>
 		</tr>
