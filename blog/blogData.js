@@ -3465,7 +3465,7 @@ const blogData = [
 	`
 	@title What needs to be accounted for in Astronomy Software
 	@date 1774277695129
-	@tags astronomy math
+	@tags astronomy dev
 	I will add to this list as I remember things.
 	<table>
 		<tr>
