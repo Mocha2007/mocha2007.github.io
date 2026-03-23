@@ -3516,7 +3516,7 @@ const blogData = [
 		<tr>
 			<td>20.85&Prime;</td>
 			<td><a href="https://en.wikipedia.org/wiki/Aberration_(astronomy)">aberration</a></td>
-			<td></td>
+			<td>Earth at perihelion (v = 30.3 km/s)</td>
 		</tr>
 		<tr>
 			<td>20&Prime;</td>
