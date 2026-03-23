@@ -3476,7 +3476,7 @@ const blogData = [
 		<tr>
 			<td>1&deg; 0&prime; 24&Prime;</td>
 			<td>lunar diurnal parallax</td>
-			<td>lunar perigee</td>
+			<td>lunar perigee, observer located on equator while moon is at horizon</td>
 		</tr>
 		<tr>
 			<td>35.4&prime;</td>
