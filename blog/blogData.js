@@ -3494,12 +3494,12 @@ const blogData = [
 			<td>at horizon, typical conditions</td>
 		</tr>
 		<tr>
-			<td>50&Prime;/yr<br>(22&prime; currently)</td>
+			<td>50&Prime;/yr<br>(22&prime; since 2000)</td>
 			<td><a href="https://en.wikipedia.org/wiki/Axial_precession">axial precession</a></td>
 			<td>-</td>
 		</tr>
 		<tr>
-			<td>10.358&Prime;/yr<br>(4.5&prime; currently)</td>
+			<td>10.358&Prime;/yr<br>(4.5&prime; since 2000)</td>
 			<td><a href="https://en.wikipedia.org/wiki/Proper_motion">proper motion</a></td>
 			<td>Barnard's Star</td>
 		</tr>
@@ -3549,7 +3549,7 @@ const blogData = [
 			<td>-</td>
 		</tr>
 		<tr>
-			<td>0.0033&Prime;/yr (0.087&Prime; currently)</td>
+			<td>0.0033&Prime;/yr (0.087&Prime; since 2000)</td>
 			<td><a href="https://en.wikipedia.org/wiki/Continental_drift">continental drift</a></td>
 			<td>Pacific plate, maximum speed</td>
 		</tr>
