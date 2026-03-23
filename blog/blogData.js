@@ -3513,6 +3513,16 @@ const blogData = [
 			<td>light travel time (moon)</td>
 			<td>-</td>
 		</tr>
+		<tr>
+			<td>0.073&Prime;</td>
+			<td>observer altitude</td>
+			<td>Mt. Everest, moon at perigee</td>
+		</tr>
+		<tr>
+			<td>0.071&Prime;</td>
+			<td>Earth's oblateness</td>
+			<td>moon at perigee</td>
+		</tr>
 	</table>
 	`,
 ];
