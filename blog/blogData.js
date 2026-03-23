@@ -3549,6 +3549,11 @@ const blogData = [
 			<td>-</td>
 		</tr>
 		<tr>
+			<td>0.19&Prime;</td>
+			<td><a href="https://en.wikipedia.org/wiki/Error_analysis_for_the_Global_Positioning_System">GPS positioning error</a></td>
+			<td>moon at perigee, assuming &le; 6 m error</td>
+		</tr>
+		<tr>
 			<td>0.11&Prime;</td>
 			<td><a href="https://en.wikipedia.org/wiki/Floating-point_arithmetic#Accuracy_problems">32-bit floating point rounding error</a></td>
 			<td>|&theta;| &ge; 256&deg;</td>
@@ -3567,6 +3572,11 @@ const blogData = [
 			<td>71 <abbr title="milliarcsecond">mas</abbr></td>
 			<td><a href="https://en.wikipedia.org/wiki/Figure_of_the_Earth">Earth's oblateness</a></td>
 			<td>moon at perigee</td>
+		</tr>
+		<tr>
+			<td>40 <abbr title="microarcsecond">&micro;as</abbr></td>
+			<td><a href="https://en.wikipedia.org/wiki/Binocular_disparity">binocular disparity</a></td>
+			<td>moon at perigee, &mu + 2&sigma male interpupillary distance<sup><a href="https://en.wikipedia.org/wiki/Pupillary_distance">1</a></sup></td>
 		</tr>
 		<tr>
 			<td>205 <abbr title="picoarcsecond">pas</abbr></td>
