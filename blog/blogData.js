@@ -3549,6 +3549,11 @@ const blogData = [
 			<td>-</td>
 		</tr>
 		<tr>
+			<td>0.0033&Prime;/yr (0.087&Prime; currently)</td>
+			<td><a href="https://en.wikipedia.org/wiki/Continental_drift">continental drift</a></td>
+			<td>Pacific plate, maximum speed</td>
+		</tr>
+		<tr>
 			<td>0.073&Prime;</td>
 			<td>observer <a href="https://en.wikipedia.org/wiki/Altitude">altitude</a></td>
 			<td>Mt. Everest, moon at perigee</td>
