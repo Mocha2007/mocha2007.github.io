@@ -3551,7 +3551,7 @@ const blogData = [
 		<tr>
 			<td>0.19&Prime;</td>
 			<td><a href="https://en.wikipedia.org/wiki/Error_analysis_for_the_Global_Positioning_System">GPS positioning error</a></td>
-			<td>moon at perigee, assuming &le; 6 m error</td>
+			<td>assuming &le; 6 m error</td>
 		</tr>
 		<tr>
 			<td>0.11&Prime;</td>
