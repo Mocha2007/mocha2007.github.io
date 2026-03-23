@@ -3494,6 +3494,16 @@ const blogData = [
 			<td>at horizon, typical conditions</td>
 		</tr>
 		<tr>
+			<td>50&Prime;/yr<br>(22&prime; currently)</td>
+			<td><a href="https://en.wikipedia.org/wiki/Axial_precession">axial precession</a></td>
+			<td>-</td>
+		</tr>
+		<tr>
+			<td>10.358&Prime;/yr<br>(4.5&prime; currently)</td>
+			<td><a href="https://en.wikipedia.org/wiki/Proper_motion">proper motion</a></td>
+			<td>Barnard's Star</td>
+		</tr>
+		<tr>
 			<td>&ge;56&Prime;</td>
 			<td>light travel time (planets)</td>
 			<td>value derived from samples - Mercury was the most extreme, followed by Venus</td>
@@ -3509,6 +3519,11 @@ const blogData = [
 			<td>-</td>
 		</tr>
 		<tr>
+			<td>18.96&Prime;</td>
+			<td><a href="https://en.wikipedia.org/wiki/Astronomical_nutation">nutation</a></td>
+			<td>-</td>
+		</tr>
+		<tr>
 			<td>9&Prime;</td>
 			<td>solar <a href="https://en.wikipedia.org/wiki/Parallax_in_astronomy#Diurnal_parallax">diurnal parallax</a></td>
 			<td>-</td>
@@ -3519,8 +3534,18 @@ const blogData = [
 			<td>Light travelling tangent to Sun's surface</td>
 		</tr>
 		<tr>
+			<td>0.77&Prime;</td>
+			<td><a href="https://en.wikipedia.org/wiki/Stellar_parallax">stellar parallax</a></td>
+			<td>Proxima Centauri</td>
+		</tr>
+		<tr>
 			<td>&asymp;0.55&Prime;</td>
 			<td>light travel time (moon)</td>
+			<td>-</td>
+		</tr>
+		<tr>
+			<td>&asymp;0.2&Prime;</td>
+			<td><a href="https://en.wikipedia.org/wiki/Polar_motion">polar motion</a></td>
 			<td>-</td>
 		</tr>
 		<tr>
