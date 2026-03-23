@@ -3549,19 +3549,29 @@ const blogData = [
 			<td>-</td>
 		</tr>
 		<tr>
-			<td>0.0033&Prime;/yr (0.087&Prime; since 2000)</td>
+			<td>0.11&Prime;</td>
+			<td><a href="https://en.wikipedia.org/wiki/Floating-point_arithmetic#Accuracy_problems">32-bit floating point rounding error</a></td>
+			<td>|&theta;| &ge; 256&deg;</td>
+		</tr>
+		<tr>
+			<td>3.3 <abbr title="milliarcsecond">mas</abbr>/yr (87 mas since 2000)</td>
 			<td><a href="https://en.wikipedia.org/wiki/Continental_drift">continental drift</a></td>
 			<td>Pacific plate, maximum speed</td>
 		</tr>
 		<tr>
-			<td>0.073&Prime;</td>
+			<td>73 <abbr title="milliarcsecond">mas</abbr></td>
 			<td>observer <a href="https://en.wikipedia.org/wiki/Altitude">altitude</a></td>
 			<td>Mt. Everest, moon at perigee</td>
 		</tr>
 		<tr>
-			<td>0.071&Prime;</td>
+			<td>71 <abbr title="milliarcsecond">mas</abbr></td>
 			<td><a href="https://en.wikipedia.org/wiki/Figure_of_the_Earth">Earth's oblateness</a></td>
 			<td>moon at perigee</td>
+		</tr>
+		<tr>
+			<td>205 <abbr title="picoarcsecond">pas</abbr></td>
+			<td><a href="https://en.wikipedia.org/wiki/Floating-point_arithmetic#Accuracy_problems">64-bit floating point rounding error</a></td>
+			<td>|&theta;| &ge; 256&deg;</td>
 		</tr>
 	</table>
 	`,
