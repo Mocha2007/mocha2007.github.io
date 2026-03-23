@@ -3576,7 +3576,7 @@ const blogData = [
 		<tr>
 			<td>40 <abbr title="microarcsecond">&micro;as</abbr></td>
 			<td><a href="https://en.wikipedia.org/wiki/Binocular_disparity">binocular disparity</a></td>
-			<td>moon at perigee, &mu + 2&sigma male interpupillary distance<sup><a href="https://en.wikipedia.org/wiki/Pupillary_distance">1</a></sup></td>
+			<td>moon at perigee, &mu; + 2&sigma; male interpupillary distance<sup><a href="https://en.wikipedia.org/wiki/Pupillary_distance">1</a></sup></td>
 		</tr>
 		<tr>
 			<td>205 <abbr title="picoarcsecond">pas</abbr></td>
