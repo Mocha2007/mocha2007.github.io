@@ -3475,32 +3475,37 @@ const blogData = [
 		</tr>
 		<tr>
 			<td>1&deg; 0&prime; 24&Prime;</td>
-			<td>Lunar Diurnal Parallax</td>
+			<td>lunar diurnal parallax</td>
 			<td>lunar perigee</td>
 		</tr>
 		<tr>
+			<td>35.4&prime;</td>
+			<td>atmospheric refraction</td>
+			<td>at horizon, typical conditions</td>
+		</tr>
+		<tr>
 			<td>33&Prime;</td>
-			<td>Planetary Diurnal Parallax</td>
+			<td>planetary diurnal parallax</td>
 			<td>Venus at closest approach</td>
 		</tr>
 		<tr>
 			<td>20&Prime;</td>
-			<td>Light travel time (sun)</td>
+			<td>light travel time (sun)</td>
 			<td>-</td>
 		</tr>
 		<tr>
 			<td>9&Prime;</td>
-			<td>Solar Diurnal Parallax</td>
+			<td>solar diurnal parallax</td>
 			<td>-</td>
 		</tr>
 		<tr>
 			<td>1.8&Prime;</td>
-			<td>Solar Gravitational Lensing</td>
+			<td>solar gravitational lensing</td>
 			<td>Light travelling tangent to Sun's surface</td>
 		</tr>
 		<tr>
 			<td>&asymp;0.55&Prime;</td>
-			<td>Light travel time (moon)</td>
+			<td>light travel time (moon)</td>
 			<td>-</td>
 		</tr>
 	</table>
