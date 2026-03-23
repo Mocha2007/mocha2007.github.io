@@ -3474,9 +3474,9 @@ const blogData = [
 			<th>Notes</th>
 		</tr>
 		<tr>
-			<td>&lt;7&deg;</td>
+			<td>8&deg; 48&prime;</td>
 			<td><a href="https://en.wikipedia.org/wiki/Orbital_inclination">inclination</a</td>
-			<td>Mercury's would be the upper bound</td>
+			<td>Venus</td>
 		</tr>
 		<tr>
 			<td>&asymp;5&deg;</td>
