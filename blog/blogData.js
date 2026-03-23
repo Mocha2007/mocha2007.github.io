@@ -3484,6 +3484,11 @@ const blogData = [
 			<td>at horizon, typical conditions</td>
 		</tr>
 		<tr>
+			<td>&ge;56&Prime;</td>
+			<td>light travel time (planets)</td>
+			<td>value derived from samples - Mercury was the most extreme, followed by Venus</td>
+		</tr>
+		<tr>
 			<td>33&Prime;</td>
 			<td>planetary diurnal parallax</td>
 			<td>Venus at closest approach</td>
