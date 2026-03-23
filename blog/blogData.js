@@ -3462,5 +3462,43 @@ const blogData = [
 	</table>
 	nb. A besieged planet is one which lies uninterrupted between Mars and Saturn in the same sign.
 	`,
+	`
+	@title What needs to be accounted for in Astronomy Software
+	@date 1774277695129
+	@tags astronomy math
+	I will add to this list as I remember things.
+	<table>
+		<tr>
+			<th>Maximum Error</th>
+			<th>Phenomenon</th>
+			<th>Notes</th>
+		</tr>
+		<tr>
+			<td>1&deg; 0&prime; 24&Prime;</td>
+			<td>Lunar Diurnal Parallax</td>
+			<td>lunar perigee</td>
+		</tr>
+		<tr>
+			<td>33&Prime;</td>
+			<td>Planetary Diurnal Parallax</td>
+			<td>Venus at closest approach</td>
+		</tr>
+		<tr>
+			<td>9&Prime;</td>
+			<td>Solar Diurnal Parallax</td>
+			<td>-</td>
+		</tr>
+		<tr>
+			<td>1.8&Prime;</td>
+			<td>Solar Gravitational Lensing</td>
+			<td>Light travelling tangent to Sun's surface</td>
+		</tr>
+		<tr>
+			<td>0.55&Prime;</td>
+			<td>Light travel time (moon)</td>
+			<td>-</td>
+		</tr>
+	</table>
+	`,
 ];
 // don't forget, run blog.timestamp to get the timestamp!
