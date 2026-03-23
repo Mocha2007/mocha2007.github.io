@@ -5,6 +5,7 @@ class Alloy {
 		this.name = name;
 		/** elem name -> fraction */
 		this.composition = composition;
+		/** @type {AlloyProperties} */
 		this.properties = properties || new AlloyProperties();
 	}
 	/** @returns {HTMLSpanElement} button to set sliders to this alloy */
@@ -2375,6 +2376,18 @@ const ALLOY = {
 			clone.sort((a, b) => b.properties[property_name] - a.properties[property_name]);
 			console.debug(clone);
 		},
+		// for Cala
+		alloyThermalBatterySpecificEnergy(){
+			ALLOY.alloys.filter(a => a.is_pure_element).forEach(a => {
+				const ambient_temp = 373.15; // 100 C
+				// appx. https://en.wikipedia.org/wiki/Trouton%27s_rule
+				const heat_of_fusion = 86.5 * a.properties.melt;
+				const fusion_heat = heat_of_fusion / 0.06; // todo: replace 0.06 with molar mass in kg/mol
+				const liq_solid_heat = (a.properties.boil - ambient_temp) * a.properties.specific_heat_capacity;
+				const total_heat = fusion_heat + liq_solid_heat;
+				console.debug(`${a.name}\t${total_heat/1e6} MJ`);
+			});
+		}
 	},
 	elem: {
 		/** @type {HTMLUListElement} */
