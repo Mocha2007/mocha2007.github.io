@@ -3524,9 +3524,9 @@ const blogData = [
 			<td>-</td>
 		</tr>
 		<tr>
-			<td>18.96&Prime;</td>
+			<td>19.5&Prime;</td>
 			<td><a href="https://en.wikipedia.org/wiki/Astronomical_nutation">nutation</a></td>
-			<td>-</td>
+			<td>For Δψ. Is &asymp;10.06 for Δε.</td>
 		</tr>
 		<tr>
 			<td>9&Prime;</td>
