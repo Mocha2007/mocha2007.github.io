@@ -1518,6 +1518,7 @@ const OOM = {
 		new MoneyDatum('California GDP (2025)', 4.3e12, "https://en.wikipedia.org/wiki/California"),
 		new MoneyDatum('Cost of the Trump tax cuts (2025)', 4.5e12, "https://www.newsweek.com/republicans-reveal-trump-tax-plan-will-cost-us-45-trillion-2030024"),
 		new MoneyDatum('US Federal Budget (2025)', 7.01e12, "https://fiscaldata.treasury.gov/static-data/published-reports/mts/MonthlyTreasuryStatement_202509.pdf"),
+		new MoneyDatum('Climate damage caused by US since 1990 (2026)', 10e12, "https://www.theguardian.com/environment/2026/mar/25/us-climate-damage-research"),
 		new MoneyDatum('US GDP (LIVE)', CONSTANT.us.gdp, "https://en.wikipedia.org/wiki/United_States"),
 		new MoneyDatum('US GDP per capita (LIVE)', CONSTANT.us.gdp_per_capita, "https://en.wikipedia.org/wiki/United_States"),
 		new MoneyDatum('US national debt (LIVE)', CONSTANT.us.debt, "https://finance.yahoo.com/markets/currencies/articles/u-debt-passes-39-trillion-074129883.html"),
