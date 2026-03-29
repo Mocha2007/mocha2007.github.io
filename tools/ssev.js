@@ -179,11 +179,11 @@ const SSEV = {
 		return `${100*f - (img_offset ? this.config.imgSize/2 : 0)}vw`;
 	},
 	config: {
-		frame: 25,
+		frame: 20,
 		/** @type {number} setInterval of animation tick */
 		interval: undefined,
 		imgSize: 4,
-		stepSize: 0.25,
+		stepSize: 0.2,
 		t: Time.fromSolarAge(0),
 	},
 	elem: {
@@ -442,7 +442,7 @@ const SSEV = {
 			if (p.img_preload.src !== newSrc) p.img_preload.src = newSrc;
 		});
 		// update timer
-		this.elem.time.display.innerHTML = `${Math.round(this.config.t.mya)} Myr ago - Solar Age: ${Math.round(CONSTANTS.ageSun - this.config.t.mya)} Myr`;
+		this.elem.time.display.innerHTML = `${this.config.t.mya.toFixed(1)} Myr ago - Solar Age: ${(CONSTANTS.ageSun - this.config.t.mya).toFixed(1)} Myr`;
 	}
 };
 
