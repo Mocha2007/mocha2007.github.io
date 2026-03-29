@@ -304,7 +304,15 @@ const SSEV = {
 			new PlanetCoords(new Time(0), 1),
 		), t => CONSTANTS.ageEarth-50 < t ? 'https://mocha2007.github.io/tools/ssev/proto.jpg'
 			: 3500 < t ? 'https://mocha2007.github.io/tools/ssev/earth_archaean.jpg'
-			: 2200 < t && t < 2500 ? 'https://upload.wikimedia.org/wikipedia/commons/9/98/Snowball_Huronian.jpg'
+			// Glaciations
+			:
+				(2750 < t && t < 2900) // Pongola
+				|| (2200 < t && t < 2500) // Huronian
+				|| (660 < t && t < 717) // Sturtian
+				|| (632.3 < t && t < 654.5) // Marinoan
+				|| (579.63 < t && t < 579.88) // Gaskiers
+				|| (530 < t && t < 549) // Baykonurian
+				? 'https://mocha2007.github.io/tools/ssev/snowball.jpg'
 			: 'https://upload.wikimedia.org/wikipedia/commons/2/2d/Meteosat-12-fci-march-equinox-2025-noon.jpg',
 		{albedo: 0.294}),
 		new Planet('Theia', new PlanetPath(
