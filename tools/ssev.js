@@ -320,9 +320,12 @@ const SSEV = {
 			new PlanetCoords(Time.fromEarthAge(50), 1.60),
 			new PlanetCoords(Time.fromEarthAge(100), 1.52368055),
 			new PlanetCoords(new Time(0), 1.52368055),
-		), t => t < 3700
-			? 'https://upload.wikimedia.org/wikipedia/commons/0/0c/Mars_-_August_30_2021_-_Flickr_-_Kevin_M._Gill.png'
-			: 'https://upload.wikimedia.org/wikipedia/commons/9/98/AncientMars.jpg'
+		), t => 4000 < t ? 'https://mocha2007.github.io/tools/ssev/mars_4.0bya.jpg'
+			: 3800 < t ? 'https://mocha2007.github.io/tools/ssev/mars_3.8bya.jpg'
+			: 3500 < t ? 'https://mocha2007.github.io/tools/ssev/mars_3.5bya.jpg'
+			: 2000 < t ? 'https://mocha2007.github.io/tools/ssev/mars_2.0bya.jpg'
+			: 1000 < t ? 'https://mocha2007.github.io/tools/ssev/mars_1.0bya.jpg'
+			: 'https://mocha2007.github.io/tools/ssev/mars.jpg'
 		, {albedo: 0.25}),
 		new Planet('Ceres', new PlanetPath(
 			// https://en.wikipedia.org/wiki/Ceres_(dwarf_planet)#Origin_and_evolution
