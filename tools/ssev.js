@@ -280,7 +280,6 @@ const SSEV = {
 		console.info('ssev.js initialized.');
 	},
 	planets: [
-		// todo: https://en.wikipedia.org/wiki/List_of_gravitationally_rounded_objects_of_the_Solar_System
 		// "10 million – 100 million years terrestrial planets form"
 		// placeholder for inner SS evolution: https://www.youtube.com/watch?v=d27exZfXzsc
 		new Planet('Mercury', new PlanetPath(
@@ -369,7 +368,9 @@ const SSEV = {
 			new PlanetCoords(Time.fromSolarAge(5), 3.5),
 			new PlanetCoords(CONSTANTS.t.grandTack.f(0), 3.5),
 			new PlanetCoords(CONSTANTS.t.grandTack.f(1/6), 1.5),
-			new PlanetCoords(CONSTANTS.t.grandTack.f(1), 5.2038),
+			new PlanetCoords(CONSTANTS.t.grandTack.f(1), 5.4),
+			new PlanetCoords(CONSTANTS.t.nice.start, 5.4),
+			new PlanetCoords(CONSTANTS.t.nice.end, 5.2038),
 			new PlanetCoords(new Time(0), 5.2038),
 		), 'https://upload.wikimedia.org/wikipedia/commons/e/e2/Jupiter_OPAL_2024.png',
 		{albedo: 0.503}),
@@ -379,7 +380,7 @@ const SSEV = {
 			new PlanetCoords(CONSTANTS.t.grandTack.f(0.9/6), 4.5),
 			new PlanetCoords(CONSTANTS.t.grandTack.f(1/6), 2),
 			new PlanetCoords(CONSTANTS.t.grandTack.f(1), 7),
-			new PlanetCoords(CONSTANTS.t.nice.start, 8.260517594),
+			new PlanetCoords(CONSTANTS.t.nice.start, 8.57),
 			new PlanetCoords(CONSTANTS.t.nice.end, 9.5826),
 			new PlanetCoords(new Time(0), 9.5826),
 		), t => 100 < t ? 'https://mocha2007.github.io/tools/ssev/saturn_no_rings.jpg'
