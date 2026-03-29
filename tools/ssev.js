@@ -63,6 +63,7 @@ class Planet {
 		this.status.id = `${this.name}_status`;
 		this.status.classList.add('status');
 		e.appendChild(this.status);
+		if (this.settings.minor) e.classList.add('minor');
 		return e;
 	}
 	/** @param {Time} time */
@@ -350,6 +351,14 @@ const SSEV = {
 			: 'https://mocha2007.github.io/tools/ssev/mars.jpg'
 		// ghe is smooth decay from +35% to modern +2%
 		, {albedo: 0.25, ghe: t => 1.019856459 * Math.pow(1.35, t/CONSTANTS.ageEarth)}),
+		new Planet('Vesta', new PlanetPath(
+			// https://astrobiology.nasa.gov/news/where-did-vesta-come-from/?linkId=469571005
+			new PlanetCoords(Time.fromSolarAge(15), 4),
+			new PlanetCoords(CONSTANTS.t.grandTack.f(0), 4),
+			new PlanetCoords(CONSTANTS.t.grandTack.f(1), 2.36),
+			new PlanetCoords(new Time(0), 2.36),
+		), 'https://upload.wikimedia.org/wikipedia/commons/5/51/Vesta_in_natural_color.jpg',
+		{albedo: 0.423, minor: true}),
 		new Planet('Ceres', new PlanetPath(
 			// https://en.wikipedia.org/wiki/Ceres_(dwarf_planet)#Origin_and_evolution
 			new PlanetCoords(Time.fromSolarAge(15), 4),
@@ -357,7 +366,7 @@ const SSEV = {
 			new PlanetCoords(CONSTANTS.t.grandTack.f(1), 2.77),
 			new PlanetCoords(new Time(0), 2.77),
 		), 'https://upload.wikimedia.org/wikipedia/commons/7/76/Ceres_-_RC3_-_Haulani_Crater_%2822381131691%29_%28cropped%29.jpg',
-		{albedo: 0.09}),
+		{albedo: 0.09, minor: true}),
 		// Nice Model begins like ~ 6 Myr
 		// Nice Model source: https://commons.wikimedia.org/wiki/File:Tsiganis2005-1.svg
 		// and: https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Nesvorny2011-1.svg/3840px-Nesvorny2011-1.svg.png
@@ -418,7 +427,7 @@ const SSEV = {
 			new PlanetCoords(CONSTANTS.t.nice.end, 24),
 			// https://en.wikipedia.org/wiki/Capture_of_Triton
 		), 'https://upload.wikimedia.org/wikipedia/commons/6/65/Triton_True_Color.png',
-		{albedo: 0.76}),
+		{albedo: 0.76, minor: true}),
 		new Planet('Pluto', new PlanetPath(
 			new PlanetCoords(Time.fromEarthAge(40), 35),
 			new PlanetCoords(new Time(CONSTANTS.t.nice.end.mya - 5), 35),
@@ -426,7 +435,7 @@ const SSEV = {
 			new PlanetCoords(new Time(CONSTANTS.t.nice.end.mya - 100), 39.482),
 			new PlanetCoords(new Time(0), 39.482),
 		), 'https://upload.wikimedia.org/wikipedia/commons/c/ca/Pluto_in_True_Color_-_High-Res.png',
-		{albedo: 0.72}),
+		{albedo: 0.72, minor: true}),
 	],
 	tick(){
 		// increment step

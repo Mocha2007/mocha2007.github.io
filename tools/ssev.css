@@ -25,3 +25,6 @@ html {
 	color: silver;
 	font-size: 75%;
 }
+.minor {
+	transform: scale(0.8);
+}
