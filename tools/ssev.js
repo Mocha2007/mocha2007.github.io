@@ -123,7 +123,7 @@ const CONSTANTS = {
 const SSEV = {
 	au2pos(au = 0, img_offset = false){
 		const min = 0.35; // au
-		const max = 35; // au
+		const max = 40; // au
 		const f = Math.log(au/min)/Math.log(max/min);
 		return `${100*f - (img_offset ? this.config.imgSize/2 : 0)}vw`;
 	},
@@ -206,7 +206,7 @@ const SSEV = {
 			main.appendChild(e);
 		});
 		// create graticule
-		[0.4, 0.5, 0.75, 1, 2, 3, 4, 5, 7.5, 10, 20, 30].forEach(g => {
+		[0.3, 0.4, 0.5, 0.75, 1, 2, 3, 4, 5, 7.5, 10, 20, 30, 40].forEach(g => {
 			const e = document.createElement('div');
 			e.classList.add('graticule');
 			e.innerHTML = g;
@@ -219,6 +219,7 @@ const SSEV = {
 		console.info('ssev.js initialized.');
 	},
 	planets: [
+		// todo: https://en.wikipedia.org/wiki/List_of_gravitationally_rounded_objects_of_the_Solar_System
 		// "10 million – 100 million years terrestrial planets form"
 		new Planet('Mercury', new PlanetPath(
 			new PlanetCoords(Time.fromEarthAge(40), 0.387098),
@@ -271,6 +272,15 @@ const SSEV = {
 			new PlanetCoords(CONSTANTS.t.nice.end, 30.07),
 			new PlanetCoords(new Time(0), 30.07),
 		), 'https://upload.wikimedia.org/wikipedia/commons/b/b9/Neptune_Voyager2_color_calibrated.png'),
+		new Planet('Triton', new PlanetPath(
+			new PlanetCoords(Time.fromEarthAge(40), 30),
+			new PlanetCoords(CONSTANTS.t.nice.end, 30),
+			// https://en.wikipedia.org/wiki/Capture_of_Triton
+		), 'https://upload.wikimedia.org/wikipedia/commons/6/65/Triton_True_Color.png'),
+		new Planet('Pluto', new PlanetPath(
+			new PlanetCoords(Time.fromEarthAge(40), 39.482),
+			new PlanetCoords(new Time(0), 39.482),
+		), 'https://upload.wikimedia.org/wikipedia/commons/c/ca/Pluto_in_True_Color_-_High-Res.png'),
 	],
 	tick(){
 		// increment step
