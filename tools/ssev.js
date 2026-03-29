@@ -248,9 +248,9 @@ const SSEV = {
 		new Planet('Earth', new PlanetPath(
 			new PlanetCoords(Time.fromEarthAge(-10), 1),
 			new PlanetCoords(new Time(0), 1),
-		), t => t < 4031
-			? 'https://upload.wikimedia.org/wikipedia/commons/2/2d/Meteosat-12-fci-march-equinox-2025-noon.jpg'
-			: 'https://upload.wikimedia.org/wikipedia/commons/1/16/Earth_formation.jpg'
+		), t => 4031 < t ? 'https://upload.wikimedia.org/wikipedia/commons/1/16/Earth_formation.jpg'
+			: 3500 < t ? 'https://upload.wikimedia.org/wikipedia/commons/9/9b/NASA-EarlyEarth-PaleOrangeDot-20190802.jpg'
+			: 'https://upload.wikimedia.org/wikipedia/commons/2/2d/Meteosat-12-fci-march-equinox-2025-noon.jpg'
 		),
 		new Planet('Theia', new PlanetPath(
 			new PlanetCoords(Time.fromEarthAge(-10), 1),
