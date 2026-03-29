@@ -193,6 +193,16 @@ const SSEV = {
 		clock.id = 'clock';
 		main.appendChild(clock);
 		// create time controls
+		// reset button
+		const timeReset = this.elem.time.play = document.createElement('span');
+		timeReset.id = 'timeReset';
+		timeReset.classList.add('button');
+		timeReset.innerHTML = 'Reset';
+		timeReset.onclick = () => {
+			SSEV.config.t.mya = CONSTANTS.ageSun;
+			SSEV.update();
+		};
+		main.appendChild(timeReset);
 		// step backward button
 		const timeStepBackward = this.elem.time.stepForward = document.createElement('span');
 		timeStepBackward.id = 'timeStepBackward';
