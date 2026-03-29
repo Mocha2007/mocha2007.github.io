@@ -205,14 +205,23 @@ const SSEV = {
 		console.info('ssev.js initialized.');
 	},
 	planets: [
+		// "10 million – 100 million years terrestrial planets form"
 		new Planet('Mercury', new PlanetPath(
-			new PlanetCoords(Time.fromEarthAge(0), 0.387098),
+			new PlanetCoords(Time.fromEarthAge(90), 0.387098),
 			new PlanetCoords(new Time(0), 0.387098),
 		), 'https://upload.wikimedia.org/wikipedia/commons/4/4a/Mercury_in_true_color.jpg'),
+		new Planet('Venus', new PlanetPath(
+			new PlanetCoords(Time.fromEarthAge(30), 0.723332),
+			new PlanetCoords(new Time(0), 0.723332),
+		), 'https://upload.wikimedia.org/wikipedia/commons/0/08/Venus_from_Mariner_10.jpg'),
 		new Planet('Earth', new PlanetPath(
 			new PlanetCoords(Time.fromEarthAge(0), 1),
 			new PlanetCoords(new Time(0), 1),
 		), 'https://upload.wikimedia.org/wikipedia/commons/2/2d/Meteosat-12-fci-march-equinox-2025-noon.jpg'),
+		new Planet('Mars', new PlanetPath(
+			new PlanetCoords(Time.fromEarthAge(60), 1.52368055),
+			new PlanetCoords(new Time(0), 1.52368055),
+		), 'https://upload.wikimedia.org/wikipedia/commons/0/0c/Mars_-_August_30_2021_-_Flickr_-_Kevin_M._Gill.png'),
 		// Nice Model begins like ~ 6 Myr
 		// Nice Model source: https://commons.wikimedia.org/wiki/File:Tsiganis2005-1.svg
 		new Planet('Jupiter', new PlanetPath(
