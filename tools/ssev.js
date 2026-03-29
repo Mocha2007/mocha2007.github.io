@@ -395,6 +395,12 @@ const SSEV = {
 		), t => 100 < t ? 'https://mocha2007.github.io/tools/ssev/saturn_no_rings.jpg'
 			: 'https://upload.wikimedia.org/wikipedia/commons/5/51/Saturn_-_August_11_1981_%2850903906546%29.jpg',
 		{albedo: 0.342}),
+		new Planet('Phoebe', new PlanetPath(
+			new PlanetCoords(Time.fromEarthAge(40), 20),
+			new PlanetCoords(CONSTANTS.t.nice.start, 20),
+			new PlanetCoords(CONSTANTS.t.nice.end, 9.5826),
+		), 'https://upload.wikimedia.org/wikipedia/commons/a/ae/Phoebe_cassini_full.jpg',
+		{albedo: 0.023, minor: true, offset: true}),
 		new Planet('Uranus', new PlanetPath(
 			new PlanetCoords(Time.fromSolarAge(15), 10),
 			new PlanetCoords(CONSTANTS.t.grandTack.f(0), 10),
@@ -423,8 +429,8 @@ const SSEV = {
 		{albedo: 0.29}),
 		// Kuiper belt WAS 20-35 au before Nice
 		new Planet('Triton', new PlanetPath(
-			new PlanetCoords(Time.fromEarthAge(40), 24),
-			new PlanetCoords(CONSTANTS.t.nice.end, 24),
+			new PlanetCoords(Time.fromEarthAge(40), 28),
+			new PlanetCoords(new Time(CONSTANTS.t.nice.end.mya - 20), 28),
 			// https://en.wikipedia.org/wiki/Capture_of_Triton
 		), 'https://upload.wikimedia.org/wikipedia/commons/6/65/Triton_True_Color.png',
 		{albedo: 0.76, minor: true}),
