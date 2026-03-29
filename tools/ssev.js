@@ -101,7 +101,7 @@ class Planet {
 	updateStatus(time){
 		const a = this.sma(time);
 		const p = Math.pow(a, 1.5);
-		this.status.innerHTML = `<br>${a.toFixed(1)} au<br>${p.toFixed(1)} yr`;
+		this.status.innerHTML = `<br>${a.toFixed(1)} au<br>${2 <= p ? `${p.toFixed(1)} yr` : `${(p*365.25).toFixed(0)} d`}`;
 	}
 }
 
@@ -237,16 +237,37 @@ const SSEV = {
 	planets: [
 		// todo: https://en.wikipedia.org/wiki/List_of_gravitationally_rounded_objects_of_the_Solar_System
 		// "10 million – 100 million years terrestrial planets form"
+		// placeholder for inner SS evolution: https://www.youtube.com/watch?v=d27exZfXzsc
 		new Planet('Mercury', new PlanetPath(
-			new PlanetCoords(Time.fromEarthAge(40), 0.387098),
+			new PlanetCoords(Time.fromEarthAge(0), 0.5),
+			new PlanetCoords(Time.fromEarthAge(5), 0.53),
+			new PlanetCoords(Time.fromEarthAge(10), 0.56),
+			new PlanetCoords(Time.fromEarthAge(15), 0.54),
+			new PlanetCoords(Time.fromEarthAge(20), 0.52),
+			new PlanetCoords(Time.fromEarthAge(25), 0.51),
+			new PlanetCoords(Time.fromEarthAge(50), 0.49),
+			new PlanetCoords(Time.fromEarthAge(100), 0.43),
+			new PlanetCoords(Time.fromEarthAge(200), 0.387098),
 			new PlanetCoords(new Time(0), 0.387098),
 		), 'https://upload.wikimedia.org/wikipedia/commons/4/4a/Mercury_in_true_color.jpg'),
 		new Planet('Venus', new PlanetPath(
-			new PlanetCoords(Time.fromEarthAge(13), 0.723332),
+			new PlanetCoords(Time.fromEarthAge(0), 0.59),
+			new PlanetCoords(Time.fromEarthAge(5), 0.67),
+			new PlanetCoords(Time.fromEarthAge(10), 0.79),
+			new PlanetCoords(Time.fromEarthAge(15), 0.76),
+			new PlanetCoords(Time.fromEarthAge(20), 0.76),
+			new PlanetCoords(Time.fromEarthAge(25), 0.77),
+			new PlanetCoords(Time.fromEarthAge(50), 0.723332),
 			new PlanetCoords(new Time(0), 0.723332),
 		), 'https://upload.wikimedia.org/wikipedia/commons/0/08/Venus_from_Mariner_10.jpg'),
 		new Planet('Earth', new PlanetPath(
-			new PlanetCoords(Time.fromEarthAge(-10), 1),
+			new PlanetCoords(Time.fromEarthAge(-20), 0.98),
+			new PlanetCoords(Time.fromEarthAge(-15), 1),
+			new PlanetCoords(Time.fromEarthAge(-10), 1.12),
+			new PlanetCoords(Time.fromEarthAge(-5), 1.12),
+			new PlanetCoords(Time.fromEarthAge(0), 1.12),
+			new PlanetCoords(Time.fromEarthAge(25), 1.09),
+			new PlanetCoords(Time.fromEarthAge(50), 1),
 			new PlanetCoords(new Time(0), 1),
 		), t => 4031 < t ? 'https://upload.wikimedia.org/wikipedia/commons/1/16/Earth_formation.jpg'
 			: 3500 < t ? 'https://upload.wikimedia.org/wikipedia/commons/9/9b/NASA-EarlyEarth-PaleOrangeDot-20190802.jpg'
@@ -254,11 +275,19 @@ const SSEV = {
 			: 'https://upload.wikimedia.org/wikipedia/commons/2/2d/Meteosat-12-fci-march-equinox-2025-noon.jpg'
 		),
 		new Planet('Theia', new PlanetPath(
-			new PlanetCoords(Time.fromEarthAge(-10), 1),
-			new PlanetCoords(Time.fromEarthAge(0), 1),
+			new PlanetCoords(Time.fromEarthAge(-20), 1.12),
+			new PlanetCoords(Time.fromEarthAge(-17), 1.2),
+			new PlanetCoords(Time.fromEarthAge(0), 1.12),
 		), 'https://upload.wikimedia.org/wikipedia/commons/f/f7/Far_side_of_the_Moon.png', {offset:true}),
 		new Planet('Mars', new PlanetPath(
-			new PlanetCoords(Time.fromEarthAge(26), 1.52368055),
+			// new PlanetCoords(Time.fromEarthAge(0), 1.15),
+			new PlanetCoords(Time.fromEarthAge(5), 1.37),
+			new PlanetCoords(Time.fromEarthAge(10), 1.58),
+			new PlanetCoords(Time.fromEarthAge(15), 1.68),
+			new PlanetCoords(Time.fromEarthAge(20), 1.66),
+			new PlanetCoords(Time.fromEarthAge(25), 1.65),
+			new PlanetCoords(Time.fromEarthAge(50), 1.60),
+			new PlanetCoords(Time.fromEarthAge(100), 1.52368055),
 			new PlanetCoords(new Time(0), 1.52368055),
 		), t => t < 3700
 			? 'https://upload.wikimedia.org/wikipedia/commons/0/0c/Mars_-_August_30_2021_-_Flickr_-_Kevin_M._Gill.png'
