@@ -250,6 +250,7 @@ const SSEV = {
 			new PlanetCoords(new Time(0), 1),
 		), t => 4031 < t ? 'https://upload.wikimedia.org/wikipedia/commons/1/16/Earth_formation.jpg'
 			: 3500 < t ? 'https://upload.wikimedia.org/wikipedia/commons/9/9b/NASA-EarlyEarth-PaleOrangeDot-20190802.jpg'
+			: 2200 < t && t < 2500 ? 'https://upload.wikimedia.org/wikipedia/commons/9/98/Snowball_Huronian.jpg'
 			: 'https://upload.wikimedia.org/wikipedia/commons/2/2d/Meteosat-12-fci-march-equinox-2025-noon.jpg'
 		),
 		new Planet('Theia', new PlanetPath(
