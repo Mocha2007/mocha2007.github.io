@@ -147,13 +147,14 @@ const CONSTANTS = {
 	t: {
 		grandTack: {
 			get end(){
-				return Time.fromSolarAge(10.);
+				return new Time(this.start.mya - 0.6);
 			},
 			f(x = 0){
 				return new Time((1-x)*this.start.mya + x*this.end.mya);
 			},
 			get start(){
-				return Time.fromSolarAge(6.);
+				// to give time for ice giants to form
+				return Time.fromSolarAge(15.);
 			},
 		},
 		nice: {
@@ -352,9 +353,9 @@ const SSEV = {
 		, {albedo: 0.25, ghe: t => 1.019856459 * Math.pow(1.35, t/CONSTANTS.ageEarth)}),
 		new Planet('Ceres', new PlanetPath(
 			// https://en.wikipedia.org/wiki/Ceres_(dwarf_planet)#Origin_and_evolution
-			new PlanetCoords(Time.fromEarthAge(40), 6.6),
-			new PlanetCoords(CONSTANTS.t.nice.start, 6.6),
-			new PlanetCoords(CONSTANTS.t.nice.end, 2.77),
+			new PlanetCoords(Time.fromSolarAge(15), 4),
+			new PlanetCoords(CONSTANTS.t.grandTack.f(0), 4),
+			new PlanetCoords(CONSTANTS.t.grandTack.f(1), 2.77),
 			new PlanetCoords(new Time(0), 2.77),
 		), 'https://upload.wikimedia.org/wikipedia/commons/7/76/Ceres_-_RC3_-_Haulani_Crater_%2822381131691%29_%28cropped%29.jpg',
 		{albedo: 0.09}),
@@ -363,15 +364,21 @@ const SSEV = {
 		// and: https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Nesvorny2011-1.svg/3840px-Nesvorny2011-1.svg.png
 		new Planet('Jupiter', new PlanetPath(
 			// https://en.wikipedia.org/wiki/Grand_tack_hypothesis
+			// https://image1.slideserve.com/2642524/grand-tack-scenario-l.jpg
 			// (0 Myr, 3.5 au) -> (3 Myr, 1.5 au) -> (6 Myr, 5.2 au)
+			new PlanetCoords(Time.fromSolarAge(5), 3.5),
 			new PlanetCoords(CONSTANTS.t.grandTack.f(0), 3.5),
-			new PlanetCoords(CONSTANTS.t.grandTack.f(0.5), 1.5),
+			new PlanetCoords(CONSTANTS.t.grandTack.f(1/6), 1.5),
 			new PlanetCoords(CONSTANTS.t.grandTack.f(1), 5.2038),
 			new PlanetCoords(new Time(0), 5.2038),
 		), 'https://upload.wikimedia.org/wikipedia/commons/e/e2/Jupiter_OPAL_2024.png',
 		{albedo: 0.503}),
 		new Planet('Saturn', new PlanetPath(
-			new PlanetCoords(Time.fromSolarAge(10), 8.4),
+			new PlanetCoords(Time.fromSolarAge(10), 4.5),
+			new PlanetCoords(CONSTANTS.t.grandTack.f(0), 4.5),
+			new PlanetCoords(CONSTANTS.t.grandTack.f(0.9/6), 4.5),
+			new PlanetCoords(CONSTANTS.t.grandTack.f(1/6), 2),
+			new PlanetCoords(CONSTANTS.t.grandTack.f(1), 7),
 			new PlanetCoords(CONSTANTS.t.nice.start, 8.260517594),
 			new PlanetCoords(CONSTANTS.t.nice.end, 9.5826),
 			new PlanetCoords(new Time(0), 9.5826),
@@ -379,7 +386,10 @@ const SSEV = {
 			: 'https://upload.wikimedia.org/wikipedia/commons/5/51/Saturn_-_August_11_1981_%2850903906546%29.jpg',
 		{albedo: 0.342}),
 		new Planet('Uranus', new PlanetPath(
-			new PlanetCoords(Time.fromSolarAge(15), 17),
+			new PlanetCoords(Time.fromSolarAge(15), 10),
+			new PlanetCoords(CONSTANTS.t.grandTack.f(0), 10),
+			new PlanetCoords(CONSTANTS.t.grandTack.f(1/3), 8.5),
+			new PlanetCoords(CONSTANTS.t.grandTack.f(1), 17),
 			new PlanetCoords(CONSTANTS.t.nice.start, 17),
 			new PlanetCoords(CONSTANTS.t.nice.end, 17),
 			new PlanetCoords(new Time(CONSTANTS.t.nice.end.mya - 5), 17),
@@ -389,7 +399,10 @@ const SSEV = {
 		), 'https://upload.wikimedia.org/wikipedia/commons/6/69/Uranus_Voyager2_color_calibrated.png',
 		{albedo: 0.3}),
 		new Planet('Neptune', new PlanetPath(
-			new PlanetCoords(Time.fromSolarAge(15), 12),
+			new PlanetCoords(Time.fromSolarAge(15), 8),
+			new PlanetCoords(CONSTANTS.t.grandTack.f(0), 8),
+			new PlanetCoords(CONSTANTS.t.grandTack.f(1/3), 7.5),
+			new PlanetCoords(CONSTANTS.t.grandTack.f(1), 12),
 			new PlanetCoords(CONSTANTS.t.nice.start, 12),
 			new PlanetCoords(CONSTANTS.t.nice.end, 24),
 			new PlanetCoords(new Time(CONSTANTS.t.nice.end.mya - 5), 26),
