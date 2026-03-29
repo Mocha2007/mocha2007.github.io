@@ -228,7 +228,7 @@ const SSEV = {
 			new PlanetCoords(CONSTANTS.t.nice.start, 8.4),
 			new PlanetCoords(CONSTANTS.t.nice.end, 9.5826),
 			new PlanetCoords(new Time(0), 9.5826),
-		), 'https://upload.wikimedia.org/wikipedia/commons/c/c7/Saturn_during_Equinox.jpg'),
+		), 'https://upload.wikimedia.org/wikipedia/commons/5/51/Saturn_-_August_11_1981_%2850903906546%29.jpg'),
 		new Planet('Uranus', new PlanetPath(
 			new PlanetCoords(Time.fromSolarAge(15), 17.1),
 			new PlanetCoords(CONSTANTS.t.nice.start, 17.1),
