@@ -53,15 +53,23 @@ class Planet {
 		e.appendChild(img);
 		e.appendChild(document.createTextNode(this.name));
 		e.classList.add('planet');
+		this.status = document.createElement('span');
+		this.status.id = `${this.name}_status`;
+		this.status.classList.add('status');
+		e.appendChild(this.status);
 		return e;
 	}
 	/** @param {Time} time */
 	pos(time){
+		return SSEV.au2pos(this.sma(time), true);
+	}
+	/** @param {Time} time */
+	sma(time){
 		const t = time.mya;
 		// OOB = DNE
 		if (this.path.points[0].time.mya < t || t < this.path.points[this.path.points.length-1].time.mya) {
 			// console.debug(`${this.name} won't spawn because ... t = ${t} ... start = ${this.path.points[0].time.mya} ... end = ${this.path.points[this.path.points.length-1].time.mya}`);
-			return '-100vw';
+			return 1e-10;
 		}
 		// step 1: find the two times surrounding t
 		// binary search on the array (the array is sorted in DESCENDING order)
@@ -85,7 +93,13 @@ class Planet {
 		const f = (t - min.time.mya)/range;
 		const a = f*(max.sma - min.sma) + min.sma;
 		// console.debug(`${this.name}'s SMA = ${a} au`);
-		return SSEV.au2pos(a, true);
+		return a;
+	}
+	/** @param {Time} time */
+	updateStatus(time){
+		const a = this.sma(time);
+		const p = Math.pow(a, 1.5);
+		this.status.innerHTML = `<br>${a.toFixed(1)} au<br>${p.toFixed(1)} yr`;
 	}
 }
 
@@ -289,7 +303,10 @@ const SSEV = {
 	},
 	update(){
 		// update planet positions
-		this.planets.forEach(p => p.elem.style.left = p.pos(SSEV.config.t));
+		this.planets.forEach(p => {
+			p.elem.style.left = p.pos(SSEV.config.t);
+			p.updateStatus(this.config.t);
+		});
 		// update timer
 		this.elem.time.display.innerHTML = `${Math.round(this.config.t.mya)} Myr ago - Solar Age: ${Math.round(CONSTANTS.ageSun - this.config.t.mya)} Myr`;
 	}

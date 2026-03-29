@@ -13,9 +13,14 @@ html {
 	padding-left: 0.5vw;
 }
 .planet {
+	color: white;
 	font-size: 1.2vw;
 	top: 5vw;
 }
 .planet img {
 	display: block;
+}
+.status {
+	color: silver;
+	font-size: 75%;
 }
