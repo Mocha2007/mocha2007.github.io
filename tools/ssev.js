@@ -33,8 +33,8 @@ class Planet {
 		this.name = name;
 		/** @type {PlanetPath} */
 		this.path = path || new PlanetPath();
-		/** @type {string} */
-		this.img = img;
+		/** @type {(n: number) => string} */
+		this.img = typeof img === "string" ? () => img : img;
 		// preload images
 		// https://stackoverflow.com/questions/3646036/preloading-images-with-javascript
 		this.img_preload = new Image();
@@ -48,7 +48,7 @@ class Planet {
 		const e = document.createElement('div');
 		e.id = this.name;
 		const img = this.img_preload;
-		img.src = this.img;
+		img.src = this.img(CONSTANTS.ageSun);
 		img.style.width = img.style.height = `${SSEV.config.imgSize}vw`;
 		e.appendChild(img);
 		e.appendChild(document.createTextNode(this.name));
@@ -250,7 +250,10 @@ const SSEV = {
 		new Planet('Mars', new PlanetPath(
 			new PlanetCoords(Time.fromEarthAge(26), 1.52368055),
 			new PlanetCoords(new Time(0), 1.52368055),
-		), 'https://upload.wikimedia.org/wikipedia/commons/0/0c/Mars_-_August_30_2021_-_Flickr_-_Kevin_M._Gill.png'),
+		), t => t < 3700
+			? 'https://upload.wikimedia.org/wikipedia/commons/0/0c/Mars_-_August_30_2021_-_Flickr_-_Kevin_M._Gill.png'
+			: 'https://upload.wikimedia.org/wikipedia/commons/9/98/AncientMars.jpg'
+		),
 		new Planet('Ceres', new PlanetPath(
 			// https://en.wikipedia.org/wiki/Ceres_(dwarf_planet)#Origin_and_evolution
 			new PlanetCoords(Time.fromEarthAge(40), 6.6),
@@ -317,6 +320,7 @@ const SSEV = {
 		this.planets.forEach(p => {
 			p.elem.style.left = p.pos(SSEV.config.t);
 			p.updateStatus(this.config.t);
+			p.img_preload.src = p.img(this.config.t.mya);
 		});
 		// update timer
 		this.elem.time.display.innerHTML = `${Math.round(this.config.t.mya)} Myr ago - Solar Age: ${Math.round(CONSTANTS.ageSun - this.config.t.mya)} Myr`;
