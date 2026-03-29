@@ -101,10 +101,11 @@ class Planet {
 	updateStatus(time){
 		const a = this.sma(time);
 		const p = Math.pow(a, 1.5);
-		const t = 287.91 / Math.pow(a, 0.5) - 273.15;
+		const albedo = this.settings.albedo || 0.25;
+		const t = CONSTANTS.sun.temp(time) * Math.sqrt(CONSTANTS.sun.radius(time)/(2*a)) * Math.pow(1-albedo, 0.25);
 		this.status.innerHTML = `<br>${a.toFixed(1)} au<br>
 		${2 <= p ? `${p.toFixed(1)} yr` : `${(p*365.25).toFixed(0)} d`}<br>
-		${t.toFixed(0)}°C`;
+		${(t - 273.15).toFixed(0)}°C`;
 	}
 }
 
@@ -113,6 +114,21 @@ const CONSTANTS = {
 	ageEarth: 4540,
 	/** https://en.wikipedia.org/wiki/Formation_and_evolution_of_the_Solar_System#Chronology */
 	ageSun: 4600,
+	/** https://commons.wikimedia.org/wiki/File:Solar_evolution_(English).svg */
+	sun: {
+		/** @param {Time} time */
+		radius(time){
+			const t = CONSTANTS.ageSun - time.mya;
+			// for first 300 Myr, goes from 0.86 -> 0.74. from then til now, gradual increase.
+			return 0.00465047 *  (t < 300 ? t/300 * (0.74-0.86) + 0.86 : (t-300)/4300 * (1-0.74) + 0.74);
+		},
+		/** @param {Time} time */
+		temp(time){
+			const t = CONSTANTS.ageSun - time.mya;
+			// for first 300 Myr, goes from 5772 -> 5666. from then til now, gradual increase.
+			return t < 300 ? t/300 * (5666-5772) + 5772 : (t-300)/4300 * (5772-5666) + 5666;
+		},
+	},
 	t: {
 		grandTack: {
 			get end(){
@@ -252,7 +268,8 @@ const SSEV = {
 			new PlanetCoords(Time.fromEarthAge(100), 0.43),
 			new PlanetCoords(Time.fromEarthAge(200), 0.387098),
 			new PlanetCoords(new Time(0), 0.387098),
-		), 'https://upload.wikimedia.org/wikipedia/commons/4/4a/Mercury_in_true_color.jpg'),
+		), 'https://upload.wikimedia.org/wikipedia/commons/4/4a/Mercury_in_true_color.jpg',
+		{albedo: 0.088}),
 		new Planet('Venus', new PlanetPath(
 			new PlanetCoords(Time.fromEarthAge(0), 0.59),
 			new PlanetCoords(Time.fromEarthAge(5), 0.67),
@@ -262,7 +279,8 @@ const SSEV = {
 			new PlanetCoords(Time.fromEarthAge(25), 0.77),
 			new PlanetCoords(Time.fromEarthAge(50), 0.723332),
 			new PlanetCoords(new Time(0), 0.723332),
-		), 'https://upload.wikimedia.org/wikipedia/commons/0/08/Venus_from_Mariner_10.jpg'),
+		), 'https://upload.wikimedia.org/wikipedia/commons/0/08/Venus_from_Mariner_10.jpg',
+		{albedo: 0.76}),
 		new Planet('Earth', new PlanetPath(
 			new PlanetCoords(Time.fromEarthAge(-20), 0.98),
 			new PlanetCoords(Time.fromEarthAge(-15), 1),
@@ -275,8 +293,8 @@ const SSEV = {
 		), t => 4031 < t ? 'https://upload.wikimedia.org/wikipedia/commons/1/16/Earth_formation.jpg'
 			: 3500 < t ? 'https://upload.wikimedia.org/wikipedia/commons/9/9b/NASA-EarlyEarth-PaleOrangeDot-20190802.jpg'
 			: 2200 < t && t < 2500 ? 'https://upload.wikimedia.org/wikipedia/commons/9/98/Snowball_Huronian.jpg'
-			: 'https://upload.wikimedia.org/wikipedia/commons/2/2d/Meteosat-12-fci-march-equinox-2025-noon.jpg'
-		),
+			: 'https://upload.wikimedia.org/wikipedia/commons/2/2d/Meteosat-12-fci-march-equinox-2025-noon.jpg',
+		{albedo: 0.294}),
 		new Planet('Theia', new PlanetPath(
 			new PlanetCoords(Time.fromEarthAge(-20), 1.12),
 			new PlanetCoords(Time.fromEarthAge(-17), 1.2),
@@ -295,14 +313,15 @@ const SSEV = {
 		), t => t < 3700
 			? 'https://upload.wikimedia.org/wikipedia/commons/0/0c/Mars_-_August_30_2021_-_Flickr_-_Kevin_M._Gill.png'
 			: 'https://upload.wikimedia.org/wikipedia/commons/9/98/AncientMars.jpg'
-		),
+		, {albedo: 0.25}),
 		new Planet('Ceres', new PlanetPath(
 			// https://en.wikipedia.org/wiki/Ceres_(dwarf_planet)#Origin_and_evolution
 			new PlanetCoords(Time.fromEarthAge(40), 6.6),
 			new PlanetCoords(CONSTANTS.t.nice.start, 6.6),
 			new PlanetCoords(CONSTANTS.t.nice.end, 2.77),
 			new PlanetCoords(new Time(0), 2.77),
-		), 'https://upload.wikimedia.org/wikipedia/commons/7/76/Ceres_-_RC3_-_Haulani_Crater_%2822381131691%29_%28cropped%29.jpg'),
+		), 'https://upload.wikimedia.org/wikipedia/commons/7/76/Ceres_-_RC3_-_Haulani_Crater_%2822381131691%29_%28cropped%29.jpg',
+		{albedo: 0.09}),
 		// Nice Model begins like ~ 6 Myr
 		// Nice Model source: https://commons.wikimedia.org/wiki/File:Tsiganis2005-1.svg
 		// and: https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Nesvorny2011-1.svg/3840px-Nesvorny2011-1.svg.png
@@ -313,13 +332,15 @@ const SSEV = {
 			new PlanetCoords(CONSTANTS.t.grandTack.f(0.5), 1.5),
 			new PlanetCoords(CONSTANTS.t.grandTack.f(1), 5.2038),
 			new PlanetCoords(new Time(0), 5.2038),
-		), 'https://upload.wikimedia.org/wikipedia/commons/e/e2/Jupiter_OPAL_2024.png'),
+		), 'https://upload.wikimedia.org/wikipedia/commons/e/e2/Jupiter_OPAL_2024.png',
+		{albedo: 0.503}),
 		new Planet('Saturn', new PlanetPath(
 			new PlanetCoords(Time.fromSolarAge(10), 8.4),
 			new PlanetCoords(CONSTANTS.t.nice.start, 8.260517594),
 			new PlanetCoords(CONSTANTS.t.nice.end, 9.5826),
 			new PlanetCoords(new Time(0), 9.5826),
-		), 'https://upload.wikimedia.org/wikipedia/commons/5/51/Saturn_-_August_11_1981_%2850903906546%29.jpg'),
+		), 'https://upload.wikimedia.org/wikipedia/commons/5/51/Saturn_-_August_11_1981_%2850903906546%29.jpg',
+		{albedo: 0.342}),
 		new Planet('Uranus', new PlanetPath(
 			new PlanetCoords(Time.fromSolarAge(15), 17),
 			new PlanetCoords(CONSTANTS.t.nice.start, 17),
@@ -328,7 +349,8 @@ const SSEV = {
 			new PlanetCoords(new Time(CONSTANTS.t.nice.end.mya - 20), 18.25),
 			new PlanetCoords(new Time(CONSTANTS.t.nice.end.mya - 100), 19.19126),
 			new PlanetCoords(new Time(0), 19.19126),
-		), 'https://upload.wikimedia.org/wikipedia/commons/6/69/Uranus_Voyager2_color_calibrated.png'),
+		), 'https://upload.wikimedia.org/wikipedia/commons/6/69/Uranus_Voyager2_color_calibrated.png',
+		{albedo: 0.3}),
 		new Planet('Neptune', new PlanetPath(
 			new PlanetCoords(Time.fromSolarAge(15), 12),
 			new PlanetCoords(CONSTANTS.t.nice.start, 12),
@@ -337,20 +359,23 @@ const SSEV = {
 			new PlanetCoords(new Time(CONSTANTS.t.nice.end.mya - 20), 28),
 			new PlanetCoords(new Time(CONSTANTS.t.nice.end.mya - 100), 30.07),
 			new PlanetCoords(new Time(0), 30.07),
-		), 'https://upload.wikimedia.org/wikipedia/commons/b/b9/Neptune_Voyager2_color_calibrated.png'),
+		), 'https://upload.wikimedia.org/wikipedia/commons/b/b9/Neptune_Voyager2_color_calibrated.png',
+		{albedo: 0.29}),
 		// Kuiper belt WAS 20-35 au before Nice
 		new Planet('Triton', new PlanetPath(
 			new PlanetCoords(Time.fromEarthAge(40), 24),
 			new PlanetCoords(CONSTANTS.t.nice.end, 24),
 			// https://en.wikipedia.org/wiki/Capture_of_Triton
-		), 'https://upload.wikimedia.org/wikipedia/commons/6/65/Triton_True_Color.png'),
+		), 'https://upload.wikimedia.org/wikipedia/commons/6/65/Triton_True_Color.png',
+		{albedo: 0.76}),
 		new Planet('Pluto', new PlanetPath(
 			new PlanetCoords(Time.fromEarthAge(40), 35),
 			new PlanetCoords(new Time(CONSTANTS.t.nice.end.mya - 5), 35),
 			new PlanetCoords(new Time(CONSTANTS.t.nice.end.mya - 20), 36.7),
 			new PlanetCoords(new Time(CONSTANTS.t.nice.end.mya - 100), 39.482),
 			new PlanetCoords(new Time(0), 39.482),
-		), 'https://upload.wikimedia.org/wikipedia/commons/c/ca/Pluto_in_True_Color_-_High-Res.png'),
+		), 'https://upload.wikimedia.org/wikipedia/commons/c/ca/Pluto_in_True_Color_-_High-Res.png',
+		{albedo: 0.72}),
 	],
 	tick(){
 		// increment step
