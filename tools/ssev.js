@@ -35,6 +35,11 @@ class Planet {
 		this.path = path || new PlanetPath();
 		/** @type {string} */
 		this.img = img;
+		// preload images
+		// https://stackoverflow.com/questions/3646036/preloading-images-with-javascript
+		this.img_preload = new Image();
+		this.img_preload.crossOrigin = "anonymous"; // prevent error spam
+		this.img_preload.src = img;
 	}
 	get elem(){
 		return document.getElementById(this.name);
@@ -42,7 +47,7 @@ class Planet {
 	createElem(){
 		const e = document.createElement('div');
 		e.id = this.name;
-		const img = document.createElement('img');
+		const img = this.img_preload;
 		img.src = this.img;
 		img.style.width = img.style.height = `${SSEV.config.imgSize}vw`;
 		e.appendChild(img);
