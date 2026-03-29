@@ -380,6 +380,7 @@ const SSEV = {
 	tick(){
 		// increment step
 		SSEV.config.t.mya -= SSEV.config.stepSize;
+		SSEV.config.t.mya = Math.max(0, SSEV.config.t.mya);
 		this.update();
 	},
 	update(){
