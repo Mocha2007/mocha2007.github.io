@@ -6,8 +6,11 @@ html {
 	position: absolute;
 }
 .graticule {
+	border-left: 2px solid cyan;
+	border-top-left-radius: 1vw;
 	font-size: 1.5vw;
-	color: red;
+	color: cyan;
+	padding-left: 0.5vw;
 }
 .planet {
 	font-size: 1.2vw;
