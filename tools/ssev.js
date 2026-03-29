@@ -41,6 +41,8 @@ class Planet {
 		this.img_preload.crossOrigin = "anonymous"; // prevent error spam
 		this.img_preload.src = this.img(0);
 		this.settings = settings || {};
+		const albedo = this.settings.albedo || 0.25;
+		if (typeof albedo !== "function") this.settings.albedo = () => albedo;
 	}
 	get elem(){
 		return document.getElementById(this.name);
@@ -101,7 +103,7 @@ class Planet {
 	updateStatus(time){
 		const a = this.sma(time);
 		const p = Math.pow(a, 1.5);
-		const albedo = this.settings.albedo || 0.25;
+		const albedo = this.settings.albedo(time.mya);
 		const t = CONSTANTS.sun.temp(time) * Math.sqrt(CONSTANTS.sun.radius(time)/(2*a)) * Math.pow(1-albedo, 0.25);
 		this.status.innerHTML = `<br>${a.toFixed(1)} au<br>
 		${2 <= p ? `${p.toFixed(1)} yr` : `${(p*365.25).toFixed(0)} d`}<br>
@@ -114,6 +116,15 @@ const CONSTANTS = {
 	ageEarth: 4540,
 	/** https://en.wikipedia.org/wiki/Formation_and_evolution_of_the_Solar_System#Chronology */
 	ageSun: 4600,
+	/** @param {number} t - Mya */
+	glacial(t){
+		return (2750 < t && t < 2900) // Pongola
+				|| (2200 < t && t < 2500) // Huronian
+				|| (660 < t && t < 717) // Sturtian
+				|| (632.3 < t && t < 654.5) // Marinoan
+				|| (579.63 < t && t < 579.88) // Gaskiers
+				|| (530 < t && t < 549); // Baykonurian
+	},
 	/** https://commons.wikimedia.org/wiki/File:Solar_evolution_(English).svg */
 	sun: {
 		/** @param {Time} time */
@@ -291,8 +302,11 @@ const SSEV = {
 			new PlanetCoords(Time.fromEarthAge(50), 0.723332),
 			new PlanetCoords(new Time(0), 0.723332),
 		), t => CONSTANTS.ageEarth-50 < t ? 'https://mocha2007.github.io/tools/ssev/proto.jpg'
+			// https://en.wikipedia.org/wiki/Venus#Magnetic_field_and_core
+			// Possibly retained water for first 2-3 Byr - let's say this period ended 2000 Mya
+			: 2000 < t ? 'https://mocha2007.github.io/tools/ssev/earth_archaean.jpg'
 			: 'https://upload.wikimedia.org/wikipedia/commons/0/08/Venus_from_Mariner_10.jpg',
-		{albedo: 0.76}),
+		{albedo: t => 2000 < t ? 0.25 : 0.76}),
 		new Planet('Earth', new PlanetPath(
 			new PlanetCoords(Time.fromEarthAge(-20), 0.98),
 			new PlanetCoords(Time.fromEarthAge(-15), 1),
@@ -305,16 +319,9 @@ const SSEV = {
 		), t => CONSTANTS.ageEarth-50 < t ? 'https://mocha2007.github.io/tools/ssev/proto.jpg'
 			: 3500 < t ? 'https://mocha2007.github.io/tools/ssev/earth_archaean.jpg'
 			// Glaciations
-			:
-				(2750 < t && t < 2900) // Pongola
-				|| (2200 < t && t < 2500) // Huronian
-				|| (660 < t && t < 717) // Sturtian
-				|| (632.3 < t && t < 654.5) // Marinoan
-				|| (579.63 < t && t < 579.88) // Gaskiers
-				|| (530 < t && t < 549) // Baykonurian
-				? 'https://mocha2007.github.io/tools/ssev/snowball.jpg'
+			: CONSTANTS.glacial(t) ? 'https://mocha2007.github.io/tools/ssev/snowball.jpg'
 			: 'https://upload.wikimedia.org/wikipedia/commons/2/2d/Meteosat-12-fci-march-equinox-2025-noon.jpg',
-		{albedo: 0.294}),
+		{albedo: t => CONSTANTS.glacial(t) ? 0.75 : 0.294}),
 		new Planet('Theia', new PlanetPath(
 			new PlanetCoords(Time.fromEarthAge(-20), 1.12),
 			new PlanetCoords(Time.fromEarthAge(-17), 1.2),
