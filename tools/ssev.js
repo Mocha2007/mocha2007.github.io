@@ -28,7 +28,7 @@ class PlanetPath {
 }
 
 class Planet {
-	constructor(name, path, img){
+	constructor(name, path, img, settings){
 		/** @type {string} */
 		this.name = name;
 		/** @type {PlanetPath} */
@@ -40,6 +40,7 @@ class Planet {
 		this.img_preload = new Image();
 		this.img_preload.crossOrigin = "anonymous"; // prevent error spam
 		this.img_preload.src = img;
+		this.settings = settings || {};
 	}
 	get elem(){
 		return document.getElementById(this.name);
@@ -53,6 +54,7 @@ class Planet {
 		e.appendChild(img);
 		e.appendChild(document.createTextNode(this.name));
 		e.classList.add('planet');
+		if (this.settings.offset) e.style.top = '15vw';
 		this.status = document.createElement('span');
 		this.status.id = `${this.name}_status`;
 		this.status.classList.add('status');
@@ -244,9 +246,16 @@ const SSEV = {
 			new PlanetCoords(new Time(0), 0.723332),
 		), 'https://upload.wikimedia.org/wikipedia/commons/0/08/Venus_from_Mariner_10.jpg'),
 		new Planet('Earth', new PlanetPath(
-			new PlanetCoords(Time.fromEarthAge(0), 1),
+			new PlanetCoords(Time.fromEarthAge(-10), 1),
 			new PlanetCoords(new Time(0), 1),
-		), 'https://upload.wikimedia.org/wikipedia/commons/2/2d/Meteosat-12-fci-march-equinox-2025-noon.jpg'),
+		), t => t < 4031
+			? 'https://upload.wikimedia.org/wikipedia/commons/2/2d/Meteosat-12-fci-march-equinox-2025-noon.jpg'
+			: 'https://upload.wikimedia.org/wikipedia/commons/1/16/Earth_formation.jpg'
+		),
+		new Planet('Theia', new PlanetPath(
+			new PlanetCoords(Time.fromEarthAge(-10), 1),
+			new PlanetCoords(Time.fromEarthAge(0), 1),
+		), 'https://upload.wikimedia.org/wikipedia/commons/f/f7/Far_side_of_the_Moon.png', {offset:true}),
 		new Planet('Mars', new PlanetPath(
 			new PlanetCoords(Time.fromEarthAge(26), 1.52368055),
 			new PlanetCoords(new Time(0), 1.52368055),
