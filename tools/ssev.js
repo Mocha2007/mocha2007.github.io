@@ -126,7 +126,7 @@ const SSEV = {
 		frame: 25,
 		/** @type {number} setInterval of animation tick */
 		interval: undefined,
-		imgSize: 5,
+		imgSize: 4,
 		stepSize: 0.25,
 		t: Time.fromSolarAge(0),
 	},
@@ -231,6 +231,13 @@ const SSEV = {
 			new PlanetCoords(Time.fromEarthAge(26), 1.52368055),
 			new PlanetCoords(new Time(0), 1.52368055),
 		), 'https://upload.wikimedia.org/wikipedia/commons/0/0c/Mars_-_August_30_2021_-_Flickr_-_Kevin_M._Gill.png'),
+		new Planet('Ceres', new PlanetPath(
+			// https://en.wikipedia.org/wiki/Ceres_(dwarf_planet)#Origin_and_evolution
+			new PlanetCoords(Time.fromEarthAge(40), 6.6),
+			new PlanetCoords(CONSTANTS.t.nice.start, 6.6),
+			new PlanetCoords(CONSTANTS.t.nice.end, 2.77),
+			new PlanetCoords(new Time(0), 2.77),
+		), 'https://upload.wikimedia.org/wikipedia/commons/7/76/Ceres_-_RC3_-_Haulani_Crater_%2822381131691%29_%28cropped%29.jpg'),
 		// Nice Model begins like ~ 6 Myr
 		// Nice Model source: https://commons.wikimedia.org/wiki/File:Tsiganis2005-1.svg
 		new Planet('Jupiter', new PlanetPath(
@@ -269,7 +276,7 @@ const SSEV = {
 		// update planet positions
 		this.planets.forEach(p => p.elem.style.left = p.pos(SSEV.config.t));
 		// update timer
-		this.elem.time.display.innerHTML = `${Math.round(this.config.t.mya)} mya`;
+		this.elem.time.display.innerHTML = `${Math.round(this.config.t.mya)} Myr ago - Solar Age: ${Math.round(CONSTANTS.ageSun - this.config.t.mya)} Myr`;
 	}
 };
 
