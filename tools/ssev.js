@@ -104,7 +104,7 @@ class Planet {
 	/** @param {Time} time */
 	updateStatus(time){
 		const a = this.sma(time);
-		const p = Math.pow(a, 1.5);
+		const p = 1.00001742096 * Math.pow(a, 1.5);
 		const albedo = this.settings.albedo(time.mya);
 		const t = CONSTANTS.sun.temp(time) * Math.sqrt(CONSTANTS.sun.radius(time)/(2*a)) * Math.pow(1-albedo, 0.25)
 			// greenhouse
