@@ -396,7 +396,7 @@ const SSEV = {
 			: 'https://upload.wikimedia.org/wikipedia/commons/5/51/Saturn_-_August_11_1981_%2850903906546%29.jpg',
 		{albedo: 0.342}),
 		new Planet('Phoebe', new PlanetPath(
-			new PlanetCoords(Time.fromEarthAge(40), 20),
+			new PlanetCoords(Time.fromSolarAge(3), 20),
 			new PlanetCoords(CONSTANTS.t.nice.start, 20),
 			new PlanetCoords(CONSTANTS.t.nice.end, 9.5826),
 		), 'https://upload.wikimedia.org/wikipedia/commons/a/ae/Phoebe_cassini_full.jpg',
@@ -429,13 +429,13 @@ const SSEV = {
 		{albedo: 0.29}),
 		// Kuiper belt WAS 20-35 au before Nice
 		new Planet('Triton', new PlanetPath(
-			new PlanetCoords(Time.fromEarthAge(40), 28),
+			new PlanetCoords(Time.fromSolarAge(15), 28),
 			new PlanetCoords(new Time(CONSTANTS.t.nice.end.mya - 20), 28),
 			// https://en.wikipedia.org/wiki/Capture_of_Triton
 		), 'https://upload.wikimedia.org/wikipedia/commons/6/65/Triton_True_Color.png',
 		{albedo: 0.76, minor: true}),
 		new Planet('Pluto', new PlanetPath(
-			new PlanetCoords(Time.fromEarthAge(40), 35),
+			new PlanetCoords(Time.fromSolarAge(15), 35),
 			new PlanetCoords(new Time(CONSTANTS.t.nice.end.mya - 5), 35),
 			new PlanetCoords(new Time(CONSTANTS.t.nice.end.mya - 20), 36.7),
 			new PlanetCoords(new Time(CONSTANTS.t.nice.end.mya - 100), 39.482),
@@ -443,7 +443,7 @@ const SSEV = {
 		), 'https://upload.wikimedia.org/wikipedia/commons/c/ca/Pluto_in_True_Color_-_High-Res.png',
 		{albedo: 0.72, minor: true}),
 		// new Planet('Haumea', new PlanetPath(
-		// 	new PlanetCoords(Time.fromEarthAge(40), 35),
+		// 	new PlanetCoords(Time.fromEarthAge(15), 35),
 		// 	new PlanetCoords(CONSTANTS.t.nice.end, 35),
 		// 	new PlanetCoords(new Time(CONSTANTS.t.nice.end.mya - 5), 37.2),
 		// 	new PlanetCoords(new Time(CONSTANTS.t.nice.end.mya - 20), 40.1),
