@@ -103,13 +103,13 @@ const CONSTANTS = {
 		},
 		nice: {
 			get end(){
-				return new Time(this.start.mya + 3);
+				return new Time(this.start.mya + 5);
 			},
 			f(x = 0){
 				return new Time((1-x)*this.start.mya + x*this.end.mya);
 			},
 			get start(){
-				return Time.fromSolarAge(600.);
+				return Time.fromSolarAge(500.);
 			},
 		},
 	},
