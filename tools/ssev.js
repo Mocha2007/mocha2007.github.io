@@ -260,6 +260,7 @@ const SSEV = {
 		), 'https://upload.wikimedia.org/wikipedia/commons/7/76/Ceres_-_RC3_-_Haulani_Crater_%2822381131691%29_%28cropped%29.jpg'),
 		// Nice Model begins like ~ 6 Myr
 		// Nice Model source: https://commons.wikimedia.org/wiki/File:Tsiganis2005-1.svg
+		// and: https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Nesvorny2011-1.svg/3840px-Nesvorny2011-1.svg.png
 		new Planet('Jupiter', new PlanetPath(
 			// https://en.wikipedia.org/wiki/Grand_tack_hypothesis
 			// (0 Myr, 3.5 au) -> (3 Myr, 1.5 au) -> (6 Myr, 5.2 au)
@@ -275,28 +276,34 @@ const SSEV = {
 			new PlanetCoords(new Time(0), 9.5826),
 		), 'https://upload.wikimedia.org/wikipedia/commons/5/51/Saturn_-_August_11_1981_%2850903906546%29.jpg'),
 		new Planet('Uranus', new PlanetPath(
-			new PlanetCoords(Time.fromSolarAge(15), 17.1),
-			new PlanetCoords(CONSTANTS.t.nice.start, 17.1),
-			new PlanetCoords(CONSTANTS.t.nice.end, 19.19126),
+			new PlanetCoords(Time.fromSolarAge(15), 17),
+			new PlanetCoords(CONSTANTS.t.nice.start, 17),
+			new PlanetCoords(CONSTANTS.t.nice.end, 17),
+			new PlanetCoords(new Time(CONSTANTS.t.nice.end.mya - 5), 17),
+			new PlanetCoords(new Time(CONSTANTS.t.nice.end.mya - 20), 18.25),
+			new PlanetCoords(new Time(CONSTANTS.t.nice.end.mya - 100), 19.19126),
 			new PlanetCoords(new Time(0), 19.19126),
 		), 'https://upload.wikimedia.org/wikipedia/commons/6/69/Uranus_Voyager2_color_calibrated.png'),
 		new Planet('Neptune', new PlanetPath(
 			new PlanetCoords(Time.fromSolarAge(15), 12),
 			new PlanetCoords(CONSTANTS.t.nice.start, 12),
-			new PlanetCoords(CONSTANTS.t.nice.end, 30.07),
+			new PlanetCoords(CONSTANTS.t.nice.end, 24),
+			new PlanetCoords(new Time(CONSTANTS.t.nice.end.mya - 5), 26),
+			new PlanetCoords(new Time(CONSTANTS.t.nice.end.mya - 20), 28),
+			new PlanetCoords(new Time(CONSTANTS.t.nice.end.mya - 100), 30.07),
 			new PlanetCoords(new Time(0), 30.07),
 		), 'https://upload.wikimedia.org/wikipedia/commons/b/b9/Neptune_Voyager2_color_calibrated.png'),
 		// Kuiper belt WAS 20-35 au before Nice
 		new Planet('Triton', new PlanetPath(
-			new PlanetCoords(Time.fromEarthAge(40), 25),
-			new PlanetCoords(CONSTANTS.t.nice.start, 25),
-			new PlanetCoords(CONSTANTS.t.nice.end, 30),
+			new PlanetCoords(Time.fromEarthAge(40), 24),
+			new PlanetCoords(CONSTANTS.t.nice.end, 24),
 			// https://en.wikipedia.org/wiki/Capture_of_Triton
 		), 'https://upload.wikimedia.org/wikipedia/commons/6/65/Triton_True_Color.png'),
 		new Planet('Pluto', new PlanetPath(
 			new PlanetCoords(Time.fromEarthAge(40), 35),
-			new PlanetCoords(CONSTANTS.t.nice.start, 35),
-			new PlanetCoords(CONSTANTS.t.nice.end, 39.482),
+			new PlanetCoords(new Time(CONSTANTS.t.nice.end.mya - 5), 35),
+			new PlanetCoords(new Time(CONSTANTS.t.nice.end.mya - 20), 36.7),
+			new PlanetCoords(new Time(CONSTANTS.t.nice.end.mya - 100), 39.482),
 			new PlanetCoords(new Time(0), 39.482),
 		), 'https://upload.wikimedia.org/wikipedia/commons/c/ca/Pluto_in_True_Color_-_High-Res.png'),
 	],
