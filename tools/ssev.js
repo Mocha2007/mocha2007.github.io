@@ -43,6 +43,8 @@ class Planet {
 		this.settings = settings || {};
 		const albedo = this.settings.albedo || 0.25;
 		if (typeof albedo !== "function") this.settings.albedo = () => albedo;
+		const ghe = this.settings.ghe || 0.25;
+		if (typeof ghe !== "function") this.settings.ghe = () => ghe;
 	}
 	get elem(){
 		return document.getElementById(this.name);
@@ -104,7 +106,9 @@ class Planet {
 		const a = this.sma(time);
 		const p = Math.pow(a, 1.5);
 		const albedo = this.settings.albedo(time.mya);
-		const t = CONSTANTS.sun.temp(time) * Math.sqrt(CONSTANTS.sun.radius(time)/(2*a)) * Math.pow(1-albedo, 0.25);
+		const t = CONSTANTS.sun.temp(time) * Math.sqrt(CONSTANTS.sun.radius(time)/(2*a)) * Math.pow(1-albedo, 0.25)
+			// greenhouse
+			* this.settings.ghe(time.mya);
 		this.status.innerHTML = `<br>${a.toFixed(1)} au<br>
 		${2 <= p ? `${p.toFixed(1)} yr` : `${(p*365.25).toFixed(0)} d`}<br>
 		${(t - 273.15).toFixed(0)}°C`;
@@ -306,7 +310,7 @@ const SSEV = {
 			// Possibly retained water for first 2-3 Byr - let's say this period ended 2000 Mya
 			: 2000 < t ? 'https://mocha2007.github.io/tools/ssev/earth_archaean.jpg'
 			: 'https://upload.wikimedia.org/wikipedia/commons/0/08/Venus_from_Mariner_10.jpg',
-		{albedo: t => 2000 < t ? 0.3 : 0.76}),
+		{albedo: t => 2000 < t ? 0.3 : 0.76, ghe: t => 2000 <= t ? 1.13 : 3.176724138}),
 		new Planet('Earth', new PlanetPath(
 			new PlanetCoords(Time.fromEarthAge(-20), 0.98),
 			new PlanetCoords(Time.fromEarthAge(-15), 1),
@@ -321,7 +325,7 @@ const SSEV = {
 			// Glaciations
 			: CONSTANTS.glacial(t) ? 'https://mocha2007.github.io/tools/ssev/snowball.jpg'
 			: 'https://upload.wikimedia.org/wikipedia/commons/2/2d/Meteosat-12-fci-march-equinox-2025-noon.jpg',
-		{albedo: t => CONSTANTS.glacial(t) ? 0.75 : 0.294}),
+		{albedo: t => CONSTANTS.glacial(t) ? 0.75 : 0.294, ghe: 1.129058824}),
 		new Planet('Theia', new PlanetPath(
 			new PlanetCoords(Time.fromEarthAge(-20), 1.12),
 			new PlanetCoords(Time.fromEarthAge(-17), 1.2),
@@ -344,7 +348,8 @@ const SSEV = {
 			: 2000 < t ? 'https://mocha2007.github.io/tools/ssev/mars_2.0bya.jpg'
 			: 1000 < t ? 'https://mocha2007.github.io/tools/ssev/mars_1.0bya.jpg'
 			: 'https://mocha2007.github.io/tools/ssev/mars.jpg'
-		, {albedo: 0.25}),
+		// ghe is smooth decay from +35% to modern +2%
+		, {albedo: 0.25, ghe: t => 1.019856459 * Math.pow(1.35, t/CONSTANTS.ageEarth)}),
 		new Planet('Ceres', new PlanetPath(
 			// https://en.wikipedia.org/wiki/Ceres_(dwarf_planet)#Origin_and_evolution
 			new PlanetCoords(Time.fromEarthAge(40), 6.6),
