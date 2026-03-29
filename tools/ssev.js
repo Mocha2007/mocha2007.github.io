@@ -44,7 +44,7 @@ class Planet {
 		e.id = this.name;
 		const img = document.createElement('img');
 		img.src = this.img;
-		img.style.width = img.style.height = '5vw';
+		img.style.width = img.style.height = `${SSEV.config.imgSize}vw`;
 		e.appendChild(img);
 		e.appendChild(document.createTextNode(this.name));
 		e.classList.add('planet');
@@ -80,7 +80,7 @@ class Planet {
 		const f = (t - min.time.mya)/range;
 		const a = f*(max.sma - min.sma) + min.sma;
 		// console.debug(`${this.name}'s SMA = ${a} au`);
-		return SSEV.au2pos(a);
+		return SSEV.au2pos(a, true);
 	}
 }
 
@@ -116,21 +116,23 @@ const CONSTANTS = {
 };
 
 const SSEV = {
-	au2pos(au = 0){
+	au2pos(au = 0, img_offset = false){
 		const min = 0.35; // au
 		const max = 35; // au
 		const f = Math.log(au/min)/Math.log(max/min);
-		return `${100*f}vw`;
+		return `${100*f + (img_offset ? this.config.imgSize/2 : 0)}vw`;
 	},
 	config: {
+		frame: 25,
 		/** @type {number} setInterval of animation tick */
 		interval: undefined,
+		imgSize: 5,
+		stepSize: 0.25,
 		t: Time.fromSolarAge(0),
 	},
 	elem: {
 		/** @type {HTMLDivElement} */
 		clock: undefined,
-		frame: 50,
 		/** @type {HTMLDivElement} */
 		main: undefined,
 		time: {
@@ -142,7 +144,6 @@ const SSEV = {
 			stepBackward: undefined,
 			/** @type {HTMLSpanElement} */
 			stepForward: undefined,
-			stepSize: 0.04,
 		},
 	},
 	init(){
@@ -199,6 +200,14 @@ const SSEV = {
 			const e = p.createElem();
 			main.appendChild(e);
 		});
+		// create graticule
+		[0.5, 1, 2, 5, 10, 20].forEach(g => {
+			const e = document.createElement('div');
+			e.classList.add('graticule');
+			e.innerHTML = g;
+			e.style.left = this.au2pos(g);
+			main.appendChild(e);
+		});
 		// update
 		this.update();
 		// finish
@@ -207,11 +216,11 @@ const SSEV = {
 	planets: [
 		// "10 million – 100 million years terrestrial planets form"
 		new Planet('Mercury', new PlanetPath(
-			new PlanetCoords(Time.fromEarthAge(90), 0.387098),
+			new PlanetCoords(Time.fromEarthAge(40), 0.387098),
 			new PlanetCoords(new Time(0), 0.387098),
 		), 'https://upload.wikimedia.org/wikipedia/commons/4/4a/Mercury_in_true_color.jpg'),
 		new Planet('Venus', new PlanetPath(
-			new PlanetCoords(Time.fromEarthAge(30), 0.723332),
+			new PlanetCoords(Time.fromEarthAge(13), 0.723332),
 			new PlanetCoords(new Time(0), 0.723332),
 		), 'https://upload.wikimedia.org/wikipedia/commons/0/08/Venus_from_Mariner_10.jpg'),
 		new Planet('Earth', new PlanetPath(
@@ -219,7 +228,7 @@ const SSEV = {
 			new PlanetCoords(new Time(0), 1),
 		), 'https://upload.wikimedia.org/wikipedia/commons/2/2d/Meteosat-12-fci-march-equinox-2025-noon.jpg'),
 		new Planet('Mars', new PlanetPath(
-			new PlanetCoords(Time.fromEarthAge(60), 1.52368055),
+			new PlanetCoords(Time.fromEarthAge(26), 1.52368055),
 			new PlanetCoords(new Time(0), 1.52368055),
 		), 'https://upload.wikimedia.org/wikipedia/commons/0/0c/Mars_-_August_30_2021_-_Flickr_-_Kevin_M._Gill.png'),
 		// Nice Model begins like ~ 6 Myr
@@ -253,7 +262,7 @@ const SSEV = {
 	],
 	tick(){
 		// increment step
-		SSEV.config.t.mya -= SSEV.elem.time.stepSize;
+		SSEV.config.t.mya -= SSEV.config.stepSize;
 		this.update();
 	},
 	update(){

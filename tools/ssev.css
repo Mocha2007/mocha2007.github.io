@@ -1,6 +1,12 @@
-.planet {
-	font-size: 75%;
+.graticule, .planet {
+	font-size: 1.5vw;
 	position: absolute;
+}
+.graticule {
+	color: red;
+}
+.planet {
+	top: 5vw;
 }
 .planet img {
 	display: block;
