@@ -278,7 +278,8 @@ const SSEV = {
 			new PlanetCoords(Time.fromEarthAge(100), 0.43),
 			new PlanetCoords(Time.fromEarthAge(200), 0.387098),
 			new PlanetCoords(new Time(0), 0.387098),
-		), 'https://upload.wikimedia.org/wikipedia/commons/4/4a/Mercury_in_true_color.jpg',
+		), t => CONSTANTS.ageEarth-50 < t ? 'https://mocha2007.github.io/tools/ssev/proto.jpg'
+			: 'https://upload.wikimedia.org/wikipedia/commons/4/4a/Mercury_in_true_color.jpg',
 		{albedo: 0.088}),
 		new Planet('Venus', new PlanetPath(
 			new PlanetCoords(Time.fromEarthAge(0), 0.59),
@@ -289,7 +290,8 @@ const SSEV = {
 			new PlanetCoords(Time.fromEarthAge(25), 0.77),
 			new PlanetCoords(Time.fromEarthAge(50), 0.723332),
 			new PlanetCoords(new Time(0), 0.723332),
-		), 'https://upload.wikimedia.org/wikipedia/commons/0/08/Venus_from_Mariner_10.jpg',
+		), t => CONSTANTS.ageEarth-50 < t ? 'https://mocha2007.github.io/tools/ssev/proto.jpg'
+			: 'https://upload.wikimedia.org/wikipedia/commons/0/08/Venus_from_Mariner_10.jpg',
 		{albedo: 0.76}),
 		new Planet('Earth', new PlanetPath(
 			new PlanetCoords(Time.fromEarthAge(-20), 0.98),
@@ -300,8 +302,8 @@ const SSEV = {
 			new PlanetCoords(Time.fromEarthAge(25), 1.09),
 			new PlanetCoords(Time.fromEarthAge(50), 1),
 			new PlanetCoords(new Time(0), 1),
-		), t => 4031 < t ? 'https://upload.wikimedia.org/wikipedia/commons/1/16/Earth_formation.jpg'
-			: 3500 < t ? 'https://upload.wikimedia.org/wikipedia/commons/9/9b/NASA-EarlyEarth-PaleOrangeDot-20190802.jpg'
+		), t => CONSTANTS.ageEarth-50 < t ? 'https://mocha2007.github.io/tools/ssev/proto.jpg'
+			: 3500 < t ? 'https://mocha2007.github.io/tools/ssev/earth_archaean.jpg'
 			: 2200 < t && t < 2500 ? 'https://upload.wikimedia.org/wikipedia/commons/9/98/Snowball_Huronian.jpg'
 			: 'https://upload.wikimedia.org/wikipedia/commons/2/2d/Meteosat-12-fci-march-equinox-2025-noon.jpg',
 		{albedo: 0.294}),
@@ -309,7 +311,7 @@ const SSEV = {
 			new PlanetCoords(Time.fromEarthAge(-20), 1.12),
 			new PlanetCoords(Time.fromEarthAge(-17), 1.2),
 			new PlanetCoords(Time.fromEarthAge(0), 1.12),
-		), 'https://upload.wikimedia.org/wikipedia/commons/f/f7/Far_side_of_the_Moon.png', {offset:true}),
+		), 'https://mocha2007.github.io/tools/ssev/proto.jpg', {offset:true}),
 		new Planet('Mars', new PlanetPath(
 			// new PlanetCoords(Time.fromEarthAge(0), 1.15),
 			new PlanetCoords(Time.fromEarthAge(5), 1.37),
@@ -320,7 +322,8 @@ const SSEV = {
 			new PlanetCoords(Time.fromEarthAge(50), 1.60),
 			new PlanetCoords(Time.fromEarthAge(100), 1.52368055),
 			new PlanetCoords(new Time(0), 1.52368055),
-		), t => 4000 < t ? 'https://mocha2007.github.io/tools/ssev/mars_4.0bya.jpg'
+		), t => CONSTANTS.ageEarth-50 < t ? 'https://mocha2007.github.io/tools/ssev/proto.jpg'
+			: 4000 < t ? 'https://mocha2007.github.io/tools/ssev/mars_4.0bya.jpg'
 			: 3800 < t ? 'https://mocha2007.github.io/tools/ssev/mars_3.8bya.jpg'
 			: 3500 < t ? 'https://mocha2007.github.io/tools/ssev/mars_3.5bya.jpg'
 			: 2000 < t ? 'https://mocha2007.github.io/tools/ssev/mars_2.0bya.jpg'

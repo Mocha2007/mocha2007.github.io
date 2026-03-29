@@ -1,3 +1,7 @@
+Protoplanet: CC0
+	https://commons.wikimedia.org/wiki/File:Earth_formation.jpg
+Earth: (PD NASA)
+	https://commons.wikimedia.org/wiki/File:NASA-EarlyEarth-PaleOrangeDot-20190802.jpg
 Mars: (both are PD NASA)
 	https://en.wikipedia.org/wiki/File:Mars_-_August_30_2021_-_Flickr_-_Kevin_M._Gill.png
 	https://commons.wikimedia.org/wiki/File:History_of_Water_on_Mars.jpg
