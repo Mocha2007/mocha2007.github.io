@@ -1,3 +1,7 @@
 .planet {
+	font-size: 75%;
 	position: absolute;
+}
+.planet img {
+	display: block;
 }

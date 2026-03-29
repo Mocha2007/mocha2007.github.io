@@ -44,7 +44,7 @@ class Planet {
 		e.id = this.name;
 		const img = document.createElement('img');
 		img.src = this.img;
-		img.style.width = '5vw';
+		img.style.width = img.style.height = '5vw';
 		e.appendChild(img);
 		e.appendChild(document.createTextNode(this.name));
 		e.classList.add('planet');
