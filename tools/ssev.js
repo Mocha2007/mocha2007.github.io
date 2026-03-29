@@ -400,7 +400,7 @@ const SSEV = {
 			new PlanetCoords(CONSTANTS.t.nice.start, 20),
 			new PlanetCoords(CONSTANTS.t.nice.end, 9.5826),
 		), 'https://upload.wikimedia.org/wikipedia/commons/a/ae/Phoebe_cassini_full.jpg',
-		{albedo: 0.023, minor: true, offset: true}),
+		{albedo: 0.023, minor: true}),
 		new Planet('Uranus', new PlanetPath(
 			new PlanetCoords(Time.fromSolarAge(15), 10),
 			new PlanetCoords(CONSTANTS.t.grandTack.f(0), 10),
