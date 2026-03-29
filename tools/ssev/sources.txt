@@ -5,3 +5,6 @@ Earth: (PD NASA)
 Mars: (both are PD NASA)
 	https://en.wikipedia.org/wiki/File:Mars_-_August_30_2021_-_Flickr_-_Kevin_M._Gill.png
 	https://commons.wikimedia.org/wiki/File:History_of_Water_on_Mars.jpg
+Saturn:
+	self-edited from a nasa photograph:
+	https://en.wikipedia.org/wiki/File:Saturn_during_Equinox.jpg
