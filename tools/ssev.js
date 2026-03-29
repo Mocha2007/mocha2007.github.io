@@ -43,7 +43,7 @@ class Planet {
 		this.settings = settings || {};
 		const albedo = this.settings.albedo || 0.25;
 		if (typeof albedo !== "function") this.settings.albedo = () => albedo;
-		const ghe = this.settings.ghe || 0.25;
+		const ghe = this.settings.ghe || 1;
 		if (typeof ghe !== "function") this.settings.ghe = () => ghe;
 	}
 	get elem(){
