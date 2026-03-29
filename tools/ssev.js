@@ -442,15 +442,15 @@ const SSEV = {
 			new PlanetCoords(new Time(0), 39.482),
 		), 'https://upload.wikimedia.org/wikipedia/commons/c/ca/Pluto_in_True_Color_-_High-Res.png',
 		{albedo: 0.72, minor: true}),
-		new Planet('Haumea', new PlanetPath(
-			new PlanetCoords(Time.fromEarthAge(40), 35),
-			new PlanetCoords(CONSTANTS.t.nice.end, 35),
-			new PlanetCoords(new Time(CONSTANTS.t.nice.end.mya - 5), 37.2),
-			new PlanetCoords(new Time(CONSTANTS.t.nice.end.mya - 20), 40.1),
-			new PlanetCoords(new Time(CONSTANTS.t.nice.end.mya - 100), 43.116),
-			new PlanetCoords(new Time(0), 43.116),
-		), 'https://upload.wikimedia.org/wikipedia/commons/9/9c/Haumea_Rotation.gif',
-		{albedo: 0.33, minor: true, offset: true}),
+		// new Planet('Haumea', new PlanetPath(
+		// 	new PlanetCoords(Time.fromEarthAge(40), 35),
+		// 	new PlanetCoords(CONSTANTS.t.nice.end, 35),
+		// 	new PlanetCoords(new Time(CONSTANTS.t.nice.end.mya - 5), 37.2),
+		// 	new PlanetCoords(new Time(CONSTANTS.t.nice.end.mya - 20), 40.1),
+		// 	new PlanetCoords(new Time(CONSTANTS.t.nice.end.mya - 100), 43.116),
+		// 	new PlanetCoords(new Time(0), 43.116),
+		// ), 'https://upload.wikimedia.org/wikipedia/commons/9/9c/Haumea_Rotation.gif',
+		// {albedo: 0.33, minor: true, offset: true}),
 	],
 	tick(){
 		// increment step
