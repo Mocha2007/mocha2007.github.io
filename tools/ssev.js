@@ -39,7 +39,7 @@ class Planet {
 		// https://stackoverflow.com/questions/3646036/preloading-images-with-javascript
 		this.img_preload = new Image();
 		this.img_preload.crossOrigin = "anonymous"; // prevent error spam
-		this.img_preload.src = img;
+		this.img_preload.src = this.img(0);
 		this.settings = settings || {};
 	}
 	get elem(){
