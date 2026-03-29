@@ -401,7 +401,8 @@ const SSEV = {
 		this.planets.forEach(p => {
 			p.elem.style.left = p.pos(SSEV.config.t);
 			p.updateStatus(this.config.t);
-			p.img_preload.src = p.img(this.config.t.mya);
+			const newSrc = p.img(this.config.t.mya);
+			if (p.img_preload.src !== newSrc) p.img_preload.src = newSrc;
 		});
 		// update timer
 		this.elem.time.display.innerHTML = `${Math.round(this.config.t.mya)} Myr ago - Solar Age: ${Math.round(CONSTANTS.ageSun - this.config.t.mya)} Myr`;
