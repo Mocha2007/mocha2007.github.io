@@ -120,7 +120,7 @@ const SSEV = {
 		const min = 0.35; // au
 		const max = 35; // au
 		const f = Math.log(au/min)/Math.log(max/min);
-		return `${100*f + (img_offset ? this.config.imgSize/2 : 0)}vw`;
+		return `${100*f - (img_offset ? this.config.imgSize/2 : 0)}vw`;
 	},
 	config: {
 		frame: 25,
