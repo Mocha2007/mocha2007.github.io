@@ -306,7 +306,7 @@ const SSEV = {
 			// Possibly retained water for first 2-3 Byr - let's say this period ended 2000 Mya
 			: 2000 < t ? 'https://mocha2007.github.io/tools/ssev/earth_archaean.jpg'
 			: 'https://upload.wikimedia.org/wikipedia/commons/0/08/Venus_from_Mariner_10.jpg',
-		{albedo: t => 2000 < t ? 0.25 : 0.76}),
+		{albedo: t => 2000 < t ? 0.3 : 0.76}),
 		new Planet('Earth', new PlanetPath(
 			new PlanetCoords(Time.fromEarthAge(-20), 0.98),
 			new PlanetCoords(Time.fromEarthAge(-15), 1),
