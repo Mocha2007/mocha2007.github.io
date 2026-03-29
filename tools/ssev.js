@@ -271,7 +271,7 @@ const SSEV = {
 		), 'https://upload.wikimedia.org/wikipedia/commons/e/e2/Jupiter_OPAL_2024.png'),
 		new Planet('Saturn', new PlanetPath(
 			new PlanetCoords(Time.fromSolarAge(10), 8.4),
-			new PlanetCoords(CONSTANTS.t.nice.start, 8.4),
+			new PlanetCoords(CONSTANTS.t.nice.start, 8.260517594),
 			new PlanetCoords(CONSTANTS.t.nice.end, 9.5826),
 			new PlanetCoords(new Time(0), 9.5826),
 		), 'https://upload.wikimedia.org/wikipedia/commons/5/51/Saturn_-_August_11_1981_%2850903906546%29.jpg'),
