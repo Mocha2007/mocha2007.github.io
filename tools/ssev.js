@@ -101,7 +101,10 @@ class Planet {
 	updateStatus(time){
 		const a = this.sma(time);
 		const p = Math.pow(a, 1.5);
-		this.status.innerHTML = `<br>${a.toFixed(1)} au<br>${2 <= p ? `${p.toFixed(1)} yr` : `${(p*365.25).toFixed(0)} d`}`;
+		const t = 287.91 / Math.pow(a, 0.5) - 273.15;
+		this.status.innerHTML = `<br>${a.toFixed(1)} au<br>
+		${2 <= p ? `${p.toFixed(1)} yr` : `${(p*365.25).toFixed(0)} d`}<br>
+		${t.toFixed(0)}°C`;
 	}
 }
 
