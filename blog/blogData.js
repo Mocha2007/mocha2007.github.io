@@ -3667,6 +3667,11 @@ const blogData = [
 			<td><img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Solar_eclipse_1867Aug29-Grosch.png" height="200"></td>
 		</tr>
 		<tr>
+			<td><a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_August_7,_1869">1869 August 7, 5:00 PM</a></td>
+			<td>Yanktonai tribe, Dakota Territory, USA</td>
+			<td><img src="https://upload.wikimedia.org/wikipedia/commons/e/e2/A_copy_of_the_winter_count_kept_by_Yanktonai_Sioux_Lone_Dog.png" height="200"></td>
+		</tr>
+		<tr>
 			<td><a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_August_7,_1869">1869 August 7, 5:13 PM</a></td>
 			<td>Burlington, Iowa, USA</td>
 			<td><img src="https://upload.wikimedia.org/wikipedia/commons/a/ac/Morton_solar_eclipse_1869-Aug-07.jpg" height="200"></td>
