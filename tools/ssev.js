@@ -268,30 +268,17 @@ const SSEV = {
 		console.info('ssev.js initialized.');
 	},
 	planets: [
-		// "10 million – 100 million years terrestrial planets form"
-		// placeholder for inner SS evolution: https://www.youtube.com/watch?v=d27exZfXzsc
+		// "10 million – 100 million years terrestrial planets form" [-50 to +40 rel to earth]
+		// placeholder for inner SS evolution: https://www.youtube.com/watch?v=d27exZfXzsc edit: after checking all Algol's sources,
+		// I suspect the orbital evolution of the inner ss shown in the video is made-up
 		new Planet('Mercury', new PlanetPath(
-			new PlanetCoords(Time.fromEarthAge(0), 0.5),
-			new PlanetCoords(Time.fromEarthAge(5), 0.53),
-			new PlanetCoords(Time.fromEarthAge(10), 0.56),
-			new PlanetCoords(Time.fromEarthAge(15), 0.54),
-			new PlanetCoords(Time.fromEarthAge(20), 0.52),
-			new PlanetCoords(Time.fromEarthAge(25), 0.51),
-			new PlanetCoords(Time.fromEarthAge(50), 0.49),
-			new PlanetCoords(Time.fromEarthAge(100), 0.43),
-			new PlanetCoords(Time.fromEarthAge(200), 0.387098),
+			new PlanetCoords(Time.fromEarthAge(40), 0.387098),
 			new PlanetCoords(new Time(0), 0.387098),
 		), t => CONSTANTS.ageEarth-50 < t ? 'https://mocha2007.github.io/tools/ssev/proto.jpg'
 			: 'https://upload.wikimedia.org/wikipedia/commons/4/4a/Mercury_in_true_color.jpg',
 		{albedo: 0.088}),
 		new Planet('Venus', new PlanetPath(
-			new PlanetCoords(Time.fromEarthAge(0), 0.59),
-			new PlanetCoords(Time.fromEarthAge(5), 0.67),
-			new PlanetCoords(Time.fromEarthAge(10), 0.79),
-			new PlanetCoords(Time.fromEarthAge(15), 0.76),
-			new PlanetCoords(Time.fromEarthAge(20), 0.76),
-			new PlanetCoords(Time.fromEarthAge(25), 0.77),
-			new PlanetCoords(Time.fromEarthAge(50), 0.723332),
+			new PlanetCoords(Time.fromEarthAge(-30), 0.723332),
 			new PlanetCoords(new Time(0), 0.723332),
 		), t => CONSTANTS.ageEarth-50 < t ? 'https://mocha2007.github.io/tools/ssev/proto.jpg'
 			// https://en.wikipedia.org/wiki/Venus#Magnetic_field_and_core
@@ -300,13 +287,7 @@ const SSEV = {
 			: 'https://upload.wikimedia.org/wikipedia/commons/0/08/Venus_from_Mariner_10.jpg',
 		{albedo: t => 2000 < t ? 0.3 : 0.76, ghe: t => 2000 <= t ? 1.13 : 3.176724138}),
 		new Planet('Earth', new PlanetPath(
-			new PlanetCoords(Time.fromEarthAge(-20), 0.98),
-			new PlanetCoords(Time.fromEarthAge(-15), 1),
-			new PlanetCoords(Time.fromEarthAge(-10), 1.12),
-			new PlanetCoords(Time.fromEarthAge(-5), 1.12),
-			new PlanetCoords(Time.fromEarthAge(0), 1.12),
-			new PlanetCoords(Time.fromEarthAge(25), 1.09),
-			new PlanetCoords(Time.fromEarthAge(50), 1),
+			new PlanetCoords(Time.fromEarthAge(-50), 1),
 			new PlanetCoords(new Time(0), 1),
 		), t => CONSTANTS.ageEarth-50 < t ? 'https://mocha2007.github.io/tools/ssev/proto.jpg'
 			: 3500 < t ? 'https://mocha2007.github.io/tools/ssev/earth_archaean.jpg'
@@ -315,19 +296,11 @@ const SSEV = {
 			: 'https://upload.wikimedia.org/wikipedia/commons/2/2d/Meteosat-12-fci-march-equinox-2025-noon.jpg',
 		{albedo: t => CONSTANTS.glacial(t) ? 0.75 : 0.294, ghe: 1.129058824}),
 		new Planet('Theia', new PlanetPath(
-			new PlanetCoords(Time.fromEarthAge(-20), 1.12),
-			new PlanetCoords(Time.fromEarthAge(-17), 1.2),
-			new PlanetCoords(Time.fromEarthAge(0), 1.12),
+			new PlanetCoords(Time.fromEarthAge(-10), 1),
+			new PlanetCoords(Time.fromEarthAge(0), 1),
 		), 'https://mocha2007.github.io/tools/ssev/proto.jpg', {offset:true}),
 		new Planet('Mars', new PlanetPath(
-			// new PlanetCoords(Time.fromEarthAge(0), 1.15),
-			new PlanetCoords(Time.fromEarthAge(5), 1.37),
-			new PlanetCoords(Time.fromEarthAge(10), 1.58),
-			new PlanetCoords(Time.fromEarthAge(15), 1.68),
-			new PlanetCoords(Time.fromEarthAge(20), 1.66),
-			new PlanetCoords(Time.fromEarthAge(25), 1.65),
-			new PlanetCoords(Time.fromEarthAge(50), 1.60),
-			new PlanetCoords(Time.fromEarthAge(100), 1.52368055),
+			new PlanetCoords(Time.fromEarthAge(-10), 1.52368055),
 			new PlanetCoords(new Time(0), 1.52368055),
 		), t => CONSTANTS.ageEarth-50 < t ? 'https://mocha2007.github.io/tools/ssev/proto.jpg'
 			: 4000 < t ? 'https://mocha2007.github.io/tools/ssev/mars_4.0bya.jpg'
