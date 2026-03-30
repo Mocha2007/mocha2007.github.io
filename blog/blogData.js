@@ -3677,6 +3677,16 @@ const blogData = [
 			<td><img src="https://upload.wikimedia.org/wikipedia/commons/5/56/Solar_eclipse_1870Dec22-corona.png" height="200"></td>
 		</tr>
 		<tr>
+			<td><a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_December_12,_1871">1871 December 12, 7:26 AM</a></td>
+			<td>Bekal, Kerala, India</td>
+			<td><img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Solar_eclipse_1871Dec12-Lord_Lindsay.png" height="200"></td>
+		</tr>
+		<tr>
+			<td><a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_December_12,_1871">1871 December 12, 7:33:15-30 AM</a></td>
+			<td>Doddabetta, Tamil Nadu, India</td>
+			<td><img src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Astronomy%3B_the_corona_of_the_sun%2C_viewed_during_a_total_sola_Wellcome_V0024739.jpg" height="200"></td>
+		</tr>
+		<tr>
 			<td><a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_July_29,_1878">1878 July 29, 3:25 PM</a></td>
 			<td>Creston, Wyoming, USA</td>
 			<td><img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Trouvelot_-_Total_eclipse_of_the_sun_-_1878.jpg" height="200"></td>
