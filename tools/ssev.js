@@ -329,8 +329,8 @@ const SSEV = {
 			: 2000 < t ? 'https://mocha2007.github.io/tools/ssev/mars_2.0bya.jpg'
 			: 1000 < t ? 'https://mocha2007.github.io/tools/ssev/mars_1.0bya.jpg'
 			: 'https://mocha2007.github.io/tools/ssev/mars.jpg'
-		// ghe is smooth decay from +40% to modern +2%
-		, {albedo: 0.25, ghe: t => 1.019856459 * Math.pow(1.4, t/CONSTANTS.ageEarth)}),
+		// ghe is smooth decay from +45% to modern +2%
+		, {albedo: 0.25, ghe: t => 1.019856459 * Math.pow(1.45, t/CONSTANTS.ageEarth)}),
 		new Planet('Vesta', new PlanetPath(
 			// https://astrobiology.nasa.gov/news/where-did-vesta-come-from/?linkId=469571005
 			new PlanetCoords(Time.fromSolarAge(15), 4),
