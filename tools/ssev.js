@@ -351,7 +351,7 @@ const SSEV = {
 		// PRIMARY source: Deienno 2017
 		// cf: https://commons.wikimedia.org/wiki/File:Tsiganis2005-1.svg
 		// cf: https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Nesvorny2011-1.svg/3840px-Nesvorny2011-1.svg.png
-		// 3:2,4:3,3:2 ???
+		// 3:2 3:2 2:1 3:2
 		new Planet('Jupiter', new PlanetPath(
 			// https://en.wikipedia.org/wiki/Grand_tack_hypothesis
 			// https://image1.slideserve.com/2642524/grand-tack-scenario-l.jpg
