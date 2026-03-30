@@ -187,6 +187,15 @@ const SSEV = {
 		stepSize: 0.2,
 		t: Time.fromSolarAge(0),
 	},
+	createButton(id, icon, label, onclick){
+		const timeStepBackward = this.elem.time.stepForward = document.createElement('span');
+		timeStepBackward.id = id;
+		timeStepBackward.classList.add('button');
+		timeStepBackward.innerHTML = icon;
+		timeStepBackward.title = label;
+		timeStepBackward.onclick = onclick;
+		return timeStepBackward;
+	},
 	elem: {
 		/** @type {HTMLDivElement} */
 		clock: undefined,
@@ -211,53 +220,29 @@ const SSEV = {
 		main.appendChild(clock);
 		// create time controls
 		// reset button
-		const timeReset = this.elem.time.play = document.createElement('span');
-		timeReset.id = 'timeReset';
-		timeReset.classList.add('button');
-		timeReset.innerHTML = 'Reset';
-		timeReset.onclick = () => {
+		main.appendChild(this.createButton('timeReset', 'Reset', 'reset', () => {
 			SSEV.config.t.mya = CONSTANTS.ageSun;
 			SSEV.update();
-		};
-		main.appendChild(timeReset);
+		}));
 		// step backward button
-		const timeStepBackward = this.elem.time.stepForward = document.createElement('span');
-		timeStepBackward.id = 'timeStepBackward';
-		timeStepBackward.classList.add('button');
-		timeStepBackward.innerHTML = '&larr;';
-		timeStepBackward.onclick = () => {
-			// increment time
+		main.appendChild(this.createButton('timeStepBackward', '&larr;', 'step backwards', () => {
 			SSEV.config.t.mya++;
-			// update
 			SSEV.update();
-		};
-		main.appendChild(timeStepBackward);
+		}));
 		// play/pause button
-		const timePlay = this.elem.time.play = document.createElement('span');
-		timePlay.id = 'timePlay';
-		timePlay.classList.add('button');
-		timePlay.innerHTML = 'Play';
-		timePlay.onclick = () => {
+		main.appendChild(this.createButton('timePlay', 'Play', 'play', () => {
 			// handle setInterval
 			SSEV.config.interval = SSEV.config.interval
 				? clearInterval(SSEV.config.interval)
 				: setInterval(() => SSEV.tick(), SSEV.config.frame);
 			// change symbol
-			timePlay.innerHTML = SSEV.config.interval ? 'Pause' : 'Play';
-		};
-		main.appendChild(timePlay);
+			timePlay.title = timePlay.innerHTML = SSEV.config.interval ? 'Pause' : 'Play';
+		}));
 		// step forward button
-		const timeStepForward = this.elem.time.stepForward = document.createElement('span');
-		timeStepForward.id = 'timeStepForward';
-		timeStepForward.classList.add('button');
-		timeStepForward.innerHTML = '&rarr;';
-		timeStepForward.onclick = () => {
-			// decrement time
+		main.appendChild(this.createButton('timeStepForward', '&rarr;', 'step forewards', () => {
 			SSEV.config.t.mya--;
-			// update
 			SSEV.update();
-		};
-		main.appendChild(timeStepForward);
+		}));
 		// display
 		const timeDisplay = this.elem.time.display = document.createElement('span');
 		timeDisplay.id = 'timeDisplay';
