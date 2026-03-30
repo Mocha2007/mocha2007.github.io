@@ -453,10 +453,10 @@ const SSEV = {
 			if (p.img_preload.src !== newSrc) p.img_preload.src = newSrc;
 		});
 		// update timer
-		const speed = 1000/this.config.frame * this.config.stepSize * 365.25e6 * 24 * 60 * 60;
+		const speed = 1000/this.config.frame * this.config.stepSize * 365.25e6 * 24 * 60 * 60 / 1e12;
 		this.elem.time.display.innerHTML = `${this.config.t.mya.toFixed(1)} Myr ago -
 		Solar Age: ${(CONSTANTS.ageSun - this.config.t.mya).toFixed(1)} Myr -
-		Speed: ${speed.toLocaleString()}x`;
+		Speed: ${speed.toFixed()} trillion &times;`;
 	}
 };
 
