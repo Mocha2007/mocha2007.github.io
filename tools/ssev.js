@@ -148,11 +148,12 @@ const CONSTANTS = {
 	t: {
 		grandTack: {
 			get end(){
-				return new Time(this.start.mya - 0.6);
+				return new Time(this.start.mya - this.length);
 			},
 			f(x = 0){
 				return new Time((1-x)*this.start.mya + x*this.end.mya);
 			},
+			length: 0.6,
 			get start(){
 				// to give time for ice giants to form
 				return Time.fromSolarAge(15.);
@@ -160,11 +161,12 @@ const CONSTANTS = {
 		},
 		nice: {
 			get end(){
-				return new Time(this.start.mya - 5);
+				return new Time(this.start.mya - this.length);
 			},
 			f(x = 0){
 				return new Time((1-x)*this.start.mya + x*this.end.mya);
 			},
+			length: 30,
 			get start(){
 				return Time.fromSolarAge(500.);
 			},
@@ -328,8 +330,10 @@ const SSEV = {
 		), 'https://upload.wikimedia.org/wikipedia/commons/7/76/Ceres_-_RC3_-_Haulani_Crater_%2822381131691%29_%28cropped%29.jpg',
 		{albedo: 0.09, minor: true}),
 		// Nice Model begins like ~ 6 Myr
-		// Nice Model source: https://commons.wikimedia.org/wiki/File:Tsiganis2005-1.svg
-		// and: https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Nesvorny2011-1.svg/3840px-Nesvorny2011-1.svg.png
+		// PRIMARY source: Deienno 2017
+		// cf: https://commons.wikimedia.org/wiki/File:Tsiganis2005-1.svg
+		// cf: https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Nesvorny2011-1.svg/3840px-Nesvorny2011-1.svg.png
+		// 3:2,4:3,3:2 ???
 		new Planet('Jupiter', new PlanetPath(
 			// https://en.wikipedia.org/wiki/Grand_tack_hypothesis
 			// https://image1.slideserve.com/2642524/grand-tack-scenario-l.jpg
@@ -338,8 +342,8 @@ const SSEV = {
 			new PlanetCoords(CONSTANTS.t.grandTack.f(0), 3.5),
 			new PlanetCoords(CONSTANTS.t.grandTack.f(1/6), 1.5),
 			new PlanetCoords(CONSTANTS.t.grandTack.f(1), 5.4),
-			new PlanetCoords(CONSTANTS.t.nice.start, 5.4),
-			new PlanetCoords(CONSTANTS.t.nice.end, 5.2038),
+			new PlanetCoords(CONSTANTS.t.nice.f(17/30), 5.4),
+			new PlanetCoords(CONSTANTS.t.nice.f(18/30), 5.2038),
 			new PlanetCoords(new Time(0), 5.2038),
 		), 'https://upload.wikimedia.org/wikipedia/commons/e/e2/Jupiter_OPAL_2024.png',
 		{albedo: 0.503}),
@@ -349,28 +353,34 @@ const SSEV = {
 			new PlanetCoords(CONSTANTS.t.grandTack.f(0.9/6), 4.5),
 			new PlanetCoords(CONSTANTS.t.grandTack.f(1/6), 2),
 			new PlanetCoords(CONSTANTS.t.grandTack.f(1), 7),
-			new PlanetCoords(CONSTANTS.t.nice.start, 7.076001764), // 3:2
-			new PlanetCoords(CONSTANTS.t.nice.end, 9.5826),
+			new PlanetCoords(CONSTANTS.t.nice.f(17/30), 5.4 * Math.pow(1.5, 2/3)),
+			new PlanetCoords(CONSTANTS.t.nice.f(18/30), 9.5826),
 			new PlanetCoords(new Time(0), 9.5826),
 		), t => 100 < t ? 'https://mocha2007.github.io/tools/ssev/saturn_no_rings.jpg'
 			: 'https://upload.wikimedia.org/wikipedia/commons/5/51/Saturn_-_August_11_1981_%2850903906546%29.jpg',
 		{albedo: 0.342}),
 		new Planet('Phoebe', new PlanetPath(
-			new PlanetCoords(Time.fromSolarAge(3), 20),
-			new PlanetCoords(CONSTANTS.t.nice.start, 20),
+			new PlanetCoords(Time.fromSolarAge(3), 25),
+			new PlanetCoords(CONSTANTS.t.nice.start, 25),
 			new PlanetCoords(CONSTANTS.t.nice.end, 9.5826),
 		), 'https://upload.wikimedia.org/wikipedia/commons/a/ae/Phoebe_cassini_full.jpg',
 		{albedo: 0.023, minor: true}),
+		new Planet('5th Giant', new PlanetPath(
+			new PlanetCoords(Time.fromSolarAge(15), 5.2),
+			new PlanetCoords(CONSTANTS.t.grandTack.f(0), 5.2),
+			new PlanetCoords(CONSTANTS.t.grandTack.f(1), 5.4 * Math.pow(1.5*1.5, 2/3)),
+			new PlanetCoords(CONSTANTS.t.nice.start, 5.4 * Math.pow(1.5*1.5, 2/3)),
+			new PlanetCoords(CONSTANTS.t.nice.f(18/30), 10.8),
+		), 'https://upload.wikimedia.org/wikipedia/commons/a/ab/Fifth_Giant.png',
+		{albedo: 0.3}),
 		new Planet('Uranus', new PlanetPath(
-			new PlanetCoords(Time.fromSolarAge(15), 10),
-			new PlanetCoords(CONSTANTS.t.grandTack.f(0), 10),
-			new PlanetCoords(CONSTANTS.t.grandTack.f(1/3), 8.5),
-			new PlanetCoords(CONSTANTS.t.grandTack.f(1), 17),
-			new PlanetCoords(CONSTANTS.t.nice.start, 17),
-			new PlanetCoords(CONSTANTS.t.nice.end, 17),
-			new PlanetCoords(new Time(CONSTANTS.t.nice.end.mya - 5), 17),
-			new PlanetCoords(new Time(CONSTANTS.t.nice.end.mya - 20), 18.25),
-			new PlanetCoords(new Time(CONSTANTS.t.nice.end.mya - 100), 19.19126),
+			new PlanetCoords(Time.fromSolarAge(15), 6),
+			new PlanetCoords(CONSTANTS.t.grandTack.f(0), 6),
+			new PlanetCoords(CONSTANTS.t.grandTack.f(1/3), 5),
+			new PlanetCoords(CONSTANTS.t.grandTack.f(1), 5.4 * Math.pow(1.5*1.5*2, 2/3)),
+			new PlanetCoords(CONSTANTS.t.nice.start, 5.4 * Math.pow(1.5*1.5*2, 2/3)),
+			new PlanetCoords(CONSTANTS.t.nice.f(17/30), 17.2),
+			new PlanetCoords(CONSTANTS.t.nice.f(18/30), 19.19126),
 			new PlanetCoords(new Time(0), 19.19126),
 		), 'https://upload.wikimedia.org/wikipedia/commons/6/69/Uranus_Voyager2_color_calibrated.png',
 		{albedo: 0.3}),
@@ -378,36 +388,33 @@ const SSEV = {
 			new PlanetCoords(Time.fromSolarAge(15), 8),
 			new PlanetCoords(CONSTANTS.t.grandTack.f(0), 8),
 			new PlanetCoords(CONSTANTS.t.grandTack.f(1/3), 7.5),
-			new PlanetCoords(CONSTANTS.t.grandTack.f(1), 12),
-			new PlanetCoords(CONSTANTS.t.nice.start, 12),
-			new PlanetCoords(CONSTANTS.t.nice.end, 24),
-			new PlanetCoords(new Time(CONSTANTS.t.nice.end.mya - 5), 26),
-			new PlanetCoords(new Time(CONSTANTS.t.nice.end.mya - 20), 28),
-			new PlanetCoords(new Time(CONSTANTS.t.nice.end.mya - 100), 30.07),
+			new PlanetCoords(CONSTANTS.t.grandTack.f(1), 5.4 * Math.pow(1.5*1.5*2*1.5, 2/3)),
+			new PlanetCoords(CONSTANTS.t.nice.start, 5.4 * Math.pow(1.5*1.5*2*1.5, 2/3)),
+			new PlanetCoords(CONSTANTS.t.nice.f(0.25), 22),
+			new PlanetCoords(CONSTANTS.t.nice.f(0.375), 27.2),
+			new PlanetCoords(CONSTANTS.t.nice.end, 30.07),
 			new PlanetCoords(new Time(0), 30.07),
 		), 'https://upload.wikimedia.org/wikipedia/commons/b/b9/Neptune_Voyager2_color_calibrated.png',
 		{albedo: 0.29}),
 		// Kuiper belt WAS 20-35 au before Nice
 		new Planet('Triton', new PlanetPath(
-			new PlanetCoords(Time.fromSolarAge(15), 28),
-			new PlanetCoords(new Time(CONSTANTS.t.nice.end.mya - 20), 28),
+			new PlanetCoords(Time.fromSolarAge(15), 30),
+			new PlanetCoords(CONSTANTS.t.nice.end, 30),
 			// https://en.wikipedia.org/wiki/Capture_of_Triton
 		), 'https://upload.wikimedia.org/wikipedia/commons/6/65/Triton_True_Color.png',
 		{albedo: 0.76, minor: true}),
 		new Planet('Pluto', new PlanetPath(
 			new PlanetCoords(Time.fromSolarAge(15), 35),
-			new PlanetCoords(new Time(CONSTANTS.t.nice.end.mya - 5), 35),
-			new PlanetCoords(new Time(CONSTANTS.t.nice.end.mya - 20), 36.7),
-			new PlanetCoords(new Time(CONSTANTS.t.nice.end.mya - 100), 39.482),
+			new PlanetCoords(CONSTANTS.t.nice.f(0.375), 35),
+			new PlanetCoords(CONSTANTS.t.nice.end, 39.482),
 			new PlanetCoords(new Time(0), 39.482),
 		), 'https://upload.wikimedia.org/wikipedia/commons/c/ca/Pluto_in_True_Color_-_High-Res.png',
 		{albedo: 0.72, minor: true}),
 		// new Planet('Haumea', new PlanetPath(
-		// 	new PlanetCoords(Time.fromEarthAge(15), 35),
-		// 	new PlanetCoords(CONSTANTS.t.nice.end, 35),
-		// 	new PlanetCoords(new Time(CONSTANTS.t.nice.end.mya - 5), 37.2),
-		// 	new PlanetCoords(new Time(CONSTANTS.t.nice.end.mya - 20), 40.1),
-		// 	new PlanetCoords(new Time(CONSTANTS.t.nice.end.mya - 100), 43.116),
+		// 	new PlanetCoords(Time.fromSolarAge(15), 31.5),
+		// 	new PlanetCoords(CONSTANTS.t.nice.f(0.25), 31.5),
+		// 	new PlanetCoords(CONSTANTS.t.nice.f(0.375), 39),
+		// 	new PlanetCoords(CONSTANTS.t.nice.end, 43.116),
 		// 	new PlanetCoords(new Time(0), 43.116),
 		// ), 'https://upload.wikimedia.org/wikipedia/commons/9/9c/Haumea_Rotation.gif',
 		// {albedo: 0.33, minor: true, offset: true}),
