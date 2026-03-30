@@ -3772,6 +3772,16 @@ const blogData = [
 			<td><img src="https://upload.wikimedia.org/wikipedia/commons/3/38/Solar_eclipse%2C_September_10th_1923_%28noao-04587%29.jpg" height="200"></td>
 		</tr>
 		<tr>
+			<td><a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_January_24,_1925">1925 January 24, 8:50 AM</a></td>
+			<td>Toronto, Canada</td>
+			<td><img src="https://upload.wikimedia.org/wikipedia/commons/d/d2/Total_Solar_Eclipse_in_Toronto%2C_January_24_1925_%28F1244_it3524%29.jpg" height="200"></td>
+		</tr>
+		<tr>
+			<td><a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_January_24,_1925">1925 January 24, 9:10 AM</a></td>
+			<td>Princeton, New Jersey, United States</td>
+			<td><img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Solar_Eclipse_by_Howard_Russell_Butler%2C_1925.jpg" height="200"></td>
+		</tr>
+		<tr>
 			<td><a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_January_24,_1925">1925 January 24, 9:11 AM</a></td>
 			<td>Highland Falls, New York, United States</td>
 			<td><img src="https://upload.wikimedia.org/wikipedia/commons/1/13/Diamond_ring_of_the_solar_eclipse_-_Jan._24%2C_1925.jpg" height="200"></td>
@@ -3780,6 +3790,11 @@ const blogData = [
 			<td><a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_January_14,_1926">1926 January 14, 3:02 PM</a></td>
 			<td>Sumatra, Indonesia</td>
 			<td><img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Solar_eclipse_of_1926-01-14%2C_John_A._Miller.jpg" height="200"></td>
+		</tr>
+		<tr>
+			<td><a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_January_14,_1926">1927 June 29, 6:24:30 AM</a></td>
+			<td>Giggleswick, North Yorkshire, United Kingdom</td>
+			<td><img src="https://upload.wikimedia.org/wikipedia/commons/7/72/1927_June_eclipse.jpg" height="200"></td>
 		</tr>
 	</table>
 	The nice thing about artwork >95 years old? It's all guaranteed to be public domain -
