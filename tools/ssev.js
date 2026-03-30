@@ -102,17 +102,19 @@ class Planet {
 		// console.debug(`${this.name}'s SMA = ${a} au`);
 		return a;
 	}
+	temp(time){
+		const albedo = this.settings.albedo(time.mya);
+		return CONSTANTS.sun.temp(time) * Math.sqrt(CONSTANTS.sun.radius(time)/(2*this.sma(time))) * Math.pow(1-albedo, 0.25)
+			// greenhouse
+			* this.settings.ghe(time.mya);
+	}
 	/** @param {Time} time */
 	updateStatus(time){
 		const a = this.sma(time);
 		const p = 1.00001742096 * Math.pow(a, 1.5);
-		const albedo = this.settings.albedo(time.mya);
-		const t = CONSTANTS.sun.temp(time) * Math.sqrt(CONSTANTS.sun.radius(time)/(2*a)) * Math.pow(1-albedo, 0.25)
-			// greenhouse
-			* this.settings.ghe(time.mya);
 		this.status.innerHTML = `<br>${a.toFixed(1)} au<br>
 		${2 <= p ? `${p.toFixed(1)} yr` : `${(p*365.25).toFixed(0)} d`}<br>
-		${(t - 273.15).toFixed(0)}°C`;
+		${(this.temp(time) - 273.15).toFixed(0)}°C`;
 	}
 }
 
@@ -419,16 +421,20 @@ const SSEV = {
 		// ), 'https://upload.wikimedia.org/wikipedia/commons/9/9c/Haumea_Rotation.gif',
 		// {albedo: 0.33, minor: true, offset: true}),
 	],
+	set(mya){
+		this.config.t.mya = mya;
+		this.update();
+	},
 	tick(){
 		// increment step
-		SSEV.config.t.mya -= SSEV.config.stepSize;
-		SSEV.config.t.mya = Math.max(0, SSEV.config.t.mya);
+		this.config.t.mya -= this.config.stepSize;
+		this.config.t.mya = Math.max(0, this.config.t.mya);
 		this.update();
 	},
 	update(){
 		// update planet positions
 		this.planets.forEach(p => {
-			p.elem.style.left = p.pos(SSEV.config.t);
+			p.elem.style.left = p.pos(this.config.t);
 			p.updateStatus(this.config.t);
 			const newSrc = p.img(this.config.t.mya);
 			if (p.img_preload.src !== newSrc) p.img_preload.src = newSrc;
