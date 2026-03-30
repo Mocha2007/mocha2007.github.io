@@ -376,7 +376,7 @@ const SSEV = {
 			new PlanetCoords(CONSTANTS.t.grandTack.f(0.9/6), 4.5),
 			new PlanetCoords(CONSTANTS.t.grandTack.f(1/6), 2),
 			new PlanetCoords(CONSTANTS.t.grandTack.f(1), 7),
-			new PlanetCoords(CONSTANTS.t.nice.start, 8.57),
+			new PlanetCoords(CONSTANTS.t.nice.start, 7.076001764), // 3:2
 			new PlanetCoords(CONSTANTS.t.nice.end, 9.5826),
 			new PlanetCoords(new Time(0), 9.5826),
 		), t => 100 < t ? 'https://mocha2007.github.io/tools/ssev/saturn_no_rings.jpg'
