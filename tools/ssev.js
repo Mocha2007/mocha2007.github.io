@@ -193,7 +193,10 @@ const SSEV = {
 		timeStepBackward.classList.add('button');
 		timeStepBackward.innerHTML = icon;
 		timeStepBackward.title = label;
-		timeStepBackward.onclick = onclick;
+		timeStepBackward.onclick = () => {
+			onclick();
+			SSEV.update();
+		};
 		return timeStepBackward;
 	},
 	elem: {
@@ -225,10 +228,9 @@ const SSEV = {
 			SSEV.update();
 		}));
 		// step backward button
-		main.appendChild(this.createButton('timeStepBackward', '&larr;', 'step backwards', () => {
-			SSEV.config.t.mya++;
-			SSEV.update();
-		}));
+		main.appendChild(this.createButton('timeStepBackward', '&larr;', 'step backwards', () => SSEV.config.t.mya++));
+		// speed down button
+		main.appendChild(this.createButton('timeSlow', '--', 'decrease playback speed', () => SSEV.config.stepSize /= 2));
 		// play/pause button
 		main.appendChild(this.createButton('timePlay', 'Play', 'play', () => {
 			// handle setInterval
@@ -238,11 +240,10 @@ const SSEV = {
 			// change symbol
 			timePlay.title = timePlay.innerHTML = SSEV.config.interval ? 'Pause' : 'Play';
 		}));
+		// speed up button
+		main.appendChild(this.createButton('timeFast', '++', 'increase playback speed', () => SSEV.config.stepSize *= 2));
 		// step forward button
-		main.appendChild(this.createButton('timeStepForward', '&rarr;', 'step forewards', () => {
-			SSEV.config.t.mya--;
-			SSEV.update();
-		}));
+		main.appendChild(this.createButton('timeStepForward', '&rarr;', 'step forewards', () => SSEV.config.t.mya--));
 		// display
 		const timeDisplay = this.elem.time.display = document.createElement('span');
 		timeDisplay.id = 'timeDisplay';
@@ -452,7 +453,10 @@ const SSEV = {
 			if (p.img_preload.src !== newSrc) p.img_preload.src = newSrc;
 		});
 		// update timer
-		this.elem.time.display.innerHTML = `${this.config.t.mya.toFixed(1)} Myr ago - Solar Age: ${(CONSTANTS.ageSun - this.config.t.mya).toFixed(1)} Myr`;
+		const speed = 1000/this.config.frame * this.config.stepSize * 365.25e6 * 24 * 60 * 60;
+		this.elem.time.display.innerHTML = `${this.config.t.mya.toFixed(1)} Myr ago -
+		Solar Age: ${(CONSTANTS.ageSun - this.config.t.mya).toFixed(1)} Myr -
+		Speed: ${speed.toLocaleString()}x`;
 	}
 };
 
