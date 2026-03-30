@@ -3782,6 +3782,8 @@ const blogData = [
 			<td><img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Solar_eclipse_of_1926-01-14%2C_John_A._Miller.jpg" height="200"></td>
 		</tr>
 	</table>
+	The nice thing about artwork >95 years old? It's all guaranteed to be public domain -
+	and the solar eclipse helps to unambiguously confirm its composition date.
 	`,
 ];
 // don't forget, run blog.timestamp to get the timestamp!
