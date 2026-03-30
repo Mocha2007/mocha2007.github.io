@@ -298,7 +298,23 @@ const SSEV = {
 			// Glaciations
 			: CONSTANTS.glacial(t) ? 'https://mocha2007.github.io/tools/ssev/snowball.jpg'
 			: 'https://upload.wikimedia.org/wikipedia/commons/2/2d/Meteosat-12-fci-march-equinox-2025-noon.jpg',
-		{albedo: t => CONSTANTS.glacial(t) ? 0.75 : 0.294, ghe: 1.129058824}),
+			{albedo: t => CONSTANTS.glacial(t) ? 0.75 : 0.294, ghe: t => 500 < t ? 1.21
+			// ghe fit to https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/All_palaeotemps.svg/3840px-All_palaeotemps.svg.png
+			// use command SSEV.planets[2].temp(SSEV.config.t); 
+			// (500, 1.21) -> (450, 1.16)
+			: 450 < t ? 0.001*t + 0.71
+			// (450, 1.16) -> (400, 1.19)
+			: 400 < t ? -0.0006*t + 1.43
+			// (400, 1.19) -> (300, 1.13)
+			: 300 < t ? 0.0006*t + 0.96
+			// (300, 1.13) -> (250, 1.18)
+			: 250 < t ? -0.001*t + 1.43
+			// (250, 1.18) -> (200, 1.15)
+			: 200 < t ? 0.0006*t + 1.03
+			// (200, 1.15) -> (100, 1.16)
+			: 100 < t ? -0.0001*t + 1.17
+			: 0.0003*t + 1.129058824
+		}),
 		new Planet('Theia', new PlanetPath(
 			new PlanetCoords(Time.fromEarthAge(-10), 1),
 			new PlanetCoords(Time.fromEarthAge(0), 1),
