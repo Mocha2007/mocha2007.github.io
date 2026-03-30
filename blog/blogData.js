@@ -3722,9 +3722,29 @@ const blogData = [
 			<td><img src="https://upload.wikimedia.org/wikipedia/commons/2/28/Thomas_Smillie_-_Smithsonian_Institution_-_Corona_of_the_Sun_during_a_Solar_Eclipse_%28pd%29.jpg" height="200"></td>
 		</tr>
 		<tr>
+			<td><a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_August_30,_1905">1905 August 30, 12:30 - 2:20 PM</a></td>
+			<td>Vichy, France</td>
+			<td><img src="https://upload.wikimedia.org/wikipedia/commons/1/11/Eclipse_du_30_ao%C3%BBt_1905_%C3%A0_Vichy_%28Petit_lib%C3%A9ral_Cusset-Vichy%2C_1905-10-22%29.jpg" height="200"></td>
+		</tr>
+		<tr>
+			<td><a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_August_30,_1905">1905 August 30, 1:12 PM</a></td>
+			<td>Spain</td>
+			<td><img src="https://upload.wikimedia.org/wikipedia/commons/c/ce/PSM_V68_D565_Sun_corona_of_August_30_1905_taken_with_40_foot_camera.png" height="200"></td>
+		</tr>
+		<tr>
 			<td><a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_August_30,_1905">1905 August 30, 1:15 PM</a></td>
 			<td>Spain</td>
 			<td><img src="https://upload.wikimedia.org/wikipedia/commons/d/db/Enrique_Simonet_-_Eclipse_-_1905.JPG" height="200"></td>
+		</tr>
+		<tr>
+			<td><a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_August_30,_1905">1905 August 30, 1:48 PM</a></td>
+			<td>Kalaa-es-Senam, Tunisia</td>
+			<td><img src="https://upload.wikimedia.org/wikipedia/commons/b/b6/The_Distribution_of_Blue-Violet_Light_in_the_Solar_Corona_on_August_30%2C_1905%2C_as_Derived_from_Photographs_Taken_at_Kalaa-es-Senam%2C_Tunisia_%281908%29_%2814596406059%29.jpg" height="200"></td>
+		</tr>
+		<tr>
+			<td><a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_August_30,_1905">1905 August 30, 2:30 PM</a></td>
+			<td>Slovenia</td>
+			<td><img src="https://upload.wikimedia.org/wikipedia/commons/7/75/Soln%C4%8Dni_mrk_dne_30._avgusta_1905.jpg" height="200"></td>
 		</tr>
 		<tr>
 			<td><a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_January_3,_1908">1908 January 3, 11:18 AM</a></td>
@@ -3742,6 +3762,16 @@ const blogData = [
 			<td><img src="https://upload.wikimedia.org/wikipedia/commons/1/11/Solar_eclipse_1912Apr17_Flammarion.jpg" height="200"></td>
 		</tr>
 		<tr>
+			<td><a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_April_17,_1912">1912 April 17, 12:38 PM</a></td>
+			<td>Amsterdam, Netherlands</td>
+			<td><img src="https://upload.wikimedia.org/wikipedia/commons/0/01/Zonsverduisteringen%2C_SFA022815765.jpg" height="200"></td>
+		</tr>
+		<tr>
+			<td><a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_April_17,_1912">1912 April 17, 2:44 PM</a></td>
+			<td>Tartu, Estonia, Russian Empire</td>
+			<td><img src="https://upload.wikimedia.org/wikipedia/commons/0/01/Reinhold_Sachker_-_P%C3%A4ikesevarjutus_Tartus_04.04.1912_kl_14.44.jpg" height="200"></td>
+		</tr>
+		<tr>
 			<td><a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_February_3,_1916">1916 February 3, 9:50 AM</a></td>
 			<td>St. Louis, Missouri, USA</td>
 			<td><img src="https://upload.wikimedia.org/wikipedia/commons/8/8f/Solar_eclipse_of_February_3%2C_1916_%28cropped%29.png" height="200"></td>
@@ -3750,6 +3780,11 @@ const blogData = [
 			<td><a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_June_8,_1918">1918 June 8, 4:04 PM</a></td>
 			<td>Baker City, Oregon, USA</td>
 			<td><img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/HowardRussellButlerEclipse.JPG" height="200"></td>
+		</tr>
+		<tr>
+			<td><a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_June_8,_1918">1918 June 8, 5:15 PM</a></td>
+			<td>Ogden, Utah, USA</td>
+			<td><img src="https://upload.wikimedia.org/wikipedia/commons/c/c5/Solar_Eclipse_1918_June_8_-_Jul_1919_Camera_Craft.jpg" height="200"></td>
 		</tr>
 		<tr>
 			<td><a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_May_29,_1919">1919 May 29, 2:45 PM</a></td>
