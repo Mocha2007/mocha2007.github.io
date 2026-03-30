@@ -3687,6 +3687,11 @@ const blogData = [
 			<td><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Solar_eclipse_1878Jul29-Corona_Pikes_peak_Langley.png" height="200"></td>
 		</tr>
 		<tr>
+			<td><a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_May_17%2C_1882">1882 May 17, 12:30 PM</a></td>
+			<td>Russian Empire</td>
+			<td><img src="https://upload.wikimedia.org/wikipedia/commons/f/f1/%D0%9A%D0%BE%D0%BC%D0%B5%D1%82%D0%B0_%D0%97%D0%B0%D1%82%D0%BC%D0%B5%D0%BD%D0%B8%D1%8F_17_%D0%BC%D0%B0%D1%8F_1882.jpg" height="200"></td>
+		</tr>
+		<tr>
 			<td><a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_May_6,_1883">1883 May 6, 11:35 AM</a></td>
 			<td>Caroline Atoll, British Western Pacific Territories, United Kingdom</td>
 			<td><img src="https://upload.wikimedia.org/wikipedia/commons/0/0a/Photograph_of_totality_as_seen_at_Caroline_Island_%281883%29.jpg" height="200"></td>
