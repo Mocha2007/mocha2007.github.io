@@ -3596,7 +3596,7 @@ const blogData = [
 	</table>
 	`,
 	`
-	@title Images of totality from 95+ years ago
+	@title Images of eclipses from 95+ years ago
 	@date 1774893598080
 	@tags astronomy
 	Historical records of eclipses are interesting in that they allow precise dating and timing of an event -
@@ -3660,6 +3660,11 @@ const blogData = [
 			<td><a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_September_7,_1858">1858 September 7, 3:38 PM</a></td>
 			<td>Paranaguá, Paraná, Brazil</td>
 			<td><img src="https://upload.wikimedia.org/wikipedia/commons/f/f6/Ilustra%C3%A7%C3%A3o_eclipse_solar_de_1858.jpg" height="200"></td>
+		</tr>
+		<tr>
+			<td><a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_October_19%2C_1865">1865 October 19, 9 AM - 12 PM</a></td>
+			<td>New York City, New York, USA</td>
+			<td><img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Harper%27s_weekly_%281865%29_%2814765206192%29.jpg" height="200"></td>
 		</tr>
 		<tr>
 			<td><a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_August_29,_1867">1867 August 29, 7:55 AM</a></td>
