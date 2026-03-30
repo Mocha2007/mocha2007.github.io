@@ -3475,7 +3475,7 @@ const blogData = [
 		</tr>
 		<tr>
 			<td>8&deg; 48&prime;</td>
-			<td><a href="https://en.wikipedia.org/wiki/Orbital_inclination">inclination</a</td>
+			<td><a href="https://en.wikipedia.org/wiki/Orbital_inclination">inclination</a></td>
 			<td>Venus</td>
 		</tr>
 		<tr>
@@ -3592,6 +3592,194 @@ const blogData = [
 			<td>205 <abbr title="picoarcsecond">pas</abbr></td>
 			<td><a href="https://en.wikipedia.org/wiki/Floating-point_arithmetic#Accuracy_problems">64-bit floating point rounding error</a></td>
 			<td>|&theta;| &ge; 256&deg;</td>
+		</tr>
+	</table>
+	`,
+	`
+	@title Images of totality from 95+ years ago
+	@date 1774893598080
+	@tags astronomy
+	Historical records of eclipses are interesting in that they allow precise dating and timing of an event -
+	and to a lesser extent, information about the observer's exact location:
+	<table>
+		<tr>
+			<th>Date and appx. Time</th>
+			<th>Observation Location</th>
+			<th>Depiction</th>
+		</tr>
+		<tr>
+			<td><a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_May_3,_1715">1715 May 3, 9:10 AM</a></td>
+			<td>Cambridge, England</td>
+			<td><img src="https://upload.wikimedia.org/wikipedia/commons/f/fd/Solar_eclipse_1715May03-Cambridge_England.png" height="200"></td>
+		</tr>
+		<tr>
+			<td><a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_June_24,_1778">1778 June 24, 7:30 AM</a></td>
+			<td>New Spain</td>
+			<td><img src="https://upload.wikimedia.org/wikipedia/commons/6/67/Solar_eclipse_1778Jun24-Ulloa.png" height="200"></td>
+		</tr>
+		<tr>
+			<td><a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_June_16,_1806">1806 June 16, 11:11 AM</a></td>
+			<td>Kinderhook, New York, USA</td>
+			<td><img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Solar_eclipse_1806Jun16-Corona-Ferrer.png" height="200"></td>
+		</tr>
+		<tr>
+			<td><a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_July_8,_1842">1842 July 8, 6:30 AM</a></td>
+			<td>Venice, Austrian Empire</td>
+			<td><img src="https://upload.wikimedia.org/wikipedia/commons/5/5b/Ippolito_Caffi%2C_Eclisse_di_sole_alle_Fondamenta_Nove_%281842%29.jpg" height="200"></td>
+		</tr>
+		<tr>
+			<td><a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_July_8,_1842">1842 July 8, 6:50 AM</a></td>
+			<td>Vienna, Austria, Austrian Empire</td>
+			<td>
+				<img src="https://upload.wikimedia.org/wikipedia/commons/9/97/Jakob_Alt%2C_Die_Sonnenfinsternis_am_8._Juli_1842.jpg" height="200">
+				<img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Johann_Christian_Schoeller%27s_1842_eclipse.png" height="200">
+			</td>
+		</tr>
+		<tr>
+			<td><a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_July_28,_1851">1851 July 28, 8:10 AM</a></td>
+			<td>Shelbyville, Kentucky, USA</td>
+			<td><img src="https://upload.wikimedia.org/wikipedia/commons/0/01/1851_PartialSolarEclipse_byJAWhipple_Harvard.png" height="200"></td>
+		</tr>
+		<tr>
+			<td><a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_July_28,_1851">1851 July 28, 3:30 PM</a></td>
+			<td>Paris, France</td>
+			<td><img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Les_parisiens_pendant_l%27%C3%A9clipse_du_28_Juillet.jpg" height="200"></td>
+		</tr>
+		<tr>
+			<td><a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_July_28,_1851">1851 July 28, 4:40 PM</a></td>
+			<td>K&ouml;nigsberg, Prussia</td>
+			<td><img src="https://upload.wikimedia.org/wikipedia/commons/3/38/1851_07_28_Berkowski.jpg" height="200"></td>
+		</tr>
+		<tr>
+			<td><a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_July_28,_1851">1851 July 28, 4:43 PM</a></td>
+			<td>Danzig, Prussia</td>
+			<td><img src="https://upload.wikimedia.org/wikipedia/commons/d/de/Za%C4%87mienie_S%C5%82o%C5%84ca_-_Gda%C5%84sk_1851-07-28.jpg" height="200">
+			(Also depicted - from top left to bottom right - Mercury, Venus, and Gemini)</td>
+		</tr>
+		<tr>
+			<td><a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_September_7,_1858">1858 September 7, 3:38 PM</a></td>
+			<td>Paranaguá, Paraná, Brazil</td>
+			<td><img src="https://upload.wikimedia.org/wikipedia/commons/f/f6/Ilustra%C3%A7%C3%A3o_eclipse_solar_de_1858.jpg" height="200"></td>
+		</tr>
+		<tr>
+			<td><a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_August_29,_1867">1867 August 29, 7:55 AM</a></td>
+			<td>Santiago, Chile</td>
+			<td><img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Solar_eclipse_1867Aug29-Grosch.png" height="200"></td>
+		</tr>
+		<tr>
+			<td><a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_August_7,_1869">1869 August 7, 5:13 PM</a></td>
+			<td>Burlington, Iowa, USA</td>
+			<td><img src="https://upload.wikimedia.org/wikipedia/commons/a/ac/Morton_solar_eclipse_1869-Aug-07.jpg" height="200"></td>
+		</tr>
+		<tr>
+			<td><a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_December_22,_1870">1870 December 22, 1:52 PM</a></td>
+			<td>Syracuse, Italy</td>
+			<td><img src="https://upload.wikimedia.org/wikipedia/commons/5/56/Solar_eclipse_1870Dec22-corona.png" height="200"></td>
+		</tr>
+		<tr>
+			<td><a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_July_29,_1878">1878 July 29, 3:25 PM</a></td>
+			<td>Creston, Wyoming, USA</td>
+			<td><img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Trouvelot_-_Total_eclipse_of_the_sun_-_1878.jpg" height="200"></td>
+		</tr>
+		<tr>
+			<td><a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_July_29,_1878">1878 July 29, 3:32 PM</a></td>
+			<td>Pike's Peak, Colorado, USA</td>
+			<td><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Solar_eclipse_1878Jul29-Corona_Pikes_peak_Langley.png" height="200"></td>
+		</tr>
+		<tr>
+			<td><a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_May_6,_1883">1883 May 6, 11:35 AM</a></td>
+			<td>Caroline Atoll, British Western Pacific Territories, United Kingdom</td>
+			<td><img src="https://upload.wikimedia.org/wikipedia/commons/0/0a/Photograph_of_totality_as_seen_at_Caroline_Island_%281883%29.jpg" height="200"></td>
+		</tr>
+		<tr>
+			<td><a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_August_19,_1887">1887 August 19, 4:55 AM</a></td>
+			<td>Berlin, German Empire</td>
+			<td><img src="https://upload.wikimedia.org/wikipedia/commons/1/10/Die_Gartenlaube_%281887%29_b_509_2.jpg" height="200"></td>
+		</tr>
+		<tr>
+			<td><a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_January_1,_1889">1889 January 1, 1:40 PM</a></td>
+			<td>Norman, California, USA</td>
+			<td><img src="https://upload.wikimedia.org/wikipedia/commons/f/f0/Eclipse_of_January_1%2C_1889%2C_from_Norman%2C_CA.jpg" height="200"></td>
+		</tr>
+		<tr>
+			<td><a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_April_16,_1893">1893 April 16, 8:20 AM</a></td>
+			<td>Mina Los Bronces, Región de Atacama, Chile</td>
+			<td><img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/PSM_V60_D257_Solar_corona_of_1893_eclipse.png" height="200"></td>
+		</tr>
+		<tr>
+			<td><a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_August_9,_1896">1896 August 9, 4:35 AM</a></td>
+			<td>Kabelvåg, Norway</td>
+			<td><img src="https://upload.wikimedia.org/wikipedia/commons/6/63/Solform%C3%B8rkelse_i_Nord-Norge_9._august_1896_-_no-nb_digifoto_20130222_00030_bldsa_FA0213_%28cropped%29.jpg" height="200"></td>
+		</tr>
+		<tr>
+			<td><a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_January_22,_1898">1898 January 22, 1:43 PM</a></td>
+			<td>Buxar, India</td>
+			<td><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Solar_eclipse_1898Jan22-Corona_at_Buxar.png" height="200"></td>
+		</tr>
+		<tr>
+			<td><a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_May_28,_1900">1900 May 28, 8:46 AM</a></td>
+			<td>Wadesboro, North Carolina, USA</td>
+			<td><img src="https://upload.wikimedia.org/wikipedia/commons/2/28/Thomas_Smillie_-_Smithsonian_Institution_-_Corona_of_the_Sun_during_a_Solar_Eclipse_%28pd%29.jpg" height="200"></td>
+		</tr>
+		<tr>
+			<td><a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_August_30,_1905">1905 August 30, 1:15 PM</a></td>
+			<td>Spain</td>
+			<td><img src="https://upload.wikimedia.org/wikipedia/commons/d/db/Enrique_Simonet_-_Eclipse_-_1905.JPG" height="200"></td>
+		</tr>
+		<tr>
+			<td><a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_January_3,_1908">1908 January 3, 11:18 AM</a></td>
+			<td>Flint Island, British Western Pacific Territories, United Kingdom</td>
+			<td><img src="https://upload.wikimedia.org/wikipedia/commons/9/96/1908_01_03_Lick.jpg" height="200"></td>
+		</tr>
+		<tr>
+			<td><a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_April_17,_1912">1912 April 17, 11:17-38 AM</a></td>
+			<td>Lisbon, Portugal</td>
+			<td><img src="https://upload.wikimedia.org/wikipedia/commons/6/6c/EclipseBrasilPortugal1May1912.jpg" height="200"></td>
+		</tr>
+		<tr>
+			<td><a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_April_17,_1912">1912 April 17, 12:11 PM</a></td>
+			<td>Paris, France</td>
+			<td><img src="https://upload.wikimedia.org/wikipedia/commons/1/11/Solar_eclipse_1912Apr17_Flammarion.jpg" height="200"></td>
+		</tr>
+		<tr>
+			<td><a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_February_3,_1916">1916 February 3, 9:50 AM</a></td>
+			<td>St. Louis, Missouri, USA</td>
+			<td><img src="https://upload.wikimedia.org/wikipedia/commons/8/8f/Solar_eclipse_of_February_3%2C_1916_%28cropped%29.png" height="200"></td>
+		</tr>
+		<tr>
+			<td><a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_June_8,_1918">1918 June 8, 4:04 PM</a></td>
+			<td>Baker City, Oregon, USA</td>
+			<td><img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/HowardRussellButlerEclipse.JPG" height="200"></td>
+		</tr>
+		<tr>
+			<td><a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_May_29,_1919">1919 May 29, 2:45 PM</a></td>
+			<td>Principe</td>
+			<td><img src="https://upload.wikimedia.org/wikipedia/commons/3/37/1919_eclipse_positive.jpg" height="200"></td>
+		</tr>
+		<tr>
+			<td><a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_September_21,_1922">1922 September 21, 1:32 PM</a></td>
+			<td>Wallal, Australia</td>
+			<td><img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/Lick_Eclipse.jpg" height="200"></td>
+		</tr>
+		<tr>
+			<td><a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_September_10,_1923">1923 September 10, 12:48 PM</a></td>
+			<td>Lompoc, California, USA</td>
+			<td><img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Howard_Russell_Butler_-_Solar_Eclipse%2C_Lompoc_1923_-_PP351_-_Princeton_University_Art_Museum.jpg" height="200"></td>
+		</tr>
+		<tr>
+			<td><a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_September_10,_1923">1923 September 10, 1:41 PM</a></td>
+			<td>Puerto Libertad, Sonora, Mexico</td>
+			<td><img src="https://upload.wikimedia.org/wikipedia/commons/3/38/Solar_eclipse%2C_September_10th_1923_%28noao-04587%29.jpg" height="200"></td>
+		</tr>
+		<tr>
+			<td><a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_January_24,_1925">1925 January 24, 9:11 AM</a></td>
+			<td>Highland Falls, New York, United States</td>
+			<td><img src="https://upload.wikimedia.org/wikipedia/commons/1/13/Diamond_ring_of_the_solar_eclipse_-_Jan._24%2C_1925.jpg" height="200"></td>
+		</tr>
+		<tr>
+			<td><a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_January_14,_1926">1926 January 14, 3:02 PM</a></td>
+			<td>Sumatra, Indonesia</td>
+			<td><img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Solar_eclipse_of_1926-01-14%2C_John_A._Miller.jpg" height="200"></td>
 		</tr>
 	</table>
 	`,
