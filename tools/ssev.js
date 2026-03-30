@@ -232,13 +232,14 @@ const SSEV = {
 		// speed down button
 		main.appendChild(this.createButton('timeSlow', '--', 'decrease playback speed', () => SSEV.config.stepSize /= 2));
 		// play/pause button
-		main.appendChild(this.createButton('timePlay', 'Play', 'play', () => {
+		main.appendChild(this.createButton('timePlay', '▶', 'play', () => {
 			// handle setInterval
 			SSEV.config.interval = SSEV.config.interval
 				? clearInterval(SSEV.config.interval)
 				: setInterval(() => SSEV.tick(), SSEV.config.frame);
 			// change symbol
-			timePlay.title = timePlay.innerHTML = SSEV.config.interval ? 'Pause' : 'Play';
+			timePlay.innerHTML = SSEV.config.interval ? '⏸' : '▶';
+			timePlay.title = SSEV.config.interval ? 'pause' : 'play';
 		}));
 		// speed up button
 		main.appendChild(this.createButton('timeFast', '++', 'increase playback speed', () => SSEV.config.stepSize *= 2));
