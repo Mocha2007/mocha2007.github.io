@@ -3762,6 +3762,21 @@ const blogData = [
 			<td><img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/Lick_Eclipse.jpg" height="200"></td>
 		</tr>
 		<tr>
+			<td><a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_September_21,_1922">1922 September 21, 3:54 PM</a></td>
+			<td>Coongoola, Australia</td>
+			<td><img src="https://upload.wikimedia.org/wikipedia/commons/1/11/Total_eclipse_of_the_sun%2C_photographed_by_JA_Lunn%2C_Coongoola%2C_1922.jpg" height="200"></td>
+		</tr>
+		<tr>
+			<td><a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_September_21,_1922">1922 September 21, 4:14 PM</a></td>
+			<td>Goondiwindi, Australia</td>
+			<td><img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Illustrated_page_from_The_Queenslander%2C_December_2%2C_1922_%2819081516054%29.jpg" height="200"></td>
+		</tr>
+		<tr>
+			<td><a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_September_10,_1923">1923 September 10, 11:50 AM - 1:50 PM</a></td>
+			<td>Mount Diablo, California, USA</td>
+			<td><img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Solar_Eclipse_10_Sep_1923_-_Nov_1923_Camera_Craft.jpg" height="200"></td>
+		</tr>
+		<tr>
 			<td><a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_September_10,_1923">1923 September 10, 12:48 PM</a></td>
 			<td>Lompoc, California, USA</td>
 			<td><img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Howard_Russell_Butler_-_Solar_Eclipse%2C_Lompoc_1923_-_PP351_-_Princeton_University_Art_Museum.jpg" height="200"></td>
