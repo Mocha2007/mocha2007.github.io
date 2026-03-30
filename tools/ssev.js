@@ -125,7 +125,7 @@ const CONSTANTS = {
 	ageSun: 4600,
 	/** @param {number} t - Mya */
 	glacial(t){
-		return (2750 < t && t < 2900) // Pongola
+		return (2837 < t && t < 2985) // Pongola
 				|| (2200 < t && t < 2500) // Huronian
 				|| (660 < t && t < 717) // Sturtian
 				|| (632.3 < t && t < 654.5) // Marinoan
