@@ -3697,6 +3697,26 @@ const blogData = [
 			<td><img src="https://upload.wikimedia.org/wikipedia/commons/1/10/Die_Gartenlaube_%281887%29_b_509_2.jpg" height="200"></td>
 		</tr>
 		<tr>
+			<td><a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_August_19,_1887">1887 August 19, 4:59 AM</a></td>
+			<td>Cologne, German Empire</td>
+			<td><img src="https://upload.wikimedia.org/wikipedia/commons/3/32/Die_Gartenlaube_%281887%29_b_509_3.jpg" height="200"></td>
+		</tr>
+		<tr>
+			<td><a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_August_19,_1887">1887 August 19, 5:06 AM</a></td>
+			<td>Kyffhäuser, German Empire</td>
+			<td><img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Die_Gartenlaube_%281887%29_b_509_1.jpg" height="200"></td>
+		</tr>
+		<tr>
+			<td><a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_August_19,_1887">1887 August 19, 5:07 AM</a></td>
+			<td>Kiel, German Empire</td>
+			<td><img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Die_Gartenlaube_%281887%29_b_510_1.jpg" height="200"></td>
+		</tr>
+		<tr>
+			<td><a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_August_19,_1887">1887 August 19, 5:11 AM</a></td>
+			<td>Vienna, Austria</td>
+			<td><img src="https://upload.wikimedia.org/wikipedia/commons/b/bb/Die_Gartenlaube_%281887%29_b_510_2.jpg" height="200"></td>
+		</tr>
+		<tr>
 			<td><a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_January_1,_1889">1889 January 1, 1:40 PM</a></td>
 			<td>Norman, California, USA</td>
 			<td><img src="https://upload.wikimedia.org/wikipedia/commons/f/f0/Eclipse_of_January_1%2C_1889%2C_from_Norman%2C_CA.jpg" height="200"></td>
@@ -3715,6 +3735,11 @@ const blogData = [
 			<td><a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_January_22,_1898">1898 January 22, 1:43 PM</a></td>
 			<td>Buxar, India</td>
 			<td><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Solar_eclipse_1898Jan22-Corona_at_Buxar.png" height="200"></td>
+		</tr>
+		<tr>
+			<td><a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_May_28,_1900">1900 May 28, 8:40 AM</a></td>
+			<td>Georgia, USA</td>
+			<td><img src="https://upload.wikimedia.org/wikipedia/commons/c/c9/1900_Solar_Eclipse_by_Nyland%2C_Utrecht_Univ_-_Jun_1900_Camera_Craft.jpg" height="200"></td>
 		</tr>
 		<tr>
 			<td><a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_May_28,_1900">1900 May 28, 8:46 AM</a></td>
