@@ -3931,6 +3931,18 @@ const blogData = [
 	@tags astronomy
 	<ul class="list2">
 		<li>
+			1605 Oct 12 -
+			the Siege of Wachtendonk (abt. 1:23 PM, elongation 4' 57")
+			of the <a href="https://en.wikipedia.org/wiki/Eighty_Years%27_War">Eighty Years' War</a>
+		</li>
+		<li>
+			1629 Jun 21 -
+			the <a href="https://en.wikipedia.org/wiki/Battle_of_Duyon_River">Battle of Duyon River</a> (abt. 9:45 AM, elongation 5' 0")
+			of the <a href="https://en.wikipedia.org/wiki/Acehnese%E2%80%93Portuguese_conflicts">Acehnese-Portuguese conflicts</a>, and
+			the <a href="https://en.wikipedia.org/wiki/Siege_of_Batavia#Second_Siege_(May%E2%80%93September_1629)">Siege of Batavia</a> (abt. 10:07 AM, elongation 14' 58")
+			of the <a href="https://en.wikipedia.org/wiki/Dutch%E2%80%93Mataram_conflicts">Dutch-Mataram conflicts</a>
+		</li>
+		<li>
 			<a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_August_12,_1654">1654 Aug 12</a> -
 			the <a href="https://en.wikipedia.org/wiki/Battle_of_Shklow">Battle of Szkłów</a> (abt. 11:45 AM, elongation 3' 37"), and
 			the <a href="https://en.wikipedia.org/wiki/Siege_of_Smolensk_(1654)">Siege of Smolensk</a> (abt. 11:54 AM, elongation 4' 33")
