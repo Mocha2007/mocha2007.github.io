@@ -3608,9 +3608,14 @@ const blogData = [
 			<th>Depiction</th>
 		</tr>
 		<tr>
-			<td><a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_May_3,_1715">1715 May 3, 9:10 AM</a></td>
+			<td><a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_May_3,_1715">1715 May 3, 9:10 AM</a> [O.S. 1715 April 22]</td>
 			<td>Cambridge, England</td>
 			<td><img src="https://upload.wikimedia.org/wikipedia/commons/f/fd/Solar_eclipse_1715May03-Cambridge_England.png" height="200"></td>
+		</tr>
+		<tr>
+			<td>1748 July 25, 9:10 AM, 10:42 AM, 12:15 PM [O.S. 1748 July 14]</td>
+			<td>London, England</td>
+			<td><img src="https://upload.wikimedia.org/wikipedia/commons/7/76/Astronomy%3B_a_view_of_London_in_1748%2C_with_diagrams_of_an_ecl_Wellcome_V0024734.jpg" height="200"></td>
 		</tr>
 		<tr>
 			<td><a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_June_24,_1778">1778 June 24, 7:30 AM</a></td>
