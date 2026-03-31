@@ -3623,6 +3623,11 @@ const blogData = [
 			<td><img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Solar_eclipse_1806Jun16-Corona-Ferrer.png" height="200"></td>
 		</tr>
 		<tr>
+			<td><a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_September_7%2C_1820">1820 September 7, 2:15 PM</a></td>
+			<td>Amsterdam, Netherlands</td>
+			<td><img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Gedeeltelijke_zonsverduistering%2C_1820_Afbeelding_van_de_groote_Zon-Eclips%2C_op_den_7den_September_1820._zooals_dezelve_zalzigtbaarzijn%2C_te_Amsterdam_%28titel_op_object%29%2C_RP-P-OB-87.383.jpg" height="200"></td>
+		</tr>
+		<tr>
 			<td><a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_July_8,_1842">1842 July 8, 6:30 AM</a></td>
 			<td>Venice, Austrian Empire</td>
 			<td><img src="https://upload.wikimedia.org/wikipedia/commons/5/5b/Ippolito_Caffi%2C_Eclisse_di_sole_alle_Fondamenta_Nove_%281842%29.jpg" height="200"></td>
@@ -3657,9 +3662,19 @@ const blogData = [
 			(Also depicted - from top left to bottom right - Mercury, Venus, and Gemini)</td>
 		</tr>
 		<tr>
+			<td><a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_May_26,_1854">1854 May 26, 5:23-8 PM</a></td>
+			<td>Ogdensburg, New York</td>
+			<td><img src="https://upload.wikimedia.org/wikipedia/commons/e/eb/Solar_eclipse_1854May28-Annular_Daguerrotyped_Alexander.png" height="200"></td>
+		</tr>
+		<tr>
 			<td><a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_September_7,_1858">1858 September 7, 3:38 PM</a></td>
 			<td>Paranaguá, Paraná, Brazil</td>
 			<td><img src="https://upload.wikimedia.org/wikipedia/commons/f/f6/Ilustra%C3%A7%C3%A3o_eclipse_solar_de_1858.jpg" height="200"></td>
+		</tr>
+		<tr>
+			<td><a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_July_18,_1860">1860 July 18, 2:50 PM</a></td>
+			<td>Rivabellosa, Spain</td>
+			<td><img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Warren_De_la_Rue_total_solar_eclipse_1860.png" height="200"></td>
 		</tr>
 		<tr>
 			<td><a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_October_19%2C_1865">1865 October 19, 9 AM - 12 PM</a></td>
