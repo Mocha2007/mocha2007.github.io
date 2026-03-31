@@ -3936,6 +3936,73 @@ const blogData = [
 			of the <a href="https://en.wikipedia.org/wiki/Polish%E2%80%93Russian_War_(1654%E2%80%931667)">Polish-Russian War</a>
 		</li>
 		<li>
+			1708 Sep 14 -
+			the <a href="https://en.wikipedia.org/wiki/Siege_of_Lille_(1708)">Siege of Lille</a> (abt. 7:43 AM, elongation 16' 54")
+			of the <a href="https://en.wikipedia.org/wiki/War_of_the_Spanish_Succession">War of the Spanish Succession</a>
+		</li>
+		<li>
+			1727 Sep 15 -
+			the <a href="https://en.wikipedia.org/wiki/Battle_of_Sangan">Battle of Sangan</a> (abt. 11:48 AM, elongation 29' 32")
+			of the <a href="https://en.wikipedia.org/wiki/Nader%27s_Campaigns">Naderian Wars</a>
+		</li>
+		<li>
+			1731 Jul 4 -
+			the <a href="https://en.wikipedia.org/wiki/Herat_campaign_of_1730%E2%80%931732">Herat campaign</a> (abt. 8:42 AM, elongation 28' 56")
+			of the <a href="https://en.wikipedia.org/wiki/Nader%27s_Campaigns">Naderian Wars</a>
+		</li>
+		<li>
+			1734 May 3 -
+			the <a href="https://en.wikipedia.org/wiki/Siege_of_Capua_(1734)">Siege of Capua</a> (abt. 11:13 AM, elongation 25' 3"), and
+			the <a href="https://en.wikipedia.org/wiki/Siege_of_Gaeta_(1734)">Siege of Gaeta</a> (abt. 11:10 AM, elongation 25' 20")
+			of the <a href="https://en.wikipedia.org/wiki/War_of_the_Polish_Succession">War of the Polish Succession</a>
+		</li>
+		<li>
+			1739 Aug 4 -
+			the <a href="https://en.wikipedia.org/wiki/Siege_of_Belgrade_(1739)">Siege of Belgrade</a> (abt. 6:13 PM, elongation 9' 1")
+			of the <a href="https://en.wikipedia.org/wiki/Russo-Turkish_War_(1735%E2%80%931739)">Russo-Turkish War</a>
+		</li>
+		<li>
+			1753 May 3 -
+			the <a href="https://en.wikipedia.org/wiki/Battle_of_Seringham">Battle of Seringham</a> (abt. 1:44 PM, elongation 30' 5")
+			of the <a href="https://en.wikipedia.org/wiki/Second_Carnatic_War">Second Carnatic War</a>
+		</li>
+		<li>
+			1758 Dec 30 -
+			the <a href="https://en.wikipedia.org/wiki/Siege_of_Madras">Siege of Madras</a> (abt. 1:09 PM, elongation 6' 25")
+			of the <a href="https://en.wikipedia.org/wiki/Seven_Years%27_War">Seven Years' War</a>
+		</li>
+		<li>
+			1760 Jun 13 -
+			the <a href="https://en.wikipedia.org/wiki/Siege_of_Glatz">Siege of Glatz</a> (abt. 8:38 AM, elongation 13' 59")
+			of the <a href="https://en.wikipedia.org/wiki/Seven_Years%27_War">Seven Years' War</a>
+		</li>
+		<li>
+			1761 Jun 3 -
+			the <a href="https://en.wikipedia.org/wiki/Capture_of_Agra">Capture of Agra</a> (abt. 5:13 AM, elongation 27' 35")
+			of the Mughal-Jat Wars
+		</li>
+		<li>
+			1762 Oct 17 -
+			the <a href="https://en.wikipedia.org/wiki/Siege_of_Cassel_(1762)">Siege of Cassel</a> (abt. 8:16 AM, elongation 16' 32")
+			of the <a href="https://en.wikipedia.org/wiki/Seven_Years%27_War">Seven Years' War</a>
+		</li>
+		<li>
+			1788 Jun 4 -
+			the <a href="https://en.wikipedia.org/wiki/Siege_of_Ochakov_(1788)">Siege of Ochakov</a> (abt. 10:45 AM, elongation 10' 45")
+			of the <a href="https://en.wikipedia.org/wiki/Russo-Turkish_War_(1787%E2%80%931792)">Russo-Turkish War</a>
+		</li>
+		<li>
+			1792 Mar 22 -
+			the <a href="https://en.wikipedia.org/wiki/Battle_of_Croix-des-Bouquets">Battle of Croix-des-Bouquets</a> (abt. 2:13 PM, elongation 4' 20")
+			of the <a href="https://en.wikipedia.org/wiki/Haitian_Revolution">Haitian Revolution</a>
+		</li>
+		<li>
+			1793 Sep 5 -
+			the <a href="https://en.wikipedia.org/wiki/Battle_of_Chantonnay_(September_1793)">Battle of Chantonnay</a> (abt. 11:07 AM, elongation 9' 24")
+			of the <a href="https://en.wikipedia.org/wiki/War_in_the_Vend%C3%A9e">War in the Vend&eacute;e</a>,
+			and various ongoing sieges of the <a href="https://en.wikipedia.org/wiki/War_of_the_First_Coalition">War of the First Coalition</a>
+		</li>
+		<li>
 			<a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_June_16,_1806">1806 Jun 16</a> -
 			the <a href="https://en.wikipedia.org/wiki/Siege_of_Gaeta_(1806)">Siege of Gaeta</a> (abt. 6:28 PM, elongation 22' 1")
 			of the <a href="https://en.wikipedia.org/wiki/Invasion_of_Naples_(1806)">Invasion of Naples</a>, and
