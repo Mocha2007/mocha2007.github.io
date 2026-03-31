@@ -3937,8 +3937,14 @@ const blogData = [
 		</li>
 		<li>
 			<a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_January_22,_1879">1879 Jan 22</a> (abt. 2:49 PM) - elongation 11' 0"
-			- <a href="https://en.wikipedia.org/wiki/Battle_of_Isandlwana">Battle of Isandlwana</a>
+			- the <a href="https://en.wikipedia.org/wiki/Battle_of_Isandlwana">Battle of Isandlwana</a> and
+			the <a href="https://en.wikipedia.org/wiki/Siege_of_Eshowe">Siege of Eshowe</a>
 			of the <a href="https://en.wikipedia.org/wiki/Anglo-Zulu_War">Anglo-Zulu War</a>
+		</li>
+		<li>
+			<a href="hhttps://en.wikipedia.org/wiki/Solar_eclipse_of_March_17,_1904">1904 Mar 17</a> (abt. 3:06 PM) - elongation 12' 18"
+			- <a href="https://en.wikipedia.org/wiki/Battle_of_Siranaya">Battle of Siranaya</a>
+			of the <a href="https://en.wikipedia.org/wiki/Moro_Rebellion">Moro Rebellion</a>
 		</li>
 		<li>
 			<a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_August_21,_1914">1914 Aug 21</a> (abt. 1:20 PM) - elongation abt. 10'
