@@ -3936,6 +3936,11 @@ const blogData = [
 			of the <a href="https://en.wikipedia.org/wiki/Polish%E2%80%93Russian_War_(1654%E2%80%931667)">Polish-Russian War</a>
 		</li>
 		<li>
+			<a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_December_22,_1870">1870 Dec 22</a> -
+			<a href="https://en.wikipedia.org/wiki/Siege_of_Belfort">Siege of Belfort</a> (abt. 12:49 PM, elongation 5' 21")
+			of the <a href="https://en.wikipedia.org/wiki/Franco-Prussian_War">Franco-Prussian War</a>
+		</li>
+		<li>
 			<a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_January_22,_1879">1879 Jan 22</a> (abt. 2:49 PM) - elongation 11' 0"
 			- the <a href="https://en.wikipedia.org/wiki/Battle_of_Isandlwana">Battle of Isandlwana</a> and
 			the <a href="https://en.wikipedia.org/wiki/Siege_of_Eshowe">Siege of Eshowe</a>
