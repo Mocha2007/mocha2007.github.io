@@ -3936,6 +3936,18 @@ const blogData = [
 			of the <a href="https://en.wikipedia.org/wiki/Polish%E2%80%93Russian_War_(1654%E2%80%931667)">Polish-Russian War</a>
 		</li>
 		<li>
+			<a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_June_16,_1806">1806 Jun 16</a> -
+			the <a href="https://en.wikipedia.org/wiki/Siege_of_Gaeta_(1806)">Siege of Gaeta</a> (abt. 6:28 PM, elongation 22' 1")
+			of the <a href="https://en.wikipedia.org/wiki/Invasion_of_Naples_(1806)">Invasion of Naples</a>, and
+			the <a href="https://en.wikipedia.org/wiki/Siege_of_Ragusa_(1806)">Siege of Ragusa</a> (abt. 6:44 PM, elongation 24' 3")
+			of the <a href="https://en.wikipedia.org/wiki/Second_Archipelago_Expedition">Second Archipelago Expedition</a>
+		</li>
+		<li>
+			1807 Nov 29 -
+			the <a href="https://en.wikipedia.org/wiki/Siege_of_Graudenz">Siege of Graudenz</a> (abt. 1:15 PM, elongation 25' 11")
+			of the <a href="https://en.wikipedia.org/wiki/War_of_the_Fourth_Coalition">War of the Fourth Coalition</a>
+		</li>
+		<li>
 			1818 May 5 -
 			the <a href="https://en.wikipedia.org/wiki/Siege_of_Diriyah">Siege of Diriyah</a> (abt. 9:26 AM, elongation 8' 18")
 			of the <a href="https://en.wikipedia.org/wiki/Najd_Expedition">Najd Expedition</a>
