@@ -3936,6 +3936,15 @@ const blogData = [
 			of the Medo-Lydian War
 		</li>
 		<li>
+			939 Jul 19 -
+			the <a href="https://en.wikipedia.org/wiki/Battle_of_Simancas">Battle of Simancas</a> (abt. 7:18 AM, elongation 2' 5")
+			of the <a href="https://en.wikipedia.org/wiki/Reconquista">Reconquista</a>
+		</li>
+		<li>
+			1030 Aug 31 -
+			the <a href="https://en.wikipedia.org/wiki/Battle_of_Stiklestad">Battle of Simancas</a> (abt. 2:55 PM, elongation 0' 30")
+		</li>
+		<li>
 			1605 Oct 12 -
 			the Siege of Wachtendonk (abt. 1:23 PM, elongation 4' 57")
 			of the <a href="https://en.wikipedia.org/wiki/Eighty_Years%27_War">Eighty Years' War</a>
