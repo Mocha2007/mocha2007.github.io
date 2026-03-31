@@ -3936,17 +3936,22 @@ const blogData = [
 			of the <a href="https://en.wikipedia.org/wiki/Polish%E2%80%93Russian_War_(1654%E2%80%931667)">Polish-Russian War</a>
 		</li>
 		<li>
+			1818 May 5 -
+			the <a href="https://en.wikipedia.org/wiki/Siege_of_Diriyah">Siege of Diriyah</a> (abt. 9:26 AM, elongation 8' 18")
+			of the <a href="https://en.wikipedia.org/wiki/Najd_Expedition">Najd Expedition</a>
+		</li>
+		<li>
 			1847 Apr 15 -
-			<a href="https://en.wikipedia.org/wiki/Bombardment_of_Tourane_(1847)">Bombardment of Tourane</a> (abt. 2:40 PM, elongation 31' 19")
+			the <a href="https://en.wikipedia.org/wiki/Bombardment_of_Tourane_(1847)">Bombardment of Tourane</a> (abt. 2:40 PM, elongation 31' 19")
 		</li>
 		<li>
 			1863 May 17 -
-			<a href="https://en.wikipedia.org/wiki/Battle_of_Miropol">Battle of Miropol</a> (abt. 7:47 PM, elongation 25' 24")
+			the <a href="https://en.wikipedia.org/wiki/Battle_of_Miropol">Battle of Miropol</a> (abt. 7:47 PM, elongation 25' 24")
 			of the <a href="https://en.wikipedia.org/wiki/January_Uprising">January Uprising</a>
 		</li>
 		<li>
 			<a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_December_22,_1870">1870 Dec 22</a> -
-			<a href="https://en.wikipedia.org/wiki/Siege_of_Belfort">Siege of Belfort</a> (abt. 12:49 PM, elongation 5' 21")
+			the <a href="https://en.wikipedia.org/wiki/Siege_of_Belfort">Siege of Belfort</a> (abt. 12:49 PM, elongation 5' 21")
 			of the <a href="https://en.wikipedia.org/wiki/Franco-Prussian_War">Franco-Prussian War</a>
 		</li>
 		<li>
