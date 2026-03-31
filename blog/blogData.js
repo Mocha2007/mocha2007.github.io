@@ -3931,8 +3931,19 @@ const blogData = [
 	@tags astronomy
 	<ul class="list2">
 		<li>
-			<a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_August_12,_1654">1654 Aug 12</a> (abt. 11:45 AM) - elongation 3' 37"
-			- <a href="https://en.wikipedia.org/wiki/Battle_of_Shklow">Battle of Szkłów</a>
+			<a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_August_12,_1654">1654 Aug 12</a> -
+			the <a href="https://en.wikipedia.org/wiki/Battle_of_Shklow">Battle of Szkłów</a> (abt. 11:45 AM, elongation 3' 37"), and
+			the <a href="https://en.wikipedia.org/wiki/Siege_of_Smolensk_(1654)">Siege of Smolensk</a> (abt. 11:54 AM, elongation 4' 33")
+			of the <a href="https://en.wikipedia.org/wiki/Polish%E2%80%93Russian_War_(1654%E2%80%931667)">Polish-Russian War</a>
+		</li>
+		<li>
+			1659 Nov 14 -
+			the <a href="https://en.wikipedia.org/wiki/Battle_of_Nyborg">Battle of Nyborg</a> (abt. 3:28 PM, elongation 11' 56")
+			of the <a href="https://en.wikipedia.org/wiki/Dano-Swedish_War_(1658%E2%80%931660)">Dano-Swedish War</a>
+		</li>
+		<li>
+			1664 Jan 28 -
+			the <a href="https://en.wikipedia.org/wiki/Siege_of_Hlukhiv">Siege of Hlukhiv</a> (abt. 9:55 AM, elongation 19' 37")
 			of the <a href="https://en.wikipedia.org/wiki/Polish%E2%80%93Russian_War_(1654%E2%80%931667)">Polish-Russian War</a>
 		</li>
 		<li>
