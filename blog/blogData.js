@@ -3925,5 +3925,140 @@ const blogData = [
 	The nice thing about artwork >95 years old? It's all guaranteed to be public domain -
 	and the solar eclipse helps to unambiguously confirm its composition date.
 	`,
+	`
+	@title List of battles taking place during a solar eclipse
+	@date 1774952364680
+	@tags astronomy
+	<ul class="list2">
+		<li>
+			<a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_August_12,_1654">1654 Aug 12</a> (abt. 11:45 AM) - elongation 3' 37"
+			- <a href="https://en.wikipedia.org/wiki/Battle_of_Shklow">Battle of Szkłów</a>
+			of the <a href="https://en.wikipedia.org/wiki/Polish%E2%80%93Russian_War_(1654%E2%80%931667)">Polish-Russian War</a>
+		</li>
+		<li>
+			<a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_January_22,_1879">1879 Jan 22</a> (abt. 2:49 PM) - elongation 11' 0"
+			- <a href="https://en.wikipedia.org/wiki/Battle_of_Isandlwana">Battle of Isandlwana</a>
+			of the <a href="https://en.wikipedia.org/wiki/Anglo-Zulu_War">Anglo-Zulu War</a>
+		</li>
+		<li>
+			<a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_August_21,_1914">1914 Aug 21</a> (abt. 1:20 PM) - elongation abt. 10'
+			- various battles, incl. eg. the <a href="https://en.wikipedia.org/wiki/Battle_of_the_Frontiers">Battle of the Frontiers</a>
+			(incl. the <a href="https://en.wikipedia.org/wiki/Battle_of_Lorraine">Battle of Lorraine</a>,
+			the <a href="https://en.wikipedia.org/wiki/Battle_of_Charleroi">Battle of Charleroi</a>,
+			the <a href="https://en.wikipedia.org/wiki/Battle_of_the_Ardennes">Battle of the Ardennes</a>, and
+			the <a href="https://en.wikipedia.org/wiki/Battle_of_Mulhouse">Battle of Mulhouse</a>)
+			of <a href="https://en.wikipedia.org/wiki/First_World_War">World War I</a>
+		</li>
+		<li>
+			<a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_January_23,_1917">1917 Jan 23</a> (abt. 8:30 AM) - elongation abt. 22'
+			- various battles, incl. eg. the <a href="https://en.wikipedia.org/wiki/Operations_on_the_Ancre,_January%E2%80%93March_1917">Operations on the Ancre</a>
+			of <a href="https://en.wikipedia.org/wiki/First_World_War">World War I</a>
+		</li>
+		<li>
+			<a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_September_21,_1941">1941 Sep 21</a>
+			the <a href="https://en.wikipedia.org/wiki/Siege_of_Leningrad">Siege of Leningrad</a>
+			of <a href="https://en.wikipedia.org/wiki/World_War_II">World War II</a> (abt. 6:49 AM, elongation abt. 22'),
+			and the <a href="https://en.wikipedia.org/wiki/Battle_of_Changsha_(1941)">Battle of Changsha</a>
+			of the <a href="https://en.wikipedia.org/wiki/Second_Sino-Japanese_War">Second Sino-Japanese War</a> (abt. 1:19 PM, elongation 2' 4"),
+		</li>
+		<li>
+			<a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_September_10,_1942">1942 Sep 10</a> -
+			the <a href="https://en.wikipedia.org/wiki/Siege_of_Malta_(World_War_II)">Siege of Malta</a> (abt. 6:49 PM, elongation 26' 16"), and
+			the <a href="https://en.wikipedia.org/wiki/Sinyavino_offensive_(1942)">Sinyavino Offensive</a> (abt. 7:05 PM, elongation 16' 13")
+			of <a href="https://en.wikipedia.org/wiki/World_War_II">World War II</a>
+		</li>
+		<li>
+			<a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_July_20,_1944">1944 Jul 20</a> -
+			various battles of <a href="https://en.wikipedia.org/wiki/World_War_II">World War II</a>, incl. eg.
+			the <a href="https://en.wikipedia.org/wiki/Battle_of_Lone_Tree_Hill">Battle of Lone Tree Hill</a> (abt. 4:49 PM, elongation 0' 43"),
+			the <a href="https://en.wikipedia.org/wiki/Battle_of_Driniumor_River">Battle of Driniumor River</a> (abt. 5:06 PM, elongation 1' 0"),
+			the <a href="https://en.wikipedia.org/wiki/Battle_of_Biak">Battle of Biak</a> (abt. 4:36 PM, elongation 1' 42"),
+			the <a href="https://en.wikipedia.org/wiki/Battle_of_Noemfoor">Battle of Noemfoor</a> (abt. 4:31 PM, elongation 2' 9"),
+			and the <a href="https://en.wikipedia.org/wiki/Battle_of_Hengyang">Battle of Hengyang</a> (abt. 3:24 PM, elongation 11' 54")
+		</li>
+		<li>
+			<a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_September_12,_1950">1950 Sep 12</a> -
+			the <a href="https://en.wikipedia.org/wiki/Battle_of_the_Pusan_Perimeter">Battle of the Pusan Perimeter</a> (abt. 12:28 PM, elongation 26' 44")
+			of the <a href="https://en.wikipedia.org/wiki/Korean_War">Korean War</a>
+		</li>
+		<li>
+			<a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_December_2,_1956">1956 Dec 2</a> -
+			the <a href="https://en.wikipedia.org/wiki/Battle_of_Port_Said">Battle of Port Said</a> (abt. 9:02 AM, elongation 22' 23")
+			of the <a href="https://en.wikipedia.org/wiki/Suez_Crisis">Suez Crisis</a>
+		</li>
+		<li>
+			<a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_November_23,_1965">1965 Nov 23</a> -
+			various operations (abt. 11:30 AM)
+			of the <a href="https://en.wikipedia.org/wiki/Vietnam_War">Vietnam War</a>
+		</li>
+		<li>
+			<a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_May_20,_1966">1966 May 20</a> -
+			various operations (abt. 7:00 PM)
+			of the <a href="https://en.wikipedia.org/wiki/Vietnam_War">Vietnam War</a>
+		</li>
+		<li>
+			<a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_March_18,_1969">1969 Mar 18</a> -
+			various operations (abt. 1:30 PM)
+			of the <a href="https://en.wikipedia.org/wiki/Vietnam_War">Vietnam War</a>
+		</li>
+		<li>
+			<a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_December_4,_1983">1983 Dec 4</a> -
+			the <a href="https://en.wikipedia.org/wiki/Battle_of_Tripoli_(1983)">Battle of Tripoli</a> (abt. 3:40 PM, elongation 23' 34")
+			of the <a href="https://en.wikipedia.org/wiki/Lebanese_Civil_War">Lebanese Civil War</a>
+		</li>
+		<li>
+			<a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_March_29,_1987">1987 Mar 29</a> -
+			the <a href="https://en.wikipedia.org/wiki/Siege_of_Basra">Siege of Basra</a> (abt. 6:38 PM, elongation 18' 57")
+			of the <a href="https://en.wikipedia.org/wiki/Iran%E2%80%93Iraq_War">Iran-Iraq War</a>
+		</li>
+		<li>
+			<a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_March_29,_2006">2006 Mar 29</a> -
+			the <a href="https://en.wikipedia.org/wiki/Battle_of_Ramadi_(2006)">Battle of Ramadi</a> (abt. 2:12 PM, elongation 9' 11")
+			of the <a href="https://en.wikipedia.org/wiki/Iraq_War">Iraq War</a>
+		</li>
+		<li>
+			<a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_August_1,_2008">2008 Aug 1</a> -
+			<a href="https://en.wikipedia.org/wiki/Operation_Augurs_of_Prosperity">Operation Augurs of Prosperity</a> (abt. 2:00 PM, elongation 25' 8")
+			of the <a href="https://en.wikipedia.org/wiki/Iraq_War">Iraq War</a>
+		</li>
+		<li>
+			<a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_July_22,_2009">2009 Jul 22</a> -
+			<a href="https://en.wikipedia.org/wiki/Operation_Panther%27s_Claw">Operation Panther's Claw</a> and
+			<a href="https://en.wikipedia.org/wiki/Operation_Strike_of_the_Sword">Operation Strike of the Sword</a> (abt. 5:30 AM, elongation 12' 10")
+			of the <a href="https://en.wikipedia.org/wiki/War_in_Afghanistan_(2001%E2%80%932021)">War in Afghanistan</a>, and
+			<a href="https://en.wikipedia.org/wiki/Operation_Rah-e-Nijat">Operation Rah-e-Nijat</a> (abt. 7:00 AM, elongation 11' 30")
+			of the <a href="https://en.wikipedia.org/wiki/Insurgency_in_Khyber_Pakhtunkhwa">Insurgency in Khyber Pakhtunkhwa</a>
+		</li>
+		<li>
+			<a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_January_15,_2010">2010 Jan 15</a> -
+			<a href="https://en.wikipedia.org/wiki/Operation_Blow_to_the_Head">Operation Blow to the Head</a> (abt. 9:00 AM, elongation 15' 7")
+			of the <a href="https://en.wikipedia.org/wiki/Houthi_insurgency_in_Yemen">Houthi insurgency</a>
+		</li>
+		<li>
+			<a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_March_20,_2015">2015 Mar 20</a> -
+			the <a href="https://en.wikipedia.org/wiki/Shyrokyne_standoff">Shyrokyne standoff</a> (abt. 12:18 PM, elongation 17' 51")
+			of the <a href="https://en.wikipedia.org/wiki/War_in_Donbas_(2014%E2%80%932022)">War in Donbas</a>,
+			the <a href="https://en.wikipedia.org/wiki/Battle_of_Sirte_(2015)">Battle of Sirte</a> (abt. 11:21 AM, elongation 21' 24")
+			of the <a href="https://en.wikipedia.org/wiki/Libyan_civil_war_(2014%E2%80%932020)">Libyan civil war</a>, and
+			the <a href="https://en.wikipedia.org/wiki/Second_Battle_of_Tikrit">Second Battle of Tikrit</a> (abt. 1:19 PM, elongation 29' 57")
+			of the <a href="https://en.wikipedia.org/wiki/War_in_Iraq_(2013%E2%80%932017)">War in Iraq</a>
+		</li>
+		<li>
+			<a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_September_1,_2016">2016 Sep 1</a> -
+			<a href="https://en.wikipedia.org/wiki/2016%E2%80%932019_Wau_clashes">Wau Clashes</a> (abt. 11:23 AM, elongation 10' 23")
+			of the <a href="https://en.wikipedia.org/wiki/South_Sudanese_Civil_War">South Sudanese Civil War</a>
+		</li>
+		<li>
+			<a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_October_25,_2022">2022 Oct 25</a> -
+			the <a href="https://en.wikipedia.org/wiki/Battle_of_Bakhmut">Battle of Bakhmut</a> (abt. 1:50 PM, elongation 10' 34")
+			and the <a href="https://en.wikipedia.org/wiki/Battle_of_Marinka_(2022%E2%80%932023)">Battle of Marinka</a> (abt. 1:50 AM, elongation 10' 53")
+			of the <a href="https://en.wikipedia.org/wiki/Russo-Ukrainian_war_(2022%E2%80%93present)">Russo-Ukrainian war</a>,
+			<a href="https://en.wikipedia.org/wiki/Operation_Claw-Lock">Operation Claw-Lock</a> (abt. 2:16 PM, elongation 12' 42")
+			of the <a href="https://en.wikipedia.org/wiki/Kurdistan_Workers%27_Party_insurgency">Kurdistan Workers' Party insurgency</a>, and
+			the <a href="https://en.wikipedia.org/wiki/2022_Southern_Yemen_offensive">Southern Yemen offensive</a> (abt. 3:01 PM, elongation 25' 14")
+			of the <a href="https://en.wikipedia.org/wiki/South_Yemen_insurgency">South Yemen insurgency</a>
+		</li>
+	</ul>
+	`
 ];
 // don't forget, run blog.timestamp to get the timestamp!
