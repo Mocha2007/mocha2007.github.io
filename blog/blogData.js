@@ -3942,7 +3942,7 @@ const blogData = [
 		</li>
 		<li>
 			1030 Aug 31 -
-			the <a href="https://en.wikipedia.org/wiki/Battle_of_Stiklestad">Battle of Simancas</a> (abt. 2:55 PM, elongation 0' 30")
+			the <a href="https://en.wikipedia.org/wiki/Battle_of_Stiklestad">Battle of Stiklestad</a> (abt. 2:55 PM, elongation 0' 30")
 		</li>
 		<li>
 			1605 Oct 12 -
