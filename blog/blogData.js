@@ -3608,6 +3608,11 @@ const blogData = [
 			<th>Depiction</th>
 		</tr>
 		<tr>
+			<td>1688 April 30, 7:18 AM</td>
+			<td>Lopburi, Thailand</td>
+			<td><img src="https://upload.wikimedia.org/wikipedia/commons/0/07/Fran%C3%A7oise_Foliot_-_Eclipse_de_soleil_au_Siam_en_1688.jpg" height="200"></td>
+		</tr>
+		<tr>
 			<td><a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_May_3,_1715">1715 May 3, 9:10 AM</a> [O.S. 1715 April 22]</td>
 			<td>Cambridge, England</td>
 			<td><img src="https://upload.wikimedia.org/wikipedia/commons/f/fd/Solar_eclipse_1715May03-Cambridge_England.png" height="200"></td>
