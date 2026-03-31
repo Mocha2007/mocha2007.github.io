@@ -3931,6 +3931,11 @@ const blogData = [
 	@tags astronomy
 	<ul class="list2">
 		<li>
+			<a href="https://en.wikipedia.org/wiki/Eclipse_of_Thales">585 BCE May 28</a> -
+			the Battle of the Eclipse (abt. 6:00 PM, in totality)
+			of the Medo-Lydian War
+		</li>
+		<li>
 			1605 Oct 12 -
 			the Siege of Wachtendonk (abt. 1:23 PM, elongation 4' 57")
 			of the <a href="https://en.wikipedia.org/wiki/Eighty_Years%27_War">Eighty Years' War</a>
