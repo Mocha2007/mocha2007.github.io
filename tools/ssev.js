@@ -136,9 +136,9 @@ class Planet {
 	updateStatus(time){
 		const status = this.status;
 		const a = this.sma(time);
-		const p = 1.00001742096 * Math.pow(a, 1.5);
+		const p = 1.00001742096 * Math.pow(a, 1.5); // 2.7365 ~ 999d when rounded
 		status.innerHTML = `<br>${a.toFixed(1)} au<br>
-		${2 <= p ? `${p.toFixed(1)} yr` : `${(p*365.25).toFixed(0)} d`}<br>
+		${2.7365 < p ? `${p.toFixed(1)} yr` : `${(p*365.25).toFixed(0)} d`}<br>
 		${(this.temp(time) - 273.15).toFixed(0)}°C`;
 		// add events
 		this.settings.events.filter(e => e.is_active(time)).forEach(e => status.appendChild(e.elem()));
