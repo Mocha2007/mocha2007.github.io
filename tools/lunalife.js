@@ -162,6 +162,7 @@ const LUNALIFE = {
 		new LunaEvent(new Date(2024, 11, 17), 'laser done?'), // L9
 		new LunaEvent(new Date(2025, 0, 7), 'Moved to Poland (!?)'),
 		new LunaEvent(new Date(2025, 7, 20), 'Birth cert changed (finally!)'),
+		new LunaEvent(new Date(2025, 8, 7), 'Observed my second lunar eclipse, right at moonrise.'),
 		new LunaEvent(new Date(2026, 7, 16), 'Theoretically the effects of HRT should be largely complete by now.'),
 		new LunaEvent(new Date(2028, 7, 16), 'Theoretically the effects of HRT should be totally complete by now.'),
 		new LunaEvent(new Date(2048, 11, 4), 'If I am alive by this date, I will have been on HRT longer than not.'),
