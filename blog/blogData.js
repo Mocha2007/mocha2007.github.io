@@ -3929,20 +3929,45 @@ const blogData = [
 	@title List of battles taking place during a solar eclipse
 	@date 1774952364680
 	@tags astronomy
+	Where the eclipse is known to have affected the battle, I have added a remark.
 	<ul class="list2">
 		<li>
 			<a href="https://en.wikipedia.org/wiki/Eclipse_of_Thales">585 BCE May 28</a> -
 			the Battle of the Eclipse (abt. 6:00 PM, in totality)
 			of the Medo-Lydian War
+			<ul class="list2">
+				<li>Convinced the combatants to draft a peace</li>
+			</ul>
+		</li>
+		<li>
+			813 May 4 -
+			the <a href="https://en.wikipedia.org/wiki/Battle_of_Versinikia">Battle of Versinikia</a> (abt. 5:17 AM, elongation 1' 17")
+			of the <a href="https://en.wikipedia.org/wiki/Byzantine%E2%80%93Bulgarian_wars">Byzantine-Bulgarian Wars</a>
+			<ul class="list2">
+				<li>Frightened the Byzantine soldiers prior to battle</li>
+			</ul>
 		</li>
 		<li>
 			939 Jul 19 -
 			the <a href="https://en.wikipedia.org/wiki/Battle_of_Simancas">Battle of Simancas</a> (abt. 7:18 AM, elongation 2' 5")
 			of the <a href="https://en.wikipedia.org/wiki/Reconquista">Reconquista</a>
+			<ul class="list2">
+				<li>Terrified both sides into ceasing combat for two days</li>
+			</ul>
 		</li>
 		<li>
 			1030 Aug 31 -
 			the <a href="https://en.wikipedia.org/wiki/Battle_of_Stiklestad">Battle of Stiklestad</a> (abt. 2:55 PM, elongation 0' 30")
+			<ul class="list2">
+				<li>Interpreted as a bad omen</li>
+			</ul>
+		</li>
+		<li>
+			1567 Apr 09 -
+			the <a href="https://en.wikipedia.org/wiki/Battle_of_Thanesar_(1567)">Battle of THanesar</a> (abt. 5:58 PM, elongation 13' 52")
+			<ul class="list2">
+				<li>Observed, but had no apparent effect on battle</li>
+			</ul>
 		</li>
 		<li>
 			1605 Oct 12 -
@@ -3961,6 +3986,9 @@ const blogData = [
 			the <a href="https://en.wikipedia.org/wiki/Battle_of_Shklow">Battle of Szkłów</a> (abt. 11:45 AM, elongation 3' 37"), and
 			the <a href="https://en.wikipedia.org/wiki/Siege_of_Smolensk_(1654)">Siege of Smolensk</a> (abt. 11:54 AM, elongation 4' 33")
 			of the <a href="https://en.wikipedia.org/wiki/Polish%E2%80%93Russian_War_(1654%E2%80%931667)">Polish-Russian War</a>
+			<ul class="list2">
+				<li>In the battle of Szkłów, it caused confusion.</li>
+			</ul>
 		</li>
 		<li>
 			1659 Nov 14 -
@@ -4021,7 +4049,13 @@ const blogData = [
 		<li>
 			1762 Oct 17 -
 			the <a href="https://en.wikipedia.org/wiki/Siege_of_Cassel_(1762)">Siege of Cassel</a> (abt. 8:16 AM, elongation 16' 32")
-			of the <a href="https://en.wikipedia.org/wiki/Seven_Years%27_War">Seven Years' War</a>
+			of the <a href="https://en.wikipedia.org/wiki/Seven_Years%27_War">Seven Years' War</a>, and
+			the <a href="https://en.wikipedia.org/wiki/Battle_of_Pipli_Sahib">Battle of Pipli Sahib</a> (abt. 2:20 PM, elongation 0' 51")
+			of the <a href="https://en.wikipedia.org/wiki/Afghan%E2%80%93Sikh_Wars">Afghan-Sikh Wars</a>
+			<ul class="list2">
+				<li>It was noticed during battle, but had no apparent effect on combatants.</li>
+			</ul>
+		</li>
 		</li>
 		<li>
 			1788 Jun 4 -
