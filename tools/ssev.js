@@ -409,6 +409,11 @@ const SSEV = {
 			new PlanetCoords(new Time(0), 2.77),
 		), 'https://upload.wikimedia.org/wikipedia/commons/7/76/Ceres_-_RC3_-_Haulani_Crater_%2822381131691%29_%28cropped%29.jpg',
 		{albedo: 0.09, minor: true}),
+		new Planet('Hygiea', new PlanetPath(
+			new PlanetCoords(new Time(2500), 3.144),
+			new PlanetCoords(new Time(0), 3.144),
+		), 'https://upload.wikimedia.org/wikipedia/commons/8/88/SPHERE_image_of_Hygiea.jpg',
+		{albedo: 0.063, minor: true, offset: true}),
 		// Nice Model begins like ~ 6 Myr
 		// PRIMARY source: Deienno 2017
 		// cf: https://commons.wikimedia.org/wiki/File:Tsiganis2005-1.svg
