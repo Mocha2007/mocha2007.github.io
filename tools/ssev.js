@@ -29,7 +29,7 @@ class PlanetEvent {
 	}
 	/** @param {Time} time */
 	is_active(time){
-		return this.start <= time.mya && time.mya <= this.end;
+		return this.start <= time.mya && time.mya < this.end;
 	}
 }
 
