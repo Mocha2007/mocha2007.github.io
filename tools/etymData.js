@@ -943,6 +943,12 @@ const etymData = [
 		forms: ['amaryll', 'amaryllis$'],
 	},
 	{
+		head: 'Ămăzṓn',
+		lang: EDS.greek,
+		gloss: 'Amazon',
+		forms: ['amazon'],
+	},
+	{
 		head: 'ămblŭ́s',
 		lang: EDS.greek,
 		gloss: 'dull',
