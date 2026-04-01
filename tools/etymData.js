@@ -1387,6 +1387,12 @@ const etymData = [
 		forms: ['hemi'],
 	},
 	{
+		head: 'hésperos',
+		lang: EDS.greek,
+		gloss: 'evening',
+		forms: ['hesper'],
+	},
+	{
 		head: 'hólos',
 		lang: EDS.greek,
 		gloss: 'whole',
