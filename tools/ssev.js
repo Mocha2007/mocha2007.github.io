@@ -11,6 +11,28 @@ class Time {
 	}
 }
 
+class PlanetEvent {
+	constructor(name, start, end = start){
+		/** @type {Name} */
+		this.name = name;
+		/** @type {number} */
+		this.start = start;
+		/** @type {number} */
+		this.end = end;
+	}
+	elem(){
+		const e = document.createElement('span');
+		e.classList.add('event');
+		e.innerHTML = this.name;
+		e.title = `${this.start.toFixed(0)} Mya - ${this.end.toFixed(0)} Mya`;
+		return e;
+	}
+	/** @param {Time} time */
+	is_active(time){
+		return this.start <= time.mya && time.mya <= this.end;
+	}
+}
+
 class PlanetCoords {
 	constructor(time, sma){
 		/** @type {Time} */
@@ -45,6 +67,8 @@ class Planet {
 		if (typeof albedo !== "function") this.settings.albedo = () => albedo;
 		const ghe = this.settings.ghe || 1;
 		if (typeof ghe !== "function") this.settings.ghe = () => ghe;
+		/** @type {PlanetEvent[]} */
+		this.settings.events = this.settings.events || [];
 	}
 	get elem(){
 		return document.getElementById(this.name);
@@ -110,11 +134,14 @@ class Planet {
 	}
 	/** @param {Time} time */
 	updateStatus(time){
+		const status = this.status;
 		const a = this.sma(time);
 		const p = 1.00001742096 * Math.pow(a, 1.5);
-		this.status.innerHTML = `<br>${a.toFixed(1)} au<br>
+		status.innerHTML = `<br>${a.toFixed(1)} au<br>
 		${2 <= p ? `${p.toFixed(1)} yr` : `${(p*365.25).toFixed(0)} d`}<br>
 		${(this.temp(time) - 273.15).toFixed(0)}°C`;
+		// add events
+		this.settings.events.filter(e => e.is_active(time)).forEach(e => status.appendChild(e.elem()));
 	}
 }
 
@@ -314,7 +341,25 @@ const SSEV = {
 			// (200, 1.15) -> (100, 1.16)
 			: 100 < t ? -0.0001*t + 1.17
 			: 0.0003*t + 1.129058824
-		}),
+		, events: [
+			new PlanetEvent('Hadean', 4031, 4567.3),
+			new PlanetEvent('Archean', 2500, 4031),
+			new PlanetEvent('Paleoproterozoic', 1600, 2500),
+			new PlanetEvent('Mesoproterozoic', 1000, 1600),
+			new PlanetEvent('Tonian', 720, 1000),
+			new PlanetEvent('Cryogenian', 635, 720),
+			new PlanetEvent('Ediacaran', 538.8, 635),
+			new PlanetEvent('Cambrian', 486.85, 538.8),
+			new PlanetEvent('Ordovician', 443.1, 486.85),
+			new PlanetEvent('Silurian', 419.62, 443.1),
+			new PlanetEvent('Devonian', 358.9, 419.62),
+			new PlanetEvent('Carboniferous', 298.9, 358.9),
+			new PlanetEvent('Permian', 251.902, 298.9),
+			new PlanetEvent('Triassic', 201.4, 251.902),
+			new PlanetEvent('Jurassic', 143.1, 201.4),
+			new PlanetEvent('Cretaceous', 66, 143.1),
+			new PlanetEvent('Cenozoic', 0, 66),
+		]}),
 		new Planet('Theia', new PlanetPath(
 			new PlanetCoords(Time.fromEarthAge(-10), 1),
 			new PlanetCoords(Time.fromEarthAge(0), 1),
@@ -330,7 +375,12 @@ const SSEV = {
 			: 1000 < t ? 'https://mocha2007.github.io/tools/ssev/mars_1.0bya.jpg'
 			: 'https://mocha2007.github.io/tools/ssev/mars.jpg'
 		// ghe is smooth decay from +45% to modern +2%
-		, {albedo: 0.25, ghe: t => 1.019856459 * Math.pow(1.45, t/CONSTANTS.ageEarth)}),
+		, {albedo: 0.25, ghe: t => 1.019856459 * Math.pow(1.45, t/CONSTANTS.ageEarth), events: [
+			new PlanetEvent('Pre-Noachian', 4100, 4500),
+			new PlanetEvent('Noachian', 3700, 4100),
+			new PlanetEvent('Hesperian', 3000, 3700),
+			new PlanetEvent('Amazonian', 0, 3000),
+		]}),
 		new Planet('Vesta', new PlanetPath(
 			// https://astrobiology.nasa.gov/news/where-did-vesta-come-from/?linkId=469571005
 			new PlanetCoords(Time.fromSolarAge(15), 4),

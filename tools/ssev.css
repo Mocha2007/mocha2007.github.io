@@ -28,3 +28,8 @@ html {
 .minor {
 	transform: scale(0.8);
 }
+.event {
+	color: lime;
+	display: block;
+	/* rotate: -90deg; */
+}
