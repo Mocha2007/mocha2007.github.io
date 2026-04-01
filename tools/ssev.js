@@ -331,7 +331,7 @@ const SSEV = {
 			: 3500 < t ? 'https://mocha2007.github.io/tools/ssev/earth_archaean.jpg'
 			// 2400-3500 Mya: https://en.wikipedia.org/wiki/Purple_Earth_hypothesis
 			: 2400 < t ? 'https://mocha2007.github.io/tools/ssev/earth_purple.jpg'
-			: 'https://upload.wikimedia.org/wikipedia/commons/2/2d/Meteosat-12-fci-march-equinox-2025-noon.jpg',
+			: 'https://mocha2007.github.io/tools/ssev/earth.jpg',
 			{albedo: t => CONSTANTS.glacial(t) ? 0.75 : 0.294, ghe: t => 500 < t ? 1.21
 			// ghe fit to https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/All_palaeotemps.svg/3840px-All_palaeotemps.svg.png
 			// use command SSEV.planets[2].temp(SSEV.config.t); 

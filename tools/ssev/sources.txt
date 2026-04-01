@@ -2,6 +2,7 @@ Protoplanet: CC0
 	https://commons.wikimedia.org/wiki/File:Earth_formation.jpg
 Earth: (PD NASA)
 	https://commons.wikimedia.org/wiki/File:NASA-EarlyEarth-PaleOrangeDot-20190802.jpg
+	https://commons.wikimedia.org/wiki/File:The_Earth_seen_from_Apollo_17.jpg
 	and a heavily-edited version of this (CC 4.0):
 	https://commons.wikimedia.org/wiki/File:Vaalbara_Continent.jpg
 Mars: (both are PD NASA)
