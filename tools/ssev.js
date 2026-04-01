@@ -286,7 +286,7 @@ const SSEV = {
 			main.appendChild(e);
 		});
 		// create graticule
-		[0.3, 0.4, 0.5, 0.75, 1, 2, 3, 4, 5, 7.5, 10, 20, 30, 40].forEach(g => {
+		[0.4, 0.5, 0.75, 1, 2, 3, 4, 5, 7.5, 10, 20, 30, 40].forEach(g => {
 			const e = document.createElement('div');
 			e.classList.add('graticule');
 			e.innerHTML = g;
