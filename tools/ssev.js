@@ -307,7 +307,9 @@ const SSEV = {
 			new PlanetCoords(new Time(0), 0.387098),
 		), t => CONSTANTS.ageEarth-50 < t ? 'https://mocha2007.github.io/tools/ssev/proto.jpg'
 			: 'https://upload.wikimedia.org/wikipedia/commons/4/4a/Mercury_in_true_color.jpg',
-		{albedo: 0.088}),
+		{albedo: 0.088, events: [
+			new PlanetEvent('Rembrandt Impact', 3890, 3910), // guessing +/- 10 Myr
+		]}),
 		new Planet('Venus', new PlanetPath(
 			new PlanetCoords(Time.fromEarthAge(-30), 0.723332),
 			new PlanetCoords(new Time(0), 0.723332),
@@ -316,7 +318,9 @@ const SSEV = {
 			// Possibly retained water for first 2-3 Byr - let's say this period ended 2000 Mya
 			: 2000 < t ? 'https://mocha2007.github.io/tools/ssev/earth_archaean.jpg'
 			: 'https://upload.wikimedia.org/wikipedia/commons/0/08/Venus_from_Mariner_10.jpg',
-		{albedo: t => 2000 < t ? 0.3 : 0.76, ghe: t => 2000 <= t ? 1.13 : 3.176724138}),
+		{albedo: t => 2000 < t ? 0.3 : 0.76, ghe: t => 2000 <= t ? 1.13 : 3.176724138, events: [
+			new PlanetEvent('Global Resurfacing Event', 300, 500),
+		]}),
 		new Planet('Earth', new PlanetPath(
 			new PlanetCoords(Time.fromEarthAge(-50), 1),
 			new PlanetCoords(new Time(0), 1),
@@ -380,6 +384,11 @@ const SSEV = {
 			new PlanetEvent('Noachian', 3700, 4100),
 			new PlanetEvent('Hesperian', 3000, 3700),
 			new PlanetEvent('Amazonian', 0, 3000),
+			// impacts
+			new PlanetEvent('Utopia Planitia', 4100, 4300),
+			new PlanetEvent('Isidis Planitia', 3890, 3910), // guessing +/- 10 Myr
+			new PlanetEvent('Hellas Planitia', 3800, 4100),
+			new PlanetEvent('Argyre Planitia', 3800, 4000),
 		]}),
 		new Planet('Vesta', new PlanetPath(
 			// https://astrobiology.nasa.gov/news/where-did-vesta-come-from/?linkId=469571005
