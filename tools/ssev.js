@@ -374,7 +374,7 @@ const SSEV = {
 		new Planet('Ryugu', new PlanetPath(
 			// https://www.science.org/doi/10.1126/sciadv.add8141
 			// Its orgin lies between Saturn and Neptune. For clarity, I put it in the geometric mean of Uranus and Neptune (16.8 au)
-			new PlanetCoords(Time.fromSolarAge(15), 16.8),
+			new PlanetCoords(Time.fromSolarAge(2), 16.8),
 			new PlanetCoords(CONSTANTS.t.nice.start, 16.8),
 			new PlanetCoords(CONSTANTS.t.nice.end, 1.1896),
 			new PlanetCoords(new Time(0), 1.1896),
