@@ -371,6 +371,15 @@ const SSEV = {
 			new PlanetCoords(Time.fromEarthAge(-10), 1),
 			new PlanetCoords(Time.fromEarthAge(0), 1),
 		), 'https://mocha2007.github.io/tools/ssev/proto.jpg', {offset:true}),
+		new Planet('Ryugu', new PlanetPath(
+			// https://www.science.org/doi/10.1126/sciadv.add8141
+			// Its orgin lies between Saturn and Neptune. For clarity, I put it in the geometric mean of Uranus and Neptune (16.8 au)
+			new PlanetCoords(Time.fromSolarAge(15), 16.8),
+			new PlanetCoords(CONSTANTS.t.nice.start, 16.8),
+			new PlanetCoords(CONSTANTS.t.nice.end, 1.1896),
+			new PlanetCoords(new Time(0), 1.1896),
+		), 'https://upload.wikimedia.org/wikipedia/commons/d/de/Ryugu_colored.jpg',
+		{albedo: 0.037, minor: true, offset: true}),
 		new Planet('Mars', new PlanetPath(
 			new PlanetCoords(Time.fromEarthAge(-10), 1.52368055),
 			new PlanetCoords(new Time(0), 1.52368055),
