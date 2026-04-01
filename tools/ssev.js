@@ -13,7 +13,7 @@ class Time {
 
 class PlanetEvent {
 	constructor(name, start, end = start){
-		/** @type {Name} */
+		/** @type {string} */
 		this.name = name;
 		/** @type {number} */
 		this.start = start;
@@ -23,7 +23,7 @@ class PlanetEvent {
 	elem(){
 		const e = document.createElement('span');
 		e.classList.add('event');
-		e.innerHTML = this.name;
+		e.innerHTML = this.name.replace('-', '&#8209;');
 		e.title = `${this.start.toFixed(0)} Mya - ${this.end.toFixed(0)} Mya`;
 		return e;
 	}
