@@ -29,7 +29,11 @@ html {
 	transform: scale(0.8);
 }
 .event {
-	color: lime;
+	color: #4c4;
 	display: block;
 	max-width: min-content;
+	border: 1px solid #4c4;
+	border-radius: 0.5vw;
+	padding: 0.1vw;
+	margin-bottom: 0.1vw;
 }
