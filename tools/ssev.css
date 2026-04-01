@@ -31,5 +31,5 @@ html {
 .event {
 	color: lime;
 	display: block;
-	max-width: fit-content;
+	max-width: min-content;
 }
