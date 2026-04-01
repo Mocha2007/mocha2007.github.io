@@ -31,5 +31,5 @@ html {
 .event {
 	color: lime;
 	display: block;
-	/* rotate: -90deg; */
+	max-width: fit-content;
 }

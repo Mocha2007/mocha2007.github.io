@@ -347,7 +347,10 @@ const SSEV = {
 			: 0.0003*t + 1.129058824
 		, events: [
 			new PlanetEvent('Hadean', 4031, 4567.3),
-			new PlanetEvent('Archean', 2500, 4031),
+			new PlanetEvent('Eoarchean', 3600, 4031),
+			new PlanetEvent('Paleoarchean', 3200, 3600),
+			new PlanetEvent('Mesoarchean', 2800, 3200),
+			new PlanetEvent('Neoarchean', 2500, 2800),
 			new PlanetEvent('Paleoproterozoic', 1600, 2500),
 			new PlanetEvent('Mesoproterozoic', 1000, 1600),
 			new PlanetEvent('Tonian', 720, 1000),
