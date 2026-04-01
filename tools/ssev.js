@@ -369,6 +369,8 @@ const SSEV = {
 			new PlanetEvent('Jurassic', 143.1, 201.4),
 			new PlanetEvent('Cretaceous', 66, 143.1),
 			new PlanetEvent('Cenozoic', 0, 66),
+			// events
+			new PlanetEvent('Great Oxidation Event', 2060, 2443),
 		]}),
 		new Planet('Theia', new PlanetPath(
 			new PlanetCoords(Time.fromEarthAge(-10), 1),
