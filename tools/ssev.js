@@ -82,7 +82,7 @@ class Planet {
 		e.appendChild(img);
 		e.appendChild(document.createTextNode(this.name));
 		e.classList.add('planet');
-		if (this.settings.offset) e.style.top = '15vw';
+		if (this.settings.offset) e.classList.add('offset');
 		this.status = document.createElement('span');
 		this.status.id = `${this.name}_status`;
 		this.status.classList.add('status');
@@ -401,6 +401,14 @@ const SSEV = {
 			new PlanetCoords(new Time(0), 2.36),
 		), 'https://upload.wikimedia.org/wikipedia/commons/5/51/Vesta_in_natural_color.jpg',
 		{albedo: 0.423, minor: true}),
+		new Planet('Lutetia', new PlanetPath(
+			// https://www.space.com/13597-asteroid-lutetia-earth-birth.html
+			new PlanetCoords(Time.fromSolarAge(15), 0.85),
+			new PlanetCoords(new Time(4050), 0.85),
+			new PlanetCoords(new Time(3950), 2.435),
+			new PlanetCoords(new Time(0), 2.435),
+		), 'https://upload.wikimedia.org/wikipedia/commons/1/17/Rosetta_triumphs_at_asteroid_Lutetia.jpg',
+		{albedo: 0.073, minor: true, offset: true}),
 		new Planet('Ceres', new PlanetPath(
 			// https://en.wikipedia.org/wiki/Ceres_(dwarf_planet)#Origin_and_evolution
 			new PlanetCoords(Time.fromSolarAge(15), 4),
