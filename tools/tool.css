@@ -1,9 +1,15 @@
+a {
+	color: #06C;
+	text-decoration: none;
+}
+a:hover {
+	color: #08F;
+}
 body {
 	background-color: black;
 	color: silver;
 	font-family: Consolas, Monospace;
 }
-
 .bubble, .button {
 	border-radius: 15px;
 	border-style: solid;
@@ -12,7 +18,6 @@ body {
 	user-select: none;
 	width: fit-content;
 }
-
 .button {
 	background-color: silver;
 	border-color: #444;
