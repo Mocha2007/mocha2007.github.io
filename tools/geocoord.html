@@ -12,11 +12,13 @@
 	Approximate Location: <a id="continent"></a>
 	<hr>
 	Total MoE: &plusmn;<span id="totmoe"></span><br>
-	Containing Rectangle Area: <span id="area">-</span>
+	Containing Rectangle Area: <span id="area">-</span><br>
+	v<sub>tan</sub>: <span id="vtan">-</span> m/s
 </div>
 
 <script>
 const R_E = 6371000; // todo account for oblateness
+const DAY_SIDEREAL = 86164.100352;
 const r_at_lat = lat => R_E * Math.cos(lat);
 const digits = s => s.includes('.') ? s.split('.')[1].length : 0;
 const moe = (r, n_digits) => Math.PI * r / (180 * Math.pow(10, n_digits));
@@ -38,9 +40,10 @@ const contelem = document.getElementById('continent');
 
 function main(){
 	const INPUT_LAT = document.getElementById('lat').value;
+	const LAT = INPUT_LAT * Math.PI/180;
 	const INPUT_LON = document.getElementById('lon').value;
 	const MOE_LAT = moe(R_E, digits(INPUT_LAT));
-	const MOE_LON = moe(r_at_lat(+INPUT_LAT * Math.PI/180), digits(INPUT_LON));
+	const MOE_LON = moe(r_at_lat(LAT), digits(INPUT_LON));
 	const MOE_TOT = Math.hypot(MOE_LAT, MOE_LON);
 	const MOE_AREA = 4 * MOE_LAT * MOE_LON;
 	// output
@@ -48,6 +51,7 @@ function main(){
 	document.getElementById('lonmoe').innerHTML = len(MOE_LON);
 	document.getElementById('totmoe').innerHTML = len(MOE_TOT);
 	document.getElementById('area').innerHTML = area(MOE_AREA);
+	document.getElementById('vtan').innerHTML = (Math.cos(LAT) * 2 * Math.PI * R_E / DAY_SIDEREAL).toFixed(1);
 	contelem.innerHTML = continent(+INPUT_LAT, +INPUT_LON);
 	contelem.href = `https://en.wikipedia.org/wiki/${contelem.innerHTML}`;
 	return {MOE_LAT, MOE_LON, MOE_TOT, MOE_AREA};
