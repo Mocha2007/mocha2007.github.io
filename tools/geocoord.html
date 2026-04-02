@@ -7,7 +7,7 @@
 <title>Geocoord MoE Calc</title>
 <h1>Geocoord Margin of Error Calculator</h1>
 
-<!-- todo: "here" button -->
+<span class="button" onclick="getLoc();">Use my location</span>
 <div onkeyup="main()" onclick="main()" style="max-width: fit-content;">
 	<a href="https://en.wikipedia.org/wiki/Latitude">Latitude</a> (&phi;): <input id="lat" type="number" min="-90" max="90" value="0"> (MoE: &plusmn;<span id="latmoe">-</span>)<br>
 	<a href="https://en.wikipedia.org/wiki/Longitude">Longitude</a> (&lambda;): <input id="lon" type="number" min="-180" max="360" value="0"> (MoE: &plusmn;<span id="lonmoe">-</span>)<br>
@@ -40,6 +40,13 @@ const continent = (lat, lon) => { // this is VERY approximate
 	return "Oceania";
 };
 const contelem = document.getElementById('continent');
+const getLoc = () =>
+	navigator.geolocation.getCurrentPosition(gc => {
+		document.getElementById('lat').value = gc.coords.latitude;
+		document.getElementById('lon').value = gc.coords.longitude;
+		main();
+	},
+	e => console.debug(`Couldn't get geolocation due to ${e}`));
 
 function main(){
 	const INPUT_LAT = document.getElementById('lat').value;
