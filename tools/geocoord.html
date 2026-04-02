@@ -7,6 +7,7 @@
 <title>Geocoord MoE Calc</title>
 <h1>Geocoord Margin of Error Calculator</h1>
 
+<!-- todo: "here" button -->
 <div onkeyup="main()" onclick="main()" style="max-width: fit-content;">
 	<a href="https://en.wikipedia.org/wiki/Latitude">Latitude</a> (&phi;): <input id="lat" type="number" min="-90" max="90" value="0"> (MoE: &plusmn;<span id="latmoe">-</span>)<br>
 	<a href="https://en.wikipedia.org/wiki/Longitude">Longitude</a> (&lambda;): <input id="lon" type="number" min="-180" max="360" value="0"> (MoE: &plusmn;<span id="lonmoe">-</span>)<br>
@@ -15,7 +16,8 @@
 </div>
 Total MoE: &plusmn;<span id="totmoe"></span><br>
 Containing Rectangle Area: <span id="area">-</span><br>
-<a href="https://en.wikipedia.org/wiki/Tangential_speed">v<sub>tan</sub></a>: <span id="vtan">-</span> m/s
+<a href="https://en.wikipedia.org/wiki/Tangential_speed">v<sub>tan</sub></a>: <span id="vtan">-</span> m/s<br>
+<a href="https://en.wikipedia.org/wiki/Solar_time#Mean_solar_time">LMST</a>: <span id="lmst">-</span>
 
 <script>
 const R_E = 6371000; // todo account for oblateness
@@ -43,6 +45,7 @@ function main(){
 	const INPUT_LAT = document.getElementById('lat').value;
 	const LAT = INPUT_LAT * Math.PI/180;
 	const INPUT_LON = document.getElementById('lon').value;
+	const LON = INPUT_LON * Math.PI/180;
 	const MOE_LAT = moe(R_E, digits(INPUT_LAT));
 	const MOE_LON = moe(r_at_lat(LAT), digits(INPUT_LON));
 	const MOE_TOT = Math.hypot(MOE_LAT, MOE_LON);
@@ -53,6 +56,12 @@ function main(){
 	document.getElementById('totmoe').innerHTML = len(MOE_TOT);
 	document.getElementById('area').innerHTML = area(MOE_AREA);
 	document.getElementById('vtan').innerHTML = (Math.cos(LAT) * 2 * Math.PI * R_E / DAY_SIDEREAL).toFixed(1);
+	document.getElementById('lmst').innerHTML = new Date(
+		// longitude hour angle
+		LON/Math.PI*12*60*60*1000
+		// current hour, UTC
+		+Date.now()
+		).toLocaleTimeString("en-US", { timeZone: "UTC" });
 	contelem.innerHTML = continent(+INPUT_LAT, +INPUT_LON);
 	contelem.href = `https://en.wikipedia.org/wiki/${contelem.innerHTML}`;
 	return {MOE_LAT, MOE_LON, MOE_TOT, MOE_AREA};
