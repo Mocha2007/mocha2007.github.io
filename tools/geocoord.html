@@ -33,7 +33,7 @@ const continent = (lat, lon) => { // this is VERY approximate
 	}
 	if (37 < lat && lon < 53) return "Europe";
 	if (34 < lat && 13 < lon) return "Asia";
-	if (65 < lon) return "Africa";
+	if (lon < 65) return "Africa";
 	return "Oceania";
 };
 const contelem = document.getElementById('continent');
