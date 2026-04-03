@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en-US">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="shortcut icon" href="img/favicon.ico">
+<link href="../tools/tool.css" type="text/css" rel="stylesheet">
+<style>
+html, body {
+	margin: 0;
+	overflow: hidden;
+	user-select: none;
+}
+.sine {
+	/* need to specify animation-duration and width */
+	display: inline-block;
+	position: relative;
+	animation-iteration-count: infinite;
+	animation-name: bounce;
+	animation-timing-function: linear;
+}
+/* animation: scroll-left 20s linear infinite; */
+@keyframes bounce {
+	/* sine-like */
+	0% {
+		left: 50%;
+	}
+	6.25% {
+		left: 69.1341716183%;
+	}
+	12.5% {
+		left: 85.3553390593%;
+	}
+	18.75% {
+		left: 96.1939766256%;
+	}
+	25% {
+		left: 99%; /* need space for symbol */
+	}
+	31.25% {
+		left: 96.1939766256%;
+	}
+	37.5% {
+		left: 85.3553390593%;
+	}
+	43.75% {
+		left: 69.1341716183%;
+	}
+	50% {
+		left: 50%;
+	}
+	56.25% {
+		left: 30.8658283817%;
+	}
+	62.5% {
+		left: 14.6446609407%;
+	}
+	68.75% {
+		left: 3.80602337444%;
+	}
+	75% {
+		left: 0%;
+	}
+	81.25% {
+		left: 3.80602337444%;
+	}
+	87.5% {
+		left: 14.6446609407%;
+	}
+	93.75% {
+		left: 30.8658283817%;
+	}
+	100% {
+		left: 50%;
+	}
+}
+</style>
+<title>Trourier</title>
+<!-- square wave fourier series -->
+
+<div class="sine" style="animation-duration: 15s;">
+	○
+</div>
+
+<br>
+
+<div style="position: relative; width: 100vw; left: -16.666666667vw;">
+	<div class="sine" style="animation-duration: 15s; width: 33.333333333vw;">
+		<div class="sine" style="animation-duration: 5s;">
+			○
+		</div>
+	</div>
+</div>
+
+</html>
