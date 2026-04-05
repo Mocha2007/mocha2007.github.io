@@ -539,7 +539,7 @@ function main(t = new Date()){
 		document.getElementById('monthImg').src = modMonth < 12 ? modMonth === 7
 			? 'https://upload.wikimedia.org/wikipedia/commons/5/5f/Sidney_Hall_-_Urania%27s_Mirror_-_Taurus_Poniatowski%2C_Serpentarius%2C_Scutum_Sobiesky%2C_and_Serpens.jpg'
 			: time.zodiacSrc[modMonth]
-			: 'https://the-public-domain-review.imgix.net/collections/aurora-borealis-in-art/SAAM-1911.4.1_2-000001.jpg';
+			: 'https://upload.wikimedia.org/wikipedia/commons/d/da/Frederic_Edwin_Church_-_Aurora_Borealis_-_Google_Art_Project.jpg';
 		monthAlt(t);
 		mlscBonus(t);
 	}
