@@ -660,7 +660,7 @@ function mochaLunisolar(t, link, lang){
 	// now figure out month/day
 	var mo;
 	for (mo = 0; mo < 13; mo++){
-		var monthLength = yearLength == 355 ? (month == 0 ? 30 : 29 + mo%2) : 30 - mo%2; // this covers all three year patterns
+		var monthLength = yearLength == 355 ? (mo == 0 ? 30 : 29 + mo%2) : 30 - mo%2; // this covers all three year patterns
 		if (monthLength <= daysSinceEpoch){
 			daysSinceEpoch -= monthLength;
 			monthStartT += _1d*monthLength;
