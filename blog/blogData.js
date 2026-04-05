@@ -4234,6 +4234,47 @@ const blogData = [
 			of the <a href="https://en.wikipedia.org/wiki/South_Yemen_insurgency">South Yemen insurgency</a>
 		</li>
 	</ul>
+	`,
 	`
+	@title Approximate boundaries of former constellations
+	@date 1775402913742
+	@tags astronomy
+	<ul class="list2">
+		<li>
+			<a href="https://en.wikipedia.org/wiki/Antinous_(constellation)">Antinous</a>:
+			<a href="https://en.wikipedia.org/wiki/Aquila_(constellation)">Aquila</a>
+			below +2° Dec
+		</li>
+		<li>
+			<a href="https://en.wikipedia.org/wiki/Cancer_Minor">Cancer Minor</a>:
+			<a href="https://en.wikipedia.org/wiki/Gemini_(constellation)">Gemini</a>
+			beyond 7h30, and below +20° Dec
+		</li>
+		<li>
+			<a href="https://en.wikipedia.org/wiki/Gallus_(constellation)">Gallus</a>:
+			<a href="https://en.wikipedia.org/wiki/Canis Major_(constellation)">Canis Major</a>
+			beyond 7h13, and below -24° Dec
+		</li>
+		<li>
+			<a href="https://en.wikipedia.org/wiki/Musca_Borealis">Musca Borealis</a>:
+			<a href="https://en.wikipedia.org/wiki/Aries_(constellation)">Aries</a>
+			beyond 2h30, and above +25° Dec
+		</li>
+		<li>
+			Quinque Dromedarii:
+			<a href="https://en.wikipedia.org/wiki/Draco_(constellation)">Draco</a>
+			between 16h45 and 18h30, and below +60° Dec
+		</li>
+		<li>
+			<a href="https://en.wikipedia.org/wiki/Sceptrum_et_Manus_Iustitiae">Sceptrum et Manus Iustitiae</a>:
+			<a href="https://en.wikipedia.org/wiki/Andromeda_(constellation)">Andromeda</a>
+			between 23h25 and 23h50
+		</li>
+		<li>
+			Sudarium Veronicae:
+			between 9h39 and 10h33, and between -2° and +10° Dec
+		</li>
+	</ul>
+	`,
 ];
 // don't forget, run blog.timestamp to get the timestamp!
