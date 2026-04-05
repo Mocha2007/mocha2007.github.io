@@ -4246,6 +4246,16 @@ const blogData = [
 			below +2° Dec
 		</li>
 		<li>
+			Aranea:
+			<a href="https://en.wikipedia.org/wiki/Virgo_(constellation)">Virgo</a>
+			below -13° Dec
+			(includes ecliptic)
+		</li>
+		<li>
+			Bufo:
+			between 14h50 and 15h05, and between -28° and -25° Dec
+		</li>
+		<li>
 			<a href="https://en.wikipedia.org/wiki/Cerberus_(constellation)">Cerberus</a>:
 			<a href="https://en.wikipedia.org/wiki/Hercules_(constellation)">Hercules</a>
 			beyond 17h50, and below +26° Dec
