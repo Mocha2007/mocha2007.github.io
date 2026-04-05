@@ -4246,14 +4246,29 @@ const blogData = [
 			below +2° Dec
 		</li>
 		<li>
+			<a href="https://en.wikipedia.org/wiki/Cerberus_(constellation)">Cerberus</a>:
+			<a href="https://en.wikipedia.org/wiki/Hercules_(constellation)">Hercules</a>
+			beyond 17h50, and below +26° Dec
+		</li>
+		<li>
 			<a href="https://en.wikipedia.org/wiki/Cancer_Minor">Cancer Minor</a>:
 			<a href="https://en.wikipedia.org/wiki/Gemini_(constellation)">Gemini</a>
 			beyond 7h30, and below +20° Dec
 		</li>
 		<li>
+			<a href="https://en.wikipedia.org/wiki/Custos_Messium">Custos Messium</a>:
+			<a href="https://en.wikipedia.org/wiki/Cassiopeia_(constellation)">Cassiopeia</a>
+			above +67° Dec
+		</li>
+		<li>
 			<a href="https://en.wikipedia.org/wiki/Gallus_(constellation)">Gallus</a>:
 			<a href="https://en.wikipedia.org/wiki/Canis Major_(constellation)">Canis Major</a>
 			beyond 7h13, and below -24° Dec
+		</li>
+		<li>
+			<a href="https://en.wikipedia.org/wiki/Mons_Maenalus">Mons Maenalus</a>:
+			<a href="https://en.wikipedia.org/wiki/Bo%C3%B6tes">Bo&ouml;tes</a>
+			below +13° 22′ Dec
 		</li>
 		<li>
 			<a href="https://en.wikipedia.org/wiki/Musca_Borealis">Musca Borealis</a>:
@@ -4266,9 +4281,19 @@ const blogData = [
 			between 16h45 and 18h30, and below +60° Dec
 		</li>
 		<li>
+			<a href="https://en.wikipedia.org/wiki/Rangifer_(constellation)">Rangifer</a>:
+			<a href="https://en.wikipedia.org/wiki/Cepheus_(constellation)">Cepheus</a>
+			beyond 1h
+		</li>
+		<li>
+			<a href="https://en.wikipedia.org/wiki/Sceptrum_Brandenburgicum">Sceptrum Brandenburgicum</a>:
+			<a href="https://en.wikipedia.org/wiki/Eridanus_(constellation)">Eridanus</a>
+			between 23h25 and 23h50
+		</li>
+		<li>
 			<a href="https://en.wikipedia.org/wiki/Sceptrum_et_Manus_Iustitiae">Sceptrum et Manus Iustitiae</a>:
 			<a href="https://en.wikipedia.org/wiki/Andromeda_(constellation)">Andromeda</a>
-			between 23h25 and 23h50
+			beyond 4h30, and between -20° and -13° Dec
 		</li>
 		<li>
 			Sudarium Veronicae:
