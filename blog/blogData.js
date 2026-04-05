@@ -4271,6 +4271,10 @@ const blogData = [
 			above +67° Dec
 		</li>
 		<li>
+			Dentalium:
+			between 20h29 and 21h26, and between -6° and -1° Dec
+		</li>
+		<li>
 			<a href="https://en.wikipedia.org/wiki/Gallus_(constellation)">Gallus</a>:
 			<a href="https://en.wikipedia.org/wiki/Canis Major_(constellation)">Canis Major</a>
 			beyond 7h13, and below -24° Dec
@@ -4308,6 +4312,11 @@ const blogData = [
 		<li>
 			Sudarium Veronicae:
 			between 9h39 and 10h33, and between -2° and +10° Dec
+		</li>
+		<li>
+			Testudo:
+			between 23h58 and 1h20, and between -4° and 0° Dec
+			(includes ecliptic)
 		</li>
 	</ul>
 	`,
