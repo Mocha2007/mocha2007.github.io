@@ -11,19 +11,19 @@ a:visited {
 	color: magenta;
 }
 .back {
-    margin: auto;
-    text-align: center;
+	margin: auto;
+	text-align: center;
 }
 .back a {
-    padding: 2px 8px;
-    border-radius: 8px;
+	padding: 2px 8px;
+	border-radius: 8px;
 }
 .center {
 	margin: 0px;
-    right: 50%;
-    bottom: 50%;
-    transform: translate(50%,50%);
-    position: absolute;
+	right: 50%;
+	bottom: 50%;
+	transform: translate(50%,50%);
+	position: absolute;
 }
 /* alt link style */
 .altlink {
@@ -37,13 +37,6 @@ a:visited {
 	color: grey;
 	cursor: pointer;
 }
-/* https://stackoverflow.com/a/4407335/2579798 */
 .notouch {
-	-webkit-touch-callout: none; /* iOS Safari */
-	-webkit-user-select: none; /* Safari */
-	-khtml-user-select: none; /* Konqueror HTML */
-	-moz-user-select: none; /* Firefox */
-	-ms-user-select: none; /* Internet Explorer/Edge */
-	user-select: none; /* Non-prefixed version, currently
-	supported by Chrome and Opera */
+	user-select: none;
 }
