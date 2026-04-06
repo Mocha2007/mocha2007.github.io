@@ -3145,10 +3145,17 @@ const blogData = [
 			<td>♈ 18&deg; 35&prime;</td>
 		</tr>
 		<tr>
-			<td>2028 March 21, 12 AM</td>
+			<td>2028 March 19, 10 PM</td>
+			<td>2028 March 21, 2 AM</td>
+			<td>1 d, 4 h</td>
+			<td>♆</td>
+			<td>♈ 6&deg; 6&prime;</td>
+		</tr>
+		<tr style="color:grey;font-style:italic;">
+			<td>2028 March 21, 2 AM</td>
 			<td>2028 March 25, 10 PM</td>
-			<td>4 d, 22 h</td>
-			<td>☉</td>
+			<td>4 d, 20 h</td>
+			<td>☉<abbr title="Only if you ignore the nonclassical planet Neptune.">*</abbr></td>
 			<td>♈ 3&deg; 6&prime;</td>
 		</tr>
 		<tr>
