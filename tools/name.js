@@ -381,5 +381,41 @@ range(ELVEN.sets[6].length * 12).forEach(() => ELVEN.sets[6].push(''));
  * (Cf) occurs 8% of the time and is very restricted (n, r, l, s, t, nt)
  */
 
+new Language('Fantasy Toponym (Luna)', [
+		[[1], [0], [3], [0], [4], [0], [2], [0], [1], [0], [5]], // The ADJ N of the N
+		[[1], [0], [3], [0], [4], [0], [2], [0], [6]], // The ADJ N of N
+		[[1], [0], [4], [0], [2], [0], [1], [0], [5]], // The N of the N
+		[[1], [0], [4], [0], [2], [0], [6]], // The N of N
+		[[1], [0], [3], [0], [4]], // The ADJ N
+	],
+	// Sources of inspiration:
+	// https://www.reddit.com/r/worldbuilding/comments/1sdne1z/the_world_of_neuterra/
+	[
+		[' '],
+		['the'],
+		['of'],
+		// Adjectives
+		[
+			// colors
+			'black', 'blue', 'bronze', 'carmine', 'gold', 'golden', 'green', 'grey', 'red', 'white', 'yellow',
+			// misc
+			'dead', 'eternal', 'frozen', 'lush', 'storming', 'vast', 'western',
+		],
+		// "Place" nouns
+		[
+			// natural
+			'continent', 'desert', 'forest', 'grasslands', 'lands', 'sea', 'wastes',
+			// man-made
+			'alliance', 'cities', 'city', 'clan', 'clans', 'crown', 'duchies', 'duchy', 'empire',
+			'kingdom', 'kingdoms', 'league',
+			'province', 'provinces', 'tribe', 'tribes',
+		],
+		// count nouns
+		['descendants', 'tower'],
+		// non-count nouns
+		['death'],
+	]
+);
+
 // finally
 namegen.init();
