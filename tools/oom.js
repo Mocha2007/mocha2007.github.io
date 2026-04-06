@@ -38,10 +38,11 @@ class Dimension {
 			this.max += uncertainty.max;
 		}
 	}
-	error_elem(p, r = 3){
+	error_elem(p, r = 3, debug = false){
 		if (this.min !== this.x || this.max !== this.x){
 			const plus = round((this.max - this.x)/p, r);
 			const minus = round((this.x - this.min)/p, r);
+			if (debug) console.debug('plus', plus, 'minus', minus);
 			if (plus !== minus){
 				return `<span class='errors'>+${plus}<br>-${minus}</span>`;
 			}
@@ -50,7 +51,7 @@ class Dimension {
 			}
 		}
 		else {
-			return ``;
+			return '';
 		}
 	}
 	get pretty(){
@@ -1050,7 +1051,7 @@ const OOM = {
 		new MassDatum("Titan's atmosphere", CONSTANT.atmosphere_mass(2574.73e3, 1.34518e23, 146.7e3)),
 		new MassDatum("Venus's atmosphere", CONSTANT.atmosphere_mass(6051.8e3, 4.86731e24, 92*CONSTANT.atm)),
 		// Astro
-		// Vesta is the most massive confirmed non-round object ... min is mimas, x is geo avg
+		// Vesta is the most massive confirmed non-round object ... min grav rounded is mimas, x is geo avg
 		new MassDatum("'Potato Radius' mass", new Mass({x: 99e18, min: 37.49e18, max: 259.0271e18}), "https://en.wikipedia.org/wiki/Potato_radius"),
 		new MassDatum("Tunguska meteor", CONSTANT.volume.ellipsoid(55) * CONSTANT.density.rock, null, [Category.MINORPLANET]),
 		new MassDatum("Barringer impactor", CONSTANT.volume.ellipsoid(50) * CONSTANT.density.iron, null, [Category.MINORPLANET]),
