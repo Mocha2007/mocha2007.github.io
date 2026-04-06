@@ -10,7 +10,7 @@ const clamp = (x, min, max) => Math.min(max, Math.max(min, x));
  * @param {number} n max digits
  * @returns string rep of that number, rounded to AT MOST n digits
  */
-const round = (x, n) => x.toFixed(n || 0).replace(/\.?0+$/, '');
+const round = (x, n) => x.toFixed(n || 0).replace(/\.(?:\d)*0+$/, '');
 
 class Dimension {
 	constructor(unit, si_pref_off, scale_factor, x, uncertainty){
@@ -1052,7 +1052,7 @@ const OOM = {
 		new MassDatum("Venus's atmosphere", CONSTANT.atmosphere_mass(6051.8e3, 4.86731e24, 92*CONSTANT.atm)),
 		// Astro
 		// Vesta is the most massive confirmed non-round object ... min grav rounded is mimas, x is geo avg
-		new MassDatum("'Potato Radius' mass", new Mass({x: 99e18, min: 37.49e18, max: 259.0271e18}), "https://en.wikipedia.org/wiki/Potato_radius"),
+		new MassDatum("'Potato Radius' mass", new Mass({x: 1e20, min: 37.49e18, max: 259.0271e18}), "https://en.wikipedia.org/wiki/Potato_radius"),
 		new MassDatum("Tunguska meteor", CONSTANT.volume.ellipsoid(55) * CONSTANT.density.rock, null, [Category.MINORPLANET]),
 		new MassDatum("Barringer impactor", CONSTANT.volume.ellipsoid(50) * CONSTANT.density.iron, null, [Category.MINORPLANET]),
 		// new MassDatum("Siljan impactor", CONSTANT.volume.ellipsoid(5e3) * CONSTANT.density.rock, "https://en.wikipedia.org/wiki/Siljan_Ring#Geology", [Category.MINORPLANET]),
