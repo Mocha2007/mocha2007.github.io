@@ -1,0 +1,35 @@
+td[planet*="sun"] {
+	color: gold;
+}
+
+td[planet*="mercury"] {
+	color: #C9C0BB;
+}
+
+td[planet*="venus"] {
+	color: #DA8A67;
+}
+
+td[planet*="earth"] {
+	color: #43B3AE;
+}
+
+td[planet*="mars"] {
+	color: #B52121;
+}
+
+td[planet*="jupiter"] {
+	color: #802D5D;
+}
+
+td[planet*="saturn"] {
+	color: #26447D;
+}
+
+td[planet*="uranus"] {
+	color: #007BA7;
+}
+
+td[planet*="neptune"] {
+	color: #2E8B57;
+}
