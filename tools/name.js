@@ -397,7 +397,8 @@ new Language('Fantasy Toponym (Luna)', [
 		// Adjectives
 		[
 			// colors
-			'black', 'blue', 'bronze', 'carmine', 'gold', 'golden', 'green', 'grey', 'red', 'white', 'yellow',
+			'black', 'blue', 'bronze', 'carmine', 'gold', 'golden', 'green', 'grey',
+			'red', 'silver', 'white', 'yellow',
 			// misc
 			'dead', 'eternal', 'frozen', 'lush', 'storming', 'vast', 'western',
 		],
@@ -408,7 +409,7 @@ new Language('Fantasy Toponym (Luna)', [
 			// man-made
 			'alliance', 'cities', 'city', 'clan', 'clans', 'crown', 'duchies', 'duchy', 'empire',
 			'kingdom', 'kingdoms', 'league',
-			'province', 'provinces', 'tribe', 'tribes',
+			'province', 'provinces', 'republic', 'tribe', 'tribes',
 		],
 		// count nouns
 		['descendants', 'tower'],
