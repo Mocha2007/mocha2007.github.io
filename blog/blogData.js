@@ -3117,6 +3117,20 @@ const blogData = [
 			<td>♓ 28&deg; 54&prime;</td>
 		</tr>
 		<tr>
+			<td>2026 April 9, 8 PM</td>
+			<td>2026 April 13, 6 AM</td>
+			<td>3 d, 10 h</td>
+			<td>♆</td>
+			<td>♈ 2&deg; 35&prime;</td>
+		</tr>
+		<tr>
+			<td>2026 April 15, 10 PM</td>
+			<td>2026 April 16, 3 AM</td>
+			<td>5 h</td>
+			<td>☾</td>
+			<td>♈ 6&deg; 9&prime;</td>
+		</tr>
+		<tr>
 			<td>2026 April 20, 7 AM</td>
 			<td>2026 April 20, 5 PM</td>
 			<td>10 h</td>
