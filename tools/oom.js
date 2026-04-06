@@ -1050,6 +1050,8 @@ const OOM = {
 		new MassDatum("Titan's atmosphere", CONSTANT.atmosphere_mass(2574.73e3, 1.34518e23, 146.7e3)),
 		new MassDatum("Venus's atmosphere", CONSTANT.atmosphere_mass(6051.8e3, 4.86731e24, 92*CONSTANT.atm)),
 		// Astro
+		// Vesta is the most massive confirmed non-round object ... min is mimas, x is geo avg
+		new MassDatum("'Potato Radius' mass", new Mass({x: 1e20, min: 37.49e18, max: 259.0271e18}), "https://en.wikipedia.org/wiki/Potato_radius"),
 		new MassDatum("Tunguska meteor", CONSTANT.volume.ellipsoid(55) * CONSTANT.density.rock, null, [Category.MINORPLANET]),
 		new MassDatum("Barringer impactor", CONSTANT.volume.ellipsoid(50) * CONSTANT.density.iron, null, [Category.MINORPLANET]),
 		// new MassDatum("Siljan impactor", CONSTANT.volume.ellipsoid(5e3) * CONSTANT.density.rock, "https://en.wikipedia.org/wiki/Siljan_Ring#Geology", [Category.MINORPLANET]),
