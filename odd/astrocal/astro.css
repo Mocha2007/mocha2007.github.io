@@ -1,5 +1,9 @@
 td[planet*="sun"] {
-	color: gold;
+	color: #FFD700;
+}
+
+td[planet*="moon"] {
+	color: #BFC1C2;
 }
 
 td[planet*="mercury"] {
