@@ -401,9 +401,9 @@ new Language('Fantasy Toponym (Luna)', [
 			'black', 'blue', 'bronze', 'carmine', 'gold', 'golden', 'green', 'grey',
 			'red', 'silver', 'white', 'yellow',
 			// directions
-			'eastern', 'northern', 'southern', 'western',
+			'eastern', 'high', 'low', 'lower', 'northern', 'southern', 'upper', 'western',
 			// misc
-			'dead', 'deadly', 'enchanted', 'eternal', 'frozen', 'great', 'high', 'laughing', 'low', 'lush', 'merry',
+			'dead', 'deadly', 'enchanted', 'eternal', 'frozen', 'great', 'laughing', 'lush', 'merry',
 			'sandy', 'storming', 'vast',
 		],
 		// "Place" nouns
