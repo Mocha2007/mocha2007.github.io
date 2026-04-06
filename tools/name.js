@@ -400,12 +400,14 @@ new Language('Fantasy Toponym (Luna)', [
 			'black', 'blue', 'bronze', 'carmine', 'gold', 'golden', 'green', 'grey',
 			'red', 'silver', 'white', 'yellow',
 			// misc
-			'dead', 'eternal', 'frozen', 'lush', 'storming', 'vast', 'western',
+			'dead', 'enchanted', 'eternal', 'frozen', 'lush',
+			'storming', 'vast', 'western',
 		],
 		// "Place" nouns
 		[
 			// natural
-			'continent', 'desert', 'forest', 'grasslands', 'lands', 'sea', 'wastes',
+			'continent', 'desert', 'forest', 'grasslands', 'lands', 'mountain',
+			'sea', 'wastes',
 			// man-made
 			'alliance', 'cities', 'city', 'clan', 'clans', 'crown', 'duchies', 'duchy', 'empire',
 			'kingdom', 'kingdoms', 'league',
@@ -413,8 +415,8 @@ new Language('Fantasy Toponym (Luna)', [
 		],
 		// count nouns
 		['descendants', 'tower'],
-		// non-count nouns
-		['death'],
+		// non-count nouns (or plural nouns)
+		['crystal', 'death', 'doom', 'hearts'],
 	]
 );
 
