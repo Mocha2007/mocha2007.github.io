@@ -391,6 +391,7 @@ new Language('Fantasy Toponym (Luna)', [
 	// Sources of inspiration:
 	// https://www.reddit.com/r/worldbuilding/comments/1sdne1z/the_world_of_neuterra/
 	// Oz
+	// https://en.wikipedia.org/wiki/Toponymy_of_England
 	[
 		[' '],
 		['the'],
@@ -401,25 +402,31 @@ new Language('Fantasy Toponym (Luna)', [
 			'black', 'blue', 'bronze', 'carmine', 'gold', 'golden', 'green', 'grey',
 			'red', 'silver', 'white', 'yellow',
 			// directions
-			'eastern', 'high', 'low', 'lower', 'northern', 'southern', 'upper', 'western',
+			'eastern', 'high', 'low', 'lower', 'nether', 'northern', 'southern', 'upper', 'western',
 			// misc
-			'dead', 'deadly', 'enchanted', 'eternal', 'frozen', 'great', 'laughing', 'lush', 'merry',
-			'sandy', 'storming', 'vast',
+			'ancient', 'dead', 'deadly', 'enchanted', 'eternal', 'frozen', 'great', 'laughing', 'little', 'lush', 'merry',
+			'old', 'sandy', 'smoky', 'snowy', 'storming', 'vast', 'wide',
 		],
 		// "Place" nouns
 		[
 			// natural
-			'continent', 'desert', 'forest', 'grasslands', 'island', 'lands', 'mountain',
-			'sands', 'sea', 'steppe', 'valley', 'wastes',
+			'bog', 'cliff', 'continent', 'desert', 'forest', 'grasslands',
+			'hill', 'island', 'land', 'marsh', 'meadow', 'mountain',
+			'pool', 'ridge', 'river', 'sands', 'sea', 'spring',
+			'steppe', 'vale', 'valley', 'wastes', 'woods',
 			// man-made
 			'alliance', 'cities', 'city', 'clan', 'clans', 'crown', 'duchies', 'duchy', 'empire',
-			'kingdom', 'kingdoms', 'league', 'marsh',
-			'pool', 'province', 'provinces', 'republic', 'tribe', 'tribes',
+			'fort', 'kingdom', 'kingdoms', 'league',
+			'province', 'provinces', 'republic', 'tribe', 'tribes',
 		],
 		// count nouns (or nouns otherwise requiring "the")
-		['descendants', 'crown', 'tower'],
+		['ancestors', 'descendants', 'crown', 'tower'],
 		// non-count nouns (or plural nouns)
-		['crystal', 'death', 'doom', 'dreams', 'fate', 'hearts'],
+		[
+			'blood', 'crystal', 'death', 'doom', 'dreams',
+			'fate', 'freedom', 'hearts', 'mud',
+			'peace', 'war'
+		],
 	]
 );
 
