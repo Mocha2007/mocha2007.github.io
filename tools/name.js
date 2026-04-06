@@ -390,6 +390,7 @@ new Language('Fantasy Toponym (Luna)', [
 	],
 	// Sources of inspiration:
 	// https://www.reddit.com/r/worldbuilding/comments/1sdne1z/the_world_of_neuterra/
+	// Oz
 	[
 		[' '],
 		['the'],
@@ -399,24 +400,26 @@ new Language('Fantasy Toponym (Luna)', [
 			// colors
 			'black', 'blue', 'bronze', 'carmine', 'gold', 'golden', 'green', 'grey',
 			'red', 'silver', 'white', 'yellow',
+			// directions
+			'eastern', 'northern', 'southern', 'western',
 			// misc
-			'dead', 'enchanted', 'eternal', 'frozen', 'lush',
-			'storming', 'vast', 'western',
+			'dead', 'deadly', 'enchanted', 'eternal', 'frozen', 'great', 'high', 'laughing', 'low', 'lush', 'merry',
+			'sandy', 'storming', 'vast',
 		],
 		// "Place" nouns
 		[
 			// natural
-			'continent', 'desert', 'forest', 'grasslands', 'lands', 'mountain',
-			'sea', 'wastes',
+			'continent', 'desert', 'forest', 'grasslands', 'island', 'lands', 'mountain',
+			'sands', 'sea', 'steppe', 'valley', 'wastes',
 			// man-made
 			'alliance', 'cities', 'city', 'clan', 'clans', 'crown', 'duchies', 'duchy', 'empire',
-			'kingdom', 'kingdoms', 'league',
-			'province', 'provinces', 'republic', 'tribe', 'tribes',
+			'kingdom', 'kingdoms', 'league', 'marsh',
+			'pool', 'province', 'provinces', 'republic', 'tribe', 'tribes',
 		],
 		// count nouns
 		['descendants', 'tower'],
 		// non-count nouns (or plural nouns)
-		['crystal', 'death', 'doom', 'hearts'],
+		['crystal', 'death', 'doom', 'dreams', 'hearts'],
 	]
 );
 
