@@ -416,10 +416,10 @@ new Language('Fantasy Toponym (Luna)', [
 			'kingdom', 'kingdoms', 'league', 'marsh',
 			'pool', 'province', 'provinces', 'republic', 'tribe', 'tribes',
 		],
-		// count nouns
-		['descendants', 'tower'],
+		// count nouns (or nouns otherwise requiring "the")
+		['descendants', 'crown', 'tower'],
 		// non-count nouns (or plural nouns)
-		['crystal', 'death', 'doom', 'dreams', 'hearts'],
+		['crystal', 'death', 'doom', 'dreams', 'fate', 'hearts'],
 	]
 );
 
