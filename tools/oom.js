@@ -1190,15 +1190,16 @@ const OOM = {
 		new AccelerationDatum('1 g', 9.80665, null, [Category.UNIT]),
 		new AccelerationDatum('Planck Acceleration', Math.sqrt(Math.pow(CONSTANT.c, 7)/(CONSTANT.planck_reduced*CONSTANT.G)), null, [Category.UNIT]),
 		// astro
-		new AccelerationDatum('Saturn\'s acceleration of Earth', CONSTANT.grav(5.68317e26, CONSTANT.au*Math.hypot(9.5826, 1))),
-		new AccelerationDatum('Jupiter\'s acceleration of Earth', CONSTANT.grav(1.898125e27, CONSTANT.au*Math.hypot(5.2038, 1))),
-		new AccelerationDatum('Sun\'s acceleration of Earth', CONSTANT.grav(CONSTANT.solar_mass, CONSTANT.au)),
-		new AccelerationDatum('White Dwarf Surface Gravity (Sirius B)', CONSTANT.grav(1.018*CONSTANT.solar_mass, 0.008098*CONSTANT.solar_radius)),
-		new AccelerationDatum('Neutron Star Surface Gravity', CONSTANT.grav(2*CONSTANT.solar_mass, 10e3)),
+		new AccelerationDatum('Saturn\'s acceleration of Earth', CONSTANT.grav(5.68317e26, CONSTANT.au*Math.hypot(9.5826, 1)), null, [Category.MATHEMATICAL]),
+		new AccelerationDatum('Jupiter\'s acceleration of Earth', CONSTANT.grav(1.898125e27, CONSTANT.au*Math.hypot(5.2038, 1)), null, [Category.MATHEMATICAL]),
+		new AccelerationDatum('Moon\'s acceleration of Earth', CONSTANT.grav(7.346e22, 384399e3), null, [Category.MATHEMATICAL]),
+		new AccelerationDatum('Sun\'s acceleration of Earth', CONSTANT.grav(CONSTANT.solar_mass, CONSTANT.au), null, [Category.MATHEMATICAL]),
+		new AccelerationDatum('White Dwarf Surface Gravity (Sirius B)', CONSTANT.grav(1.018*CONSTANT.solar_mass, 0.008098*CONSTANT.solar_radius), null, [Category.MATHEMATICAL]),
+		new AccelerationDatum('Neutron Star Surface Gravity', CONSTANT.grav(2*CONSTANT.solar_mass, 10e3), null, [Category.MATHEMATICAL]),
 		// misc
 		new AccelerationDatum('Bohr acceleration of an electron in Hydrogen', 9.149e21),
-		new AccelerationDatum('Bohr acceleration of an electron in Carbon', 12*9.149e21),
-		new AccelerationDatum('Bohr acceleration of an electron in Uranium', 238*9.149e21),
+		new AccelerationDatum('Bohr acceleration of an electron in Carbon', 12*9.149e21, null, [Category.MATHEMATICAL]),
+		new AccelerationDatum('Bohr acceleration of an electron in Uranium', 238*9.149e21, null, [Category.MATHEMATICAL]),
 	],
 	dataAngle: [
 		// Units
