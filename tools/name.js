@@ -392,6 +392,7 @@ new Language('Fantasy Toponym (Luna)', [
 	// https://www.reddit.com/r/worldbuilding/comments/1sdne1z/the_world_of_neuterra/
 	// Oz
 	// https://en.wikipedia.org/wiki/Toponymy_of_England
+	// https://donjon.bin.sh/fantasy/world/
 	[
 		[' '],
 		['the'],
@@ -400,7 +401,7 @@ new Language('Fantasy Toponym (Luna)', [
 		[
 			// colors
 			'black', 'blue', 'bronze', 'carmine', 'gold', 'golden', 'green', 'grey',
-			'red', 'silver', 'white', 'yellow',
+			'red', 'sanguine', 'silver', 'white', 'yellow',
 			// directions
 			'eastern', 'high', 'low', 'lower', 'nether', 'northern', 'southern', 'upper', 'western',
 			// misc
@@ -410,25 +411,56 @@ new Language('Fantasy Toponym (Luna)', [
 		// "Place" nouns
 		[
 			// natural
-			'bog', 'cliff', 'continent', 'desert', 'forest', 'grasslands',
+			'bog', 'cliff', 'continent', 'desert', 'falls', 'forest', 'grasslands',
 			'hill', 'island', 'land', 'marsh', 'meadow', 'mountain',
-			'pool', 'ridge', 'river', 'sands', 'sea', 'spring',
+			'pool', 'ridge', 'river', 'sanctuary', 'sands', 'sea', 'spring',
 			'steppe', 'vale', 'valley', 'wastes', 'woods',
 			// man-made
-			'alliance', 'cities', 'city', 'clan', 'clans', 'crown', 'duchies', 'duchy', 'empire',
+			'alliance', 'castle', 'cities', 'city', 'clan', 'clans', 'crown', 'duchies', 'duchy', 'empire',
 			'fort', 'kingdom', 'kingdoms', 'league',
-			'province', 'provinces', 'republic', 'tribe', 'tribes',
+			'province', 'provinces', 'republic', 'shrine', 'stronghold', 'tribe', 'tribes',
 		],
 		// count nouns (or nouns otherwise requiring "the")
 		['ancestors', 'descendants', 'crown', 'tower'],
 		// non-count nouns (or plural nouns)
 		[
-			'blood', 'crystal', 'death', 'doom', 'dreams',
+			'blood', 'crystal', 'dawn', 'death', 'doom', 'dreams',
 			'fate', 'freedom', 'hearts', 'mud',
-			'peace', 'war'
+			'peace', 'war', 'worlds'
 		],
 	]
 );
+
+new Language('English Toponym', [[[0, 3], [1]], [...DITHEMATIC, [2]], [[3], [4], ...DITHEMATIC], [[0, 3], [1], [5], [0, 3], [1]]],
+	// https://en.wikipedia.org/wiki/Toponymy_of_England
+	// https://en.wikipedia.org/wiki/List_of_towns_in_England
+	[
+		[
+			'ash', 'barn', 'black', 'bridge', 'fair', 'green',
+			'hale', 'horn', 'kings', 'kirk', 'long', 'mans', 'middle',
+			'oak', 'ox', 'rams', 'red', 'salt', 'sand', 'sea', 'stone',
+			'thorn', 'white', 'wood', 'wool',
+		],
+		[
+			'borough', 'bridge', 'burgh', 'bury', 'by', 'castle', 'cester', 'chester', 'church', 'dale', 'dell',
+			'field', 'ford', 'gate', 'grove', 'ham', 'hill', 'holm', 'house', 'ing', 'kirk',
+			'ley', 'market', 'mouth', 'pool', 'port', 'ridge', 'stable',
+			'stead', 'thorpe', 'thwaite', 'toft', 'ton', 'well', 'wich', 'wick', 'wood', 'worth',
+		],
+		[
+			'-by-water', '-on-sea', '-on-the-hill',
+		],
+		[
+			'north', 'south', 'east', 'west', 'high', 'low', 'upper', 'lower', 'nether',
+			'great', 'little',
+			'new', 'old',
+		],
+		[' '],
+		['-by-'],
+	]
+);
+
+// todo: german toponym
 
 // finally
 namegen.init();
