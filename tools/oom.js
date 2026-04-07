@@ -1097,6 +1097,7 @@ const OOM = {
 		new MassDatum("3 Juno", 27e18, null, [Category.MINORPLANET]),
 		new MassDatum("2 Pallas", 2.04e20, null, [Category.MINORPLANET]),
 		new MassDatum("1 Ceres", 9.3839e20, null, [Category.MINORPLANET]),
+		new MassDatum("Mimas", new Mass(3.75094e19, 0.00023e19), "https://en.wikipedia.org/wiki/Mimas"),
 		new MassDatum("Dione", 1.0954868e21),
 		// new MassDatum("Ariel", 1.2331e21),
 		new MassDatum("Umbriel", 1.2885e21),
