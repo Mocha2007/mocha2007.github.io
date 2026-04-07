@@ -167,7 +167,7 @@ class Datum {
 		this.elem_cache;
 		CONSTANT.stats.data++;
 		// units don't need sources
-		if (!source && !this.categories.includes(Category.UNIT)){
+		if (!source && ![Category.UNIT, Category.MATHEMATICAL].some(c => this.categories.includes(c))){
 			console.warn(`no source for |${name}|, ${dimension.name} |${amt}|`);
 			CONSTANT.stats.missingSources++;
 		}
@@ -393,6 +393,7 @@ class Category {
 	static DRV = "DRV";
 	static HYPOTHETICAL = "Hypothetical";
 	static FICTIONAL = "Fictional";
+	static MATHEMATICAL = "Mathematical"; // mathematically computed
 	static MINORPLANET = "Minor Planet"; // (or comet)
 	static UNIT = "Unit of Measurement";
 }
@@ -674,6 +675,7 @@ const OOM = {
 	config: {
 		default_categories: [
 			Category.COIN,
+			Category.MATHEMATICAL,
 			Category.MINORPLANET,
 		],
 		/** @type {string?} */
@@ -1268,11 +1270,11 @@ const OOM = {
 		new AngleDatum("7x50 Binocular resolution", CONSTANT.angular_resolution(50e-3)),
 		new AngleDatum("Eye resolution", 562e-9/9e-3),
 		// Pythagorean triples
-		new AngleDatum("3-4-5 Triangle, Angle opposite 5", Math.asin(3/5)),
-		new AngleDatum("5-12-13 Triangle, Angle opposite 13", Math.asin(5/13)),
-		new AngleDatum("7-24-25 Triangle, Angle opposite 25", Math.asin(7/25)),
-		new AngleDatum("9-40-41 Triangle, Angle opposite 41", Math.asin(9/41)),
-		new AngleDatum("11-60-61 Triangle, Angle opposite 61", Math.asin(11/61)),
+		new AngleDatum("3-4-5 Triangle, Angle opposite 5", Math.asin(3/5), null, [Category.MATHEMATICAL]),
+		new AngleDatum("5-12-13 Triangle, Angle opposite 13", Math.asin(5/13), null, [Category.MATHEMATICAL]),
+		new AngleDatum("7-24-25 Triangle, Angle opposite 25", Math.asin(7/25), null, [Category.MATHEMATICAL]),
+		new AngleDatum("9-40-41 Triangle, Angle opposite 41", Math.asin(9/41), null, [Category.MATHEMATICAL]),
+		new AngleDatum("11-60-61 Triangle, Angle opposite 61", Math.asin(11/61), null, [Category.MATHEMATICAL]),
 		// Misc
 		new AngleDatum("Earth (From Andromeda)", CONSTANT.angular_diameter(CONSTANT.earth_radius, 2.5e6*CONSTANT.ly), "https://en.wikipedia.org/wiki/Andromeda_Galaxy"),
 		new AngleDatum("Voyager 1 (From Earth, 2026)", CONSTANT.angular_diameter(3.7/2, 172.12*CONSTANT.au), "https://en.wikipedia.org/wiki/Voyager_1"),
@@ -1632,7 +1634,7 @@ const OOM = {
 		new SpeedDatum("D-T fusion neutron", 52e6, "https://en.wikipedia.org/wiki/Neutron_temperature#Fast"),
 		// electron """orbital speed""", derived from centripetal force equation + coulomb's law
 		// last two values are electron mass and hydrogen "atomic radius"
-		new SpeedDatum("Hydrogen electron orbital speed (Bohr model)", Math.sqrt((CONSTANT.ke * Math.pow(CONSTANT.electron, 2))/(9.1093837139e-31 * 25e-12))),
+		new SpeedDatum("Hydrogen electron orbital speed (Bohr model)", Math.sqrt((CONSTANT.ke * Math.pow(CONSTANT.electron, 2))/(9.1093837139e-31 * 25e-12)), null, [Category.MATHEMATICAL]),
 		new SpeedDatum("Speed of light", CONSTANT.c, "https://en.wikipedia.org/wiki/Speed_of_light"),
 	],
 	dataTemperature: [
