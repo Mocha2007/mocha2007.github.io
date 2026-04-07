@@ -433,6 +433,7 @@ new Language('Fantasy Toponym (Luna)', [
 
 new Language('English Toponym', [[[0, 3], [1]], [...DITHEMATIC, [2]], [[3], [4], ...DITHEMATIC], [[0, 3], [1], [5], [0, 3], [1]]],
 	// https://en.wikipedia.org/wiki/Toponymy_of_England
+	// https://keithbriggs.info/English_placename_element_distribution.html
 	// https://en.wikipedia.org/wiki/List_of_towns_in_England
 	[
 		[
@@ -442,10 +443,16 @@ new Language('English Toponym', [[[0, 3], [1]], [...DITHEMATIC, [2]], [[3], [4],
 			'thorn', 'white', 'wood', 'wool',
 		],
 		[
-			'borough', 'bridge', 'burgh', 'bury', 'by', 'castle', 'cester', 'chester', 'church', 'dale', 'dell',
-			'field', 'ford', 'gate', 'grove', 'ham', 'hill', 'holm', 'house', 'ing', 'kirk',
-			'ley', 'market', 'mouth', 'pool', 'port', 'ridge', 'stable',
-			'stead', 'thorpe', 'thwaite', 'toft', 'ton', 'well', 'wich', 'wick', 'wood', 'worth',
+			'back', 'beach', 'beck', 'bie', 'borough', 'bourn', 'bourne', 'bridge', 'burgh', 'burn', 'bury', 'by',
+			'caster', 'castle', 'cester', 'chester', 'church', 'cot', 'cote', 'cott',
+			'dale', 'dell', 'don',
+			'field', 'ford', 'gate', 'grove',
+			'hall', 'hale', 'ham', 'haugh', 'haw', 'hay', 'head', 'heath', 'hill', 'hoe', 'holm', 'hoo', 'house', 'hythe',
+			'ing', 'ingham', 'ings', 'ington', 'kirk',
+			'leigh', 'ley', 'market', 'minster', 'mouth', 'ness', 'or', 'pool', 'port', 'ridge',
+			'stable', 'stead', 'sted', 'stock', 'ston', 'stone', 'stowe',
+			'thorpe', 'thwaite', 'toft', 'ton', 'tree', 'try',
+			'wall', 'well', 'wich', 'wick', 'wood', 'worth', 'worthy',
 		],
 		[
 			'-by-water', '-on-sea', '-on-the-hill',
