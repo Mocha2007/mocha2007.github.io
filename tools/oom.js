@@ -165,9 +165,11 @@ class Datum {
 		this.categories = categories || [];
 		/** @type {HTMLSpanElement} */
 		this.elem_cache;
+		CONSTANT.stats.data++;
 		// units don't need sources
 		if (!source && !this.categories.includes(Category.UNIT)){
 			console.warn(`no source for |${name}|, mass |${amt}|`);
+			CONSTANT.stats.missingSources++;
 		}
 	}
 	elem(e2y){
@@ -586,6 +588,10 @@ const CONSTANT = {
 	solar_mass: 1988475000e21,
 	/** in kg */
 	solar_radius: 695700e3,
+	stats: {
+		data: 0,
+		missingSources: 0,
+	},
 	thickness: {
 		/** https://en.wikipedia.org/wiki/Earth%27s_crust#Composition */
 		crust: {
@@ -1099,37 +1105,37 @@ const OOM = {
 		new MassDatum("2 Pallas", new Mass(2.04e20, 0.03e20), "https://en.wikipedia.org/wiki/2_Pallas", [Category.MINORPLANET]),
 		new MassDatum("1 Ceres", new Mass(9.3839e20, 0.00005e20), "https://en.wikipedia.org/wiki/Ceres_(dwarf_planet)", [Category.MINORPLANET]),
 		new MassDatum("Mimas", new Mass(3.75094e19, 0.00023e19), "https://en.wikipedia.org/wiki/Mimas"),
-		new MassDatum("Dione", 1.0954868e21),
-		// new MassDatum("Ariel", 1.2331e21),
-		new MassDatum("Umbriel", 1.2885e21),
-		new MassDatum("Charon", 1.5897e21),
+		new MassDatum("Dione", new Mass(1.0954868e21, 0.0000246e21), "https://en.wikipedia.org/wiki/Dione_(moon)"),
+		new MassDatum("Ariel", new Mass(1.2331e21, 0.0180e21), "https://en.wikipedia.org/wiki/Ariel_(moon)"),
+		new MassDatum("Umbriel", new Mass(1.2885e21, 0.0225e21), "https://en.wikipedia.org/wiki/Umbriel"),
+		new MassDatum("Charon", new Mass(1.5897e21, 0.0045e21), "https://en.wikipedia.org/wiki/Charon_(moon)"),
 		// new MassDatum("Gonggong", 1.75e21, null, [Category.MINORPLANET]),
-		new MassDatum("Iapetus", 1.8056591e21),
+		new MassDatum("Iapetus", new Mass(1.8056591e21, 0.0000544e21), "https://en.wikipedia.org/wiki/Iapetus_(moon)"),
 		// new MassDatum("Rhea", 2.3064854e21),
 		new MassDatum("Asteroid Belt", 9.3839e20/.392, "https://en.wikipedia.org/wiki/Asteroid_belt#Characteristics", [Category.MINORPLANET]),
-		new MassDatum("Makemake", 2.69e21),
-		new MassDatum("Oberon", 3.1104e21),
-		new MassDatum("Titania", 3.4550e21),
-		new MassDatum("Haumea", 3.95244e21, null, [Category.MINORPLANET]),
-		new MassDatum("Pluto", 1.3025e22, null, [Category.MINORPLANET]),
-		new MassDatum("Eris", 1.6466e22, null, [Category.MINORPLANET]),
-		new MassDatum("Triton", 2.1389e22),
-		new MassDatum("Europa", 4.79984e22),
-		new MassDatum("Moon", 7.346e22),
-		new MassDatum("Io", 8.931938e22),
-		new MassDatum("Callisto", 1.075938e23),
-		new MassDatum("Titan", 1.34518e23),
-		new MassDatum("Ganymede", 1.4819e23),
-		new MassDatum("Mercury", 3.3011e23),
-		new MassDatum("Mars", 6.4171e23),
+		new MassDatum("Makemake", new Mass(2.69e21, 0.2e21), "https://en.wikipedia.org/wiki/Makemake", [Category.MINORPLANET]),
+		new MassDatum("Oberon", new Mass(3.1104e21, 0.0749e21), "https://en.wikipedia.org/wiki/Oberon_(moon)"),
+		new MassDatum("Titania", new Mass(3.4550e21, 0.0509e21), "https://en.wikipedia.org/wiki/Titania_(moon)"),
+		new MassDatum("Haumea", 3.95244e21, "https://en.wikipedia.org/wiki/Haumea", [Category.MINORPLANET]),
+		new MassDatum("Pluto", new Mass(1.3025e22, 0.0006e22), "https://en.wikipedia.org/wiki/Pluto", [Category.MINORPLANET]),
+		new MassDatum("Eris", new Mass(1.6466e22, 0.0085e22), "https://en.wikipedia.org/wiki/Eris_(dwarf_planet)", [Category.MINORPLANET]),
+		new MassDatum("Triton", new Mass(2.1389e22, 0.0028e22), "https://en.wikipedia.org/wiki/Triton_(moon)"),
+		new MassDatum("Europa", 4.79984e22, "https://en.wikipedia.org/wiki/Europa_(moon)"),
+		new MassDatum("Moon", 7.346e22, "https://en.wikipedia.org/wiki/Moon"),
+		new MassDatum("Io", new Mass(8.931938e22, 0.000018e22), "https://en.wikipedia.org/wiki/Io_(moon)"),
+		new MassDatum("Callisto", new Mass(1.075938e23, 0.000137e23), "https://en.wikipedia.org/wiki/Callisto_(moon)"),
+		new MassDatum("Titan", new Mass(1.34518e23, 0.00003e23), "https://en.wikipedia.org/wiki/Titan_(moon)"),
+		new MassDatum("Ganymede", 1.4819e23, "https://en.wikipedia.org/wiki/Ganymede_(moon)"),
+		new MassDatum("Mercury", 3.3011e23, "https://en.wikipedia.org/wiki/Mercury_(planet)"),
+		new MassDatum("Mars", 6.4171e23, "https://en.wikipedia.org/wiki/Mars"),
 		new MassDatum("Theia", new Mass({min:0.1*CONSTANT.earth_mass,max:0.45*CONSTANT.earth_mass}),"https://en.wikipedia.org/wiki/Theia_(hypothetical_planet)"),
-		new MassDatum("Venus", 4.86731e24),
-		new MassDatum("Earth", CONSTANT.earth_mass),
+		new MassDatum("Venus", new Mass(4.86731e24, 0.00023e24), "https://en.wikipedia.org/wiki/Venus"),
+		new MassDatum("Earth", new Mass(CONSTANT.earth_mass, 0.00028e24), "https://en.wikipedia.org/wiki/Earth"),
 		new MassDatum("Planet Nine", new Mass(4.4*CONSTANT.earth_mass, 1.1*CONSTANT.earth_mass), "https://en.wikipedia.org/wiki/Planet_Nine", [Category.HYPOTHETICAL]),
-		new MassDatum("Uranus", 8.68099e25),
-		new MassDatum("Neptune", 1.024092e26),
-		new MassDatum("Saturn", 5.68317e26),
-		new MassDatum("Jupiter", CONSTANT.jupiter_mass),
+		new MassDatum("Uranus", new Mass(8.68099e25, 0.00040e25), "https://en.wikipedia.org/wiki/Uranus"),
+		new MassDatum("Neptune", new Mass(1.024092e26, 0.000048e26), "https://en.wikipedia.org/wiki/Neptune"),
+		new MassDatum("Saturn", new Mass(5.68317e26, 0.00026e26), "https://en.wikipedia.org/wiki/Saturn"),
+		new MassDatum("Jupiter", new Mass(CONSTANT.jupiter_mass, 0.000088e27), "https://en.wikipedia.org/wiki/Jupiter"),
 		// Namei/Oneia
 		new MassDatum("Oneia", 1.28*CONSTANT.earth_mass, "../namei/namei.html#oneia", [Category.FICTIONAL]),
 		new MassDatum("Eisen", 9.0586*CONSTANT.jupiter_mass, "../namei/namei.html#eisen", [Category.FICTIONAL]),
@@ -1140,7 +1146,7 @@ const OOM = {
 		new MassDatum("Luhman 16 A", new Mass(35.4*CONSTANT.jupiter_mass, 0.2*CONSTANT.jupiter_mass), "https://en.wikipedia.org/wiki/Luhman_16"),
 		new MassDatum("ε Indi Bb", new Mass({min:50*CONSTANT.jupiter_mass,max:54.5*CONSTANT.jupiter_mass}), "https://en.wikipedia.org/wiki/Epsilon_Indi"),
 		new MassDatum("ε Indi Ba", new Mass({min:67.6*CONSTANT.jupiter_mass,max:69.1*CONSTANT.jupiter_mass}), "https://en.wikipedia.org/wiki/Epsilon_Indi"),
-		new MassDatum("Proxima Centauri", 0.1221*CONSTANT.solar_mass),
+		new MassDatum("Proxima Centauri", new Mass(0.1221*CONSTANT.solar_mass, 0.0022*CONSTANT.solar_mass), "https://en.wikipedia.org/wiki/Proxima_Centauri"),
 		new MassDatum("Barnard's Star", 0.162*CONSTANT.solar_mass),
 		new MassDatum("Solar core", 0.34*CONSTANT.solar_mass, "https://en.wikipedia.org/wiki/Solar_core"),
 		new MassDatum("Sun", CONSTANT.solar_mass),
@@ -1169,8 +1175,8 @@ const OOM = {
 		new MassDatum("Great Attractor", 1e16*CONSTANT.solar_mass, "https://en.wikipedia.org/wiki/Great_Attractor"),
 		new MassDatum("Laniakea Supercluster", 1e17*CONSTANT.solar_mass),
 		new MassDatum("Pisces-Cetus Supercluster Complex", 1e18*CONSTANT.solar_mass),
-		new MassDatum("Huge-LQG", 6.1e18*CONSTANT.solar_mass),
-		new MassDatum("Observable universe", 1.5e53),
+		new MassDatum("Huge-LQG", 6.1e18*CONSTANT.solar_mass, "https://en.wikipedia.org/wiki/Huge-LQG"),
+		new MassDatum("Observable universe", 1.5e53, "https://en.wikipedia.org/wiki/Observable_universe"),
 	],
 	dataAcceleration: [
 		// units
@@ -1737,7 +1743,9 @@ const OOM = {
 		// i need to toggle shift twice to unbreak hover for some reason?
 		this.toggleShift();
 		this.toggleShift();
-		console.info('oom.js initialized.');
+		if (CONSTANT.stats.missingSources)
+			console.warn(CONSTANT.stats.missingSources, `missing sources (${(100*CONSTANT.stats.missingSources/CONSTANT.stats.data).toFixed(0)}%)`);
+		console.info(`oom.js initialized (${CONSTANT.stats.data} data)`);
 	},
 	initCats(){
 		const container = this.elem.cat_container = document.createElement('div');
@@ -1869,7 +1877,7 @@ const OOM = {
 	},
 	toggleShift(shiftTo){
 		this.config.shifted = !this.config.shifted;
-		console.debug(`toggleShift(|${shiftTo}|) -> `, this.config.shifted);
+		// console.debug(`toggleShift(|${shiftTo}|) -> `, this.config.shifted);
 		this.elem.tabs.forEach(elem => {
 			elem.style.transform = this.config.shifted ? 'translate(50vw, 0)' : '';
 			elem.style.display = elem.id === 'main' || (this.config.shifted && elem.id === shiftTo) ? '' : 'none';
