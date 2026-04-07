@@ -168,7 +168,7 @@ class Datum {
 		CONSTANT.stats.data++;
 		// units don't need sources
 		if (!source && ![Category.UNIT, Category.MATHEMATICAL].some(c => this.categories.includes(c))){
-			console.warn(`no source for |${name}|, ${dimension.name} |${amt}|`);
+			console.warn(`no source for |${name}|, ${dimension.name} |${this.mass.x}|`);
 			CONSTANT.stats.missingSources++;
 		}
 	}
