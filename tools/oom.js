@@ -1219,7 +1219,7 @@ const OOM = {
 		new AngleDatum("Procyon A", CONSTANT.angular_diameter(2.043*CONSTANT.solar_radius, 11.46*CONSTANT.ly), "https://en.wikipedia.org/wiki/Procyon"),
 		new AngleDatum("R Doradus", CONSTANT.angular_diameter(298*CONSTANT.solar_radius, 178*CONSTANT.ly), "https://en.wikipedia.org/wiki/R_Doradus"),
 		new AngleDatum("Rigel A", CONSTANT.angular_diameter(74.1*CONSTANT.solar_radius, 848*CONSTANT.ly), "https://en.wikipedia.org/wiki/Rigel"),
-		new AngleDatum("Sagittarius A* (Event Horizon)", CONSTANT.angular_diameter(260/3000*CONSTANT.au, 26996*CONSTANT.ly)),
+		new AngleDatum("Sagittarius A* (Event Horizon)", CONSTANT.angular_diameter(260/3000*CONSTANT.au, 26996*CONSTANT.ly), "https://en.wikipedia.org/wiki/Sagittarius_A*"),
 		new AngleDatum("Sirius A", CONSTANT.angular_diameter(1.7144*CONSTANT.solar_radius, 8.61*CONSTANT.ly), "https://en.wikipedia.org/wiki/Sirius"),
 		new AngleDatum("Vega", CONSTANT.angular_diameter(2.726*CONSTANT.solar_radius, 25.04*CONSTANT.ly), "https://en.wikipedia.org/wiki/Vega"),
 		// Exoplanet Angular Diameters
@@ -1242,16 +1242,16 @@ const OOM = {
 		new AngleDatum("Uranus", CONSTANT.angular_diameter_heliocentric_orbit(25362e3, 18.2861, 20.0965), "https://en.wikipedia.org/wiki/Uranus"),
 		new AngleDatum("Neptune", CONSTANT.angular_diameter_heliocentric_orbit(24622e3, 29.81, 30.33), "https://en.wikipedia.org/wiki/Neptune"),
 		new AngleDatum("Pluto", CONSTANT.angular_diameter_heliocentric_orbit(1188.3e3, 29.658, 49.305), "https://en.wikipedia.org/wiki/Pluto", [Category.MINORPLANET]),
-		new AngleDatum("Orcus", CONSTANT.angular_diameter_heliocentric_orbit(910e3/2, 30.281, 48.067), null, [Category.MINORPLANET]),
-		new AngleDatum("Gonggong", CONSTANT.angular_diameter_heliocentric_orbit(615e3, 33.235, 100.555), null, [Category.MINORPLANET]),
-		new AngleDatum("Haumea", CONSTANT.angular_diameter_heliocentric_orbit(780e3, 34.647, 51.585), null, [Category.MINORPLANET]),
-		new AngleDatum("Eris", CONSTANT.angular_diameter_heliocentric_orbit(1163e3, 38.1, 97.49), null, [Category.MINORPLANET]),
-		new AngleDatum("Makemake", CONSTANT.angular_diameter_heliocentric_orbit(715e3, 38.201, 52.796), null, [Category.MINORPLANET]),
-		new AngleDatum("Quaoar", CONSTANT.angular_diameter_heliocentric_orbit(1097.6e3/2, 41.900, 45.488), null, [Category.MINORPLANET]),
-		new AngleDatum("Sedna", CONSTANT.angular_diameter_heliocentric_orbit(906e3/2, 76.19, 937), null, [Category.MINORPLANET]),
+		new AngleDatum("Orcus", CONSTANT.angular_diameter_heliocentric_orbit(910e3/2, 30.281, 48.067), "https://en.wikipedia.org/wiki/Orcus_(dwarf_planet)", [Category.MINORPLANET]),
+		new AngleDatum("Gonggong", CONSTANT.angular_diameter_heliocentric_orbit(615e3, 33.235, 100.555), "https://en.wikipedia.org/wiki/Gonggong_(dwarf_planet)", [Category.MINORPLANET]),
+		new AngleDatum("Haumea", CONSTANT.angular_diameter_heliocentric_orbit(780e3, 34.647, 51.585), "https://en.wikipedia.org/wiki/Haumea", [Category.MINORPLANET]),
+		new AngleDatum("Eris", CONSTANT.angular_diameter_heliocentric_orbit(1163e3, 38.1, 97.49), "https://en.wikipedia.org/wiki/Eris_(dwarf_planet)", [Category.MINORPLANET]),
+		new AngleDatum("Makemake", CONSTANT.angular_diameter_heliocentric_orbit(715e3, 38.201, 52.796), "https://en.wikipedia.org/wiki/Makemake", [Category.MINORPLANET]),
+		new AngleDatum("Quaoar", CONSTANT.angular_diameter_heliocentric_orbit(1097.6e3/2, 41.900, 45.488), "https://en.wikipedia.org/wiki/Quaoar", [Category.MINORPLANET]),
+		new AngleDatum("Sedna", CONSTANT.angular_diameter_heliocentric_orbit(906e3/2, 76.19, 937), "https://en.wikipedia.org/wiki/Sedna_(dwarf_planet)", [Category.MINORPLANET]),
 		new AngleDatum("Planet Nine", CONSTANT.angular_diameter_heliocentric_orbit(Math.cbrt(4.4)*CONSTANT.earth_radius, 200, 370), "https://en.wikipedia.org/wiki/Planet_Nine", [Category.HYPOTHETICAL]),
 		// Moon Angular Diameters
-		new AngleDatum("Ganymede", CONSTANT.angular_diameter_heliocentric_orbit(2634.1e3, 4.9506, 5.4570)),
+		new AngleDatum("Ganymede", CONSTANT.angular_diameter_heliocentric_orbit(2634.1e3, 4.9506, 5.4570), "https://en.wikipedia.org/wiki/Ganymede_(moon)"),
 		// Fictional Exoplanet Diameters
 		new AngleDatum("Tribble homeworld (Star Trek)", CONSTANT.angular_diameter(CONSTANT.earth_radius, 120.4*CONSTANT.ly), "https://en.wikipedia.org/wiki/Tribble", [Category.FICTIONAL]),
 		new AngleDatum("Qo'noS (Star Trek)", CONSTANT.angular_diameter(CONSTANT.earth_radius, 108*CONSTANT.ly), "https://en.wikipedia.org/wiki/Klingon#Homeworld", [Category.FICTIONAL]),
@@ -1269,7 +1269,7 @@ const OOM = {
 		new AngleDatum("36\" Telescope resolution", CONSTANT.angular_resolution(36*CONSTANT.in), null, [Category.MATHEMATICAL]),
 		new AngleDatum("4\" Telescope resolution", CONSTANT.angular_resolution(4*CONSTANT.in), null, [Category.MATHEMATICAL]),
 		new AngleDatum("7x50 Binocular resolution", CONSTANT.angular_resolution(50e-3), null, [Category.MATHEMATICAL]),
-		new AngleDatum("Eye resolution", 562e-9/9e-3),
+		new AngleDatum("Eye resolution", CONSTANT.angular_resolution(6.5e-3), "https://en.wikipedia.org/wiki/Pupil"),
 		// Pythagorean triples
 		new AngleDatum("3-4-5 Triangle, Angle opposite 5", Math.asin(3/5), null, [Category.MATHEMATICAL]),
 		new AngleDatum("5-12-13 Triangle, Angle opposite 13", Math.asin(5/13), null, [Category.MATHEMATICAL]),
@@ -1285,7 +1285,7 @@ const OOM = {
 		new AngleDatum("ISS (Closest)", CONSTANT.angular_diameter(109/2, 413e3)),
 		new AngleDatum("A380 (From Surface, Cruise)", CONSTANT.angular_diameter(79.75/2, 11e3)),
 		new AngleDatum("WTC (From Liberty Island)", CONSTANT.angular_diameter(546.2/2, 3740)),
-		new AngleDatum("Minecraft FOV (Default)", 70/180 * Math.PI),
+		new AngleDatum("Minecraft FOV (Default)", 70/180 * Math.PI, "https://minecraft.wiki/w/Options#Video_Settings"),
 		// new AngleDatum("A flea at 500 yards", CONSTANT.angular_diameter(3e-3/2, 500*CONSTANT.yd)), // as in BttF
 		// Snellen Chart
 		new AngleDatum("Snellen Chart, Smallest Letters (20/10)", CONSTANT.snellen(0.5), "https://en.wikipedia.org/wiki/Snellen_chart"),
