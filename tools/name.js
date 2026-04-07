@@ -11,7 +11,7 @@ function bars(n){
 		'https://upload.wikimedia.org/wikipedia/commons/2/24/100_percent.svg',
 	][completion];
 	// eslint-disable-next-line max-len
-	return `<img src="${icon_src}" style="height:4vh;" title="${n.toLocaleString()} possibilities">`;
+	return `<img src="${icon_src}" title="${n.toLocaleString()} possibilities">`;
 }
 
 class Language {
@@ -36,7 +36,7 @@ class Language {
 		if (this.elem_)
 			return this.elem_;
 		const container = document.createElement('div');
-		container.style.display = 'inline-block';
+		container.classList.add('langContainer');
 		// https://www.w3schools.com/tags/att_input_type_radio.asp
 		const radio = document.createElement('input');
 		radio.type = 'radio';
