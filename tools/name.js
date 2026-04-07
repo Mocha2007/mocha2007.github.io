@@ -467,7 +467,44 @@ new Language('English Toponym', [[[0, 3], [1]], [...DITHEMATIC, [2]], [[3], [4],
 	]
 );
 
-// todo: german toponym
+new Language('German Toponym', [[[0], [1, 2], [3]], [[0], [1, 2], [3], [4], [0], [1, 2], [3]]],
+	// https://en.wikipedia.org/wiki/German_toponymy
+	[
+		['', 'bad '],
+		[
+			'alt', 'alten', 'groß', 'großen', 'hoh', 'hohen', 'höch', 'hoch',
+			'klein', 'neu', 'neuen', 'nieder', 'ober', 'unter', 'wal',
+		],
+		[
+			'grün', 'grüne', 'kirch',
+			'lichten', 'lichter',
+			'schön', 'schöne',
+			// these are solely from https://en.wikipedia.org/wiki/List_of_cities_in_Germany_by_population
+			'augs', 'biele', 'braunsch', 'darm', 'dort', 'duis', 'düssel', 'er',
+			'frank', 'frei', 'ham', 'heidel', 'heil', 'hildes', 'ingol',
+			'kre', 'lü', 'ludwigs', 'magde', 'mann', 'mül',
+			'nürn', 'offen', 'olden', 'osna', 'pader', 'pforz',
+			'regens', 'rem', 'saar', 'salz', 'stutt',
+			'wolfs', 'würz',
+		],
+		[
+			'ach', 'au', 'aue',
+			'bach', 'baum', 'berg', 'bergen', 'born', 'bronn', 'brunn', 'brünn', 'brücken', 'brück', 'bruck', 'brig', 'bühl', 'bühel', 'burg',
+			'dorf', 'torf', 'ey', 'eck', 'egg',
+			'feld', 'felde', 'filde', 'fels', 'furt', 'ford', 'fürth',
+			'gard', 'gart', 'garten',
+			'hagen', 'hain', 'halde', 'halden', 'haus', 'hausen', 'haven', 'hafen', 'heim', 'hof', 'hoff', 'hofen', 'holm', 'holz', 'holzen', 'hude', 'hufe', 'hut',
+			'ing', 'ingen', 'ungen', 'ung', 'ens',
+			'kirchen', 'kirche', 'kirch', 'land',
+			'mund', 'münde', 'münden', 'ow',
+			'roth', 'rath', 'rode', 'reuth', 'reith', 'rith', 'ried', 'rade',
+			'scheid', 'see', 'stadt', 'stedt', 'stätt', 'stetten', 'stein',
+			'tal', 'thal', 'dahl', 'thurm', 'turm',
+			'wald', 'walde', 'wang', 'wangen', 'wängle', 'weil', 'weiler', 'willer', 'wend', 'winden', 'werder', 'werth', 'wörth', 'ort', 'wiese', 'wiesen', 'weig', 'wick', 'wig', 'wieck',
+		],
+		[' bei '],
+	]
+);
 
 // finally
 namegen.init();
