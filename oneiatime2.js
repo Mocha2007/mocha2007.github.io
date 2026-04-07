@@ -153,7 +153,8 @@ function holidayCSS(){
 		document.body.style.filter = 'invert(1)';
 		img.classList.add('social'); // so it remains unaffected by the pinkening
 		var a = Array.from(document.getElementsByClassName('highlight'));
-		a.push(...document.getElementsByTagName('progress'));
+		// spread operator (...) not in es3
+		Array.from(document.getElementsByTagName('progress')).forEach(function (e) { return a.push(e); });
 		for (var i = 0; i < a.length; i++)
 			a[i].style.filter = 'invert(1)';
 		alreadyUsedCustomCss = true;

@@ -1,4 +1,7 @@
+/* jshint esversion: 6, strict: true, strict: global */
 /* global playSound */
+
+'use strict';
 
 const cw = {
 	bh: 'Body Horror',

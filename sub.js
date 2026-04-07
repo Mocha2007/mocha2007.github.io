@@ -141,7 +141,7 @@ var subtitles =	[
 	'Es puella, fac puellam.',
 	'Delivering high-quality lunacy since 2017.',
 	// 2026
-	'OFFICIAL, federal government CERTIFIED gender extremist, the GREATEST, like NO ONE has ever seen before',
+	'OFFICIAL, federal government CERTIFIED gender extremist, the GREATEST, like NO ONE has ever seen before'
 ];
 subtitles.push(subtitles.length+1 + ' unique subtitles - collect them all!');
 

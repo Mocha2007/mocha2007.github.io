@@ -28,7 +28,7 @@ function phoonsvg(phase){
 		(3) circular mask to remove edges
 	*/
 	var svg = createSvgElement('svg');
-	IE_COMPAT && svg.classList.add('phoon');
+	if (IE_COMPAT) svg.classList.add('phoon');
 	svg.setAttribute('viewBox', '-1 -1 2 2');
 	svg.setAttribute('width', svgScale);
 	svg.setAttribute('height', svgScale);
