@@ -161,13 +161,14 @@ class Datum {
 		this.mass = typeof amt === "number" ? new dimension(amt) : amt;
 		/** @type {string} */
 		this.source = source;
-		if (!source){
-			console.warn(`no source for |${name}|, mass |${amt}|`);
-		}
 		/** @type {Category[]} */
 		this.categories = categories || [];
 		/** @type {HTMLSpanElement} */
 		this.elem_cache;
+		// units don't need sources
+		if (!source && !this.categories.includes(Category.UNIT)){
+			console.warn(`no source for |${name}|, mass |${amt}|`);
+		}
 	}
 	elem(e2y){
 		const e = document.createElement('span');
