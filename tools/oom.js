@@ -168,7 +168,7 @@ class Datum {
 		CONSTANT.stats.data++;
 		// units don't need sources
 		if (!source && !this.categories.includes(Category.UNIT)){
-			console.warn(`no source for |${name}|, mass |${amt}|`);
+			console.warn(`no source for |${name}|, ${dimension.name} |${amt}|`);
 			CONSTANT.stats.missingSources++;
 		}
 	}
@@ -656,6 +656,7 @@ const CONSTANT = {
 		return this.d*365.2425;
 	},
 	$: {
+		src: 'http://www.xe.com/currencyconverter/convert',
 		// as of 2026-03-06
 		eur: 1.15992097,
 		gbp: 1.33917590,
@@ -1463,13 +1464,13 @@ const OOM = {
 	],
 	dataMoney: [
 		// currencies
-		new MoneyDatum('Iranian Rial (2026)', CONSTANT.$.irr),
-		new MoneyDatum('Vietnamese Đồng (2026)', CONSTANT.$.vnd),
-		new MoneyDatum('Yen (2026)', CONSTANT.$.jpy),
-		new MoneyDatum('Złoty (2026)', CONSTANT.$.pln),
-		new MoneyDatum('Dollar', 1),
-		new MoneyDatum('Euro (2026)', CONSTANT.$.eur),
-		new MoneyDatum('Pound (2026)', CONSTANT.$.gbp),
+		new MoneyDatum('Iranian Rial (2026)', CONSTANT.$.irr, CONSTANT.$.src),
+		new MoneyDatum('Vietnamese Đồng (2026)', CONSTANT.$.vnd, CONSTANT.$.src),
+		new MoneyDatum('Yen (2026)', CONSTANT.$.jpy, CONSTANT.$.src),
+		new MoneyDatum('Złoty (2026)', CONSTANT.$.pln, CONSTANT.$.src),
+		new MoneyDatum('Dollar', 1, CONSTANT.$.src),
+		new MoneyDatum('Euro (2026)', CONSTANT.$.eur, CONSTANT.$.src),
+		new MoneyDatum('Pound (2026)', CONSTANT.$.gbp, CONSTANT.$.src),
 		// min wage
 		new MoneyDatum('Minimum Wage (Annual, US, since 2007)', 8*7.25*5*52, "https://en.wikipedia.org/wiki/Fair_Minimum_Wage_Act_of_2007"),
 		new MoneyDatum('Minimum Wage (Annual, Poland, 2026)', 4806*12*CONSTANT.$.pln, "https://en.wikipedia.org/wiki/Minimum_wage_in_Poland"),
@@ -1597,10 +1598,10 @@ const OOM = {
 	],
 	dataSpeed: [
 		// units
-		new SpeedDatum("Kilometer per hour", 1e3/CONSTANT.h),
-		new SpeedDatum("Mile per hour", CONSTANT.mi/CONSTANT.h),
-		new SpeedDatum("Knot (unit)", CONSTANT.nmi/CONSTANT.h, "https://en.wikipedia.org/wiki/Knot_(unit)"),
-		new SpeedDatum("Meter per second", 1),
+		new SpeedDatum("Kilometer per hour", 1e3/CONSTANT.h, null, [Category.UNIT]),
+		new SpeedDatum("Mile per hour", CONSTANT.mi/CONSTANT.h, null, [Category.UNIT]),
+		new SpeedDatum("Knot (unit)", CONSTANT.nmi/CONSTANT.h, "https://en.wikipedia.org/wiki/Knot_(unit)", [Category.UNIT]),
+		new SpeedDatum("Meter per second", 1, null, [Category.UNIT]),
 		// continental drift
 		new SpeedDatum("Eurasian plate", new Speed({min:7e-3/CONSTANT.yr,max:14e-3/CONSTANT.yr}), "https://en.wikipedia.org/wiki/Eurasian_plate"),
 		new SpeedDatum("Antarctic plate", new Speed({min:12e-3/CONSTANT.yr,max:14e-3/CONSTANT.yr}), "https://en.wikipedia.org/wiki/Antarctic_plate"),
