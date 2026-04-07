@@ -519,6 +519,10 @@ const CONSTANT = {
 	get in(){
 		return this.ft/12;
 	},
+	get jc(){
+		const js = (new Date() - new Date(2000, 0))/1e3;
+		return js / this.yr / 100;
+	},
 	/** in kg */
 	jupiter_mass: 1.898125e27,
 	/** in J/K */
@@ -1674,17 +1678,17 @@ const OOM = {
 		new TimeDatum("Century", 100*CONSTANT.yr, null, [Category.UNIT]),
 		new TimeDatum("Millennium", 1e3*CONSTANT.yr, null, [Category.UNIT]),
 		// orbits
-		new TimeDatum("Lunar synodic month", 29.530588861*CONSTANT.d),
+		new TimeDatum("Lunar synodic month", CONSTANT.d * (29.530588861 + CONSTANT.jc * (0.00000021621 - CONSTANT.jc * 3.64e-10)), "https://en.wikipedia.org/wiki/Lunar_month#Synodic_month"),
 		// half-lives
-		new TimeDatum("W and Z boson half-life", 3e-25),
-		new TimeDatum("Hydrogen-5 half-life", 86e-24),
-		new TimeDatum("Plutonium-244 half-life", 8.13e7*CONSTANT.yr),
-		new TimeDatum("Uranium-235 half-life", 7.04e8*CONSTANT.yr),
-		new TimeDatum("Uranium-238 half-life", 4.463e9*CONSTANT.yr),
-		new TimeDatum("Thorium-232 half-life", 1.40e10*CONSTANT.yr),
+		new TimeDatum("W and Z boson half-life", 3e-25, "https://en.wikipedia.org/wiki/W_and_Z_bosons"),
+		new TimeDatum("Hydrogen-5 half-life", 86e-24, "https://en.wikipedia.org/wiki/Isotopes_of_hydrogen#Hydrogen-5"),
+		new TimeDatum("Plutonium-244 half-life", 8.13e7*CONSTANT.yr, "https://en.wikipedia.org/wiki/Plutonium-244"),
+		new TimeDatum("Uranium-235 half-life", 7.04e8*CONSTANT.yr, "https://en.wikipedia.org/wiki/Uranium-235"),
+		new TimeDatum("Uranium-238 half-life", 4.463e9*CONSTANT.yr, "https://en.wikipedia.org/wiki/Uranium-238"),
+		new TimeDatum("Thorium-232 half-life", 1.40e10*CONSTANT.yr, "https://en.wikipedia.org/wiki/Thorium-232"),
 		// ages
-		new TimeDatum("Age of the Earth", 4.54e9*CONSTANT.yr),
-		new TimeDatum("Age of the Universe", 13.79e9*CONSTANT.yr),
+		new TimeDatum("Age of the Earth", new Time(4.54e9*CONSTANT.yr, 0.05e9*CONSTANT.yr), "https://en.wikipedia.org/wiki/Age_of_Earth"),
+		new TimeDatum("Age of the Universe", 13.787e9*CONSTANT.yr, "https://en.wikipedia.org/wiki/Age_of_the_universe"),
 		// misc
 		new TimeDatum("Time since the creation of this webtool", (new Date() - new Date("2026-02-06T12:49:19.000Z"))/1e3, "https://github.com/Mocha2007/mocha2007.github.io/commit/d901d1ae1d29255cb2bba470393e7c4ede485fef"),
 		new TimeDatum("Time since the creation of this website", (new Date() - new Date("2017-05-17T01:50:57.000Z"))/1e3, "https://github.com/Mocha2007/mocha2007.github.io/commit/4e1bbc0bc41c4f75681c539cd09e164594e6ba7c"),
