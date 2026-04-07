@@ -89,7 +89,7 @@ const LUNALIFE = {
 		new LunaEvent(new Date(2011, 0, 1), 'The other guinea pig died ;-;'),
 		new LunaEvent(new Date(2011, 0, 6), 'Joined Youtube'),
 		new LunaEvent(new Date(2011, 3, 22), 'Start conworlding (then, about Mochadia)'),
-		new LunaEvent(new Date(2011, 3, 27), '(appx) I got Spore as a birthday gift. I was obsessed with this game for years.'),
+		new LunaEvent(new Date(2011, 3, 27), 'I got Spore as a birthday gift. I was obsessed with this game for years.'),
 		new LunaEvent(new Date(2011, 3, 30), 'Join cult of bronydom'),
 		new LunaEvent(new Date(2011, 4), 'Joined Twitter (and then proceeded to never use it...)'),
 		new LunaEvent(new Date(2011, 5, 13), 'End of first period of regular journalling.'),
