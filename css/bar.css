@@ -10,13 +10,16 @@ progress {
 progress[role]:after {
 	background-image: none; /* removes default background from polyfill */
 }
+
+/* EARTH */
+
 /*
  * Progress bar background
  */
 
 /* Firefox and Polyfill */
 progress#clock_earth_progress {
-	background: url("../img/progress0.png"); /* !important */
+	background: url("../img/progress0.png");
 }
 /* Chrome */
 progress#clock_earth_progress::-webkit-progress-bar {
@@ -40,15 +43,34 @@ progress#clock_earth_progress[aria-valuenow]:before {
 	background: url("../img/progress1.png");
 }
 
-/* new ones */
+/* EREMOR */
 
-progress#clock_eremor_progress,
+/*
+ * Progress bar background
+ */
+
+/* Firefox and Polyfill */
+progress#clock_eremor_progress {
+	background: url("../img/progress2.png");
+}
+/* Chrome */
 progress#clock_eremor_progress::-webkit-progress-bar {
 	background: url("../img/progress2.png");
 }
 
-progress#clock_eremor_progress::-moz-progress-bar,
-progress#clock_eremor_progress::-webkit-progress-value,
+/*
+ * Progress bar value
+ */
+
+/* Firefox */
+progress#clock_eremor_progress::-moz-progress-bar {
+	background: url("../img/progress3.png");
+}
+/* Chrome */
+progress#clock_eremor_progress::-webkit-progress-value {
+	background: url("../img/progress3.png");
+}
+/* Polyfill */
 progress#clock_eremor_progress[aria-valuenow]:before {
 	background: url("../img/progress3.png");
 }
