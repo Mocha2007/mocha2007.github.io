@@ -4,6 +4,29 @@
 <meta name="description" content="Purely US Species">
 <link rel="shortcut icon" href="img/favicon.ico">
 <link href="../tools/tool.css" type="text/css" rel="stylesheet">
+<style>
+span[class^=tag]{font-family: monospace;border-radius:8px;padding:2px}
+/* CR itically endangered */
+.tagc::before{content:"C";}
+.tagc{background-color:#c00;color:#400;}
+.tagc:hover::after{content:"ritically endangered";}
+/* E ndangered */
+.tage::before{content:"E";}
+.tage{background-color:#c60;color:#420;}
+.tage:hover::after{content:"ndangered";}
+/* N ear threatened */
+.tagn::before{content:"N";}
+.tagn{background-color:#9c0;color:#340;}
+.tagn:hover::after{content:"ear threatened";}
+/* V ulnerable */
+.tagv::before{content:"V";}
+.tagv{background-color:#cc0;color:#440;}
+.tagv:hover::after{content:"ulnerable";}
+/* W extinct in wild */
+.tagw::before{content:"W";}
+.tagw{background-color:white;color:black;}
+.tagw:hover::after{content:" Extinct in the wild";}
+</style>
 <title>Purely US Species</title>
 <h1 id="US_Species">Purely US Species</h1>
 <p>
@@ -15,7 +38,7 @@
 <ul>
 	<li><a href="https://en.wikipedia.org/wiki/Gunnison%27s_prairie_dog">Cynomys gunnisoni</a> - Gunnison's prairie dog</li>
 	<li><a href="https://en.wikipedia.org/wiki/White-tailed_prairie_dog">Cynomys leucurus</a> - White-tailed prairie dog</li>
-	<li><a href="https://en.wikipedia.org/wiki/Utah_prairie_dog">Cynomys parvidens</a> - Utah prairie dog</li>
+	<li><span class="tage"></span> <a href="https://en.wikipedia.org/wiki/Utah_prairie_dog">Cynomys parvidens</a> - Utah prairie dog</li>
 	<li><a href="https://en.wikipedia.org/wiki/Allen%27s_chipmunk">Neotamias senex</a> - Allen's chipmunk</li>
 	<li><a href="https://en.wikipedia.org/wiki/Eastern_woodrat">Neotoma floridana</a> - Eastern woodrat</li>
 	<li><a href="https://en.wikipedia.org/wiki/Golden_mouse">Ochrotomys nuttalli</a> - Golden mouse</li>
@@ -28,11 +51,12 @@
 </ul>
 <h3 id="Carnivoran">Carnivorans</h3>
 <ul>
+	<li><span class="tagc"></span> <a href="https://en.wikipedia.org/wiki/Red_wolf">Canis rufus</a> - Red wolf</li>
 	<li><a href="https://en.wikipedia.org/wiki/Black-footed_ferret">Mustela nigripes</a> - Black-footed ferret</li>
 </ul>
 <h3 id="Birds">Birds</h3>
 <ul>
-	<li><a href="https://en.wikipedia.org/wiki/Hawaiian_crow">Corvus hawaiiensis</a> - Hawaiian crow</li>
+	<li><span class="tagw"></span> <a href="https://en.wikipedia.org/wiki/Hawaiian_crow">Corvus hawaiiensis</a> - Hawaiian crow</li>
 </ul>
 <h3 id="Reptiles">Reptiles</h3>
 <ul>
@@ -46,21 +70,21 @@
 <h2 id="Plants">Plants</h2>
 <!-- https://commons.wikimedia.org/wiki/Category:Flora_distribution_maps_of_the_United_States -->
 <ul>
-	<li><a href="https://en.wikipedia.org/wiki/Fraser_fir">Abies fraseri</a> - Fraser fir</li>
+	<li><span class="tage"></span> <a href="https://en.wikipedia.org/wiki/Fraser_fir">Abies fraseri</a> - Fraser fir</li>
 	<li><a href="https://en.wikipedia.org/wiki/Aesculus_glabra">Aesculus glabra</a> - Ohio buckeye</li>
-	<li><a href="https://en.wikipedia.org/wiki/Venus_flytrap">Dionaea muscipula</a> - Venus flytrap</li>
+	<li><span class="tagv"></span> <a href="https://en.wikipedia.org/wiki/Venus_flytrap">Dionaea muscipula</a> - Venus flytrap</li>
 	<li><a href="https://en.wikipedia.org/wiki/Ilex_opaca">Ilex opaca</a> - American holly</li>
 	<li><a href="https://en.wikipedia.org/wiki/Magnolia_grandiflora">Magnolia gradiflora</a> - Southern magnolia</li>
 	<li><a href="https://en.wikipedia.org/wiki/Blue_spruce">Picea pungens</a> - Blue spruce</li>
 	<li><a href="https://en.wikipedia.org/wiki/Pinus_aristata">Pinus aristata</a> - Rocky Mountain bristlecone pine</li>
-	<li><a href="https://en.wikipedia.org/wiki/Pinus_balfouriana">Pinus balfouriana</a> - Foxtail pine</li>
+	<li><span class="tagn"></span> <a href="https://en.wikipedia.org/wiki/Pinus_balfouriana">Pinus balfouriana</a> - Foxtail pine</li>
 	<li><a href="https://en.wikipedia.org/wiki/Pinus_edulis">Pinus edulis</a> - Colorado pinyon</li>
 	<li><a href="https://en.wikipedia.org/wiki/Pinus_longaeva">Pinus longaeva</a> - Great Basin bristlecone pine</li>
-	<li><a href="https://en.wikipedia.org/wiki/Longleaf_pine">Pinus palustris</a> - Longleaf pine</li>
+	<li><span class="tage"></span> <a href="https://en.wikipedia.org/wiki/Longleaf_pine">Pinus palustris</a> - Longleaf pine</li>
 	<li><a href="https://en.wikipedia.org/wiki/Pinus_taeda">Pinus taeda</a> - Loblolly pine</li>
 	<li><a href="https://en.wikipedia.org/wiki/Quercus_coccinea">Quercus coccinea</a> - Scarlet oak</li>
-	<li><a href="https://en.wikipedia.org/wiki/Sequoia_sempervirens">Sequoia sempervirens</a> - California redwood</li>
-	<li><a href="https://en.wikipedia.org/wiki/Sequoiadendron_giganteum">Sequoiadendron giganteum</a> - Giant redwood</li>
+	<li><span class="tage"></span> <a href="https://en.wikipedia.org/wiki/Sequoia_sempervirens">Sequoia sempervirens</a> - California redwood</li>
+	<li><span class="tage"></span> <a href="https://en.wikipedia.org/wiki/Sequoiadendron_giganteum">Sequoiadendron giganteum</a> - Giant redwood</li>
 	<li><a href="https://en.wikipedia.org/wiki/Taxodium_ascendens">Taxdium ascendens</a> - Pond cypress</li>
 	<li><a href="https://en.wikipedia.org/wiki/Taxodium_distichum">Taxdium distichum</a> - Bald cypress</li>
 </ul>
