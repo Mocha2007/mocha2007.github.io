@@ -306,7 +306,7 @@ const SSEV = {
 			new PlanetCoords(Time.fromEarthAge(40), 0.387098),
 			new PlanetCoords(new Time(0), 0.387098),
 		), t => CONSTANTS.ageEarth-50 < t ? 'https://mocha2007.github.io/tools/ssev/proto.jpg'
-			: 'https://upload.wikimedia.org/wikipedia/commons/4/4a/Mercury_in_true_color.jpg',
+			: 'https://mocha2007.github.io/tools/ssev/mercury.jpg',
 		{albedo: 0.088, events: [
 			new PlanetEvent('Rembrandt Impact', 3890, 3910), // guessing +/- 10 Myr
 		]}),
@@ -317,7 +317,7 @@ const SSEV = {
 			// https://en.wikipedia.org/wiki/Venus#Magnetic_field_and_core
 			// Possibly retained water for first 2-3 Byr - let's say this period ended 2000 Mya
 			: 2000 < t ? 'https://mocha2007.github.io/tools/ssev/earth_archaean.jpg'
-			: 'https://upload.wikimedia.org/wikipedia/commons/0/08/Venus_from_Mariner_10.jpg',
+			: 'https://mocha2007.github.io/tools/ssev/venus.jpg',
 		{albedo: t => 2000 < t ? 0.3 : 0.76, ghe: t => 2000 <= t ? 1.13 : 3.176724138, events: [
 			new PlanetEvent('Global Resurfacing Event', 300, 500),
 		]}),
@@ -383,7 +383,7 @@ const SSEV = {
 			new PlanetCoords(CONSTANTS.t.nice.start, 16.8),
 			new PlanetCoords(CONSTANTS.t.nice.end, 1.1896),
 			new PlanetCoords(new Time(0), 1.1896),
-		), 'https://upload.wikimedia.org/wikipedia/commons/d/de/Ryugu_colored.jpg',
+		), 'https://mocha2007.github.io/tools/ssev/ryugu.jpg',
 		{albedo: 0.037, minor: true, offset: true}),
 		new Planet('Mars', new PlanetPath(
 			new PlanetCoords(Time.fromEarthAge(-10), 1.52368055),
@@ -413,7 +413,7 @@ const SSEV = {
 			new PlanetCoords(CONSTANTS.t.grandTack.f(0), 4),
 			new PlanetCoords(CONSTANTS.t.grandTack.f(1), 2.36),
 			new PlanetCoords(new Time(0), 2.36),
-		), 'https://upload.wikimedia.org/wikipedia/commons/5/51/Vesta_in_natural_color.jpg',
+		), 'https://mocha2007.github.io/tools/ssev/vesta.jpg',
 		{albedo: 0.423, minor: true}),
 		new Planet('Lutetia', new PlanetPath(
 			// https://www.space.com/13597-asteroid-lutetia-earth-birth.html
@@ -421,7 +421,7 @@ const SSEV = {
 			new PlanetCoords(new Time(4050), 0.85),
 			new PlanetCoords(new Time(3950), 2.435),
 			new PlanetCoords(new Time(0), 2.435),
-		), 'https://upload.wikimedia.org/wikipedia/commons/1/17/Rosetta_triumphs_at_asteroid_Lutetia.jpg',
+		), 'https://mocha2007.github.io/tools/ssev/lutetia.jpg',
 		{albedo: 0.073, minor: true, offset: true}),
 		new Planet('Ceres', new PlanetPath(
 			// https://en.wikipedia.org/wiki/Ceres_(dwarf_planet)#Origin_and_evolution
@@ -429,12 +429,12 @@ const SSEV = {
 			new PlanetCoords(CONSTANTS.t.grandTack.f(0), 4),
 			new PlanetCoords(CONSTANTS.t.grandTack.f(1), 2.77),
 			new PlanetCoords(new Time(0), 2.77),
-		), 'https://upload.wikimedia.org/wikipedia/commons/7/76/Ceres_-_RC3_-_Haulani_Crater_%2822381131691%29_%28cropped%29.jpg',
+		), 'https://mocha2007.github.io/tools/ssev/ceres.jpg',
 		{albedo: 0.09, minor: true}),
 		new Planet('Hygiea', new PlanetPath(
 			new PlanetCoords(new Time(2500), 3.144),
 			new PlanetCoords(new Time(0), 3.144),
-		), 'https://upload.wikimedia.org/wikipedia/commons/8/88/SPHERE_image_of_Hygiea.jpg',
+		), 'https://mocha2007.github.io/tools/ssev/hygiea.jpg',
 		{albedo: 0.063, minor: true, offset: true}),
 		// Nice Model begins like ~ 6 Myr
 		// PRIMARY source: Deienno 2017
@@ -452,7 +452,7 @@ const SSEV = {
 			new PlanetCoords(CONSTANTS.t.nice.f(17/30), 5.4),
 			new PlanetCoords(CONSTANTS.t.nice.f(18/30), 5.2038),
 			new PlanetCoords(new Time(0), 5.2038),
-		), 'https://upload.wikimedia.org/wikipedia/commons/e/e2/Jupiter_OPAL_2024.png',
+		), 'https://mocha2007.github.io/tools/ssev/jupiter.jpg',
 		{albedo: 0.503}),
 		new Planet('Saturn', new PlanetPath(
 			new PlanetCoords(Time.fromSolarAge(10), 4.5),
@@ -464,13 +464,13 @@ const SSEV = {
 			new PlanetCoords(CONSTANTS.t.nice.f(18/30), 9.5826),
 			new PlanetCoords(new Time(0), 9.5826),
 		), t => 100 < t ? 'https://mocha2007.github.io/tools/ssev/saturn_no_rings.jpg'
-			: 'https://upload.wikimedia.org/wikipedia/commons/5/51/Saturn_-_August_11_1981_%2850903906546%29.jpg',
+			: 'https://mocha2007.github.io/tools/ssev/saturn.jpg',
 		{albedo: 0.342}),
 		new Planet('Phoebe', new PlanetPath(
 			new PlanetCoords(Time.fromSolarAge(3), 25),
 			new PlanetCoords(CONSTANTS.t.nice.start, 25),
 			new PlanetCoords(CONSTANTS.t.nice.end, 9.5826),
-		), 'https://upload.wikimedia.org/wikipedia/commons/a/ae/Phoebe_cassini_full.jpg',
+		), 'https://mocha2007.github.io/tools/ssev/phoebe.jpg',
 		{albedo: 0.023, minor: true}),
 		new Planet('5th Giant', new PlanetPath(
 			new PlanetCoords(Time.fromSolarAge(15), 5.2),
@@ -478,7 +478,7 @@ const SSEV = {
 			new PlanetCoords(CONSTANTS.t.grandTack.f(1), 5.4 * Math.pow(1.5*1.5, 2/3)),
 			new PlanetCoords(CONSTANTS.t.nice.start, 5.4 * Math.pow(1.5*1.5, 2/3)),
 			new PlanetCoords(CONSTANTS.t.nice.f(18/30), 10.8),
-		), 'https://upload.wikimedia.org/wikipedia/commons/a/ab/Fifth_Giant.png',
+		), 'https://mocha2007.github.io/tools/ssev/Fifth_Giant.png',
 		{albedo: 0.3}),
 		new Planet('Uranus', new PlanetPath(
 			new PlanetCoords(Time.fromSolarAge(15), 6),
@@ -489,7 +489,7 @@ const SSEV = {
 			new PlanetCoords(CONSTANTS.t.nice.f(17/30), 17.2),
 			new PlanetCoords(CONSTANTS.t.nice.f(18/30), 19.19126),
 			new PlanetCoords(new Time(0), 19.19126),
-		), 'https://upload.wikimedia.org/wikipedia/commons/6/69/Uranus_Voyager2_color_calibrated.png',
+		), 'https://mocha2007.github.io/tools/ssev/uranus.jpg',
 		{albedo: 0.3}),
 		new Planet('Neptune', new PlanetPath(
 			new PlanetCoords(Time.fromSolarAge(15), 8),
@@ -501,21 +501,21 @@ const SSEV = {
 			new PlanetCoords(CONSTANTS.t.nice.f(0.375), 27.2),
 			new PlanetCoords(CONSTANTS.t.nice.end, 30.07),
 			new PlanetCoords(new Time(0), 30.07),
-		), 'https://upload.wikimedia.org/wikipedia/commons/b/b9/Neptune_Voyager2_color_calibrated.png',
+		), 'https://mocha2007.github.io/tools/ssev/neptune.jpg',
 		{albedo: 0.29}),
 		// Kuiper belt WAS 20-35 au before Nice
 		new Planet('Triton', new PlanetPath(
 			new PlanetCoords(Time.fromSolarAge(15), 30),
 			new PlanetCoords(CONSTANTS.t.nice.end, 30),
 			// https://en.wikipedia.org/wiki/Capture_of_Triton
-		), 'https://upload.wikimedia.org/wikipedia/commons/6/65/Triton_True_Color.png',
+		), 'https://mocha2007.github.io/tools/ssev/triton.jpg',
 		{albedo: 0.76, minor: true}),
 		new Planet('Pluto', new PlanetPath(
 			new PlanetCoords(Time.fromSolarAge(15), 35),
 			new PlanetCoords(CONSTANTS.t.nice.f(0.375), 35),
 			new PlanetCoords(CONSTANTS.t.nice.end, 39.482),
 			new PlanetCoords(new Time(0), 39.482),
-		), 'https://upload.wikimedia.org/wikipedia/commons/c/ca/Pluto_in_True_Color_-_High-Res.png',
+		), 'https://mocha2007.github.io/tools/ssev/pluto.jpg',
 		{albedo: 0.72, minor: true}),
 		// new Planet('Haumea', new PlanetPath(
 		// 	new PlanetCoords(Time.fromSolarAge(15), 31.5),
