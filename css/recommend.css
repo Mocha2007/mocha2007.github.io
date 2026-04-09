@@ -10,6 +10,8 @@ details{line-height:16px;}
 .f::after{content:"(F)"}
 .m{color:#03f}
 .m::after{content:"(M)"}
+.nb{color:#fff}
+.nb::after{content:"(NB)"}
 .super{color:#f00;}
 .sub{color:#f80}
 .infra{color:#ff0}
