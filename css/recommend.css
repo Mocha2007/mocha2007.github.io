@@ -12,6 +12,8 @@ details{line-height:16px;}
 .m::after{content:"(M)"}
 .nb{color:#fff}
 .nb::after{content:"(NB)"}
+.dead{color:#f00; font-size: 75%;}
+.dead::after{content:"(Inactive)"}
 .super{color:#f00;}
 .sub{color:#f80}
 .infra{color:#ff0}
