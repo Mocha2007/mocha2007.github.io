@@ -232,6 +232,7 @@ var events = [ // MUST BE REVERSE CHRONO ORDER!!! time before 01 jan 2018
 	[308e6, 'The <a href="https://en.wikipedia.org/wiki/Mazon_Creek_fossil_beds">Mazon Creek fossil beds</a> form'],
 	[305e6, 'The <a href="https://en.wikipedia.org/wiki/Carboniferous_rainforest_collapse">Carboniferous rainforest collapse</a>'],
 	[300e6, 'Highest atmospheric <a href="https://en.wikipedia.org/wiki/Geological_history_of_oxygen">oxygen levels</a>: 35%'],
+	[300e6, 'Formation of the <a href="https://en.wikipedia.org/wiki/Ursa_Major_moving_group">Ursa Major moving group</a>'],
 	[299e6, '<a href="https://en.wikipedia.org/wiki/Hamilton_Quarry">Hamilton Quarry</a> forms'],
 	[298.9e6, 'End of the <a href="https://en.wikipedia.org/wiki/Carboniferous">Carboniferous</a>'],
 	[298.9e6, 'Origin of <a href="https://en.wikipedia.org/wiki/Glossopteris">Glossopteris</a>'],
