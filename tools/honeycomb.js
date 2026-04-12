@@ -23,6 +23,7 @@ class Category {
 	static ASTRONOMY = "astronomy";
 	static ENGLISH = "english";
 	static GEOGRAPHY = "geography";
+	static MISC = "miscellaneous";
 	static MUSIC = "music";
 	static FILM = "film";
 	static RELIGION = "religion";
@@ -83,6 +84,7 @@ const HONEYCOMB = {
 			- todo: https://en.wikipedia.org/wiki/List_of_animal_names
 		*/
 		new Word("adverb", new Hint("can modify adjectives and verbs", Category.ENGLISH)),
+		new Word("aether", new Hint("the luminiferous variety was said to carry light", Category.MISC)),
 		new Word("angola", new Hint("its capital, Luanda", Category.GEOGRAPHY)),
 		new Word("ankara", new Hint("capital of Turkey", Category.GEOGRAPHY)),
 		new Word("antlia", new Hint("air pump constellation", Category.ASTRONOMY)),
@@ -130,14 +132,18 @@ const HONEYCOMB = {
 		new Word("gambia", new Hint("its capital, Banjul", Category.GEOGRAPHY)),
 		new Word("gemini", new Hint("twin sign", Category.ASTROLOGY)),
 		new Word("greece", new Hint("its capital, Athens", Category.GEOGRAPHY)),
+		new Word("grouse", new Hint("landfowl, eg. ruffed, spruce, sooty", Category.ZOOLOGY)),
 		new Word("guinea", new Hint("its capital, Conakry", Category.GEOGRAPHY)),
 		new Word("guyana", new Hint("its capital, Georgetown", Category.GEOGRAPHY)),
 		new Word("hawaii", new Hint("Pacific kingdom invaded by the United States", Category.GEOGRAPHY)),
+		new Word("hornet", new Hint("large wasp", Category.ZOOLOGY)),
 		new Word("horses", new Hint("stallions or mares", Category.ZOOLOGY)),
 		new Word("hydrus", new Hint("lesser water snake constellation", Category.ASTRONOMY)),
 		new Word("itself", new Hint("third person singular neuter reflexive", Category.ENGLISH)),
 		new Word("jordan", new Hint("its capital, Amman", Category.GEOGRAPHY)),
 		new Word("latvia", new Hint("its capital, Riga", Category.GEOGRAPHY)),
+		new Word("lizard", new Hint("common quadrupedal reptile", Category.ZOOLOGY)),
+		new Word("locust", new Hint("swarming grasshopper", Category.ZOOLOGY)),
 		new Word("mexico", new Hint("most populous Spanish-speaking country", Category.GEOGRAPHY)),
 		new Word("myself", new Hint("first person singular reflexive", Category.ENGLISH)),
 		new Word("norway", new Hint("its capital, Oslo", Category.GEOGRAPHY)),
