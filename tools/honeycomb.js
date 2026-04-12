@@ -737,6 +737,7 @@ const HONEYCOMB = {
 			cat_dropdown.appendChild(option);
 		});
 		cat_dropdown.onclick = () => HONEYCOMB.config.forcecat = cat_dropdown.value;
+		cat_dropdown.value = this.config.forcecat
 		controls.appendChild(cat_dropdown);
 	},
 	new(){
