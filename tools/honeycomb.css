@@ -15,6 +15,9 @@ html, body {
 	width: 38vw;
 	clip-path: polygon(20% 0%, 80% 0%, 100% 50%, 80% 100%, 20% 100%, 0% 50%);
 }
+.hint {
+	padding: 0 2vw;
+}
 .letter {
 	background-color: #444;
 	border: 2px solid black;
