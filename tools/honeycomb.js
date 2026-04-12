@@ -358,7 +358,7 @@ const HONEYCOMB = {
 		re = new RegExp(`${CLUE1.getLetter(Direction.DL)}${CLUE0.getLetter(Direction.UL)}`);
 		const WORD6 = this.randomWordMatching(dictionary, w => re.test(w.word));
 		dictionary.splice(dictionary.indexOf(WORD6), 1);
-		const WORD6_START = (8-re.exec(WORD6.word).index) % 6;
+		const WORD6_START = (7-re.exec(WORD6.word).index) % 6;
 		const CLUE6 = new Clue(WORD6, WORD6_START);
 		// console.debug(CLUE2, WORD0.word[(WORD0_START + 5) % 6]);
 		// next, choose the word above-right
@@ -372,7 +372,7 @@ const HONEYCOMB = {
 		re = new RegExp(`${CLUE6.getLetter(Direction.DN)}${CLUE0.getLetter(Direction.DL)}`);
 		const WORD5 = this.randomWordMatching(dictionary, w => re.test(w.word));
 		dictionary.splice(dictionary.indexOf(WORD5), 1);
-		const WORD5_START = (7-re.exec(WORD5.word).index) % 6;
+		const WORD5_START = (6-re.exec(WORD5.word).index) % 6;
 		const CLUE5 = new Clue(WORD5, WORD5_START);
 		// console.debug(CLUE4, WORD0.word[(WORD0_START + 4) % 6]);
 		// next, choose the word down-right
@@ -386,7 +386,7 @@ const HONEYCOMB = {
 		re = new RegExp(`${CLUE5.getLetter(Direction.DR)}${CLUE0.getLetter(Direction.DN)}${CLUE3.getLetter(Direction.DL)}`);
 		const WORD4 = this.randomWordMatching(dictionary, w => re.test(w.word));
 		dictionary.splice(dictionary.indexOf(WORD4), 1);
-		const WORD4_START = (6-re.exec(WORD4.word).index) % 6;
+		const WORD4_START = (5-re.exec(WORD4.word).index) % 6;
 		const CLUE4 = new Clue(WORD4, WORD4_START);
 		// console.debug(CLUE6, WORD0.word[(WORD0_START + 3) % 6]);
 		// create elements
