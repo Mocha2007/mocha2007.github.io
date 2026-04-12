@@ -29,14 +29,17 @@ class Word {
 }
 
 class Category {
+	static ANIME = "Anime";
 	static ASTROLOGY = "Astrology";
 	static ASTRONOMY = "Astronomy";
 	static ENGLISH = "English";
 	static GEOGRAPHY = "Geography";
 	static HISTORY = "History";
+	static MEDICINE = "Medicine";
 	static MISC = "Miscellaneous";
 	static MUSIC = "Music";
 	static FILM = "Film";
+	static PHYSICS = "Physics";
 	static RELIGION = "Religion";
 	static TRANSPORT = "Transport";
 	static VIDEOGAME = "Video games";
@@ -137,10 +140,19 @@ const HONEYCOMB = {
 			Things added:
 			- all 6-letter constellations and planets
 			- all 6-letter countries (excl. Israel Kuwait Monaco)
-			- todo: https://en.wikipedia.org/wiki/List_of_animal_names
+			- partial: all 6-letter https://en.wikipedia.org/wiki/Planetary_nomenclature
+			- partial: https://en.wikipedia.org/wiki/List_of_animal_names
 		*/
 		new Word("adverb", new Hint("can modify adjectives and verbs", Category.ENGLISH)),
-		new Word("aether", new Hint("the luminiferous variety was said to carry light", Category.MISC)),
+		new Word("aether", [
+			new Hint("common 19th century anaesthetic", Category.MEDICINE),
+			new Hint("the luminiferous variety was said to carry light", Category.PHYSICS),
+			new Hint("in a certain Minecraft mod, the opposite of the nether", Category.VIDEOGAME),
+		]),
+		new Word("albedo", [
+			new Hint("an object's brightness", Category.ASTRONOMY),
+			new Hint("overseer of the guardians of Nazarick", Category.ANIME),
+		]),
 		new Word("angola", new Hint("its capital, Luanda", Category.GEOGRAPHY)),
 		new Word("ankara", new Hint("capital of Turkey", Category.GEOGRAPHY)),
 		new Word("antlia", new Hint("air pump constellation", Category.ASTRONOMY)),
@@ -161,10 +173,21 @@ const HONEYCOMB = {
 		]),
 		new Word("cancer", new Hint("crab sign", Category.ASTROLOGY)),
 		new Word("canine", new Hint("of dogs", Category.ZOOLOGY)),
+		new Word("catena", new Hint("chain of craters", Category.ASTRONOMY)),
 		new Word("cattle", new Hint("a cow or ox", Category.ZOOLOGY)),
 		new Word("carina", new Hint("keel constellation", Category.ASTRONOMY)),
+		new Word("chasma", new Hint("deep, elongated, steep-sided depression", Category.ASTRONOMY)),
+		new Word("collis", new Hint("small hill", Category.ASTRONOMY)),
+		new Word("corona", [
+			new Hint("outer stellar atmosphere", Category.ASTRONOMY),
+			new Hint("Mexican beer", Category.MISC),
+			new Hint("slang: disease which caused a pandemic in 2020", Category.MEDICINE),
+		]),
 		new Word("corvus", new Hint("crow constellation", Category.ASTRONOMY)),
-		new Word("crater", new Hint("cup constellation", Category.ASTRONOMY)),
+		new Word("crater", [
+			new Hint("cup constellation", Category.ASTRONOMY),
+			new Hint("circular depression, usually due to an impact", Category.ASTRONOMY),
+		]),
 		new Word("cygnus", new Hint("swan constellation", Category.ASTRONOMY)),
 		new Word("cyprus", new Hint("its capital, Nicosia", Category.GEOGRAPHY)),
 		new Word("donkey", [
