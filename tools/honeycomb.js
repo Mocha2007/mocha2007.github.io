@@ -68,7 +68,7 @@ class Clue {
 	constructor(word, start_index = 0){
 		/** @type {Word} */
 		this.word = word;
-		/** @type {number} what index of the word does the "up" direction represent? */
+		/** @type {number} I don't remember what this represents */
 		this.start_index = start_index;
 	}
 	createElement(id){
