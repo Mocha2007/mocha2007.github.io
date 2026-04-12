@@ -40,6 +40,7 @@ class Category {
 	static GEOGRAPHY = "Geography";
 	static HISTORY = "History";
 	static LANGUAGE = "Language";
+	static MEASUREMENT = "Measurement";
 	static MEDICINE = "Medicine";
 	static MISC = "Miscellaneous";
 	static MUSIC = "Music";
@@ -162,6 +163,7 @@ const HONEYCOMB = {
 			new Hint("an object's brightness", Category.ASTRONOMY),
 			new Hint("overseer of the guardians of Nazarick", Category.ANIME),
 		]),
+		new Word("ampere", new Hint("SI unit of current", Category.MEASUREMENT)),
 		new Word("angola", new Hint("its capital, Luanda", Category.GEOGRAPHY)),
 		new Word("ankara", new Hint("capital of Turkey", Category.GEOGRAPHY)),
 		new Word("antlia", new Hint("air pump constellation", Category.ASTRONOMY)),
@@ -175,6 +177,7 @@ const HONEYCOMB = {
 		new Word("bootes", new Hint("herdsman constellation", Category.ASTRONOMY)),
 		new Word("bovine", new Hint("of cattle", Category.ZOOLOGY)),
 		new Word("brazil", new Hint("its capital, Brasília", Category.GEOGRAPHY)),
+		new Word("bronze", new Hint("copper-tin alloy", Category.CHEMISTRY)),
 		new Word("brunei", new Hint("its capital, Bandar Seri Begawan", Category.GEOGRAPHY)),
 		new Word("caelum", new Hint("chisel constellation", Category.ASTRONOMY)),
 		new Word("canada", [
@@ -205,6 +208,8 @@ const HONEYCOMB = {
 		new Word("curium", new Hint("actinide alpha source", Category.CHEMISTRY)),
 		new Word("cygnus", new Hint("swan constellation", Category.ASTRONOMY)),
 		new Word("cyprus", new Hint("its capital, Nicosia", Category.GEOGRAPHY)),
+		new Word("dalton", new Hint("atomic mass unit", Category.MEASUREMENT)),
+		new Word("degree", new Hint("1/360 of a circle", Category.MEASUREMENT)),
 		new Word("donkey", [
 			new Hint("Shrek's partner", Category.FILM),
 			new Hint("presumably, a large burrito", Category.SPANISH),
@@ -265,6 +270,7 @@ const HONEYCOMB = {
 		new Word("iodine", new Hint("heaviest dietary element", Category.CHEMISTRY)),
 		new Word("itself", new Hint("third person singular neuter reflexive", Category.ENGLISH)),
 		new Word("jordan", new Hint("its capital, Amman", Category.GEOGRAPHY)),
+		new Word("kelvin", new Hint("SI unit of temperature", Category.MEASUREMENT)),
 		new Word("kidney", new Hint("blood filtration organ", Category.MEDICINE)),
 		new Word("latvia", new Hint("its capital, Riga", Category.GEOGRAPHY)),
 		new Word("lesbos", new Hint("island of Sappho", Category.GEOGRAPHY)),
@@ -274,7 +280,9 @@ const HONEYCOMB = {
 			new Hint("one of three plagues sent to Egypt", Category.RELIGION),
 		]),
 		new Word("mexico", new Hint("most populous Spanish-speaking country", Category.GEOGRAPHY)),
+		new Word("minute", new Hint("sixty seconds", Category.MEASUREMENT)),
 		new Word("myself", new Hint("first person singular reflexive", Category.ENGLISH)),
+		new Word("newton", new Hint("SI unit of force", Category.MEASUREMENT)),
 		new Word("nickel", new Hint("most common impurity in meteoric iron", Category.CHEMISTRY)),
 		new Word("norway", new Hint("its capital, Oslo", Category.GEOGRAPHY)),
 		new Word("octans", new Hint("octant constellation", Category.ASTRONOMY)),
@@ -288,6 +296,7 @@ const HONEYCOMB = {
 			new Hint("imitative bird", Category.ZOOLOGY),
 			new Hint("Minecraft mob, dies to cookies", Category.VIDEOGAME),
 		]),
+		new Word("pascal", new Hint("SI unit of pressure", Category.MEASUREMENT)),
 		new Word("pictor", new Hint("painter constellation", Category.ASTRONOMY)),
 		new Word("pisces", new Hint("fish sign", Category.ASTROLOGY)),
 		new Word("poland", [
@@ -301,6 +310,7 @@ const HONEYCOMB = {
 			new Hint("royal color", Category.HISTORY),
 		]),
 		new Word("rabbit", new Hint("small hopping mammal", Category.ZOOLOGY)),
+		new Word("radian", new Hint("SI unit of angle", Category.MEASUREMENT)),
 		new Word("radium", new Hint("radioactive alkaline earth metal", Category.CHEMISTRY)),
 		new Word("rhodes", new Hint("Greek island known for its Colossus", Category.GEOGRAPHY)),
 		new Word("russia", [
@@ -322,6 +332,7 @@ const HONEYCOMB = {
 			new Hint("rocket family which first brought humans to the moon", Category.TRANSPORT),
 		]),
 		new Word("scutum", new Hint("shield constellation", Category.ASTRONOMY)),
+		new Word("second", new Hint("SI unit of time", Category.MEASUREMENT)),
 		new Word("serbia", [
 			new Hint("its capital, Belgrade", Category.GEOGRAPHY),
 			new Hint("its invasion brought about a world war", Category.HISTORY),
