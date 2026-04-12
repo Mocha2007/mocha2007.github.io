@@ -529,6 +529,12 @@ const HONEYCOMB = {
 				case 'Backspace':
 					HONEYCOMB.letterNodes.backspace();
 					break;
+				case 'ArrowLeft':
+				case 'ArrowUp':
+					HONEYCOMB.letterNodes.advanceHex(true);
+					break;
+				case 'ArrowDown':
+				case 'ArrowRight':
 				case 'Space':
 				case 'Tab':
 					if (ev.shiftKey) {
