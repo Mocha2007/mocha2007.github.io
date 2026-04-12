@@ -33,11 +33,29 @@ class Category {
 
 class Direction {
 	static UP = 0;
-	static UL = 1;
-	static UR = 2;
-	static DL = 3;
-	static DR = 4;
-	static DN = 5;
+	static UR = 1;
+	static DR = 2;
+	static DN = 3;
+	static DL = 4;
+	static UL = 5;
+	static from(n = 0){
+		switch (n){
+			case 0:
+				return this.UP;
+			case 1:
+				return this.UR;
+			case 2:
+				return this.DR;
+			case 3:
+				return this.DN;
+			case 4:
+				return this.DL;
+			case 5:
+				return this.UL;
+			default:
+				throw `invalid direction: ${n}`;
+		}
+	}
 }
 
 class Clue {
@@ -55,6 +73,21 @@ class Clue {
 		// todo: if id is 1-6, we need to create 4 of 6 letter spaces
 		// else, if id is 0, we need to create all 6...
 		return e;
+	}
+	/**
+	 * @param {number} i 
+	 * @param {number} j 
+	 */
+	createTextCell(i, j){
+		const cellId = 5*i+j;
+		const direction = (4 + i + j) % 6;
+		/** @type {HTMLDivElement} */
+		const elem = document.getElementById(`hex${i}`);
+		const cell = document.createElement('div');
+		cell.classList.add('letter');
+		cell.classList.add(`direction${direction}`);
+		cell.onclick = () => HONEYCOMB.letterNodes.select(cellId);
+		elem.appendChild(cell);
 	}
 	/** @param {Direction} direction */
 	getLetter(direction){
@@ -188,17 +221,16 @@ const HONEYCOMB = {
 		new Word("volans", new Hint("flying fish constellation", Category.ASTRONOMY)),
 		new Word("zambia", new Hint("its capital, Lusaka", Category.GEOGRAPHY)),
 	],
+	/** @type {Clue[]} */
+	clues: new Array(7).fill(undefined),
 	letterNodes: {
 		get hex(){
-			const x = this.selected % 4;
-			return x < 24 ? x + 1 : 0;
+			return this.selected % 5;
 		},
 		letters: new Array(30).fill(''),
 		selected: 0,
 		advance(reverse = false){
-			this.elemSelected().classList.remove('selected');
-			this.selected = (this.selected + (reverse ? 29 : 1)) % 30;
-			this.elemSelected().classList.add('selected');
+			this.select((this.selected + (reverse ? 29 : 1)) % 30);
 		},
 		advanceHex(reverse = false){
 			const start = this.hex;
@@ -217,9 +249,14 @@ const HONEYCOMB = {
 		elemSelected(){
 			return this.elem(this.selected);
 		},
+		select(n = 0){
+			this.elemSelected().classList.remove('selected');
+			this.selected = n;
+			this.elemSelected().classList.add('selected');
+		},
 		setLetter(char = ''){
 			this.elemSelected().innerHTML = this.letters[this.selected] = char;
-		}
+		},
 	},
 	clear(){
 		document.body.innerHTML = '';
@@ -320,6 +357,23 @@ const HONEYCOMB = {
 		document.body.appendChild(CLUE4.createElement(4));
 		document.body.appendChild(CLUE5.createElement(5));
 		document.body.appendChild(CLUE6.createElement(6));
+		this.clues = [
+			CLUE0,
+			CLUE1,
+			CLUE2,
+			CLUE3,
+			CLUE4,
+			CLUE5,
+			CLUE6,
+		];
+		// create letter buttons
+		this.clues.forEach((c, i) => {
+			if (!i) return; // don't create any for center cell
+			// create 5 cells
+			for (let j = 0; j < 5; j++){
+				c.createTextCell(i, j);
+			}
+		});
 	},
 	new_wrapper(){
 		let success = false;

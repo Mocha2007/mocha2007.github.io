@@ -11,8 +11,19 @@ html, body {
 }
 .letter {
 	background-color: #444;
+	border: 2px solid black;
+	border-radius: 5px;
 	color: white;
 	cursor: pointer;
+	height: 1em;
+	position: relative;
+	width: 1em;
+}
+.letter:hover {
+	background-color: #555;
+}
+.letter:active {
+	background-color: #666;
 }
 .letter.selected {
 	background-color: #888;
@@ -50,4 +61,29 @@ html, body {
 }
 #hex6 {
 	top: 66.67vh;
+}
+/* directions */
+.direction0 {
+	left: 50%;
+	top: 0;
+}
+.direction1 {
+	right: 0;
+	top: 33%;
+}
+.direction2 {
+	right: 0;
+	top: 67%;
+}
+.direction3 {
+	left: 50%;
+	bottom: 0;
+}
+.direction4 {
+	left: 0;
+	top: 67%;
+}
+.direction5 {
+	left: 0;
+	top: 33%;
 }
