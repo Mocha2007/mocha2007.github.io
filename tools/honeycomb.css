@@ -16,6 +16,7 @@ html, body {
 	color: white;
 	cursor: pointer;
 	height: 2em;
+	line-height: 2em;
 	position: absolute;
 	width: 2em;
 }
