@@ -30,6 +30,7 @@ class Word {
 }
 
 class Category {
+	static ANATOMY = "Anatomy";
 	static ANIME = "Anime";
 	static ASTROLOGY = "Astrology";
 	static ASTRONOMY = "Astronomy";
@@ -53,6 +54,7 @@ class Category {
 	static PHYSICS = "Physics";
 	static PROGRAMMING = "Programming";
 	static RELIGION = "Religion";
+	static TECH = "Technology";
 	static TRANSPORT = "Transport";
 	static VEXILLOLOGY = "Vexilollogy";
 	static VIDEOGAME = "Video games";
@@ -179,10 +181,15 @@ const HONEYCOMB = {
 		new Word("ankara", new Hint("capital of Turkey", Category.GEOGRAPHY)),
 		new Word("antlia", new Hint("air pump constellation", Category.ASTRONOMY)),
 		new Word("apogee", new Hint("furthest part of an orbit from Earth", Category.ASTROLOGY)),
+		new Word("apple", [
+			new Hint("common red fruit", Category.FOOD),
+			new Hint("high-end computer and phone manufacturer", Category.TECH),
+		]),
 		new Word("aquila", new Hint("eagle constellation", Category.ASTRONOMY)),
 		new Word("astana", new Hint("capital of Kazakhstan", Category.GEOGRAPHY)),
 		new Word("auriga", new Hint("charioteer constellation", Category.ASTRONOMY)),
 		new Word("autumn", new Hint("season after summer", Category.METEOROLOGY)),
+		new Word("banana", new Hint("long yellow fruit", Category.FOOD)),
 		new Word("barium", new Hint("in pure form, this element is a common radiocontrast agent", Category.CHEMISTRY)),
 		new Word("basalt", new Hint("dark extrusive igneous rock", Category.GEOLOGY)),
 		new Word("beaver", new Hint("dam-building rodent", Category.ZOOLOGY)),
@@ -197,6 +204,7 @@ const HONEYCOMB = {
 		new Word("bremen", new Hint("smallest German state", Category.GEOGRAPHY)),
 		new Word("bronze", new Hint("copper-tin alloy", Category.CHEMISTRY)),
 		new Word("brunei", new Hint("its capital, Bandar Seri Begawan", Category.GEOGRAPHY)),
+		new Word("butter", new Hint("churned cream", Category.FOOD)),
 		new Word("caelum", new Hint("chisel constellation", Category.ASTRONOMY)),
 		new Word("canada", [
 			new Hint("its capital, Ottawa", Category.GEOGRAPHY),
@@ -207,13 +215,16 @@ const HONEYCOMB = {
 		new Word("canton", new Hint("flag quarter", Category.VEXILLOLOGY)),
 		new Word("carbon", new Hint("main element of coal", Category.CHEMISTRY)),
 		new Word("carina", new Hint("keel constellation", Category.ASTRONOMY)),
+		new Word("casein", new Hint("milk protein", Category.FOOD)),
 		new Word("catena", new Hint("chain of craters", Category.ASTRONOMY)),
 		new Word("cattle", new Hint("a cow or ox", Category.ZOOLOGY)),
 		new Word("cesium", new Hint("second-defining element", Category.CHEMISTRY)),
 		new Word("charge", new Hint("symbol in the field of a flag", Category.VEXILLOLOGY)),
+		new Word("cheese", new Hint("solid milk product", Category.FOOD)),
 		new Word("cobble", new Hint("rock, between a pebble and boulder in size", Category.GEOLOGY)),
 		new Word("crimea", new Hint("invaded by Russia in 2014", Category.HISTORY)),
 		new Word("chasma", new Hint("deep, elongated, steep-sided depression", Category.ASTRONOMY)),
+		new Word("cherry", new Hint("small red fruit", Category.FOOD)),
 		new Word("cobalt", new Hint("metal used in blue pigments", Category.CHEMISTRY)),
 		new Word("collis", new Hint("small hill", Category.ASTRONOMY)),
 		new Word("colony", new Hint("organization of conspecifics", Category.BIOLOGY)),
@@ -248,6 +259,7 @@ const HONEYCOMB = {
 			new Hint("mahi-mahi constellation", Category.ASTRONOMY),
 			new Hint("mythical golden city (second word)", Category.HISTORY),
 		]),
+		new Word("eggnog", new Hint("wintry dairy drink", Category.FOOD)),
 		new Word("embryo", new Hint("initial developmental stage", Category.BIOLOGY)),
 		new Word("enzyme", new Hint("catalytic protein", Category.BIOLOGY)),
 		new Word("equine", new Hint("of horses", Category.ZOOLOGY)),
@@ -265,6 +277,7 @@ const HONEYCOMB = {
 			new Hint("beastly synonym of uncover", Category.ENGLISH),
 			new Hint("domesticated polecat", Category.ZOOLOGY),
 		]),
+		new Word("finger", new Hint("digit of the hand", Category.ANATOMY)),
 		new Word("finial", new Hint("decorative flagpole cap", Category.VEXILLOLOGY)),
 		new Word("forest", new Hint("biome of trees", Category.GEOGRAPHY)),
 		new Word("fornax", new Hint("furnace constellation", Category.ASTRONOMY)),
@@ -279,6 +292,7 @@ const HONEYCOMB = {
 		new Word("garnet", new Hint("red gem", Category.MINEROLOGY)),
 		new Word("gemini", new Hint("twin sign", Category.ASTROLOGY)),
 		new Word("genome", new Hint("entire set of genetic material", Category.BIOLOGY)),
+		new Word("gelato", new Hint("Italian ice cream", Category.FOOD)),
 		new Word("gothic", [
 			new Hint("2001 RPG", Category.VIDEOGAME),
 			new Hint("of the east Germanic conquerers of Rome", Category.HISTORY),
@@ -358,6 +372,8 @@ const HONEYCOMB = {
 			new Hint("citrus, eg. mandarin", Category.FOOD),
 		]),
 		new Word("oxygen", new Hint("second most abundant element in Earth's atmosphere", Category.CHEMISTRY)),
+		new Word("paneer", new Hint("Indian cheese", Category.FOOD)),
+		new Word("papaya", new Hint("large tropical yellow fruit", Category.FOOD)),
 		new Word("parrot", [
 			new Hint("imitative bird", Category.ZOOLOGY),
 			new Hint("Minecraft mob, dies to cookies", Category.VIDEOGAME),
@@ -391,6 +407,7 @@ const HONEYCOMB = {
 		new Word("rabbit", new Hint("small hopping mammal", Category.ZOOLOGY)),
 		new Word("radian", new Hint("SI unit of angle", Category.MEASUREMENT)),
 		new Word("radium", new Hint("radioactive alkaline earth metal", Category.CHEMISTRY)),
+		new Word("rennet", new Hint("cheesemaking enzymes", Category.FOOD)),
 		new Word("rhodes", new Hint("Greek island known for its Colossus", Category.GEOGRAPHY)),
 		new Word("russia", [
 			new Hint("its capital, Moscow", Category.GEOGRAPHY),
@@ -462,6 +479,7 @@ const HONEYCOMB = {
 		new Word("volans", new Hint("flying fish constellation", Category.ASTRONOMY)),
 		new Word("weight", new Hint("downward force", Category.PHYSICS)),
 		new Word("winter", new Hint("season after fall", Category.METEOROLOGY)),
+		new Word("yogurt", new Hint("fermented milk product", Category.FOOD)),
 		new Word("zambia", new Hint("its capital, Lusaka", Category.GEOGRAPHY)),
 		new Word("zombie", [
 			new Hint("horror staple monster", Category.FILM),
