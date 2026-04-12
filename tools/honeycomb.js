@@ -56,6 +56,7 @@ class Category {
 	static PROGRAMMING = "Programming";
 	static RELIGION = "Religion";
 	static TECH = "Technology";
+	static TEXTILE = "Textile";
 	static TRANSPORT = "Transport";
 	static VEXILLOLOGY = "Vexilollogy";
 	static VIDEOGAME = "Video games";
@@ -242,6 +243,7 @@ const HONEYCOMB = {
 			new Hint("slang: disease which caused a pandemic in 2020", Category.MEDICINE),
 		]),
 		new Word("corvus", new Hint("crow constellation", Category.ASTRONOMY)),
+		new Word("cotton", new Hint("common plant fiber", Category.TEXTILE)),
 		new Word("cougar", new Hint("mountain lion", Category.ZOOLOGY)),
 		new Word("coyote", new Hint("American canid", Category.ZOOLOGY)),
 		new Word("crater", [
@@ -268,6 +270,7 @@ const HONEYCOMB = {
 			new Hint("mahi-mahi constellation", Category.ASTRONOMY),
 			new Hint("mythical golden city (second word)", Category.HISTORY),
 		]),
+		new Word("dragon", new Hint("mythological winged lizard", Category.RELIGION)),
 		new Word("eggnog", new Hint("wintry dairy drink", Category.FOOD)),
 		new Word("embryo", new Hint("initial developmental stage", Category.BIOLOGY)),
 		new Word("enzyme", new Hint("catalytic protein", Category.BIOLOGY)),
@@ -275,6 +278,7 @@ const HONEYCOMB = {
 		new Word("ermine", new Hint("black-tailed white weasel", Category.ZOOLOGY)),
 		new Word("eroded", new Hint("worn away", Category.GEOLOGY)),
 		new Word("euboea", new Hint("large island off Boeotia", Category.GEOGRAPHY)),
+		new Word("fabric", new Hint("cloth", Category.TEXTILE)),
 		new Word("falcon", [
 			new Hint("bird of prey, eg. peregrine", Category.ZOOLOGY),
 			new Hint("millennium or maltese", Category.FILM),
@@ -297,6 +301,7 @@ const HONEYCOMB = {
 			new Hint("its capital, Paris", Category.GEOGRAPHY),
 		]),
 		new Word("freeze", new Hint("solidify", Category.CHEMISTRY)),
+		new Word("fungus", new Hint("mushrooms are a type of this", Category.BIOLOGY)),
 		new Word("gambia", new Hint("its capital, Banjul", Category.GEOGRAPHY)),
 		new Word("gamete", new Hint("reproductive cell", Category.BIOLOGY)),
 		new Word("garnet", new Hint("red gem", Category.MINEROLOGY)),
@@ -482,6 +487,7 @@ const HONEYCOMB = {
 		]),
 		new Word("taurus", new Hint("bull sign", Category.ASTROLOGY)),
 		new Word("tephra", new Hint("volcanic ejecta", Category.GEOLOGY)),
+		new Word("thread", new Hint("used with needles, found on spools", Category.TEXTILE)),
 		new Word("tongue", new Hint("organ of taste and language", Category.MEDICINE)),
 		new Word("tucana", new Hint("toucan constellation", Category.ASTRONOMY)),
 		new Word("tundra", new Hint("arctic biome", Category.GEOGRAPHY)),
@@ -501,6 +507,7 @@ const HONEYCOMB = {
 		new Word("violet", new Hint("bluish purple", Category.COLOR)),
 		new Word("volans", new Hint("flying fish constellation", Category.ASTRONOMY)),
 		new Word("walrus", new Hint("tusked marine mammal", Category.ZOOLOGY)),
+		new Word("weaver", new Hint("textile producer", Category.TEXTILE)),
 		new Word("weight", new Hint("downward force", Category.PHYSICS)),
 		new Word("winter", new Hint("season after fall", Category.METEOROLOGY)),
 		new Word("yellow", new Hint("color between orange and green", Category.COLOR)),
