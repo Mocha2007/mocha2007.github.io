@@ -1,14 +1,16 @@
 html, body {
+	overflow: hidden;
 	user-select: none;
 }
 .hex {
 	background-color: #430;
-	height: 30vh;
-	line-height: 30vh;
+	height: 33vh;
+	line-height: 33vh;
 	position: absolute;
 	text-align: center;
 	vertical-align: middle;
-	width: 30vw;
+	width: 38vw;
+	clip-path: polygon(20% 0%, 80% 0%, 100% 50%, 80% 100%, 20% 100%, 0% 50%);
 }
 .letter {
 	background-color: #444;
@@ -20,6 +22,7 @@ html, body {
 	line-height: 2em;
 	position: absolute;
 	width: 2em;
+	z-index: 1;
 }
 .letter:hover {
 	background-color: #555;
@@ -37,7 +40,7 @@ html, body {
 	pointer-events: none;
 	position: absolute;
 	width: 2em;
-	z-index: 1;
+	z-index: 2;
 }
 .start::before {
 	content: '*';
@@ -52,13 +55,13 @@ html, body {
 }
 /* horizontal alignment of hexes */
 #hex1, #hex0, #hex4 {
-	left: 33vw;
+	left: 31vw;
 }
 #hex5, #hex6 {
 	left: 0;
 }
 #hex2, #hex3 {
-	left: 66vw;
+	left: 62vw;
 }
 /* vertical alignment of hexes */
 #hex1 {
@@ -77,27 +80,24 @@ html, body {
 	top: 66.67vh;
 }
 /* directions */
-.direction0 {
+.direction0, .direction3 {
 	left: 45%;
+}
+.direction1, .direction2 {
+	right: 12%;
+}
+.direction1, .direction5 {
+	top: 20%;
+}
+.direction2, .direction4 {
+	bottom: 20%;
+}
+.direction4, .direction5 {
+	left: 12%;
+}
+.direction0 {
 	top: 0;
 }
-.direction1 {
-	right: 0;
-	top: 15%;
-}
-.direction2 {
-	right: 0;
-	top: 70%;
-}
 .direction3 {
-	left: 45%;
 	bottom: 0;
-}
-.direction4 {
-	left: 0;
-	top: 70%;
-}
-.direction5 {
-	left: 0;
-	top: 15%;
 }
