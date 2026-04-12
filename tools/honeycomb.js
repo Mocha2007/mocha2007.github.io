@@ -79,11 +79,12 @@ class Clue {
 	 * @param {number} j 
 	 */
 	createTextCell(i, j){
-		const cellId = 5*i+j;
+		const cellId = 5*(i-1)+j;
 		const direction = (4 + i + j) % 6;
 		/** @type {HTMLDivElement} */
 		const elem = document.getElementById(`hex${i}`);
 		const cell = document.createElement('div');
+		cell.id = `letter${cellId}`;
 		cell.classList.add('letter');
 		cell.classList.add(`direction${direction}`);
 		cell.onclick = () => HONEYCOMB.letterNodes.select(cellId);
