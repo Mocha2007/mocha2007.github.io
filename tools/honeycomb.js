@@ -148,6 +148,7 @@ const HONEYCOMB = {
 			- all 6-letter constellations and planets
 			- all 6-letter countries (excl. Israel Kuwait Monaco)
 			- all 6-letter elements (excl. Cerium and Erbium)
+			- all 6-letter minecraft mobs (excl. new ones)
 			- partial: all 6-letter https://en.wikipedia.org/wiki/Planetary_nomenclature
 			- partial: https://en.wikipedia.org/wiki/List_of_animal_names
 		*/
@@ -207,6 +208,7 @@ const HONEYCOMB = {
 		new Word("donkey", [
 			new Hint("Shrek's partner", Category.FILM),
 			new Hint("presumably, a large burrito", Category.SPANISH),
+			new Hint("rideable Minecraft mob", Category.VIDEOGAME),
 		]),
 		new Word("dorado", [
 			new Hint("mahi-mahi constellation", Category.ASTRONOMY),
@@ -282,6 +284,10 @@ const HONEYCOMB = {
 			new Hint("citrus, eg. mandarin", Category.FOOD),
 		]),
 		new Word("oxygen", new Hint("second most abundant element in Earth's atmosphere", Category.CHEMISTRY)),
+		new Word("parrot", [
+			new Hint("imitative bird", Category.ZOOLOGY),
+			new Hint("Minecraft mob, dies to cookies", Category.VIDEOGAME),
+		]),
 		new Word("pictor", new Hint("painter constellation", Category.ASTRONOMY)),
 		new Word("pisces", new Hint("fish sign", Category.ASTROLOGY)),
 		new Word("poland", [
@@ -302,6 +308,10 @@ const HONEYCOMB = {
 			new Hint("invaded Ukraine in 2014 and 2022", Category.HISTORY),
 		]),
 		new Word("rwanda", new Hint("its capital, Kigali", Category.GEOGRAPHY)),
+		new Word("salmon", [
+			new Hint("fish used to make lox", Category.FOOD),
+			new Hint("Minecraft mob, one of four fish", Category.VIDEOGAME),
+		]),
 		new Word("saturn", [
 			new Hint("greatly ringed giant", Category.ASTRONOMY),
 			new Hint("greater malefic", Category.ASTROLOGY),
@@ -319,6 +329,10 @@ const HONEYCOMB = {
 		new Word("sicily", new Hint("largest Mediterranean island", Category.GEOGRAPHY)),
 		new Word("silver", new Hint("common coinage metal", Category.CHEMISTRY)),
 		new Word("sodium", new Hint("secondary constituent of table salt", Category.CHEMISTRY)),
+		new Word("spider", [
+			new Hint("common eight-legged critter", Category.ZOOLOGY),
+			new Hint("Minecraft string source", Category.VIDEOGAME),
+		]),
 		new Word("sulfur", new Hint("element said to smell of egg", Category.CHEMISTRY)),
 		new Word("sweden", new Hint("its capital, Stockholm", Category.GEOGRAPHY)),
 		new Word("switch", [
@@ -332,6 +346,7 @@ const HONEYCOMB = {
 			new Hint("american landfowl", Category.ZOOLOGY),
 			new Hint("its capital, Ankara", Category.GEOGRAPHY),
 		]),
+		new Word("turtle", new Hint("shelled reptile", Category.ZOOLOGY)),
 		new Word("tuvalu", new Hint("its capital, Funafuti", Category.GEOGRAPHY)),
 		new Word("uganda", new Hint("its capital, Kampala", Category.GEOGRAPHY)),
 		new Word("uranus", [
@@ -343,6 +358,10 @@ const HONEYCOMB = {
 		new Word("volans", new Hint("flying fish constellation", Category.ASTRONOMY)),
 		new Word("weight", new Hint("downward force", Category.PHYSICS)),
 		new Word("zambia", new Hint("its capital, Lusaka", Category.GEOGRAPHY)),
+		new Word("zombie", [
+			new Hint("horror staple monster", Category.FILM),
+			new Hint("second mob added to Minecraft", Category.VIDEOGAME),
+		]),
 	],
 	/** @type {Clue[]} */
 	clues: new Array(7).fill(undefined),
