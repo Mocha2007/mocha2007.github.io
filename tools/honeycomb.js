@@ -29,11 +29,13 @@ class Category {
 	static ASTRONOMY = "astronomy";
 	static ENGLISH = "english";
 	static GEOGRAPHY = "geography";
+	static HISTORY = "history";
 	static MISC = "miscellaneous";
 	static MUSIC = "music";
 	static FILM = "film";
 	static RELIGION = "religion";
 	static TRANSPORT = "transport";
+	static VIDEOGAME = "video games";
 	static ZOOLOGY = "zoology";
 }
 
@@ -181,6 +183,11 @@ const HONEYCOMB = {
 		]),
 		new Word("gambia", new Hint("its capital, Banjul", Category.GEOGRAPHY)),
 		new Word("gemini", new Hint("twin sign", Category.ASTROLOGY)),
+		new Word("gothic", [
+			new Hint("2001 RPG", Category.VIDEOGAME),
+			new Hint("of the east Germanic conquerers of Rome", Category.HISTORY),
+			new Hint("sans-serif, in other words", Category.MISC),
+		]),
 		new Word("greece", new Hint("its capital, Athens", Category.GEOGRAPHY)),
 		new Word("grouse", new Hint("landfowl, eg. ruffed, spruce, sooty", Category.ZOOLOGY)),
 		new Word("guinea", new Hint("its capital, Conakry", Category.GEOGRAPHY)),
