@@ -67,6 +67,8 @@ class Category {
 	static VIDEOGAME = "Video games";
 	static ZOOLOGY = "Zoology";
 }
+/** @type {Category[]} */
+Category.categories = Object.keys(Category).map(k => Category[k]);
 
 class Difficulty {
 	static EASY = 0;
@@ -573,6 +575,7 @@ const HONEYCOMB = {
 	config: {
 		avoidDupeCats: true,
 		avoidMultipleHardClues: true,
+		forcecat: '',
 	},
 	/** @type {Clue[]} */
 	clues: new Array(7).fill(undefined),
@@ -720,6 +723,19 @@ const HONEYCOMB = {
 			HONEYCOMB.config.avoidMultipleHardClues = button_amhc.checked;
 		};
 		controls.appendChild(button_amhc_label);
+		// force category dropdown
+		const cat_dropdown = document.createElement('select');
+		cat_dropdown.id = 'forcecat';
+		const catcounts = this.stats.categories;
+		const options = ['', ...Category.categories.filter(c => 7 <= catcounts[c])];
+		options.forEach(c => {
+			const option = document.createElement('option');
+			option.value = c;
+			option.innerHTML = c ? `${c} (${catcounts[c]})` : 'All Categories';
+			cat_dropdown.appendChild(option);
+		});
+		cat_dropdown.onclick = () => HONEYCOMB.config.forcecat = cat_dropdown.value;
+		controls.appendChild(cat_dropdown);
 	},
 	new(){
 		this.clear();
@@ -844,7 +860,7 @@ const HONEYCOMB = {
 		const matches = dictionary.filter(filter);
 		if (matches.length < 1) console.warn('no matches');
 		// if possible, avoid duplicate categories, and multiple hard clues
-		const catmatches = matches.filter(w => w.hints.some(h => !used_categories.includes(h.category) && (!HONEYCOMB.config.avoidMultipleHardClues || n_hard <= 0 || h.difficulty <= Difficulty.NORMAL)));
+		const catmatches = matches.filter(w => w.hints.some(h => (HONEYCOMB.config.forcecat ? h.category === HONEYCOMB.config.forcecat : !HONEYCOMB.config.avoidDupeCats || !used_categories.includes(h.category)) && (!HONEYCOMB.config.avoidMultipleHardClues || n_hard <= 0 || h.difficulty <= Difficulty.NORMAL)));
 		const arr = catmatches.length ? catmatches : matches;
 		return arr[Math.floor(Math.random() * arr.length)];
 	}
