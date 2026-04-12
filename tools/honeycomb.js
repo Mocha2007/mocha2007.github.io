@@ -571,6 +571,7 @@ const HONEYCOMB = {
 		new Word("zygote", new Hint("diploid cell fromed from two haploid gametes", Category.BIOLOGY)),
 	],
 	config: {
+		avoidDupeCats: true,
 		avoidMultipleHardClues: true,
 	},
 	/** @type {Clue[]} */
@@ -693,17 +694,26 @@ const HONEYCOMB = {
 		button_new.innerHTML = 'new';
 		button_new.onclick = () => HONEYCOMB.new_wrapper();
 		controls.appendChild(button_new);
+		// "avoid duplicate categories" button
+		const button_adc_label = document.createElement('label');
+		const button_adc = document.createElement('input');
+		button_adc.type = 'checkbox';
+		button_adc.id = 'adc';
+		button_adc.checked = this.config.avoidDupeCats;
+		button_adc_label.appendChild(button_adc);
+		button_adc_label.appendChild(document.createTextNode('Avoid Duplicate Categories'));
+		button_adc_label.onclick = () => HONEYCOMB.config.avoidDupeCats = button_adc.checked;
+		controls.appendChild(button_adc_label);
 		// "avoid multiple hard clues" button
 		const button_amhc_label = document.createElement('label');
 		const button_amhc = document.createElement('input');
 		button_amhc.type = 'checkbox';
 		button_amhc.id = 'ahmc';
-		button_amhc.checked = true;
+		button_amhc.checked = this.config.avoidMultipleHardClues;
 		button_amhc_label.appendChild(button_amhc);
 		button_amhc_label.appendChild(document.createTextNode('Avoid Excessive Difficulty'));
 		button_amhc_label.onclick = () => HONEYCOMB.config.avoidMultipleHardClues = button_amhc.checked;
 		controls.appendChild(button_amhc_label);
-
 	},
 	new(){
 		this.clear();

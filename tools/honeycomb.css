@@ -2,9 +2,6 @@ html, body {
 	overflow: hidden;
 	user-select: none;
 }
-label {
-	font-size: 75%;
-}
 .hex {
 	background-color: #430;
 	display: flex;
@@ -67,7 +64,10 @@ label {
 	content: 'Difficulty: ';
 }
 #controls {
+	display: flex;
 	height: 14vh;
+	flex-direction: column;
+	font-size: 75%;
 	left: 0;
 	padding: 1vh 1vw;
 	position: absolute;
