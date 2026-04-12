@@ -89,6 +89,7 @@ class Clue {
 		cell.classList.add('letter');
 		cell.classList.add(`direction${direction}`);
 		cell.onclick = () => HONEYCOMB.letterNodes.select(cellId);
+		cell.setAttribute('answer', this.getLetter(direction));
 		elem.appendChild(cell);
 	}
 	/** @param {Direction} direction */
@@ -262,6 +263,12 @@ const HONEYCOMB = {
 	},
 	clear(){
 		document.body.innerHTML = '';
+	},
+	debug(){
+		Array.from(document.getElementsByClassName('letter')).forEach(e => {
+			const answer = e.getAttribute('answer');
+			e.innerHTML = answer;
+		});
 	},
 	init(){
 		console.info(`${this.words.length} words`);
