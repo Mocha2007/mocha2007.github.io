@@ -54,6 +54,7 @@ class Category {
 	static PROGRAMMING = "Programming";
 	static RELIGION = "Religion";
 	static TRANSPORT = "Transport";
+	static VEXILLOLOGY = "Vexilollogy";
 	static VIDEOGAME = "Video games";
 	static ZOOLOGY = "Zoology";
 }
@@ -197,10 +198,12 @@ const HONEYCOMB = {
 		]),
 		new Word("cancer", new Hint("crab sign", Category.ASTROLOGY)),
 		new Word("canine", new Hint("of dogs", Category.ZOOLOGY)),
+		new Word("canton", new Hint("flag quarter", Category.VEXILLOLOGY)),
 		new Word("carbon", new Hint("main element of coal", Category.CHEMISTRY)),
 		new Word("carina", new Hint("keel constellation", Category.ASTRONOMY)),
 		new Word("catena", new Hint("chain of craters", Category.ASTRONOMY)),
 		new Word("cattle", new Hint("a cow or ox", Category.ZOOLOGY)),
+		new Word("charge", new Hint("symbol in the field of a flag", Category.VEXILLOLOGY)),
 		new Word("cobble", new Hint("rock, between a pebble and boulder in size", Category.GEOLOGY)),
 		new Word("iodine", new Hint("second-defining element", Category.CHEMISTRY)),
 		new Word("chasma", new Hint("deep, elongated, steep-sided depression", Category.ASTRONOMY)),
@@ -254,6 +257,7 @@ const HONEYCOMB = {
 			new Hint("beastly synonym of uncover", Category.ENGLISH),
 			new Hint("domesticated polecat", Category.ZOOLOGY),
 		]),
+		new Word("finial", new Hint("decorative flagpole cap", Category.VEXILLOLOGY)),
 		new Word("forest", new Hint("biome of trees", Category.GEOGRAPHY)),
 		new Word("fornax", new Hint("furnace constellation", Category.ASTRONOMY)),
 		new Word("fossil", new Hint("mineralized organism remains", Category.GEOLOGY)),
