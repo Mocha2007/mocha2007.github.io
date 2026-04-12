@@ -15,9 +15,9 @@ html, body {
 	border-radius: 5px;
 	color: white;
 	cursor: pointer;
-	height: 1em;
+	height: 2em;
 	position: absolute;
-	width: 1em;
+	width: 2em;
 }
 .letter:hover {
 	background-color: #555;
@@ -64,7 +64,7 @@ html, body {
 }
 /* directions */
 .direction0 {
-	left: 50%;
+	left: 45%;
 	top: 0;
 }
 .direction1 {
@@ -76,7 +76,7 @@ html, body {
 	top: 70%;
 }
 .direction3 {
-	left: 50%;
+	left: 45%;
 	bottom: 0;
 }
 .direction4 {
