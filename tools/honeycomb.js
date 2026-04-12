@@ -193,6 +193,27 @@ const HONEYCOMB = {
 	},
 	init(){
 		console.info(`${this.words.length} words`);
+		document.body.onkeydown = ev => {
+			console.debug(`keypress`, ev);
+			switch (ev.key) {
+				case 'Backspace':
+					// todo
+					break;
+				case 'Tab':
+					if (ev.shiftKey) {
+						// todo
+					}
+					else {
+						// todo
+					}
+					break;
+				default:
+					if (ev.key.length === 1) {
+						const char = ev.key.toLowerCase();
+						// todo
+					}
+			}
+		};
 		this.new_wrapper();
 	},
 	new(){

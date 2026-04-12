@@ -1,3 +1,9 @@
+html, body {
+	user-select: none;
+}
+.letter {
+	cursor: pointer;
+}
 .hex {
 	background-color: #430;
 	height: 30vh;
