@@ -11,6 +11,10 @@ class Hint {
 		const e = document.createElement('span');
 		e.classList.add('hint');
 		e.innerHTML = this.hint;
+		const cat = document.createElement('span');
+		cat.innerHTML = this.category;
+		cat.classList.add('category');
+		e.appendChild(cat);
 		return e;
 	}
 }
@@ -25,18 +29,18 @@ class Word {
 }
 
 class Category {
-	static ASTROLOGY = "astrology";
-	static ASTRONOMY = "astronomy";
-	static ENGLISH = "english";
-	static GEOGRAPHY = "geography";
-	static HISTORY = "history";
-	static MISC = "miscellaneous";
-	static MUSIC = "music";
-	static FILM = "film";
-	static RELIGION = "religion";
-	static TRANSPORT = "transport";
-	static VIDEOGAME = "video games";
-	static ZOOLOGY = "zoology";
+	static ASTROLOGY = "Astrology";
+	static ASTRONOMY = "Astronomy";
+	static ENGLISH = "English";
+	static GEOGRAPHY = "Geography";
+	static HISTORY = "History";
+	static MISC = "Miscellaneous";
+	static MUSIC = "Music";
+	static FILM = "Film";
+	static RELIGION = "Religion";
+	static TRANSPORT = "Transport";
+	static VIDEOGAME = "Video games";
+	static ZOOLOGY = "Zoology";
 }
 
 class Direction {

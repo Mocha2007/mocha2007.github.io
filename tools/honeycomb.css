@@ -7,6 +7,7 @@ html, body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	flex-direction: column;
 	height: 33vh;
 	position: absolute;
 	text-align: center;
@@ -45,6 +46,15 @@ html, body {
 	width: 4vh;
 	transform: translateY(-2.5vh);
 	z-index: 2;
+}
+.category {
+	color: grey;
+	display: block;
+	font-size: 75%;
+}
+.category::before {
+	color: skyblue;
+	content: 'Category: ';
 }
 #controls {
 	height: 14vh;
