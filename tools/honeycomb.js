@@ -7,6 +7,12 @@ class Hint {
 		/** @type {string} */
 		this.img = img; // todo
 	}
+	elem(){
+		const e = document.createElement('span');
+		e.classList.add('hint');
+		e.innerHTML = this.hint;
+		return e;
+	}
 }
 
 class Word {
@@ -69,7 +75,9 @@ class Clue {
 		const e = document.createElement('div');
 		e.classList.add('hex');
 		e.id = `hex${id}`;
-		e.innerHTML = this.word.word;
+		// choose a random hint, if not the center cell...
+		const hint = this.word.hints[Math.floor(Math.random() * this.word.hints.length)];
+		if (id) e.appendChild(hint.elem());
 		// todo: if id is 1-6, we need to create 4 of 6 letter spaces
 		// else, if id is 0, we need to create all 6...
 		return e;
