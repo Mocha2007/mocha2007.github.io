@@ -169,12 +169,26 @@ const HONEYCOMB = {
 		const WORD4_START = (7-WORD1.word.indexOf(CLUE0.getLetter(Direction.DL))) % 6;
 		const CLUE4 = new Clue(WORD4, WORD4_START);
 		console.debug(CLUE4, WORD0.word[(WORD0_START + 4) % 6]);
+		// next, choose the word down-right
+		const WORD5 = this.randomWordMatching(dictionary, w => new RegExp(`${CLUE0.getLetter(Direction.DR)}${CLUE3.getLetter(Direction.DN)}`).test(w.word));
+		dictionary.splice(dictionary.indexOf(WORD5), 1);
+		const WORD5_START = (11-WORD1.word.indexOf(CLUE0.getLetter(Direction.DR))) % 6;
+		const CLUE5 = new Clue(WORD5, WORD5_START);
+		console.debug(CLUE5, WORD0.word[(WORD0_START + 2) % 6]);
+		// next, choose the word down
+		const WORD6 = this.randomWordMatching(dictionary, w => new RegExp(`${CLUE4.getLetter(Direction.DR)}${CLUE0.getLetter(Direction.DN)}${CLUE5.getLetter(Direction.DL)}`).test(w.word));
+		dictionary.splice(dictionary.indexOf(WORD6), 1);
+		const WORD6_START = (6-WORD1.word.indexOf(CLUE0.getLetter(Direction.DR))) % 6;
+		const CLUE6 = new Clue(WORD6, WORD6_START);
+		console.debug(CLUE6, WORD0.word[(WORD0_START + 3) % 6]);
 		// create elements
 		document.body.appendChild(CLUE1.createElement(1));
 		document.body.appendChild(CLUE2.createElement(2));
 		document.body.appendChild(CLUE3.createElement(3));
 		document.body.appendChild(CLUE0.createElement(0));
-		document.body.appendChild(CLUE3.createElement(4));
+		document.body.appendChild(CLUE4.createElement(4));
+		document.body.appendChild(CLUE5.createElement(5));
+		document.body.appendChild(CLUE6.createElement(6));
 	},
 	new_wrapper(){
 		let success = false;
