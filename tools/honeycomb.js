@@ -78,9 +78,11 @@ const HONEYCOMB = {
 	words: [
 		new Word("antlia", new Hint("air pump constellation", Category.ASTRONOMY)),
 		new Word("aquila", new Hint("eagle constellation", Category.ASTRONOMY)),
+		new Word("astana", new Hint("capital of Turkey", Category.GEOGRAPHY)),
 		new Word("auriga", new Hint("charioteer constellation", Category.ASTRONOMY)),
 		new Word("bootes", new Hint("herdsman constellation", Category.ASTRONOMY)),
 		new Word("caelum", new Hint("chisel constellation", Category.ASTRONOMY)),
+		new Word("canada", new Hint("maple leaf flag", Category.GEOGRAPHY)),
 		new Word("cancer", new Hint("crab sign", Category.ASTROLOGY)),
 		new Word("carina", new Hint("keel constellation", Category.ASTRONOMY)),
 		new Word("corvus", new Hint("crow constellation", Category.ASTRONOMY)),
@@ -93,9 +95,14 @@ const HONEYCOMB = {
 			new Hint("SpaceX launch vehicle", Category.TRANSPORT),
 		]),
 		new Word("fornax", new Hint("furnace constellation", Category.ASTRONOMY)),
+		new Word("france", [
+			new Hint("country with the most francophones", Category.GEOGRAPHY),
+			new Hint("its capital, Paris", Category.GEOGRAPHY),
+		]),
 		new Word("gemini", new Hint("twin sign", Category.ASTROLOGY)),
 		new Word("hydrus", new Hint("lesser water snake constellation", Category.ASTRONOMY)),
 		new Word("itself", new Hint("third person singular neuter reflexive", Category.ENGLISH)),
+		new Word("mexico", new Hint("most populous Spanish-speaking country", Category.GEOGRAPHY)),
 		new Word("octans", new Hint("octant constellation", Category.ASTRONOMY)),
 		new Word("pictor", new Hint("painter constellation", Category.ASTRONOMY)),
 		new Word("pisces", new Hint("fish sign", Category.ASTROLOGY)),
@@ -140,11 +147,13 @@ const HONEYCOMB = {
 		console.debug(CLUE0);
 		// next, choose the word above
 		const WORD1 = this.randomWordMatching(dictionary, w => w.word.includes(CLUE0.getLetter(Direction.UP)));
+		dictionary.splice(dictionary.indexOf(WORD1), 1);
 		const WORD1_START = (9-WORD1.word.indexOf(CLUE0.getLetter(Direction.UP))) % 6;
 		const CLUE1 = new Clue(WORD1, WORD1_START);
 		console.debug(CLUE1, WORD0.word[WORD0_START]);
 		// next, choose the word above-left
 		const WORD2 = this.randomWordMatching(dictionary, w => new RegExp(`${CLUE1.getLetter(Direction.DL)}${CLUE0.getLetter(Direction.UL)}`).test(w.word));
+		dictionary.splice(dictionary.indexOf(WORD2), 1);
 		const WORD2_START = (8-WORD1.word.indexOf(CLUE0.getLetter(Direction.UL))) % 6;
 		const CLUE2 = new Clue(WORD2, WORD2_START);
 		console.debug(CLUE2, WORD0.word[(WORD0_START + 5) % 6]);
