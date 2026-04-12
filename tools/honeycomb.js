@@ -35,6 +35,7 @@ class Category {
 	static ENGLISH = "English";
 	static GEOGRAPHY = "Geography";
 	static HISTORY = "History";
+	static LANGUAGE = "Language";
 	static MEDICINE = "Medicine";
 	static MISC = "Miscellaneous";
 	static MUSIC = "Music";
@@ -74,9 +75,12 @@ class Direction {
 }
 
 class Clue {
-	constructor(word, start_index = 0){
+	constructor(word, start_index = 0, hint_index = -1){
 		/** @type {Word} */
 		this.word = word;
+		/** @type {Hint} */
+		// choose a random hint, if unspecified...
+		this.hint = hint_index < 0 ? this.word.hints[Math.floor(Math.random() * this.word.hints.length)] : this.word.hints[hint_index];
 		/** @type {number} I don't remember what this represents */
 		this.start_index = start_index;
 	}
@@ -84,9 +88,8 @@ class Clue {
 		const e = document.createElement('div');
 		e.classList.add('hex');
 		e.id = `hex${id}`;
-		// choose a random hint, if not the center cell...
-		const hint = this.word.hints[Math.floor(Math.random() * this.word.hints.length)];
-		if (id) e.appendChild(hint.elem());
+		// display hint, if not center cell
+		if (id) e.appendChild(this.hint.elem());
 		// create start indicator
 		const start = document.createElement('div');
 		start.classList.add('start');
@@ -194,7 +197,10 @@ const HONEYCOMB = {
 			new Hint("Shrek's partner", Category.FILM),
 			new Hint("presumably, a large burrito", Category.SPANISH),
 		]),
-		new Word("dorado", new Hint("mahi-mahi constellation", Category.ASTRONOMY)),
+		new Word("dorado", [
+			new Hint("mahi-mahi constellation", Category.ASTRONOMY),
+			new Hint("mythical golden city (second word)", Category.HISTORY),
+		]),
 		new Word("equine", new Hint("of horses", Category.ZOOLOGY)),
 		new Word("euboea", new Hint("large island off Boeotia", Category.GEOGRAPHY)),
 		new Word("falcon", [
@@ -203,7 +209,10 @@ const HONEYCOMB = {
 			new Hint("SpaceX launch vehicle", Category.TRANSPORT),
 		]),
 		new Word("feline", new Hint("of cats", Category.ZOOLOGY)),
-		new Word("ferret", new Hint("domesticated polecat", Category.ZOOLOGY)),
+		new Word("ferret", [
+			new Hint("beastly synonym of uncover", Category.ENGLISH),
+			new Hint("domesticated polecat", Category.ZOOLOGY),
+		]),
 		new Word("fornax", new Hint("furnace constellation", Category.ASTRONOMY)),
 		new Word("france", [
 			new Hint("country with the most francophones", Category.GEOGRAPHY),
@@ -218,29 +227,52 @@ const HONEYCOMB = {
 		]),
 		new Word("greece", new Hint("its capital, Athens", Category.GEOGRAPHY)),
 		new Word("grouse", new Hint("landfowl, eg. ruffed, spruce, sooty", Category.ZOOLOGY)),
-		new Word("guinea", new Hint("its capital, Conakry", Category.GEOGRAPHY)),
+		new Word("guinea", [
+			new Hint("a coin, worth twenty shillings", Category.HISTORY),
+			new Hint("its capital, Conakry", Category.GEOGRAPHY),
+			new Hint("most linguistically diverse island, (second word)", Category.LANGUAGE),
+			new Hint("preceding fowl and pig", Category.ZOOLOGY),
+		]),
 		new Word("guyana", new Hint("its capital, Georgetown", Category.GEOGRAPHY)),
-		new Word("hawaii", new Hint("Pacific kingdom invaded by the United States", Category.GEOGRAPHY)),
-		new Word("hornet", new Hint("large wasp", Category.ZOOLOGY)),
-		new Word("horses", new Hint("stallions or mares", Category.ZOOLOGY)),
+		new Word("hawaii", [
+			new Hint("American state surrounded entirely by ocean", Category.GEOGRAPHY),
+			new Hint("Pacific kingdom invaded by the United States", Category.HISTORY),
+		]),
+		new Word("hornet", [
+			new Hint("large wasp", Category.ZOOLOGY),
+			new Hint("beastly name of the F-18", Category.TRANSPORT),
+		]),
+		new Word("horses", [
+			new Hint("1988 Q Lazzarus song (second word)", Category.MUSIC),
+			new Hint("stallions or mares", Category.ZOOLOGY),
+		]),
 		new Word("hydrus", new Hint("lesser water snake constellation", Category.ASTRONOMY)),
 		new Word("itself", new Hint("third person singular neuter reflexive", Category.ENGLISH)),
 		new Word("jordan", new Hint("its capital, Amman", Category.GEOGRAPHY)),
 		new Word("latvia", new Hint("its capital, Riga", Category.GEOGRAPHY)),
 		new Word("lesbos", new Hint("island of Sappho", Category.GEOGRAPHY)),
 		new Word("lizard", new Hint("common quadrupedal reptile", Category.ZOOLOGY)),
-		new Word("locust", new Hint("swarming grasshopper", Category.ZOOLOGY)),
+		new Word("locust", [
+			new Hint("swarming grasshopper", Category.ZOOLOGY),
+			new Hint("one of three plagues sent to Egypt", Category.RELIGION),
+		]),
 		new Word("mexico", new Hint("most populous Spanish-speaking country", Category.GEOGRAPHY)),
 		new Word("myself", new Hint("first person singular reflexive", Category.ENGLISH)),
 		new Word("norway", new Hint("its capital, Oslo", Category.GEOGRAPHY)),
 		new Word("octans", new Hint("octant constellation", Category.ASTRONOMY)),
 		new Word("pictor", new Hint("painter constellation", Category.ASTRONOMY)),
 		new Word("pisces", new Hint("fish sign", Category.ASTROLOGY)),
-		new Word("poland", new Hint("its capital, Warsaw", Category.GEOGRAPHY)),
+		new Word("poland", [
+			new Hint("its capital, Warsaw", Category.GEOGRAPHY),
+			new Hint("its invasion brought about a world war", Category.HISTORY),
+		]),
 		new Word("puppis", new Hint("poop deck constellation", Category.ASTRONOMY)),
 		new Word("rabbit", new Hint("small hopping mammal", Category.ZOOLOGY)),
 		new Word("rhodes", new Hint("Greek island known for its Colossus", Category.GEOGRAPHY)),
-		new Word("russia", new Hint("its capital, Moscow", Category.GEOGRAPHY)),
+		new Word("russia", [
+			new Hint("its capital, Moscow", Category.GEOGRAPHY),
+			new Hint("invaded Ukraine in 2014 and 2022", Category.HISTORY),
+		]),
 		new Word("rwanda", new Hint("its capital, Kigali", Category.GEOGRAPHY)),
 		new Word("saturn", [
 			new Hint("greatly ringed giant", Category.ASTRONOMY),
@@ -248,9 +280,14 @@ const HONEYCOMB = {
 			new Hint("to Holst, the bringer of old age", Category.MUSIC),
 			new Hint("Roman god of agriculture and wealth", Category.RELIGION),
 			new Hint("father of Jupiter", Category.RELIGION),
+			new Hint("Sega console", Category.VIDEOGAME),
+			new Hint("rocket family which first brought humans to the moon", Category.TRANSPORT),
 		]),
 		new Word("scutum", new Hint("shield constellation", Category.ASTRONOMY)),
-		new Word("serbia", new Hint("its capital, Belgrade", Category.GEOGRAPHY)),
+		new Word("serbia", [
+			new Hint("its capital, Belgrade", Category.GEOGRAPHY),
+			new Hint("its invasion brought about a world war", Category.HISTORY),
+		]),
 		new Word("sicily", new Hint("largest Mediterranean island", Category.GEOGRAPHY)),
 		new Word("sweden", new Hint("its capital, Stockholm", Category.GEOGRAPHY)),
 		new Word("taurus", new Hint("bull sign", Category.ASTROLOGY)),
@@ -381,48 +418,56 @@ const HONEYCOMB = {
 		const WORD0_START = 0; // always
 		/** @type {Clue} */
 		const CLUE0 = new Clue(WORD0, WORD0_START);
+		const USED_CATEGORIES = [CLUE0.hint.category];
 		// console.debug(CLUE0);
 		// next, choose the word above
 		let re = new RegExp(`${CLUE0.getLetter(Direction.UP)}`);
-		const WORD1 = this.randomWordMatching(dictionary, w => re.test(w.word));
+		const WORD1 = this.randomWordMatching(dictionary, w => re.test(w.word), USED_CATEGORIES);
 		dictionary.splice(dictionary.indexOf(WORD1), 1);
 		const WORD1_START = (9-re.exec(WORD1.word).index) % 6;
-		const CLUE1 = new Clue(WORD1, WORD1_START);
+		// choose a hint w/ a category that is NOT in USED_CATEGORIES
+		let hint_id = WORD1.hints.findIndex(h => USED_CATEGORIES.includes(h.category));
+		const CLUE1 = new Clue(WORD1, WORD1_START, hint_id);
 		// console.debug(CLUE1, WORD0.word[WORD0_START]);
 		// next, choose the word above-left
 		re = new RegExp(`${CLUE1.getLetter(Direction.DL)}${CLUE0.getLetter(Direction.UL)}`);
-		const WORD6 = this.randomWordMatching(dictionary, w => re.test(w.word));
+		const WORD6 = this.randomWordMatching(dictionary, w => re.test(w.word), USED_CATEGORIES);
 		dictionary.splice(dictionary.indexOf(WORD6), 1);
 		const WORD6_START = (7-re.exec(WORD6.word).index) % 6;
-		const CLUE6 = new Clue(WORD6, WORD6_START);
+		hint_id = WORD6.hints.findIndex(h => USED_CATEGORIES.includes(h.category));
+		const CLUE6 = new Clue(WORD6, WORD6_START, hint_id);
 		// console.debug(CLUE2, WORD0.word[(WORD0_START + 5) % 6]);
 		// next, choose the word above-right
 		re = new RegExp(`${CLUE0.getLetter(Direction.UR)}${CLUE1.getLetter(Direction.DR)}`);
-		const WORD2 = this.randomWordMatching(dictionary, w => re.test(w.word));
+		const WORD2 = this.randomWordMatching(dictionary, w => re.test(w.word), USED_CATEGORIES);
 		dictionary.splice(dictionary.indexOf(WORD2), 1);
 		const WORD2_START = (10-re.exec(WORD2.word).index) % 6;
-		const CLUE2 = new Clue(WORD2, WORD2_START);
+		hint_id = WORD2.hints.findIndex(h => USED_CATEGORIES.includes(h.category));
+		const CLUE2 = new Clue(WORD2, WORD2_START, hint_id);
 		// console.debug(CLUE3, WORD0.word[(WORD0_START + 1) % 6]);
 		// next, choose the word down-left
 		re = new RegExp(`${CLUE6.getLetter(Direction.DN)}${CLUE0.getLetter(Direction.DL)}`);
-		const WORD5 = this.randomWordMatching(dictionary, w => re.test(w.word));
+		const WORD5 = this.randomWordMatching(dictionary, w => re.test(w.word), USED_CATEGORIES);
 		dictionary.splice(dictionary.indexOf(WORD5), 1);
 		const WORD5_START = (6-re.exec(WORD5.word).index) % 6;
-		const CLUE5 = new Clue(WORD5, WORD5_START);
+		hint_id = WORD5.hints.findIndex(h => USED_CATEGORIES.includes(h.category));
+		const CLUE5 = new Clue(WORD5, WORD5_START, hint_id);
 		// console.debug(CLUE4, WORD0.word[(WORD0_START + 4) % 6]);
 		// next, choose the word down-right
 		re = new RegExp(`${CLUE0.getLetter(Direction.DR)}${CLUE2.getLetter(Direction.DN)}`);
-		const WORD3 = this.randomWordMatching(dictionary, w => re.test(w.word));
+		const WORD3 = this.randomWordMatching(dictionary, w => re.test(w.word), USED_CATEGORIES);
 		dictionary.splice(dictionary.indexOf(WORD3), 1);
 		const WORD3_START = (11-re.exec(WORD3.word).index) % 6;
-		const CLUE3 = new Clue(WORD3, WORD3_START);
+		hint_id = WORD3.hints.findIndex(h => USED_CATEGORIES.includes(h.category));
+		const CLUE3 = new Clue(WORD3, WORD3_START, hint_id);
 		// console.debug(CLUE5, WORD0.word[(WORD0_START + 2) % 6]);
 		// next, choose the word down
 		re = new RegExp(`${CLUE5.getLetter(Direction.DR)}${CLUE0.getLetter(Direction.DN)}${CLUE3.getLetter(Direction.DL)}`);
-		const WORD4 = this.randomWordMatching(dictionary, w => re.test(w.word));
+		const WORD4 = this.randomWordMatching(dictionary, w => re.test(w.word), USED_CATEGORIES);
 		dictionary.splice(dictionary.indexOf(WORD4), 1);
 		const WORD4_START = (5-re.exec(WORD4.word).index) % 6;
-		const CLUE4 = new Clue(WORD4, WORD4_START);
+		hint_id = WORD4.hints.findIndex(h => USED_CATEGORIES.includes(h.category));
+		const CLUE4 = new Clue(WORD4, WORD4_START, hint_id);
 		// console.debug(CLUE6, WORD0.word[(WORD0_START + 3) % 6]);
 		// create elements
 		document.body.appendChild(CLUE1.createElement(1));
@@ -467,7 +512,7 @@ const HONEYCOMB = {
 	randomWordMatching(dictionary, filter = () => true, used_categories = []){
 		const matches = dictionary.filter(filter);
 		if (matches.length < 1) console.warn('no matches'); 
-		const catmatches = [];// matches.filter(w => w.hints.any(h => !used_categories.includes(h.category)));
+		const catmatches = matches.filter(w => w.hints.any(h => !used_categories.includes(h.category)));
 		const arr = catmatches.length ? catmatches : matches;
 		return arr[Math.floor(Math.random() * arr.length)];
 	}
