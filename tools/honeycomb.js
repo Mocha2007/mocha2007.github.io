@@ -253,6 +253,14 @@ const HONEYCOMB = {
 			this.setLetter();
 			this.advance(true);
 		},
+		check(){
+			for (let i = 0; i < 30; i++){
+				const letterNode = this.elem(i);
+				if (letterNode.getAttribute('answer') !== letterNode.innerHTML)
+					return false;
+			}
+			return true;
+		},
 		/** @returns {HTMLDivElement} */
 		elem(n = 0){
 			return document.getElementById(`letter${n}`);
@@ -305,6 +313,10 @@ const HONEYCOMB = {
 							HONEYCOMB.letterNodes.advance();
 						}
 					}
+			}
+			// check
+			if (HONEYCOMB.letterNodes.check()){
+				alert('Congratulations! You win! Press NEW to start a new game!');
 			}
 		};
 		// new game
