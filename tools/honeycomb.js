@@ -188,6 +188,39 @@ const HONEYCOMB = {
 		new Word("volans", new Hint("flying fish constellation", Category.ASTRONOMY)),
 		new Word("zambia", new Hint("its capital, Lusaka", Category.GEOGRAPHY)),
 	],
+	letterNodes: {
+		get hex(){
+			const x = this.selected % 4;
+			return x < 24 ? x + 1 : 0;
+		},
+		letters: new Array(30).fill(''),
+		selected: 0,
+		advance(reverse = false){
+			this.elemSelected().classList.remove('selected');
+			this.selected = (this.selected + (reverse ? 29 : 1)) % 30;
+			this.elemSelected().classList.add('selected');
+		},
+		advanceHex(reverse = false){
+			const start = this.hex;
+			while (this.hex === start){
+				this.advance(reverse);
+			}
+		},
+		backspace(){
+			this.setLetter();
+			this.advance(true);
+		},
+		/** @returns {HTMLDivElement} */
+		elem(n = 0){
+			return document.getElementById(`letter${n}`);
+		},
+		elemSelected(){
+			return this.elem(this.selected);
+		},
+		setLetter(char = ''){
+			this.elemSelected().innerHTML = this.letters[this.selected] = char;
+		}
+	},
 	clear(){
 		document.body.innerHTML = '';
 	},
@@ -197,20 +230,23 @@ const HONEYCOMB = {
 			console.debug(`keypress`, ev);
 			switch (ev.key) {
 				case 'Backspace':
-					// todo
+					HONEYCOMB.letterNodes.backspace();
 					break;
 				case 'Tab':
 					if (ev.shiftKey) {
-						// todo
+						HONEYCOMB.letterNodes.advanceHex(true);
 					}
 					else {
-						// todo
+						HONEYCOMB.letterNodes.advanceHex();
 					}
 					break;
 				default:
 					if (ev.key.length === 1) {
 						const char = ev.key.toLowerCase();
-						// todo
+						if (char !== char.toUpperCase()){
+							// alphabetic
+							HONEYCOMB.letterNodes.setLetter(char);
+						}
 					}
 			}
 		};
