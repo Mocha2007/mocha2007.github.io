@@ -80,6 +80,7 @@ const HONEYCOMB = {
 			Things added:
 			- all 6-letter constellations and planets
 			- all 6-letter countries (excl. Israel Kuwait Monaco)
+			- todo: https://en.wikipedia.org/wiki/List_of_animal_names
 		*/
 		new Word("adverb", new Hint("can modify adjectives and verbs", Category.ENGLISH)),
 		new Word("angola", new Hint("its capital, Luanda", Category.GEOGRAPHY)),
@@ -88,9 +89,11 @@ const HONEYCOMB = {
 		new Word("aquila", new Hint("eagle constellation", Category.ASTRONOMY)),
 		new Word("astana", new Hint("capital of Kazakhstan", Category.GEOGRAPHY)),
 		new Word("auriga", new Hint("charioteer constellation", Category.ASTRONOMY)),
+		new Word("beaver", new Hint("dam-building rodent", Category.ZOOLOGY)),
 		new Word("belize", new Hint("its capital, Belmopan", Category.GEOGRAPHY)),
 		new Word("bhutan", new Hint("its capital, Thimphu", Category.GEOGRAPHY)),
 		new Word("bootes", new Hint("herdsman constellation", Category.ASTRONOMY)),
+		new Word("bovine", new Hint("of cattle", Category.ZOOLOGY)),
 		new Word("brazil", new Hint("its capital, Brasília", Category.GEOGRAPHY)),
 		new Word("brunei", new Hint("its capital, Bandar Seri Begawan", Category.GEOGRAPHY)),
 		new Word("caelum", new Hint("chisel constellation", Category.ASTRONOMY)),
@@ -99,17 +102,26 @@ const HONEYCOMB = {
 			new Hint("maple leaf flag", Category.GEOGRAPHY),
 		]),
 		new Word("cancer", new Hint("crab sign", Category.ASTROLOGY)),
+		new Word("canine", new Hint("of dogs", Category.ZOOLOGY)),
+		new Word("cattle", new Hint("a cow or ox", Category.ZOOLOGY)),
 		new Word("carina", new Hint("keel constellation", Category.ASTRONOMY)),
 		new Word("corvus", new Hint("crow constellation", Category.ASTRONOMY)),
 		new Word("crater", new Hint("cup constellation", Category.ASTRONOMY)),
 		new Word("cygnus", new Hint("swan constellation", Category.ASTRONOMY)),
 		new Word("cyprus", new Hint("its capital, Nicosia", Category.GEOGRAPHY)),
+		new Word("donkey", [
+			new Hint("Shrek's partner", Category.FILM),
+			new Hint("presumably, a large burrito", Category.SPANISH),
+		]),
 		new Word("dorado", new Hint("mahi-mahi constellation", Category.ASTRONOMY)),
+		new Word("equine", new Hint("of horses", Category.ZOOLOGY)),
 		new Word("falcon", [
 			new Hint("bird of prey, eg. peregrine", Category.ZOOLOGY),
 			new Hint("millennium or maltese", Category.FILM),
 			new Hint("SpaceX launch vehicle", Category.TRANSPORT),
 		]),
+		new Word("feline", new Hint("of cats", Category.ZOOLOGY)),
+		new Word("ferret", new Hint("domesticated polecat", Category.ZOOLOGY)),
 		new Word("fornax", new Hint("furnace constellation", Category.ASTRONOMY)),
 		new Word("france", [
 			new Hint("country with the most francophones", Category.GEOGRAPHY),
@@ -120,6 +132,8 @@ const HONEYCOMB = {
 		new Word("greece", new Hint("its capital, Athens", Category.GEOGRAPHY)),
 		new Word("guinea", new Hint("its capital, Conakry", Category.GEOGRAPHY)),
 		new Word("guyana", new Hint("its capital, Georgetown", Category.GEOGRAPHY)),
+		new Word("hawaii", new Hint("Pacific kingdom invaded by the United States", Category.GEOGRAPHY)),
+		new Word("horses", new Hint("stallions or mares", Category.ZOOLOGY)),
 		new Word("hydrus", new Hint("lesser water snake constellation", Category.ASTRONOMY)),
 		new Word("itself", new Hint("third person singular neuter reflexive", Category.ENGLISH)),
 		new Word("jordan", new Hint("its capital, Amman", Category.GEOGRAPHY)),
@@ -132,6 +146,7 @@ const HONEYCOMB = {
 		new Word("pisces", new Hint("fish sign", Category.ASTROLOGY)),
 		new Word("poland", new Hint("its capital, Warsaw", Category.GEOGRAPHY)),
 		new Word("puppis", new Hint("poop deck constellation", Category.ASTRONOMY)),
+		new Word("rabbit", new Hint("small hopping mammal", Category.ZOOLOGY)),
 		new Word("russia", new Hint("its capital, Moscow", Category.GEOGRAPHY)),
 		new Word("rwanda", new Hint("its capital, Kigali", Category.GEOGRAPHY)),
 		new Word("saturn", [
