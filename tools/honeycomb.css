@@ -1,0 +1,34 @@
+.hex {
+	background-color: #430;
+	border: 0.1vh 0.1vw;
+	height: 30vh;
+	position: absolute;
+	text-align: center;
+	width: 30vw;
+}
+/* horizontal alignment of hexes */
+#hex1, #hex0, #hex6 {
+	left: 33vw;
+}
+#hex2, #hex4 {
+	left: 0;
+}
+#hex3, #hex5 {
+	left: 66vw;
+}
+/* vertical alignment of hexes */
+#hex1 {
+	top: 0;
+}
+#hex2, #hex3 {
+	top: 15vw;
+}
+#hex0 {
+	top: 30vw;
+}
+#hex4, #hex5 {
+	top: 45vw;
+}
+#hex6 {
+	top: 60vw;
+}
