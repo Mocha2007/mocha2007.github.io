@@ -75,8 +75,8 @@ class Clue {
 		return e;
 	}
 	/**
-	 * @param {number} i 
-	 * @param {number} j 
+	 * @param {number} i nth hex
+	 * @param {number} j nth letter within this hex
 	 */
 	createTextCell(i, j){
 		const cellId = 5*(i-1)+j;

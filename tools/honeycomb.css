@@ -69,11 +69,11 @@ html, body {
 }
 .direction1 {
 	right: 0;
-	top: 33%;
+	top: 15%;
 }
 .direction2 {
 	right: 0;
-	top: 67%;
+	top: 70%;
 }
 .direction3 {
 	left: 50%;
@@ -81,9 +81,9 @@ html, body {
 }
 .direction4 {
 	left: 0;
-	top: 67%;
+	top: 70%;
 }
 .direction5 {
 	left: 0;
-	top: 33%;
+	top: 15%;
 }
