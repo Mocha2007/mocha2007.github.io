@@ -42,6 +42,7 @@ class Category {
 	static LANGUAGE = "Language";
 	static MEASUREMENT = "Measurement";
 	static MEDICINE = "Medicine";
+	static MINEROLOGY = "Minerology";
 	static MISC = "Miscellaneous";
 	static MUSIC = "Music";
 	static FILM = "Film";
@@ -237,6 +238,7 @@ const HONEYCOMB = {
 			new Hint("its capital, Paris", Category.GEOGRAPHY),
 		]),
 		new Word("gambia", new Hint("its capital, Banjul", Category.GEOGRAPHY)),
+		new Word("garnet", new Hint("red gem", Category.MINEROLOGY)),
 		new Word("gemini", new Hint("twin sign", Category.ASTROLOGY)),
 		new Word("gothic", [
 			new Hint("2001 RPG", Category.VIDEOGAME),
@@ -273,6 +275,10 @@ const HONEYCOMB = {
 		new Word("kelvin", new Hint("SI unit of temperature", Category.MEASUREMENT)),
 		new Word("kidney", new Hint("blood filtration organ", Category.MEDICINE)),
 		new Word("latvia", new Hint("its capital, Riga", Category.GEOGRAPHY)),
+		new Word("lazuli", [
+			new Hint("blue stone (second word)", Category.MINEROLOGY),
+			new Hint("Minecraft ore used to enchant (second word)", Category.VIDEOGAME),
+		]),
 		new Word("lesbos", new Hint("island of Sappho", Category.GEOGRAPHY)),
 		new Word("lizard", new Hint("common quadrupedal reptile", Category.ZOOLOGY)),
 		new Word("locust", [
