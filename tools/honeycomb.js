@@ -226,6 +226,7 @@ const HONEYCOMB = {
 	},
 	init(){
 		console.info(`${this.words.length} words`);
+		// prepare keyboard controls
 		document.body.onkeydown = ev => {
 			console.debug(`keypress`, ev);
 			switch (ev.key) {
@@ -250,7 +251,20 @@ const HONEYCOMB = {
 					}
 			}
 		};
+		// new game
 		this.new_wrapper();
+	},
+	initControls(){
+		// prepare control panel
+		const controls = document.createElement('div');
+		controls.id = 'controls';
+		document.body.appendChild(controls);
+		// "new" button
+		const button_new = document.createElement('span');
+		button_new.classList.add('button');
+		button_new.innerHTML = 'new';
+		button_new.onclick = () => HONEYCOMB.new_wrapper();
+		controls.appendChild(button_new);
 	},
 	new(){
 		this.clear();
@@ -318,6 +332,7 @@ const HONEYCOMB = {
 				// pass...
 			}
 		}
+		this.initControls();
 	},
 	/** @returns {Word} */
 	randomWordMatching(dictionary, filter = () => true){

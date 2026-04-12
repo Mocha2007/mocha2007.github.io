@@ -17,6 +17,14 @@ html, body {
 .letter.selected {
 	background-color: #888;
 }
+#controls {
+	height: 16.67vh;
+	left: 0;
+	padding: 1vh 1vw;
+	position: absolute;
+	top: 0;
+	width: 33.33vw;
+}
 /* horizontal alignment of hexes */
 #hex1, #hex0, #hex6 {
 	left: 33vw;
