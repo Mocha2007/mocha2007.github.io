@@ -140,32 +140,32 @@ const HONEYCOMB = {
 		let dictionary = this.words.map(w => w);
 		// first, choose the mystery word for the center
 		const WORD0 = this.randomWordMatching(dictionary);
-		dictionary = dictionary.splice(dictionary.indexOf(WORD0), 1);
+		dictionary.splice(dictionary.indexOf(WORD0), 1);
 		const WORD0_START = 0; // always
 		/** @type {Clue} */
 		const CLUE0 = new Clue(WORD0, WORD0_START);
 		console.debug(CLUE0);
 		// next, choose the word above
 		const WORD1 = this.randomWordMatching(dictionary, w => w.word.includes(CLUE0.getLetter(Direction.UP)));
-		dictionary = dictionary.splice(dictionary.indexOf(WORD1), 1);
+		dictionary.splice(dictionary.indexOf(WORD1), 1);
 		const WORD1_START = (9-WORD1.word.indexOf(CLUE0.getLetter(Direction.UP))) % 6;
 		const CLUE1 = new Clue(WORD1, WORD1_START);
 		console.debug(CLUE1, WORD0.word[WORD0_START]);
 		// next, choose the word above-left
 		const WORD2 = this.randomWordMatching(dictionary, w => new RegExp(`${CLUE1.getLetter(Direction.DL)}${CLUE0.getLetter(Direction.UL)}`).test(w.word));
-		dictionary = dictionary.splice(dictionary.indexOf(WORD2), 1);
+		dictionary.splice(dictionary.indexOf(WORD2), 1);
 		const WORD2_START = (8-WORD1.word.indexOf(CLUE0.getLetter(Direction.UL))) % 6;
 		const CLUE2 = new Clue(WORD2, WORD2_START);
 		console.debug(CLUE2, WORD0.word[(WORD0_START + 5) % 6]);
 		// next, choose the word above-right
 		const WORD3 = this.randomWordMatching(dictionary, w => new RegExp(`${CLUE0.getLetter(Direction.UR)}${CLUE1.getLetter(Direction.DR)}`).test(w.word));
-		dictionary = dictionary.splice(dictionary.indexOf(WORD3), 1);
+		dictionary.splice(dictionary.indexOf(WORD3), 1);
 		const WORD3_START = (10-WORD1.word.indexOf(CLUE0.getLetter(Direction.UR))) % 6;
 		const CLUE3 = new Clue(WORD3, WORD3_START);
 		console.debug(CLUE3, WORD0.word[(WORD0_START + 1) % 6]);
 		// next, choose the word down-left
 		const WORD4 = this.randomWordMatching(dictionary, w => new RegExp(`${CLUE2.getLetter(Direction.DN)}${CLUE0.getLetter(Direction.DL)}`).test(w.word));
-		dictionary = dictionary.splice(dictionary.indexOf(WORD4), 1);
+		dictionary.splice(dictionary.indexOf(WORD4), 1);
 		const WORD4_START = (7-WORD1.word.indexOf(CLUE0.getLetter(Direction.DL))) % 6;
 		const CLUE4 = new Clue(WORD4, WORD4_START);
 		console.debug(CLUE4, WORD0.word[(WORD0_START + 4) % 6]);
