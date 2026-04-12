@@ -348,39 +348,45 @@ const HONEYCOMB = {
 		const CLUE0 = new Clue(WORD0, WORD0_START);
 		// console.debug(CLUE0);
 		// next, choose the word above
-		const WORD1 = this.randomWordMatching(dictionary, w => w.word.includes(CLUE0.getLetter(Direction.UP)));
+		let re = new RegExp(`${CLUE0.getLetter(Direction.UP)}`);
+		const WORD1 = this.randomWordMatching(dictionary, w => re.test(w.word));
 		dictionary.splice(dictionary.indexOf(WORD1), 1);
-		const WORD1_START = (9-WORD1.word.indexOf(CLUE0.getLetter(Direction.UP))) % 6;
+		const WORD1_START = (9-re.exec(WORD1.word).index) % 6;
 		const CLUE1 = new Clue(WORD1, WORD1_START);
 		// console.debug(CLUE1, WORD0.word[WORD0_START]);
 		// next, choose the word above-left
-		const WORD6 = this.randomWordMatching(dictionary, w => new RegExp(`${CLUE1.getLetter(Direction.DL)}${CLUE0.getLetter(Direction.UL)}`).test(w.word));
+		re = new RegExp(`${CLUE1.getLetter(Direction.DL)}${CLUE0.getLetter(Direction.UL)}`);
+		const WORD6 = this.randomWordMatching(dictionary, w => re.test(w.word));
 		dictionary.splice(dictionary.indexOf(WORD6), 1);
-		const WORD6_START = (8-WORD1.word.indexOf(CLUE0.getLetter(Direction.UL))) % 6;
+		const WORD6_START = (8-re.exec(WORD6.word).index) % 6;
 		const CLUE6 = new Clue(WORD6, WORD6_START);
 		// console.debug(CLUE2, WORD0.word[(WORD0_START + 5) % 6]);
 		// next, choose the word above-right
-		const WORD2 = this.randomWordMatching(dictionary, w => new RegExp(`${CLUE0.getLetter(Direction.UR)}${CLUE1.getLetter(Direction.DR)}`).test(w.word));
+		re = new RegExp(`${CLUE0.getLetter(Direction.UR)}${CLUE1.getLetter(Direction.DR)}`);
+		const WORD2 = this.randomWordMatching(dictionary, w => re.test(w.word));
 		dictionary.splice(dictionary.indexOf(WORD2), 1);
-		const WORD2_START = (10-WORD1.word.indexOf(CLUE0.getLetter(Direction.UR))) % 6;
+		const WORD2_START = (10-re.exec(WORD2.word).index) % 6;
 		const CLUE2 = new Clue(WORD2, WORD2_START);
 		// console.debug(CLUE3, WORD0.word[(WORD0_START + 1) % 6]);
 		// next, choose the word down-left
-		const WORD5 = this.randomWordMatching(dictionary, w => new RegExp(`${CLUE6.getLetter(Direction.DN)}${CLUE0.getLetter(Direction.DL)}`).test(w.word));
+		re = new RegExp(`${CLUE6.getLetter(Direction.DN)}${CLUE0.getLetter(Direction.DL)}`);
+		const WORD5 = this.randomWordMatching(dictionary, w => re.test(w.word));
 		dictionary.splice(dictionary.indexOf(WORD5), 1);
-		const WORD5_START = (7-WORD1.word.indexOf(CLUE0.getLetter(Direction.DL))) % 6;
+		const WORD5_START = (7-re.exec(WORD5.word).index) % 6;
 		const CLUE5 = new Clue(WORD5, WORD5_START);
 		// console.debug(CLUE4, WORD0.word[(WORD0_START + 4) % 6]);
 		// next, choose the word down-right
-		const WORD3 = this.randomWordMatching(dictionary, w => new RegExp(`${CLUE0.getLetter(Direction.DR)}${CLUE2.getLetter(Direction.DN)}`).test(w.word));
+		re = new RegExp(`${CLUE0.getLetter(Direction.DR)}${CLUE2.getLetter(Direction.DN)}`);
+		const WORD3 = this.randomWordMatching(dictionary, w => re.test(w.word));
 		dictionary.splice(dictionary.indexOf(WORD3), 1);
-		const WORD3_START = (11-WORD1.word.indexOf(CLUE0.getLetter(Direction.DR))) % 6;
+		const WORD3_START = (11-re.exec(WORD3.word).index) % 6;
 		const CLUE3 = new Clue(WORD3, WORD3_START);
 		// console.debug(CLUE5, WORD0.word[(WORD0_START + 2) % 6]);
 		// next, choose the word down
-		const WORD4 = this.randomWordMatching(dictionary, w => new RegExp(`${CLUE5.getLetter(Direction.DR)}${CLUE0.getLetter(Direction.DN)}${CLUE3.getLetter(Direction.DL)}`).test(w.word));
+		re = new RegExp(`${CLUE5.getLetter(Direction.DR)}${CLUE0.getLetter(Direction.DN)}${CLUE3.getLetter(Direction.DL)}`);
+		const WORD4 = this.randomWordMatching(dictionary, w => re.test(w.word));
 		dictionary.splice(dictionary.indexOf(WORD4), 1);
-		const WORD4_START = (6-WORD1.word.indexOf(CLUE0.getLetter(Direction.DR))) % 6;
+		const WORD4_START = (6-re.exec(WORD4.word).index) % 6;
 		const CLUE4 = new Clue(WORD4, WORD4_START);
 		// console.debug(CLUE6, WORD0.word[(WORD0_START + 3) % 6]);
 		// create elements
