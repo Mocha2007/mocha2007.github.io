@@ -176,6 +176,11 @@ const HONEYCOMB = {
 			new Hint("archaic term for the British isles", Category.GEOGRAPHY),
 			new Hint("second discovered trans-neptunian object", Category.ASTRONOMY),
 		]),
+		new Word("amazon", [
+			new Hint("mythical warrior woman", Category.RELIGION),
+			new Hint("largest tropical rainforest", Category.GEOGRAPHY),
+			new Hint("technology company that began as a bookseller", Category.TECH),
+		]),
 		new Word("ampere", new Hint("SI unit of current", Category.MEASUREMENT)),
 		new Word("angola", new Hint("its capital, Luanda", Category.GEOGRAPHY)),
 		new Word("ankara", new Hint("capital of Turkey", Category.GEOGRAPHY)),
@@ -226,6 +231,7 @@ const HONEYCOMB = {
 		new Word("chasma", new Hint("deep, elongated, steep-sided depression", Category.ASTRONOMY)),
 		new Word("cherry", new Hint("small red fruit", Category.FOOD)),
 		new Word("cobalt", new Hint("metal used in blue pigments", Category.CHEMISTRY)),
+		new Word("coffee", new Hint("dark caffeinated beverage", Category.FOOD)),
 		new Word("collis", new Hint("small hill", Category.ASTRONOMY)),
 		new Word("colony", new Hint("organization of conspecifics", Category.BIOLOGY)),
 		new Word("copper", new Hint("primary constituent of brass and bronze", Category.CHEMISTRY)),
@@ -350,6 +356,7 @@ const HONEYCOMB = {
 		new Word("luster", new Hint("how light interacts with a rock surface", Category.GEOLOGY)),
 		new Word("mantle", new Hint("layer between the crust and core", Category.GEOLOGY)),
 		new Word("marble", new Hint("white metamorphic rock", Category.GEOLOGY)),
+		new Word("maroon", new Hint("dark red", Category.COLOR)),
 		new Word("matrix", [
 			new Hint("material between eukaryotic cells", Category.BIOLOGY),
 			new Hint("medium in which grains of material are embedded", Category.GEOLOGY),
@@ -409,6 +416,7 @@ const HONEYCOMB = {
 		new Word("radium", new Hint("radioactive alkaline earth metal", Category.CHEMISTRY)),
 		new Word("rennet", new Hint("cheesemaking enzymes", Category.FOOD)),
 		new Word("rhodes", new Hint("Greek island known for its Colossus", Category.GEOGRAPHY)),
+		new Word("russet", new Hint("reddish brown", Category.COLOR)),
 		new Word("russia", [
 			new Hint("its capital, Moscow", Category.GEOGRAPHY),
 			new Hint("invaded Ukraine in 2014 and 2022", Category.HISTORY),
@@ -476,9 +484,11 @@ const HONEYCOMB = {
 			new Hint("Greek god of the sky", Category.RELIGION),
 			new Hint("father of the Titans", Category.RELIGION),
 		]),
+		new Word("violet", new Hint("bluish purple", Category.COLOR)),
 		new Word("volans", new Hint("flying fish constellation", Category.ASTRONOMY)),
 		new Word("weight", new Hint("downward force", Category.PHYSICS)),
 		new Word("winter", new Hint("season after fall", Category.METEOROLOGY)),
+		new Word("yellow", new Hint("color between orange and green", Category.COLOR)),
 		new Word("yogurt", new Hint("fermented milk product", Category.FOOD)),
 		new Word("zambia", new Hint("its capital, Lusaka", Category.GEOGRAPHY)),
 		new Word("zombie", [
