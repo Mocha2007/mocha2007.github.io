@@ -534,48 +534,54 @@ const HONEYCOMB = {
 		dictionary.splice(dictionary.indexOf(WORD1), 1);
 		const WORD1_START = (9-re.exec(WORD1.word).index) % 6;
 		// choose a hint w/ a category that is NOT in USED_CATEGORIES
-		let hint_id = WORD1.hints.findIndex(h => USED_CATEGORIES.includes(h.category));
+		let hint_id = WORD1.hints.findIndex(h => !USED_CATEGORIES.includes(h.category));
 		const CLUE1 = new Clue(WORD1, WORD1_START, hint_id);
+		USED_CATEGORIES.push(CLUE1.hint.category);
 		// console.debug(CLUE1, WORD0.word[WORD0_START]);
 		// next, choose the word above-left
 		re = new RegExp(`${CLUE1.getLetter(Direction.DL)}${CLUE0.getLetter(Direction.UL)}`);
 		const WORD6 = this.randomWordMatching(dictionary, w => re.test(w.word), USED_CATEGORIES);
 		dictionary.splice(dictionary.indexOf(WORD6), 1);
 		const WORD6_START = (7-re.exec(WORD6.word).index) % 6;
-		hint_id = WORD6.hints.findIndex(h => USED_CATEGORIES.includes(h.category));
+		hint_id = WORD6.hints.findIndex(h => !USED_CATEGORIES.includes(h.category));
 		const CLUE6 = new Clue(WORD6, WORD6_START, hint_id);
+		USED_CATEGORIES.push(CLUE6.hint.category);
 		// console.debug(CLUE2, WORD0.word[(WORD0_START + 5) % 6]);
 		// next, choose the word above-right
 		re = new RegExp(`${CLUE0.getLetter(Direction.UR)}${CLUE1.getLetter(Direction.DR)}`);
 		const WORD2 = this.randomWordMatching(dictionary, w => re.test(w.word), USED_CATEGORIES);
 		dictionary.splice(dictionary.indexOf(WORD2), 1);
 		const WORD2_START = (10-re.exec(WORD2.word).index) % 6;
-		hint_id = WORD2.hints.findIndex(h => USED_CATEGORIES.includes(h.category));
+		hint_id = WORD2.hints.findIndex(h => !USED_CATEGORIES.includes(h.category));
 		const CLUE2 = new Clue(WORD2, WORD2_START, hint_id);
+		USED_CATEGORIES.push(CLUE2.hint.category);
 		// console.debug(CLUE3, WORD0.word[(WORD0_START + 1) % 6]);
 		// next, choose the word down-left
 		re = new RegExp(`${CLUE6.getLetter(Direction.DN)}${CLUE0.getLetter(Direction.DL)}`);
 		const WORD5 = this.randomWordMatching(dictionary, w => re.test(w.word), USED_CATEGORIES);
 		dictionary.splice(dictionary.indexOf(WORD5), 1);
 		const WORD5_START = (6-re.exec(WORD5.word).index) % 6;
-		hint_id = WORD5.hints.findIndex(h => USED_CATEGORIES.includes(h.category));
+		hint_id = WORD5.hints.findIndex(h => !USED_CATEGORIES.includes(h.category));
 		const CLUE5 = new Clue(WORD5, WORD5_START, hint_id);
+		USED_CATEGORIES.push(CLUE5.hint.category);
 		// console.debug(CLUE4, WORD0.word[(WORD0_START + 4) % 6]);
 		// next, choose the word down-right
 		re = new RegExp(`${CLUE0.getLetter(Direction.DR)}${CLUE2.getLetter(Direction.DN)}`);
 		const WORD3 = this.randomWordMatching(dictionary, w => re.test(w.word), USED_CATEGORIES);
 		dictionary.splice(dictionary.indexOf(WORD3), 1);
 		const WORD3_START = (11-re.exec(WORD3.word).index) % 6;
-		hint_id = WORD3.hints.findIndex(h => USED_CATEGORIES.includes(h.category));
+		hint_id = WORD3.hints.findIndex(h => !USED_CATEGORIES.includes(h.category));
 		const CLUE3 = new Clue(WORD3, WORD3_START, hint_id);
+		USED_CATEGORIES.push(CLUE3.hint.category);
 		// console.debug(CLUE5, WORD0.word[(WORD0_START + 2) % 6]);
 		// next, choose the word down
 		re = new RegExp(`${CLUE5.getLetter(Direction.DR)}${CLUE0.getLetter(Direction.DN)}${CLUE3.getLetter(Direction.DL)}`);
 		const WORD4 = this.randomWordMatching(dictionary, w => re.test(w.word), USED_CATEGORIES);
 		dictionary.splice(dictionary.indexOf(WORD4), 1);
 		const WORD4_START = (5-re.exec(WORD4.word).index) % 6;
-		hint_id = WORD4.hints.findIndex(h => USED_CATEGORIES.includes(h.category));
+		hint_id = WORD4.hints.findIndex(h => !USED_CATEGORIES.includes(h.category));
 		const CLUE4 = new Clue(WORD4, WORD4_START, hint_id);
+		USED_CATEGORIES.push(CLUE4.hint.category);
 		// console.debug(CLUE6, WORD0.word[(WORD0_START + 3) % 6]);
 		// create elements
 		document.body.appendChild(CLUE1.createElement(1));
@@ -610,17 +616,22 @@ const HONEYCOMB = {
 				this.new();
 				break;
 			}
-			catch {
+			catch (e) {
 				// pass...
+				// console.warn(e);
 			}
 		}
 		this.initControls();
 	},
-	/** @returns {Word} */
+	/**
+	 * @param {Word[]} dictionary
+	 * @param {Category[]} used_categories
+	 * @returns {Word}
+	 */
 	randomWordMatching(dictionary, filter = () => true, used_categories = []){
 		const matches = dictionary.filter(filter);
 		if (matches.length < 1) console.warn('no matches'); 
-		const catmatches = matches.filter(w => w.hints.any(h => !used_categories.includes(h.category)));
+		const catmatches = matches.filter(w => w.hints.some(h => !used_categories.includes(h.category)));
 		const arr = catmatches.length ? catmatches : matches;
 		return arr[Math.floor(Math.random() * arr.length)];
 	}
