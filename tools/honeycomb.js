@@ -81,6 +81,7 @@ const HONEYCOMB = {
 			- all 6-letter constellations and planets
 			- all 6-letter countries (excl. Israel Kuwait Monaco)
 		*/
+		new Word("adverb", new Hint("can modify adjectives and verbs", Category.ENGLISH)),
 		new Word("angola", new Hint("its capital, Luanda", Category.GEOGRAPHY)),
 		new Word("ankara", new Hint("capital of Turkey", Category.GEOGRAPHY)),
 		new Word("antlia", new Hint("air pump constellation", Category.ASTRONOMY)),
@@ -124,6 +125,7 @@ const HONEYCOMB = {
 		new Word("jordan", new Hint("its capital, Amman", Category.GEOGRAPHY)),
 		new Word("latvia", new Hint("its capital, Riga", Category.GEOGRAPHY)),
 		new Word("mexico", new Hint("most populous Spanish-speaking country", Category.GEOGRAPHY)),
+		new Word("myself", new Hint("first person singular reflexive", Category.ENGLISH)),
 		new Word("norway", new Hint("its capital, Oslo", Category.GEOGRAPHY)),
 		new Word("octans", new Hint("octant constellation", Category.ASTRONOMY)),
 		new Word("pictor", new Hint("painter constellation", Category.ASTRONOMY)),
