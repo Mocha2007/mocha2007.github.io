@@ -505,11 +505,16 @@ const HONEYCOMB = {
 		new Word("yellow", new Hint("color between orange and green", Category.COLOR)),
 		new Word("yogurt", new Hint("fermented milk product", Category.FOOD)),
 		new Word("zambia", new Hint("its capital, Lusaka", Category.GEOGRAPHY)),
+		new Word("zealot", new Hint("fanatic", Category.RELIGION)),
+		new Word("zenith", new Hint("the point directly above the observer", Category.ASTRONOMY)),
+		new Word("zither", new Hint("guitar ancestor", Category.MUSIC)),
+		new Word("zodiac", new Hint("the twelve signs of the ecliptic", Category.ASTROLOGY)),
 		new Word("zombie", [
 			new Hint("horror staple monster", Category.FILM),
 			new Hint("second mob added to Minecraft", Category.VIDEOGAME),
 		]),
 		new Word("zircon", new Hint("key mineral of geochronology", Category.GEOLOGY)),
+		new Word("zygote", new Hint("diploid cell fromed from two haploid gametes", Category.BIOLOGY)),
 	],
 	/** @type {Clue[]} */
 	clues: new Array(7).fill(undefined),
