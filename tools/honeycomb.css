@@ -21,14 +21,14 @@
 	top: 0;
 }
 #hex2, #hex3 {
-	top: 15vw;
+	top: 16.67vh;
 }
 #hex0 {
-	top: 30vw;
+	top: 33.33vh;
 }
 #hex4, #hex5 {
-	top: 45vw;
+	top: 50vh;
 }
 #hex6 {
-	top: 60vw;
+	top: 66.67vh;
 }
