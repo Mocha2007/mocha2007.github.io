@@ -16,7 +16,7 @@ html, body {
 	color: white;
 	cursor: pointer;
 	height: 1em;
-	position: relative;
+	position: absolute;
 	width: 1em;
 }
 .letter:hover {
