@@ -130,7 +130,9 @@ class Clue {
 		this.word = word;
 		/** @type {Hint} */
 		// choose a random hint, if unspecified...
-		this.hint = hint_index < 0 ? this.word.hints[Math.floor(Math.random() * this.word.hints.length)] : this.word.hints[hint_index];
+		this.hint = hint_index < 0
+			? HONEYCOMB.config.forcecat ? this.word.hints.find(h => h.category === HONEYCOMB.config.forcecat) : this.word.hints[Math.floor(Math.random() * this.word.hints.length)]
+			: this.word.hints[hint_index];
 		/** @type {number} I don't remember what this represents */
 		this.start_index = start_index;
 	}
@@ -738,6 +740,7 @@ const HONEYCOMB = {
 		controls.appendChild(cat_dropdown);
 	},
 	new(){
+		const fi = h => HONEYCOMB.config.forcecat ? h.category === HONEYCOMB.config.forcecat : !USED_CATEGORIES.includes(h.category);
 		this.clear();
 		let dictionary = this.words.map(w => w);
 		let n_hard = 0;
@@ -756,7 +759,7 @@ const HONEYCOMB = {
 		dictionary.splice(dictionary.indexOf(WORD1), 1);
 		const WORD1_START = (9-re.exec(WORD1.word).index) % 6;
 		// choose a hint w/ a category that is NOT in USED_CATEGORIES
-		let hint_id = WORD1.hints.findIndex(h => !USED_CATEGORIES.includes(h.category));
+		let hint_id = WORD1.hints.findIndex(fi);
 		const CLUE1 = new Clue(WORD1, WORD1_START, hint_id);
 		USED_CATEGORIES.push(CLUE1.hint.category);
 		n_hard += Difficulty.NORMAL < CLUE1.hint.difficulty;
@@ -766,7 +769,7 @@ const HONEYCOMB = {
 		const WORD6 = this.randomWordMatching(dictionary, w => re.test(w.word), USED_CATEGORIES, n_hard);
 		dictionary.splice(dictionary.indexOf(WORD6), 1);
 		const WORD6_START = (7-re.exec(WORD6.word).index) % 6;
-		hint_id = WORD6.hints.findIndex(h => !USED_CATEGORIES.includes(h.category));
+		hint_id = WORD6.hints.findIndex(fi);
 		const CLUE6 = new Clue(WORD6, WORD6_START, hint_id);
 		USED_CATEGORIES.push(CLUE6.hint.category);
 		n_hard += Difficulty.NORMAL < CLUE6.hint.difficulty;
@@ -776,7 +779,7 @@ const HONEYCOMB = {
 		const WORD2 = this.randomWordMatching(dictionary, w => re.test(w.word), USED_CATEGORIES, n_hard);
 		dictionary.splice(dictionary.indexOf(WORD2), 1);
 		const WORD2_START = (10-re.exec(WORD2.word).index) % 6;
-		hint_id = WORD2.hints.findIndex(h => !USED_CATEGORIES.includes(h.category));
+		hint_id = WORD2.hints.findIndex(fi);
 		const CLUE2 = new Clue(WORD2, WORD2_START, hint_id);
 		USED_CATEGORIES.push(CLUE2.hint.category);
 		n_hard += Difficulty.NORMAL < CLUE2.hint.difficulty;
@@ -786,7 +789,7 @@ const HONEYCOMB = {
 		const WORD5 = this.randomWordMatching(dictionary, w => re.test(w.word), USED_CATEGORIES, n_hard);
 		dictionary.splice(dictionary.indexOf(WORD5), 1);
 		const WORD5_START = (6-re.exec(WORD5.word).index) % 6;
-		hint_id = WORD5.hints.findIndex(h => !USED_CATEGORIES.includes(h.category));
+		hint_id = WORD5.hints.findIndex(fi);
 		const CLUE5 = new Clue(WORD5, WORD5_START, hint_id);
 		USED_CATEGORIES.push(CLUE5.hint.category);
 		n_hard += Difficulty.NORMAL < CLUE5.hint.difficulty;
@@ -796,7 +799,7 @@ const HONEYCOMB = {
 		const WORD3 = this.randomWordMatching(dictionary, w => re.test(w.word), USED_CATEGORIES, n_hard);
 		dictionary.splice(dictionary.indexOf(WORD3), 1);
 		const WORD3_START = (11-re.exec(WORD3.word).index) % 6;
-		hint_id = WORD3.hints.findIndex(h => !USED_CATEGORIES.includes(h.category));
+		hint_id = WORD3.hints.findIndex(fi);
 		const CLUE3 = new Clue(WORD3, WORD3_START, hint_id);
 		USED_CATEGORIES.push(CLUE3.hint.category);
 		n_hard += Difficulty.NORMAL < CLUE3.hint.difficulty;
@@ -806,7 +809,7 @@ const HONEYCOMB = {
 		const WORD4 = this.randomWordMatching(dictionary, w => re.test(w.word), USED_CATEGORIES, n_hard);
 		dictionary.splice(dictionary.indexOf(WORD4), 1);
 		const WORD4_START = (5-re.exec(WORD4.word).index) % 6;
-		hint_id = WORD4.hints.findIndex(h => !USED_CATEGORIES.includes(h.category));
+		hint_id = WORD4.hints.findIndex(fi);
 		const CLUE4 = new Clue(WORD4, WORD4_START, hint_id);
 		USED_CATEGORIES.push(CLUE4.hint.category);
 		n_hard += Difficulty.NORMAL < CLUE4.hint.difficulty;
@@ -857,10 +860,10 @@ const HONEYCOMB = {
 	 * @returns {Word}
 	 */
 	randomWordMatching(dictionary, filter = () => true, used_categories = [], n_hard = 0){
-		const matches = dictionary.filter(filter);
+		const matches = dictionary.filter(filter).filter(w => w.hints.some(h => !HONEYCOMB.config.forcecat || h.category === HONEYCOMB.config.forcecat));
 		if (matches.length < 1) console.warn('no matches');
 		// if possible, avoid duplicate categories, and multiple hard clues
-		const catmatches = matches.filter(w => w.hints.some(h => (HONEYCOMB.config.forcecat ? h.category === HONEYCOMB.config.forcecat : !HONEYCOMB.config.avoidDupeCats || !used_categories.includes(h.category)) && (!HONEYCOMB.config.avoidMultipleHardClues || n_hard <= 0 || h.difficulty <= Difficulty.NORMAL)));
+		const catmatches = matches.filter(w => w.hints.some(h => (HONEYCOMB.config.forcecat || !HONEYCOMB.config.avoidDupeCats || !used_categories.includes(h.category)) && (!HONEYCOMB.config.avoidMultipleHardClues || n_hard <= 0 || h.difficulty <= Difficulty.NORMAL)));
 		const arr = catmatches.length ? catmatches : matches;
 		return arr[Math.floor(Math.random() * arr.length)];
 	}
