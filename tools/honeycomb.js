@@ -429,11 +429,10 @@ const HONEYCOMB = {
 		});
 	},
 	new_wrapper(){
-		let success = false;
-		while (!success){
+		for (let i = 0; i < 100000; i++){
 			try {
 				this.new();
-				success = true;
+				break;
 			}
 			catch {
 				// pass...
@@ -442,10 +441,12 @@ const HONEYCOMB = {
 		this.initControls();
 	},
 	/** @returns {Word} */
-	randomWordMatching(dictionary, filter = () => true){
+	randomWordMatching(dictionary, filter = () => true, used_categories = []){
 		const matches = dictionary.filter(filter);
 		if (matches.length < 1) console.warn('no matches'); 
-		return matches[Math.floor(Math.random() * matches.length)];
+		const catmatches = [];// matches.filter(w => w.hints.any(h => !used_categories.includes(h.category)));
+		const arr = catmatches.length ? catmatches : matches;
+		return arr[Math.floor(Math.random() * arr.length)];
 	}
 };
 
