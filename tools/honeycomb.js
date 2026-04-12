@@ -32,7 +32,11 @@ class Category {
 	static ANIME = "Anime";
 	static ASTROLOGY = "Astrology";
 	static ASTRONOMY = "Astronomy";
+	static BIOLOGY = "Biology";
+	static CHEMISTRY = "Chemistry";
+	static COLOR = "Color";
 	static ENGLISH = "English";
+	static FOOD = "Food";
 	static GEOGRAPHY = "Geography";
 	static HISTORY = "History";
 	static LANGUAGE = "Language";
@@ -143,6 +147,7 @@ const HONEYCOMB = {
 			Things added:
 			- all 6-letter constellations and planets
 			- all 6-letter countries (excl. Israel Kuwait Monaco)
+			- all 6-letter elements (excl. Cerium and Erbium)
 			- partial: all 6-letter https://en.wikipedia.org/wiki/Planetary_nomenclature
 			- partial: https://en.wikipedia.org/wiki/List_of_animal_names
 		*/
@@ -162,6 +167,7 @@ const HONEYCOMB = {
 		new Word("aquila", new Hint("eagle constellation", Category.ASTRONOMY)),
 		new Word("astana", new Hint("capital of Kazakhstan", Category.GEOGRAPHY)),
 		new Word("auriga", new Hint("charioteer constellation", Category.ASTRONOMY)),
+		new Word("barium", new Hint("in pure form, this element is a common radiocontrast agent", Category.CHEMISTRY)),
 		new Word("beaver", new Hint("dam-building rodent", Category.ZOOLOGY)),
 		new Word("belize", new Hint("its capital, Belmopan", Category.GEOGRAPHY)),
 		new Word("bhutan", new Hint("its capital, Thimphu", Category.GEOGRAPHY)),
@@ -176,11 +182,15 @@ const HONEYCOMB = {
 		]),
 		new Word("cancer", new Hint("crab sign", Category.ASTROLOGY)),
 		new Word("canine", new Hint("of dogs", Category.ZOOLOGY)),
+		new Word("carbon", new Hint("main element of coal", Category.CHEMISTRY)),
+		new Word("carina", new Hint("keel constellation", Category.ASTRONOMY)),
 		new Word("catena", new Hint("chain of craters", Category.ASTRONOMY)),
 		new Word("cattle", new Hint("a cow or ox", Category.ZOOLOGY)),
-		new Word("carina", new Hint("keel constellation", Category.ASTRONOMY)),
+		new Word("iodine", new Hint("second-defining element", Category.CHEMISTRY)),
 		new Word("chasma", new Hint("deep, elongated, steep-sided depression", Category.ASTRONOMY)),
+		new Word("cobalt", new Hint("metal used in blue pigments", Category.CHEMISTRY)),
 		new Word("collis", new Hint("small hill", Category.ASTRONOMY)),
+		new Word("copper", new Hint("primary constituent of brass and bronze", Category.CHEMISTRY)),
 		new Word("corona", [
 			new Hint("outer stellar atmosphere", Category.ASTRONOMY),
 			new Hint("Mexican beer", Category.MISC),
@@ -191,6 +201,7 @@ const HONEYCOMB = {
 			new Hint("cup constellation", Category.ASTRONOMY),
 			new Hint("circular depression, usually due to an impact", Category.ASTRONOMY),
 		]),
+		new Word("curium", new Hint("actinide alpha source", Category.CHEMISTRY)),
 		new Word("cygnus", new Hint("swan constellation", Category.ASTRONOMY)),
 		new Word("cyprus", new Hint("its capital, Nicosia", Category.GEOGRAPHY)),
 		new Word("donkey", [
@@ -234,6 +245,7 @@ const HONEYCOMB = {
 			new Hint("preceding fowl and pig", Category.ZOOLOGY),
 		]),
 		new Word("guyana", new Hint("its capital, Georgetown", Category.GEOGRAPHY)),
+		new Word("helium", new Hint("element discovered in the sun", Category.CHEMISTRY)),
 		new Word("hawaii", [
 			new Hint("American state surrounded entirely by ocean", Category.GEOGRAPHY),
 			new Hint("Pacific kingdom invaded by the United States", Category.HISTORY),
@@ -247,8 +259,11 @@ const HONEYCOMB = {
 			new Hint("stallions or mares", Category.ZOOLOGY),
 		]),
 		new Word("hydrus", new Hint("lesser water snake constellation", Category.ASTRONOMY)),
+		new Word("indium", new Hint("element named for its bluish-purple spectral line", Category.CHEMISTRY)),
+		new Word("iodine", new Hint("heaviest dietary element", Category.CHEMISTRY)),
 		new Word("itself", new Hint("third person singular neuter reflexive", Category.ENGLISH)),
 		new Word("jordan", new Hint("its capital, Amman", Category.GEOGRAPHY)),
+		new Word("kidney", new Hint("blood filtration organ", Category.MEDICINE)),
 		new Word("latvia", new Hint("its capital, Riga", Category.GEOGRAPHY)),
 		new Word("lesbos", new Hint("island of Sappho", Category.GEOGRAPHY)),
 		new Word("lizard", new Hint("common quadrupedal reptile", Category.ZOOLOGY)),
@@ -258,16 +273,29 @@ const HONEYCOMB = {
 		]),
 		new Word("mexico", new Hint("most populous Spanish-speaking country", Category.GEOGRAPHY)),
 		new Word("myself", new Hint("first person singular reflexive", Category.ENGLISH)),
+		new Word("nickel", new Hint("most common impurity in meteoric iron", Category.CHEMISTRY)),
 		new Word("norway", new Hint("its capital, Oslo", Category.GEOGRAPHY)),
 		new Word("octans", new Hint("octant constellation", Category.ASTRONOMY)),
+		new Word("orange", [
+			new Hint("reddish yellow", Category.COLOR),
+			new Hint("word said to have no rhymes", Category.ENGLISH),
+			new Hint("citrus, eg. mandarin", Category.FOOD),
+		]),
+		new Word("oxygen", new Hint("second most abundant element in Earth's atmosphere", Category.CHEMISTRY)),
 		new Word("pictor", new Hint("painter constellation", Category.ASTRONOMY)),
 		new Word("pisces", new Hint("fish sign", Category.ASTROLOGY)),
 		new Word("poland", [
 			new Hint("its capital, Warsaw", Category.GEOGRAPHY),
 			new Hint("its invasion brought about a world war", Category.HISTORY),
 		]),
+		new Word("pulley", new Hint("simple machine", Category.PHYSICS)),
 		new Word("puppis", new Hint("poop deck constellation", Category.ASTRONOMY)),
+		new Word("purple", [
+			new Hint("reddish blue", Category.COLOR),
+			new Hint("royal color", Category.HISTORY),
+		]),
 		new Word("rabbit", new Hint("small hopping mammal", Category.ZOOLOGY)),
+		new Word("radium", new Hint("radioactive alkaline earth metal", Category.CHEMISTRY)),
 		new Word("rhodes", new Hint("Greek island known for its Colossus", Category.GEOGRAPHY)),
 		new Word("russia", [
 			new Hint("its capital, Moscow", Category.GEOGRAPHY),
@@ -289,8 +317,16 @@ const HONEYCOMB = {
 			new Hint("its invasion brought about a world war", Category.HISTORY),
 		]),
 		new Word("sicily", new Hint("largest Mediterranean island", Category.GEOGRAPHY)),
+		new Word("silver", new Hint("common coinage metal", Category.CHEMISTRY)),
+		new Word("sodium", new Hint("secondary constituent of table salt", Category.CHEMISTRY)),
+		new Word("sulfur", new Hint("element said to smell of egg", Category.CHEMISTRY)),
 		new Word("sweden", new Hint("its capital, Stockholm", Category.GEOGRAPHY)),
+		new Word("switch", [
+			new Hint("tops and bottoms", Category.MISC),
+			new Hint("Nintendo console", Category.VIDEOGAME),
+		]),
 		new Word("taurus", new Hint("bull sign", Category.ASTROLOGY)),
+		new Word("tongue", new Hint("organ of taste and language", Category.MEDICINE)),
 		new Word("tucana", new Hint("toucan constellation", Category.ASTRONOMY)),
 		new Word("turkey", [
 			new Hint("american landfowl", Category.ZOOLOGY),
@@ -305,6 +341,7 @@ const HONEYCOMB = {
 			new Hint("father of the Titans", Category.RELIGION),
 		]),
 		new Word("volans", new Hint("flying fish constellation", Category.ASTRONOMY)),
+		new Word("weight", new Hint("downward force", Category.PHYSICS)),
 		new Word("zambia", new Hint("its capital, Lusaka", Category.GEOGRAPHY)),
 	],
 	/** @type {Clue[]} */
@@ -352,6 +389,18 @@ const HONEYCOMB = {
 			this.elemSelected().innerHTML = this.letters[this.selected] = char;
 		},
 	},
+	stats: {
+		get categories(){
+			const o = {};
+			HONEYCOMB.words.forEach(w => {
+				w.hints.forEach(h => {
+					o[h.category] ||= 0;
+					o[h.category]++;
+				});
+			});
+			return o;
+		},
+	},
 	clear(){
 		document.body.innerHTML = '';
 	},
@@ -363,6 +412,7 @@ const HONEYCOMB = {
 	},
 	init(){
 		console.info(`${this.words.length} words`);
+		console.info('category statistics:', this.stats.categories);
 		// prepare keyboard controls
 		document.body.onkeydown = ev => {
 			console.debug(`keypress`, ev);
