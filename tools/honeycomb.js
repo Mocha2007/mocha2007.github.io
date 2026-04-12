@@ -119,6 +119,7 @@ const HONEYCOMB = {
 		]),
 		new Word("dorado", new Hint("mahi-mahi constellation", Category.ASTRONOMY)),
 		new Word("equine", new Hint("of horses", Category.ZOOLOGY)),
+		new Word("euboea", new Hint("large island off Boeotia", Category.GEOGRAPHY)),
 		new Word("falcon", [
 			new Hint("bird of prey, eg. peregrine", Category.ZOOLOGY),
 			new Hint("millennium or maltese", Category.FILM),
@@ -144,6 +145,7 @@ const HONEYCOMB = {
 		new Word("itself", new Hint("third person singular neuter reflexive", Category.ENGLISH)),
 		new Word("jordan", new Hint("its capital, Amman", Category.GEOGRAPHY)),
 		new Word("latvia", new Hint("its capital, Riga", Category.GEOGRAPHY)),
+		new Word("lesbos", new Hint("island of Sappho", Category.GEOGRAPHY)),
 		new Word("lizard", new Hint("common quadrupedal reptile", Category.ZOOLOGY)),
 		new Word("locust", new Hint("swarming grasshopper", Category.ZOOLOGY)),
 		new Word("mexico", new Hint("most populous Spanish-speaking country", Category.GEOGRAPHY)),
@@ -155,6 +157,7 @@ const HONEYCOMB = {
 		new Word("poland", new Hint("its capital, Warsaw", Category.GEOGRAPHY)),
 		new Word("puppis", new Hint("poop deck constellation", Category.ASTRONOMY)),
 		new Word("rabbit", new Hint("small hopping mammal", Category.ZOOLOGY)),
+		new Word("rhodes", new Hint("Greek island known for its Colossus", Category.GEOGRAPHY)),
 		new Word("russia", new Hint("its capital, Moscow", Category.GEOGRAPHY)),
 		new Word("rwanda", new Hint("its capital, Kigali", Category.GEOGRAPHY)),
 		new Word("saturn", [
@@ -166,6 +169,7 @@ const HONEYCOMB = {
 		]),
 		new Word("scutum", new Hint("shield constellation", Category.ASTRONOMY)),
 		new Word("serbia", new Hint("its capital, Belgrade", Category.GEOGRAPHY)),
+		new Word("sicily", new Hint("largest Mediterranean island", Category.GEOGRAPHY)),
 		new Word("sweden", new Hint("its capital, Stockholm", Category.GEOGRAPHY)),
 		new Word("taurus", new Hint("bull sign", Category.ASTROLOGY)),
 		new Word("tucana", new Hint("toucan constellation", Category.ASTRONOMY)),
