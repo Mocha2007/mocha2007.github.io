@@ -35,6 +35,7 @@ class Category {
 	static ASTROLOGY = "Astrology";
 	static ASTRONOMY = "Astronomy";
 	static BIOLOGY = "Biology";
+	static BOTANY = "Botany";
 	static CHEMISTRY = "Chemistry";
 	static COLOR = "Color";
 	static ENGLISH = "English";
@@ -168,6 +169,7 @@ const HONEYCOMB = {
 			new Hint("the luminiferous variety was said to carry light", Category.PHYSICS),
 			new Hint("in a certain Minecraft mod, the opposite of the nether", Category.VIDEOGAME),
 		]),
+		new Word("alaska", new Hint("largest American state", Category.GEOGRAPHY)),
 		new Word("albedo", [
 			new Hint("an object's brightness", Category.ASTRONOMY),
 			new Hint("overseer of the guardians of Nazarick", Category.ANIME),
@@ -186,10 +188,6 @@ const HONEYCOMB = {
 		new Word("ankara", new Hint("capital of Turkey", Category.GEOGRAPHY)),
 		new Word("antlia", new Hint("air pump constellation", Category.ASTRONOMY)),
 		new Word("apogee", new Hint("furthest part of an orbit from Earth", Category.ASTROLOGY)),
-		new Word("apple", [
-			new Hint("common red fruit", Category.FOOD),
-			new Hint("high-end computer and phone manufacturer", Category.TECH),
-		]),
 		new Word("aquila", new Hint("eagle constellation", Category.ASTRONOMY)),
 		new Word("astana", new Hint("capital of Kazakhstan", Category.GEOGRAPHY)),
 		new Word("auriga", new Hint("charioteer constellation", Category.ASTRONOMY)),
@@ -199,9 +197,11 @@ const HONEYCOMB = {
 		new Word("basalt", new Hint("dark extrusive igneous rock", Category.GEOLOGY)),
 		new Word("beaver", new Hint("dam-building rodent", Category.ZOOLOGY)),
 		new Word("belize", new Hint("its capital, Belmopan", Category.GEOGRAPHY)),
+		new Word("beluga", new Hint("arctic whale", Category.ZOOLOGY)),
 		new Word("berlin", new Hint("German capital", Category.GEOGRAPHY)),
 		new Word("bhutan", new Hint("its capital, Thimphu", Category.GEOGRAPHY)),
 		new Word("biotic", new Hint("of biological origin", Category.ENGLISH)),
+		new Word("bobcat", new Hint("short-tailed wildcat", Category.ZOOLOGY)),
 		new Word("bootes", new Hint("herdsman constellation", Category.ASTRONOMY)),
 		new Word("botany", new Hint("study of plants", Category.BIOLOGY)),
 		new Word("bovine", new Hint("of cattle", Category.ZOOLOGY)),
@@ -210,6 +210,7 @@ const HONEYCOMB = {
 		new Word("bronze", new Hint("copper-tin alloy", Category.CHEMISTRY)),
 		new Word("brunei", new Hint("its capital, Bandar Seri Begawan", Category.GEOGRAPHY)),
 		new Word("butter", new Hint("churned cream", Category.FOOD)),
+		new Word("cactus", new Hint("spiked desert plant", Category.BOTANY)),
 		new Word("caelum", new Hint("chisel constellation", Category.ASTRONOMY)),
 		new Word("canada", [
 			new Hint("its capital, Ottawa", Category.GEOGRAPHY),
@@ -241,6 +242,8 @@ const HONEYCOMB = {
 			new Hint("slang: disease which caused a pandemic in 2020", Category.MEDICINE),
 		]),
 		new Word("corvus", new Hint("crow constellation", Category.ASTRONOMY)),
+		new Word("cougar", new Hint("mountain lion", Category.ZOOLOGY)),
+		new Word("coyote", new Hint("American canid", Category.ZOOLOGY)),
 		new Word("crater", [
 			new Hint("cup constellation", Category.ASTRONOMY),
 			new Hint("circular depression, usually due to an impact", Category.ASTRONOMY),
@@ -269,6 +272,7 @@ const HONEYCOMB = {
 		new Word("embryo", new Hint("initial developmental stage", Category.BIOLOGY)),
 		new Word("enzyme", new Hint("catalytic protein", Category.BIOLOGY)),
 		new Word("equine", new Hint("of horses", Category.ZOOLOGY)),
+		new Word("ermine", new Hint("black-tailed white weasel", Category.ZOOLOGY)),
 		new Word("eroded", new Hint("worn away", Category.GEOLOGY)),
 		new Word("euboea", new Hint("large island off Boeotia", Category.GEOGRAPHY)),
 		new Word("falcon", [
@@ -299,6 +303,8 @@ const HONEYCOMB = {
 		new Word("gemini", new Hint("twin sign", Category.ASTROLOGY)),
 		new Word("genome", new Hint("entire set of genetic material", Category.BIOLOGY)),
 		new Word("gelato", new Hint("Italian ice cream", Category.FOOD)),
+		new Word("ginkgo", new Hint("'living fossil' monotypic tree division", Category.BOTANY)),
+		new Word("gopher", new Hint("small burrowing rodent", Category.ZOOLOGY)),
 		new Word("gothic", [
 			new Hint("2001 RPG", Category.VIDEOGAME),
 			new Hint("of the east Germanic conquerers of Rome", Category.HISTORY),
@@ -333,6 +339,7 @@ const HONEYCOMB = {
 		new Word("iberia", new Hint("peninsula of Spain and Portugal", Category.GEOGRAPHY)),
 		new Word("indium", new Hint("element named for its bluish-purple spectral line", Category.CHEMISTRY)),
 		new Word("iodine", new Hint("heaviest dietary element", Category.CHEMISTRY)),
+		new Word("island", new Hint("land surrounded by water", Category.GEOGRAPHY)),
 		new Word("istria", new Hint("Croatian peninsula", Category.GEOGRAPHY)),
 		new Word("itself", new Hint("third person singular neuter reflexive", Category.ENGLISH)),
 		new Word("jordan", new Hint("its capital, Amman", Category.GEOGRAPHY)),
@@ -356,6 +363,8 @@ const HONEYCOMB = {
 		new Word("luster", new Hint("how light interacts with a rock surface", Category.GEOLOGY)),
 		new Word("mantle", new Hint("layer between the crust and core", Category.GEOLOGY)),
 		new Word("marble", new Hint("white metamorphic rock", Category.GEOLOGY)),
+		new Word("marmot", new Hint("large ground-dwelling rodent", Category.ZOOLOGY)),
+		new Word("marten", new Hint("weasel-like mammal", Category.ZOOLOGY)),
 		new Word("maroon", new Hint("dark red", Category.COLOR)),
 		new Word("matrix", [
 			new Hint("material between eukaryotic cells", Category.BIOLOGY),
@@ -372,6 +381,10 @@ const HONEYCOMB = {
 		new Word("newton", new Hint("SI unit of force", Category.MEASUREMENT)),
 		new Word("nickel", new Hint("most common impurity in meteoric iron", Category.CHEMISTRY)),
 		new Word("norway", new Hint("its capital, Oslo", Category.GEOGRAPHY)),
+		new Word("ocelot", [
+			new Hint("small American felid", Category.ZOOLOGY),
+			new Hint("Minecraft wild cat", Category.VIDEOGAME),
+		]),
 		new Word("octans", new Hint("octant constellation", Category.ASTRONOMY)),
 		new Word("orange", [
 			new Hint("reddish yellow", Category.COLOR),
@@ -388,7 +401,7 @@ const HONEYCOMB = {
 		new Word("pascal", new Hint("SI unit of pressure", Category.MEASUREMENT)),
 		new Word("pebble", new Hint("rock, smaller than cobble", Category.GEOLOGY)),
 		new Word("pindus", new Hint("Greek mountain range", Category.GEOGRAPHY)),
-		new Word("phloem", new Hint("photosynthesis product transport tissue", Category.BIOLOGY)),
+		new Word("phloem", new Hint("photosynthesis product transport tissue", Category.BOTANY)),
 		new Word("phylum", new Hint("taxonomic rank under kingdom", Category.BIOLOGY)),
 		new Word("piazzi", new Hint("Ceres discoverer surname", Category.ASTRONOMY)),
 		new Word("pictor", new Hint("painter constellation", Category.ASTRONOMY)),
@@ -486,6 +499,7 @@ const HONEYCOMB = {
 		]),
 		new Word("violet", new Hint("bluish purple", Category.COLOR)),
 		new Word("volans", new Hint("flying fish constellation", Category.ASTRONOMY)),
+		new Word("walrus", new Hint("tusked marine mammal", Category.ZOOLOGY)),
 		new Word("weight", new Hint("downward force", Category.PHYSICS)),
 		new Word("winter", new Hint("season after fall", Category.METEOROLOGY)),
 		new Word("yellow", new Hint("color between orange and green", Category.COLOR)),
