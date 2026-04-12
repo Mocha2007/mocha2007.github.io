@@ -84,6 +84,7 @@ class Clue {
 		const start = document.createElement('div');
 		start.classList.add('start');
 		start.classList.add(`direction${this.start_index}`);
+		start.innerHTML = '⇘⇓⇙⇖⇑⇗'[this.start_index];
 		e.appendChild(start);
 		return e;
 	}

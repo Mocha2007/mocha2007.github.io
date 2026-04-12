@@ -37,15 +37,14 @@ html, body {
 }
 .start {
 	color: gold;
-	height: 2em;
+	font-size: 4vh;
+	height: 4vh;
 	line-height: 2em;
 	pointer-events: none;
 	position: absolute;
-	width: 2em;
+	width: 4vh;
+	transform: translateY(-2.5vh);
 	z-index: 2;
-}
-.start::before {
-	content: '*';
 }
 #controls {
 	height: 14vh;
