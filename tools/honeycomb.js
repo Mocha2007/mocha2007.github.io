@@ -68,7 +68,7 @@ class Clue {
 	constructor(word, start_index = 0){
 		/** @type {Word} */
 		this.word = word;
-		/** @type {number} */
+		/** @type {number} what index of the word does the "up" direction represent? */
 		this.start_index = start_index;
 	}
 	createElement(id){
@@ -108,16 +108,16 @@ class Clue {
 		switch (direction) {
 			case Direction.UP:
 				return this.word.word[(6 - this.start_index) % 6];
-			case Direction.UL:
-				return this.word.word[(11 - this.start_index) % 6];
-			case Direction.DL:
-				return this.word.word[(10 - this.start_index) % 6];
-			case Direction.DN:
-				return this.word.word[(9 - this.start_index) % 6];
-			case Direction.DR:
-				return this.word.word[(8 - this.start_index) % 6];
 			case Direction.UR:
 				return this.word.word[(7 - this.start_index) % 6];
+			case Direction.DR:
+				return this.word.word[(8 - this.start_index) % 6];
+			case Direction.DN:
+				return this.word.word[(9 - this.start_index) % 6];
+			case Direction.DL:
+				return this.word.word[(10 - this.start_index) % 6];
+			case Direction.UL:
+				return this.word.word[(11 - this.start_index) % 6];
 			default:
 				throw `invalid direction: ${direction}`;
 		}
