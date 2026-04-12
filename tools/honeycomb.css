@@ -2,6 +2,9 @@ html, body {
 	overflow: hidden;
 	user-select: none;
 }
+label {
+	font-size: 75%;
+}
 .hex {
 	background-color: #430;
 	display: flex;

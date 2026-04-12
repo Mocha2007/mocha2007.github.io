@@ -570,6 +570,9 @@ const HONEYCOMB = {
 		new Word("zircon", new Hint("key mineral of geochronology", Category.GEOLOGY)),
 		new Word("zygote", new Hint("diploid cell fromed from two haploid gametes", Category.BIOLOGY)),
 	],
+	config: {
+		avoidMultipleHardClues: true,
+	},
 	/** @type {Clue[]} */
 	clues: new Array(7).fill(undefined),
 	letterNodes: {
@@ -690,6 +693,17 @@ const HONEYCOMB = {
 		button_new.innerHTML = 'new';
 		button_new.onclick = () => HONEYCOMB.new_wrapper();
 		controls.appendChild(button_new);
+		// "avoid multiple hard clues" button
+		const button_amhc_label = document.createElement('label');
+		const button_amhc = document.createElement('input');
+		button_amhc.type = 'checkbox';
+		button_amhc.id = 'ahmc';
+		button_amhc.checked = true;
+		button_amhc_label.appendChild(button_amhc);
+		button_amhc_label.appendChild(document.createTextNode('Avoid Excessive Difficulty'));
+		button_amhc_label.onclick = () => HONEYCOMB.config.avoidMultipleHardClues = button_amhc.checked;
+		controls.appendChild(button_amhc_label);
+
 	},
 	new(){
 		this.clear();
@@ -814,7 +828,7 @@ const HONEYCOMB = {
 		const matches = dictionary.filter(filter);
 		if (matches.length < 1) console.warn('no matches');
 		// if possible, avoid duplicate categories, and multiple hard clues
-		const catmatches = matches.filter(w => w.hints.some(h => !used_categories.includes(h.category) && (n_hard <= 0 || h.difficulty <= Difficulty.NORMAL)));
+		const catmatches = matches.filter(w => w.hints.some(h => !used_categories.includes(h.category) && (!HONEYCOMB.config.avoidMultipleHardClues || n_hard <= 0 || h.difficulty <= Difficulty.NORMAL)));
 		const arr = catmatches.length ? catmatches : matches;
 		return arr[Math.floor(Math.random() * arr.length)];
 	}
