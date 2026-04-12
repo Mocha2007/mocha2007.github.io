@@ -76,18 +76,33 @@ class Clue {
 
 const HONEYCOMB = {
 	words: [
+		/*
+			Things added:
+			- all 6-letter constellations and planets
+			- all 6-letter countries (excl. Israel Kuwait Monaco)
+		*/
+		new Word("angola", new Hint("its capital, Luanda", Category.GEOGRAPHY)),
+		new Word("ankara", new Hint("capital of Turkey", Category.GEOGRAPHY)),
 		new Word("antlia", new Hint("air pump constellation", Category.ASTRONOMY)),
 		new Word("aquila", new Hint("eagle constellation", Category.ASTRONOMY)),
-		new Word("astana", new Hint("capital of Turkey", Category.GEOGRAPHY)),
+		new Word("astana", new Hint("capital of Kazakhstan", Category.GEOGRAPHY)),
 		new Word("auriga", new Hint("charioteer constellation", Category.ASTRONOMY)),
+		new Word("belize", new Hint("its capital, Belmopan", Category.GEOGRAPHY)),
+		new Word("bhutan", new Hint("its capital, Thimphu", Category.GEOGRAPHY)),
 		new Word("bootes", new Hint("herdsman constellation", Category.ASTRONOMY)),
+		new Word("brazil", new Hint("its capital, Brasília", Category.GEOGRAPHY)),
+		new Word("brunei", new Hint("its capital, Bandar Seri Begawan", Category.GEOGRAPHY)),
 		new Word("caelum", new Hint("chisel constellation", Category.ASTRONOMY)),
-		new Word("canada", new Hint("maple leaf flag", Category.GEOGRAPHY)),
+		new Word("canada", [
+			new Hint("its capital, Ottawa", Category.GEOGRAPHY),
+			new Hint("maple leaf flag", Category.GEOGRAPHY),
+		]),
 		new Word("cancer", new Hint("crab sign", Category.ASTROLOGY)),
 		new Word("carina", new Hint("keel constellation", Category.ASTRONOMY)),
 		new Word("corvus", new Hint("crow constellation", Category.ASTRONOMY)),
 		new Word("crater", new Hint("cup constellation", Category.ASTRONOMY)),
 		new Word("cygnus", new Hint("swan constellation", Category.ASTRONOMY)),
+		new Word("cyprus", new Hint("its capital, Nicosia", Category.GEOGRAPHY)),
 		new Word("dorado", new Hint("mahi-mahi constellation", Category.ASTRONOMY)),
 		new Word("falcon", [
 			new Hint("bird of prey, eg. peregrine", Category.ZOOLOGY),
@@ -99,14 +114,24 @@ const HONEYCOMB = {
 			new Hint("country with the most francophones", Category.GEOGRAPHY),
 			new Hint("its capital, Paris", Category.GEOGRAPHY),
 		]),
+		new Word("gambia", new Hint("its capital, Banjul", Category.GEOGRAPHY)),
 		new Word("gemini", new Hint("twin sign", Category.ASTROLOGY)),
+		new Word("greece", new Hint("its capital, Athens", Category.GEOGRAPHY)),
+		new Word("guinea", new Hint("its capital, Conakry", Category.GEOGRAPHY)),
+		new Word("guyana", new Hint("its capital, Georgetown", Category.GEOGRAPHY)),
 		new Word("hydrus", new Hint("lesser water snake constellation", Category.ASTRONOMY)),
 		new Word("itself", new Hint("third person singular neuter reflexive", Category.ENGLISH)),
+		new Word("jordan", new Hint("its capital, Amman", Category.GEOGRAPHY)),
+		new Word("latvia", new Hint("its capital, Riga", Category.GEOGRAPHY)),
 		new Word("mexico", new Hint("most populous Spanish-speaking country", Category.GEOGRAPHY)),
+		new Word("norway", new Hint("its capital, Oslo", Category.GEOGRAPHY)),
 		new Word("octans", new Hint("octant constellation", Category.ASTRONOMY)),
 		new Word("pictor", new Hint("painter constellation", Category.ASTRONOMY)),
 		new Word("pisces", new Hint("fish sign", Category.ASTROLOGY)),
+		new Word("poland", new Hint("its capital, Warsaw", Category.GEOGRAPHY)),
 		new Word("puppis", new Hint("poop deck constellation", Category.ASTRONOMY)),
+		new Word("russia", new Hint("its capital, Moscow", Category.GEOGRAPHY)),
+		new Word("rwanda", new Hint("its capital, Kigali", Category.GEOGRAPHY)),
 		new Word("saturn", [
 			new Hint("greatly ringed giant", Category.ASTRONOMY),
 			new Hint("greater malefic", Category.ASTROLOGY),
@@ -115,12 +140,16 @@ const HONEYCOMB = {
 			new Hint("father of Jupiter", Category.RELIGION),
 		]),
 		new Word("scutum", new Hint("shield constellation", Category.ASTRONOMY)),
+		new Word("serbia", new Hint("its capital, Belgrade", Category.GEOGRAPHY)),
+		new Word("sweden", new Hint("its capital, Stockholm", Category.GEOGRAPHY)),
 		new Word("taurus", new Hint("bull sign", Category.ASTROLOGY)),
 		new Word("tucana", new Hint("toucan constellation", Category.ASTRONOMY)),
 		new Word("turkey", [
 			new Hint("american landfowl", Category.ZOOLOGY),
-			new Hint("its capital, Astana", Category.GEOGRAPHY),
+			new Hint("its capital, Ankara", Category.GEOGRAPHY),
 		]),
+		new Word("tuvalu", new Hint("its capital, Funafuti", Category.GEOGRAPHY)),
+		new Word("uganda", new Hint("its capital, Kampala", Category.GEOGRAPHY)),
 		new Word("uranus", [
 			new Hint("greatly tilted giant", Category.ASTRONOMY),
 			new Hint("to Holst, the magician", Category.MUSIC),
@@ -128,6 +157,7 @@ const HONEYCOMB = {
 			new Hint("father of the Titans", Category.RELIGION),
 		]),
 		new Word("volans", new Hint("flying fish constellation", Category.ASTRONOMY)),
+		new Word("zambia", new Hint("its capital, Lusaka", Category.GEOGRAPHY)),
 	],
 	clear(){
 		document.body.innerHTML = '';
