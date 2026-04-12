@@ -1,11 +1,11 @@
 class Hint {
-	constructor(hint, category, img = ''){
+	constructor(hint, category, difficulty = Difficulty.NORMAL){
 		/** @type {string} */
 		this.hint = hint;
 		/** @type {Category} */
 		this.category = category;
-		/** @type {string} */
-		this.img = img; // todo
+		/** @type {Difficulty} */
+		this.difficulty = difficulty;
 	}
 	elem(){
 		const e = document.createElement('span');
@@ -15,6 +15,11 @@ class Hint {
 		cat.innerHTML = this.category;
 		cat.classList.add('category');
 		e.appendChild(cat);
+		const dif = document.createElement('span');
+		dif.innerHTML = this.difficulty;
+		dif.title = Difficulty.title(this.difficulty);
+		dif.classList.add('difficulty');
+		e.appendChild(dif);
 		return e;
 	}
 }
@@ -61,6 +66,21 @@ class Category {
 	static VEXILLOLOGY = "Vexilollogy";
 	static VIDEOGAME = "Video games";
 	static ZOOLOGY = "Zoology";
+}
+
+class Difficulty {
+	static EASY = "Easy";
+	static NORMAL = "Normal";
+	static HARD = "Hard";
+	static TRICKY = "Tricky";
+	static title(difficulty){
+		switch (difficulty){
+			case this.TRICKY:
+				return 'Think carefully; the answer is not straightforward.';
+			default:
+				return difficulty;
+		}
+	}
 }
 
 class Direction {
@@ -166,7 +186,7 @@ const HONEYCOMB = {
 		*/
 		new Word("adverb", new Hint("modifies adjectives and verbs", Category.ENGLISH)),
 		new Word("aether", [
-			new Hint("common 19th century anaesthetic", Category.MEDICINE),
+			new Hint("common 19th century anaesthetic", Category.MEDICINE, Difficulty.HARD),
 			new Hint("the luminiferous variety was said to carry light", Category.PHYSICS),
 			new Hint("in a certain Minecraft mod, the opposite of the nether", Category.VIDEOGAME),
 		]),
@@ -252,7 +272,7 @@ const HONEYCOMB = {
 			new Hint("cup constellation", Category.ASTRONOMY),
 			new Hint("circular depression, usually due to an impact", Category.ASTRONOMY),
 		]),
-		new Word("craton", new Hint("part of a continental plate", Category.GEOLOGY)),
+		new Word("craton", new Hint("part of a continental plate", Category.GEOLOGY, Difficulty.HARD)),
 		new Word("cuboid", new Hint("rectangular prism", Category.MATH)),
 		new Word("curium", new Hint("actinide alpha source", Category.CHEMISTRY)),
 		new Word("cycler", new Hint("spacecraft on a closed transfer orbit", Category.TRANSPORT)),
@@ -265,11 +285,11 @@ const HONEYCOMB = {
 		new Word("desert", new Hint("biome with little precipitation", Category.GEOGRAPHY)),
 		new Word("donkey", [
 			new Hint("Shrek's partner", Category.FILM),
-			new Hint("presumably, a large burrito", Category.SPANISH),
+			new Hint("presumably, a large burrito", Category.ENGLISH, Difficulty.TRICKY),
 			new Hint("rideable Minecraft mob", Category.VIDEOGAME),
 		]),
 		new Word("dorado", [
-			new Hint("mahi-mahi constellation", Category.ASTRONOMY),
+			new Hint("mahi-mahi constellation", Category.ASTRONOMY, Difficulty.HARD),
 			new Hint("mythical golden city (second word)", Category.HISTORY),
 		]),
 		new Word("dragon", new Hint("mythological winged lizard", Category.RELIGION)),
@@ -294,9 +314,9 @@ const HONEYCOMB = {
 			new Hint("beastly synonym of uncover", Category.ENGLISH),
 			new Hint("domesticated polecat", Category.ZOOLOGY),
 		]),
-		new Word("finger", new Hint("digit of the hand", Category.ANATOMY)),
+		new Word("finger", new Hint("digit of the hand", Category.ANATOMY, Difficulty.EASY)),
 		new Word("finial", new Hint("decorative flagpole cap", Category.VEXILLOLOGY)),
-		new Word("forest", new Hint("biome of trees", Category.GEOGRAPHY)),
+		new Word("forest", new Hint("biome of trees", Category.GEOGRAPHY, Difficulty.EASY)),
 		new Word("fornax", new Hint("furnace constellation", Category.ASTRONOMY)),
 		new Word("fossil", new Hint("mineralized organism remains", Category.GEOLOGY)),
 		new Word("france", [
@@ -417,7 +437,7 @@ const HONEYCOMB = {
 		new Word("pluton", new Hint("igneous intrusion", Category.GEOLOGY)),
 		new Word("poland", [
 			new Hint("its capital, Warsaw", Category.GEOGRAPHY),
-			new Hint("its invasion brought about a world war", Category.HISTORY),
+			new Hint("its invasion brought about a world war", Category.HISTORY, Difficulty.TRICKY),
 		]),
 		new Word("pulley", new Hint("simple machine", Category.PHYSICS)),
 		new Word("puppis", new Hint("poop deck constellation", Category.ASTRONOMY)),
@@ -451,7 +471,7 @@ const HONEYCOMB = {
 		new Word("saturn", [
 			new Hint("greatly ringed giant", Category.ASTRONOMY),
 			new Hint("greater malefic", Category.ASTROLOGY),
-			new Hint("to Holst, the bringer of old age", Category.MUSIC),
+			new Hint("to Holst, the bringer of old age", Category.MUSIC, Difficulty.HARD),
 			new Hint("Roman god of agriculture and wealth", Category.RELIGION),
 			new Hint("father of Jupiter", Category.RELIGION),
 			new Hint("Sega console", Category.VIDEOGAME),
@@ -464,7 +484,7 @@ const HONEYCOMB = {
 		new Word("second", new Hint("SI unit of time", Category.MEASUREMENT)),
 		new Word("serbia", [
 			new Hint("its capital, Belgrade", Category.GEOGRAPHY),
-			new Hint("its invasion brought about a world war", Category.HISTORY),
+			new Hint("its invasion brought about a world war", Category.HISTORY, Difficulty.TRICKY),
 		]),
 		new Word("shield", new Hint("exposed precambrian rock", Category.GEOLOGY)),
 		new Word("sicily", new Hint("largest Mediterranean island", Category.GEOGRAPHY)),
@@ -505,7 +525,7 @@ const HONEYCOMB = {
 		new Word("uganda", new Hint("its capital, Kampala", Category.GEOGRAPHY)),
 		new Word("uranus", [
 			new Hint("greatly tilted giant", Category.ASTRONOMY),
-			new Hint("to Holst, the magician", Category.MUSIC),
+			new Hint("to Holst, the magician", Category.MUSIC, Difficulty.HARD),
 			new Hint("Greek god of the sky", Category.RELIGION),
 			new Hint("father of the Titans", Category.RELIGION),
 		]),

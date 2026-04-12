@@ -47,14 +47,18 @@ html, body {
 	transform: translateY(-2.5vh);
 	z-index: 2;
 }
-.category {
+.category, .difficulty {
 	color: grey;
 	display: block;
-	font-size: 75%;
+	font-size: 67%;
 }
 .category::before {
 	color: skyblue;
 	content: 'Category: ';
+}
+.difficulty::before {
+	color: gold;
+	content: 'Difficulty: ';
 }
 #controls {
 	height: 14vh;
