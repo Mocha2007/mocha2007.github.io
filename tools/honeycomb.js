@@ -81,6 +81,7 @@ class Clue {
 	createTextCell(i, j){
 		const cellId = 5*(i-1)+j;
 		const direction = (4 + i + j) % 6;
+		// console.debug('\t->', direction);
 		/** @type {HTMLDivElement} */
 		const elem = document.getElementById(`hex${i}`);
 		const cell = document.createElement('div');
@@ -321,43 +322,43 @@ const HONEYCOMB = {
 		const CLUE1 = new Clue(WORD1, WORD1_START);
 		// console.debug(CLUE1, WORD0.word[WORD0_START]);
 		// next, choose the word above-left
-		const WORD2 = this.randomWordMatching(dictionary, w => new RegExp(`${CLUE1.getLetter(Direction.DL)}${CLUE0.getLetter(Direction.UL)}`).test(w.word));
-		dictionary.splice(dictionary.indexOf(WORD2), 1);
-		const WORD2_START = (8-WORD1.word.indexOf(CLUE0.getLetter(Direction.UL))) % 6;
-		const CLUE2 = new Clue(WORD2, WORD2_START);
+		const WORD6 = this.randomWordMatching(dictionary, w => new RegExp(`${CLUE1.getLetter(Direction.DL)}${CLUE0.getLetter(Direction.UL)}`).test(w.word));
+		dictionary.splice(dictionary.indexOf(WORD6), 1);
+		const WORD6_START = (8-WORD1.word.indexOf(CLUE0.getLetter(Direction.UL))) % 6;
+		const CLUE6 = new Clue(WORD6, WORD6_START);
 		// console.debug(CLUE2, WORD0.word[(WORD0_START + 5) % 6]);
 		// next, choose the word above-right
-		const WORD3 = this.randomWordMatching(dictionary, w => new RegExp(`${CLUE0.getLetter(Direction.UR)}${CLUE1.getLetter(Direction.DR)}`).test(w.word));
-		dictionary.splice(dictionary.indexOf(WORD3), 1);
-		const WORD3_START = (10-WORD1.word.indexOf(CLUE0.getLetter(Direction.UR))) % 6;
-		const CLUE3 = new Clue(WORD3, WORD3_START);
+		const WORD2 = this.randomWordMatching(dictionary, w => new RegExp(`${CLUE0.getLetter(Direction.UR)}${CLUE1.getLetter(Direction.DR)}`).test(w.word));
+		dictionary.splice(dictionary.indexOf(WORD2), 1);
+		const WORD2_START = (10-WORD1.word.indexOf(CLUE0.getLetter(Direction.UR))) % 6;
+		const CLUE2 = new Clue(WORD2, WORD2_START);
 		// console.debug(CLUE3, WORD0.word[(WORD0_START + 1) % 6]);
 		// next, choose the word down-left
-		const WORD4 = this.randomWordMatching(dictionary, w => new RegExp(`${CLUE2.getLetter(Direction.DN)}${CLUE0.getLetter(Direction.DL)}`).test(w.word));
-		dictionary.splice(dictionary.indexOf(WORD4), 1);
-		const WORD4_START = (7-WORD1.word.indexOf(CLUE0.getLetter(Direction.DL))) % 6;
-		const CLUE4 = new Clue(WORD4, WORD4_START);
+		const WORD5 = this.randomWordMatching(dictionary, w => new RegExp(`${CLUE6.getLetter(Direction.DN)}${CLUE0.getLetter(Direction.DL)}`).test(w.word));
+		dictionary.splice(dictionary.indexOf(WORD5), 1);
+		const WORD5_START = (7-WORD1.word.indexOf(CLUE0.getLetter(Direction.DL))) % 6;
+		const CLUE5 = new Clue(WORD5, WORD5_START);
 		// console.debug(CLUE4, WORD0.word[(WORD0_START + 4) % 6]);
 		// next, choose the word down-right
-		const WORD5 = this.randomWordMatching(dictionary, w => new RegExp(`${CLUE0.getLetter(Direction.DR)}${CLUE3.getLetter(Direction.DN)}`).test(w.word));
-		dictionary.splice(dictionary.indexOf(WORD5), 1);
-		const WORD5_START = (11-WORD1.word.indexOf(CLUE0.getLetter(Direction.DR))) % 6;
-		const CLUE5 = new Clue(WORD5, WORD5_START);
+		const WORD3 = this.randomWordMatching(dictionary, w => new RegExp(`${CLUE0.getLetter(Direction.DR)}${CLUE2.getLetter(Direction.DN)}`).test(w.word));
+		dictionary.splice(dictionary.indexOf(WORD3), 1);
+		const WORD3_START = (11-WORD1.word.indexOf(CLUE0.getLetter(Direction.DR))) % 6;
+		const CLUE3 = new Clue(WORD3, WORD3_START);
 		// console.debug(CLUE5, WORD0.word[(WORD0_START + 2) % 6]);
 		// next, choose the word down
-		const WORD6 = this.randomWordMatching(dictionary, w => new RegExp(`${CLUE4.getLetter(Direction.DR)}${CLUE0.getLetter(Direction.DN)}${CLUE5.getLetter(Direction.DL)}`).test(w.word));
-		dictionary.splice(dictionary.indexOf(WORD6), 1);
-		const WORD6_START = (6-WORD1.word.indexOf(CLUE0.getLetter(Direction.DR))) % 6;
-		const CLUE6 = new Clue(WORD6, WORD6_START);
+		const WORD4 = this.randomWordMatching(dictionary, w => new RegExp(`${CLUE5.getLetter(Direction.DR)}${CLUE0.getLetter(Direction.DN)}${CLUE3.getLetter(Direction.DL)}`).test(w.word));
+		dictionary.splice(dictionary.indexOf(WORD4), 1);
+		const WORD4_START = (6-WORD1.word.indexOf(CLUE0.getLetter(Direction.DR))) % 6;
+		const CLUE4 = new Clue(WORD4, WORD4_START);
 		// console.debug(CLUE6, WORD0.word[(WORD0_START + 3) % 6]);
 		// create elements
 		document.body.appendChild(CLUE1.createElement(1));
-		document.body.appendChild(CLUE2.createElement(2));
-		document.body.appendChild(CLUE3.createElement(3));
-		document.body.appendChild(CLUE0.createElement(0));
-		document.body.appendChild(CLUE4.createElement(4));
-		document.body.appendChild(CLUE5.createElement(5));
 		document.body.appendChild(CLUE6.createElement(6));
+		document.body.appendChild(CLUE2.createElement(2));
+		document.body.appendChild(CLUE0.createElement(0));
+		document.body.appendChild(CLUE5.createElement(5));
+		document.body.appendChild(CLUE3.createElement(3));
+		document.body.appendChild(CLUE4.createElement(4));
 		this.clues = [
 			CLUE0,
 			CLUE1,
@@ -372,6 +373,7 @@ const HONEYCOMB = {
 			if (!i) return; // don't create any for center cell
 			// create 5 cells
 			for (let j = 0; j < 5; j++){
+				// console.debug(i, j);
 				c.createTextCell(i, j);
 			}
 		});
@@ -400,9 +402,9 @@ const HONEYCOMB = {
 HONEYCOMB.init();
 /* ARRANGEMENT:
 		1
-	2		3
+	6		2
 		0
-	4		5
-		6
+	5		3
+		4
 	which means I'll need 30 slots total for the letters...
 */

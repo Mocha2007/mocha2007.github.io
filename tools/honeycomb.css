@@ -37,29 +37,29 @@ html, body {
 	width: 33.33vw;
 }
 /* horizontal alignment of hexes */
-#hex1, #hex0, #hex6 {
+#hex1, #hex0, #hex4 {
 	left: 33vw;
 }
-#hex2, #hex4 {
+#hex5, #hex6 {
 	left: 0;
 }
-#hex3, #hex5 {
+#hex2, #hex3 {
 	left: 66vw;
 }
 /* vertical alignment of hexes */
 #hex1 {
 	top: 0;
 }
-#hex2, #hex3 {
+#hex2, #hex6 {
 	top: 16.67vh;
 }
 #hex0 {
 	top: 33.33vh;
 }
-#hex4, #hex5 {
+#hex3, #hex5 {
 	top: 50vh;
 }
-#hex6 {
+#hex4 {
 	top: 66.67vh;
 }
 /* directions */
