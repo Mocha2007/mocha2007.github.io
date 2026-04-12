@@ -212,7 +212,7 @@ const HONEYCOMB = {
 		new Word("aquila", new Hint("eagle constellation", Category.ASTRONOMY)),
 		new Word("astana", new Hint("capital of Kazakhstan", Category.GEOGRAPHY)),
 		new Word("auriga", new Hint("charioteer constellation", Category.ASTRONOMY)),
-		new Word("autumn", new Hint("season after summer", Category.METEOROLOGY)),
+		new Word("autumn", new Hint("season after summer", Category.METEOROLOGY, Difficulty.EASY)),
 		new Word("banana", new Hint("long yellow fruit", Category.FOOD)),
 		new Word("barium", new Hint("in pure form, this element is a common radiocontrast agent", Category.CHEMISTRY)),
 		new Word("basalt", new Hint("dark extrusive igneous rock", Category.GEOLOGY)),
@@ -415,7 +415,7 @@ const HONEYCOMB = {
 		]),
 		new Word("octans", new Hint("octant constellation", Category.ASTRONOMY)),
 		new Word("orange", [
-			new Hint("reddish yellow", Category.COLOR),
+			new Hint("reddish yellow", Category.COLOR, Difficulty.EASY),
 			new Hint("word said to have no rhymes", Category.ENGLISH),
 			new Hint("citrus, eg. mandarin", Category.FOOD),
 		]),
@@ -442,7 +442,7 @@ const HONEYCOMB = {
 		new Word("pulley", new Hint("simple machine", Category.PHYSICS)),
 		new Word("puppis", new Hint("poop deck constellation", Category.ASTRONOMY)),
 		new Word("purple", [
-			new Hint("reddish blue", Category.COLOR),
+			new Hint("reddish blue", Category.COLOR, Difficulty.EASY),
 			new Hint("royal color", Category.HISTORY),
 		]),
 		new Word("python", [
@@ -500,11 +500,11 @@ const HONEYCOMB = {
 		]),
 		new Word("spring", [
 			new Hint("source", Category.GEOLOGY),
-			new Hint("season after winter", Category.METEOROLOGY),
+			new Hint("season after winter", Category.METEOROLOGY, Difficulty.EASY),
 		]),
 		new Word("steppe", new Hint("grassland plains, as in Eurasia", Category.GEOGRAPHY)),
 		new Word("sulfur", new Hint("element said to smell of egg", Category.CHEMISTRY)),
-		new Word("summer", new Hint("season after spring", Category.METEOROLOGY)),
+		new Word("summer", new Hint("season after spring", Category.METEOROLOGY, Difficulty.EASY)),
 		new Word("sweden", new Hint("its capital, Stockholm", Category.GEOGRAPHY)),
 		new Word("switch", [
 			new Hint("tops and bottoms", Category.MISC),
@@ -534,8 +534,8 @@ const HONEYCOMB = {
 		new Word("walrus", new Hint("tusked marine mammal", Category.ZOOLOGY)),
 		new Word("weaver", new Hint("textile producer", Category.TEXTILE)),
 		new Word("weight", new Hint("downward force", Category.PHYSICS)),
-		new Word("winter", new Hint("season after fall", Category.METEOROLOGY)),
-		new Word("yellow", new Hint("color between orange and green", Category.COLOR)),
+		new Word("winter", new Hint("season after fall", Category.METEOROLOGY, Difficulty.EASY)),
+		new Word("yellow", new Hint("color between orange and green", Category.COLOR, Difficulty.EASY)),
 		new Word("yogurt", new Hint("fermented milk product", Category.FOOD)),
 		new Word("zambia", new Hint("its capital, Lusaka", Category.GEOGRAPHY)),
 		new Word("zealot", new Hint("fanatic", Category.RELIGION)),
