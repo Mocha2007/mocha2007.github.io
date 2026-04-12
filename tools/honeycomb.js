@@ -78,8 +78,11 @@ class Clue {
 		// choose a random hint, if not the center cell...
 		const hint = this.word.hints[Math.floor(Math.random() * this.word.hints.length)];
 		if (id) e.appendChild(hint.elem());
-		// todo: if id is 1-6, we need to create 4 of 6 letter spaces
-		// else, if id is 0, we need to create all 6...
+		// create start indicator
+		const start = document.createElement('div');
+		start.classList.add('start');
+		start.classList.add(`direction${this.start_index}`);
+		e.appendChild(start);
 		return e;
 	}
 	/**

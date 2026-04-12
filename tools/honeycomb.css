@@ -30,13 +30,25 @@ html, body {
 .letter.selected {
 	background-color: #888;
 }
+.start {
+	color: gold;
+	height: 2em;
+	line-height: 2em;
+	pointer-events: none;
+	position: absolute;
+	width: 2em;
+	z-index: 1;
+}
+.start::before {
+	content: '*';
+}
 #controls {
-	height: 16.67vh;
+	height: 14vh;
 	left: 0;
 	padding: 1vh 1vw;
 	position: absolute;
 	top: 0;
-	width: 33.33vw;
+	width: 30vw;
 }
 /* horizontal alignment of hexes */
 #hex1, #hex0, #hex4 {
