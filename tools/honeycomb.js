@@ -23,6 +23,7 @@ class Word {
 	constructor(word, hints){
 		/** @type {string} */
 		this.word = word;
+		if (word.length !== 6) console.warn(`${word} is not 6 letters`);
 		/** @type {Hint[]} */
 		this.hints = hints.length ? hints : [hints];
 	}
@@ -41,13 +42,16 @@ class Category {
 	static GEOLOGY = "Geology";
 	static HISTORY = "History";
 	static LANGUAGE = "Language";
+	static MATH = "Mathematics";
 	static MEASUREMENT = "Measurement";
 	static MEDICINE = "Medicine";
+	static METEOROLOGY = "Meteorology";
 	static MINEROLOGY = "Minerology";
 	static MISC = "Miscellaneous";
 	static MUSIC = "Music";
 	static FILM = "Film";
 	static PHYSICS = "Physics";
+	static PROGRAMMING = "Programming";
 	static RELIGION = "Religion";
 	static TRANSPORT = "Transport";
 	static VIDEOGAME = "Video games";
@@ -155,7 +159,7 @@ const HONEYCOMB = {
 			- partial: all 6-letter https://en.wikipedia.org/wiki/Planetary_nomenclature
 			- partial: https://en.wikipedia.org/wiki/List_of_animal_names
 		*/
-		new Word("adverb", new Hint("can modify adjectives and verbs", Category.ENGLISH)),
+		new Word("adverb", new Hint("modifies adjectives and verbs", Category.ENGLISH)),
 		new Word("aether", [
 			new Hint("common 19th century anaesthetic", Category.MEDICINE),
 			new Hint("the luminiferous variety was said to carry light", Category.PHYSICS),
@@ -169,9 +173,11 @@ const HONEYCOMB = {
 		new Word("angola", new Hint("its capital, Luanda", Category.GEOGRAPHY)),
 		new Word("ankara", new Hint("capital of Turkey", Category.GEOGRAPHY)),
 		new Word("antlia", new Hint("air pump constellation", Category.ASTRONOMY)),
+		new Word("apogee", new Hint("furthest part of an orbit from Earth", Category.ASTROLOGY)),
 		new Word("aquila", new Hint("eagle constellation", Category.ASTRONOMY)),
 		new Word("astana", new Hint("capital of Kazakhstan", Category.GEOGRAPHY)),
 		new Word("auriga", new Hint("charioteer constellation", Category.ASTRONOMY)),
+		new Word("autumn", new Hint("season after summer", Category.METEOROLOGY)),
 		new Word("barium", new Hint("in pure form, this element is a common radiocontrast agent", Category.CHEMISTRY)),
 		new Word("basalt", new Hint("dark extrusive igneous rock", Category.GEOLOGY)),
 		new Word("beaver", new Hint("dam-building rodent", Category.ZOOLOGY)),
@@ -202,7 +208,7 @@ const HONEYCOMB = {
 		new Word("copper", new Hint("primary constituent of brass and bronze", Category.CHEMISTRY)),
 		new Word("corona", [
 			new Hint("outer stellar atmosphere", Category.ASTRONOMY),
-			new Hint("Mexican beer", Category.MISC),
+			new Hint("Mexican beer", Category.FOOD),
 			new Hint("slang: disease which caused a pandemic in 2020", Category.MEDICINE),
 		]),
 		new Word("corvus", new Hint("crow constellation", Category.ASTRONOMY)),
@@ -211,7 +217,9 @@ const HONEYCOMB = {
 			new Hint("circular depression, usually due to an impact", Category.ASTRONOMY),
 		]),
 		new Word("craton", new Hint("part of a continental plate", Category.GEOLOGY)),
+		new Word("cuboid", new Hint("rectangular prism", Category.MATH)),
 		new Word("curium", new Hint("actinide alpha source", Category.CHEMISTRY)),
+		new Word("cycler", new Hint("spacecraft on a closed transfer orbit", Category.TRANSPORT)),
 		new Word("cygnus", new Hint("swan constellation", Category.ASTRONOMY)),
 		new Word("cyprus", new Hint("its capital, Nicosia", Category.GEOGRAPHY)),
 		new Word("dacite", new Hint("one type of felsic rock", Category.GEOLOGY)),
@@ -241,12 +249,14 @@ const HONEYCOMB = {
 			new Hint("beastly synonym of uncover", Category.ENGLISH),
 			new Hint("domesticated polecat", Category.ZOOLOGY),
 		]),
+		new Word("forest", new Hint("biome of trees", Category.GEOGRAPHY)),
 		new Word("fornax", new Hint("furnace constellation", Category.ASTRONOMY)),
 		new Word("fossil", new Hint("mineralized organism remains", Category.GEOLOGY)),
 		new Word("france", [
 			new Hint("country with the most francophones", Category.GEOGRAPHY),
 			new Hint("its capital, Paris", Category.GEOGRAPHY),
 		]),
+		new Word("freeze", new Hint("solidify", Category.CHEMISTRY)),
 		new Word("gambia", new Hint("its capital, Banjul", Category.GEOGRAPHY)),
 		new Word("garnet", new Hint("red gem", Category.MINEROLOGY)),
 		new Word("gemini", new Hint("twin sign", Category.ASTROLOGY)),
@@ -265,6 +275,7 @@ const HONEYCOMB = {
 			new Hint("preceding fowl and pig", Category.ZOOLOGY),
 		]),
 		new Word("guyana", new Hint("its capital, Georgetown", Category.GEOGRAPHY)),
+		new Word("haumea", new Hint("dwarf planet named for goddess of Hawaii", Category.ASTRONOMY)),
 		new Word("helium", new Hint("element discovered in the sun", Category.CHEMISTRY)),
 		new Word("hawaii", [
 			new Hint("American state surrounded entirely by ocean", Category.GEOGRAPHY),
@@ -284,6 +295,8 @@ const HONEYCOMB = {
 		new Word("itself", new Hint("third person singular neuter reflexive", Category.ENGLISH)),
 		new Word("jordan", new Hint("its capital, Amman", Category.GEOGRAPHY)),
 		new Word("kelvin", new Hint("SI unit of temperature", Category.MEASUREMENT)),
+		new Word("kepler", new Hint("astronomer known for his laws of planetary motion", Category.ASTRONOMY)),
+		new Word("kernel", new Hint("operating system core", Category.PROGRAMMING)),
 		new Word("kidney", new Hint("blood filtration organ", Category.MEDICINE)),
 		new Word("latvia", new Hint("its capital, Riga", Category.GEOGRAPHY)),
 		new Word("lazuli", [
@@ -291,6 +304,7 @@ const HONEYCOMB = {
 			new Hint("Minecraft ore used to enchant (second word)", Category.VIDEOGAME),
 		]),
 		new Word("lesbos", new Hint("island of Sappho", Category.GEOGRAPHY)),
+		new Word("linear", new Hint("of a line", Category.MATH)),
 		new Word("lizard", new Hint("common quadrupedal reptile", Category.ZOOLOGY)),
 		new Word("locust", [
 			new Hint("swarming grasshopper", Category.ZOOLOGY),
@@ -299,6 +313,13 @@ const HONEYCOMB = {
 		new Word("luster", new Hint("how light interacts with a rock surface", Category.GEOLOGY)),
 		new Word("mantle", new Hint("layer between the crust and core", Category.GEOLOGY)),
 		new Word("marble", new Hint("white metamorphic rock", Category.GEOLOGY)),
+		new Word("matrix", [
+			new Hint("material between eukaryotic cells", Category.BIOLOGY),
+			new Hint("medium in which grains of material are embedded", Category.GEOLOGY),
+			new Hint("rectangular array", Category.MATH),
+			new Hint("1999 sci-fi action film", Category.FILM),
+		]),
+		new Word("memory", new Hint("data storage", Category.PROGRAMMING)),
 		new Word("mexico", new Hint("most populous Spanish-speaking country", Category.GEOGRAPHY)),
 		new Word("minute", new Hint("sixty seconds", Category.MEASUREMENT)),
 		new Word("myself", new Hint("first person singular reflexive", Category.ENGLISH)),
@@ -318,6 +339,7 @@ const HONEYCOMB = {
 		]),
 		new Word("pascal", new Hint("SI unit of pressure", Category.MEASUREMENT)),
 		new Word("pebble", new Hint("rock, smaller than cobble", Category.GEOLOGY)),
+		new Word("piazzi", new Hint("Ceres discoverer surname", Category.ASTRONOMY)),
 		new Word("pictor", new Hint("painter constellation", Category.ASTRONOMY)),
 		new Word("pisces", new Hint("fish sign", Category.ASTROLOGY)),
 		new Word("pluton", new Hint("igneous intrusion", Category.GEOLOGY)),
@@ -331,7 +353,12 @@ const HONEYCOMB = {
 			new Hint("reddish blue", Category.COLOR),
 			new Hint("royal color", Category.HISTORY),
 		]),
+		new Word("python", [
+			new Hint("nonvenomous tropical snake", Category.ZOOLOGY),
+			new Hint("widespread dynamically typed programming language", Category.PROGRAMMING),
+		]),
 		new Word("quakes", new Hint("tremors of the crust, in short", Category.GEOLOGY)),
+		new Word("quaoar", new Hint("dwarf planet named for Tongva creator god", Category.ASTRONOMY)),
 		new Word("quartz", new Hint("silica mineral", Category.MINEROLOGY)),
 		new Word("rabbit", new Hint("small hopping mammal", Category.ZOOLOGY)),
 		new Word("radian", new Hint("SI unit of angle", Category.MEASUREMENT)),
@@ -355,6 +382,7 @@ const HONEYCOMB = {
 			new Hint("Sega console", Category.VIDEOGAME),
 			new Hint("rocket family which first brought humans to the moon", Category.TRANSPORT),
 		]),
+		new Word("secant", new Hint("line intersecting a curve at two points", Category.MATH)),
 		new Word("scutum", new Hint("shield constellation", Category.ASTRONOMY)),
 		new Word("second", new Hint("SI unit of time", Category.MEASUREMENT)),
 		new Word("serbia", [
@@ -364,12 +392,21 @@ const HONEYCOMB = {
 		new Word("shield", new Hint("exposed precambrian rock", Category.GEOLOGY)),
 		new Word("sicily", new Hint("largest Mediterranean island", Category.GEOGRAPHY)),
 		new Word("silver", new Hint("common coinage metal", Category.CHEMISTRY)),
+		new Word("sirius", new Hint("brightest nighttime star", Category.ASTRONOMY)),
 		new Word("sodium", new Hint("secondary constituent of table salt", Category.CHEMISTRY)),
+		new Word("source", new Hint("spring", Category.GEOLOGY)),
+		new Word("sphere", new Hint("3D analogue of a circle", Category.MATH)),
 		new Word("spider", [
 			new Hint("common eight-legged critter", Category.ZOOLOGY),
 			new Hint("Minecraft string source", Category.VIDEOGAME),
 		]),
+		new Word("spring", [
+			new Hint("source", Category.GEOLOGY),
+			new Hint("season after winter", Category.METEOROLOGY),
+		]),
+		new Word("steppe", new Hint("grassland plains, as in Eurasia", Category.GEOGRAPHY)),
 		new Word("sulfur", new Hint("element said to smell of egg", Category.CHEMISTRY)),
+		new Word("summer", new Hint("season after spring", Category.METEOROLOGY)),
 		new Word("sweden", new Hint("its capital, Stockholm", Category.GEOGRAPHY)),
 		new Word("switch", [
 			new Hint("tops and bottoms", Category.MISC),
@@ -395,6 +432,7 @@ const HONEYCOMB = {
 		]),
 		new Word("volans", new Hint("flying fish constellation", Category.ASTRONOMY)),
 		new Word("weight", new Hint("downward force", Category.PHYSICS)),
+		new Word("winter", new Hint("season after fall", Category.METEOROLOGY)),
 		new Word("zambia", new Hint("its capital, Lusaka", Category.GEOGRAPHY)),
 		new Word("zombie", [
 			new Hint("horror staple monster", Category.FILM),
