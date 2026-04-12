@@ -279,6 +279,7 @@ const HONEYCOMB = {
 				case 'Backspace':
 					HONEYCOMB.letterNodes.backspace();
 					break;
+				case 'Space':
 				case 'Tab':
 					if (ev.shiftKey) {
 						HONEYCOMB.letterNodes.advanceHex(true);
@@ -293,6 +294,7 @@ const HONEYCOMB = {
 						if (char !== char.toUpperCase()){
 							// alphabetic
 							HONEYCOMB.letterNodes.setLetter(char);
+							HONEYCOMB.letterNodes.advance();
 						}
 					}
 			}
