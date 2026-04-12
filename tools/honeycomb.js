@@ -429,6 +429,7 @@ const HONEYCOMB = {
 		new Word("minute", new Hint("sixty seconds", Category.MEASUREMENT)),
 		new Word("myosin", new Hint("motor protein", Category.BIOLOGY)),
 		new Word("myself", new Hint("first person singular reflexive", Category.ENGLISH)),
+		new Word("needle", new Hint("sharp threader", Category.TEXTILE)),
 		new Word("neuron", new Hint("electrically exciteable cell", Category.BIOLOGY)),
 		new Word("newton", new Hint("SI unit of force", Category.MEASUREMENT)),
 		new Word("nickel", new Hint("most common impurity in meteoric iron", Category.CHEMISTRY)),
