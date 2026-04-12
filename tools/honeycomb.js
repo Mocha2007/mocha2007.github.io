@@ -38,6 +38,7 @@ class Category {
 	static ENGLISH = "English";
 	static FOOD = "Food";
 	static GEOGRAPHY = "Geography";
+	static GEOLOGY = "Geology";
 	static HISTORY = "History";
 	static LANGUAGE = "Language";
 	static MEASUREMENT = "Measurement";
@@ -172,9 +173,11 @@ const HONEYCOMB = {
 		new Word("astana", new Hint("capital of Kazakhstan", Category.GEOGRAPHY)),
 		new Word("auriga", new Hint("charioteer constellation", Category.ASTRONOMY)),
 		new Word("barium", new Hint("in pure form, this element is a common radiocontrast agent", Category.CHEMISTRY)),
+		new Word("basalt", new Hint("dark extrusive igneous rock", Category.GEOLOGY)),
 		new Word("beaver", new Hint("dam-building rodent", Category.ZOOLOGY)),
 		new Word("belize", new Hint("its capital, Belmopan", Category.GEOGRAPHY)),
 		new Word("bhutan", new Hint("its capital, Thimphu", Category.GEOGRAPHY)),
+		new Word("biotic", new Hint("of biological origin", Category.ENGLISH)),
 		new Word("bootes", new Hint("herdsman constellation", Category.ASTRONOMY)),
 		new Word("bovine", new Hint("of cattle", Category.ZOOLOGY)),
 		new Word("brazil", new Hint("its capital, Brasília", Category.GEOGRAPHY)),
@@ -191,6 +194,7 @@ const HONEYCOMB = {
 		new Word("carina", new Hint("keel constellation", Category.ASTRONOMY)),
 		new Word("catena", new Hint("chain of craters", Category.ASTRONOMY)),
 		new Word("cattle", new Hint("a cow or ox", Category.ZOOLOGY)),
+		new Word("cobble", new Hint("rock, between a pebble and boulder in size", Category.GEOLOGY)),
 		new Word("iodine", new Hint("second-defining element", Category.CHEMISTRY)),
 		new Word("chasma", new Hint("deep, elongated, steep-sided depression", Category.ASTRONOMY)),
 		new Word("cobalt", new Hint("metal used in blue pigments", Category.CHEMISTRY)),
@@ -206,11 +210,14 @@ const HONEYCOMB = {
 			new Hint("cup constellation", Category.ASTRONOMY),
 			new Hint("circular depression, usually due to an impact", Category.ASTRONOMY),
 		]),
+		new Word("craton", new Hint("part of a continental plate", Category.GEOLOGY)),
 		new Word("curium", new Hint("actinide alpha source", Category.CHEMISTRY)),
 		new Word("cygnus", new Hint("swan constellation", Category.ASTRONOMY)),
 		new Word("cyprus", new Hint("its capital, Nicosia", Category.GEOGRAPHY)),
+		new Word("dacite", new Hint("one type of felsic rock", Category.GEOLOGY)),
 		new Word("dalton", new Hint("atomic mass unit", Category.MEASUREMENT)),
 		new Word("degree", new Hint("1/360 of a circle", Category.MEASUREMENT)),
+		new Word("desert", new Hint("biome with little precipitation", Category.GEOGRAPHY)),
 		new Word("donkey", [
 			new Hint("Shrek's partner", Category.FILM),
 			new Hint("presumably, a large burrito", Category.SPANISH),
@@ -221,6 +228,7 @@ const HONEYCOMB = {
 			new Hint("mythical golden city (second word)", Category.HISTORY),
 		]),
 		new Word("equine", new Hint("of horses", Category.ZOOLOGY)),
+		new Word("eroded", new Hint("worn away", Category.GEOLOGY)),
 		new Word("euboea", new Hint("large island off Boeotia", Category.GEOGRAPHY)),
 		new Word("falcon", [
 			new Hint("bird of prey, eg. peregrine", Category.ZOOLOGY),
@@ -228,11 +236,13 @@ const HONEYCOMB = {
 			new Hint("SpaceX launch vehicle", Category.TRANSPORT),
 		]),
 		new Word("feline", new Hint("of cats", Category.ZOOLOGY)),
+		new Word("felsic", new Hint("of silicate-rich igneous", Category.GEOLOGY)),
 		new Word("ferret", [
 			new Hint("beastly synonym of uncover", Category.ENGLISH),
 			new Hint("domesticated polecat", Category.ZOOLOGY),
 		]),
 		new Word("fornax", new Hint("furnace constellation", Category.ASTRONOMY)),
+		new Word("fossil", new Hint("mineralized organism remains", Category.GEOLOGY)),
 		new Word("france", [
 			new Hint("country with the most francophones", Category.GEOGRAPHY),
 			new Hint("its capital, Paris", Category.GEOGRAPHY),
@@ -245,6 +255,7 @@ const HONEYCOMB = {
 			new Hint("of the east Germanic conquerers of Rome", Category.HISTORY),
 			new Hint("sans-serif, in other words", Category.MISC),
 		]),
+		new Word("graben", new Hint("depressed block of crust bordered by parallel faults", Category.GEOLOGY)),
 		new Word("greece", new Hint("its capital, Athens", Category.GEOGRAPHY)),
 		new Word("grouse", new Hint("landfowl, eg. ruffed, spruce, sooty", Category.ZOOLOGY)),
 		new Word("guinea", [
@@ -285,6 +296,9 @@ const HONEYCOMB = {
 			new Hint("swarming grasshopper", Category.ZOOLOGY),
 			new Hint("one of three plagues sent to Egypt", Category.RELIGION),
 		]),
+		new Word("luster", new Hint("how light interacts with a rock surface", Category.GEOLOGY)),
+		new Word("mantle", new Hint("layer between the crust and core", Category.GEOLOGY)),
+		new Word("marble", new Hint("white metamorphic rock", Category.GEOLOGY)),
 		new Word("mexico", new Hint("most populous Spanish-speaking country", Category.GEOGRAPHY)),
 		new Word("minute", new Hint("sixty seconds", Category.MEASUREMENT)),
 		new Word("myself", new Hint("first person singular reflexive", Category.ENGLISH)),
@@ -303,8 +317,10 @@ const HONEYCOMB = {
 			new Hint("Minecraft mob, dies to cookies", Category.VIDEOGAME),
 		]),
 		new Word("pascal", new Hint("SI unit of pressure", Category.MEASUREMENT)),
+		new Word("pebble", new Hint("rock, smaller than cobble", Category.GEOLOGY)),
 		new Word("pictor", new Hint("painter constellation", Category.ASTRONOMY)),
 		new Word("pisces", new Hint("fish sign", Category.ASTROLOGY)),
+		new Word("pluton", new Hint("igneous intrusion", Category.GEOLOGY)),
 		new Word("poland", [
 			new Hint("its capital, Warsaw", Category.GEOGRAPHY),
 			new Hint("its invasion brought about a world war", Category.HISTORY),
@@ -315,6 +331,8 @@ const HONEYCOMB = {
 			new Hint("reddish blue", Category.COLOR),
 			new Hint("royal color", Category.HISTORY),
 		]),
+		new Word("quakes", new Hint("tremors of the crust, in short", Category.GEOLOGY)),
+		new Word("quartz", new Hint("silica mineral", Category.MINEROLOGY)),
 		new Word("rabbit", new Hint("small hopping mammal", Category.ZOOLOGY)),
 		new Word("radian", new Hint("SI unit of angle", Category.MEASUREMENT)),
 		new Word("radium", new Hint("radioactive alkaline earth metal", Category.CHEMISTRY)),
@@ -343,6 +361,7 @@ const HONEYCOMB = {
 			new Hint("its capital, Belgrade", Category.GEOGRAPHY),
 			new Hint("its invasion brought about a world war", Category.HISTORY),
 		]),
+		new Word("shield", new Hint("exposed precambrian rock", Category.GEOLOGY)),
 		new Word("sicily", new Hint("largest Mediterranean island", Category.GEOGRAPHY)),
 		new Word("silver", new Hint("common coinage metal", Category.CHEMISTRY)),
 		new Word("sodium", new Hint("secondary constituent of table salt", Category.CHEMISTRY)),
@@ -357,8 +376,10 @@ const HONEYCOMB = {
 			new Hint("Nintendo console", Category.VIDEOGAME),
 		]),
 		new Word("taurus", new Hint("bull sign", Category.ASTROLOGY)),
+		new Word("tephra", new Hint("volcanic ejecta", Category.GEOLOGY)),
 		new Word("tongue", new Hint("organ of taste and language", Category.MEDICINE)),
 		new Word("tucana", new Hint("toucan constellation", Category.ASTRONOMY)),
+		new Word("tundra", new Hint("arctic biome", Category.GEOGRAPHY)),
 		new Word("turkey", [
 			new Hint("american landfowl", Category.ZOOLOGY),
 			new Hint("its capital, Ankara", Category.GEOGRAPHY),
@@ -379,6 +400,7 @@ const HONEYCOMB = {
 			new Hint("horror staple monster", Category.FILM),
 			new Hint("second mob added to Minecraft", Category.VIDEOGAME),
 		]),
+		new Word("zircon", new Hint("key mineral of geochronology", Category.GEOLOGY)),
 	],
 	/** @type {Clue[]} */
 	clues: new Array(7).fill(undefined),
