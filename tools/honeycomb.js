@@ -52,6 +52,8 @@ class Clue {
 		e.classList.add('hex');
 		e.id = `hex${id}`;
 		e.innerHTML = this.word.word;
+		// todo: if id is 1-6, we need to create 4 of 6 letter spaces
+		// else, if id is 0, we need to create all 6...
 		return e;
 	}
 	/** @param {Direction} direction */
