@@ -463,6 +463,7 @@ const HONEYCOMB = {
 		new Word("sodium", new Hint("secondary constituent of table salt", Category.CHEMISTRY)),
 		new Word("source", new Hint("spring", Category.GEOLOGY)),
 		new Word("sphere", new Hint("3D analogue of a circle", Category.MATH)),
+		new Word("sphinx", new Hint("mythological creature with the head of a person and the body of a lion", Category.RELIGION)),
 		new Word("spider", [
 			new Hint("common eight-legged critter", Category.ZOOLOGY),
 			new Hint("Minecraft string source", Category.VIDEOGAME),
@@ -587,7 +588,7 @@ const HONEYCOMB = {
 		console.info('category statistics:', this.stats.categories);
 		// prepare keyboard controls
 		document.body.onkeydown = ev => {
-			console.debug(`keypress`, ev);
+			// console.debug(`keypress`, ev);
 			switch (ev.key) {
 				case 'Backspace':
 					HONEYCOMB.letterNodes.backspace();
