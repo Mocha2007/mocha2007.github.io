@@ -594,6 +594,7 @@ const HONEYCOMB = {
 		new Word("molten", new Hint("of liquid metal", Category.CHEMISTRY)),
 		new Word("moment", new Hint("ninety seconds", Category.MEASUREMENT)),
 		new Word("monday", new Hint("day after the weekend", Category.MEASUREMENT, Difficulty.EASY)),
+		new Word("mormon", new Hint("follower of Joseph Smith", Category.RELIGION)),
 		new Word("morrow", new Hint("morning", Category.MEASUREMENT)),
 		new Word("mortar", new Hint("pestle complement", Category.MISC)),
 		new Word("myosin", new Hint("motor protein", Category.BIOLOGY)),
