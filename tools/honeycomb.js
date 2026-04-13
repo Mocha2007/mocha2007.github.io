@@ -79,6 +79,8 @@ Category.categories = Object.keys(Category).map(k => Category[k]);
 
 class Difficulty {
 	static EASY = 0;
+	/* easter egg */
+	static SIMPLE = 0.5;
 	static NORMAL = 1;
 	static HARD = 2;
 	static TRICKY = 3;
@@ -344,6 +346,7 @@ const HONEYCOMB = {
 		new Word("dasher", new Hint("first reindeer called on by Santa", Category.HOLIDAY_WINTER)),
 		new Word("decade", new Hint("ten years", Category.MEASUREMENT, Difficulty.EASY)),
 		new Word("degree", new Hint("1/360 of a circle", Category.MEASUREMENT)),
+		new Word("delete", new Hint("key on keyboard similar to backspace", Category.MISC)),
 		new Word("desert", new Hint("biome with little precipitation", Category.GEOGRAPHY)),
 		new Word("donkey", [
 			new Hint("Shrek's partner", Category.FILM),
@@ -357,6 +360,7 @@ const HONEYCOMB = {
 		new Word("drachm", new Hint("sixteenth of an ounce", Category.MEASUREMENT, Difficulty.HARD)),
 		new Word("dragon", new Hint("mythological winged lizard", Category.RELIGION)),
 		new Word("dyeing", new Hint("textile coloring", Category.TEXTILE)),
+		new Word("easter", new Hint("Christian spring holiday", Category.RELIGION)),
 		new Word("eggnog", new Hint("wintry dairy drink", Category.HOLIDAY_WINTER)),
 		new Word("embryo", new Hint("initial developmental stage", Category.BIOLOGY)),
 		new Word("enzyme", new Hint("catalytic protein", Category.BIOLOGY)),
@@ -364,6 +368,7 @@ const HONEYCOMB = {
 		new Word("equine", new Hint("of horses", Category.ZOOLOGY)),
 		new Word("ermine", new Hint("black-tailed white weasel", Category.ZOOLOGY)),
 		new Word("eroded", new Hint("worn away", Category.GEOLOGY)),
+		new Word("escape", new Hint("key in upper-left corner of keyboard", Category.MISC)),
 		new Word("euboea", new Hint("large island off Boeotia", Category.GEOGRAPHY)),
 		new Word("europa", new Hint("Galileian moon", Category.ASTRONOMY)),
 		new Word("europe", new Hint("continent of Rome", Category.GEOGRAPHY)),
@@ -565,7 +570,7 @@ const HONEYCOMB = {
 		new Word("potato", new Hint("staple tuber", Category.FOOD)),
 		new Word("prefix", new Hint("attached to end of word", Category.GRAMMAR)),
 		new Word("prison", new Hint("carceral punishment building", Category.LAW)),
-		new Word("pulley", new Hint("simple machine", Category.PHYSICS)),
+		new Word("pulley", new Hint("simple machine", Category.PHYSICS, Difficulty.SIMPLE)),
 		new Word("puppis", new Hint("poop deck constellation", Category.ASTRONOMY)),
 		new Word("purple", [
 			new Hint("reddish blue", Category.COLOR, Difficulty.EASY),
