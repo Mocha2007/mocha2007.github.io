@@ -622,8 +622,8 @@ const HONEYCOMB = {
 	clues: new Array(7).fill(undefined),
 	get id(){
 		return this.clues
-			.map((c, i) => c.word.id * Math.pow(512, i))
-			.reduce((a, b) => a+b)
+			// literally Java's string hashing algo
+			.reduce((a, b) => 31*a+b.word.id, 0)
 			.toString(16);
 	},
 	letterNodes: {
@@ -788,7 +788,7 @@ const HONEYCOMB = {
 		const puzzle_id = document.createElement('span');
 		puzzle_id.id = 'puzzleId';
 		puzzle_id.innerHTML = `id: ${this.id}`;
-		controls.appendChild(puzzle_id);
+		document.body.appendChild(puzzle_id);
 	},
 	new(){
 		const fi = h => HONEYCOMB.config.forcecat ? h.category === HONEYCOMB.config.forcecat : !USED_CATEGORIES.includes(h.category);

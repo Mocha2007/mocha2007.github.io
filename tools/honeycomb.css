@@ -122,3 +122,9 @@ html, body {
 .direction3 {
 	bottom: 0;
 }
+#puzzleId {
+	bottom: 0;
+	font-size: 50%;
+	position: absolute;
+	right: 0;
+}
