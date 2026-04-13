@@ -664,7 +664,7 @@ const HONEYCOMB = {
 	},
 	letterNodes: {
 		get hex(){
-			return this.selected % 5;
+			return Math.floor(this.selected / 5);
 		},
 		letters: new Array(30).fill(''),
 		selected: 0,
@@ -731,7 +731,7 @@ const HONEYCOMB = {
 		console.info('category statistics:', this.stats.categories);
 		// prepare keyboard controls
 		document.body.onkeydown = ev => {
-			// console.debug(`keypress`, ev);
+			console.debug(`keypress`, ev);
 			switch (ev.key) {
 				case 'Backspace':
 				case 'Delete':
@@ -739,11 +739,13 @@ const HONEYCOMB = {
 					break;
 				case 'ArrowLeft':
 				case 'ArrowUp':
-					HONEYCOMB.letterNodes.advanceHex(true);
+					HONEYCOMB.letterNodes.advance(true);
 					break;
 				case 'ArrowDown':
 				case 'ArrowRight':
-				case 'Space':
+					HONEYCOMB.letterNodes.advance();
+					break;
+				case ' ':
 				case 'Tab':
 					if (ev.shiftKey) {
 						HONEYCOMB.letterNodes.advanceHex(true);
