@@ -970,7 +970,7 @@ const HONEYCOMB = {
 		});
 	},
 	new_wrapper(){
-		for (let i = 0; i < 100000; i++){
+		for (let i = 0; i < 10000; i++){
 			try {
 				this.new();
 				break;
