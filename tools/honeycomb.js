@@ -600,6 +600,10 @@ const HONEYCOMB = {
 		new Word("rabbit", new Hint("small hopping mammal", Category.ZOOLOGY)),
 		new Word("radian", new Hint("SI unit of angle", Category.MEASUREMENT)),
 		new Word("radium", new Hint("radioactive alkaline earth metal", Category.CHEMISTRY)),
+		new Word("radius", [
+			new Hint("bone next to ulna", Category.ANATOMY),
+			new Hint("distance from center of circle to its edge", Category.MATH),
+		]),
 		new Word("redder", new Hint("objects moving away appear this way", Category.PHYSICS)),
 		new Word("rennet", new Hint("cheesemaking enzymes", Category.FOOD)),
 		new Word("rhodes", new Hint("Greek island known for its Colossus", Category.GEOGRAPHY)),
