@@ -624,7 +624,8 @@ const HONEYCOMB = {
 		return this.clues
 			// literally Java's string hashing algo
 			.reduce((a, b) => 31*a+b.word.id, 0)
-			.toString(16);
+			.toString(16)
+			.slice(-4);
 	},
 	letterNodes: {
 		get hex(){
