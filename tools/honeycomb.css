@@ -2,6 +2,9 @@ html, body {
 	overflow: hidden;
 	user-select: none;
 }
+select {
+	width: fit-content;
+}
 .hex {
 	background-color: #430;
 	display: flex;

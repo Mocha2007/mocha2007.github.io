@@ -842,7 +842,7 @@ const HONEYCOMB = {
 		button_adc.id = 'adc';
 		button_adc.checked = this.config.avoidDupeCats;
 		button_adc_label.appendChild(button_adc);
-		button_adc_label.appendChild(document.createTextNode('Avoid Duplicate Categories'));
+		button_adc_label.appendChild(document.createTextNode('Balance Categories'));
 		button_adc_label.onclick = () => {
 			button_adc.checked = !button_adc.checked;
 			HONEYCOMB.config.avoidDupeCats = button_adc.checked;
@@ -855,7 +855,7 @@ const HONEYCOMB = {
 		button_amhc.id = 'ahmc';
 		button_amhc.checked = this.config.avoidMultipleHardClues;
 		button_amhc_label.appendChild(button_amhc);
-		button_amhc_label.appendChild(document.createTextNode('Avoid Excessive Difficulty'));
+		button_amhc_label.appendChild(document.createTextNode('Balance Difficulty'));
 		button_amhc_label.onclick = () => {
 			button_amhc.checked = !button_amhc.checked;
 			HONEYCOMB.config.avoidMultipleHardClues = button_amhc.checked;
