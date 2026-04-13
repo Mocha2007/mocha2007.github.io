@@ -38,6 +38,7 @@ class Word {
 }
 
 class Category {
+	static AGRICULTURE = "Agriculture";
 	static ANATOMY = "Anatomy";
 	static ANIME = "Anime";
 	static ASTROLOGY = "Astrology";
@@ -282,6 +283,10 @@ const HONEYCOMB = {
 		new Word("bootes", new Hint("herdsman constellation", Category.ASTRONOMY)),
 		new Word("botany", new Hint("study of plants", Category.BIOLOGY)),
 		new Word("bovine", new Hint("of cattle", Category.ZOOLOGY)),
+		new Word("branch", [
+			new Hint("plant limb", Category.BOTANY),
+			new Hint("repository offshoot", Category.PROGRAMMING),
+		]),
 		new Word("brazil", new Hint("its capital, Brasília", Category.GEOGRAPHY)),
 		new Word("bremen", new Hint("smallest German state", Category.GEOGRAPHY)),
 		new Word("bronze", new Hint("copper-tin alloy", Category.CHEMISTRY)),
@@ -307,6 +312,7 @@ const HONEYCOMB = {
 		new Word("carbon", new Hint("main element of coal", Category.CHEMISTRY)),
 		new Word("carina", new Hint("keel constellation", Category.ASTRONOMY)),
 		new Word("carols", new Hint("sung around the holidays", Category.HOLIDAY_WINTER)),
+		new Word("carpel", new Hint("female reproductive organ of flowering plants", Category.BOTANY, Difficulty.HARD)),
 		new Word("carpet", new Hint("rug", Category.TEXTILE)),
 		new Word("carrot", new Hint("orange root", Category.FOOD)),
 		new Word("casein", new Hint("milk protein", Category.FOOD)),
@@ -412,6 +418,7 @@ const HONEYCOMB = {
 		new Word("finger", new Hint("digit of the hand", Category.ANATOMY, Difficulty.EASY)),
 		new Word("finial", new Hint("decorative flagpole cap", Category.VEXILLOLOGY)),
 		new Word("firkin", new Hint("quarter of a barrel", Category.MEASUREMENT, Difficulty.HARD)),
+		new Word("floret", new Hint("small flower", Category.BOTANY, Difficulty.HARD)),
 		new Word("florin", new Hint("a coin, worth two shillings", Category.HISTORY)),
 		new Word("flower", new Hint("inflorescence", Category.BOTANY)),
 		new Word("forest", new Hint("biome of trees", Category.GEOGRAPHY, Difficulty.EASY)),
@@ -494,7 +501,10 @@ const HONEYCOMB = {
 		new Word("junior", new Hint("senior antonym", Category.ENGLISH)),
 		new Word("kelvin", new Hint("SI unit of temperature", Category.MEASUREMENT)),
 		new Word("kepler", new Hint("astronomer known for his laws of planetary motion", Category.ASTRONOMY)),
-		new Word("kernel", new Hint("operating system core", Category.PROGRAMMING)),
+		new Word("kernel", [
+			new Hint("drupe", Category.BOTANY),
+			new Hint("operating system core", Category.PROGRAMMING),
+		]),
 		new Word("kidney", new Hint("blood filtration organ", Category.MEDICINE)),
 		new Word("knight", [
 			new Hint("noble warrior", Category.HISTORY),
@@ -511,9 +521,10 @@ const HONEYCOMB = {
 			new Hint("Minecraft ore used to enchant (second word)", Category.VIDEOGAME),
 		]),
 		new Word("league", new Hint("three miles", Category.MEASUREMENT, Difficulty.HARD)),
+		new Word("legume", new Hint("Fabaceae fruit", Category.BOTANY, Difficulty.HARD)),
 		new Word("length", new Hint("dimesion measured by the meter", Category.MEASUREMENT)),
 		new Word("lesbos", new Hint("island of Sappho", Category.GEOGRAPHY)),
-		new Word("lichen", new Hint("algae-fungus symbiote", Category.BIOLOGY)),
+		new Word("lichen", new Hint("algae-fungus symbiote", Category.BOTANY)),
 		new Word("lights", new Hint("bright decorations strung on tree", Category.HOLIDAY_WINTER)),
 		new Word("linear", new Hint("of a line", Category.MATH)),
 		new Word("liquid", new Hint("product of melting", Category.CHEMISTRY)),
@@ -525,6 +536,7 @@ const HONEYCOMB = {
 		new Word("lovage", new Hint("parsley-like herb", Category.FOOD)),
 		new Word("lumber", new Hint("wood", Category.MISC)),
 		new Word("luster", new Hint("how light interacts with a rock surface", Category.GEOLOGY)),
+		new Word("lychee", new Hint("small, bumpy south Asian fruit", Category.FOOD)),
 		new Word("magpie", new Hint("intelligent black-and-white bird", Category.ZOOLOGY)),
 		new Word("manger", new Hint("structure Jesus was said to be born in", Category.HOLIDAY_WINTER)),
 		new Word("mantle", new Hint("layer between the crust and core", Category.GEOLOGY)),
@@ -553,6 +565,7 @@ const HONEYCOMB = {
 		new Word("myosin", new Hint("motor protein", Category.BIOLOGY)),
 		new Word("myself", new Hint("first person singular reflexive", Category.GRAMMAR)),
 		new Word("nebula", new Hint("'cloudy' object, follows Crab and Orion", Category.ASTRONOMY)),
+		new Word("nectar", new Hint("flower juice", Category.BOTANY)),
 		new Word("needle", [
 			new Hint("pine 'leaf'", Category.BOTANY),
 			new Hint("sharp threader", Category.TEXTILE),
@@ -577,6 +590,12 @@ const HONEYCOMB = {
 		new Word("oxgang", new Hint("fifteen acres", Category.MEASUREMENT, Difficulty.HARD)),
 		new Word("oxygen", new Hint("second most abundant element in Earth's atmosphere", Category.CHEMISTRY)),
 		new Word("paneer", new Hint("Indian cheese", Category.FOOD)),
+		new Word("palate", [
+			new Hint("roof of the mouth", Category.ANATOMY),
+			new Hint("expanded lower lip of a flower", Category.BOTANY, Difficulty.HARD),
+			new Hint("one's taste", Category.FOOD),
+			new Hint("consonants like /c/ and /k/ are pronounced here", Category.LANGUAGE),
+		]),
 		new Word("papaya", new Hint("large tropical yellow fruit", Category.FOOD)),
 		new Word("parrot", [
 			new Hint("imitative bird", Category.ZOOLOGY),
@@ -591,19 +610,23 @@ const HONEYCOMB = {
 			new Hint("sine repetition interval", Category.MATH),
 		]),
 		new Word("pestle", new Hint("mortar complement", Category.MISC)),
+		new Word("petals", new Hint("flower segments", Category.BOTANY)),
 		new Word("pewter", new Hint("alloy, primarily tin", Category.CHEMISTRY)),
 		new Word("pindus", new Hint("Greek mountain range", Category.GEOGRAPHY)),
+		new Word("pistil", new Hint("free carpel", Category.BOTANY, Difficulty.HARD)),
 		new Word("phloem", new Hint("photosynthesis product transport tissue", Category.BOTANY)),
 		new Word("phylum", new Hint("taxonomic rank under kingdom", Category.BIOLOGY)),
 		new Word("piazzi", new Hint("Ceres discoverer surname", Category.ASTRONOMY, Difficulty.HARD)),
 		new Word("pictor", new Hint("painter constellation", Category.ASTRONOMY)),
 		new Word("pisces", new Hint("fish sign", Category.ASTROLOGY)),
+		new Word("plants", new Hint("organisms botanists study", Category.BOTANY)),
 		new Word("plasma", new Hint("ionized gas", Category.CHEMISTRY)),
 		new Word("pluton", new Hint("igneous intrusion", Category.GEOLOGY)),
 		new Word("poland", [
 			new Hint("its capital, Warsaw", Category.GEOGRAPHY),
 			new Hint("its invasion brought about a world war", Category.HISTORY, Difficulty.TRICKY),
 		]),
+		new Word("pollen", new Hint("seed plant microspore", Category.BOTANY)),
 		new Word("pollux", new Hint("eastern twin of Gemini", Category.ASTRONOMY)),
 		new Word("pomelo", new Hint("large citrus", Category.FOOD)),
 		new Word("poplar", new Hint("deciduous northern flowering tree", Category.BOTANY, Difficulty.HARD)),
@@ -664,6 +687,7 @@ const HONEYCOMB = {
 		new Word("sesame", new Hint("hamburger bun seed", Category.FOOD)),
 		new Word("scurvy", new Hint("vitamin C deficiency", Category.MEDICINE)),
 		new Word("scutum", new Hint("shield constellation", Category.ASTRONOMY)),
+		new Word("scythe", new Hint("crop-harvesting tool", Category.AGRICULTURE)),
 		new Word("season", new Hint("quarter of a year", Category.MEASUREMENT)),
 		new Word("secant", new Hint("line intersecting a curve at two points", Category.MATH)),
 		new Word("second", new Hint("SI unit of time", Category.MEASUREMENT)),
@@ -711,6 +735,7 @@ const HONEYCOMB = {
 		new Word("taurus", new Hint("bull sign", Category.ASTROLOGY)),
 		new Word("tephra", new Hint("volcanic ejecta", Category.GEOLOGY)),
 		new Word("tethys", new Hint("fifth-largest Saturnian moon", Category.ASTRONOMY)),
+		new Word("thorns", new Hint("sharp things on roses", Category.BOTANY)),
 		new Word("thread", new Hint("used with needles, found on spools", Category.TEXTILE)),
 		new Word("timber", new Hint("wood", Category.MISC)),
 		new Word("tinsel", new Hint("sparkly decoration strung on tree", Category.HOLIDAY_WINTER)),
