@@ -868,7 +868,7 @@ const HONEYCOMB = {
 		document.body.appendChild(puzzle_id);
 	},
 	new(){
-		const fi = h => HONEYCOMB.config.seasonalFilter(h.category) && HONEYCOMB.config.forcecat ? h.category === HONEYCOMB.config.forcecat : !USED_CATEGORIES.includes(h.category);
+		const fi = h => HONEYCOMB.config.seasonalFilter(h.category) && (HONEYCOMB.config.forcecat ? h.category === HONEYCOMB.config.forcecat : !USED_CATEGORIES.includes(h.category));
 		this.clear();
 		let dictionary = this.words.map(w => w);
 		let n_hard = 0;
