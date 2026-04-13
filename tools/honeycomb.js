@@ -32,6 +32,9 @@ class Word {
 		/** @type {Hint[]} */
 		this.hints = hints.length ? hints : [hints];
 	}
+	get id(){
+		return HONEYCOMB.words.indexOf(this);
+	}
 }
 
 class Category {
@@ -617,6 +620,12 @@ const HONEYCOMB = {
 	},
 	/** @type {Clue[]} */
 	clues: new Array(7).fill(undefined),
+	get id(){
+		return this.clues
+			.map((c, i) => c.word.id * Math.pow(512, i))
+			.reduce((a, b) => a+b)
+			.toString(16);
+	},
 	letterNodes: {
 		get hex(){
 			return this.selected % 5;
@@ -775,6 +784,11 @@ const HONEYCOMB = {
 		cat_dropdown.onclick = () => HONEYCOMB.config.forcecat = cat_dropdown.value;
 		cat_dropdown.value = this.config.forcecat
 		controls.appendChild(cat_dropdown);
+		// show id
+		const puzzle_id = document.createElement('span');
+		puzzle_id.id = 'puzzleId';
+		puzzle_id.innerHTML = `id: ${this.id}`;
+		controls.appendChild(puzzle_id);
 	},
 	new(){
 		const fi = h => HONEYCOMB.config.forcecat ? h.category === HONEYCOMB.config.forcecat : !USED_CATEGORIES.includes(h.category);
