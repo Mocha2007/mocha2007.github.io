@@ -360,6 +360,7 @@ const HONEYCOMB = {
 		new Word("eggnog", new Hint("wintry dairy drink", Category.HOLIDAY_WINTER)),
 		new Word("embryo", new Hint("initial developmental stage", Category.BIOLOGY)),
 		new Word("enzyme", new Hint("catalytic protein", Category.BIOLOGY)),
+		new Word("eocene", new Hint("paleogene epoch preceding the oligocene", Category.GEOLOGY)),
 		new Word("equine", new Hint("of horses", Category.ZOOLOGY)),
 		new Word("ermine", new Hint("black-tailed white weasel", Category.ZOOLOGY)),
 		new Word("eroded", new Hint("worn away", Category.GEOLOGY)),
@@ -425,6 +426,7 @@ const HONEYCOMB = {
 		]),
 		new Word("guilty", new Hint("verdict to punish the accused", Category.LAW)),
 		new Word("guyana", new Hint("its capital, Georgetown", Category.GEOGRAPHY)),
+		new Word("hadean", new Hint("oldest eon", Category.GEOLOGY)),
 		new Word("haumea", new Hint("dwarf planet named for goddess of Hawaii", Category.ASTRONOMY)),
 		new Word("hawaii", [
 			new Hint("American state surrounded entirely by ocean", Category.GEOGRAPHY),
@@ -540,6 +542,11 @@ const HONEYCOMB = {
 		new Word("pascal", new Hint("SI unit of pressure", Category.MEASUREMENT)),
 		new Word("peanut", new Hint("legume commonly ground to butter", Category.FOOD)),
 		new Word("pebble", new Hint("rock, smaller than cobble", Category.GEOLOGY)),
+		new Word("period", [
+			new Hint("orbit repetition interval", Category.ASTRONOMY),
+			new Hint("era subdivision", Category.GEOLOGY),
+			new Hint("sine repetition interval", Category.MATH),
+		]),
 		new Word("pestle", new Hint("mortar complement", Category.MISC)),
 		new Word("pewter", new Hint("alloy, primarily tin", Category.CHEMISTRY)),
 		new Word("pindus", new Hint("Greek mountain range", Category.GEOGRAPHY)),
@@ -649,6 +656,7 @@ const HONEYCOMB = {
 		new Word("tinsel", new Hint("sparkly decoration strung on tree", Category.HOLIDAY_WINTER)),
 		new Word("tomato", new Hint("fruit considered a vegetable", Category.FOOD)),
 		new Word("tongue", new Hint("organ of taste and language", Category.MEDICINE)),
+		new Word("tonian", new Hint("neoproterozoic period preceding the cryogenian", Category.GEOLOGY)),
 		new Word("triton", new Hint("Neptune's largest moon", Category.ASTRONOMY)),
 		new Word("trojan", [
 			new Hint("small body in the lagrangian point of a planet", Category.ASTRONOMY),
