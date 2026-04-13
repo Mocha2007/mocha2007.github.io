@@ -50,6 +50,7 @@ class Category {
 	static COLOR = "Color";
 	/* specifically meta-English, NOT grammar, NOT literature */
 	static ENGLISH = "English";
+	static FANTASY = "Fantasy";
 	static FOOD = "Food";
 	static GEOGRAPHY = "Geography";
 	static GEOLOGY = "Geology";
@@ -252,6 +253,7 @@ const HONEYCOMB = {
 		new Word("aroace", new Hint("slang: aromantic and asexual", Category.LGBT)),
 		new Word("astana", new Hint("capital of Kazakhstan", Category.GEOGRAPHY)),
 		new Word("athena", new Hint("Greek goddess of wisdom", Category.RELIGION)),
+		new Word("attack", new Hint("antonym of defend", Category.ENGLISH)),
 		new Word("auburn", new Hint("dark reddish brown", Category.COLOR)),
 		new Word("august", new Hint("eighth month", Category.MEASUREMENT, Difficulty.EASY)),
 		new Word("auriga", new Hint("charioteer constellation", Category.ASTRONOMY)),
@@ -363,6 +365,7 @@ const HONEYCOMB = {
 		new Word("corvus", new Hint("crow constellation", Category.ASTRONOMY)),
 		new Word("cotton", new Hint("common plant fiber", Category.TEXTILE)),
 		new Word("cougar", new Hint("mountain lion", Category.ZOOLOGY)),
+		new Word("cowrie", new Hint("sea snail used as currency", Category.ZOOLOGY)),
 		new Word("coyote", new Hint("American canid", Category.ZOOLOGY)),
 		new Word("crater", [
 			new Hint("cup constellation", Category.ASTRONOMY),
@@ -384,6 +387,7 @@ const HONEYCOMB = {
 		new Word("dative", new Hint("case marking the indirect object", Category.GRAMMAR)),
 		new Word("decade", new Hint("ten years", Category.MEASUREMENT, Difficulty.EASY)),
 		new Word("decare", new Hint("unit of a thousand square meters", Category.MEASUREMENT)),
+		new Word("defend", new Hint("antonym of attack", Category.ENGLISH)),
 		new Word("degree", new Hint("1/360 of a circle", Category.MEASUREMENT)),
 		new Word("delete", new Hint("key on keyboard similar to backspace", Category.MISC)),
 		new Word("desert", new Hint("biome with little precipitation", Category.GEOGRAPHY)),
@@ -397,7 +401,7 @@ const HONEYCOMB = {
 			new Hint("mythical golden city (second word)", Category.HISTORY),
 		]),
 		new Word("drachm", new Hint("sixteenth of an ounce", Category.MEASUREMENT, Difficulty.HARD)),
-		new Word("dragon", new Hint("mythological winged lizard", Category.RELIGION)),
+		new Word("dragon", new Hint("mythological winged lizard", Category.FANTASY)),
 		new Word("durian", new Hint("large smelly fruit", Category.FOOD)),
 		new Word("dyeing", new Hint("textile coloring", Category.TEXTILE)),
 		new Word("easter", new Hint("Christian spring holiday", Category.RELIGION)),
@@ -463,6 +467,7 @@ const HONEYCOMB = {
 			new Hint("strong root", Category.BOTANY),
 		]),
 		new Word("ginkgo", new Hint("'living fossil' monotypic tree division", Category.BOTANY)),
+		new Word("goblin", new Hint("mischievous humanoid (often green)", Category.FANTASY)),
 		new Word("gopher", new Hint("small burrowing rodent", Category.ZOOLOGY)),
 		new Word("gothic", [
 			new Hint("2001 RPG", Category.VIDEOGAME),
@@ -530,6 +535,7 @@ const HONEYCOMB = {
 			new Hint("noble warrior", Category.HISTORY),
 			new Hint("chess jumper", Category.BOARDGAME),
 		]),
+		new Word("kobold", new Hint("mischievous reptilian humanoid", Category.FANTASY)),
 		new Word("kuiper", new Hint("Pluto lies in this belt", Category.ASTRONOMY)),
 		new Word("labile", [
 			new Hint("kinetically unstable", Category.CHEMISTRY),
@@ -575,6 +581,7 @@ const HONEYCOMB = {
 			new Hint("1999 sci-fi action film", Category.FILM),
 		]),
 		new Word("meadow", new Hint("grassy field", Category.BOTANY)),
+		new Word("medium", new Hint("neither small nor large", Category.ENGLISH)),
 		new Word("medusa", new Hint("serpent-haired monster", Category.RELIGION)),
 		new Word("memory", new Hint("data storage", Category.PROGRAMMING)),
 		new Word("meteor", new Hint("shooting star", Category.ASTRONOMY)),
@@ -651,6 +658,10 @@ const HONEYCOMB = {
 		new Word("plants", new Hint("organisms botanists study", Category.BOTANY)),
 		new Word("plasma", new Hint("ionized gas", Category.CHEMISTRY)),
 		new Word("pluton", new Hint("igneous intrusion", Category.GEOLOGY)),
+		new Word("poison", [
+			new Hint("harmful substance", Category.MEDICINE),
+			new Hint("in D&D, damage type caused by eg. venom", Category.FANTASY),
+		]),
 		new Word("poland", [
 			new Hint("its capital, Warsaw", Category.GEOGRAPHY),
 			new Hint("its invasion brought about a world war", Category.HISTORY, Difficulty.TRICKY),
@@ -660,6 +671,7 @@ const HONEYCOMB = {
 		new Word("pomelo", new Hint("large citrus", Category.FOOD)),
 		new Word("poplar", new Hint("deciduous northern flowering tree", Category.BOTANY, Difficulty.HARD)),
 		new Word("potato", new Hint("staple tuber", Category.FOOD)),
+		new Word("potion", new Hint("magical concoction", Category.FANTASY)),
 		new Word("prefix", new Hint("attached to end of word", Category.GRAMMAR)),
 		new Word("prison", new Hint("carceral punishment building", Category.LAW)),
 		new Word("proton", new Hint("positive nucleon", Category.CHEMISTRY)),
@@ -693,6 +705,7 @@ const HONEYCOMB = {
 		new Word("retort", new Hint("bent-necked flask", Category.CHEMISTRY)),
 		new Word("rhodes", new Hint("Greek island known for its Colossus", Category.GEOGRAPHY)),
 		new Word("ribbon", new Hint("thin cloth band", Category.TEXTILE)),
+		new Word("ritual", new Hint("spell that can be cast without expending a spell slot, at the expense of time", Category.FANTASY)),
 		new Word("russet", new Hint("reddish brown", Category.COLOR)),
 		new Word("russia", [
 			new Hint("its capital, Moscow", Category.GEOGRAPHY),
@@ -817,6 +830,7 @@ const HONEYCOMB = {
 			new Hint("season after fall", Category.MEASUREMENT, Difficulty.EASY),
 			new Hint("christmas season", Category.HOLIDAY_WINTER, Difficulty.EASY),
 		]),
+		new Word("wisdom", new Hint("in D&D, represents a character's practical intelligence", Category.FANTASY)),
 		new Word("wreath", new Hint("decorative branch ring", Category.HOLIDAY_WINTER)),
 		new Word("yellow", new Hint("color between orange and green", Category.COLOR, Difficulty.EASY)),
 		new Word("yogurt", new Hint("fermented milk product", Category.FOOD)),
