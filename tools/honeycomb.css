@@ -19,6 +19,7 @@ html, body {
 	padding: 0 2vw;
 }
 .letter {
+	border: min(0.3vh, 0.3vw) solid black;
 	position: absolute;
 	height: 2em;
 	line-height: 2em;
@@ -26,7 +27,6 @@ html, body {
 }
 .letter, .kbkey {
 	background-color: #333;
-	border: min(0.3vh, 0.3vw) solid black;
 	border-radius: min(1vh, 1vw);
 	color: white;
 	cursor: pointer;
@@ -89,6 +89,7 @@ html, body {
 	font-size: 2vh;
 	height: 5vh;
 	line-height: 5vh;
+	margin: 0.2vh 0.2vw;
 	width: 3vw;
 }
 /* horizontal alignment of hexes */
