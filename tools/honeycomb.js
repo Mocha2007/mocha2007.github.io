@@ -51,6 +51,7 @@ class Category {
 	static GEOGRAPHY = "Geography";
 	static GEOLOGY = "Geology";
 	static HISTORY = "History";
+	static HOLIDAY_WINTER = "Winter Holidays";
 	static LANGUAGE = "Language";
 	static MATH = "Mathematics";
 	static MEASUREMENT = "Measurement";
@@ -339,7 +340,7 @@ const HONEYCOMB = {
 		]),
 		new Word("dragon", new Hint("mythological winged lizard", Category.RELIGION)),
 		new Word("dyeing", new Hint("textile coloring", Category.TEXTILE)),
-		new Word("eggnog", new Hint("wintry dairy drink", Category.FOOD)),
+		new Word("eggnog", new Hint("wintry dairy drink", Category.HOLIDAY_WINTER)),
 		new Word("embryo", new Hint("initial developmental stage", Category.BIOLOGY)),
 		new Word("enzyme", new Hint("catalytic protein", Category.BIOLOGY)),
 		new Word("equine", new Hint("of horses", Category.ZOOLOGY)),
@@ -373,6 +374,7 @@ const HONEYCOMB = {
 			new Hint("its capital, Paris", Category.GEOGRAPHY),
 		]),
 		new Word("freeze", new Hint("solidify", Category.CHEMISTRY)),
+		new Word("frosty", new Hint("animated snowman", Category.HOLIDAY_WINTER)),
 		new Word("fungus", new Hint("mushrooms are a type of this", Category.BIOLOGY)),
 		new Word("galaxy", new Hint("the Milky Way is this", Category.ASTRONOMY)),
 		new Word("gambia", new Hint("its capital, Banjul", Category.GEOGRAPHY)),
@@ -429,6 +431,7 @@ const HONEYCOMB = {
 		new Word("island", new Hint("land surrounded by water", Category.GEOGRAPHY)),
 		new Word("istria", new Hint("Croatian peninsula", Category.GEOGRAPHY)),
 		new Word("itself", new Hint("third person singular neuter reflexive", Category.ENGLISH)),
+		new Word("jingle", new Hint("what sleighbells do", Category.HOLIDAY_WINTER)),
 		new Word("jordan", new Hint("its capital, Amman", Category.GEOGRAPHY)),
 		new Word("kelvin", new Hint("SI unit of temperature", Category.MEASUREMENT)),
 		new Word("kepler", new Hint("astronomer known for his laws of planetary motion", Category.ASTRONOMY)),
@@ -556,19 +559,20 @@ const HONEYCOMB = {
 		]),
 		new Word("savory", new Hint("satureja herb", Category.BOTANY)),
 		new Word("saxony", new Hint("state of Leipzig and Dresden", Category.GEOGRAPHY)),
-		new Word("secant", new Hint("line intersecting a curve at two points", Category.MATH)),
-		new Word("sewing", new Hint("textile fastening", Category.TEXTILE)),
 		new Word("scutum", new Hint("shield constellation", Category.ASTRONOMY)),
+		new Word("secant", new Hint("line intersecting a curve at two points", Category.MATH)),
 		new Word("second", new Hint("SI unit of time", Category.MEASUREMENT)),
 		new Word("serbia", [
 			new Hint("its capital, Belgrade", Category.GEOGRAPHY),
 			new Hint("its invasion brought about a world war", Category.HISTORY, Difficulty.TRICKY),
 		]),
+		new Word("sewing", new Hint("textile fastening", Category.TEXTILE)),
 		new Word("shield", new Hint("exposed precambrian rock", Category.GEOLOGY)),
 		new Word("sicily", new Hint("largest Mediterranean island", Category.GEOGRAPHY)),
 		new Word("sienna", new Hint("reddish brown pigment", Category.COLOR)),
 		new Word("silver", new Hint("common coinage metal", Category.CHEMISTRY)),
 		new Word("sirius", new Hint("brightest nighttime star", Category.ASTRONOMY)),
+		new Word("sleigh", new Hint("Santa's vehicle", Category.HOLIDAY_WINTER)),
 		new Word("sodium", new Hint("secondary constituent of table salt", Category.CHEMISTRY)),
 		new Word("source", new Hint("spring", Category.GEOLOGY)),
 		new Word("sphere", new Hint("3D analogue of a circle", Category.MATH)),
@@ -633,6 +637,7 @@ const HONEYCOMB = {
 		new Word("weaver", new Hint("textile producer", Category.TEXTILE)),
 		new Word("weight", new Hint("downward force", Category.PHYSICS)),
 		new Word("winter", new Hint("season after fall", Category.METEOROLOGY, Difficulty.EASY)),
+		new Word("wreath", new Hint("decorative branch ring", Category.HOLIDAY_WINTER)),
 		new Word("yellow", new Hint("color between orange and green", Category.COLOR, Difficulty.EASY)),
 		new Word("yogurt", new Hint("fermented milk product", Category.FOOD)),
 		new Word("zaffre", new Hint("cobalt blue pigment", Category.COLOR)),
@@ -651,8 +656,18 @@ const HONEYCOMB = {
 	config: {
 		avoidDupeCats: true,
 		avoidMultipleHardClues: true,
+		date: new Date(),
 		debug: document.URL[0].toLowerCase() === 'f', // file:// vs. http(s)://
 		forcecat: '',
+		/** @param {Category} c */
+		seasonalFilter(c){
+			switch (c){
+				case Category.HOLIDAY_WINTER:
+					return this.date.getMonth() === 11;
+				default:
+					return true;
+			}
+		}
 	},
 	/** @type {Clue[]} */
 	clues: new Array(7).fill(undefined),
@@ -835,7 +850,7 @@ const HONEYCOMB = {
 		document.body.appendChild(puzzle_id);
 	},
 	new(){
-		const fi = h => HONEYCOMB.config.forcecat ? h.category === HONEYCOMB.config.forcecat : !USED_CATEGORIES.includes(h.category);
+		const fi = h => HONEYCOMB.config.seasonalFilter(h.category) && HONEYCOMB.config.forcecat ? h.category === HONEYCOMB.config.forcecat : !USED_CATEGORIES.includes(h.category);
 		this.clear();
 		let dictionary = this.words.map(w => w);
 		let n_hard = 0;
