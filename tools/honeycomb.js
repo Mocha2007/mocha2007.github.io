@@ -897,7 +897,7 @@ const HONEYCOMB = {
 			Array.from(row).forEach(char => {
 				const elem_char = document.createElement('span');
 				kbrow.appendChild(elem_char);
-				elem_char.innerHTML = char;
+				elem_char.innerHTML = char.toUpperCase();
 				elem_char.classList.add('kbkey');
 				elem_char.onclick = () => {
 					HONEYCOMB.letterNodes.setLetter(char);

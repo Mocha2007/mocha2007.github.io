@@ -20,6 +20,9 @@ html, body {
 }
 .letter {
 	position: absolute;
+	height: 2em;
+	line-height: 2em;
+	width: 2em;
 }
 .letter, .kbkey {
 	background-color: #444;
@@ -27,9 +30,6 @@ html, body {
 	border-radius: 5px;
 	color: white;
 	cursor: pointer;
-	height: 2em;
-	line-height: 2em;
-	width: 2em;
 	z-index: 1;
 }
 .letter:hover, .kbkey:hover {
@@ -77,7 +77,6 @@ html, body {
 	width: 30vw;
 }
 #osc {
-	font-size: 90%;
 	position: absolute;
 	right: 0;
 	text-align: center;
@@ -85,6 +84,10 @@ html, body {
 }
 .kbkey {
 	display: inline-block;
+	font-size: 2vh;
+	height: 5vh;
+	line-height: 5vh;
+	width: 3vw;
 }
 /* horizontal alignment of hexes */
 #hex1, #hex0, #hex4 {
