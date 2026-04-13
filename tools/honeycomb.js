@@ -679,6 +679,7 @@ const HONEYCOMB = {
 		forcecat: '',
 		/** @param {Category} c */
 		seasonalFilter(c){
+			// if (this !== HONEYCOMB.config) alert('assert failed');
 			switch (c){
 				case Category.HOLIDAY_WINTER:
 					return this.date.getMonth() === 11;
@@ -868,9 +869,13 @@ const HONEYCOMB = {
 		document.body.appendChild(puzzle_id);
 	},
 	new(){
-		const fi = h => HONEYCOMB.config.seasonalFilter(h.category) && (HONEYCOMB.config.forcecat ? h.category === HONEYCOMB.config.forcecat : !USED_CATEGORIES.includes(h.category));
+		// word must also pass seasonal filter here, because some words have hints in multiple categories
+		const fi = h => HONEYCOMB.config.seasonalFilter(h.category)
+			&& (HONEYCOMB.config.forcecat ? h.category === HONEYCOMB.config.forcecat : !USED_CATEGORIES.includes(h.category));
 		this.clear();
-		let dictionary = this.words.map(w => w);
+		let dictionary = this.words
+			// word MUST pass seasonal filter.
+			.filter(w => w.hints.some(HONEYCOMB.config.seasonalFilter));
 		let n_hard = 0;
 		// first, choose the mystery word for the center
 		const WORD0 = this.randomWordMatching(dictionary);
@@ -988,7 +993,9 @@ const HONEYCOMB = {
 	 * @returns {Word}
 	 */
 	randomWordMatching(dictionary, filter = () => true, used_categories = [], n_hard = 0){
-		const matches = dictionary.filter(filter).filter(w => w.hints.some(h => !HONEYCOMB.config.forcecat || h.category === HONEYCOMB.config.forcecat));
+		const matches = dictionary.filter(filter)
+			// if a category is forced, it MUST be that category
+			.filter(w => w.hints.some(h => !HONEYCOMB.config.forcecat || h.category === HONEYCOMB.config.forcecat));
 		if (matches.length < 1) console.warn('no matches');
 		// if possible, avoid duplicate categories, and multiple hard clues
 		const catmatches = matches.filter(w => w.hints.some(h => (HONEYCOMB.config.forcecat || !HONEYCOMB.config.avoidDupeCats || !used_categories.includes(h.category)) && (!HONEYCOMB.config.avoidMultipleHardClues || n_hard <= 0 || h.difficulty <= Difficulty.NORMAL)));
