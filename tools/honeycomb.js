@@ -679,10 +679,9 @@ const HONEYCOMB = {
 		forcecat: '',
 		/** @param {Category} c */
 		seasonalFilter(c){
-			// if (this !== HONEYCOMB.config) alert('assert failed');
 			switch (c){
 				case Category.HOLIDAY_WINTER:
-					return this.date.getMonth() === 11;
+					return HONEYCOMB.config.date.getMonth() === 11;
 				default:
 					return true;
 			}
