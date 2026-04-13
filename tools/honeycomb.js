@@ -56,6 +56,7 @@ class Category {
 	static HOLIDAY_WINTER = "Winter Holidays";
 	static LANGUAGE = "Language";
 	static LAW = "Law";
+	static LGBT = "LGBT";
 	static MATH = "Mathematics";
 	static MEASUREMENT = "Measurement";
 	static MEDICINE = "Medicine";
@@ -239,6 +240,7 @@ const HONEYCOMB = {
 		new Word("apogee", new Hint("furthest part of an orbit from Earth", Category.ASTROLOGY)),
 		new Word("apollo", new Hint("Greek god of healing and prophecy", Category.RELIGION)),
 		new Word("aquila", new Hint("eagle constellation", Category.ASTRONOMY)),
+		new Word("aroace", new Hint("slang: aromantic and asexual", Category.LGBT)),
 		new Word("astana", new Hint("capital of Kazakhstan", Category.GEOGRAPHY)),
 		new Word("athena", new Hint("Greek goddess of wisdom", Category.RELIGION)),
 		new Word("auburn", new Hint("dark reddish brown", Category.COLOR)),
@@ -311,7 +313,9 @@ const HONEYCOMB = {
 		]),
 		new Word("cheese", new Hint("solid milk product", Category.FOOD)),
 		new Word("charon", new Hint("Pluto's largest moon", Category.ASTRONOMY)),
+		new Word("chaser", new Hint("fetishizer of trans folks", Category.LGBT)),
 		new Word("chrome", new Hint("Google browser", Category.TECH)),
+		new Word("cishet", new Hint("slang: cisgender and heterosexual", Category.LGBT)),
 		new Word("cobble", new Hint("rock, between a pebble and boulder in size", Category.GEOLOGY)),
 		new Word("crimea", new Hint("invaded by Russia in 2014", Category.HISTORY)),
 		new Word("chasma", new Hint("deep, elongated, steep-sided depression", Category.ASTRONOMY)),
@@ -417,6 +421,7 @@ const HONEYCOMB = {
 		new Word("garden", new Hint("outdoor plant cultivation area", Category.BOTANY)),
 		new Word("garlic", new Hint("strong bulb", Category.BOTANY)),
 		new Word("garnet", new Hint("red gem", Category.MINEROLOGY)),
+		new Word("gaydar", new Hint("intuition of sexuality", Category.LGBT)),
 		new Word("gemini", new Hint("twin sign", Category.ASTROLOGY)),
 		new Word("genome", new Hint("entire set of genetic material", Category.BIOLOGY)),
 		new Word("gelato", new Hint("Italian ice cream", Category.FOOD)),
@@ -660,6 +665,8 @@ const HONEYCOMB = {
 		]),
 		new Word("spruce", new Hint("conifer", Category.BOTANY)),
 		new Word("steppe", new Hint("grassland plains, as in Eurasia", Category.GEOGRAPHY)),
+		new Word("strain", new Hint("deformation", Category.PHYSICS)),
+		new Word("stress", new Hint("deformation force", Category.PHYSICS)),
 		new Word("suffix", new Hint("attached to end of word", Category.GRAMMAR)),
 		new Word("sulfur", new Hint("element said to smell of egg", Category.CHEMISTRY)),
 		new Word("sunset", new Hint("dusk", Category.MEASUREMENT, Difficulty.EASY)),
@@ -667,7 +674,7 @@ const HONEYCOMB = {
 		new Word("sunday", new Hint("second day of the weekend", Category.MEASUREMENT, Difficulty.EASY)),
 		new Word("sweden", new Hint("its capital, Stockholm", Category.GEOGRAPHY)),
 		new Word("switch", [
-			new Hint("tops and bottoms", Category.MISC),
+			new Hint("tops and bottoms", Category.LGBT),
 			new Hint("Nintendo console", Category.VIDEOGAME),
 		]),
 		new Word("syzygy", new Hint("alignment of three objects", Category.ASTRONOMY)),
