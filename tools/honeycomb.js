@@ -692,6 +692,9 @@ const HONEYCOMB = {
 		date: new Date(),
 		debug: document.URL[0].toLowerCase() === 'f', // file:// vs. http(s)://
 		forcecat: '',
+		get minCatSize(){
+			return this.debug ? 7 : 28;
+		},
 		/** @param {Category} c */
 		seasonalFilter(c){
 			switch (c){
@@ -865,7 +868,7 @@ const HONEYCOMB = {
 		const cat_dropdown = document.createElement('select');
 		cat_dropdown.id = 'forcecat';
 		const catcounts = this.stats.categories;
-		const options = ['', ...Category.categories.filter(c => 7 <= catcounts[c])];
+		const options = ['', ...Category.categories.filter(c => this.config.minCatSize <= catcounts[c])];
 		options.forEach(c => {
 			const option = document.createElement('option');
 			option.value = c;
