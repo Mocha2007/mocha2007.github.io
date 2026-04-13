@@ -198,7 +198,7 @@ const HONEYCOMB = {
 		/*
 			Things added:
 			- all 6-letter constellations and planets
-			- all 6-letter countries (excl. Israel Kuwait Monaco)
+			- all 6-letter countries (excl. Kuwait Monaco)
 			- all 6-letter elements (excl. Cerium and Erbium)
 			- all 6-letter minecraft mobs (excl. new ones)
 			- partial: all 6-letter https://en.wikipedia.org/wiki/Planetary_nomenclature
@@ -247,6 +247,7 @@ const HONEYCOMB = {
 		new Word("barley", new Hint("major cereal grain", Category.BOTANY)),
 		new Word("barred", new Hint("spiral galaxies may be this, like the Milky Way", Category.ASTRONOMY)),
 		new Word("basalt", new Hint("dark extrusive igneous rock", Category.GEOLOGY)),
+		new Word("bazaar", new Hint("middle-eastern marketplace", Category.MISC)),
 		new Word("beaver", new Hint("dam-building rodent", Category.ZOOLOGY)),
 		new Word("belize", new Hint("its capital, Belmopan", Category.GEOGRAPHY)),
 		new Word("beluga", new Hint("arctic whale", Category.ZOOLOGY)),
@@ -294,6 +295,7 @@ const HONEYCOMB = {
 		new Word("casein", new Hint("milk protein", Category.FOOD)),
 		new Word("castor", new Hint("western twin of Gemini", Category.ASTRONOMY)),
 		new Word("catena", new Hint("chain of craters", Category.ASTRONOMY)),
+		new Word("catnip", new Hint("herb enjoyed by cats", Category.BOTANY)),
 		new Word("cattle", new Hint("a cow or ox", Category.ZOOLOGY)),
 		new Word("cesium", new Hint("second-defining element", Category.CHEMISTRY)),
 		new Word("charge", new Hint("symbol in the field of a flag", Category.VEXILLOLOGY)),
@@ -442,6 +444,7 @@ const HONEYCOMB = {
 		new Word("iodine", new Hint("heaviest dietary element", Category.CHEMISTRY)),
 		new Word("island", new Hint("land surrounded by water", Category.GEOGRAPHY)),
 		new Word("istria", new Hint("Croatian peninsula", Category.GEOGRAPHY)),
+		new Word("israel", new Hint("country responsible for the Gaza genocide", Category.HISTORY)),
 		new Word("itself", new Hint("third person singular neuter reflexive", Category.ENGLISH)),
 		new Word("jingle", new Hint("what sleighbells do", Category.HOLIDAY_WINTER)),
 		new Word("jordan", new Hint("its capital, Amman", Category.GEOGRAPHY)),
@@ -449,6 +452,7 @@ const HONEYCOMB = {
 		new Word("kepler", new Hint("astronomer known for his laws of planetary motion", Category.ASTRONOMY)),
 		new Word("kernel", new Hint("operating system core", Category.PROGRAMMING)),
 		new Word("kidney", new Hint("blood filtration organ", Category.MEDICINE)),
+		new Word("knight", new Hint("noble warrior", Category.HISTORY)),
 		new Word("kuiper", new Hint("Pluto lies in this belt", Category.ASTRONOMY)),
 		new Word("lambda", new Hint("Greek L", Category.LANGUAGE)),
 		new Word("lammas", new Hint("Wiccan harvest holiday", Category.RELIGION)),
@@ -565,7 +569,7 @@ const HONEYCOMB = {
 			new Hint("Minecraft mob, one of four fish", Category.VIDEOGAME),
 		]),
 		new Word("saturn", [
-			new Hint("greatly ringed giant", Category.ASTRONOMY),
+			new Hint("great ringed giant", Category.ASTRONOMY),
 			new Hint("greater malefic", Category.ASTROLOGY),
 			new Hint("to Holst, the bringer of old age", Category.MUSIC, Difficulty.HARD),
 			new Hint("Roman god of agriculture and wealth", Category.RELIGION),
