@@ -692,6 +692,10 @@ const HONEYCOMB = {
 		date: new Date(),
 		debug: document.URL[0].toLowerCase() === 'f', // file:// vs. http(s)://
 		forcecat: '',
+		get hashLength(){
+			return this.debug ? Infinity : 4;
+		},
+		maxIter: 10000,
 		get minCatSize(){
 			return this.debug ? 7 : 28;
 		},
@@ -707,12 +711,12 @@ const HONEYCOMB = {
 	},
 	/** @type {Clue[]} */
 	clues: new Array(7).fill(undefined),
-	get id(){
+	get hash(){
 		return this.clues
 			// literally Java's string hashing algo
 			.reduce((a, b) => 31*a+b.word.id, 0)
 			.toString(16)
-			.slice(-4);
+			.slice(-this.config.hashLength);
 	},
 	letterNodes: {
 		get hex(){
@@ -881,7 +885,7 @@ const HONEYCOMB = {
 		// show id
 		const puzzle_id = document.createElement('span');
 		puzzle_id.id = 'puzzleId';
-		puzzle_id.innerHTML = this.id;
+		puzzle_id.innerHTML = this.hash;
 		puzzle_id.title = 'Puzzle ID';
 		document.body.appendChild(puzzle_id);
 		this.initOnscreenKeyboard();
@@ -1017,7 +1021,7 @@ const HONEYCOMB = {
 		});
 	},
 	new_wrapper(){
-		for (let i = 0; i < 10000; i++){
+		for (let i = 0; i < this.config.maxIter; i++){
 			try {
 				this.new();
 				break;
