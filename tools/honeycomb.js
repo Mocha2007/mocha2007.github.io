@@ -734,6 +734,7 @@ const HONEYCOMB = {
 			// console.debug(`keypress`, ev);
 			switch (ev.key) {
 				case 'Backspace':
+				case 'Delete':
 					HONEYCOMB.letterNodes.backspace();
 					break;
 				case 'ArrowLeft':
