@@ -55,6 +55,7 @@ class Category {
 	static HISTORY = "History";
 	static HOLIDAY_WINTER = "Winter Holidays";
 	static LANGUAGE = "Language";
+	static LAW = "Law";
 	static MATH = "Mathematics";
 	static MEASUREMENT = "Measurement";
 	static MEDICINE = "Medicine";
@@ -241,7 +242,7 @@ const HONEYCOMB = {
 		new Word("auburn", new Hint("dark reddish brown", Category.COLOR)),
 		new Word("august", new Hint("eighth month", Category.MISC, Difficulty.EASY)),
 		new Word("auriga", new Hint("charioteer constellation", Category.ASTRONOMY)),
-		new Word("autumn", new Hint("season after summer", Category.METEOROLOGY, Difficulty.EASY)),
+		new Word("autumn", new Hint("season after summer", Category.MEASUREMENT, Difficulty.EASY)),
 		new Word("aurora", new Hint("norther or southern lights", Category.ASTRONOMY, Difficulty.EASY)),
 		new Word("baikal", new Hint("largest Asian freshwater lake", Category.GEOGRAPHY)),
 		new Word("bamboo", new Hint("fast-growing grass used like wood", Category.BOTANY)),
@@ -275,6 +276,7 @@ const HONEYCOMB = {
 		new Word("bronze", new Hint("copper-tin alloy", Category.CHEMISTRY)),
 		new Word("brunei", new Hint("its capital, Bandar Seri Begawan", Category.GEOGRAPHY)),
 		new Word("burger", new Hint("ground beef in a bun", Category.FOOD)),
+		new Word("bushel", new Hint("eight gallons", Category.MEASUREMENT, Difficulty.HARD)),
 		new Word("butter", new Hint("churned cream", Category.FOOD)),
 		new Word("cactus", new Hint("spiked desert plant", Category.BOTANY)),
 		new Word("caelum", new Hint("chisel constellation", Category.ASTRONOMY)),
@@ -352,6 +354,7 @@ const HONEYCOMB = {
 			new Hint("mahi-mahi constellation", Category.ASTRONOMY, Difficulty.HARD),
 			new Hint("mythical golden city (second word)", Category.HISTORY),
 		]),
+		new Word("drachm", new Hint("sixteenth of an ounce", Category.MEASUREMENT, Difficulty.HARD)),
 		new Word("dragon", new Hint("mythological winged lizard", Category.RELIGION)),
 		new Word("dyeing", new Hint("textile coloring", Category.TEXTILE)),
 		new Word("eggnog", new Hint("wintry dairy drink", Category.HOLIDAY_WINTER)),
@@ -369,6 +372,7 @@ const HONEYCOMB = {
 			new Hint("millennium or maltese", Category.FILM),
 			new Hint("SpaceX launch vehicle", Category.TRANSPORT),
 		]),
+		new Word("fathom", new Hint("thousandth of a nautical mile", Category.MEASUREMENT, Difficulty.HARD)),
 		new Word("feline", new Hint("of cats", Category.ZOOLOGY)),
 		new Word("felsic", new Hint("of silicate-rich igneous", Category.GEOLOGY)),
 		new Word("family", new Hint("taxonomic rank under order", Category.BIOLOGY)),
@@ -391,6 +395,7 @@ const HONEYCOMB = {
 		new Word("friday", new Hint("day before the weekend", Category.MISC, Difficulty.EASY)),
 		new Word("frosty", new Hint("animated snowman", Category.HOLIDAY_WINTER)),
 		new Word("fungus", new Hint("mushrooms are a type of this", Category.BIOLOGY)),
+		new Word("gallon", new Hint("eight pints", Category.MEASUREMENT, Difficulty.HARD)),
 		new Word("galaxy", new Hint("the Milky Way is this", Category.ASTRONOMY)),
 		new Word("gambia", new Hint("its capital, Banjul", Category.GEOGRAPHY)),
 		new Word("gamete", new Hint("reproductive cell", Category.BIOLOGY)),
@@ -418,6 +423,7 @@ const HONEYCOMB = {
 			new Hint("most linguistically diverse island, (second word)", Category.LANGUAGE),
 			new Hint("preceding fowl and pig", Category.ZOOLOGY),
 		]),
+		new Word("guilty", new Hint("verdict to punish the accused", Category.LAW)),
 		new Word("guyana", new Hint("its capital, Georgetown", Category.GEOGRAPHY)),
 		new Word("haumea", new Hint("dwarf planet named for goddess of Hawaii", Category.ASTRONOMY)),
 		new Word("hawaii", [
@@ -468,6 +474,7 @@ const HONEYCOMB = {
 			new Hint("blue stone (second word)", Category.MINEROLOGY),
 			new Hint("Minecraft ore used to enchant (second word)", Category.VIDEOGAME),
 		]),
+		new Word("league", new Hint("three miles", Category.MEASUREMENT, Difficulty.HARD)),
 		new Word("lesbos", new Hint("island of Sappho", Category.GEOGRAPHY)),
 		new Word("lichen", new Hint("algae-fungus symbiote", Category.BIOLOGY)),
 		new Word("lights", new Hint("bright decorations strung on tree", Category.HOLIDAY_WINTER)),
@@ -499,6 +506,7 @@ const HONEYCOMB = {
 		new Word("mexico", new Hint("most populous Spanish-speaking country", Category.GEOGRAPHY)),
 		new Word("midday", new Hint("noon", Category.MISC, Difficulty.EASY)),
 		new Word("minute", new Hint("sixty seconds", Category.MEASUREMENT)),
+		new Word("moment", new Hint("ninety seconds", Category.MEASUREMENT)),
 		new Word("monday", new Hint("day after the weekend", Category.MISC, Difficulty.EASY)),
 		new Word("mortar", new Hint("pestle complement", Category.MISC)),
 		new Word("myosin", new Hint("motor protein", Category.BIOLOGY)),
@@ -549,6 +557,7 @@ const HONEYCOMB = {
 		new Word("pollux", new Hint("eastern twin of Gemini", Category.ASTRONOMY)),
 		new Word("potato", new Hint("staple tuber", Category.FOOD)),
 		new Word("prefix", new Hint("attached to end of word", Category.GRAMMAR)),
+		new Word("prison", new Hint("carceral punishment building", Category.LAW)),
 		new Word("pulley", new Hint("simple machine", Category.PHYSICS)),
 		new Word("puppis", new Hint("poop deck constellation", Category.ASTRONOMY)),
 		new Word("purple", [
@@ -592,6 +601,7 @@ const HONEYCOMB = {
 		new Word("saxony", new Hint("state of Leipzig and Dresden", Category.GEOGRAPHY)),
 		new Word("senior", new Hint("senior antonym", Category.ENGLISH)),
 		new Word("scutum", new Hint("shield constellation", Category.ASTRONOMY)),
+		new Word("season", new Hint("quarter of a year", Category.MEASUREMENT)),
 		new Word("secant", new Hint("line intersecting a curve at two points", Category.MATH)),
 		new Word("second", new Hint("SI unit of time", Category.MEASUREMENT)),
 		new Word("serbia", [
@@ -616,14 +626,14 @@ const HONEYCOMB = {
 		new Word("sponge", new Hint("most basal animal", Category.ZOOLOGY)),
 		new Word("spring", [
 			new Hint("source", Category.GEOLOGY),
-			new Hint("season after winter", Category.METEOROLOGY, Difficulty.EASY),
+			new Hint("season after winter", Category.MEASUREMENT, Difficulty.EASY),
 		]),
 		new Word("spruce", new Hint("conifer", Category.BOTANY)),
 		new Word("steppe", new Hint("grassland plains, as in Eurasia", Category.GEOGRAPHY)),
 		new Word("suffix", new Hint("attached to end of word", Category.GRAMMAR)),
 		new Word("sulfur", new Hint("element said to smell of egg", Category.CHEMISTRY)),
 		new Word("sunset", new Hint("dusk", Category.MISC, Difficulty.EASY)),
-		new Word("summer", new Hint("season after spring", Category.METEOROLOGY, Difficulty.EASY)),
+		new Word("summer", new Hint("season after spring", Category.MEASUREMENT, Difficulty.EASY)),
 		new Word("sunday", new Hint("second day of the weekend", Category.MISC, Difficulty.EASY)),
 		new Word("sweden", new Hint("its capital, Stockholm", Category.GEOGRAPHY)),
 		new Word("switch", [
@@ -674,7 +684,7 @@ const HONEYCOMB = {
 		new Word("weaver", new Hint("textile producer", Category.TEXTILE)),
 		new Word("weight", new Hint("downward force", Category.PHYSICS)),
 		new Word("winter", [
-			new Hint("season after fall", Category.METEOROLOGY, Difficulty.EASY),
+			new Hint("season after fall", Category.MEASUREMENT, Difficulty.EASY),
 			new Hint("christmas season", Category.HOLIDAY_WINTER, Difficulty.EASY),
 		]),
 		new Word("wreath", new Hint("decorative branch ring", Category.HOLIDAY_WINTER)),
