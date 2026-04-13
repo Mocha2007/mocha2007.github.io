@@ -26,8 +26,8 @@ html, body {
 }
 .letter, .kbkey {
 	background-color: #333;
-	border: 2px solid black;
-	border-radius: 5px;
+	border: min(0.3vh, 0.3vw) solid black;
+	border-radius: min(1vh, 1vw);
 	color: white;
 	cursor: pointer;
 	z-index: 1;
