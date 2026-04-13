@@ -582,7 +582,7 @@ const HONEYCOMB = {
 			new Hint("Sega console", Category.VIDEOGAME),
 			new Hint("rocket family which first brought humans to the moon", Category.TRANSPORT),
 		]),
-		new Word("savory", new Hint("satureja herb", Category.BOTANY)),
+		new Word("savory", new Hint("satureja herb", Category.BOTANY, Difficulty.HARD)),
 		new Word("saxony", new Hint("state of Leipzig and Dresden", Category.GEOGRAPHY)),
 		new Word("senior", new Hint("senior antonym", Category.ENGLISH)),
 		new Word("scutum", new Hint("shield constellation", Category.ASTRONOMY)),
@@ -881,6 +881,31 @@ const HONEYCOMB = {
 		puzzle_id.innerHTML = this.id;
 		puzzle_id.title = 'Puzzle ID';
 		document.body.appendChild(puzzle_id);
+		this.initOnscreenKeyboard();
+	},
+	initOnscreenKeyboard(){
+		const KEYBOARD = [
+			'qwertyuiop',
+			'asdfghjkl',
+			'zxcvbnm'
+		];
+		const elem_osc = document.createElement('div');
+		elem_osc.id = 'osc';
+		KEYBOARD.forEach(row => {
+			const kbrow = document.createElement('div');
+			elem_osc.appendChild(kbrow);
+			Array.from(row).forEach(char => {
+				const elem_char = document.createElement('span');
+				kbrow.appendChild(elem_char);
+				elem_char.innerHTML = char;
+				elem_char.classList.add('kbkey');
+				elem_char.onclick = () => {
+					HONEYCOMB.letterNodes.setLetter(char);
+					HONEYCOMB.letterNodes.advance();
+				}
+			});
+		});
+		document.body.appendChild(elem_osc);
 	},
 	new(){
 		// word must also pass seasonal filter here, because some words have hints in multiple categories

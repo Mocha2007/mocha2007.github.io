@@ -19,6 +19,9 @@ html, body {
 	padding: 0 2vw;
 }
 .letter {
+	position: absolute;
+}
+.letter, .kbkey {
 	background-color: #444;
 	border: 2px solid black;
 	border-radius: 5px;
@@ -26,14 +29,13 @@ html, body {
 	cursor: pointer;
 	height: 2em;
 	line-height: 2em;
-	position: absolute;
 	width: 2em;
 	z-index: 1;
 }
-.letter:hover {
+.letter:hover, .kbkey:hover {
 	background-color: #555;
 }
-.letter:active {
+.letter:active, .kbkey:active {
 	background-color: #666;
 }
 .letter.selected {
@@ -73,6 +75,16 @@ html, body {
 	position: absolute;
 	top: 0;
 	width: 30vw;
+}
+#osc {
+	font-size: 90%;
+	position: absolute;
+	right: 0;
+	text-align: center;
+	top: 0;
+}
+.kbkey {
+	display: inline-block;
 }
 /* horizontal alignment of hexes */
 #hex1, #hex0, #hex4 {
