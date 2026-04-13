@@ -285,6 +285,7 @@ const HONEYCOMB = {
 		new Word("cesium", new Hint("second-defining element", Category.CHEMISTRY)),
 		new Word("charge", new Hint("symbol in the field of a flag", Category.VEXILLOLOGY)),
 		new Word("cheese", new Hint("solid milk product", Category.FOOD)),
+		new Word("charon", new Hint("Pluto's largest moon", Category.ASTRONOMY)),
 		new Word("chrome", new Hint("Google browser", Category.TECH)),
 		new Word("cobble", new Hint("rock, between a pebble and boulder in size", Category.GEOLOGY)),
 		new Word("crimea", new Hint("invaded by Russia in 2014", Category.HISTORY)),
@@ -470,6 +471,7 @@ const HONEYCOMB = {
 		new Word("nickel", new Hint("most common impurity in meteoric iron", Category.CHEMISTRY)),
 		new Word("norway", new Hint("its capital, Oslo", Category.GEOGRAPHY)),
 		new Word("nutmeg", new Hint("seed which mace covers", Category.BOTANY)),
+		new Word("oberon", new Hint("second-largest Uranian moon", Category.ASTRONOMY)),
 		new Word("ocelot", [
 			new Hint("small American felid", Category.ZOOLOGY),
 			new Hint("Minecraft wild cat", Category.VIDEOGAME),
@@ -583,9 +585,11 @@ const HONEYCOMB = {
 		new Word("syzygy", new Hint("alignment of three objects", Category.ASTRONOMY)),
 		new Word("taurus", new Hint("bull sign", Category.ASTROLOGY)),
 		new Word("tephra", new Hint("volcanic ejecta", Category.GEOLOGY)),
+		new Word("tethys", new Hint("fifth-largest Saturnian moon", Category.ASTRONOMY)),
 		new Word("thread", new Hint("used with needles, found on spools", Category.TEXTILE)),
 		new Word("tomato", new Hint("fruit considered a vegetable", Category.FOOD)),
 		new Word("tongue", new Hint("organ of taste and language", Category.MEDICINE)),
+		new Word("triton", new Hint("Neptune's largest moon", Category.ASTRONOMY)),
 		new Word("trojan", [
 			new Hint("small body in the lagrangian point of a planet", Category.ASTRONOMY),
 			new Hint("disguised malware", Category.TECH),
