@@ -874,7 +874,7 @@ const HONEYCOMB = {
 		this.clear();
 		let dictionary = this.words
 			// word MUST pass seasonal filter.
-			.filter(w => w.hints.some(HONEYCOMB.config.seasonalFilter));
+			.filter(w => w.hints.some(h => HONEYCOMB.config.seasonalFilter(h.category)));
 		let n_hard = 0;
 		// first, choose the mystery word for the center
 		const WORD0 = this.randomWordMatching(dictionary);
