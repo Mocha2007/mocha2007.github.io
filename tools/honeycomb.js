@@ -436,6 +436,7 @@ const HONEYCOMB = {
 		new Word("hyssop", new Hint("mediterranean shrub used in herbal medicine", Category.BOTANY)),
 		new Word("iberia", new Hint("peninsula of Spain and Portugal", Category.GEOGRAPHY)),
 		new Word("icicle", new Hint("ice spear", Category.MISC)),
+		new Word("imbolc", new Hint("Wiccan end-of-winter holiday", Category.RELIGION)),
 		new Word("indigo", new Hint("'I' of the rainbow", Category.COLOR)),
 		new Word("indium", new Hint("element named for its bluish-purple spectral line", Category.CHEMISTRY)),
 		new Word("iodine", new Hint("heaviest dietary element", Category.CHEMISTRY)),
@@ -450,6 +451,7 @@ const HONEYCOMB = {
 		new Word("kidney", new Hint("blood filtration organ", Category.MEDICINE)),
 		new Word("kuiper", new Hint("Pluto lies in this belt", Category.ASTRONOMY)),
 		new Word("lambda", new Hint("Greek L", Category.LANGUAGE)),
+		new Word("lammas", new Hint("Wiccan harvest holiday", Category.RELIGION)),
 		new Word("latvia", new Hint("its capital, Riga", Category.GEOGRAPHY)),
 		new Word("laurel", new Hint("bay leaf source", Category.BOTANY)),
 		new Word("lazuli", [
@@ -505,6 +507,7 @@ const HONEYCOMB = {
 			new Hint("word said to have no rhymes", Category.ENGLISH),
 			new Hint("citrus, eg. mandarin", Category.FOOD),
 		]),
+		new Word("ostara", new Hint("Wiccan spring equinox holiday", Category.RELIGION)),
 		new Word("oxygen", new Hint("second most abundant element in Earth's atmosphere", Category.CHEMISTRY)),
 		new Word("paneer", new Hint("Indian cheese", Category.FOOD)),
 		new Word("papaya", new Hint("large tropical yellow fruit", Category.FOOD)),
@@ -887,7 +890,7 @@ const HONEYCOMB = {
 		// console.debug(CLUE0);
 		// next, choose the word above
 		let re = new RegExp(`${CLUE0.getLetter(Direction.UP)}`);
-		const WORD1 = this.randomWordMatching(dictionary, w => re.test(w.word), USED_CATEGORIES, n_hard);
+		const WORD1 = this.randomWordMatching(dictionary, re, USED_CATEGORIES, n_hard);
 		dictionary.splice(dictionary.indexOf(WORD1), 1);
 		const WORD1_START = (9-re.exec(WORD1.word).index) % 6;
 		// choose a hint w/ a category that is NOT in USED_CATEGORIES
@@ -898,7 +901,7 @@ const HONEYCOMB = {
 		// console.debug(CLUE1, WORD0.word[WORD0_START]);
 		// next, choose the word above-left
 		re = new RegExp(`${CLUE1.getLetter(Direction.DL)}${CLUE0.getLetter(Direction.UL)}`);
-		const WORD6 = this.randomWordMatching(dictionary, w => re.test(w.word), USED_CATEGORIES, n_hard);
+		const WORD6 = this.randomWordMatching(dictionary, re, USED_CATEGORIES, n_hard);
 		dictionary.splice(dictionary.indexOf(WORD6), 1);
 		const WORD6_START = (7-re.exec(WORD6.word).index) % 6;
 		hint_id = WORD6.hints.findIndex(fi);
@@ -908,7 +911,7 @@ const HONEYCOMB = {
 		// console.debug(CLUE2, WORD0.word[(WORD0_START + 5) % 6]);
 		// next, choose the word above-right
 		re = new RegExp(`${CLUE0.getLetter(Direction.UR)}${CLUE1.getLetter(Direction.DR)}`);
-		const WORD2 = this.randomWordMatching(dictionary, w => re.test(w.word), USED_CATEGORIES, n_hard);
+		const WORD2 = this.randomWordMatching(dictionary, re, USED_CATEGORIES, n_hard);
 		dictionary.splice(dictionary.indexOf(WORD2), 1);
 		const WORD2_START = (10-re.exec(WORD2.word).index) % 6;
 		hint_id = WORD2.hints.findIndex(fi);
@@ -918,7 +921,7 @@ const HONEYCOMB = {
 		// console.debug(CLUE3, WORD0.word[(WORD0_START + 1) % 6]);
 		// next, choose the word down-left
 		re = new RegExp(`${CLUE6.getLetter(Direction.DN)}${CLUE0.getLetter(Direction.DL)}`);
-		const WORD5 = this.randomWordMatching(dictionary, w => re.test(w.word), USED_CATEGORIES, n_hard);
+		const WORD5 = this.randomWordMatching(dictionary, re, USED_CATEGORIES, n_hard);
 		dictionary.splice(dictionary.indexOf(WORD5), 1);
 		const WORD5_START = (6-re.exec(WORD5.word).index) % 6;
 		hint_id = WORD5.hints.findIndex(fi);
@@ -928,7 +931,7 @@ const HONEYCOMB = {
 		// console.debug(CLUE4, WORD0.word[(WORD0_START + 4) % 6]);
 		// next, choose the word down-right
 		re = new RegExp(`${CLUE0.getLetter(Direction.DR)}${CLUE2.getLetter(Direction.DN)}`);
-		const WORD3 = this.randomWordMatching(dictionary, w => re.test(w.word), USED_CATEGORIES, n_hard);
+		const WORD3 = this.randomWordMatching(dictionary, re, USED_CATEGORIES, n_hard);
 		dictionary.splice(dictionary.indexOf(WORD3), 1);
 		const WORD3_START = (11-re.exec(WORD3.word).index) % 6;
 		hint_id = WORD3.hints.findIndex(fi);
@@ -938,7 +941,7 @@ const HONEYCOMB = {
 		// console.debug(CLUE5, WORD0.word[(WORD0_START + 2) % 6]);
 		// next, choose the word down
 		re = new RegExp(`${CLUE5.getLetter(Direction.DR)}${CLUE0.getLetter(Direction.DN)}${CLUE3.getLetter(Direction.DL)}`);
-		const WORD4 = this.randomWordMatching(dictionary, w => re.test(w.word), USED_CATEGORIES, n_hard);
+		const WORD4 = this.randomWordMatching(dictionary, re, USED_CATEGORIES, n_hard);
 		dictionary.splice(dictionary.indexOf(WORD4), 1);
 		const WORD4_START = (5-re.exec(WORD4.word).index) % 6;
 		hint_id = WORD4.hints.findIndex(fi);
@@ -991,11 +994,11 @@ const HONEYCOMB = {
 	 * @param {Category[]} used_categories
 	 * @returns {Word}
 	 */
-	randomWordMatching(dictionary, filter = () => true, used_categories = [], n_hard = 0){
-		const matches = dictionary.filter(filter)
+	randomWordMatching(dictionary, re = new RegExp('.'), used_categories = [], n_hard = 0){
+		const matches = dictionary
 			// if a category is forced, it MUST be that category
-			.filter(w => w.hints.some(h => !HONEYCOMB.config.forcecat || h.category === HONEYCOMB.config.forcecat));
-		if (matches.length < 1) console.warn('no matches');
+			.filter(w => re.test(w.word) && w.hints.some(h => !HONEYCOMB.config.forcecat || h.category === HONEYCOMB.config.forcecat));
+		if (matches.length < 1) console.warn('no matches', this.config.debug && re.source);
 		// if possible, avoid duplicate categories, and multiple hard clues
 		const catmatches = matches.filter(w => w.hints.some(h => (HONEYCOMB.config.forcecat || !HONEYCOMB.config.avoidDupeCats || !used_categories.includes(h.category)) && (!HONEYCOMB.config.avoidMultipleHardClues || n_hard <= 0 || h.difficulty <= Difficulty.NORMAL)));
 		const arr = catmatches.length ? catmatches : matches;
