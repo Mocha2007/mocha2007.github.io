@@ -741,10 +741,12 @@ const HONEYCOMB = {
 					break;
 				case 'ArrowLeft':
 				case 'ArrowUp':
+				case ',':
 					HONEYCOMB.letterNodes.advance(true);
 					break;
 				case 'ArrowDown':
 				case 'ArrowRight':
+				case '.':
 					HONEYCOMB.letterNodes.advance();
 					break;
 				case ' ':
