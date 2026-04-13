@@ -46,10 +46,12 @@ class Category {
 	static BOTANY = "Botany";
 	static CHEMISTRY = "Chemistry";
 	static COLOR = "Color";
+	/* specifically meta-English, NOT grammar, NOT literature */
 	static ENGLISH = "English";
 	static FOOD = "Food";
 	static GEOGRAPHY = "Geography";
 	static GEOLOGY = "Geology";
+	static GRAMMAR = "Grammar";
 	static HISTORY = "History";
 	static HOLIDAY_WINTER = "Winter Holidays";
 	static LANGUAGE = "Language";
@@ -204,7 +206,7 @@ const HONEYCOMB = {
 			- partial: all 6-letter https://en.wikipedia.org/wiki/Planetary_nomenclature
 			- partial: https://en.wikipedia.org/wiki/List_of_animal_names
 		*/
-		new Word("adverb", new Hint("modifies adjectives and verbs", Category.ENGLISH)),
+		new Word("adverb", new Hint("modifies adjectives and verbs", Category.GRAMMAR)),
 		new Word("aether", [
 			new Hint("common 19th century anaesthetic", Category.MEDICINE, Difficulty.HARD),
 			new Hint("the luminiferous variety was said to carry light", Category.PHYSICS),
@@ -258,7 +260,7 @@ const HONEYCOMB = {
 			new Hint("system with two stars", Category.ASTRONOMY),
 			new Hint("numeric data on computers is stored in this", Category.PROGRAMMING, Difficulty.TRICKY),
 		]),
-		new Word("biotic", new Hint("of biological origin", Category.ENGLISH)),
+		new Word("biotic", new Hint("of biological origin", Category.BIOLOGY)),
 		new Word("bisque", [
 			new Hint("pale pinkish brown", Category.COLOR),
 			new Hint("thick creamy soup", Category.FOOD),
@@ -343,7 +345,6 @@ const HONEYCOMB = {
 		new Word("desert", new Hint("biome with little precipitation", Category.GEOGRAPHY)),
 		new Word("donkey", [
 			new Hint("Shrek's partner", Category.FILM),
-			new Hint("presumably, a large burrito", Category.ENGLISH, Difficulty.TRICKY),
 			new Hint("rideable Minecraft mob", Category.VIDEOGAME),
 		]),
 		new Word("donner", new Hint("seventh reindeer called on by Santa", Category.HOLIDAY_WINTER)),
@@ -448,7 +449,7 @@ const HONEYCOMB = {
 		new Word("island", new Hint("land surrounded by water", Category.GEOGRAPHY)),
 		new Word("istria", new Hint("Croatian peninsula", Category.GEOGRAPHY)),
 		new Word("israel", new Hint("country responsible for the Gaza genocide", Category.HISTORY)),
-		new Word("itself", new Hint("third person singular neuter reflexive", Category.ENGLISH)),
+		new Word("itself", new Hint("third person singular neuter reflexive", Category.GRAMMAR)),
 		new Word("jingle", new Hint("what sleighbells do", Category.HOLIDAY_WINTER)),
 		new Word("jordan", new Hint("its capital, Amman", Category.GEOGRAPHY)),
 		new Word("junior", new Hint("senior antonym", Category.ENGLISH)),
@@ -496,12 +497,12 @@ const HONEYCOMB = {
 		new Word("memory", new Hint("data storage", Category.PROGRAMMING)),
 		new Word("meteor", new Hint("shooting star", Category.ASTRONOMY)),
 		new Word("mexico", new Hint("most populous Spanish-speaking country", Category.GEOGRAPHY)),
-		new Word("midday", new Hint("noon", Category.ENGLISH, Difficulty.EASY)),
+		new Word("midday", new Hint("noon", Category.MISC, Difficulty.EASY)),
 		new Word("minute", new Hint("sixty seconds", Category.MEASUREMENT)),
 		new Word("monday", new Hint("day after the weekend", Category.MISC, Difficulty.EASY)),
 		new Word("mortar", new Hint("pestle complement", Category.MISC)),
 		new Word("myosin", new Hint("motor protein", Category.BIOLOGY)),
-		new Word("myself", new Hint("first person singular reflexive", Category.ENGLISH)),
+		new Word("myself", new Hint("first person singular reflexive", Category.GRAMMAR)),
 		new Word("nebula", new Hint("'cloudy' object, follows Crab and Orion", Category.ASTRONOMY)),
 		new Word("needle", new Hint("sharp threader", Category.TEXTILE)),
 		new Word("neuron", new Hint("electrically exciteable cell", Category.BIOLOGY)),
@@ -547,7 +548,7 @@ const HONEYCOMB = {
 		]),
 		new Word("pollux", new Hint("eastern twin of Gemini", Category.ASTRONOMY)),
 		new Word("potato", new Hint("staple tuber", Category.FOOD)),
-		new Word("prefix", new Hint("attached to end of word", Category.ENGLISH)),
+		new Word("prefix", new Hint("attached to end of word", Category.GRAMMAR)),
 		new Word("pulley", new Hint("simple machine", Category.PHYSICS)),
 		new Word("puppis", new Hint("poop deck constellation", Category.ASTRONOMY)),
 		new Word("purple", [
@@ -619,9 +620,9 @@ const HONEYCOMB = {
 		]),
 		new Word("spruce", new Hint("conifer", Category.BOTANY)),
 		new Word("steppe", new Hint("grassland plains, as in Eurasia", Category.GEOGRAPHY)),
-		new Word("suffix", new Hint("attached to end of word", Category.ENGLISH)),
+		new Word("suffix", new Hint("attached to end of word", Category.GRAMMAR)),
 		new Word("sulfur", new Hint("element said to smell of egg", Category.CHEMISTRY)),
-		new Word("sunset", new Hint("dusk", Category.ENGLISH, Difficulty.EASY)),
+		new Word("sunset", new Hint("dusk", Category.MISC, Difficulty.EASY)),
 		new Word("summer", new Hint("season after spring", Category.METEOROLOGY, Difficulty.EASY)),
 		new Word("sunday", new Hint("second day of the weekend", Category.MISC, Difficulty.EASY)),
 		new Word("sweden", new Hint("its capital, Stockholm", Category.GEOGRAPHY)),
