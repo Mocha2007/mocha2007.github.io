@@ -787,7 +787,8 @@ const HONEYCOMB = {
 		// show id
 		const puzzle_id = document.createElement('span');
 		puzzle_id.id = 'puzzleId';
-		puzzle_id.innerHTML = `id: ${this.id}`;
+		puzzle_id.innerHTML = this.id;
+		puzzle_id.title = 'Puzzle ID';
 		document.body.appendChild(puzzle_id);
 	},
 	new(){
