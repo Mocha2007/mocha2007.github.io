@@ -47,6 +47,7 @@ html, body {
 	font-size: 4vh;
 	height: 4vh;
 	line-height: 2em;
+	opacity: 50%;
 	pointer-events: none;
 	position: absolute;
 	width: 4vh;
