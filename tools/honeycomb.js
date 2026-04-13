@@ -651,6 +651,7 @@ const HONEYCOMB = {
 	config: {
 		avoidDupeCats: true,
 		avoidMultipleHardClues: true,
+		debug: document.URL[0].toLowerCase() === 'f', // file:// vs. http(s)://
 		forcecat: '',
 	},
 	/** @type {Clue[]} */
@@ -729,9 +730,10 @@ const HONEYCOMB = {
 	init(){
 		console.info(`${this.words.length} words`);
 		console.info('category statistics:', this.stats.categories);
+		if (this.config.debug) console.info('debug mode');
 		// prepare keyboard controls
 		document.body.onkeydown = ev => {
-			console.debug(`keypress`, ev);
+			if (HONEYCOMB.config.debug) console.debug(`keypress`, ev);
 			switch (ev.key) {
 				case 'Backspace':
 				case 'Delete':
