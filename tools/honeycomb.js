@@ -429,6 +429,7 @@ const HONEYCOMB = {
 		new Word("cuboid", new Hint("rectangular prism", Category.MATH)),
 		new Word("curium", new Hint("actinide alpha source", Category.CHEMISTRY)),
 		new Word("cycler", new Hint("spacecraft on a closed transfer orbit", Category.TRANSPORT)),
+		new Word("cygnet", new Hint("young swan", Category.ZOOLOGY)),
 		new Word("cygnus", new Hint("swan constellation", Category.ASTRONOMY)),
 		new Word("cyprus", new Hint("its capital, Nicosia", Category.GEOGRAPHY)),
 		new Word("dacite", new Hint("one type of felsic rock", Category.GEOLOGY)),
