@@ -182,6 +182,8 @@ class Clue {
 		const cell = document.createElement('div');
 		// cell.innerHTML = cellId;
 		cell.id = `letter${cellId}`;
+		cell.title = `Cell ${cellId}`;
+		cell.role = 'button';
 		cell.classList.add('letter');
 		cell.classList.add(`direction${direction}`);
 		cell.onclick = () => HONEYCOMB.letterNodes.select(cellId);
@@ -1152,6 +1154,7 @@ const HONEYCOMB = {
 		button_new.classList.add('button');
 		button_new.innerHTML = 'new';
 		button_new.tabIndex = 0;
+		button_new.role = 'button';
 		button_new.onclick = () => HONEYCOMB.new_wrapper();
 		controls.appendChild(button_new);
 		// "avoid duplicate categories" button
@@ -1217,6 +1220,7 @@ const HONEYCOMB = {
 				elem_char.innerHTML = char.toUpperCase();
 				elem_char.classList.add('kbkey');
 				elem_char.tabIndex = 0;
+				elem_char.role = 'button';
 				elem_char.onclick = () => {
 					HONEYCOMB.letterNodes.setLetter(char);
 					HONEYCOMB.letterNodes.advance();
