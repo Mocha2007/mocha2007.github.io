@@ -868,6 +868,14 @@ const HONEYCOMB = {
 		get hashLength(){
 			return this.debug ? Infinity : 4;
 		},
+		kblayout: 'qwerty',
+		kblayouts: {
+			qwerty: [
+				'qwertyuiop',
+				'asdfghjkl',
+				'zxcvbnm'
+			],
+		},
 		maxIter: 10000,
 		get minCatSize(){
 			return this.debug ? 7 : 28;
@@ -1087,14 +1095,9 @@ const HONEYCOMB = {
 		this.initOnscreenKeyboard();
 	},
 	initOnscreenKeyboard(){
-		const KEYBOARD = [
-			'qwertyuiop',
-			'asdfghjkl',
-			'zxcvbnm'
-		];
 		const elem_osc = document.createElement('div');
 		elem_osc.id = 'osc';
-		KEYBOARD.forEach(row => {
+		this.config.kblayouts[this.config.kblayout].forEach(row => {
 			const kbrow = document.createElement('div');
 			elem_osc.appendChild(kbrow);
 			Array.from(row).forEach(char => {
