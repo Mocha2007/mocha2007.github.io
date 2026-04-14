@@ -1222,7 +1222,6 @@ const HONEYCOMB = {
 		// word must also pass seasonal filter here, because some words have hints in multiple categories
 		const fi = h => HONEYCOMB.config.seasonalFilter(h.category)
 			&& (HONEYCOMB.config.forcecat ? h.category === HONEYCOMB.config.forcecat : !USED_CATEGORIES.includes(h.category));
-		this.clear();
 		let dictionary = this.words
 			// word MUST pass seasonal filter.
 			.filter(w => w.hints.some(h => HONEYCOMB.config.seasonalFilter(h.category)));
@@ -1298,6 +1297,7 @@ const HONEYCOMB = {
 		n_hard += Difficulty.NORMAL < CLUE4.hint.difficulty;
 		// console.debug(CLUE6, WORD0.word[(WORD0_START + 3) % 6]);
 		// create elements
+		this.clear();
 		document.body.appendChild(CLUE1.createElement(1));
 		document.body.appendChild(CLUE6.createElement(6));
 		document.body.appendChild(CLUE2.createElement(2));
