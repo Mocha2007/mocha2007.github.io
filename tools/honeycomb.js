@@ -186,6 +186,7 @@ class Clue {
 		cell.classList.add(`direction${direction}`);
 		cell.onclick = () => HONEYCOMB.letterNodes.select(cellId);
 		cell.setAttribute('answer', this.getLetter(direction));
+		cell.tabIndex = 0;
 		const otherNeighbor = [
 			// 0-9 (Hexes 1 and 2)
 			-1, -1, -1, 2, 0, -1, -1, -1, 3, 0,
@@ -1150,6 +1151,7 @@ const HONEYCOMB = {
 		const button_new = document.createElement('span');
 		button_new.classList.add('button');
 		button_new.innerHTML = 'new';
+		button_new.tabIndex = 0;
 		button_new.onclick = () => HONEYCOMB.new_wrapper();
 		controls.appendChild(button_new);
 		// "avoid duplicate categories" button
@@ -1179,6 +1181,9 @@ const HONEYCOMB = {
 		};
 		controls.appendChild(button_amhc_label);
 		// force category dropdown
+		const cat_dropdown_container = document.createElement('label');
+		cat_dropdown_container.innerHTML = 'Category: ';
+		controls.appendChild(cat_dropdown_container);
 		const cat_dropdown = document.createElement('select');
 		cat_dropdown.id = 'forcecat';
 		const catcounts = this.stats.categories;
@@ -1191,7 +1196,7 @@ const HONEYCOMB = {
 		});
 		cat_dropdown.onclick = () => HONEYCOMB.config.forcecat = cat_dropdown.value;
 		cat_dropdown.value = this.config.forcecat
-		controls.appendChild(cat_dropdown);
+		cat_dropdown_container.appendChild(cat_dropdown);
 		// show id
 		const puzzle_id = document.createElement('span');
 		puzzle_id.id = 'puzzleId';
@@ -1211,6 +1216,7 @@ const HONEYCOMB = {
 				kbrow.appendChild(elem_char);
 				elem_char.innerHTML = char.toUpperCase();
 				elem_char.classList.add('kbkey');
+				elem_char.tabIndex = 0;
 				elem_char.onclick = () => {
 					HONEYCOMB.letterNodes.setLetter(char);
 					HONEYCOMB.letterNodes.advance();

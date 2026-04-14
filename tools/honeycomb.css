@@ -61,7 +61,7 @@ select {
 	z-index: 2;
 }
 .category, .difficulty {
-	color: grey;
+	color: #aaa;
 	display: block;
 	font-size: 67%;
 }
