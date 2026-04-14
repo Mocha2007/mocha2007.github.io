@@ -1021,9 +1021,9 @@ const HONEYCOMB = {
 				this.select(i);
 			}
 		},
-		backspace(){
+		backspace(backtrack = false){
 			this.setLetter();
-			this.advance(true);
+			if (backtrack) this.advance(true);
 		},
 		check(){
 			// mark solved cells
@@ -1098,8 +1098,11 @@ const HONEYCOMB = {
 		// prepare keyboard controls
 		document.body.onkeydown = ev => {
 			if (HONEYCOMB.config.debug) console.debug(`keypress`, ev);
+			// ev.shiftKey
 			switch (ev.key) {
 				case 'Backspace':
+					HONEYCOMB.letterNodes.backspace(true);
+					break;
 				case 'Delete':
 					HONEYCOMB.letterNodes.backspace();
 					break;
@@ -1110,17 +1113,15 @@ const HONEYCOMB = {
 					break;
 				case 'ArrowDown':
 				case 'ArrowRight':
+				case ' ':
 				case '.':
 					HONEYCOMB.letterNodes.advance();
 					break;
-				case ' ':
-				case 'Tab':
-					if (ev.shiftKey) {
-						HONEYCOMB.letterNodes.advanceHex(true);
-					}
-					else {
-						HONEYCOMB.letterNodes.advanceHex();
-					}
+				case '<':
+					HONEYCOMB.letterNodes.advanceHex(true);
+					break;
+				case '>':
+					HONEYCOMB.letterNodes.advanceHex();
 					break;
 				default:
 					if (ev.key.length === 1) {
