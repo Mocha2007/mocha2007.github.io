@@ -892,6 +892,7 @@ const HONEYCOMB = {
 			.slice(-this.config.hashLength);
 	},
 	letterNodes: {
+		/** note: ignores inner hex */
 		get hex(){
 			return Math.floor(this.selected / 5);
 		},
@@ -901,9 +902,10 @@ const HONEYCOMB = {
 			this.select((this.selected + (reverse ? 29 : 1)) % 30);
 		},
 		advanceHex(reverse = false){
-			const start = this.hex;
-			while (this.hex === start){
-				this.advance(reverse);
+			const target = (this.hex + (reverse ? 5 : 1)) % 6;
+			for (let i = 0; i < 30; i++){
+				if (this.hex === target) break;
+				this.select(i);
 			}
 		},
 		backspace(){
