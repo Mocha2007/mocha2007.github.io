@@ -96,6 +96,8 @@ class Difficulty {
 		switch (difficulty){
 			case this.EASY:
 				return 'Easy';
+			case this.SIMPLE:
+				return 'Simple';
 			case this.NORMAL:
 				return 'Normal';
 			case this.HARD:
