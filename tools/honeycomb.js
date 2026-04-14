@@ -174,11 +174,21 @@ class Clue {
 		/** @type {HTMLDivElement} */
 		const elem = document.getElementById(`hex${i}`);
 		const cell = document.createElement('div');
+		// cell.innerHTML = cellId;
 		cell.id = `letter${cellId}`;
 		cell.classList.add('letter');
 		cell.classList.add(`direction${direction}`);
 		cell.onclick = () => HONEYCOMB.letterNodes.select(cellId);
 		cell.setAttribute('answer', this.getLetter(direction));
+		const otherNeighbor = [
+			// 0-9 (Hexes 1 and 2)
+			-1, -1, -1, 2, 0, -1, -1, -1, 3, 0,
+			// 10-19 (Hexes 3 and 4)
+			-1, -1, -1, 4, 0, -1, -1, -1, 5, 0,
+			// 20-29 (Hexes 5 and 6)
+			-1, -1, -1, 6, 0, -1, -1, -1, 1, 0,
+		]
+		cell.setAttribute('hexes', JSON.stringify([i, otherNeighbor[cellId]]));
 		elem.appendChild(cell);
 	}
 	/** @param {Direction} direction */
@@ -597,6 +607,7 @@ const HONEYCOMB = {
 		new Word("mormon", new Hint("follower of Joseph Smith", Category.RELIGION)),
 		new Word("morrow", new Hint("morning", Category.MEASUREMENT)),
 		new Word("mortar", new Hint("pestle complement", Category.MISC)),
+		new Word("murder", new Hint("unlawful killing", Category.LAW)),
 		new Word("myosin", new Hint("motor protein", Category.BIOLOGY)),
 		new Word("myself", new Hint("first person singular reflexive", Category.GRAMMAR)),
 		new Word("nebula", new Hint("'cloudy' object, follows Crab and Orion", Category.ASTRONOMY)),
@@ -900,6 +911,13 @@ const HONEYCOMB = {
 			this.advance(true);
 		},
 		check(){
+			// mark solved cells
+			this.solvedHexes.forEach((isSolved, i) => {
+				const e = document.getElementById(`hex${i}`).classList;
+				if (isSolved) e.add('solved');
+				else e.remove('solved');
+			});
+			// see if whole solution is valid
 			for (let i = 0; i < 30; i++){
 				const letterNode = this.elem(i);
 				if (letterNode.getAttribute('answer') !== letterNode.innerHTML)
@@ -911,17 +929,31 @@ const HONEYCOMB = {
 		elem(n = 0){
 			return document.getElementById(`letter${n}`);
 		},
-		elemSelected(){
+		get elemSelected(){
 			return this.elem(this.selected);
 		},
 		select(n = 0){
-			this.elemSelected().classList.remove('selected');
+			this.elemSelected.classList.remove('selected');
 			this.selected = n;
-			this.elemSelected().classList.add('selected');
+			this.elemSelected.classList.add('selected');
 		},
 		setLetter(char = ''){
-			this.elemSelected().innerHTML = this.letters[this.selected] = char;
+			const solved = this.solvedHexes;
+			if (!JSON.parse(this.elemSelected.getAttribute('hexes')).some(i => solved[i]))
+				this.elemSelected.innerHTML = this.letters[this.selected] = char;
 		},
+		get solvedHexes(){
+			/** @type {number[]} */
+			const hexes = new Array(7).fill(0);
+			Array.from(document.getElementsByClassName('letter')).forEach(letter => {
+				if (letter.getAttribute('answer') === letter.innerHTML) {
+					/** @type {number[]} */
+					const neighbors = JSON.parse(letter.getAttribute('hexes'));
+					neighbors.forEach(hex => hexes[hex]++);
+				}
+			});
+			return hexes.map(x => 5 < x);
+		}
 	},
 	stats: {
 		get categories(){
