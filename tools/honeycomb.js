@@ -70,7 +70,7 @@ class Category {
 	static FILM = "Film";
 	static PHYSICS = "Physics";
 	static PROGRAMMING = "Programming";
-	static RELIGION = "Religion";
+	static RELIGION = "Religion & Myth";
 	static TECH = "Technology";
 	static TEXTILE = "Textile";
 	static TRANSPORT = "Transport";
@@ -451,6 +451,7 @@ const HONEYCOMB = {
 		new Word("flower", new Hint("inflorescence", Category.BOTANY)),
 		new Word("forest", new Hint("biome of trees", Category.GEOGRAPHY, Difficulty.EASY)),
 		new Word("fornax", new Hint("furnace constellation", Category.ASTRONOMY)),
+		new Word("fortis", new Hint("nitric acid, alchemically (second word)", Category.CHEMISTRY)),
 		new Word("fossil", new Hint("mineralized organism remains", Category.GEOLOGY)),
 		new Word("france", [
 			new Hint("country with the most francophones", Category.GEOGRAPHY),
@@ -562,6 +563,7 @@ const HONEYCOMB = {
 		]),
 		new Word("league", new Hint("three miles", Category.MEASUREMENT, Difficulty.HARD)),
 		new Word("legume", new Hint("Fabaceae fruit", Category.BOTANY, Difficulty.HARD)),
+		new Word("lemons", new Hint("when life gives you...", Category.ENGLISH)),
 		new Word("length", new Hint("dimesion measured by the meter", Category.MEASUREMENT)),
 		new Word("lesbos", new Hint("island of Sappho", Category.GEOGRAPHY)),
 		new Word("lichen", new Hint("algae-fungus symbiote", Category.BOTANY)),
@@ -844,6 +846,7 @@ const HONEYCOMB = {
 		]),
 		new Word("wisdom", new Hint("in D&D, represents a character's practical intelligence", Category.FANTASY)),
 		new Word("wreath", new Hint("decorative branch ring", Category.HOLIDAY_WINTER)),
+		new Word("wuxing", new Hint("five traditional Chinese elements", Category.RELIGION)),
 		new Word("yellow", new Hint("color between orange and green", Category.COLOR, Difficulty.EASY)),
 		new Word("yogurt", new Hint("fermented milk product", Category.FOOD)),
 		new Word("zaffre", new Hint("cobalt blue pigment", Category.COLOR)),
