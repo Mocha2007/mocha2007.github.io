@@ -92,10 +92,10 @@ class Difficulty {
 	static EASY = 0;
 	/* easter egg */
 	static SIMPLE = 0.5;
+	/* somehow objectionable, to prevent pearlclutchers */
+	static SPICY = 0.9;
 	static NORMAL = 1;
 	static HARD = 2;
-	/* somehow objectionable, to prevent pearlclutchers */
-	static SPICY = 2.5;
 	static TRICKY = 3;
 	static string(difficulty){
 		switch (difficulty){
