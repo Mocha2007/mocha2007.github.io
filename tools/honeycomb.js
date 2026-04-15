@@ -1185,11 +1185,17 @@ const HONEYCOMB = {
 			});
 			return o;
 		},
+		get cpw(){
+			return this.nClues / HONEYCOMB.words.length;
+		},
 		get letterFreq(){
 			const o = [{}, {}, {}, {}, {}, {}];
 			HONEYCOMB.words.forEach(w => Array.from(w.word).forEach((c, i) => o[i][c] = o[i][c] ? o[i][c] + 1 : 1));
 			return o;
 		},
+		get nClues(){
+			return HONEYCOMB.words.reduce((a, b) => a+b.hints.length, 0);
+		}
 	},
 	checkOrder(){
 		this.words.forEach((w, i, a) => {
@@ -1220,7 +1226,7 @@ const HONEYCOMB = {
 		});
 	},
 	init(){
-		console.info(`${this.words.length} words`);
+		console.info(`${this.words.length} words, ${this.stats.nClues} clues`);
 		console.info('category statistics:', this.stats.categories);
 		if (this.config.debug) {
 			console.info('debug mode');
