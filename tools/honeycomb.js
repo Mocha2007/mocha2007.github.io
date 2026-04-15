@@ -279,11 +279,11 @@ const HONEYCOMB = {
 		new Word("auburn", new Hint("dark reddish brown", Category.COLOR)),
 		new Word("august", new Hint("eighth month", Category.MEASUREMENT, Difficulty.EASY)),
 		new Word("auriga", new Hint("charioteer constellation", Category.ASTRONOMY)),
-		new Word("autumn", new Hint("season after summer", Category.MEASUREMENT, Difficulty.EASY)),
 		new Word("aurora", [
 			new Hint("northern or southern lights", Category.ASTRONOMY, Difficulty.EASY),
 			new Hint("4X space simulation game infamous for its difficulty curve", Category.VIDEOGAME)
 		]),
+		new Word("autumn", new Hint("season after summer", Category.MEASUREMENT, Difficulty.EASY)),
 		new Word("azalea", new Hint("rhododendron", Category.BOTANY, Difficulty.HARD)),
 		new Word("baikal", new Hint("largest Asian freshwater lake", Category.GEOGRAPHY)),
 		new Word("bamboo", new Hint("fast-growing grass used like wood", Category.BOTANY)),
@@ -379,23 +379,23 @@ const HONEYCOMB = {
 		new Word("celery", new Hint("green stalks", Category.FOOD)),
 		new Word("cellar", new Hint("where wine or root vegetables may be stored", Category.FOOD)),
 		new Word("cesium", new Hint("second-defining element", Category.CHEMISTRY)),
+		new Word("chakra", new Hint("bodily energy center", Category.RELIGION)),
 		new Word("charge", [
 			new Hint("symbol in the field of a flag", Category.VEXILLOLOGY),
 			new Hint("measured in Coulombs", Category.MEASUREMENT),
 		]),
-		new Word("cheese", new Hint("solid milk product", Category.FOOD)),
-		new Word("chakra", new Hint("bodily energy center", Category.RELIGION)),
 		new Word("charon", [
 			new Hint("Pluto's largest moon", Category.ASTRONOMY),
 			new Hint("ferryman of Hades", Category.RELIGION),
 		]),
 		new Word("chaser", new Hint("fetishizer of trans folks", Category.LGBT)),
+		new Word("chasma", new Hint("deep, elongated, steep-sided depression", Category.ASTRONOMY)),
+		new Word("cheese", new Hint("solid milk product", Category.FOOD)),
+		new Word("cherry", new Hint("small red fruit", Category.FOOD)),
 		new Word("chiral", new Hint("of a molecule with L- and D- stereoisomers", Category.CHEMISTRY, Difficulty.HARD)),
 		new Word("chrome", new Hint("Google browser", Category.TECH)),
 		new Word("cishet", new Hint("slang: cisgender and heterosexual", Category.LGBT)),
 		new Word("claret", new Hint("dry red wine of Bordeaux", Category.FOOD)),
-		new Word("chasma", new Hint("deep, elongated, steep-sided depression", Category.ASTRONOMY)),
-		new Word("cherry", new Hint("small red fruit", Category.FOOD)),
 		new Word("clover", [
 			new Hint("small trefoliate plant", Category.BOTANY),
 			new Hint("symbol of St. Patrick's day", Category.HOLIDAY_SPRING),
@@ -441,9 +441,9 @@ const HONEYCOMB = {
 		new Word("cyprus", new Hint("its capital, Nicosia", Category.GEOGRAPHY)),
 		new Word("dacite", new Hint("one type of felsic rock", Category.GEOLOGY)),
 		new Word("dagger", new Hint("knife weapon", Category.MISC)),
+		new Word("dalton", new Hint("atomic mass unit", Category.MEASUREMENT)),
 		new Word("dancer", new Hint("second reindeer called on by Santa", Category.HOLIDAY_WINTER)),
 		new Word("danube", new Hint("second-longest European river", Category.GEOGRAPHY)),
-		new Word("dalton", new Hint("atomic mass unit", Category.MEASUREMENT)),
 		new Word("dasher", new Hint("first reindeer called on by Santa", Category.HOLIDAY_WINTER)),
 		new Word("dative", new Hint("case marking the indirect object", Category.GRAMMAR)),
 		new Word("decade", new Hint("ten years", Category.MEASUREMENT, Difficulty.EASY)),
@@ -492,13 +492,13 @@ const HONEYCOMB = {
 			new Hint("millennium or maltese", Category.FILM),
 			new Hint("SpaceX launch vehicle", Category.TRANSPORT),
 		]),
-		new Word("fathom", new Hint("thousandth of a nautical mile", Category.MEASUREMENT, Difficulty.HARD)),
-		new Word("feline", new Hint("of cats", Category.ZOOLOGY)),
-		new Word("felsic", new Hint("of silicate-rich igneous", Category.GEOLOGY)),
 		new Word("family", [
 			new Hint("taxonomic rank under order", Category.BIOLOGY),
 			new Hint("70s American sitcom, All in the...", Category.TV),
 		]),
+		new Word("fathom", new Hint("thousandth of a nautical mile", Category.MEASUREMENT, Difficulty.HARD)),
+		new Word("feline", new Hint("of cats", Category.ZOOLOGY)),
+		new Word("felsic", new Hint("of silicate-rich igneous", Category.GEOLOGY)),
 		new Word("fennel", new Hint("mediterranean herb related to dill", Category.FOOD)),
 		new Word("ferret", [
 			new Hint("beastly synonym of uncover", Category.ENGLISH, Difficulty.HARD),
@@ -532,17 +532,17 @@ const HONEYCOMB = {
 		new Word("friday", new Hint("day before the weekend", Category.MEASUREMENT, Difficulty.EASY)),
 		new Word("frosty", new Hint("animated snowman", Category.HOLIDAY_WINTER)),
 		new Word("fungus", new Hint("mushrooms are a type of this", Category.BIOLOGY)),
-		new Word("gallon", new Hint("eight pints", Category.MEASUREMENT, Difficulty.HARD)),
 		new Word("galaxy", new Hint("the Milky Way is this", Category.ASTRONOMY)),
+		new Word("gallon", new Hint("eight pints", Category.MEASUREMENT, Difficulty.HARD)),
 		new Word("gambia", new Hint("its capital, Banjul", Category.GEOGRAPHY)),
 		new Word("gamete", new Hint("reproductive cell", Category.BIOLOGY)),
 		new Word("garden", new Hint("outdoor plant cultivation area", Category.BOTANY)),
 		new Word("garlic", new Hint("strong bulb", Category.BOTANY)),
 		new Word("garnet", new Hint("red silicate mineral", Category.MINEROLOGY)),
 		new Word("gaydar", new Hint("intuition of sexuality", Category.LGBT)),
+		new Word("gelato", new Hint("Italian ice cream", Category.FOOD)),
 		new Word("gemini", new Hint("twin sign", Category.ASTROLOGY)),
 		new Word("genome", new Hint("entire set of genetic material", Category.BIOLOGY)),
-		new Word("gelato", new Hint("Italian ice cream", Category.FOOD)),
 		new Word("ginger", [
 			new Hint("red hair", Category.COLOR),
 			new Hint("strong root", Category.BOTANY),
@@ -558,15 +558,15 @@ const HONEYCOMB = {
 		new Word("graben", new Hint("depressed block of crust bordered by parallel faults", Category.GEOLOGY)),
 		new Word("grapes", new Hint("what wine is made of", Category.FOOD)),
 		new Word("greece", new Hint("its capital, Athens", Category.GEOGRAPHY)),
-		new Word("grouse", new Hint("landfowl, eg. ruffed, spruce, sooty", Category.ZOOLOGY, Difficulty.HARD)),
 		new Word("grinch", new Hint("who nemesis", Category.HOLIDAY_WINTER)),
+		new Word("grouse", new Hint("landfowl, eg. ruffed, spruce, sooty", Category.ZOOLOGY, Difficulty.HARD)),
+		new Word("guilty", new Hint("verdict to punish the accused", Category.LAW)),
 		new Word("guinea", [
 			new Hint("a coin, worth twenty-one shillings", Category.HISTORY),
 			new Hint("its capital, Conakry", Category.GEOGRAPHY),
 			new Hint("most linguistically diverse island, (second word)", Category.LANGUAGE),
 			new Hint("preceding fowl and pig", Category.ZOOLOGY),
 		]),
-		new Word("guilty", new Hint("verdict to punish the accused", Category.LAW)),
 		new Word("guyana", new Hint("its capital, Georgetown", Category.GEOGRAPHY)),
 		new Word("hadean", new Hint("oldest eon", Category.GEOLOGY)),
 		new Word("hadron", new Hint("meson or baryon", Category.PHYSICS)),
@@ -600,8 +600,8 @@ const HONEYCOMB = {
 		new Word("indium", new Hint("element named for its bluish-purple spectral line", Category.CHEMISTRY)),
 		new Word("iodine", new Hint("heaviest dietary element", Category.CHEMISTRY)),
 		new Word("island", new Hint("land surrounded by water", Category.GEOGRAPHY)),
-		new Word("istria", new Hint("Croatian peninsula", Category.GEOGRAPHY)),
 		new Word("israel", new Hint("country responsible for the Gaza genocide", Category.HISTORY)),
+		new Word("istria", new Hint("Croatian peninsula", Category.GEOGRAPHY)),
 		new Word("itself", new Hint("third person singular neuter reflexive", Category.GRAMMAR)),
 		new Word("jalopy", new Hint("junk car, synonym", Category.ENGLISH)),
 		new Word("jingle", new Hint("what sleighbells do", Category.HOLIDAY_WINTER)),
@@ -666,8 +666,8 @@ const HONEYCOMB = {
 		new Word("mantle", new Hint("layer between the crust and core", Category.GEOLOGY)),
 		new Word("marble", new Hint("white metamorphic rock", Category.GEOLOGY)),
 		new Word("marmot", new Hint("large ground-dwelling rodent", Category.ZOOLOGY)),
-		new Word("marten", new Hint("weasel-like mammal", Category.ZOOLOGY)),
 		new Word("maroon", new Hint("dark red", Category.COLOR)),
+		new Word("marten", new Hint("weasel-like mammal", Category.ZOOLOGY)),
 		new Word("matrix", [
 			new Hint("material between eukaryotic cells", Category.BIOLOGY),
 			new Hint("medium in which grains of material are embedded", Category.GEOLOGY),
@@ -735,13 +735,13 @@ const HONEYCOMB = {
 			new Hint("second most abundant element in Earth's atmosphere", Category.CHEMISTRY),
 			new Hint("Klei survival simulation game (first word)", Category.VIDEOGAME),
 		]),
-		new Word("paneer", new Hint("Indian cheese", Category.FOOD)),
 		new Word("palate", [
 			new Hint("roof of the mouth", Category.ANATOMY),
 			new Hint("expanded lower lip of a flower", Category.BOTANY, Difficulty.HARD),
 			new Hint("one's taste", Category.FOOD),
 			new Hint("consonants like /c/ and /k/ are pronounced here", Category.LANGUAGE),
 		]),
+		new Word("paneer", new Hint("Indian cheese", Category.FOOD)),
 		new Word("papaya", new Hint("large tropical yellow fruit", Category.FOOD)),
 		new Word("parrot", [
 			new Hint("imitative bird", Category.ZOOLOGY),
@@ -767,11 +767,11 @@ const HONEYCOMB = {
 		new Word("phloem", new Hint("photosynthesis product transport tissue", Category.BOTANY)),
 		new Word("photon", new Hint("light particle", Category.PHYSICS)),
 		new Word("phylum", new Hint("taxonomic rank under kingdom", Category.BIOLOGY)),
-		new Word("pindus", new Hint("Greek mountain range", Category.GEOGRAPHY)),
-		new Word("pistil", new Hint("free carpel", Category.BOTANY, Difficulty.HARD)),
 		new Word("piazzi", new Hint("Ceres discoverer surname", Category.ASTRONOMY, Difficulty.HARD)),
 		new Word("pictor", new Hint("painter constellation", Category.ASTRONOMY)),
+		new Word("pindus", new Hint("Greek mountain range", Category.GEOGRAPHY)),
 		new Word("pisces", new Hint("fish sign", Category.ASTROLOGY)),
+		new Word("pistil", new Hint("free carpel", Category.BOTANY, Difficulty.HARD)),
 		new Word("plants", new Hint("organisms botanists study", Category.BOTANY)),
 		new Word("plasma", new Hint("ionized gas", Category.CHEMISTRY)),
 		new Word("pluton", new Hint("igneous intrusion", Category.GEOLOGY)),
@@ -846,19 +846,19 @@ const HONEYCOMB = {
 		]),
 		new Word("savory", new Hint("satureja herb", Category.BOTANY, Difficulty.HARD)),
 		new Word("saxony", new Hint("state of Leipzig and Dresden", Category.GEOGRAPHY)),
-		new Word("secret", new Hint("hidden knowledge", Category.MISC)),
-		new Word("senior", new Hint("senior antonym", Category.ENGLISH)),
-		new Word("sesame", new Hint("hamburger bun seed", Category.FOOD)),
 		new Word("scurvy", new Hint("vitamin C deficiency", Category.MEDICINE)),
 		new Word("scutum", new Hint("shield constellation", Category.ASTRONOMY)),
 		new Word("scythe", new Hint("crop-harvesting tool", Category.AGRICULTURE)),
 		new Word("season", new Hint("quarter of a year", Category.MEASUREMENT)),
 		new Word("secant", new Hint("line intersecting a curve at two points", Category.MATH)),
 		new Word("second", new Hint("SI unit of time", Category.MEASUREMENT)),
+		new Word("secret", new Hint("hidden knowledge", Category.MISC)),
+		new Word("senior", new Hint("senior antonym", Category.ENGLISH)),
 		new Word("serbia", [
 			new Hint("its capital, Belgrade", Category.GEOGRAPHY),
 			new Hint("its invasion brought about a world war", Category.HISTORY, Difficulty.TRICKY),
 		]),
+		new Word("sesame", new Hint("hamburger bun seed", Category.FOOD)),
 		new Word("sewing", new Hint("textile fastening", Category.TEXTILE)),
 		new Word("sherry", new Hint("fortified wine", Category.FOOD)),
 		new Word("shield", new Hint("exposed precambrian rock", Category.GEOLOGY)),
@@ -897,9 +897,9 @@ const HONEYCOMB = {
 		new Word("stress", new Hint("deformation force", Category.PHYSICS)),
 		new Word("suffix", new Hint("attached to end of word", Category.GRAMMAR)),
 		new Word("sulfur", new Hint("element said to smell of egg", Category.CHEMISTRY)),
-		new Word("sunset", new Hint("dusk", Category.MEASUREMENT, Difficulty.EASY)),
 		new Word("summer", new Hint("season after spring", Category.MEASUREMENT, Difficulty.EASY)),
 		new Word("sunday", new Hint("second day of the weekend", Category.MEASUREMENT, Difficulty.EASY)),
+		new Word("sunset", new Hint("dusk", Category.MEASUREMENT, Difficulty.EASY)),
 		new Word("sweden", new Hint("its capital, Stockholm", Category.GEOGRAPHY)),
 		new Word("switch", [
 			new Hint("tops and bottoms", Category.LGBT),
@@ -969,13 +969,13 @@ const HONEYCOMB = {
 		new Word("zambia", new Hint("its capital, Lusaka", Category.GEOGRAPHY)),
 		new Word("zealot", new Hint("fanatic", Category.RELIGION)),
 		new Word("zenith", new Hint("the point directly above the observer", Category.ASTRONOMY)),
+		new Word("zircon", new Hint("key mineral of geochronology", Category.GEOLOGY)),
 		new Word("zither", new Hint("guitar ancestor", Category.MUSIC)),
 		new Word("zodiac", new Hint("the twelve signs of the ecliptic", Category.ASTROLOGY)),
 		new Word("zombie", [
 			new Hint("horror staple monster", Category.FILM),
 			new Hint("second mob added to Minecraft", Category.VIDEOGAME),
 		]),
-		new Word("zircon", new Hint("key mineral of geochronology", Category.GEOLOGY)),
 		new Word("zygote", new Hint("diploid cell fromed from two haploid gametes", Category.BIOLOGY)),
 	],
 	config: {
@@ -1104,6 +1104,14 @@ const HONEYCOMB = {
 			return o;
 		},
 	},
+	checkOrder(){
+		this.words.forEach((w, i, a) => {
+			if (!i) return;
+			const prev = a[i-1].word;
+			const curr = w.word;
+			if (!(prev < curr)) console.warn(`${prev} precedes ${curr} so is out of order`);
+		});
+	},
 	clear(){
 		document.body.innerHTML = '';
 	},
@@ -1116,7 +1124,10 @@ const HONEYCOMB = {
 	init(){
 		console.info(`${this.words.length} words`);
 		console.info('category statistics:', this.stats.categories);
-		if (this.config.debug) console.info('debug mode');
+		if (this.config.debug) {
+			console.info('debug mode');
+			this.checkOrder();
+		}
 		// prepare keyboard controls
 		document.body.onkeydown = ev => {
 			if (HONEYCOMB.config.debug) console.debug(`keypress`, ev);
