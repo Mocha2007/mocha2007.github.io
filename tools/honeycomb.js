@@ -305,6 +305,10 @@ const HONEYCOMB = {
 			new Hint("claimed divine identity of being in TOS episode 'Who Mourns of Adonais'?", Category.TV, Difficulty.HARD),
 		]),
 		new Word("aquila", new Hint("eagle constellation", Category.ASTRONOMY)),
+		new Word("archer", [
+			new Hint("bow-wielding soldier", Category.MISC),
+			new Hint("Minecraft skeletons bear these", Category.VIDEOGAME),
+		]),
 		new Word("aroace", new Hint("slang: aromantic and asexual", Category.LGBT)),
 		new Word("astana", new Hint("capital of Kazakhstan", Category.GEOGRAPHY)),
 		new Word("athena", new Hint("Greek goddess of wisdom", Category.RELIGION)),
