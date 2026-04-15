@@ -1091,7 +1091,7 @@ const HONEYCOMB = {
 			const tgtdir = this.hexSelectedStartDirection;
 			for (let i = 0; i < 30; i++){
 				n = (n + (reverse ? 29 : 1)) % 30;
-				console.debug(`i: ${i}, n: ${n}, SH = ${this.selectedHex}, SLH`, this.selectedLetterHexes, 'SLD', this.letterSelectedDirection, 'tgt', tgtdir);
+				if (HONEYCOMB.config.debug) console.debug(`i: ${i}, n: ${n}, SH = ${this.selectedHex}, SLH`, this.selectedLetterHexes, 'SLD', this.letterSelectedDirection, 'tgt', tgtdir);
 				this.selectLetter(n);
 				// [] is in same hex
 				if (this.selectedLetterHexes[0] === this.selectedHex && this.letterSelectedDirection === tgtdir)
