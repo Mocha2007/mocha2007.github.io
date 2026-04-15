@@ -244,6 +244,9 @@ const HONEYCOMB = {
 			- all 6-letter countries (excl. Kuwait Monaco)
 			- all 6-letter elements (excl. Cerium and Erbium)
 			- all 6-letter minecraft mobs (excl. new ones)
+			- all 6-letter DF ...
+				- ores: 1 (Galena) https://dwarffortresswiki.org/index.php/Ore
+				- gems: 10 (Garnet, Jasper, Lazuli, Morion, Pyrite, Pyrope, Quartz, Schorl, Spinel, Zircon) https://dwarffortresswiki.org/index.php/Gem
 			- partial: all 6-letter https://en.wikipedia.org/wiki/Planetary_nomenclature
 			- partial: https://en.wikipedia.org/wiki/List_of_animal_names
 		*/
@@ -570,6 +573,7 @@ const HONEYCOMB = {
 		new Word("frosty", new Hint("animated snowman", Category.HOLIDAY_WINTER)),
 		new Word("fungus", new Hint("mushrooms are a type of this", Category.BIOLOGY)),
 		new Word("galaxy", new Hint("the Milky Way is this", Category.ASTRONOMY)),
+		new Word("galena", new Hint("lead sulfide ore", Category.MINEROLOGY)),
 		new Word("gallon", new Hint("eight pints", Category.MEASUREMENT, Difficulty.HARD)),
 		new Word("gambia", new Hint("its capital, Banjul", Category.GEOGRAPHY)),
 		new Word("gamete", new Hint("reproductive cell", Category.BIOLOGY)),
@@ -613,7 +617,7 @@ const HONEYCOMB = {
 		new Word("hadean", new Hint("oldest eon", Category.GEOLOGY)),
 		new Word("hadron", new Hint("meson or baryon", Category.PHYSICS)),
 		new Word("halide", new Hint("halogen ion", Category.CHEMISTRY)),
-		new Word("halite", new Hint("rock salt", Category.GEOLOGY)),
+		new Word("halite", new Hint("rock salt", Category.MINEROLOGY)),
 		new Word("harris", new Hint("Biden VP", Category.NEWS2020S)),
 		new Word("haumea", new Hint("dwarf planet named for goddess of Hawaii", Category.ASTRONOMY)),
 		new Word("hawaii", [
@@ -648,6 +652,7 @@ const HONEYCOMB = {
 		new Word("istria", new Hint("Croatian peninsula", Category.GEOGRAPHY)),
 		new Word("itself", new Hint("third person singular neuter reflexive", Category.LANGUAGE)),
 		new Word("jalopy", new Hint("junk car, synonym", Category.ENGLISH)),
+		new Word("jasper", new Hint("impure chalcedony variety", Category.MINEROLOGY, Difficulty.HARD)),
 		new Word("jingle", new Hint("what sleighbells do", Category.HOLIDAY_WINTER)),
 		new Word("jordan", new Hint("its capital, Amman", Category.GEOGRAPHY)),
 		new Word("junior", new Hint("senior antonym", Category.ENGLISH)),
@@ -737,6 +742,7 @@ const HONEYCOMB = {
 		new Word("molten", new Hint("of liquid metal", Category.CHEMISTRY)),
 		new Word("moment", new Hint("ninety seconds", Category.MEASUREMENT)),
 		new Word("monday", new Hint("day after the weekend", Category.MEASUREMENT, Difficulty.EASY)),
+		new Word("morion", new Hint("dark smoky quartz variety", Category.MINEROLOGY, Difficulty.HARD)),
 		new Word("mormon", new Hint("follower of Joseph Smith", Category.RELIGION)),
 		new Word("morrow", new Hint("morning", Category.MEASUREMENT)),
 		new Word("mortar", new Hint("pestle complement", Category.MISC)),
@@ -848,6 +854,8 @@ const HONEYCOMB = {
 			new Hint("reddish blue", Category.COLOR, Difficulty.EASY),
 			new Hint("royal color", Category.HISTORY),
 		]),
+		new Word("pyrite", new Hint("fool's gold", Category.MINEROLOGY)),
+		new Word("pyrope", new Hint("garnet variety, from Greek 'fire eye'", Category.MINEROLOGY, Difficulty.HARD)),
 		new Word("python", [
 			new Hint("nonvenomous tropical snake", Category.ZOOLOGY),
 			new Hint("widespread dynamically typed programming language", Category.PROGRAMMING),
@@ -899,6 +907,7 @@ const HONEYCOMB = {
 		new Word("savory", new Hint("satureja herb", Category.BOTANY, Difficulty.HARD)),
 		new Word("saxony", new Hint("state of Leipzig and Dresden", Category.GEOGRAPHY)),
 		new Word("school", new Hint("one of these was double-tapped by the US on the first day of the Iran War", Category.NEWS2020S, Difficulty.SPICY)),
+		new Word("schorl", new Hint("dark tourmaline variety", Category.MINEROLOGY, Difficulty.HARD)),
 		new Word("scurvy", new Hint("vitamin C deficiency", Category.MEDICINE)),
 		new Word("scutum", new Hint("shield constellation", Category.ASTRONOMY)),
 		new Word("scythe", new Hint("crop-harvesting tool", Category.AGRICULTURE)),
@@ -1055,7 +1064,7 @@ const HONEYCOMB = {
 			new Hint("Spore archetype with the Fanatical Frenzy ability", Category.VIDEOGAME),
 		]),
 		new Word("zenith", new Hint("the point directly above the observer", Category.ASTRONOMY)),
-		new Word("zircon", new Hint("key mineral of geochronology", Category.GEOLOGY)),
+		new Word("zircon", new Hint("key mineral of geochronology", Category.MINEROLOGY)),
 		new Word("zither", new Hint("guitar ancestor", Category.MUSIC)),
 		new Word("zodiac", new Hint("the twelve signs of the ecliptic", Category.ASTROLOGY)),
 		new Word("zohran", new Hint("2025 NYC mayoral election winner (forename)", Category.NEWS2020S)),
