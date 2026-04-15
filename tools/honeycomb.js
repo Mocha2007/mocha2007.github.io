@@ -482,6 +482,7 @@ const HONEYCOMB = {
 		]),
 		new Word("europe", new Hint("continent of Rome", Category.GEOGRAPHY)),
 		new Word("fabric", new Hint("cloth", Category.TEXTILE)),
+		new Word("facile", new Hint("easy synonym", Category.ENGLISH, Difficulty.HARD)),
 		new Word("falcon", [
 			new Hint("bird of prey, eg. peregrine", Category.ZOOLOGY),
 			new Hint("millennium or maltese", Category.FILM),
@@ -812,6 +813,7 @@ const HONEYCOMB = {
 		new Word("redder", new Hint("objects moving away appear this way", Category.PHYSICS)),
 		new Word("rennet", new Hint("cheesemaking enzymes", Category.FOOD)),
 		new Word("retort", new Hint("bent-necked flask", Category.CHEMISTRY)),
+		new Word("return", new Hint("Star Wars Episode VI (first word)", Category.FILM)),
 		new Word("rhodes", new Hint("Greek island known for its Colossus", Category.GEOGRAPHY)),
 		new Word("ribbon", new Hint("thin cloth band", Category.TEXTILE)),
 		new Word("ritual", new Hint("spell that can be cast without expending a spell slot, at the expense of time", Category.FANTASY)),
@@ -837,6 +839,7 @@ const HONEYCOMB = {
 		]),
 		new Word("savory", new Hint("satureja herb", Category.BOTANY, Difficulty.HARD)),
 		new Word("saxony", new Hint("state of Leipzig and Dresden", Category.GEOGRAPHY)),
+		new Word("secret", new Hint("hidden knowledge", Category.MISC)),
 		new Word("senior", new Hint("senior antonym", Category.ENGLISH)),
 		new Word("sesame", new Hint("hamburger bun seed", Category.FOOD)),
 		new Word("scurvy", new Hint("vitamin C deficiency", Category.MEDICINE)),
@@ -851,6 +854,7 @@ const HONEYCOMB = {
 		]),
 		new Word("sewing", new Hint("textile fastening", Category.TEXTILE)),
 		new Word("shield", new Hint("exposed precambrian rock", Category.GEOLOGY)),
+		new Word("shorts", new Hint("pants that only go to the knees", Category.MISC)),
 		new Word("sicily", new Hint("largest Mediterranean island", Category.GEOGRAPHY)),
 		new Word("sienna", new Hint("reddish brown pigment", Category.COLOR)),
 		new Word("silver", [
@@ -869,6 +873,7 @@ const HONEYCOMB = {
 			new Hint("Minecraft string source", Category.VIDEOGAME),
 		]),
 		new Word("spinel", new Hint("red oxide mineral", Category.MINEROLOGY)),
+		new Word("spirit", new Hint("Father, Son, and Holy...", Category.RELIGION)),
 		new Word("sponge", new Hint("most basal animal", Category.ZOOLOGY)),
 		new Word("spring", [
 			new Hint("source", Category.GEOLOGY),
@@ -1082,6 +1087,11 @@ const HONEYCOMB = {
 					o[h.category]++;
 				});
 			});
+			return o;
+		},
+		get letterFreq(){
+			const o = [{}, {}, {}, {}, {}, {}];
+			HONEYCOMB.words.forEach(w => Array.from(w.word).forEach((c, i) => o[i][c] = o[i][c] ? o[i][c] + 1 : 1));
 			return o;
 		},
 	},
