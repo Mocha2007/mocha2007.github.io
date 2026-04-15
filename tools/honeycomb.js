@@ -652,6 +652,7 @@ const HONEYCOMB = {
 			new Hint("one of three plagues sent to Egypt", Category.RELIGION),
 		]),
 		new Word("lovage", new Hint("parsley-like herb", Category.FOOD)),
+		new Word("luanti", new Hint("better known as Minetest", Category.VIDEOGAME)),
 		new Word("lumber", new Hint("wood", Category.MISC)),
 		new Word("luster", new Hint("how light interacts with a rock surface", Category.GEOLOGY)),
 		new Word("lychee", new Hint("small, bumpy south Asian fruit", Category.FOOD)),
