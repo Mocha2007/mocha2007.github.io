@@ -91,6 +91,7 @@ class Difficulty {
 	static SIMPLE = 0.5;
 	static NORMAL = 1;
 	static HARD = 2;
+	static SPICY = 2.5;
 	static TRICKY = 3;
 	static string(difficulty){
 		switch (difficulty){
@@ -102,6 +103,8 @@ class Difficulty {
 				return 'Normal';
 			case this.HARD:
 				return 'Hard';
+			case this.SPICY:
+				return 'Spicy';
 			case this.TRICKY:
 				return 'Tricky';
 		}
@@ -452,6 +455,7 @@ const HONEYCOMB = {
 		new Word("degree", new Hint("1/360 of a circle", Category.MEASUREMENT)),
 		new Word("delete", new Hint("key on keyboard similar to backspace", Category.MISC)),
 		new Word("desert", new Hint("biome with little precipitation", Category.GEOGRAPHY)),
+		new Word("donald", new Hint("felon, child rapist, war criminal", Category.HISTORY, Difficulty.SPICY)),
 		new Word("donkey", [
 			new Hint("Shrek's partner", Category.FILM),
 			new Hint("rideable Minecraft mob", Category.VIDEOGAME),
@@ -582,6 +586,7 @@ const HONEYCOMB = {
 		new Word("helium", new Hint("element discovered in the sun", Category.CHEMISTRY)),
 		new Word("hermes", new Hint("Greek messenger god", Category.RELIGION)),
 		new Word("hestia", new Hint("Greek goddess of the hearth", Category.RELIGION)),
+		new Word("hormuz", new Hint("strait closed by Iran in response to American-Israeli attacks", Category.HISTORY, Difficulty.SPICY)),
 		new Word("hornet", [
 			new Hint("large wasp", Category.ZOOLOGY),
 			new Hint("beastly name of the F-18", Category.TRANSPORT),
@@ -602,7 +607,7 @@ const HONEYCOMB = {
 		new Word("indium", new Hint("element named for its bluish-purple spectral line", Category.CHEMISTRY)),
 		new Word("iodine", new Hint("heaviest dietary element", Category.CHEMISTRY)),
 		new Word("island", new Hint("land surrounded by water", Category.GEOGRAPHY)),
-		new Word("israel", new Hint("country responsible for the Gaza genocide", Category.HISTORY)),
+		new Word("israel", new Hint("country responsible for the Gaza genocide", Category.HISTORY, Difficulty.SPICY)),
 		new Word("istria", new Hint("Croatian peninsula", Category.GEOGRAPHY)),
 		new Word("itself", new Hint("third person singular neuter reflexive", Category.GRAMMAR)),
 		new Word("jalopy", new Hint("junk car, synonym", Category.ENGLISH)),
@@ -849,6 +854,7 @@ const HONEYCOMB = {
 		]),
 		new Word("savory", new Hint("satureja herb", Category.BOTANY, Difficulty.HARD)),
 		new Word("saxony", new Hint("state of Leipzig and Dresden", Category.GEOGRAPHY)),
+		new Word("school", new Hint("one of these was double-tapped by the US on the first day of the Iran War", Category.HISTORY, Difficulty.SPICY)),
 		new Word("scurvy", new Hint("vitamin C deficiency", Category.MEDICINE)),
 		new Word("scutum", new Hint("shield constellation", Category.ASTRONOMY)),
 		new Word("scythe", new Hint("crop-harvesting tool", Category.AGRICULTURE)),
@@ -983,8 +989,6 @@ const HONEYCOMB = {
 		new Word("zygote", new Hint("diploid cell fromed from two haploid gametes", Category.BIOLOGY)),
 	],
 	config: {
-		avoidDupeCats: true,
-		avoidMultipleHardClues: true,
 		date: new Date(),
 		debug: document.URL[0].toLowerCase() === 'f', // file:// vs. http(s)://
 		forcecat: '',
@@ -1014,7 +1018,12 @@ const HONEYCOMB = {
 				default:
 					return true;
 			}
-		}
+		},
+		toggles: {
+			'Balance Categories': true,
+			'Balance Difficulty': true,
+			'🌶️': false,
+		},
 	},
 	/** @type {Clue[]} */
 	clues: new Array(7).fill(undefined),
@@ -1119,6 +1128,17 @@ const HONEYCOMB = {
 	clear(){
 		document.body.innerHTML = '';
 	},
+	createToggle(id = ''){
+		const label = document.createElement('label');
+		const input = document.createElement('input');
+		input.type = 'checkbox';
+		input.id = id.replaceAll(' ', '_');
+		input.checked = this.config.toggles[id];
+		label.appendChild(input);
+		label.appendChild(document.createTextNode(id));
+		label.onclick = () => HONEYCOMB.config.toggles[id] = input.checked = !input.checked;
+		return label;
+	},
 	debug(){
 		Array.from(document.getElementsByClassName('letter')).forEach(e => {
 			const answer = e.getAttribute('answer');
@@ -1191,32 +1211,8 @@ const HONEYCOMB = {
 		button_new.role = 'button';
 		button_new.onclick = () => HONEYCOMB.new_wrapper();
 		controls.appendChild(button_new);
-		// "avoid duplicate categories" button
-		const button_adc_label = document.createElement('label');
-		const button_adc = document.createElement('input');
-		button_adc.type = 'checkbox';
-		button_adc.id = 'adc';
-		button_adc.checked = this.config.avoidDupeCats;
-		button_adc_label.appendChild(button_adc);
-		button_adc_label.appendChild(document.createTextNode('Balance Categories'));
-		button_adc_label.onclick = () => {
-			button_adc.checked = !button_adc.checked;
-			HONEYCOMB.config.avoidDupeCats = button_adc.checked;
-		};
-		controls.appendChild(button_adc_label);
-		// "avoid multiple hard clues" button
-		const button_amhc_label = document.createElement('label');
-		const button_amhc = document.createElement('input');
-		button_amhc.type = 'checkbox';
-		button_amhc.id = 'ahmc';
-		button_amhc.checked = this.config.avoidMultipleHardClues;
-		button_amhc_label.appendChild(button_amhc);
-		button_amhc_label.appendChild(document.createTextNode('Balance Difficulty'));
-		button_amhc_label.onclick = () => {
-			button_amhc.checked = !button_amhc.checked;
-			HONEYCOMB.config.avoidMultipleHardClues = button_amhc.checked;
-		};
-		controls.appendChild(button_amhc_label);
+		// add toggles
+		Object.keys(this.config.toggles).forEach(id => controls.appendChild(this.createToggle(id)));
 		// force category dropdown
 		const cat_dropdown_container = document.createElement('label');
 		cat_dropdown_container.innerHTML = 'Category: ';
@@ -1266,6 +1262,8 @@ const HONEYCOMB = {
 	new(){
 		// word must also pass seasonal filter here, because some words have hints in multiple categories
 		const fi = h => HONEYCOMB.config.seasonalFilter(h.category)
+			// no spicy words unless allowed
+			&& (HONEYCOMB.config.toggles["🌶️"] || h.difficulty !== Difficulty.SPICY)
 			&& (HONEYCOMB.config.forcecat ? h.category === HONEYCOMB.config.forcecat : !USED_CATEGORIES.includes(h.category));
 		let dictionary = this.words
 			// word MUST pass seasonal filter.
@@ -1389,11 +1387,16 @@ const HONEYCOMB = {
 	 */
 	randomWordMatching(dictionary, substring = '', used_categories = [], n_hard = 0){
 		const matches = dictionary
-			// if a category is forced, it MUST be that category
-			.filter(w => 0 <= this.wordContains(w.word, substring) && w.hints.some(h => !HONEYCOMB.config.forcecat || h.category === HONEYCOMB.config.forcecat));
+		.filter(w =>
+				// word must contain substring in question
+				0 <= this.wordContains(w.word, substring)
+				// if a category is forced, it MUST be that category
+				&& w.hints.some(h => (!HONEYCOMB.config.forcecat || h.category === HONEYCOMB.config.forcecat)
+				// avoid spicy clues unless allowed
+				&& (HONEYCOMB.config.toggles["🌶️"] || h.difficulty !== Difficulty.SPICY)));
 		if (matches.length < 1) console.warn('no matches', this.config.debug && substring);
 		// if possible, avoid duplicate categories, and multiple hard clues
-		const catmatches = matches.filter(w => w.hints.some(h => (HONEYCOMB.config.forcecat || !HONEYCOMB.config.avoidDupeCats || !used_categories.includes(h.category)) && (!HONEYCOMB.config.avoidMultipleHardClues || n_hard <= 0 || h.difficulty <= Difficulty.NORMAL)));
+		const catmatches = matches.filter(w => w.hints.some(h => (HONEYCOMB.config.forcecat || !HONEYCOMB.config.toggles["Balance Categories"] || !used_categories.includes(h.category)) && (!HONEYCOMB.config.toggles["Balance Difficulty"] || n_hard <= 0 || h.difficulty <= Difficulty.NORMAL)));
 		const arr = catmatches.length ? catmatches : matches;
 		return arr[Math.floor(Math.random() * arr.length)];
 	},
