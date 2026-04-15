@@ -62,6 +62,7 @@ class Category {
 	static LANGUAGE = "Language";
 	static LAW = "Law";
 	static LGBT = "LGBT";
+	static LITERATURE = "Literature";
 	static MATH = "Mathematics";
 	static MEASUREMENT = "Measurement";
 	static MEDICINE = "Medicine";
@@ -760,6 +761,7 @@ const HONEYCOMB = {
 		new Word("nectar", new Hint("flower juice", Category.BOTANY)),
 		new Word("needle", [
 			new Hint("pine 'leaf'", Category.BOTANY),
+			new Hint("'injector' tip", Category.MEDICINE),
 			new Hint("sharp threader", Category.TEXTILE),
 		]),
 		new Word("neuron", new Hint("electrically exciteable cell", Category.BIOLOGY)),
@@ -870,7 +872,10 @@ const HONEYCOMB = {
 		new Word("quecto", new Hint("metric prefix for 10^-30", Category.MEASUREMENT)),
 		new Word("quetta", new Hint("metric prefix for 10^30", Category.MEASUREMENT)),
 		new Word("quiver", new Hint("arrow holder", Category.MISC)),
-		new Word("rabbit", new Hint("small hopping mammal", Category.ZOOLOGY)),
+		new Word("rabbit", [
+			new Hint("small hopping mammal", Category.ZOOLOGY),
+			new Hint("rabbit Alice chased", Category.LITERATURE),
+		]),
 		new Word("radian", new Hint("SI unit of angle", Category.MEASUREMENT)),
 		new Word("radish", new Hint("round red root", Category.FOOD)),
 		new Word("radium", new Hint("radioactive alkaline earth metal", Category.CHEMISTRY)),
@@ -883,8 +888,14 @@ const HONEYCOMB = {
 		new Word("redder", new Hint("objects moving away appear this way", Category.PHYSICS)),
 		new Word("reddit", new Hint("social news aggregator/webforum platform", Category.TECH)),
 		new Word("rennet", new Hint("cheesemaking enzymes", Category.FOOD)),
-		new Word("retort", new Hint("bent-necked flask", Category.CHEMISTRY)),
-		new Word("return", new Hint("Star Wars Episode VI (first word)", Category.FILM)),
+		new Word("retort", [
+			new Hint("bent-necked flask", Category.CHEMISTRY),
+			new Hint("comeback synonym", Category.MISC),
+		]),
+		new Word("return", [
+			new Hint("Star Wars Episode VI (first word)", Category.FILM),
+			new Hint("alternate label for 'enter' key", Category.TECH),
+		]),
 		new Word("rhodes", new Hint("Greek island known for its Colossus", Category.GEOGRAPHY)),
 		new Word("ribbon", new Hint("thin cloth band", Category.TEXTILE)),
 		new Word("ritual", new Hint("spell that can be cast without expending a spell slot, at the expense of time", Category.FANTASY)),
@@ -926,7 +937,10 @@ const HONEYCOMB = {
 			new Hint("its capital, Belgrade", Category.GEOGRAPHY),
 			new Hint("its invasion brought about a world war", Category.HISTORY, Difficulty.TRICKY),
 		]),
-		new Word("sesame", new Hint("hamburger bun seed", Category.FOOD)),
+		new Word("sesame", [
+			new Hint("hamburger bun seed", Category.FOOD),
+			new Hint("popular children's show: this street", Category.TV),
+		]),
 		new Word("sewing", new Hint("textile fastening", Category.TEXTILE)),
 		new Word("shaman", new Hint("Spore archetype with the Return Ticket ability", Category.VIDEOGAME)),
 		new Word("sherry", new Hint("fortified wine", Category.FOOD)),
@@ -939,7 +953,10 @@ const HONEYCOMB = {
 			new Hint("common coinage metal", Category.CHEMISTRY),
 			new Hint("this medal is given to second place", Category.SPORT),
 		]),
-		new Word("sirius", new Hint("brightest nighttime star", Category.ASTRONOMY)),
+		new Word("sirius", [
+			new Hint("brightest nighttime star", Category.ASTRONOMY),
+			new Hint("American broadcasting corporation (minus 'XM')", Category.MISC),
+		]),
 		new Word("sleigh", new Hint("Santa's vehicle", Category.HOLIDAY_WINTER)),
 		new Word("sodium", new Hint("secondary constituent of table salt", Category.CHEMISTRY)),
 		new Word("source", new Hint("spring", Category.GEOLOGY)),
@@ -950,7 +967,11 @@ const HONEYCOMB = {
 			new Hint("Minecraft string source", Category.VIDEOGAME),
 		]),
 		new Word("spinel", new Hint("red oxide mineral", Category.MINEROLOGY)),
-		new Word("spirit", new Hint("Father, Son, and Holy...", Category.RELIGION)),
+		new Word("spiner", new Hint("Data actor (surname)", Category.TV, Difficulty.HARD)),
+		new Word("spirit", [
+			new Hint("Father, Son, and Holy...", Category.RELIGION),
+			new Hint("aircraft which completed the first transatlantic flight (first word)", Category.TRANSPORT, Difficulty.HARD),
+		]),
 		new Word("sponge", [
 			new Hint("most basal animal", Category.ZOOLOGY),
 			new Hint("species of star of hit Nickelodeon animation", Category.TV),
@@ -958,10 +979,12 @@ const HONEYCOMB = {
 		new Word("spring", [
 			new Hint("source", Category.GEOLOGY),
 			new Hint("season after winter", Category.MEASUREMENT, Difficulty.EASY),
+			new Hint("Stravinsky ballet: the Rite of this", Category.MUSIC, Difficulty.HARD),
 		]),
 		new Word("spruce", [
 			new Hint("conifer", Category.BOTANY),
 			new Hint("Minecraft taiga tree", Category.VIDEOGAME),
+			new Hint("Hughes H-4 Hercules nickname (first word)", Category.TRANSPORT, Difficulty.HARD),
 		]),
 		new Word("steppe", new Hint("grassland plains, as in Eurasia", Category.GEOGRAPHY)),
 		new Word("stevia", new Hint("sugar substitute", Category.FOOD)),
@@ -969,7 +992,10 @@ const HONEYCOMB = {
 			new Hint("given $130k in hush money to not reveal her affair with Trump (forename)", Category.NEWS2020S, Difficulty.SPICY),
 			new Hint("'It was a dark and ... night'", Category.MISC),
 		]),
-		new Word("strain", new Hint("deformation", Category.PHYSICS)),
+		new Word("strain", [
+			new Hint("deformation", Category.PHYSICS),
+			new Hint("disease variety", Category.MEDICINE),
+		]),
 		new Word("stream", new Hint("creek or brook", Category.GEOGRAPHY)),
 		new Word("stress", [
 			new Hint("deformation force", Category.PHYSICS),
@@ -977,7 +1003,10 @@ const HONEYCOMB = {
 		]),
 		new Word("suffix", new Hint("attached to end of word", Category.LANGUAGE)),
 		new Word("sulfur", new Hint("element said to smell of egg", Category.CHEMISTRY)),
-		new Word("summer", new Hint("season after spring", Category.MEASUREMENT, Difficulty.EASY)),
+		new Word("summer", [
+			new Hint("season after spring", Category.MEASUREMENT, Difficulty.EASY),
+			new Hint("Nightmare Moon interrupted the thousandth celebration of this (first word)", Category.TV),
+		]),
 		new Word("sunday", new Hint("second day of the weekend", Category.MEASUREMENT, Difficulty.EASY)),
 		new Word("sunset", new Hint("dusk", Category.MEASUREMENT, Difficulty.EASY)),
 		new Word("sweden", new Hint("its capital, Stockholm", Category.GEOGRAPHY)),
