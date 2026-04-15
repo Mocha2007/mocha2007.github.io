@@ -1214,13 +1214,13 @@ const HONEYCOMB = {
 					break;
 				case 'ArrowDown':
 				case 'ArrowRight':
-				case ' ':
 				case '.':
 					HONEYCOMB.letterNodes.advanceLetter();
 					break;
 				case '<':
 					HONEYCOMB.letterNodes.advanceHex(true);
 					break;
+				case ' ':
 				case '>':
 					HONEYCOMB.letterNodes.advanceHex();
 					break;
