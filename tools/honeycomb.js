@@ -497,7 +497,7 @@ const HONEYCOMB = {
 		]),
 		new Word("fennel", new Hint("mediterranean herb related to dill", Category.FOOD)),
 		new Word("ferret", [
-			new Hint("beastly synonym of uncover", Category.ENGLISH),
+			new Hint("beastly synonym of uncover", Category.ENGLISH, Difficulty.HARD),
 			new Hint("domesticated polecat", Category.ZOOLOGY),
 		]),
 		new Word("finger", [
@@ -988,7 +988,7 @@ const HONEYCOMB = {
 		},
 		maxIter: 10000,
 		get minCatSize(){
-			return this.debug ? 7 : 28;
+			return this.debug ? 7 : 35;
 		},
 		/** @param {Category} c */
 		seasonalFilter(c){
