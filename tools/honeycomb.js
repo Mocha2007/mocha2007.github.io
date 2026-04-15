@@ -1069,19 +1069,21 @@ const HONEYCOMB = {
 			return JSON.parse(this.letterSelected.getAttribute('hexes'));
 		},
 		selectedHex: 1,
-		advanceLetter(reverse = false){
+		advanceLetter(reverse = false, toStart = false){
 			// increment selection until we reach another cell in the current hex
 			let n = this.selectedLetter;
+			const tgtdir = this.hexSelectedStartDirection;
 			for (let i = 0; i < 30; i++){
 				n = (n + (reverse ? 29 : 1)) % 30;
 				// console.debug(`i: ${i}, n: ${n}`);
 				this.selectLetter(n);
-				if (this.selectedLetterHexes.includes(this.selectedHex)) break;
+				if (this.selectedLetterHexes.includes(this.selectedHex))
+					if (!toStart || this.letterSelectedDirection === tgtdir) break;
 			}
 		},
 		advanceHex(reverse = false){
 			this.selectHex((this.selectedHex + (reverse ? 6 : 1)) % 7);
-			this.advanceLetter(reverse);
+			this.advanceLetter(reverse, true);
 		},
 		backspace(backtrack = false){
 			this.setLetter();
@@ -1109,12 +1111,20 @@ const HONEYCOMB = {
 		get hexSelected(){
 			return this.hexElem(this.selectedHex);
 		},
+		get hexSelectedStartDirection(){
+			return Array.from(Array.from(this.hexSelected.getElementsByClassName('start'))[0].classList)
+				.find(c => c.includes('direction'));
+		},
 		/** @returns {HTMLDivElement} */
 		letterElem(n = 0){
 			return document.getElementById(`letter${n}`);
 		},
 		get letterSelected(){
 			return this.letterElem(this.selectedLetter);
+		},
+		get letterSelectedDirection(){
+			return Array.from(this.letterSelected.classList)
+				.find(c => c.includes('direction'));
 		},
 		selectHex(n = 0){
 			this.hexSelected.classList.remove('selected');
