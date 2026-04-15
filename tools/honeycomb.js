@@ -510,6 +510,7 @@ const HONEYCOMB = {
 		]),
 		new Word("finial", new Hint("decorative flagpole cap", Category.VEXILLOLOGY)),
 		new Word("firkin", new Hint("quarter of a barrel", Category.MEASUREMENT, Difficulty.HARD)),
+		new Word("flickr", new Hint("image host", Category.TECH)),
 		new Word("floret", new Hint("small flower", Category.BOTANY, Difficulty.HARD)),
 		new Word("florin", new Hint("a coin, worth two shillings", Category.HISTORY)),
 		new Word("flower", new Hint("inflorescence", Category.BOTANY)),
@@ -549,6 +550,7 @@ const HONEYCOMB = {
 		]),
 		new Word("ginkgo", new Hint("'living fossil' monotypic tree division", Category.BOTANY)),
 		new Word("goblin", new Hint("mischievous humanoid (often green)", Category.FANTASY)),
+		new Word("google", new Hint("tech company responsible for Chrome", Category.TECH)),
 		new Word("gopher", new Hint("small burrowing rodent", Category.ZOOLOGY)),
 		new Word("gothic", [
 			new Hint("2001 RPG", Category.VIDEOGAME),
@@ -818,6 +820,7 @@ const HONEYCOMB = {
 		]),
 		new Word("raisin", new Hint("dried grape", Category.FOOD)),
 		new Word("redder", new Hint("objects moving away appear this way", Category.PHYSICS)),
+		new Word("reddit", new Hint("social news aggregator/webforum platform", Category.TECH)),
 		new Word("rennet", new Hint("cheesemaking enzymes", Category.FOOD)),
 		new Word("retort", new Hint("bent-necked flask", Category.CHEMISTRY)),
 		new Word("return", new Hint("Star Wars Episode VI (first word)", Category.FILM)),
@@ -925,6 +928,7 @@ const HONEYCOMB = {
 		]),
 		new Word("tropic", new Hint("northern- or southernmost latitude the sun can be directly overhead", Category.ASTRONOMY)),
 		new Word("tucana", new Hint("toucan constellation", Category.ASTRONOMY)),
+		new Word("tumblr", new Hint("blogging platform formerly owned by Yahoo", Category.TECH)),
 		new Word("tundra", new Hint("arctic biome", Category.GEOGRAPHY)),
 		new Word("turkey", [
 			new Hint("american landfowl", Category.ZOOLOGY),
