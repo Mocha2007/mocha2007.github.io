@@ -93,6 +93,7 @@ class Difficulty {
 	static SIMPLE = 0.5;
 	static NORMAL = 1;
 	static HARD = 2;
+	/* somehow objectionable, to prevent pearlclutchers */
 	static SPICY = 2.5;
 	static TRICKY = 3;
 	static string(difficulty){
@@ -933,7 +934,8 @@ const HONEYCOMB = {
 		new Word("sunset", new Hint("dusk", Category.MEASUREMENT, Difficulty.EASY)),
 		new Word("sweden", new Hint("its capital, Stockholm", Category.GEOGRAPHY)),
 		new Word("switch", [
-			new Hint("tops and bottoms", Category.LGBT),
+			new Hint("tops and bottoms", Category.LGBT, Difficulty.SPICY),
+			new Hint("statement with cases", Category.PROGRAMMING),
 			new Hint("Nintendo console", Category.VIDEOGAME),
 		]),
 		new Word("syzygy", new Hint("alignment of three objects", Category.ASTRONOMY)),
