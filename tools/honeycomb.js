@@ -1182,7 +1182,7 @@ const HONEYCOMB = {
 			return JSON.parse(this.letterSelected.getAttribute('hexes'));
 		},
 		selectedHex: 1,
-		advanceLetter(reverse = false){
+		advanceLetter(reverse = false, toStart = false){
 			const opposite = {
 				direction0: 'direction3',
 				direction1: 'direction4',
@@ -1199,16 +1199,16 @@ const HONEYCOMB = {
 				if (HONEYCOMB.config.debug) console.debug(`i: ${i}, n: ${n}, SH = ${this.selectedHex}, SLH`, this.selectedLetterHexes, 'SLD', this.letterSelectedDirection, 'tgt', tgtdir);
 				this.selectLetter(n);
 				// [] is in same hex
-				if (this.selectedLetterHexes[0] === this.selectedHex && this.letterSelectedDirection === tgtdir)
+				if (this.selectedLetterHexes[0] === this.selectedHex && (!toStart || this.letterSelectedDirection === tgtdir))
 					break;
 				// [] is in adjacent hex
-				if (this.selectedLetterHexes[1] === this.selectedHex && this.letterSelectedDirection === opposite[tgtdir])
+				if (this.selectedLetterHexes[1] === this.selectedHex && (!toStart || this.letterSelectedDirection === opposite[tgtdir]))
 					break;
 			}
 		},
 		advanceHex(reverse = false){
 			this.selectHex((this.selectedHex + (reverse ? 6 : 1)) % 7);
-			this.advanceLetter(reverse);
+			this.advanceLetter(reverse, true);
 		},
 		backspace(backtrack = false){
 			this.setLetter();
