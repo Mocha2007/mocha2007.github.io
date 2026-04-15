@@ -194,7 +194,7 @@ class Clue {
 		cell.role = 'button';
 		cell.classList.add('letter');
 		cell.classList.add(`direction${direction}`);
-		cell.onclick = () => HONEYCOMB.letterNodes.select(cellId);
+		cell.onclick = () => HONEYCOMB.letterNodes.selectLetter(cellId);
 		cell.setAttribute('answer', this.getLetter(direction));
 		cell.tabIndex = 0;
 		const otherNeighbor = [
@@ -1062,26 +1062,30 @@ const HONEYCOMB = {
 			.slice(-this.config.hashLength);
 	},
 	letterNodes: {
-		/** note: ignores inner hex */
-		get hex(){
-			return Math.floor(this.selected / 5);
-		},
 		letters: new Array(30).fill(''),
-		selected: 0,
+		selectedLetter: 0,
+		/** @returns {number[]} */
+		get selectedLetterHexes(){
+			return JSON.parse(this.letterSelected.getAttribute('hexes'));
+		},
 		selectedHex: 1,
-		advance(reverse = false){
-			this.select((this.selected + (reverse ? 29 : 1)) % 30);
+		advanceLetter(reverse = false){
+			// increment selection until we reach another cell in the current hex
+			let n = this.selectedLetter;
+			for (let i = 0; i < 30; i++){
+				n = (n + (reverse ? 29 : 1)) % 30;
+				// console.debug(`i: ${i}, n: ${n}`);
+				this.selectLetter(n);
+				if (this.selectedLetterHexes.includes(this.selectedHex)) break;
+			}
 		},
 		advanceHex(reverse = false){
-			const target = (this.hex + (reverse ? 5 : 1)) % 6;
-			for (let i = 0; i < 30; i++){
-				if (this.hex === target) break;
-				this.select(i);
-			}
+			this.selectHex((this.selectedHex + (reverse ? 6 : 1)) % 7);
+			this.advanceLetter(reverse);
 		},
 		backspace(backtrack = false){
 			this.setLetter();
-			if (backtrack) this.advance(true);
+			if (backtrack) this.advanceLetter(true);
 		},
 		check(){
 			// mark solved cells
@@ -1092,18 +1096,11 @@ const HONEYCOMB = {
 			});
 			// see if whole solution is valid
 			for (let i = 0; i < 30; i++){
-				const letterNode = this.elem(i);
+				const letterNode = this.letterElem(i);
 				if (letterNode.getAttribute('answer') !== letterNode.innerHTML)
 					return false;
 			}
 			return true;
-		},
-		/** @returns {HTMLDivElement} */
-		elem(n = 0){
-			return document.getElementById(`letter${n}`);
-		},
-		get elemSelected(){
-			return this.elem(this.selected);
 		},
 		/** @returns {HTMLDivElement} */
 		hexElem(n = 0){
@@ -1112,20 +1109,27 @@ const HONEYCOMB = {
 		get hexSelected(){
 			return this.hexElem(this.selectedHex);
 		},
-		select(n = 0){
-			this.elemSelected.classList.remove('selected');
-			this.selected = n;
-			this.elemSelected.classList.add('selected');
+		/** @returns {HTMLDivElement} */
+		letterElem(n = 0){
+			return document.getElementById(`letter${n}`);
+		},
+		get letterSelected(){
+			return this.letterElem(this.selectedLetter);
 		},
 		selectHex(n = 0){
 			this.hexSelected.classList.remove('selected');
 			this.selectedHex = n;
 			this.hexSelected.classList.add('selected');
 		},
+		selectLetter(n = 0){
+			this.letterSelected.classList.remove('selected');
+			this.selectedLetter = n;
+			this.letterSelected.classList.add('selected');
+		},
 		setLetter(char = ''){
 			const solved = this.solvedHexes;
-			if (!JSON.parse(this.elemSelected.getAttribute('hexes')).some(i => solved[i]))
-				this.elemSelected.innerHTML = this.letters[this.selected] = char;
+			if (!this.selectedLetterHexes.some(i => solved[i]))
+				this.letterSelected.innerHTML = this.letters[this.selectedLetter] = char;
 		},
 		get solvedHexes(){
 			/** @type {number[]} */
@@ -1206,13 +1210,13 @@ const HONEYCOMB = {
 				case 'ArrowLeft':
 				case 'ArrowUp':
 				case ',':
-					HONEYCOMB.letterNodes.advance(true);
+					HONEYCOMB.letterNodes.advanceLetter(true);
 					break;
 				case 'ArrowDown':
 				case 'ArrowRight':
 				case ' ':
 				case '.':
-					HONEYCOMB.letterNodes.advance();
+					HONEYCOMB.letterNodes.advanceLetter();
 					break;
 				case '<':
 					HONEYCOMB.letterNodes.advanceHex(true);
@@ -1226,7 +1230,7 @@ const HONEYCOMB = {
 						if (char !== char.toUpperCase()){
 							// alphabetic
 							HONEYCOMB.letterNodes.setLetter(char);
-							HONEYCOMB.letterNodes.advance();
+							HONEYCOMB.letterNodes.advanceLetter();
 						}
 					}
 			}
@@ -1293,7 +1297,7 @@ const HONEYCOMB = {
 				elem_char.role = 'button';
 				elem_char.onclick = () => {
 					HONEYCOMB.letterNodes.setLetter(char);
-					HONEYCOMB.letterNodes.advance();
+					HONEYCOMB.letterNodes.advanceLetter();
 				}
 			});
 		});
