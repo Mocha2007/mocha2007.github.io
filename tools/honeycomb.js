@@ -48,14 +48,13 @@ class Category {
 	static BOTANY = "Botany";
 	static CHEMISTRY = "Chemistry";
 	static COLOR = "Color";
-	/* specifically meta-English, NOT grammar, NOT literature */
+	/* specifically meta-English, NOT language, NOT literature */
 	static ENGLISH = "English";
 	static FANTASY = "Fantasy";
 	static FILM = "Film";
 	static FOOD = "Food";
 	static GEOGRAPHY = "Geography";
 	static GEOLOGY = "Geology";
-	static GRAMMAR = "Grammar";
 	// for event clues happening BEFORE 2020s
 	static HISTORY = "History";
 	static HOLIDAY_SPRING = "Spring Holidays";
@@ -243,7 +242,7 @@ const HONEYCOMB = {
 			new Hint("reddish Minecraft wood", Category.VIDEOGAME),
 		]),
 		new Word("acidic", new Hint("not basic", Category.CHEMISTRY)),
-		new Word("adverb", new Hint("modifies adjectives and verbs", Category.GRAMMAR)),
+		new Word("adverb", new Hint("modifies adjectives and verbs", Category.LANGUAGE)),
 		new Word("aether", [
 			new Hint("common 19th century anaesthetic", Category.MEDICINE, Difficulty.HARD),
 			new Hint("the luminiferous variety was said to carry light", Category.PHYSICS),
@@ -453,7 +452,7 @@ const HONEYCOMB = {
 		new Word("dancer", new Hint("second reindeer called on by Santa", Category.HOLIDAY_WINTER)),
 		new Word("danube", new Hint("second-longest European river", Category.GEOGRAPHY)),
 		new Word("dasher", new Hint("first reindeer called on by Santa", Category.HOLIDAY_WINTER)),
-		new Word("dative", new Hint("case marking the indirect object", Category.GRAMMAR)),
+		new Word("dative", new Hint("case marking the indirect object", Category.LANGUAGE)),
 		new Word("decade", new Hint("ten years", Category.MEASUREMENT, Difficulty.EASY)),
 		new Word("decare", new Hint("unit of a thousand square meters", Category.MEASUREMENT)),
 		new Word("defend", new Hint("antonym of attack", Category.ENGLISH)),
@@ -620,7 +619,7 @@ const HONEYCOMB = {
 		new Word("island", new Hint("land surrounded by water", Category.GEOGRAPHY)),
 		new Word("israel", new Hint("country responsible for the Gaza genocide", Category.NEWS2020S, Difficulty.SPICY)),
 		new Word("istria", new Hint("Croatian peninsula", Category.GEOGRAPHY)),
-		new Word("itself", new Hint("third person singular neuter reflexive", Category.GRAMMAR)),
+		new Word("itself", new Hint("third person singular neuter reflexive", Category.LANGUAGE)),
 		new Word("jalopy", new Hint("junk car, synonym", Category.ENGLISH)),
 		new Word("jingle", new Hint("what sleighbells do", Category.HOLIDAY_WINTER)),
 		new Word("jordan", new Hint("its capital, Amman", Category.GEOGRAPHY)),
@@ -643,7 +642,7 @@ const HONEYCOMB = {
 		new Word("kuiper", new Hint("Pluto lies in this belt", Category.ASTRONOMY)),
 		new Word("labile", [
 			new Hint("kinetically unstable", Category.CHEMISTRY),
-			new Hint("valence-changing verb", Category.GRAMMAR),
+			new Hint("valence-changing verb", Category.LANGUAGE),
 		]),
 		new Word("lacuna", new Hint("missing part of inscription", Category.HISTORY)),
 		new Word("lambda", [
@@ -718,7 +717,7 @@ const HONEYCOMB = {
 			new Hint("forbidden by one of the ten commandments", Category.RELIGION),
 		]),
 		new Word("myosin", new Hint("motor protein", Category.BIOLOGY)),
-		new Word("myself", new Hint("first person singular reflexive", Category.GRAMMAR)),
+		new Word("myself", new Hint("first person singular reflexive", Category.LANGUAGE)),
 		new Word("nebula", new Hint("'cloudy' object, follows Crab and Orion", Category.ASTRONOMY)),
 		new Word("nectar", new Hint("flower juice", Category.BOTANY)),
 		new Word("needle", [
@@ -732,6 +731,10 @@ const HONEYCOMB = {
 			new Hint("American 5-cent piece", Category.MISC),
 		]),
 		new Word("norway", new Hint("its capital, Oslo", Category.GEOGRAPHY)),
+		new Word("nuclei", [
+			new Hint("centers of atoms", Category.CHEMISTRY),
+			new Hint("centers of syllables", Category.LANGUAGE),
+		]),
 		new Word("nutmeg", [
 			new Hint("seed which mace covers", Category.BOTANY),
 			new Hint("Connecticut is the this state", Category.GEOGRAPHY),
@@ -807,7 +810,7 @@ const HONEYCOMB = {
 		new Word("poplar", new Hint("deciduous northern flowering tree", Category.BOTANY, Difficulty.HARD)),
 		new Word("potato", new Hint("staple tuber", Category.FOOD)),
 		new Word("potion", new Hint("magical concoction", Category.FANTASY)),
-		new Word("prefix", new Hint("attached to end of word", Category.GRAMMAR)),
+		new Word("prefix", new Hint("attached to end of word", Category.LANGUAGE)),
 		new Word("pretti", new Hint("nurse murdered by ICE (surname)", Category.NEWS2020S, Difficulty.SPICY)),
 		new Word("prison", new Hint("carceral punishment building", Category.LAW)),
 		new Word("proton", new Hint("positive nucleon", Category.CHEMISTRY)),
@@ -917,7 +920,7 @@ const HONEYCOMB = {
 		new Word("stevia", new Hint("sugar substitute", Category.FOOD)),
 		new Word("strain", new Hint("deformation", Category.PHYSICS)),
 		new Word("stress", new Hint("deformation force", Category.PHYSICS)),
-		new Word("suffix", new Hint("attached to end of word", Category.GRAMMAR)),
+		new Word("suffix", new Hint("attached to end of word", Category.LANGUAGE)),
 		new Word("sulfur", new Hint("element said to smell of egg", Category.CHEMISTRY)),
 		new Word("summer", new Hint("season after spring", Category.MEASUREMENT, Difficulty.EASY)),
 		new Word("sunday", new Hint("second day of the weekend", Category.MEASUREMENT, Difficulty.EASY)),
