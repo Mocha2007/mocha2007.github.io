@@ -1013,7 +1013,7 @@ const HONEYCOMB = {
 			new Hint("horror staple monster", Category.FILM),
 			new Hint("second mob added to Minecraft", Category.VIDEOGAME),
 		]),
-		new Word("zygote", new Hint("diploid cell fromed from two haploid gametes", Category.BIOLOGY)),
+		new Word("zygote", new Hint("diploid cell formed from two haploid gametes", Category.BIOLOGY)),
 	],
 	config: {
 		date: new Date(),
