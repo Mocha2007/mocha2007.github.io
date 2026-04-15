@@ -51,10 +51,12 @@ class Category {
 	/* specifically meta-English, NOT grammar, NOT literature */
 	static ENGLISH = "English";
 	static FANTASY = "Fantasy";
+	static FILM = "Film";
 	static FOOD = "Food";
 	static GEOGRAPHY = "Geography";
 	static GEOLOGY = "Geology";
 	static GRAMMAR = "Grammar";
+	// for event clues happening BEFORE 2020s
 	static HISTORY = "History";
 	static HOLIDAY_SPRING = "Spring Holidays";
 	static HOLIDAY_WINTER = "Winter Holidays";
@@ -69,7 +71,8 @@ class Category {
 	static MINEROLOGY = "Minerology";
 	static MISC = "Miscellaneous";
 	static MUSIC = "Music";
-	static FILM = "Film";
+	// for event clues happening in 2020s
+	static NEWS2020S = "2020s News";
 	static PHYSICS = "Physics";
 	static PROGRAMMING = "Programming";
 	static RELIGION = "Religion & Myth";
@@ -358,6 +361,7 @@ const HONEYCOMB = {
 		new Word("cancer", [
 			new Hint("crab sign", Category.ASTROLOGY),
 			new Hint("carcinogens cause this", Category.MEDICINE),
+			new Hint("Biden was diagnosed with this in May of 2025", Category.NEWS2020S),
 		]),
 		new Word("canine", new Hint("of dogs", Category.ZOOLOGY)),
 		new Word("canola", new Hint("rapeseed cultivar", Category.BOTANY)),
@@ -372,6 +376,7 @@ const HONEYCOMB = {
 		new Word("carpel", new Hint("female reproductive organ of flowering plants", Category.BOTANY, Difficulty.HARD)),
 		new Word("carpet", new Hint("rug", Category.TEXTILE)),
 		new Word("carrot", new Hint("orange root", Category.FOOD)),
+		new Word("carter", new Hint("hundred year old president who died in 2024", Category.NEWS2020S)),
 		new Word("casein", new Hint("milk protein", Category.FOOD)),
 		new Word("cashew", new Hint("crescent nut", Category.FOOD)),
 		new Word("castor", new Hint("western twin of Gemini", Category.ASTRONOMY)),
@@ -438,7 +443,7 @@ const HONEYCOMB = {
 		new Word("cruise", new Hint("large recreational type of ship", Category.TRANSPORT)),
 		new Word("cuboid", new Hint("rectangular prism", Category.MATH)),
 		new Word("curium", new Hint("actinide alpha source", Category.CHEMISTRY)),
-		new Word("cycler", new Hint("spacecraft on a closed transfer orbit", Category.TRANSPORT)),
+		new Word("cycler", new Hint("spacecraft on a closed transfer orbit", Category.TRANSPORT, Difficulty.HARD)),
 		new Word("cygnet", new Hint("young swan", Category.ZOOLOGY)),
 		new Word("cygnus", new Hint("swan constellation", Category.ASTRONOMY)),
 		new Word("cyprus", new Hint("its capital, Nicosia", Category.GEOGRAPHY)),
@@ -508,6 +513,7 @@ const HONEYCOMB = {
 			new Hint("beastly synonym of uncover", Category.ENGLISH, Difficulty.HARD),
 			new Hint("domesticated polecat", Category.ZOOLOGY),
 		]),
+		new Word("fidesz", new Hint("party defeated in the 2026 Hungarian parliament election", Category.NEWS2020S)),
 		new Word("finger", [
 			new Hint("digit of the hand", Category.ANATOMY, Difficulty.EASY),
 			new Hint("type of lime native to Australia", Category.BOTANY),
@@ -548,6 +554,10 @@ const HONEYCOMB = {
 		new Word("gelato", new Hint("Italian ice cream", Category.FOOD)),
 		new Word("gemini", new Hint("twin sign", Category.ASTROLOGY)),
 		new Word("genome", new Hint("entire set of genetic material", Category.BIOLOGY)),
+		new Word("george", [
+			new Hint("murdered by Derek Chauvin in 2020 (forename)", Category.NEWS2020S),
+			new Hint("king who lost the colonies", Category.HISTORY),
+		]),
 		new Word("ginger", [
 			new Hint("red hair", Category.COLOR),
 			new Hint("strong root", Category.BOTANY),
@@ -578,15 +588,16 @@ const HONEYCOMB = {
 		new Word("hadron", new Hint("meson or baryon", Category.PHYSICS)),
 		new Word("halide", new Hint("halogen ion", Category.CHEMISTRY)),
 		new Word("halite", new Hint("rock salt", Category.GEOLOGY)),
+		new Word("harris", new Hint("Biden VP", Category.NEWS2020S)),
 		new Word("haumea", new Hint("dwarf planet named for goddess of Hawaii", Category.ASTRONOMY)),
 		new Word("hawaii", [
 			new Hint("American state surrounded entirely by ocean", Category.GEOGRAPHY),
-			new Hint("Pacific kingdom invaded by the United States", Category.HISTORY),
+			new Hint("Pacific kingdom invaded by the United States", Category.HISTORY, Difficulty.SPICY),
 		]),
 		new Word("helium", new Hint("element discovered in the sun", Category.CHEMISTRY)),
 		new Word("hermes", new Hint("Greek messenger god", Category.RELIGION)),
 		new Word("hestia", new Hint("Greek goddess of the hearth", Category.RELIGION)),
-		new Word("hormuz", new Hint("strait closed by Iran in response to American-Israeli attacks", Category.HISTORY, Difficulty.SPICY)),
+		new Word("hormuz", new Hint("strait closed by Iran in response to American-Israeli attacks", Category.NEWS2020S, Difficulty.SPICY)),
 		new Word("hornet", [
 			new Hint("large wasp", Category.ZOOLOGY),
 			new Hint("beastly name of the F-18", Category.TRANSPORT),
@@ -607,7 +618,7 @@ const HONEYCOMB = {
 		new Word("indium", new Hint("element named for its bluish-purple spectral line", Category.CHEMISTRY)),
 		new Word("iodine", new Hint("heaviest dietary element", Category.CHEMISTRY)),
 		new Word("island", new Hint("land surrounded by water", Category.GEOGRAPHY)),
-		new Word("israel", new Hint("country responsible for the Gaza genocide", Category.HISTORY, Difficulty.SPICY)),
+		new Word("israel", new Hint("country responsible for the Gaza genocide", Category.NEWS2020S, Difficulty.SPICY)),
 		new Word("istria", new Hint("Croatian peninsula", Category.GEOGRAPHY)),
 		new Word("itself", new Hint("third person singular neuter reflexive", Category.GRAMMAR)),
 		new Word("jalopy", new Hint("junk car, synonym", Category.ENGLISH)),
@@ -797,6 +808,7 @@ const HONEYCOMB = {
 		new Word("potato", new Hint("staple tuber", Category.FOOD)),
 		new Word("potion", new Hint("magical concoction", Category.FANTASY)),
 		new Word("prefix", new Hint("attached to end of word", Category.GRAMMAR)),
+		new Word("pretti", new Hint("nurse murdered by ICE (surname)", Category.NEWS2020S, Difficulty.SPICY)),
 		new Word("prison", new Hint("carceral punishment building", Category.LAW)),
 		new Word("proton", new Hint("positive nucleon", Category.CHEMISTRY)),
 		new Word("pulley", new Hint("simple machine", Category.PHYSICS, Difficulty.SIMPLE)),
@@ -824,6 +836,7 @@ const HONEYCOMB = {
 			new Hint("distance from center of circle to its edge", Category.MATH),
 		]),
 		new Word("raisin", new Hint("dried grape", Category.FOOD)),
+		new Word("reagan", new Hint("worshipped by Republicans prior to Trump", Category.HISTORY, Difficulty.SPICY)),
 		new Word("redder", new Hint("objects moving away appear this way", Category.PHYSICS)),
 		new Word("reddit", new Hint("social news aggregator/webforum platform", Category.TECH)),
 		new Word("rennet", new Hint("cheesemaking enzymes", Category.FOOD)),
@@ -835,7 +848,7 @@ const HONEYCOMB = {
 		new Word("russet", new Hint("reddish brown", Category.COLOR)),
 		new Word("russia", [
 			new Hint("its capital, Moscow", Category.GEOGRAPHY),
-			new Hint("invaded Ukraine in 2014 and 2022", Category.HISTORY),
+			new Hint("invaded Ukraine in 2014 and 2022", Category.NEWS2020S),
 		]),
 		new Word("rwanda", new Hint("its capital, Kigali", Category.GEOGRAPHY)),
 		new Word("saline", new Hint("salty", Category.MISC)),
@@ -854,7 +867,7 @@ const HONEYCOMB = {
 		]),
 		new Word("savory", new Hint("satureja herb", Category.BOTANY, Difficulty.HARD)),
 		new Word("saxony", new Hint("state of Leipzig and Dresden", Category.GEOGRAPHY)),
-		new Word("school", new Hint("one of these was double-tapped by the US on the first day of the Iran War", Category.HISTORY, Difficulty.SPICY)),
+		new Word("school", new Hint("one of these was double-tapped by the US on the first day of the Iran War", Category.NEWS2020S, Difficulty.SPICY)),
 		new Word("scurvy", new Hint("vitamin C deficiency", Category.MEDICINE)),
 		new Word("scutum", new Hint("shield constellation", Category.ASTRONOMY)),
 		new Word("scythe", new Hint("crop-harvesting tool", Category.AGRICULTURE)),
@@ -982,6 +995,7 @@ const HONEYCOMB = {
 		new Word("zircon", new Hint("key mineral of geochronology", Category.GEOLOGY)),
 		new Word("zither", new Hint("guitar ancestor", Category.MUSIC)),
 		new Word("zodiac", new Hint("the twelve signs of the ecliptic", Category.ASTROLOGY)),
+		new Word("zohran", new Hint("2025 NYC mayoral election winner (forename)", Category.NEWS2020S)),
 		new Word("zombie", [
 			new Hint("horror staple monster", Category.FILM),
 			new Hint("second mob added to Minecraft", Category.VIDEOGAME),
