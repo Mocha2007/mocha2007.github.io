@@ -1257,10 +1257,10 @@ const HONEYCOMB = {
 		const USED_CATEGORIES = [CLUE0.hint.category];
 		// console.debug(CLUE0);
 		// next, choose the word above
-		let re = new RegExp(`${CLUE0.getLetter(Direction.UP)}`);
-		const WORD1 = this.randomWordMatching(dictionary, re, USED_CATEGORIES, n_hard);
+		let substring = `${CLUE0.getLetter(Direction.UP)}`;
+		const WORD1 = this.randomWordMatching(dictionary, substring, USED_CATEGORIES, n_hard);
 		dictionary.splice(dictionary.indexOf(WORD1), 1);
-		const WORD1_START = (9-re.exec(WORD1.word).index) % 6;
+		const WORD1_START = (9-this.wordContains(WORD1.word, substring)) % 6;
 		// choose a hint w/ a category that is NOT in USED_CATEGORIES
 		let hint_id = WORD1.hints.findIndex(fi);
 		const CLUE1 = new Clue(WORD1, WORD1_START, hint_id);
@@ -1268,50 +1268,50 @@ const HONEYCOMB = {
 		n_hard += Difficulty.NORMAL < CLUE1.hint.difficulty;
 		// console.debug(CLUE1, WORD0.word[WORD0_START]);
 		// next, choose the word above-left
-		re = new RegExp(`${CLUE1.getLetter(Direction.DL)}${CLUE0.getLetter(Direction.UL)}`);
-		const WORD6 = this.randomWordMatching(dictionary, re, USED_CATEGORIES, n_hard);
+		substring = `${CLUE1.getLetter(Direction.DL)}${CLUE0.getLetter(Direction.UL)}`;
+		const WORD6 = this.randomWordMatching(dictionary, substring, USED_CATEGORIES, n_hard);
 		dictionary.splice(dictionary.indexOf(WORD6), 1);
-		const WORD6_START = (7-re.exec(WORD6.word).index) % 6;
+		const WORD6_START = (7-this.wordContains(WORD6.word, substring)) % 6;
 		hint_id = WORD6.hints.findIndex(fi);
 		const CLUE6 = new Clue(WORD6, WORD6_START, hint_id);
 		USED_CATEGORIES.push(CLUE6.hint.category);
 		n_hard += Difficulty.NORMAL < CLUE6.hint.difficulty;
 		// console.debug(CLUE2, WORD0.word[(WORD0_START + 5) % 6]);
 		// next, choose the word above-right
-		re = new RegExp(`${CLUE0.getLetter(Direction.UR)}${CLUE1.getLetter(Direction.DR)}`);
-		const WORD2 = this.randomWordMatching(dictionary, re, USED_CATEGORIES, n_hard);
+		substring = `${CLUE0.getLetter(Direction.UR)}${CLUE1.getLetter(Direction.DR)}`;
+		const WORD2 = this.randomWordMatching(dictionary, substring, USED_CATEGORIES, n_hard);
 		dictionary.splice(dictionary.indexOf(WORD2), 1);
-		const WORD2_START = (10-re.exec(WORD2.word).index) % 6;
+		const WORD2_START = (10-this.wordContains(WORD2.word, substring)) % 6;
 		hint_id = WORD2.hints.findIndex(fi);
 		const CLUE2 = new Clue(WORD2, WORD2_START, hint_id);
 		USED_CATEGORIES.push(CLUE2.hint.category);
 		n_hard += Difficulty.NORMAL < CLUE2.hint.difficulty;
 		// console.debug(CLUE3, WORD0.word[(WORD0_START + 1) % 6]);
 		// next, choose the word down-left
-		re = new RegExp(`${CLUE6.getLetter(Direction.DN)}${CLUE0.getLetter(Direction.DL)}`);
-		const WORD5 = this.randomWordMatching(dictionary, re, USED_CATEGORIES, n_hard);
+		substring = `${CLUE6.getLetter(Direction.DN)}${CLUE0.getLetter(Direction.DL)}`;
+		const WORD5 = this.randomWordMatching(dictionary, substring, USED_CATEGORIES, n_hard);
 		dictionary.splice(dictionary.indexOf(WORD5), 1);
-		const WORD5_START = (6-re.exec(WORD5.word).index) % 6;
+		const WORD5_START = (6-this.wordContains(WORD5.word, substring)) % 6;
 		hint_id = WORD5.hints.findIndex(fi);
 		const CLUE5 = new Clue(WORD5, WORD5_START, hint_id);
 		USED_CATEGORIES.push(CLUE5.hint.category);
 		n_hard += Difficulty.NORMAL < CLUE5.hint.difficulty;
 		// console.debug(CLUE4, WORD0.word[(WORD0_START + 4) % 6]);
 		// next, choose the word down-right
-		re = new RegExp(`${CLUE0.getLetter(Direction.DR)}${CLUE2.getLetter(Direction.DN)}`);
-		const WORD3 = this.randomWordMatching(dictionary, re, USED_CATEGORIES, n_hard);
+		substring = `${CLUE0.getLetter(Direction.DR)}${CLUE2.getLetter(Direction.DN)}`;
+		const WORD3 = this.randomWordMatching(dictionary, substring, USED_CATEGORIES, n_hard);
 		dictionary.splice(dictionary.indexOf(WORD3), 1);
-		const WORD3_START = (11-re.exec(WORD3.word).index) % 6;
+		const WORD3_START = (11-this.wordContains(WORD3.word, substring)) % 6;
 		hint_id = WORD3.hints.findIndex(fi);
 		const CLUE3 = new Clue(WORD3, WORD3_START, hint_id);
 		USED_CATEGORIES.push(CLUE3.hint.category);
 		n_hard += Difficulty.NORMAL < CLUE3.hint.difficulty;
 		// console.debug(CLUE5, WORD0.word[(WORD0_START + 2) % 6]);
 		// next, choose the word down
-		re = new RegExp(`${CLUE5.getLetter(Direction.DR)}${CLUE0.getLetter(Direction.DN)}${CLUE3.getLetter(Direction.DL)}`);
-		const WORD4 = this.randomWordMatching(dictionary, re, USED_CATEGORIES, n_hard);
+		substring = `${CLUE5.getLetter(Direction.DR)}${CLUE0.getLetter(Direction.DN)}${CLUE3.getLetter(Direction.DL)}`;
+		const WORD4 = this.randomWordMatching(dictionary, substring, USED_CATEGORIES, n_hard);
 		dictionary.splice(dictionary.indexOf(WORD4), 1);
-		const WORD4_START = (5-re.exec(WORD4.word).index) % 6;
+		const WORD4_START = (5-this.wordContains(WORD4.word, substring)) % 6;
 		hint_id = WORD4.hints.findIndex(fi);
 		const CLUE4 = new Clue(WORD4, WORD4_START, hint_id);
 		USED_CATEGORIES.push(CLUE4.hint.category);
@@ -1363,16 +1363,24 @@ const HONEYCOMB = {
 	 * @param {Category[]} used_categories
 	 * @returns {Word}
 	 */
-	randomWordMatching(dictionary, re = new RegExp('.'), used_categories = [], n_hard = 0){
+	randomWordMatching(dictionary, substring = '', used_categories = [], n_hard = 0){
 		const matches = dictionary
 			// if a category is forced, it MUST be that category
-			.filter(w => re.test(w.word) && w.hints.some(h => !HONEYCOMB.config.forcecat || h.category === HONEYCOMB.config.forcecat));
-		if (matches.length < 1) console.warn('no matches', this.config.debug && re.source);
+			.filter(w => 0 <= this.wordContains(w.word, substring) && w.hints.some(h => !HONEYCOMB.config.forcecat || h.category === HONEYCOMB.config.forcecat));
+		if (matches.length < 1) console.warn('no matches', this.config.debug && substring);
 		// if possible, avoid duplicate categories, and multiple hard clues
 		const catmatches = matches.filter(w => w.hints.some(h => (HONEYCOMB.config.forcecat || !HONEYCOMB.config.avoidDupeCats || !used_categories.includes(h.category)) && (!HONEYCOMB.config.avoidMultipleHardClues || n_hard <= 0 || h.difficulty <= Difficulty.NORMAL)));
 		const arr = catmatches.length ? catmatches : matches;
 		return arr[Math.floor(Math.random() * arr.length)];
-	}
+	},
+	/**
+	 * @param {string} word
+	 * @param {string?} substring
+	 * @returns {number} index of position in word of substring (includes word wrapping)
+	 */
+	wordContains(word, substring = ''){
+		return (word + word).indexOf(substring);
+	},
 };
 
 HONEYCOMB.init();
