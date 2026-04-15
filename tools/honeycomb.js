@@ -247,6 +247,7 @@ const HONEYCOMB = {
 			- all 6-letter DF ...
 				- ores: 1 (Galena) https://dwarffortresswiki.org/index.php/Ore
 				- gems: 10 (Garnet, Jasper, Lazuli, Morion, Pyrite, Pyrope, Quartz, Schorl, Spinel, Zircon) https://dwarffortresswiki.org/index.php/Gem
+				- stones: 8 (Basalt, Dacite, Gabbro, Gneiss, Gypsum, Marble, Rutile, Schist) https://dwarffortresswiki.org/index.php/Stone
 			- partial: all 6-letter https://en.wikipedia.org/wiki/Planetary_nomenclature
 			- partial: https://en.wikipedia.org/wiki/List_of_animal_names
 		*/
@@ -572,6 +573,7 @@ const HONEYCOMB = {
 		new Word("friday", new Hint("day before the weekend", Category.MEASUREMENT, Difficulty.EASY)),
 		new Word("frosty", new Hint("animated snowman", Category.HOLIDAY_WINTER)),
 		new Word("fungus", new Hint("mushrooms are a type of this", Category.BIOLOGY)),
+		new Word("gabbro", new Hint("phaneritic mafic intrusive igneous rock", Category.GEOLOGY, Difficulty.HARD)),
 		new Word("galaxy", new Hint("the Milky Way is this", Category.ASTRONOMY)),
 		new Word("galena", new Hint("lead sulfide ore", Category.MINEROLOGY)),
 		new Word("gallon", new Hint("eight pints", Category.MEASUREMENT, Difficulty.HARD)),
@@ -593,6 +595,7 @@ const HONEYCOMB = {
 			new Hint("strong root", Category.BOTANY),
 		]),
 		new Word("ginkgo", new Hint("'living fossil' monotypic tree division", Category.BOTANY)),
+		new Word("gneiss", new Hint("common metamorphic rock", Category.GEOLOGY, Difficulty.HARD)),
 		new Word("goblin", new Hint("mischievous humanoid (often green)", Category.FANTASY)),
 		new Word("google", new Hint("tech company responsible for Chrome", Category.TECH)),
 		new Word("gopher", new Hint("small burrowing rodent", Category.ZOOLOGY)),
@@ -614,6 +617,7 @@ const HONEYCOMB = {
 			new Hint("preceding fowl and pig", Category.ZOOLOGY),
 		]),
 		new Word("guyana", new Hint("its capital, Georgetown", Category.GEOGRAPHY)),
+		new Word("gypsum", new Hint("soft mineral used in fertilizer and plaster", Category.MINEROLOGY, Difficulty.HARD)),
 		new Word("hadean", new Hint("oldest eon", Category.GEOLOGY)),
 		new Word("hadron", new Hint("meson or baryon", Category.PHYSICS)),
 		new Word("halide", new Hint("halogen ion", Category.CHEMISTRY)),
@@ -889,6 +893,7 @@ const HONEYCOMB = {
 			new Hint("its capital, Moscow", Category.GEOGRAPHY),
 			new Hint("invaded Ukraine in 2014 and 2022", Category.NEWS2020S),
 		]),
+		new Word("rutile", new Hint("titanium dioxide mineral", Category.MINEROLOGY, Difficulty.HARD)),
 		new Word("rwanda", new Hint("its capital, Kigali", Category.GEOGRAPHY)),
 		new Word("saline", new Hint("salty", Category.MISC)),
 		new Word("salmon", [
@@ -906,6 +911,7 @@ const HONEYCOMB = {
 		]),
 		new Word("savory", new Hint("satureja herb", Category.BOTANY, Difficulty.HARD)),
 		new Word("saxony", new Hint("state of Leipzig and Dresden", Category.GEOGRAPHY)),
+		new Word("schist", new Hint("medium-grained metamorphic rock", Category.GEOLOGY, Difficulty.HARD)),
 		new Word("school", new Hint("one of these was double-tapped by the US on the first day of the Iran War", Category.NEWS2020S, Difficulty.SPICY)),
 		new Word("schorl", new Hint("dark tourmaline variety", Category.MINEROLOGY, Difficulty.HARD)),
 		new Word("scurvy", new Hint("vitamin C deficiency", Category.MEDICINE)),
