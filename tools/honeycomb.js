@@ -147,6 +147,13 @@ class Direction {
 				throw `invalid direction: ${n}`;
 		}
 	}
+	/**
+	 * @param {Direction} direction
+	 * @returns {Direction}
+	 */
+	static opposite(direction){
+		return (direction + 3) % 6;
+	}
 }
 
 class Clue {
@@ -928,6 +935,7 @@ const HONEYCOMB = {
 		new Word("stevia", new Hint("sugar substitute", Category.FOOD)),
 		new Word("stormy", new Hint("given $130k in hush money to not reveal her affair with Trump (forename)", Category.NEWS2020S, Difficulty.SPICY)),
 		new Word("strain", new Hint("deformation", Category.PHYSICS)),
+		new Word("stream", new Hint("creek or brook", Category.GEOGRAPHY)),
 		new Word("stress", new Hint("deformation force", Category.PHYSICS)),
 		new Word("suffix", new Hint("attached to end of word", Category.LANGUAGE)),
 		new Word("sulfur", new Hint("element said to smell of egg", Category.CHEMISTRY)),
@@ -1069,21 +1077,33 @@ const HONEYCOMB = {
 			return JSON.parse(this.letterSelected.getAttribute('hexes'));
 		},
 		selectedHex: 1,
-		advanceLetter(reverse = false, toStart = false){
+		advanceLetter(reverse = false){
+			const opposite = {
+				direction0: 'direction3',
+				direction1: 'direction4',
+				direction2: 'direction5',
+				direction3: 'direction0',
+				direction4: 'direction1',
+				direction5: 'direction2',
+			};
 			// increment selection until we reach another cell in the current hex
 			let n = this.selectedLetter;
 			const tgtdir = this.hexSelectedStartDirection;
 			for (let i = 0; i < 30; i++){
 				n = (n + (reverse ? 29 : 1)) % 30;
-				// console.debug(`i: ${i}, n: ${n}`);
+				console.debug(`i: ${i}, n: ${n}, SH = ${this.selectedHex}, SLH`, this.selectedLetterHexes, 'SLD', this.letterSelectedDirection, 'tgt', tgtdir);
 				this.selectLetter(n);
-				if (this.selectedLetterHexes.includes(this.selectedHex))
-					if (!toStart || this.letterSelectedDirection === tgtdir) break;
+				// [] is in same hex
+				if (this.selectedLetterHexes[0] === this.selectedHex && this.letterSelectedDirection === tgtdir)
+					break;
+				// [] is in adjacent hex
+				if (this.selectedLetterHexes[1] === this.selectedHex && this.letterSelectedDirection === opposite[tgtdir])
+					break;
 			}
 		},
 		advanceHex(reverse = false){
 			this.selectHex((this.selectedHex + (reverse ? 6 : 1)) % 7);
-			this.advanceLetter(reverse, true);
+			this.advanceLetter(reverse);
 		},
 		backspace(backtrack = false){
 			this.setLetter();
