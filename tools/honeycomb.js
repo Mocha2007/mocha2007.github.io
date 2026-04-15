@@ -328,7 +328,7 @@ const HONEYCOMB = {
 		new Word("baikal", new Hint("largest Asian freshwater lake", Category.GEOGRAPHY)),
 		new Word("bamboo", new Hint("fast-growing grass used like wood", Category.BOTANY)),
 		new Word("banana", [
-			new Hint("long yellow fruit", Category.FOOD),
+			new Hint("long yellow fruit", Category.FOOD, Difficulty.EASY),
 			new Hint("dancing fruit of Peanut Butter Jelly Time meme", Category.MEME),
 		]),
 		new Word("barium", new Hint("in pure form, this element is a common radiocontrast agent", Category.CHEMISTRY)),
@@ -368,7 +368,10 @@ const HONEYCOMB = {
 			new Hint("plant limb", Category.BOTANY),
 			new Hint("repository offshoot", Category.PROGRAMMING),
 		]),
-		new Word("brazil", new Hint("its capital, Brasília", Category.GEOGRAPHY)),
+		new Word("brazil", [
+			new Hint("its capital, Brasília", Category.GEOGRAPHY),
+			new Hint("nut high in Selenium (first word)", Category.FOOD),
+		]),
 		new Word("bremen", new Hint("smallest German state", Category.GEOGRAPHY)),
 		new Word("bronze", [
 			new Hint("copper-tin alloy", Category.CHEMISTRY),
@@ -398,7 +401,10 @@ const HONEYCOMB = {
 			new Hint("carcinogens cause this", Category.MEDICINE),
 			new Hint("Biden was diagnosed with this in May of 2025", Category.NEWS2020S),
 		]),
-		new Word("canine", new Hint("of dogs", Category.ZOOLOGY)),
+		new Word("canine", [
+			new Hint("incisor", Category.ANATOMY),
+			new Hint("of dogs", Category.ZOOLOGY),
+		]),
 		new Word("canola", new Hint("rapeseed cultivar", Category.BOTANY)),
 		new Word("canton", [
 			new Hint("flag quarter", Category.VEXILLOLOGY),
@@ -474,7 +480,10 @@ const HONEYCOMB = {
 			new Hint("circular depression, usually due to an impact", Category.ASTRONOMY),
 		]),
 		new Word("craton", new Hint("part of a continental plate", Category.GEOLOGY, Difficulty.HARD)),
-		new Word("crimea", new Hint("invaded by Russia in 2014", Category.HISTORY)),
+		new Word("crimea", [
+			new Hint("invaded by Russia in 2014", Category.HISTORY),
+			new Hint("Ukrainian peninsula", Category.GEOGRAPHY),
+		]),
 		new Word("cruise", new Hint("large recreational type of ship", Category.TRANSPORT)),
 		new Word("cuboid", new Hint("rectangular prism", Category.MATH)),
 		new Word("curium", new Hint("actinide alpha source", Category.CHEMISTRY)),
@@ -529,7 +538,10 @@ const HONEYCOMB = {
 			new Hint("Paradox renaissance 4X game (first word)", Category.VIDEOGAME),
 		]),
 		new Word("europe", new Hint("continent of Rome", Category.GEOGRAPHY)),
-		new Word("fabric", new Hint("cloth", Category.TEXTILE)),
+		new Word("fabric", [
+			new Hint("cloth", Category.TEXTILE),
+			new Hint("Minecraft modloader", Category.VIDEOGAME),
+		]),
 		new Word("facile", new Hint("easy synonym", Category.ENGLISH, Difficulty.HARD)),
 		new Word("falcon", [
 			new Hint("bird of prey, eg. peregrine", Category.ZOOLOGY),
@@ -610,7 +622,10 @@ const HONEYCOMB = {
 			new Hint("sans-serif, in other words", Category.ENGLISH),
 		]),
 		new Word("graben", new Hint("depressed block of crust bordered by parallel faults", Category.GEOLOGY)),
-		new Word("grapes", new Hint("what wine is made of", Category.FOOD)),
+		new Word("grapes", [
+			new Hint("what wine is made of", Category.FOOD),
+			new Hint("Steinbeck novel (first word)", Category.LITERATURE),
+		]),
 		new Word("greece", new Hint("its capital, Athens", Category.GEOGRAPHY)),
 		new Word("grinch", new Hint("who nemesis", Category.HOLIDAY_WINTER)),
 		new Word("grouse", new Hint("landfowl, eg. ruffed, spruce, sooty", Category.ZOOLOGY, Difficulty.HARD)),
