@@ -21,6 +21,9 @@ select {
 .hex.solved {
 	background-color: #040;
 }
+.hex.selected:not(.solved) {
+	background-color: #640;
+}
 .hint {
 	padding: 0 2vw;
 }

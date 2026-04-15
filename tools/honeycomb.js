@@ -161,10 +161,12 @@ class Clue {
 		/** @type {number} I don't remember what this represents */
 		this.start_index = start_index;
 	}
+	/** @param {number} id */
 	createElement(id){
 		const e = document.createElement('div');
 		e.classList.add('hex');
 		e.id = `hex${id}`;
+		e.onclick = () => HONEYCOMB.letterNodes.selectHex(id);
 		// display hint, if not center cell
 		if (id) e.appendChild(this.hint.elem());
 		// create start indicator
@@ -1066,6 +1068,7 @@ const HONEYCOMB = {
 		},
 		letters: new Array(30).fill(''),
 		selected: 0,
+		selectedHex: 1,
 		advance(reverse = false){
 			this.select((this.selected + (reverse ? 29 : 1)) % 30);
 		},
@@ -1102,10 +1105,22 @@ const HONEYCOMB = {
 		get elemSelected(){
 			return this.elem(this.selected);
 		},
+		/** @returns {HTMLDivElement} */
+		hexElem(n = 0){
+			return document.getElementById(`hex${n}`);
+		},
+		get hexSelected(){
+			return this.hexElem(this.selectedHex);
+		},
 		select(n = 0){
 			this.elemSelected.classList.remove('selected');
 			this.selected = n;
 			this.elemSelected.classList.add('selected');
+		},
+		selectHex(n = 0){
+			this.hexSelected.classList.remove('selected');
+			this.selectedHex = n;
+			this.hexSelected.classList.add('selected');
 		},
 		setLetter(char = ''){
 			const solved = this.solvedHexes;
