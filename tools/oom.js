@@ -463,6 +463,7 @@ const CONSTANT = {
 	},
 	/** in kg */
 	da: 1.66053906892e-27,
+	dailyAxialPrecession: 2*Math.PI/(365.25*25771.4),
 	density: {
 		asteroid: {
 			/** https://en.wikipedia.org/wiki/C-type_asteroid */
@@ -1250,6 +1251,15 @@ const OOM = {
 		new AngleDatum("Quaoar", CONSTANT.angular_diameter_heliocentric_orbit(1097.6e3/2, 41.900, 45.488), "https://en.wikipedia.org/wiki/Quaoar", [Category.MINORPLANET]),
 		new AngleDatum("Sedna", CONSTANT.angular_diameter_heliocentric_orbit(906e3/2, 76.19, 937), "https://en.wikipedia.org/wiki/Sedna_(dwarf_planet)", [Category.MINORPLANET]),
 		new AngleDatum("Planet Nine", CONSTANT.angular_diameter_heliocentric_orbit(Math.cbrt(4.4)*CONSTANT.earth_radius, 200, 370), "https://en.wikipedia.org/wiki/Planet_Nine", [Category.HYPOTHETICAL]),
+		// Mean daily motions of planets (relative to equinox of the epoch)
+		new AngleDatum("Mean apparent daily motion of the Sun, Mercury, and Venus", 2*Math.PI/365.256363, "https://en.wikipedia.org/wiki/Sidereal_year"),
+		new AngleDatum("Mean apparent daily motion of Mars", 2*Math.PI/686.980 - CONSTANT.dailyAxialPrecession, "https://en.wikipedia.org/wiki/Mars"),
+		new AngleDatum("Mean apparent daily motion of Jupiter", 2*Math.PI/4332.59 - CONSTANT.dailyAxialPrecession, "https://en.wikipedia.org/wiki/Jupiter"),
+		new AngleDatum("Mean apparent daily motion of Saturn", 2*Math.PI/10755.70 - CONSTANT.dailyAxialPrecession, "https://en.wikipedia.org/wiki/Saturn"),
+		new AngleDatum("Mean apparent daily motion of Uranus", 2*Math.PI/30688.5 - CONSTANT.dailyAxialPrecession, "https://en.wikipedia.org/wiki/Uranus"),
+		new AngleDatum("Mean apparent daily motion of Neptune", 2*Math.PI/60195 - CONSTANT.dailyAxialPrecession, "https://en.wikipedia.org/wiki/Neptune"),
+		new AngleDatum("Mean apparent daily motion of Planet 9", new Angle({x:2*Math.PI/(365.25*4940) - CONSTANT.dailyAxialPrecession, max:2*Math.PI/(365.25*(4940-750)) - CONSTANT.dailyAxialPrecession, min:2*Math.PI/(365.25*(4940+790)) - CONSTANT.dailyAxialPrecession}), "https://en.wikipedia.org/wiki/Planet_Nine", [Category.HYPOTHETICAL]),
+		new AngleDatum("Mean daily axial precession", CONSTANT.dailyAxialPrecession, "https://en.wikipedia.org/wiki/Axial_precession"),
 		// Moon Angular Diameters
 		new AngleDatum("Ganymede", CONSTANT.angular_diameter_heliocentric_orbit(2634.1e3, 4.9506, 5.4570), "https://en.wikipedia.org/wiki/Ganymede_(moon)"),
 		// Fictional Exoplanet Diameters
