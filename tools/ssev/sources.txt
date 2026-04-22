@@ -11,3 +11,6 @@ Mars: (both are PD NASA)
 Saturn:
 	self-edited from a nasa photograph:
 	https://en.wikipedia.org/wiki/File:Saturn_during_Equinox.jpg
+Eris:
+	self-edited from: (CC 4.0)
+	https://en.wikipedia.org/wiki/File:ESO-L._Cal%C3%A7ada_-_Eso1142c_(by).jpg
