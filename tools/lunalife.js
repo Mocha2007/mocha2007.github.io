@@ -167,7 +167,7 @@ const LUNALIFE = {
 		new LunaEvent(new Date(2025, 7, 20), 'Birth cert changed (finally!)'),
 		new LunaEvent(new Date(2025, 8), 'This month I got a new phone and laptop, as my old ones were both on their last legs.'),
 		new LunaEvent(new Date(2025, 8, 7), 'Observed my second lunar eclipse, right at moonrise.'),
-		new LunaEvent(new Date(2026, 2, 3), 'Old phone now started to have difficulty maintaining a charge, so I stopped using it, and Discord too, after a decade.'),
+		new LunaEvent(new Date(2026, 2, 2), 'Old phone now started to have difficulty maintaining a charge, so I stopped using it, and Discord too, after a decade. Also deleted my Twitter account.'),
 		new LunaEvent(new Date(2026, 3, 17), 'Observed three meteors(!!!) while stargazing.'),
 		new LunaEvent(new Date(2026, 3, 23), 'On this date, I learned I could (conditionally) continue to stay in Poland.'),
 		new LunaEvent(new Date(2026, 3, 24), 'Coco passed.'),
