@@ -92,6 +92,7 @@ const LUNALIFE = {
 		new LunaEvent(new Date(2011, 3, 27), 'I got Spore as a birthday gift. I was obsessed with this game for years.'),
 		new LunaEvent(new Date(2011, 3, 30), 'Join cult of bronydom'),
 		new LunaEvent(new Date(2011, 4), 'Joined Twitter (and then proceeded to never use it...)'),
+		new LunaEvent(new Date(2011, 5, 4), 'First Youtube video: "Weird Spore Glitch".'),
 		new LunaEvent(new Date(2011, 5, 13), 'End of first period of regular journalling.'),
 		new LunaEvent(new Date(2011, 8, 15), 'I started playing Minecraft in B1.8.1', 'My first vid was Oct 19th, so before then, but after Sep 15th since that\'s when the update released.'),
 		new LunaEvent(new Date(2011, 10), 'I started playing Terraria shortly before 1.1, after watching SirEldricIV\'s Hardcore Saga LP series.', 'I played Terraria AFTER MC but before 1.1... so between Sep 15th and Dec 1st...'),
