@@ -442,6 +442,7 @@ const HONEYCOMB = {
 		new Word("cheese", new Hint("solid milk product", Category.FOOD)),
 		new Word("cherry", new Hint("small red fruit", Category.FOOD)),
 		new Word("chiral", new Hint("of a molecule with L- and D- stereoisomers", Category.CHEMISTRY, Difficulty.HARD)),
+		new Word("chives", new Hint("green onion-like plant", Category.FOOD)),
 		new Word("chrome", new Hint("Google browser", Category.TECH)),
 		new Word("cishet", new Hint("slang: cisgender and heterosexual", Category.LGBT)),
 		new Word("claret", new Hint("dry red wine of Bordeaux", Category.FOOD)),
