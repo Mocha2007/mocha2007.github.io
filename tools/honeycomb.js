@@ -342,7 +342,10 @@ const HONEYCOMB = {
 		new Word("beaker", new Hint("flat-bottomed, straight-sided glass vessel", Category.CHEMISTRY)),
 		new Word("beaver", new Hint("dam-building rodent", Category.ZOOLOGY)),
 		new Word("belize", new Hint("its capital, Belmopan", Category.GEOGRAPHY)),
-		new Word("beluga", new Hint("arctic whale", Category.ZOOLOGY)),
+		new Word("beluga", [
+			new Hint("arctic whale", Category.ZOOLOGY),
+			new Hint("large transport airplane manufactured by Airbus", Category.TRANSPORT),
+		]),
 		new Word("berlin", [
 			new Hint("German capital", Category.GEOGRAPHY),
 			new Hint("capital halved after WWII", Category.HISTORY),
@@ -364,10 +367,16 @@ const HONEYCOMB = {
 		]),
 		new Word("blonde", new Hint("fair hair", Category.COLOR)),
 		new Word("bobcat", new Hint("short-tailed wildcat", Category.ZOOLOGY)),
-		new Word("boeing", new Hint("a whistleblower for this company mysteriously died in 2024", Category.NEWS2020S)),
+		new Word("boeing", [
+			new Hint("a whistleblower for this company mysteriously died in 2024", Category.NEWS2020S),
+			new Hint("major American aircraft manufacturer", Category.TRANSPORT),
+		]),
 		new Word("bootes", new Hint("herdsman constellation", Category.ASTRONOMY)),
 		new Word("botany", new Hint("study of plants", Category.BIOLOGY)),
-		new Word("bottle", new Hint("common liquid container", Category.FOOD)),
+		new Word("bottle", [
+			new Hint("common liquid container", Category.FOOD),
+			new Hint("surface with no inside or outside (second word)", Category.MATH, Difficulty.HARD),
+		]),
 		new Word("bovine", new Hint("of cattle", Category.ZOOLOGY)),
 		new Word("branch", [
 			new Hint("plant limb", Category.BOTANY),
@@ -994,7 +1003,7 @@ const HONEYCOMB = {
 			new Hint("American upper house", Category.LAW),
 			new Hint("dissolved by the emperor in A New Hope", Category.FILM),
 		]),
-		new Word("senior", new Hint("senior antonym", Category.ENGLISH)),
+		new Word("senior", new Hint("junior antonym", Category.ENGLISH)),
 		new Word("serbia", [
 			new Hint("its capital, Belgrade", Category.GEOGRAPHY),
 			new Hint("its invasion brought about a world war", Category.HISTORY, Difficulty.TRICKY),
