@@ -74,6 +74,7 @@ class Category {
 	// for event clues happening in 2020s
 	static NEWS2020S = "2020s News";
 	static PHYSICS = "Physics";
+	static POLITICS = "Politics";
 	static PROGRAMMING = "Programming";
 	static RELIGION = "Religion & Myth";
 	static SPORT = "Sport";
@@ -310,6 +311,7 @@ const HONEYCOMB = {
 			new Hint("Minecraft skeletons bear these", Category.VIDEOGAME),
 		]),
 		new Word("aroace", new Hint("slang: aromantic and asexual", Category.LGBT)),
+		new Word("assist", new Hint("colloquially a 'slingshot' manouver (second word)", Category.ASTRONOMY)),
 		new Word("astana", new Hint("capital of Kazakhstan", Category.GEOGRAPHY)),
 		new Word("athena", new Hint("Greek goddess of wisdom", Category.RELIGION)),
 		new Word("attack", [
@@ -341,7 +343,10 @@ const HONEYCOMB = {
 		new Word("beaver", new Hint("dam-building rodent", Category.ZOOLOGY)),
 		new Word("belize", new Hint("its capital, Belmopan", Category.GEOGRAPHY)),
 		new Word("beluga", new Hint("arctic whale", Category.ZOOLOGY)),
-		new Word("berlin", new Hint("German capital", Category.GEOGRAPHY)),
+		new Word("berlin", [
+			new Hint("German capital", Category.GEOGRAPHY),
+			new Hint("capital halved after WWII", Category.HISTORY),
+		]),
 		new Word("bhutan", new Hint("its capital, Thimphu", Category.GEOGRAPHY)),
 		new Word("binary", [
 			new Hint("system with two stars", Category.ASTRONOMY),
@@ -428,6 +433,7 @@ const HONEYCOMB = {
 		new Word("cattle", new Hint("a cow or ox", Category.ZOOLOGY)),
 		new Word("celery", new Hint("green stalks", Category.FOOD)),
 		new Word("cellar", new Hint("where wine or root vegetables may be stored", Category.FOOD)),
+		new Word("center", new Hint("position between left and right", Category.POLITICS)),
 		new Word("cesium", new Hint("second-defining element", Category.CHEMISTRY)),
 		new Word("chakra", new Hint("bodily energy center", Category.RELIGION)),
 		new Word("charge", [
@@ -520,7 +526,10 @@ const HONEYCOMB = {
 			new Hint("mythical golden city (second word)", Category.HISTORY),
 		]),
 		new Word("drachm", new Hint("sixteenth of an ounce", Category.MEASUREMENT, Difficulty.HARD)),
-		new Word("dragon", new Hint("mythological winged lizard", Category.FANTASY)),
+		new Word("dragon", [
+			new Hint("mythological winged lizard", Category.FANTASY),
+			new Hint("SpaceX spacecraft", Category.TRANSPORT),
+		]),
 		new Word("durian", new Hint("large smelly fruit", Category.FOOD)),
 		new Word("dyeing", new Hint("textile coloring", Category.TEXTILE)),
 		new Word("easter", new Hint("Christian spring holiday", Category.HOLIDAY_SPRING)),
@@ -583,6 +592,7 @@ const HONEYCOMB = {
 		new Word("france", [
 			new Hint("country with the most francophones", Category.GEOGRAPHY),
 			new Hint("its capital, Paris", Category.GEOGRAPHY),
+			new Hint("Tour de...", Category.SPORT),
 			new Hint("banned unvaccinated American travellers in 2021", Category.NEWS2020S),
 		]),
 		new Word("freeze", new Hint("solidify", Category.CHEMISTRY)),
@@ -633,7 +643,10 @@ const HONEYCOMB = {
 			new Hint("what wine is made of", Category.FOOD),
 			new Hint("Steinbeck novel (first word)", Category.LITERATURE),
 		]),
-		new Word("greece", new Hint("its capital, Athens", Category.GEOGRAPHY)),
+		new Word("greece", [
+			new Hint("its capital, Athens", Category.GEOGRAPHY),
+			new Hint("conquered by Rome c. 146 BCE", Category.HISTORY),
+		]),
 		new Word("grinch", new Hint("who nemesis", Category.HOLIDAY_WINTER)),
 		new Word("grouse", new Hint("landfowl, eg. ruffed, spruce, sooty", Category.ZOOLOGY, Difficulty.HARD)),
 		new Word("guilty", new Hint("verdict to punish the accused", Category.LAW)),
@@ -656,6 +669,7 @@ const HONEYCOMB = {
 			new Hint("American state surrounded entirely by ocean", Category.GEOGRAPHY),
 			new Hint("Pacific kingdom invaded by the United States", Category.HISTORY, Difficulty.SPICY),
 		]),
+		new Word("health", new Hint("H of WHO", Category.GEOGRAPHY)),
 		new Word("helium", new Hint("element discovered in the sun", Category.CHEMISTRY)),
 		new Word("hermes", new Hint("Greek messenger god", Category.RELIGION)),
 		new Word("hestia", new Hint("Greek goddess of the hearth", Category.RELIGION)),
@@ -716,6 +730,7 @@ const HONEYCOMB = {
 			new Hint("Greek L", Category.LANGUAGE),
 		]),
 		new Word("lammas", new Hint("Wiccan harvest holiday", Category.RELIGION)),
+		new Word("lander", new Hint("unused component of Apollo 13", Category.TRANSPORT)),
 		new Word("latvia", new Hint("its capital, Riga", Category.GEOGRAPHY)),
 		new Word("laurel", new Hint("bay leaf source", Category.BOTANY)),
 		new Word("lazuli", [
@@ -744,6 +759,7 @@ const HONEYCOMB = {
 		new Word("lumber", new Hint("wood", Category.MISC)),
 		new Word("luster", new Hint("how light interacts with a rock surface", Category.GEOLOGY)),
 		new Word("lychee", new Hint("small, bumpy south Asian fruit", Category.FOOD)),
+		new Word("maduro", new Hint("Venezuelan leader abducted by US in 2026", Category.NEWS2020S)),
 		new Word("magpie", new Hint("intelligent black-and-white bird", Category.ZOOLOGY)),
 		new Word("manger", new Hint("structure Jesus was said to be born in", Category.HOLIDAY_WINTER)),
 		new Word("mantle", new Hint("layer between the crust and core", Category.GEOLOGY)),
@@ -779,11 +795,14 @@ const HONEYCOMB = {
 		new Word("mormon", new Hint("follower of Joseph Smith", Category.RELIGION)),
 		new Word("morrow", new Hint("morning", Category.MEASUREMENT)),
 		new Word("mortar", new Hint("pestle complement", Category.MISC)),
+		new Word("mosque", new Hint("muslim house of worship", Category.RELIGION)),
+		new Word("munich", new Hint("Bavarian capital", Category.GEOGRAPHY)),
 		new Word("murder", [
 			new Hint("unlawful killing", Category.LAW),
 			new Hint("forbidden by one of the ten commandments", Category.RELIGION),
 			new Hint("Derek Chauvin was found guilty of this in 2021", Category.NEWS2020S),
 		]),
+		new Word("museum", new Hint("Indiana Jones: 'It belongs in a...'", Category.FILM)),
 		new Word("myosin", new Hint("motor protein", Category.BIOLOGY)),
 		new Word("myself", new Hint("first person singular reflexive", Category.LANGUAGE)),
 		new Word("nation", new Hint("along with Ticketmaster, found by a jury in 2026 to be a monopoly (second word)", Category.NEWS2020S)),
@@ -820,6 +839,11 @@ const HONEYCOMB = {
 			new Hint("word said to have no rhymes", Category.ENGLISH),
 			new Hint("citrus, eg. mandarin", Category.FOOD),
 		]),
+		new Word("origin", [
+			new Hint("New Glenn manufacturer (second word)", Category.TRANSPORT),
+			new Hint("graph center", Category.MATH),
+		]),
+		new Word("osiris", new Hint("major Egyptian god", Category.RELIGION)),
 		new Word("ostara", new Hint("Wiccan spring equinox holiday", Category.RELIGION)),
 		new Word("oxgang", new Hint("fifteen acres", Category.MEASUREMENT, Difficulty.HARD)),
 		new Word("oxygen", [
@@ -863,6 +887,7 @@ const HONEYCOMB = {
 		new Word("pindus", new Hint("Greek mountain range", Category.GEOGRAPHY)),
 		new Word("pisces", new Hint("fish sign", Category.ASTROLOGY)),
 		new Word("pistil", new Hint("free carpel", Category.BOTANY, Difficulty.HARD)),
+		new Word("planet", new Hint("large star-orbiting body", Category.ASTRONOMY)),
 		new Word("plants", new Hint("organisms botanists study", Category.BOTANY)),
 		new Word("plasma", new Hint("ionized gas", Category.CHEMISTRY)),
 		new Word("pluton", new Hint("igneous intrusion", Category.GEOLOGY)),
@@ -874,6 +899,7 @@ const HONEYCOMB = {
 			new Hint("its capital, Warsaw", Category.GEOGRAPHY),
 			new Hint("its invasion brought about a world war", Category.HISTORY, Difficulty.TRICKY),
 		]),
+		new Word("polish", new Hint("most widely spoken West Slavic language", Category.LANGUAGE)),
 		new Word("pollen", new Hint("seed plant microspore", Category.BOTANY)),
 		new Word("pollux", new Hint("eastern twin of Gemini", Category.ASTRONOMY)),
 		new Word("pomelo", new Hint("large citrus", Category.FOOD)),
@@ -929,6 +955,7 @@ const HONEYCOMB = {
 		new Word("rhodes", new Hint("Greek island known for its Colossus", Category.GEOGRAPHY)),
 		new Word("ribbon", new Hint("thin cloth band", Category.TEXTILE)),
 		new Word("ritual", new Hint("spell that can be cast without expending a spell slot, at the expense of time", Category.FANTASY)),
+		new Word("runway", new Hint("aircraft landing strip", Category.TRANSPORT)),
 		new Word("russet", new Hint("reddish brown", Category.COLOR)),
 		new Word("russia", [
 			new Hint("its capital, Moscow", Category.GEOGRAPHY),
@@ -936,6 +963,7 @@ const HONEYCOMB = {
 		]),
 		new Word("rutile", new Hint("titanium dioxide mineral", Category.MINEROLOGY, Difficulty.HARD)),
 		new Word("rwanda", new Hint("its capital, Kigali", Category.GEOGRAPHY)),
+		new Word("sahara", new Hint("African desert", Category.GEOGRAPHY)),
 		new Word("saline", new Hint("salty", Category.MISC)),
 		new Word("salmon", [
 			new Hint("fish used to make lox", Category.FOOD),
@@ -962,6 +990,10 @@ const HONEYCOMB = {
 		new Word("secant", new Hint("line intersecting a curve at two points", Category.MATH)),
 		new Word("second", new Hint("SI unit of time", Category.MEASUREMENT)),
 		new Word("secret", new Hint("hidden knowledge", Category.MISC)),
+		new Word("senate", [
+			new Hint("American upper house", Category.LAW),
+			new Hint("dissolved by the emperor in A New Hope", Category.FILM),
+		]),
 		new Word("senior", new Hint("senior antonym", Category.ENGLISH)),
 		new Word("serbia", [
 			new Hint("its capital, Belgrade", Category.GEOGRAPHY),
@@ -975,7 +1007,12 @@ const HONEYCOMB = {
 		new Word("shaman", new Hint("Spore archetype with the Return Ticket ability", Category.VIDEOGAME)),
 		new Word("sherry", new Hint("fortified wine", Category.FOOD)),
 		new Word("shield", new Hint("exposed precambrian rock", Category.GEOLOGY)),
+		new Word("shinzo", [
+			new Hint("longest-serving Japanese PM", Category.HISTORY),
+			new Hint("former Japanese PM assassinated in 2022 (forename)", Category.NEWS2020S),
+		]),
 		new Word("shorts", new Hint("pants that only go to the knees", Category.MISC)),
+		new Word("shrink", new Hint("a psychologist, colloquially", Category.MISC)),
 		new Word("sicily", new Hint("largest Mediterranean island", Category.GEOGRAPHY)),
 		new Word("sienna", new Hint("reddish brown pigment", Category.COLOR)),
 		new Word("silver", [
@@ -990,6 +1027,7 @@ const HONEYCOMB = {
 		new Word("sleigh", new Hint("Santa's vehicle", Category.HOLIDAY_WINTER)),
 		new Word("sodium", new Hint("secondary constituent of table salt", Category.CHEMISTRY)),
 		new Word("source", new Hint("spring", Category.GEOLOGY)),
+		new Word("spacex", new Hint("Starship manufacturer", Category.TRANSPORT)),
 		new Word("sphere", new Hint("3D analogue of a circle", Category.MATH)),
 		new Word("sphinx", new Hint("mythological creature with the head of a person and the body of a lion", Category.RELIGION)),
 		new Word("spider", [
@@ -1031,6 +1069,7 @@ const HONEYCOMB = {
 			new Hint("deformation force", Category.PHYSICS),
 			new Hint("AKA 'accent'", Category.LANGUAGE),
 		]),
+		new Word("stuart", new Hint("English dynasty following Tudor", Category.HISTORY)),
 		new Word("suffix", new Hint("attached to end of word", Category.LANGUAGE)),
 		new Word("sulfur", new Hint("element said to smell of egg", Category.CHEMISTRY)),
 		new Word("summer", [
@@ -1046,6 +1085,7 @@ const HONEYCOMB = {
 			new Hint("Nintendo console", Category.VIDEOGAME),
 		]),
 		new Word("syzygy", new Hint("alignment of three objects", Category.ASTRONOMY)),
+		new Word("taiwan", new Hint("island nation off China", Category.GEOGRAPHY)),
 		new Word("taoism", new Hint("Chinese philosophical tradition", Category.RELIGION)),
 		new Word("taurus", new Hint("bull sign", Category.ASTROLOGY)),
 		new Word("tephra", new Hint("volcanic ejecta", Category.GEOLOGY)),
@@ -1058,6 +1098,7 @@ const HONEYCOMB = {
 		]),
 		new Word("timber", new Hint("wood", Category.MISC)),
 		new Word("tinsel", new Hint("sparkly decoration strung on tree", Category.HOLIDAY_WINTER)),
+		new Word("tobago", new Hint("Trinidad complement", Category.GEOGRAPHY)),
 		new Word("tomato", new Hint("fruit considered a vegetable", Category.FOOD)),
 		new Word("tongue", new Hint("organ of taste and language", Category.MEDICINE)),
 		new Word("tonian", new Hint("neoproterozoic period preceding the cryogenian", Category.GEOLOGY)),
@@ -1107,6 +1148,7 @@ const HONEYCOMB = {
 		new Word("waxing", new Hint("excrescent", Category.ASTRONOMY)),
 		new Word("weaver", new Hint("textile producer", Category.TEXTILE)),
 		new Word("weight", new Hint("downward force", Category.PHYSICS)),
+		new Word("wessex", new Hint("first English dynasty", Category.HISTORY)),
 		new Word("winery", new Hint("winemaking place", Category.FOOD)),
 		new Word("winter", [
 			new Hint("season after fall", Category.MEASUREMENT, Difficulty.EASY),
@@ -1343,7 +1385,7 @@ const HONEYCOMB = {
 		});
 	},
 	init(){
-		console.info(`${this.words.length} words, ${this.stats.nClues} clues`);
+		console.info(`${this.words.length} words, ${this.stats.nClues} clues (${this.stats.cpw.toFixed(2)} CPW)`);
 		console.info('category statistics:', this.stats.categories);
 		if (this.config.debug) {
 			console.info('debug mode');
