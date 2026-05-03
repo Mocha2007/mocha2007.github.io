@@ -378,6 +378,7 @@ const HONEYCOMB = {
 			new Hint("this medal is given to third place", Category.SPORT),
 		]),
 		new Word("brunei", new Hint("its capital, Bandar Seri Begawan", Category.GEOGRAPHY)),
+		new Word("bryant", new Hint("basketball player killed in helicopter crash (surname)", Category.NEWS2020S)),
 		new Word("burger", new Hint("ground beef in a bun", Category.FOOD)),
 		new Word("bushel", new Hint("eight gallons", Category.MEASUREMENT, Difficulty.HARD)),
 		new Word("butane", new Hint("C4H10", Category.CHEMISTRY)),
@@ -505,7 +506,10 @@ const HONEYCOMB = {
 		new Word("degree", new Hint("1/360 of a circle", Category.MEASUREMENT)),
 		new Word("delete", new Hint("key on keyboard similar to backspace", Category.MISC)),
 		new Word("desert", new Hint("biome with little precipitation", Category.GEOGRAPHY)),
-		new Word("donald", new Hint("felon, child rapist, war criminal", Category.HISTORY, Difficulty.SPICY)),
+		new Word("donald", [
+			new Hint("2020 presidential candidate who caught covid (forename)", Category.NEWS2020S),
+			new Hint("felon, child rapist, war criminal", Category.HISTORY, Difficulty.SPICY),
+		]),
 		new Word("donkey", [
 			new Hint("Shrek's partner", Category.FILM),
 			new Hint("rideable Minecraft mob", Category.VIDEOGAME),
@@ -579,6 +583,7 @@ const HONEYCOMB = {
 		new Word("france", [
 			new Hint("country with the most francophones", Category.GEOGRAPHY),
 			new Hint("its capital, Paris", Category.GEOGRAPHY),
+			new Hint("banned unvaccinated American travellers in 2021", Category.NEWS2020S),
 		]),
 		new Word("freeze", new Hint("solidify", Category.CHEMISTRY)),
 		new Word("french", [
@@ -606,6 +611,7 @@ const HONEYCOMB = {
 		new Word("genome", new Hint("entire set of genetic material", Category.BIOLOGY)),
 		new Word("george", [
 			new Hint("murdered by Derek Chauvin in 2020 (forename)", Category.NEWS2020S),
+			new Hint("NY rep expelled in 2023 for fraud (forename)", Category.NEWS2020S),
 			new Hint("king who lost the colonies", Category.HISTORY),
 		]),
 		new Word("ginger", [
@@ -644,6 +650,7 @@ const HONEYCOMB = {
 		new Word("halide", new Hint("halogen ion", Category.CHEMISTRY)),
 		new Word("halite", new Hint("rock salt", Category.MINEROLOGY)),
 		new Word("harris", new Hint("Biden VP", Category.NEWS2020S)),
+		new Word("harvey", new Hint("producer convicted for rape in 2020", Category.NEWS2020S)),
 		new Word("haumea", new Hint("dwarf planet named for goddess of Hawaii", Category.ASTRONOMY)),
 		new Word("hawaii", [
 			new Hint("American state surrounded entirely by ocean", Category.GEOGRAPHY),
@@ -679,6 +686,7 @@ const HONEYCOMB = {
 		new Word("jalopy", new Hint("junk car, synonym", Category.ENGLISH)),
 		new Word("jasper", new Hint("impure chalcedony variety", Category.MINEROLOGY, Difficulty.HARD)),
 		new Word("jingle", new Hint("what sleighbells do", Category.HOLIDAY_WINTER)),
+		new Word("johnny", new Hint("Heard found liable for damages against this actor (forename) in 2022", Category.NEWS2020S)),
 		new Word("jordan", new Hint("its capital, Amman", Category.GEOGRAPHY)),
 		new Word("junior", new Hint("senior antonym", Category.ENGLISH)),
 		new Word("kelvin", new Hint("SI unit of temperature", Category.MEASUREMENT)),
@@ -774,9 +782,11 @@ const HONEYCOMB = {
 		new Word("murder", [
 			new Hint("unlawful killing", Category.LAW),
 			new Hint("forbidden by one of the ten commandments", Category.RELIGION),
+			new Hint("Derek Chauvin was found guilty of this in 2021", Category.NEWS2020S),
 		]),
 		new Word("myosin", new Hint("motor protein", Category.BIOLOGY)),
 		new Word("myself", new Hint("first person singular reflexive", Category.LANGUAGE)),
+		new Word("nation", new Hint("along with Ticketmaster, found by a jury in 2026 to be a monopoly (second word)", Category.NEWS2020S)),
 		new Word("nebula", new Hint("'cloudy' object, follows Crab and Orion", Category.ASTRONOMY)),
 		new Word("nectar", new Hint("flower juice", Category.BOTANY)),
 		new Word("needle", [
@@ -1040,6 +1050,7 @@ const HONEYCOMB = {
 		new Word("taurus", new Hint("bull sign", Category.ASTROLOGY)),
 		new Word("tephra", new Hint("volcanic ejecta", Category.GEOLOGY)),
 		new Word("tethys", new Hint("fifth-largest Saturnian moon", Category.ASTRONOMY)),
+		new Word("thomas", new Hint("SCOTUS justice found accepting luxury trips from donors in 2023 (surname)", Category.NEWS2020S)),
 		new Word("thorns", new Hint("sharp things on roses", Category.BOTANY)),
 		new Word("thread", [
 			new Hint("used with needles, found on spools", Category.TEXTILE),
