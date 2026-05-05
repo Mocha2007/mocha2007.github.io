@@ -180,7 +180,7 @@ const LUNALIFE = {
 		new LunaEvent(new Date(2026, 3, 17), 'Observed three meteors(!!!) while stargazing.'),
 		new LunaEvent(new Date(2026, 3, 23), 'On this date, I learned I could (conditionally) continue to stay in Poland.'),
 		new LunaEvent(new Date(2026, 3, 24), 'Coco passed.'),
-		new LunaEvent(new Date(2026, 4, 11), 'Move to Nowa Sól?'),
+		new LunaEvent(new Date(2026, 5, 3), 'Move to Zielona Góra?'),
 		new LunaEvent(new Date(2026, 7, 12), 'I will attempt to view a solar eclipse (my fourth).'),
 		new LunaEvent(new Date(2026, 7, 16), 'Theoretically the effects of HRT should be largely complete by now.'),
 		new LunaEvent(new Date(2028, 0, 7), 'If I still reside in Poland by this date, and speak Polish fluently, I could apply for citizenship.'),
