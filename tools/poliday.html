@@ -101,7 +101,7 @@ const main = () => {
 	// trade sundays
 	trade_sundays.forEach(f => {
 		const date = sunday_before(f(year));
-		if (computed.includes(date)) return;
+		if (date === easter(year)) return; // Easter / "last sunday in april" is the only possible collision
 		const tr = document.createElement('tr');
 		table_tsunday.appendChild(tr);
 		const td = document.createElement('td');
