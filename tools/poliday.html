@@ -99,9 +99,10 @@ const main = () => {
 			.toLocaleDateString("pl-PL", {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'});
 	});
 	// trade sundays
+	const this_easter = easter(year);
 	trade_sundays.forEach(f => {
 		const date = sunday_before(f(year));
-		if (date === easter(year)) return; // Easter / "last sunday in april" is the only possible collision
+		if (date.getDate() === this_easter.getDate() && date.getMonth() === this_easter.getMonth()) return; // Easter / "last sunday in april" is the only possible collision
 		const tr = document.createElement('tr');
 		table_tsunday.appendChild(tr);
 		const td = document.createElement('td');
