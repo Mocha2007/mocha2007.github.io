@@ -8,9 +8,11 @@
 <p>
 	<a href="https://www.gov.pl/web/family/trade-on-sundays">law</a>
 </p>
-<label onclick="main();" onkeyup="main();">
+<label onclick="main()" onkeyup="main()">
 	Year:
+	<span class="button" onclick="elem_year.value--">&larr;</span>
 	<input type="number" id="year" min="0" step="1">
+	<span class="button" onclick="elem_year.value++">&rarr;</span>
 </label>
 <h2>Holidays</h2>
 <table id="holidays"></table>
