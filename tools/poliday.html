@@ -96,22 +96,28 @@ const main = () => {
 		th.innerHTML = name;
 		const td = document.createElement('td');
 		tr.appendChild(td);
-		const date = f(year);
-		computed.push(date);
-		td.innerHTML = date
+		const date = document.createElement('date');
+		td.appendChild(date);
+		const t = f(year);
+		computed.push(t);
+		date.innerHTML = t
 			.toLocaleDateString("pl-PL", {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'});
+		date.setAttribute('datetime', t.toLocaleString('en-CA').slice(0, 10));
 	});
 	// trade sundays
 	const this_easter = easter(year);
 	trade_sundays.forEach(f => {
-		const date = sunday_before(f(year));
-		if (date.getDate() === this_easter.getDate() && date.getMonth() === this_easter.getMonth()) return; // Easter / "last sunday in april" is the only possible collision
+		const t = sunday_before(f(year));
+		if (t.getDate() === this_easter.getDate() && t.getMonth() === this_easter.getMonth()) return; // Easter / "last sunday in april" is the only possible collision
 		const tr = document.createElement('tr');
 		table_tsunday.appendChild(tr);
 		const td = document.createElement('td');
 		tr.appendChild(td);
-		td.innerHTML = date
+		const date = document.createElement('date');
+		td.appendChild(date);
+		date.innerHTML = t
 			.toLocaleDateString("pl-PL", {year: 'numeric', month: 'long', day: 'numeric'});
+		date.setAttribute('datetime', t.toLocaleString('en-CA').slice(0, 10));
 	});
 }
 main();
