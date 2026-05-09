@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en-US">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="tool.css" type="text/css" rel="stylesheet">
+<title>Polish Holidays and Trade Sundays</title>
+<h1>Polish Holidays and Trade Sundays</h1>
+<p>
+	<a href="https://www.gov.pl/web/family/trade-on-sundays">law</a>
+</p>
+<label onclick="main();" onkeyup="main();">
+	Year:
+	<input type="number" id="year" min="0" step="1">
+</label>
+<h2>Holidays</h2>
+<table id="holidays"></table>
+<h2>Trade Sundays</h2>
+<table id="trade_sundays"></table>
+<script>
+const DAY = 24*60*60*1000;
+const table_poliday = document.getElementById('holidays');
+const table_tsunday = document.getElementById('trade_sundays');
+const elem_year = document.getElementById('year');
+elem_year.value = new Date().getFullYear();
+const idiv = (a, b) => Math.floor(a/b);
+// https://en.wikipedia.org/wiki/Date_of_Easter#Gauss's_Easter_algorithm
+const easter = year => {
+	const a = year % 19;
+	const b = year % 4;
+	const c = year % 7;
+	const k = idiv(year, 100);
+	const p = idiv(13 + 8*k, 25);
+	const q = idiv(k, 4);
+	const m = (15 - p + k - q) % 30;
+	const n = (4 + k - q) % 7;
+	const d = (19 * a + m) % 30;
+	const e = (2 * b + 4 * c + 6 * d + n) % 7;
+	const me = d + e + 22;
+	let ae = d + e - 9;
+	if (ae === 25 && d === 28 && e === 6 && a > 10)
+		ae = 18;
+	if (ae === 26 && d === 29 && e === 6)
+		ae = 19;
+	return me <= 31 ? new Date(year, 2, me) : new Date(year, 3, ae);
+};
+const add_days = (date, n) => new Date(+date + n*DAY);
+const sunday_before = date => {
+	for (let i = 1; i <= 7; i++){
+		const d = new Date(date.getFullYear(), date.getMonth(), date.getDate() - i);
+		if (d.getDay() === 0)
+			return d;
+		// else console.debug(date, i, d);
+	}
+	throw 'should never happen';
+};
+const polidays = [
+	['New Year\'s Day', year => new Date(year, 0, 1)],
+	['Epiphany', year => new Date(year, 0, 6)],
+	['Easter Sunday', easter],
+	['Easter Monday', year => add_days(easter(year), 1)],
+	['National Day', year => new Date(year, 4, 1)],
+	['National Day of the Third May', year => new Date(year, 4, 3)],
+	['Pentecost', year => add_days(easter(year), 49)],
+	['Corpus Christi', year => add_days(easter(year), 60)], // ???
+	['Assumption of the Blessed Virgin Mary', year => new Date(year, 7, 15)],
+	['All Saints', year => new Date(year, 10, 1)],
+	['National Independence Day', year => new Date(year, 10, 11)],
+	['Christmas', year => new Date(year, 11, 25)],
+	['Day after Christmas', year => new Date(year, 11, 26)],
+];
+const trade_sundays = [
+	// the next two sundays preceding christmas day (11 dec - 17 dec and 18 dec - 24 dec)
+	// the sunday immediatele preceding easter (easter - 7)
+	// last sunday in jan apr jun aug
+	year => new Date(year, 1, 1),
+	easter,
+	year => new Date(year, 4, 1),
+	year => new Date(year, 6, 1),
+	year => new Date(year, 8, 1),
+	year => sunday_before(new Date(year, 11, 25)),
+	year => new Date(year, 11, 25),
+];
+const main = () => {
+	const year = +elem_year.value;
+	table_poliday.innerHTML = table_tsunday.innerHTML = '';
+	const computed = [];
+	// holidays
+	polidays.forEach(([name, f]) => {
+		const tr = document.createElement('tr');
+		table_poliday.appendChild(tr);
+		const th = document.createElement('th');
+		tr.appendChild(th);
+		th.innerHTML = name;
+		const td = document.createElement('td');
+		tr.appendChild(td);
+		const date = f(year);
+		computed.push(date);
+		td.innerHTML = date
+			.toLocaleDateString("pl-PL", {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'});
+	});
+	// trade sundays
+	trade_sundays.forEach(f => {
+		const date = sunday_before(f(year));
+		if (computed.includes(date)) return;
+		const tr = document.createElement('tr');
+		table_tsunday.appendChild(tr);
+		const td = document.createElement('td');
+		tr.appendChild(td);
+		td.innerHTML = date
+			.toLocaleDateString("pl-PL", {year: 'numeric', month: 'long', day: 'numeric'});
+	});
+}
+main();
+</script>
+</html>
