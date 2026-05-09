@@ -10,9 +10,9 @@
 </p>
 <label onclick="main()" onkeyup="main()">
 	Year:
-	<span class="button" onclick="elem_year.value--" tabindex="0" role="button">&larr;</span>
+	<span class="button" onclick="elem_year.value--" onkeydown="ife(() => elem_year.value--, event)" tabindex="0" role="button">&larr;</span>
 	<input type="number" id="year" min="0" step="1">
-	<span class="button" onclick="elem_year.value++" tabindex="0" role="button">&rarr;</span>
+	<span class="button" onclick="elem_year.value++" onkeydown="ife(() => elem_year.value++, event)" tabindex="0" role="button">&rarr;</span>
 </label>
 <h2>Holidays</h2>
 <table id="holidays"></table>
@@ -55,6 +55,7 @@ const sunday_before = date => {
 	}
 	throw 'should never happen';
 };
+const ife = (f, event) => {if (event.key === 'Enter') f();};
 const polidays = [
 	['New Year\'s Day', year => new Date(year, 0, 1)],
 	['Epiphany', year => new Date(year, 0, 6)],
