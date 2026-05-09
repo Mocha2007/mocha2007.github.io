@@ -96,7 +96,7 @@ const main = () => {
 		th.innerHTML = name;
 		const td = document.createElement('td');
 		tr.appendChild(td);
-		const date = document.createElement('date');
+		const date = document.createElement('time');
 		td.appendChild(date);
 		const t = f(year);
 		computed.push(t);
@@ -113,7 +113,7 @@ const main = () => {
 		table_tsunday.appendChild(tr);
 		const td = document.createElement('td');
 		tr.appendChild(td);
-		const date = document.createElement('date');
+		const date = document.createElement('time');
 		td.appendChild(date);
 		date.innerHTML = t
 			.toLocaleDateString("pl-PL", {year: 'numeric', month: 'long', day: 'numeric'});
