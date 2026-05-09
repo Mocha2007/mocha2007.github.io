@@ -10,9 +10,9 @@
 </p>
 <label onclick="main()" onkeyup="main()">
 	Year:
-	<span class="button" onclick="elem_year.value--">&larr;</span>
+	<span class="button" onclick="elem_year.value--" tabindex="0" role="button">&larr;</span>
 	<input type="number" id="year" min="0" step="1">
-	<span class="button" onclick="elem_year.value++">&rarr;</span>
+	<span class="button" onclick="elem_year.value++" tabindex="0" role="button">&rarr;</span>
 </label>
 <h2>Holidays</h2>
 <table id="holidays"></table>
@@ -94,6 +94,7 @@ const main = () => {
 		tr.appendChild(th);
 		th.innerHTML = name;
 		const td = document.createElement('td');
+		td.lang = 'pl-PL';
 		tr.appendChild(td);
 		const date = f(year);
 		computed.push(date);
