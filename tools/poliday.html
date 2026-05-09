@@ -1,22 +1,22 @@
 <!doctype html>
-<html lang="en-US">
+<html lang="pl-PL">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="tool.css" type="text/css" rel="stylesheet">
-<title>Polish Holidays and Trade Sundays</title>
-<h1>Polish Holidays and Trade Sundays</h1>
+<title>Święta i Niedziele Handlowe</title>
+<h1>Święta i Niedziele Handlowe</h1>
 <p>
-	<a href="https://www.gov.pl/web/family/trade-on-sundays">law</a>
+	<a href="https://www.gov.pl/web/rodzina/zakaz-handlu-w-niedziele">ustawa</a>
 </p>
 <label onclick="main()" onkeyup="main()">
-	Year:
+	Rok:
 	<span class="button" onclick="elem_year.value--" onkeydown="ife(() => elem_year.value--, event)" tabindex="0" role="button">&larr;</span>
 	<input type="number" id="year" min="0" step="1">
 	<span class="button" onclick="elem_year.value++" onkeydown="ife(() => elem_year.value++, event)" tabindex="0" role="button">&rarr;</span>
 </label>
-<h2>Holidays</h2>
+<h2>Święta</h2>
 <table id="holidays"></table>
-<h2>Trade Sundays</h2>
+<h2>Niedziele Handlowe</h2>
 <table id="trade_sundays"></table>
 <script>
 const DAY = 24*60*60*1000;
@@ -57,19 +57,19 @@ const sunday_before = date => {
 };
 const ife = (f, event) => {if (event.key === 'Enter') f();};
 const polidays = [
-	['New Year\'s Day', year => new Date(year, 0, 1)],
-	['Epiphany', year => new Date(year, 0, 6)],
-	['Easter Sunday', easter],
-	['Easter Monday', year => add_days(easter(year), 1)],
-	['National Day', year => new Date(year, 4, 1)],
-	['National Day of the Third May', year => new Date(year, 4, 3)],
-	['Pentecost', year => add_days(easter(year), 49)],
-	['Corpus Christi', year => add_days(easter(year), 60)], // ???
-	['Assumption of the Blessed Virgin Mary', year => new Date(year, 7, 15)],
-	['All Saints', year => new Date(year, 10, 1)],
-	['National Independence Day', year => new Date(year, 10, 11)],
-	['Christmas', year => new Date(year, 11, 25)],
-	['Day after Christmas', year => new Date(year, 11, 26)],
+	['Nowy Rok', year => new Date(year, 0, 1)],
+	['Święto Trzech Króli', year => new Date(year, 0, 6)],
+	['pierwszy dzień Wielkiej Nocy', easter],
+	['drugi dzień Wielkiej Nocy', year => add_days(easter(year), 1)],
+	['Święto Państwowe', year => new Date(year, 4, 1)],
+	['Święto Narodowe Trzeciego Maja', year => new Date(year, 4, 3)],
+	['pierwszy dzień Zielonych Świątek', year => add_days(easter(year), 49)],
+	['dzień Bożego Ciała', year => add_days(easter(year), 60)], // ???
+	['Wniebowzięcie Najświętszej Maryi Panny', year => new Date(year, 7, 15)],
+	['Wszystkich Świętych', year => new Date(year, 10, 1)],
+	['Narodowe Święto Niepodległości', year => new Date(year, 10, 11)],
+	['pierwszy dzień Bożego Narodzenia', year => new Date(year, 11, 25)],
+	['drugi dzień Bożego Narodzenia', year => new Date(year, 11, 26)],
 ];
 const trade_sundays = [
 	// the next two sundays preceding christmas day (11 dec - 17 dec and 18 dec - 24 dec)
@@ -95,7 +95,6 @@ const main = () => {
 		tr.appendChild(th);
 		th.innerHTML = name;
 		const td = document.createElement('td');
-		td.lang = 'pl-PL';
 		tr.appendChild(td);
 		const date = f(year);
 		computed.push(date);
