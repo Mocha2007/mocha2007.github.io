@@ -91,6 +91,7 @@ const LUNALIFE = {
 		new LunaEvent(new Date(2010, 0, 1), '(appx) stabbing incident at my school.'),
 		new LunaEvent(new Date(2010, 2, 18), 'Someone brought a gun to my school (don\'t worry, nothing happened).'),
 		new LunaEvent(new Date(2010, 3, 4), 'An earthquake hit San Diego on Easter, the strongest quake I experienced (about magnitude 5 at my location).'),
+		new LunaEvent(new Date(2010, 8, 19), '(appx) I started posting comments on jmtb02\'s blog UwU'),
 		new LunaEvent(new Date(2010, 11, 20), '1/2 guinea pigs died ;-;'),
 		new LunaEvent(new Date(2010, 11, 21), 'Joined Armorgames.'),
 		new LunaEvent(new Date(2010, 11, 22), 'Joined Kongregate.'),
