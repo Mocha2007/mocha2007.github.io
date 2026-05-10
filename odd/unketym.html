@@ -123,9 +123,9 @@
 	<li class="c21">groyper</li>
 	<li>grump</li>
 	<li>gullible</li>
-	<li>hackery</li>
+	<li class="c19">hackery (s. oxcart)</li>
 	<li>hassle</li>
-	<li>hemlock</li>
+	<li class="oe">hemlock</li>
 	<li>hickey</li>
 	<li>hives</li>
 	<li>hoagie</li>
@@ -313,4 +313,11 @@
 	<li>zoom</li>
 </ul>
 <a href="../odd.html">&larr; back</a>
+<script>
+[
+	['me', 'from Middle English'],
+	['oe', 'from Old English'],
+	...(new Array(10)).fill(0).map((_, i) => [`c${i+11}`, `from ${i+11} c.`])
+].forEach(([className, title]) => Array.from(document.getElementsByClassName(className)).forEach(elem => elem.title = title));
+</script>
 </html>
