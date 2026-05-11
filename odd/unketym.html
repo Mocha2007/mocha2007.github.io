@@ -18,11 +18,11 @@
 </style>
 <title>List of Words with Uncertain or Disputed Etymologies</title>
 <h1>List of Words with Uncertain or Disputed Etymologies</h1>
-<p>
+<p id="desc">
 	I have only included "common" words (ie., no archaic or dialectal vocabulary).
 </p>
 <!-- cf https://www.musanim.com/mam/unknown.html -->
-<ul style="columns: 4;">
+<ul id="list" style="columns: 4;">
 	<li class="c16">askance</li>
 	<li class="c15">average</li>
 	<li class="c13">bad</li>
@@ -372,6 +372,9 @@
 </ul>
 <a href="../odd.html">&larr; back</a>
 <script>
+// count
+document.getElementById('desc').innerHTML += `This list contains ${document.getElementById('list').childElementCount} entries.`;
+// add hover
 [
 	['me', 'from Middle English (12th-15th c.)'],
 	['oe', 'from Old English (5th-11th c.)'],
