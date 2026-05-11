@@ -12802,14 +12802,6 @@
 		"notes": "Modern Eremoran uses ''nau'', which was originally just the determiner form."
 	},
 	{
-		"title": "nau kikom",
-		"etym": "P/nau/kikom",
-		"cat": "interj.",
-		"defList": [
-			"(informal) hey, hi, hello"
-		]
-	},
-	{
 		"title": "naba",
 		"etym": "I/PEN/*naβa/root//~/nabi",
 		"cat": "n., 4th",
@@ -13135,6 +13127,14 @@
 		"cat": "adj.",
 		"defList": [
 			"which, what"
+		]
+	},
+	{
+		"title": "nau kikom",
+		"etym": "P/nau/kikom",
+		"cat": "interj.",
+		"defList": [
+			"(informal) hey, hi, hello"
 		]
 	},
 	{
@@ -14554,7 +14554,7 @@
 	},
 	{
 		"title": "potar",
-		"etym": "r/poltasar",
+		"etym": "r/potasar",
 		"cat": "n., 1st",
 		"defList": [
 			"(slur) a Połtaś person"
@@ -17064,7 +17064,7 @@
 	{
 		"title": "tanarm",
 		"etym": "C/tanarz/-m",
-		"cat": "v.",
+		"cat": "n., 5th",
 		"defList": [
 			"(mathematics) remainder, modulus"
 		],
