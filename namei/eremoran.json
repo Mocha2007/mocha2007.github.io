@@ -9883,7 +9883,8 @@
 		"cat": "adv.",
 		"defList": [
 			"lo, behold"
-		]
+		],
+		"notes": "less excited than ''obo''"
 	},
 	{
 		"title": "koldik",
@@ -13941,8 +13942,10 @@
 		"etym": "I/PEN/*oβo/[excitement particle]",
 		"cat": "adv.",
 		"defList": [
-			"[excitement particle]"
-		]
+			"[excitement particle]",
+			"lo, behold"
+		],
+		"notes": "more excited than ''kol''"
 	},
 	{
 		"title": "odar",
