@@ -1,11 +1,14 @@
-.s{text-shadow: 0 0 0 #c00}
-.a{text-shadow: 0 0 0 #a00}
-.b{text-shadow: 0 0 0 #800}
-.c{text-shadow: 0 0 0 #600}
-.d{text-shadow: 0 0 0 #400}
-.f{text-shadow: 0 0 0 #000}
+.s{color:rgb(253, 231, 37)}
+.a{color:rgb(103, 210, 92)}
+.b{color:rgb(45, 170, 129)}
+.c{color:rgb(43, 120, 143)}
+.d{color:rgb(63, 65, 130)}
+.f{color:rgb(68, 13, 84)}
 .s, .a, .b, .c, .d, .f {
-	color: transparent;
+	font-variant-emoji: text;
+}
+.s::before, .a::before, .b::before, .c::before, .d::before, .f::before {
+	content: '⚫';
 }
 .vowel {
 	font-family: monospace;
