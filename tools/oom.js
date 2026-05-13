@@ -1536,7 +1536,8 @@ const OOM = {
 		// consistent with https://www.middleeasteye.net/live/live-us-and-israel-attack-iran
 		// which claims that "the first hundred hours have cost $3.7 B" ($0.888 B/d)
 		// https://www.nytimes.com/2026/03/11/world/middleeast/iran-war-costs-pentagon.html?unlocked_article_code=1.SVA.vsUF.0KCfGdZalz4Y
-		new MoneyDatum('Cost to maintain the Iran War for a year (2026)', 25e9/2*12, "https://www.npr.org/2026/04/29/g-s1-119333/the-iran-war-now-has-a-price-tag-25-billion-but-still-no-end-date"),
+		// https://www.npr.org/2026/04/29/g-s1-119333/the-iran-war-now-has-a-price-tag-25-billion-but-still-no-end-date
+		new MoneyDatum('Cost to maintain the Iran War for a year (2026)', 29e9/2*12, "https://www.nytimes.com/2026/05/12/us/politics/iran-war-cost-hegseth-congress.html"),
 		new MoneyDatum('Annual cost of universal free college (US, 2026)', 30e9, "https://www.nytimes.com/2026/03/21/opinion/iran-war-cost.html"),
 		new MoneyDatum('Annual cost of universal universal pre-K (US, 2026)', 35e9, "https://www.nytimes.com/2026/03/21/opinion/iran-war-cost.html"),
 		new MoneyDatum('Space Shuttle Project (2012)', 211e9, "https://en.wikipedia.org/wiki/Space_Shuttle"),
