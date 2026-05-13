@@ -8,7 +8,7 @@
 	font-variant-emoji: text;
 }
 .s::before, .a::before, .b::before, .c::before, .d::before, .f::before {
-	content: '⚫';
+	content: '⚫ ';
 }
 .vowel {
 	font-family: monospace;
