@@ -4356,7 +4356,9 @@ const blogData = [
 		<li>For that matter, throughout the entire <cite>Submachine</cite> series, Mateusz uses highly amusing Polglish variable names.</li>
 		<li><cite>Scuba</cite>: major exploit: by simply placing crafting items in the square,
 		then closing the menu, then reopening it, you can craft an item for free.
-		This leaves "negative" stacks which can simply be deleted.</li>
+		This leaves "negative" stacks which can simply be deleted.
+		You could probably speedrun the game pretty fast with this.
+		</li>
 		<li><cite>Picma Picture Enigmas</cite>: puzzles are stored in XML.</li>
 	</ul>
 	`,
