@@ -1,15 +1,6 @@
 /* exported effectList, effects, freq2note, numberline, playEFG, waves */
-/* global audio, note2name, playTone, range, settings */
+/* global audio, getAllSubsets, note2name, playTone, range, settings */
 'use strict';
-
-// https://stackoverflow.com/a/47147597/2579798
-const getAllSubsets =
-	theArray => theArray.reduce(
-		(subsets, value) => subsets.concat(
-			subsets.map(set => [value, ...set])
-		),
-		[[]]
-	);
 
 /**
  * @param {number} root frequency in hz
