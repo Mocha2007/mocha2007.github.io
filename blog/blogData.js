@@ -4346,17 +4346,18 @@ const blogData = [
 	@date 1778956961315
 	@tags flash submachine
 	<ul class="list2">
-		<li>In <cite>Idle Mine</cite>, clicking the example rock 200 times in the help screen shows a secret message.</li>
-		<li>In <cite>Submachine 2</cite>, wrt. the math puzzle: <ul>
+		<li><cite>Idle Mine</cite>: clicking the example rock 200 times in the help screen shows a secret message.</li>
+		<li><cite>Submachine 2</cite>: wrt. the math puzzle: <ul>
 			<li>It's a lot simpler than I expected, and the possible solution space is much smaller than it could potentially have been.</li>
 			<li>M is a randomly chosen integer between 499 and 998, inclusive</li>
 			<li>C has a 50/50 chance of being 2 or 3 (already assumed this from experience)</li>
 			<li>This means the 4-digit solution can be only one of 1000 numbers, ranging from 1996 to 8982</li>
 		</ul></li>
 		<li>For that matter, throughout the entire <cite>Submachine</cite> series, Mateusz uses highly amusing Polglish variable names.</li>
-		<li>There exists a major exploit in <cite>Scuba</cite> - by simply placing crafting items in the square,
+		<li><cite>Scuba</cite>: major exploit: by simply placing crafting items in the square,
 		then closing the menu, then reopening it, you can craft an item for free.
 		This leaves "negative" stacks which can simply be deleted.</li>
+		<li><cite>Picma Picture Enigmas</cite>: puzzles are stored in XML.</li>
 	</ul>
 	`,
 ];
