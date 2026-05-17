@@ -4347,7 +4347,8 @@ const blogData = [
 	@tags flash submachine
 	<ul class="list2">
 		<li><cite>Doodle God</cite>: elements and recipes appear to be stored as CSV,
-		so modding should theoretically be fairly simple.</li>
+		so modding should theoretically be fairly simple.
+		Also, most elements actually have several proverbs attached to them, not just one.</li>
 		<li><cite>Idle Mine</cite>: clicking the example rock 200 times in the help screen shows a secret message.</li>
 		<li><cite>Oiligarchy</cite>: highly amusing constant name: DOLLARS_PER_BUCK.</li>
 		<li><cite>Picma Picture Enigmas</cite>: puzzles are stored in XML.</li>
