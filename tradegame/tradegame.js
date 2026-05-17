@@ -47,7 +47,7 @@ class Town {
 		if (this.id === GAME.state.location){
 			e.classList.add('location');
 		}
-		e.title = `${this.name}\nDistance: ${GAME.state.town.distance(this).toFixed(0)} km\nTravel Time: ${GAME.state.town.travelTime(this).toFixed(0)} h`;
+		e.title = `${this.name}\nDistance: ${GAME.state.town.distance(this).toFixed(0)} km\nTravel Time: ${GAME.prettyDuration(GAME.state.town.travelTime(this))}`;
 		e.onclick = () => GAME.setLocation(this.id);
 		e.style.left = `${this.x*100}%`;
 		e.style.top = `${this.y*100}%`;
@@ -178,6 +178,12 @@ const GAME = {
 			return wrap(`${s}s ${d}d`);
 		}
 		return wrap(`${d}d`);
+	},
+	prettyDuration(h = 0){
+		const hours = Math.floor(h);
+		const ho = hours % 24;
+		const d = Math.floor(hours / 24);
+		return d ? `${d} d, ${ho} h` : `${ho} h`;
 	},
 	init(){
 		this.state.goods = range(this.config.nGoods)
