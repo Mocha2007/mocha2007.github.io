@@ -109,7 +109,7 @@ const GAME = {
 			const buyContainer = document.createElement('span');
 			buyContainer.classList.add('buyContainer');
 			container.appendChild(buyContainer);
-			buyContainer.appendChild(document.createTextNode('Buy: '));
+			// buyContainer.appendChild(document.createTextNode('Buy: '));
 			const buyAmt = document.createElement('input');
 			buyAmt.type = 'number';
 			buyAmt.value = 0;
@@ -154,7 +154,7 @@ const GAME = {
 			const sellContainer = document.createElement('span');
 			sellContainer.classList.add('sellContainer');
 			container.appendChild(sellContainer);
-			sellContainer.appendChild(document.createTextNode('Sell: '));
+			// sellContainer.appendChild(document.createTextNode('Sell: '));
 			const sellAmt = document.createElement('input');
 			sellAmt.type = 'number';
 			sellAmt.value = 0;
