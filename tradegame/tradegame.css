@@ -90,5 +90,14 @@ h1,h2,h3,h4,h5 {
 }
 .buyNoneButton, .sellNoneButton {
 	background-color: #444;
-	left: -3vw;
+	margin-left: -3vw;
+}
+.buyButton, .sellButton {
+	background-color: #444;
+	display: inline-block;
+	text-align: center;
+	width: 3vw;
+}
+.sellContainer {
+	margin-left: 2vw;
 }

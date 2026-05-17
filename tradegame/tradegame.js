@@ -111,7 +111,7 @@ const GAME = {
 			buyContainer.appendChild(document.createTextNode('Buy: '));
 			const buyAmt = document.createElement('input');
 			buyAmt.type = 'number';
-			buyAmt.value = 1;
+			buyAmt.value = 0;
 			buyContainer.appendChild(buyAmt);
 			const buyMaxButton = document.createElement('span');
 			buyMaxButton.innerHTML = 'max';
@@ -131,6 +131,7 @@ const GAME = {
 			buyContainer.appendChild(buyNoneButton);
 			const buyButton = document.createElement('span');
 			buyButton.innerHTML = 'buy';
+			buyButton.classList.add('buyButton');
 			buyButton.classList.add('button');
 			buyButton.onclick = () => {
 				const amt = +buyAmt.value;
@@ -155,7 +156,7 @@ const GAME = {
 			sellContainer.appendChild(document.createTextNode('Sell: '));
 			const sellAmt = document.createElement('input');
 			sellAmt.type = 'number';
-			sellAmt.value = 1;
+			sellAmt.value = 0;
 			sellContainer.appendChild(sellAmt);
 			const sellMaxButton = document.createElement('span');
 			sellMaxButton.innerHTML = 'max';
@@ -171,6 +172,7 @@ const GAME = {
 			sellContainer.appendChild(sellNoneButton);
 			const sellButton = document.createElement('span');
 			sellButton.innerHTML = 'sell';
+			sellButton.classList.add('sellButton');
 			sellButton.classList.add('button');
 			sellButton.onclick = () => {
 				const amt = +sellAmt.value;
