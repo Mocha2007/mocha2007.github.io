@@ -52,22 +52,19 @@ h1,h2,h3,h4,h5 {
 	width: min(50vh, 100vw);
 }
 .mapIcon {
-	background-color: maroon;
-	border-radius: 1em;
+	background-color: #444;
+	border-radius: 1em 1em 0 0;
 	height: 1em;
 	position: absolute;
 	width: 1em;
 }
-.mapIcon.location {
-	background-color: red;
-	border: 1px solid maroon;
+.mapIcon.location, .mapIcon:hover {
+	background-color: silver;
+	border: 1px solid #444;
+	cursor: pointer;
 }
 .mapIcon.location:hover {
 	cursor: auto;
-}
-.mapIcon:hover {
-	background-color: red;
-	cursor: pointer;
 }
 .buySellContainer {
 	position: absolute;
