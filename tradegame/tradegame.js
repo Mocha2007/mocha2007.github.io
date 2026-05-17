@@ -90,7 +90,7 @@ const GAME = {
 		name: 'Trader',
 		nGoods: 20,
 		nTowns: 20,
-		playerStartMoney: 500,
+		playerStartMoney: 480,
 		/** ms */
 		priceUpdateInterval: 60*60*1000,
 		/** km/h */
@@ -369,7 +369,7 @@ const GAME = {
 		this.elem.map.innerHTML = '';
 		this.state.towns.forEach(t => this.elem.map.appendChild(t.createMapElem()));
 		// update trader info
-		this.elem.player.innerHTML = '';
+		this.elem.player.innerHTML = `Money: ${this.prettyPrice(this.state.player.money)}`;
 		this.state.goods.forEach((g, i) => {
 			const e = document.createElement('div');
 			const amt = this.state.player.goods[i];
