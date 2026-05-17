@@ -100,6 +100,84 @@ const GAME = {
 		varianceQuantum: 0.01,
 	},
 	elem: {
+		createBuySellButtons(goodId = 0){
+			const good = GAME.state.goods[goodId];
+			const container = document.createElement('span');
+			container.classList.add('buySellContainer');
+			// BUY
+			const buyContainer = document.createElement('span');
+			buyContainer.classList.add('buyContainer');
+			container.appendChild(buyContainer);
+			buyContainer.appendChild(document.createTextNode('Buy: '));
+			const buyAmt = document.createElement('input');
+			buyAmt.type = 'number';
+			buyAmt.value = 1;
+			buyContainer.appendChild(buyAmt);
+			const buyMaxButton = document.createElement('span');
+			buyMaxButton.classList.add('buyMaxButton');
+			buyMaxButton.onclick = () => {
+				const price = GAME.state.town.price(good);
+				const maxAmt = Math.floor(GAME.state.player.money / price);
+				buyAmt.value = maxAmt;
+			};
+			buyContainer.appendChild(buyMaxButton);
+			const buyNoneButton = document.createElement('span');
+			buyNoneButton.onclick = () => buyAmt.value = 0;
+			buyNoneButton.classList.add('buyNoneButton');
+			buyContainer.appendChild(buyNoneButton);
+			const buyButton = document.createElement('span');
+			buyButton.onclick = () => {
+				const amt = +buyAmt.value;
+				const priceUnit = GAME.state.town.price(good);
+				const priceTotal = Math.round(amt * priceUnit);
+				if (GAME.state.player.money <= priceTotal) {
+					if (confirm(`Really buy ${amt} ${GAME.state.goods[goodId].name} for ${GAME.prettyPrice(priceTotal)}?`)){
+						GAME.state.player.money -= priceTotal;
+						GAME.state.player.goods[goodId] += amt;
+					}
+				}
+				else {
+					alert('Insufficient funds.');
+				}
+			};
+			buyButton.classList.add('buyButton');
+			buyContainer.appendChild(buyButton);
+			// SELL
+			const sellContainer = document.createElement('span');
+			sellContainer.classList.add('sellContainer');
+			container.appendChild(sellContainer);
+			sellContainer.appendChild(document.createTextNode('Sell: '));
+			const sellAmt = document.createElement('input');
+			sellAmt.type = 'number';
+			sellAmt.value = 1;
+			sellContainer.appendChild(sellAmt);
+			const sellMaxButton = document.createElement('span');
+			sellMaxButton.classList.add('sellMaxButton');
+			sellMaxButton.onclick = () => sellAmt.value = GAME.state.player.goods[goodId];
+			sellContainer.appendChild(sellMaxButton);
+			const sellNoneButton = document.createElement('span');
+			sellNoneButton.onclick = () => sellAmt.value = 0;
+			sellNoneButton.classList.add('sellNoneButton');
+			sellContainer.appendChild(sellNoneButton);
+			const sellButton = document.createElement('span');
+			sellButton.onclick = () => {
+				const amt = +sellAmt.value;
+				const priceUnit = GAME.state.town.price(good);
+				const priceTotal = Math.round(amt * priceUnit);
+				if (amt <= GAME.state.player.goods[goodId]) {
+					if (confirm(`Really sell ${amt} ${GAME.state.goods[goodId].name} for ${GAME.prettyPrice(priceTotal)}?`)){
+						GAME.state.player.goods[goodId] -= amt;
+						GAME.state.player.money += priceTotal;
+					}
+				}
+				else {
+					alert('Insufficient goods.');
+				}
+			};
+			sellButton.classList.add('sellButton');
+			sellContainer.appendChild(sellButton);
+			return container;
+		},
 		createHeader(n = 1, s = ""){
 			const e = document.createElement(`h${n}`);
 			e.innerHTML = s;
@@ -169,6 +247,8 @@ const GAME = {
 		goods: [],
 		location: 0,
 		player: {
+			/** @type {number[]} */
+			goods: [],
 			money: 0,
 		},
 		t: 0,
@@ -241,6 +321,7 @@ const GAME = {
 		}
 		this.setLocation(0);
 		this.state.player.money = this.config.playerStartMoney;
+		this.state.player.goods = new Array(this.config.nGoods).fill(0);
 		console.info('tradegame.js loaded');
 	},
 	passTime(t = 0){
