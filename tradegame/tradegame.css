@@ -2,4 +2,12 @@ html, body {
 	background-color: black;
 	color: silver;
 	font-family: monospace;
+	user-select: none;
+}
+.price {
+	color: gold;
+}
+.price:hover {
+	color: #fe8;
+	text-shadow: 0 0 2px gold;
 }

@@ -76,18 +76,19 @@ const GAME = {
 		priceList: undefined,
 	},
 	prettyPrice(x = 0){
+		const wrap = s => `<span class="price">${s}</span>`;
 		let r = Math.round(x);
 		const d = r % 12;
 		r = Math.floor(r / 12);
 		const s = r % 20;
 		const l = Math.floor(r / 20);
 		if (l) {
-			return `${l} £ ${s} s ${d} d`;
+			return wrap(`${l}£ ${s}s ${d}d`);
 		}
 		if (s) {
-			return `${s} s ${d} d`;
+			return wrap(`${s}s ${d}d`);
 		}
-		return `${d} d`;
+		return wrap(`${d}d`);
 	},
 	state: {
 		/** @type {Good[]} */
