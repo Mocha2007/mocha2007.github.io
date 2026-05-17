@@ -172,7 +172,7 @@ const GAME = {
 		}
 	},
 	prettyPrice(x = 0){
-		const wrap = s => `<span class="price">${s}</span>`;
+		const wrap = s => `<span class="price" title="${x.toFixed(0)} pence">${s}</span>`;
 		let r = Math.round(x);
 		const d = r % 12;
 		r = Math.floor(r / 12);
