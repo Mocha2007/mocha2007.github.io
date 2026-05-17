@@ -12,10 +12,10 @@ class Good {
 	get price(){
 		return this.priceBase * (1 + (2*this.variance - 1) * GAME.config.varianceScaleGood);
 	}
-	createElem(){
+	createElem(priceOverride){
 		const e = document.createElement('div');
 		e.classList.add('good');
-		e.innerHTML = `${this.name} = ${GAME.prettyPrice(this.price)}`;
+		e.innerHTML = `${this.name} = ${GAME.prettyPrice(priceOverride || this.price)}`;
 		return e;
 	}
 	tick(){
@@ -30,6 +30,13 @@ class Town {
 		this.x = Math.random();
 		this.y = Math.random();
 		this.variances = range(GAME.config.nGoods).map(_ => Math.random());
+	}
+	createElem(){
+		const e = document.createElement('div');
+		e.classList.add('town');
+		e.appendChild(GAME.elem.createHeader(3, this.name));
+		GAME.state.goods.forEach(g => e.appendChild(g.createElem(this.price(g))));
+		return e;
 	}
 	/** @param {Good} good  */
 	price(good){
