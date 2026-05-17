@@ -1,11 +1,16 @@
+const range = n => (new Array(n)).fill(0).map((_, i) => i);
+
 class Good {
 	constructor(name = "", priceBase = 0){
 		this.name = name;
 		this.priceBase = priceBase;
 		this.variance = Math.random();
 	}
+	get id(){
+		return GAME.state.goods.indexOf(this);
+	}
 	get price(){
-		return this.priceBase * (1 + this.variance * GAME.config.varianceScale);
+		return this.priceBase * (1 + (2*this.variance - 1) * GAME.config.varianceScaleGood);
 	}
 	createElem(){
 		const e = document.createElement('div');
@@ -16,6 +21,22 @@ class Good {
 	tick(){
 		this.variance += (Math.random < this.variance ? -1 : 1)
 			* GAME.config.varianceQuantum;
+	}
+}
+
+class Town {
+	constructor(){
+		this.name = Town.randomName();
+		this.x = Math.random();
+		this.y = Math.random();
+		this.variances = range(GAME.config.nGoods).map(_ => Math.random());
+	}
+	/** @param {Good} good  */
+	price(good){
+		return good.price * (1 + (2*this.variances[good.id]-1) * GAME.config.varianceScaleTown);
+	}
+	static randomName(){
+		return "Town";
 	}
 }
 
@@ -31,9 +52,11 @@ const GAME = {
 			"Gold", "Silk", "Tomes", "Gems"
 		],
 		nGoods: 20,
+		nTowns: 20,
 		/** ms */
 		priceUpdateInterval: 60*60*1000,
-		varianceScale: 0.75,
+		varianceScaleGood: 0.5,
+		varianceScaleTown: 0.5,
 		varianceQuantum: 0.01,
 	},
 	elem: {
@@ -63,10 +86,14 @@ const GAME = {
 		/** @type {Good[]} */
 		goods: [],
 		t: 0,
+		/** @type {Town[]} */
+		towns: [],
 	},
 	init(){
-		this.state.goods = (new Array(this.config.nGoods)).fill(0)
-			.map((_, i) => new Good(this.config.goodNames[i], this.config.goodPriceBase * Math.pow(this.config.goodPriceScaling, i)));
+		this.state.goods = range(this.config.nGoods)
+			.map(i => new Good(this.config.goodNames[i], this.config.goodPriceBase * Math.pow(this.config.goodPriceScaling, i)));
+		this.state.towns = range(this.config.nTowns)
+			.map(i => new Town());
 		if (!this.elem.priceList) {
 			const priceListContainer = document.createElement('div');
 			document.body.appendChild(priceListContainer);
