@@ -137,7 +137,7 @@ const GAME = {
 				const amt = +buyAmt.value;
 				const priceUnit = GAME.state.town.price(good);
 				const priceTotal = Math.round(amt * priceUnit);
-				if (GAME.state.player.money <= priceTotal) {
+				if (priceTotal <= GAME.state.player.money) {
 					if (confirm(`Really buy ${amt} ${GAME.state.goods[goodId].name} for ${GAME.prettyPrice(priceTotal)}?`)){
 						GAME.state.player.money -= priceTotal;
 						GAME.state.player.goods[goodId] += amt;
