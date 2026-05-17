@@ -90,6 +90,7 @@ const GAME = {
 		name: 'Trader',
 		nGoods: 20,
 		nTowns: 20,
+		playerStartMoney: 500,
 		/** ms */
 		priceUpdateInterval: 60*60*1000,
 		/** km/h */
@@ -167,6 +168,9 @@ const GAME = {
 		/** @type {Good[]} */
 		goods: [],
 		location: 0,
+		player: {
+			money: 0,
+		},
 		t: 0,
 		get town(){
 			return this.towns[this.location];
@@ -236,6 +240,7 @@ const GAME = {
 			document.body.appendChild(map);
 		}
 		this.setLocation(0);
+		this.state.player.money = this.config.playerStartMoney;
 		console.info('tradegame.js loaded');
 	},
 	passTime(t = 0){
