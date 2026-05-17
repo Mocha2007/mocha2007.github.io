@@ -44,6 +44,7 @@ h1,h2,h3,h4,h5 {
 }
 #map {
 	background-color: beige;
+	border-radius: min(4vh, 8vw);
 	bottom: 0;
 	height: min(50vh, 100vw);
 	left: calc(50vw - min(25vh, 50vw));
