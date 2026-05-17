@@ -88,8 +88,23 @@ const GAME = {
 	},
 	// todo
 	nameGen: {
-		consonants: "ptkbdgmns".split(''),
-		vowels: "aeiou".split(''),
+		phones: {
+			get consonant(){
+				return []
+					.concat(this.plosive)
+					.concat(this.liquid)
+					.concat(this.nasal)
+					.concat(this.fricative);
+			},
+			fricative: 'fvsz'.split(''),
+			liquid: 'lr'.split(''),
+			nasal: 'mn'.split(''),
+			plosive: 'ptkbdg'.split(''),
+			vowel: "aeiou".split(''),
+		},
+		sylls: [
+			['consonant', 'vowel'],
+		],
 		/** @param {Array} arr  */
 		choice(arr){
 			return arr[Math.floor(arr.length * Math.random())];
@@ -102,9 +117,11 @@ const GAME = {
 			return s;
 		},
 		syllable(cap = false){
-			const onset = this.choice(this.consonants);
-			const onset2 = cap ? onset.toUpperCase() : onset;
-			return onset2 + this.choice(this.vowels);
+			const form = this.choice(this.sylls);
+			return form.map((cat, i) => {
+				const raw = this.choice(this.phones[cat]);
+				return cap && i === 0 ? raw.toUpperCase() : raw;
+			}).join('');
 		},
 	},
 	state: {
