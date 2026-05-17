@@ -26,7 +26,7 @@ class Good {
 
 class Town {
 	constructor(){
-		this.name = Town.randomName();
+		this.name = GAME.nameGen.name();
 		this.x = Math.random();
 		this.y = Math.random();
 		this.variances = range(GAME.config.nGoods).map(_ => Math.random());
@@ -53,9 +53,6 @@ class Town {
 	/** @param {Good} good  */
 	price(good){
 		return good.price * (1 + (2*this.variances[good.id]-1) * GAME.config.varianceScaleTown);
-	}
-	static randomName(){
-		return "Town";
 	}
 }
 
@@ -89,6 +86,38 @@ const GAME = {
 		/** @type {HTMLDivElement} */
 		priceList: undefined,
 	},
+	// todo
+	nameGen: {
+		consonants: "ptkbdgmns".split(''),
+		vowels: "aeiou".split(''),
+		/** @param {Array} arr  */
+		choice(arr){
+			return arr[Math.floor(arr.length * Math.random())];
+		},
+		name(){
+			let s = '';
+			for (let i = 0; i < 1.5 + 2*Math.random(); i++) {
+				s += this.syllable(i === 0);
+			}
+			return s;
+		},
+		syllable(cap = false){
+			const onset = this.choice(this.consonants);
+			const onset2 = cap ? onset.toUpperCase() : onset;
+			return onset2 + this.choice(this.vowels);
+		},
+	},
+	state: {
+		/** @type {Good[]} */
+		goods: [],
+		location: 0,
+		t: 0,
+		get town(){
+			return this.towns[this.location];
+		},
+		/** @type {Town[]} */
+		towns: [],
+	},
 	prettyPrice(x = 0){
 		const wrap = s => `<span class="price">${s}</span>`;
 		let r = Math.round(x);
@@ -103,17 +132,6 @@ const GAME = {
 			return wrap(`${s}s ${d}d`);
 		}
 		return wrap(`${d}d`);
-	},
-	state: {
-		/** @type {Good[]} */
-		goods: [],
-		location: 0,
-		t: 0,
-		get town(){
-			return this.towns[this.location];
-		},
-		/** @type {Town[]} */
-		towns: [],
 	},
 	init(){
 		this.state.goods = range(this.config.nGoods)
