@@ -6,11 +6,17 @@ html, body {
 	margin: 0;
 	user-select: none;
 }
+h1,h2,h3,h4,h5 {
+	text-align: center;
+}
 #priceListContainer {
-	height: 50vh;
-	padding: 1vh 1vw;
 	font-size: 1.7vh;
-	width: 100vw;
+	height: 50vh;
+	left: 0;
+	padding: 1vh 1vw;
+	position: absolute;
+	top: 0;
+	width: 49vw;
 }
 .price {
 	color: gold;
@@ -19,10 +25,20 @@ html, body {
 	color: #fe8;
 	text-shadow: 0 0 2px gold;
 }
+#playerContainer {
+	height: 50vh;
+	padding: 1vh 1vw;
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 49vw;
+}
 #map {
 	background-color: beige;
+	bottom: 0;
 	height: min(50vh, 100vw);
-	position: relative;
+	left: calc(50vw - min(25vh, 50vw));
+	position: absolute;
 	margin: 0 auto;
 	width: min(50vh, 100vw);
 }

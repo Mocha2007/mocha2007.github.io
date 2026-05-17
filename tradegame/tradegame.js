@@ -80,6 +80,7 @@ const GAME = {
 			"Wine", "Bronze", "Tools", "Silver",
 			"Gold", "Silk", "Tomes", "Gems"
 		],
+		name: 'Trader',
 		nGoods: 20,
 		nTowns: 20,
 		/** ms */
@@ -98,6 +99,8 @@ const GAME = {
 		},
 		/** @type {HTMLDivElement} */
 		map: undefined,
+		/** @type {HTMLDivElement} */
+		player: undefined,
 		/** @type {HTMLDivElement} */
 		priceList: undefined,
 	},
@@ -205,6 +208,15 @@ const GAME = {
 			const priceList = this.elem.priceList = document.createElement('div');
 			priceList.id = 'priceList';
 			priceListContainer.appendChild(priceList);
+		}
+		if (!this.elem.player) {
+			const playerContainer = document.createElement('div');
+			playerContainer.id = 'playerContainer';
+			document.body.appendChild(playerContainer);
+			playerContainer.appendChild(this.elem.createHeader(2, this.config.name || prompt('Name:')));
+			const player = this.elem.player = document.createElement('div');
+			player.id = 'player';
+			playerContainer.appendChild(player);
 		}
 		if (!this.elem.map) {
 			const map = this.elem.map = document.createElement('div');
