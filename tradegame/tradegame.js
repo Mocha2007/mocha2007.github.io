@@ -47,20 +47,30 @@ class Town {
 		if (this.id === GAME.state.location){
 			e.classList.add('location');
 		}
-		e.title = this.name;
+		e.title = `${this.name}\nDistance: ${GAME.state.town.distance(this).toFixed(0)} km\nTravel Time: ${GAME.state.town.travelTime(this).toFixed(0)} h`;
 		e.onclick = () => GAME.setLocation(this.id);
 		e.style.left = `${this.x*100}%`;
 		e.style.top = `${this.y*100}%`;
 		return e;
 	}
+	/** @param {Town} other */
+	distance(other){
+		return Math.hypot((this.x - other.x), (this.y - other.y)) * GAME.config.distanceScale;
+	}
 	/** @param {Good} good  */
 	price(good){
 		return good.price * (1 + (2*this.variances[good.id]-1) * GAME.config.varianceScaleTown);
+	}
+	/** @param {Town} other */
+	travelTime(other){
+		return this.distance(other) / GAME.config.travelSpeed;
 	}
 }
 
 const GAME = {
 	config: {
+		/* map width/height, in km */
+		distanceScale: 1000,
 		goodPriceBase: 4,
 		goodPriceScaling: 1.36,
 		goodNames: [
@@ -74,6 +84,8 @@ const GAME = {
 		nTowns: 20,
 		/** ms */
 		priceUpdateInterval: 60*60*1000,
+		/** km/h */
+		travelSpeed: 5,
 		varianceScaleGood: 0.5,
 		varianceScaleTown: 0.5,
 		varianceQuantum: 0.01,
@@ -139,6 +151,9 @@ const GAME = {
 		},
 	},
 	state: {
+		get date(){
+			return new Date(1000, 0, 1, 0, 0, 0, this.t);
+		},
 		/** @type {Good[]} */
 		goods: [],
 		location: 0,
@@ -173,7 +188,7 @@ const GAME = {
 			const priceListContainer = document.createElement('div');
 			priceListContainer.id = 'priceListContainer';
 			document.body.appendChild(priceListContainer);
-			priceListContainer.appendChild(this.elem.createHeader(2, "Prices in <span class='insertTownName'></span>"));
+			priceListContainer.appendChild(this.elem.createHeader(2, "Prices in <span class='insertTownName'></span> on <span class='insertDate'></span>"));
 			const priceList = this.elem.priceList = document.createElement('div');
 			priceList.id = 'priceList';
 			priceListContainer.appendChild(priceList);
@@ -194,9 +209,13 @@ const GAME = {
 		}
 	},
 	setLocation(id = 0){
+		const travelTime = this.state.town.travelTime(this.state.towns[id]) * 60*60*1000;
+		this.passTime(travelTime);
 		this.state.location = id;
 		Array.from(document.getElementsByClassName('insertTownName'))
 			.forEach(e => e.innerHTML = this.state.town.name);
+		Array.from(document.getElementsByClassName('insertDate'))
+			.forEach(e => e.innerHTML = this.state.date.toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'}));
 		// alert(`todo: moved to #${id}`);
 		this.updateInterface();
 	},
