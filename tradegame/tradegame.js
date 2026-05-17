@@ -123,7 +123,7 @@ const GAME = {
 		if (!this.elem.priceList) {
 			const priceListContainer = document.createElement('div');
 			document.body.appendChild(priceListContainer);
-			priceListContainer.appendChild(this.elem.createHeader(2, "Prices"));
+			priceListContainer.appendChild(this.elem.createHeader(2, "Prices in <span class='insertTownName'></span>"));
 			const priceList = this.elem.priceList = document.createElement('div');
 			priceList.id = 'priceList';
 			priceListContainer.appendChild(priceList);
@@ -133,7 +133,7 @@ const GAME = {
 			map.id = 'map';
 			document.body.appendChild(map);
 		}
-		this.updateInterface();
+		this.setLocation(0);
 		console.info('tradegame.js loaded');
 	},
 	passTime(t = 0){
@@ -145,7 +145,10 @@ const GAME = {
 	},
 	setLocation(id = 0){
 		this.state.location = id;
-		alert(`todo: moved to #${id}`);
+		Array.from(document.getElementsByClassName('insertTownName'))
+			.forEach(e => e.innerHTML = this.state.town.name);
+		// alert(`todo: moved to #${id}`);
+		this.updateInterface();
 	},
 	tick(){
 		this.state.goods.forEach(g => g.tick());
@@ -153,7 +156,7 @@ const GAME = {
 	},
 	updateInterface(){
 		this.elem.priceList.innerHTML = '';
-		this.state.goods.forEach(g => this.elem.priceList.appendChild(g.createElem()));
+		this.state.goods.forEach(g => this.elem.priceList.appendChild(g.createElem(this.state.town.price(g))));
 		this.elem.map.innerHTML = '';
 		this.state.towns.forEach(t => this.elem.map.appendChild(t.createMapElem()))
 	},
