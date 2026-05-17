@@ -101,3 +101,10 @@ h1,h2,h3,h4,h5 {
 .sellContainer {
 	margin-left: 2vw;
 }
+#version {
+	bottom: 0;
+	color: gray;
+	font-size: 75%;
+	position: absolute;
+	right: 0;
+}

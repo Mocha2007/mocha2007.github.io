@@ -73,6 +73,7 @@ class MoneyFormat {
 }
 
 const GAME = {
+	version: '26w21',
 	config: {
 		dateFormat: {month: 'long', day: 'numeric', year: 'numeric'},
 		/* map width/height, in km */
@@ -203,6 +204,8 @@ const GAME = {
 		player: undefined,
 		/** @type {HTMLDivElement} */
 		priceList: undefined,
+		/** @type {HTMLDivElement} */
+		version: undefined,
 	},
 	// todo
 	nameGen: {
@@ -333,6 +336,12 @@ const GAME = {
 			const map = this.elem.map = document.createElement('div');
 			map.id = 'map';
 			document.body.appendChild(map);
+		}
+		if (!this.elem.version) {
+			const version = this.elem.version = document.createElement('div');
+			version.id = version.title = 'version';
+			version.innerHTML = this.version;
+			document.body.appendChild(version);
 		}
 		this.setLocation(0);
 		console.info('tradegame.js loaded');
