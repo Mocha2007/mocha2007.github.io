@@ -4360,6 +4360,9 @@ const blogData = [
 		You could probably speedrun the game pretty fast with this.
 		</li>
 		<li><cite>Picma Picture Enigmas</cite>: puzzles are stored in XML.</li>
+		<li><cite>Pandemic American Swine</cite>: every state is its own AS class, because... reasons?
+		Also, the music (3 minutes long main theme and 1 minute long menu theme) is set to loop only 9,999,999 times,
+		so theoretically if you leave the game running long enough (57 years for the main screen, 19 years for the menu screen), the music will stop.</li>
 	</ul>
 	`,
 ];
