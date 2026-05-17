@@ -48,7 +48,7 @@ class Town {
 			e.classList.add('location');
 		}
 		e.title = `${this.name}\nDistance: ${GAME.state.town.distance(this).toFixed(0)} km\nTravel Time: ${GAME.prettyDuration(GAME.state.town.travelTime(this))}`;
-		e.onclick = () => GAME.setLocation(this.id);
+		e.onclick = () => GAME.confirmTravel(this.id);
 		e.style.left = `${this.x*100}%`;
 		e.style.top = `${this.y*100}%`;
 		return e;
@@ -163,6 +163,13 @@ const GAME = {
 		},
 		/** @type {Town[]} */
 		towns: [],
+	},
+	confirmTravel(id = 0){
+		const destination = this.state.towns[id];
+		const t = this.state.town.travelTime(destination);
+		if (confirm(`Are you sure you wish to spend ${this.prettyDuration(t)} travelling to ${destination.name}?`)) {
+			this.setLocation(id);
+		}
 	},
 	prettyPrice(x = 0){
 		const wrap = s => `<span class="price">${s}</span>`;
