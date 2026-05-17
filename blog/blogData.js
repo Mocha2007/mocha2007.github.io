@@ -4346,7 +4346,19 @@ const blogData = [
 	@date 1778956961315
 	@tags flash submachine
 	<ul class="list2">
+		<li><cite>Doodle God</cite>: elements and recipes appear to be stored as CSV,
+		so modding should theoretically be fairly simple.</li>
 		<li><cite>Idle Mine</cite>: clicking the example rock 200 times in the help screen shows a secret message.</li>
+		<li><cite>Oiligarchy</cite>: highly amusing constant name: DOLLARS_PER_BUCK.</li>
+		<li><cite>Picma Picture Enigmas</cite>: puzzles are stored in XML.</li>
+		<li><cite>Pandemic American Swine</cite>: every state is its own AS class, because... reasons?
+		Also, the music (3 minutes long main theme and 1 minute long menu theme) is set to loop only 9,999,999 times,
+		so theoretically if you leave the game running long enough (57 years for the main screen, 19 years for the menu screen), the music will stop.</li>
+		<li><cite>Scuba</cite>: major exploit: by simply placing crafting items in the square,
+		then closing the menu, then reopening it, you can craft an item for free.
+		This leaves "negative" stacks which can simply be deleted.
+		You could probably speedrun the game pretty fast with this.
+		</li>
 		<li><cite>Submachine 2</cite>: wrt. the math puzzle: <ul>
 			<li>It's a lot simpler than I expected, and the possible solution space is much smaller than it could potentially have been.</li>
 			<li>M is a randomly chosen integer between 499 and 998, inclusive</li>
@@ -4354,16 +4366,6 @@ const blogData = [
 			<li>This means the 4-digit solution can be only one of 1000 numbers, ranging from 1996 to 8982</li>
 		</ul></li>
 		<li>For that matter, throughout the entire <cite>Submachine</cite> series, Mateusz uses highly amusing Polglish variable names.</li>
-		<li><cite>Scuba</cite>: major exploit: by simply placing crafting items in the square,
-		then closing the menu, then reopening it, you can craft an item for free.
-		This leaves "negative" stacks which can simply be deleted.
-		You could probably speedrun the game pretty fast with this.
-		</li>
-		<li><cite>Picma Picture Enigmas</cite>: puzzles are stored in XML.</li>
-		<li><cite>Pandemic American Swine</cite>: every state is its own AS class, because... reasons?
-		Also, the music (3 minutes long main theme and 1 minute long menu theme) is set to loop only 9,999,999 times,
-		so theoretically if you leave the game running long enough (57 years for the main screen, 19 years for the menu screen), the music will stop.</li>
-		<li><cite>Oiligarchy</cite>: highly amusing constant name: DOLLARS_PER_BUCK.</li>
 	</ul>
 	`,
 ];
