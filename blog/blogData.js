@@ -4363,6 +4363,7 @@ const blogData = [
 		<li><cite>Pandemic American Swine</cite>: every state is its own AS class, because... reasons?
 		Also, the music (3 minutes long main theme and 1 minute long menu theme) is set to loop only 9,999,999 times,
 		so theoretically if you leave the game running long enough (57 years for the main screen, 19 years for the menu screen), the music will stop.</li>
+		<li><cite>Oiligarchy</cite>: highly amusing constant name: DOLLARS_PER_BUCK.</li>
 	</ul>
 	`,
 ];
