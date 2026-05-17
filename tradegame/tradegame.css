@@ -21,14 +21,16 @@ html, body {
 }
 #map {
 	background-color: beige;
-	height: 50vh;
-	width: 100vw;
+	height: min(50vh, 100vw);
+	position: relative;
+	margin: 0 auto;
+	width: min(50vh, 100vw);
 }
 .mapIcon {
 	background-color: maroon;
 	border-radius: 1em;
 	height: 1em;
-	position: relative;
+	position: absolute;
 	width: 1em;
 }
 .mapIcon.location {

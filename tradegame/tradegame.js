@@ -27,8 +27,8 @@ class Good {
 class Town {
 	constructor(){
 		this.name = GAME.nameGen.name();
-		this.x = Math.random();
-		this.y = Math.random();
+		this.x = Math.random()*0.8 + 0.1;
+		this.y = Math.random()*0.8 + 0.1;
 		this.variances = range(GAME.config.nGoods).map(_ => Math.random());
 	}
 	get id(){
