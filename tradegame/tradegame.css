@@ -2,7 +2,15 @@ html, body {
 	background-color: black;
 	color: silver;
 	font-family: monospace;
+	overflow: hidden;
+	margin: 0;
 	user-select: none;
+}
+#priceListContainer {
+	height: 50vh;
+	padding: 1vh 1vw;
+	font-size: 1.7vh;
+	width: 100vw;
 }
 .price {
 	color: gold;
@@ -13,6 +21,8 @@ html, body {
 }
 #map {
 	background-color: beige;
+	height: 50vh;
+	width: 100vw;
 }
 .mapIcon {
 	background-color: maroon;

@@ -168,6 +168,7 @@ const GAME = {
 			.map(i => new Town());
 		if (!this.elem.priceList) {
 			const priceListContainer = document.createElement('div');
+			priceListContainer.id = 'priceListContainer';
 			document.body.appendChild(priceListContainer);
 			priceListContainer.appendChild(this.elem.createHeader(2, "Prices in <span class='insertTownName'></span>"));
 			const priceList = this.elem.priceList = document.createElement('div');
