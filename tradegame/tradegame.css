@@ -2,13 +2,22 @@ html, body {
 	background-color: black;
 	color: silver;
 	font-family: monospace;
-	font-size: 1.5vh;
+	font-size: 1.55vh;
 	overflow: hidden;
 	margin: 0;
 	user-select: none;
 }
 h1,h2,h3,h4,h5 {
 	text-align: center;
+}
+.button {
+	cursor: pointer;
+}
+.button:hover {
+	opacity: 75%;
+}
+.button:active {
+	opacity: 50%;
 }
 #priceListContainer {
 	height: 50vh;
@@ -65,6 +74,21 @@ h1,h2,h3,h4,h5 {
 	right: 0;
 }
 .buySellContainer input {
-	max-height: 0.5em;
+	max-height: 0.7em;
 	max-width: 3em;
+}
+.buyMaxButton, .buyNoneButton, .sellMaxButton, .sellNoneButton {
+	display: inline-block;
+	font-size: 50%;
+	position: relative;
+	text-align: center;
+	width: 3vw;
+}
+.buyMaxButton, .sellMaxButton {
+	background-color: maroon;
+	top: -1em;
+}
+.buyNoneButton, .sellNoneButton {
+	background-color: #444;
+	left: -3vw;
 }

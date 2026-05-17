@@ -114,6 +114,8 @@ const GAME = {
 			buyAmt.value = 1;
 			buyContainer.appendChild(buyAmt);
 			const buyMaxButton = document.createElement('span');
+			buyMaxButton.innerHTML = 'max';
+			buyMaxButton.classList.add('button');
 			buyMaxButton.classList.add('buyMaxButton');
 			buyMaxButton.onclick = () => {
 				const price = GAME.state.town.price(good);
@@ -122,10 +124,14 @@ const GAME = {
 			};
 			buyContainer.appendChild(buyMaxButton);
 			const buyNoneButton = document.createElement('span');
+			buyNoneButton.innerHTML = 'none';
+			buyNoneButton.classList.add('button');
 			buyNoneButton.onclick = () => buyAmt.value = 0;
 			buyNoneButton.classList.add('buyNoneButton');
 			buyContainer.appendChild(buyNoneButton);
 			const buyButton = document.createElement('span');
+			buyButton.innerHTML = 'buy';
+			buyButton.classList.add('button');
 			buyButton.onclick = () => {
 				const amt = +buyAmt.value;
 				const priceUnit = GAME.state.town.price(good);
@@ -152,14 +158,20 @@ const GAME = {
 			sellAmt.value = 1;
 			sellContainer.appendChild(sellAmt);
 			const sellMaxButton = document.createElement('span');
+			sellMaxButton.innerHTML = 'max';
+			sellMaxButton.classList.add('button');
 			sellMaxButton.classList.add('sellMaxButton');
 			sellMaxButton.onclick = () => sellAmt.value = GAME.state.player.goods[goodId];
 			sellContainer.appendChild(sellMaxButton);
 			const sellNoneButton = document.createElement('span');
+			sellNoneButton.innerHTML = 'none';
+			sellNoneButton.classList.add('button');
 			sellNoneButton.onclick = () => sellAmt.value = 0;
 			sellNoneButton.classList.add('sellNoneButton');
 			sellContainer.appendChild(sellNoneButton);
 			const sellButton = document.createElement('span');
+			sellButton.innerHTML = 'sell';
+			sellButton.classList.add('button');
 			sellButton.onclick = () => {
 				const amt = +sellAmt.value;
 				const priceUnit = GAME.state.town.price(good);
