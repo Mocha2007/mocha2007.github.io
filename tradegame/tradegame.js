@@ -44,6 +44,9 @@ class Town {
 	createMapElem(){
 		const e = document.createElement('div');
 		e.classList.add('mapIcon');
+		if (this.id === GAME.state.location){
+			e.classList.add('location');
+		}
 		e.title = this.name;
 		e.onclick = () => GAME.setLocation(this.id);
 		e.style.left = `${this.x*100}%`;

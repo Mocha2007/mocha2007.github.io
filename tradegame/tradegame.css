@@ -31,6 +31,13 @@ html, body {
 	position: relative;
 	width: 1em;
 }
+.mapIcon.location {
+	background-color: red;
+	border: 1px solid maroon;
+}
+.mapIcon.location:hover {
+	cursor: auto;
+}
 .mapIcon:hover {
 	background-color: red;
 	cursor: pointer;
