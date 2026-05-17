@@ -74,6 +74,7 @@ class MoneyFormat {
 
 const GAME = {
 	config: {
+		dateFormat: {month: 'long', day: 'numeric', year: 'numeric'},
 		/* map width/height, in km */
 		distanceScale: 1000,
 		goodPriceBase: 4,
@@ -251,7 +252,7 @@ const GAME = {
 		Array.from(document.getElementsByClassName('insertTownName'))
 			.forEach(e => e.innerHTML = this.state.town.name);
 		Array.from(document.getElementsByClassName('insertDate'))
-			.forEach(e => e.innerHTML = this.state.date.toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'}));
+			.forEach(e => e.innerHTML = this.state.date.toLocaleDateString('en-US', this.config.dateFormat));
 		// alert(`todo: moved to #${id}`);
 		this.updateInterface();
 	},
