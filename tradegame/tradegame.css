@@ -11,3 +11,17 @@ html, body {
 	color: #fe8;
 	text-shadow: 0 0 2px gold;
 }
+#map {
+	background-color: beige;
+}
+.mapIcon {
+	background-color: maroon;
+	border-radius: 1em;
+	height: 1em;
+	position: relative;
+	width: 1em;
+}
+.mapIcon:hover {
+	background-color: red;
+	cursor: pointer;
+}

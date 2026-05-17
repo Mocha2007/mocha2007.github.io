@@ -31,11 +31,23 @@ class Town {
 		this.y = Math.random();
 		this.variances = range(GAME.config.nGoods).map(_ => Math.random());
 	}
+	get id(){
+		return GAME.state.towns.indexOf(this);
+	}
 	createElem(){
 		const e = document.createElement('div');
 		e.classList.add('town');
 		e.appendChild(GAME.elem.createHeader(3, this.name));
 		GAME.state.goods.forEach(g => e.appendChild(g.createElem(this.price(g))));
+		return e;
+	}
+	createMapElem(){
+		const e = document.createElement('div');
+		e.classList.add('mapIcon');
+		e.title = this.name;
+		e.onclick = () => GAME.setLocation(this.id);
+		e.style.left = `${this.x*100}%`;
+		e.style.top = `${this.y*100}%`;
 		return e;
 	}
 	/** @param {Good} good  */
@@ -73,6 +85,8 @@ const GAME = {
 			return e;
 		},
 		/** @type {HTMLDivElement} */
+		map: undefined,
+		/** @type {HTMLDivElement} */
 		priceList: undefined,
 	},
 	prettyPrice(x = 0){
@@ -93,7 +107,11 @@ const GAME = {
 	state: {
 		/** @type {Good[]} */
 		goods: [],
+		location: 0,
 		t: 0,
+		get town(){
+			return this.towns[this.location];
+		},
 		/** @type {Town[]} */
 		towns: [],
 	},
@@ -110,6 +128,11 @@ const GAME = {
 			priceList.id = 'priceList';
 			priceListContainer.appendChild(priceList);
 		}
+		if (!this.elem.map) {
+			const map = this.elem.map = document.createElement('div');
+			map.id = 'map';
+			document.body.appendChild(map);
+		}
 		this.updateInterface();
 		console.info('tradegame.js loaded');
 	},
@@ -120,6 +143,10 @@ const GAME = {
 			this.tick();
 		}
 	},
+	setLocation(id = 0){
+		this.state.location = id;
+		alert(`todo: moved to #${id}`);
+	},
 	tick(){
 		this.state.goods.forEach(g => g.tick());
 		this.updateInterface();
@@ -127,6 +154,8 @@ const GAME = {
 	updateInterface(){
 		this.elem.priceList.innerHTML = '';
 		this.state.goods.forEach(g => this.elem.priceList.appendChild(g.createElem()));
+		this.elem.map.innerHTML = '';
+		this.state.towns.forEach(t => this.elem.map.appendChild(t.createMapElem()))
 	},
 };
 
