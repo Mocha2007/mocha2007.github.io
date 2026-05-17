@@ -67,6 +67,11 @@ class Town {
 	}
 }
 
+class MoneyFormat {
+	static LSD = 0;
+	static DECIMAL = 1;
+}
+
 const GAME = {
 	config: {
 		/* map width/height, in km */
@@ -80,6 +85,7 @@ const GAME = {
 			"Wine", "Bronze", "Tools", "Silver",
 			"Gold", "Silk", "Tomes", "Gems"
 		],
+		moneyFormat: MoneyFormat.LSD,
 		name: 'Trader',
 		nGoods: 20,
 		nTowns: 20,
@@ -177,17 +183,22 @@ const GAME = {
 	prettyPrice(x = 0){
 		const wrap = s => `<span class="price" title="${x.toFixed(0)} pence">${s}</span>`;
 		let r = Math.round(x);
-		const d = r % 12;
-		r = Math.floor(r / 12);
-		const s = r % 20;
-		const l = Math.floor(r / 20);
-		if (l) {
-			return wrap(`${l}£ ${s}s ${d}d`);
+		if (this.config.moneyFormat === MoneyFormat.LSD) {
+			const d = r % 12;
+			r = Math.floor(r / 12);
+			const s = r % 20;
+			const l = Math.floor(r / 20);
+			if (l) {
+				return wrap(`${l}£ ${s}s ${d}d`);
+			}
+			if (s) {
+				return wrap(`${s}s ${d}d`);
+			}
+			return wrap(`${d}d`);
 		}
-		if (s) {
-			return wrap(`${s}s ${d}d`);
+		else {
+			return wrap(`${r}d`);
 		}
-		return wrap(`${d}d`);
 	},
 	prettyDuration(h = 0){
 		const hours = Math.floor(h);
