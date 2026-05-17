@@ -99,11 +99,17 @@ const GAME = {
 			fricative: 'fvsz'.split(''),
 			liquid: 'lr'.split(''),
 			nasal: 'mn'.split(''),
+			get obstruent(){
+				return this.plosive.concat(this.fricative);
+			},
 			plosive: 'ptkbdg'.split(''),
 			vowel: "aeiou".split(''),
 		},
 		sylls: [
 			['consonant', 'vowel'],
+			['consonant', 'vowel', 'consonant'],
+			['obstruent', 'liquid', 'vowel'],
+			['obstruent', 'liquid', 'vowel', 'consonant'],
 		],
 		/** @param {Array} arr  */
 		choice(arr){
@@ -111,10 +117,15 @@ const GAME = {
 		},
 		name(){
 			let s = '';
-			for (let i = 0; i < 1.5 + 2*Math.random(); i++) {
+			const length = this.randint(2, 3);
+			for (let i = 0; i < length; i++) {
 				s += this.syllable(i === 0);
 			}
 			return s;
+		},
+		randint(min = 0, max = 1){
+			const range = max - min;
+			return Math.floor(Math.random()*range + min);
 		},
 		syllable(cap = false){
 			const form = this.choice(this.sylls);
