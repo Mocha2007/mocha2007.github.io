@@ -292,6 +292,7 @@ const GAME = {
 		return d ? `${d} d, ${ho} h` : `${ho} h`;
 	},
 	init(){
+		this.initPlayer();
 		this.state.goods = range(this.config.nGoods)
 			.map(i => new Good(this.config.goodNames[i], this.config.goodPriceBase * Math.pow(this.config.goodPriceScaling, i)));
 		this.state.towns = range(this.config.nTowns)
@@ -320,9 +321,11 @@ const GAME = {
 			document.body.appendChild(map);
 		}
 		this.setLocation(0);
+		console.info('tradegame.js loaded');
+	},
+	initPlayer(){
 		this.state.player.money = this.config.playerStartMoney;
 		this.state.player.goods = new Array(this.config.nGoods).fill(0);
-		console.info('tradegame.js loaded');
 	},
 	passTime(t = 0){
 		this.state.t += t;
@@ -350,7 +353,16 @@ const GAME = {
 		this.elem.priceList.innerHTML = '';
 		this.state.goods.forEach(g => this.elem.priceList.appendChild(g.createElem(this.state.town.price(g))));
 		this.elem.map.innerHTML = '';
-		this.state.towns.forEach(t => this.elem.map.appendChild(t.createMapElem()))
+		this.state.towns.forEach(t => this.elem.map.appendChild(t.createMapElem()));
+		// update trader info
+		this.elem.player.innerHTML = '';
+		this.state.goods.forEach((g, i) => {
+			const e = document.createElement('div');
+			const amt = this.state.player.goods[i];
+			e.innerHTML = `${g.name}: ${amt} `;
+			e.appendChild(this.elem.createBuySellButtons(i));
+			this.elem.player.appendChild(e);
+		});
 	},
 };
 
