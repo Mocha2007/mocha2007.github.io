@@ -1,5 +1,51 @@
 const range = n => (new Array(n)).fill(0).map((_, i) => i);
 
+class Tone {
+	constructor(o = {}){
+		/** @type {number} */
+		this.freq = o.freq || 440;
+		/** @type {number} */
+		this.hold = o.hold || 100;
+		/** @type {number} */
+		this.attack = o.attack || 100;
+		/** @type {number} */
+		this.fade = o.fade || 100;
+		/** @type {number} */
+		this.volume = o.volume || 1;
+		/** @type {string} */
+		this.wave = o.wave || 'sine';
+	}
+	get duration(){
+		return this.attack + this.hold + this.fade;
+	}
+	/** (see piano.js for further info) */
+	play(){
+		const gain = GAME.audio.createGain(), osc = GAME.audio.createOscillator();
+		gain.connect(GAME.audio.destination);
+		gain.gain.setValueAtTime(this.attack ? this.volume : 0, GAME.audio.currentTime);
+		if (this.attack) {
+			gain.gain.linearRampToValueAtTime(this.volume, GAME.audio.currentTime + this.attack / 1000);
+		}
+		osc.frequency.value = this.freq;
+		osc.type = this.wave;
+		osc.connect(gain);
+		osc.start(0);
+		setTimeout(() => {
+			if (this.fade) {
+				gain.gain.linearRampToValueAtTime(0, GAME.audio.currentTime + this.fade / 1000);
+			}
+			setTimeout(() => {
+				try {
+					osc.stop(0);
+					osc.disconnect(gain);
+					gain.disconnect(GAME.audio.destination);
+				}
+				catch (_){}
+			}, this.fade + 1000);
+		}, this.attack + this.hold);
+	}
+}
+
 class Good {
 	constructor(name = "", priceBase = 0, variance = undefined){
 		this.name = name;
@@ -92,6 +138,7 @@ class MoneyFormat {
 }
 
 const GAME = {
+	audio: new(window.AudioContext || window.webkitAudioContext)(),
 	/** non-user-editable vars */
 	constants: {
 		/* map width/height, in km */
@@ -111,6 +158,9 @@ const GAME = {
 		playerStartMoney: 480,
 		/** ms */
 		priceUpdateInterval: 60*60*1000,
+		sfx: {
+			button: new Tone({freq: 200, attack: 0, hold: 0, fade: 500, volume: 0.1}),
+		},
 		/** km/h */
 		travelSpeed: 5,
 		varianceScaleGood: 0.5,
@@ -142,6 +192,7 @@ const GAME = {
 			buyMaxButton.classList.add('button');
 			buyMaxButton.classList.add('buyMaxButton');
 			buyMaxButton.onclick = () => {
+				GAME.constants.sfx.button.play();
 				const price = GAME.state.town.price(good);
 				const maxAmt = Math.floor(GAME.state.player.money / price);
 				buyAmt.value = maxAmt;
@@ -150,7 +201,10 @@ const GAME = {
 			const buyNoneButton = document.createElement('span');
 			buyNoneButton.innerHTML = 'none';
 			buyNoneButton.classList.add('button');
-			buyNoneButton.onclick = () => buyAmt.value = 0;
+			buyNoneButton.onclick = () => {
+				GAME.constants.sfx.button.play();
+				buyAmt.value = 0;
+			};
 			buyNoneButton.classList.add('buyNoneButton');
 			buyContainer.appendChild(buyNoneButton);
 			const buyButton = document.createElement('span');
@@ -158,6 +212,7 @@ const GAME = {
 			buyButton.classList.add('buyButton');
 			buyButton.classList.add('button');
 			buyButton.onclick = () => {
+				GAME.constants.sfx.button.play();
 				const amt = +buyAmt.value;
 				const priceUnit = GAME.state.town.price(good);
 				const priceTotal = Math.round(amt * priceUnit);
@@ -187,12 +242,18 @@ const GAME = {
 			sellMaxButton.innerHTML = 'max';
 			sellMaxButton.classList.add('button');
 			sellMaxButton.classList.add('sellMaxButton');
-			sellMaxButton.onclick = () => sellAmt.value = GAME.state.player.goods[goodId];
+			sellMaxButton.onclick = () => {
+				GAME.constants.sfx.button.play();
+				sellAmt.value = GAME.state.player.goods[goodId];
+			};
 			sellContainer.appendChild(sellMaxButton);
 			const sellNoneButton = document.createElement('span');
 			sellNoneButton.innerHTML = 'none';
 			sellNoneButton.classList.add('button');
-			sellNoneButton.onclick = () => sellAmt.value = 0;
+			sellNoneButton.onclick = () => {
+				GAME.constants.sfx.button.play();
+				sellAmt.value = 0;
+			};
 			sellNoneButton.classList.add('sellNoneButton');
 			sellContainer.appendChild(sellNoneButton);
 			const sellButton = document.createElement('span');
@@ -200,6 +261,7 @@ const GAME = {
 			sellButton.classList.add('sellButton');
 			sellButton.classList.add('button');
 			sellButton.onclick = () => {
+				GAME.constants.sfx.button.play();
 				const amt = +sellAmt.value;
 				const priceUnit = GAME.state.town.price(good);
 				const priceTotal = Math.round(amt * priceUnit);
@@ -326,7 +388,10 @@ const GAME = {
 				e.classList.add('button');
 				e.innerHTML = s;
 				e.title = `${s} game`;
-				e.onclick = f;
+				e.onclick = () => {
+					GAME.constants.sfx.button.play();
+					f();
+				};
 				saveContainer.appendChild(e);
 			};
 			const saveContainer = document.createElement('div');
@@ -458,6 +523,7 @@ const GAME = {
 			playerHeader.classList.add('insertPlayerName');
 			playerHeader.classList.add('button');
 			playerHeader.onclick = () => {
+				GAME.constants.sfx.button.play();
 				this.state.player.name = prompt('Name:');
 				this.updateInterface();
 			};
