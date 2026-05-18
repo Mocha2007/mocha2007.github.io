@@ -394,7 +394,7 @@ const GAME = {
 	init(){
 		this.initPlayer();
 		this.state.goods = range(this.constants.nGoods)
-			.map(i => new Good(this.constants.goodNames[i], this.constants.goodPriceBase * Math.pow(this.constants.goodPriceScaling, i)));
+			.map(i => new Good(this.constants.goodNames[i], Math.round(this.constants.goodPriceBase * Math.pow(this.constants.goodPriceScaling, i))));
 		this.state.towns = range(this.constants.nTowns)
 			.map(i => new Town());
 		if (!this.elem.priceList) {
