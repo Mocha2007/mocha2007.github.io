@@ -1,10 +1,10 @@
 const range = n => (new Array(n)).fill(0).map((_, i) => i);
 
 class Good {
-	constructor(name = "", priceBase = 0){
+	constructor(name = "", priceBase = 0, variance = undefined){
 		this.name = name;
 		this.priceBase = priceBase;
-		this.variance = Math.random();
+		this.variance = variance || Math.random();
 	}
 	get id(){
 		return GAME.state.goods.indexOf(this);
@@ -21,6 +21,13 @@ class Good {
 	tick(){
 		this.variance += (Math.random < this.variance ? -1 : 1)
 			* GAME.config.varianceQuantum;
+	}
+	/** @param {Good} g */
+	static toObj(g){
+		return {name: g.name, priceBase: g.priceBase, variance: g.variance};
+	}
+	static fromObj(o){
+		return new Good(o.name, o.priceBase, o.variance);
 	}
 }
 
@@ -64,6 +71,18 @@ class Town {
 	/** @param {Town} other */
 	travelTime(other){
 		return this.distance(other) / GAME.config.travelSpeed;
+	}
+	/** @param {Town} t */
+	static toObj(t){
+		return {name: t.name, x: t.x, y: t.y, variances: t.variances};
+	}
+	static fromObj(o){
+		const t = new Town();
+		t.name = o.name;
+		t.x = o.x;
+		t.y = o.y;
+		t.variances = o.variances;
+		return t;
 	}
 }
 
@@ -205,6 +224,8 @@ const GAME = {
 		/** @type {HTMLDivElement} */
 		priceList: undefined,
 		/** @type {HTMLDivElement} */
+		saveContainer: undefined,
+		/** @type {HTMLDivElement} */
 		version: undefined,
 	},
 	// todo
@@ -256,6 +277,47 @@ const GAME = {
 			}).join('');
 		},
 	},
+	save: {
+		createSaveElement(){
+			const saveContainer = document.createElement('div');
+			saveContainer.id = 'saveContainer';
+			const saveButton = document.createElement('div');
+			saveButton.classList.add('button');
+			saveButton.innerHTML = 'Save';
+			saveButton.onclick = () => 
+				navigator.clipboard.writeText(this.string)
+					.then(() => {alert('Save copied to clipboard'); console.log('Copied save');},
+					e => {alert('Failed to save to clipboard'); console.error('copying save failed:', e)});
+			saveContainer.appendChild(saveButton);
+			const loadButton = document.createElement('div');
+			loadButton.classList.add('button');
+			loadButton.innerHTML = 'Load';
+			loadButton.onclick = () => 
+				navigator.clipboard.readText()
+					.then(s => this.string = s,
+					e => console.error('copying save failed:', e));
+			saveContainer.appendChild(loadButton);
+			return saveContainer;
+		},
+		get saveObject(){
+			return {
+				config: GAME.config,
+				state: GAME.state.saveData,
+			};
+		},
+		set saveObject(o){
+			GAME.config = o.config;
+			GAME.state.saveData = o.state;
+		},
+		get string(){
+			return btoa(JSON.stringify(this.saveObject));
+		},
+		set string(s){
+			console.log('loading save...');
+			this.saveObject = JSON.parse(atob(s));
+			GAME.updateInterface();
+		},
+	},
 	state: {
 		get date(){
 			return new Date(1000, 0, 1, 0, 0, 0, this.t);
@@ -267,6 +329,22 @@ const GAME = {
 			/** @type {number[]} */
 			goods: [],
 			money: 0,
+		},
+		get saveData(){
+			return {
+				goods: this.goods.map(Good.toObj),
+				location: this.location,
+				player: this.player,
+				t: this.t,
+				towns: this.towns.map(Town.toObj), 
+			};
+		},
+		set saveData(o){
+			this.goods = o.goods.map(Good.fromObj);
+			this.location = o.location;
+			this.player = o.player;
+			this.t = o.t;
+			this.towns = o.towns.map(Town.fromObj);
 		},
 		t: 0,
 		get town(){
@@ -337,6 +415,9 @@ const GAME = {
 			map.id = 'map';
 			document.body.appendChild(map);
 		}
+		if (!this.elem.saveContainer) {
+			document.body.appendChild(this.elem.saveContainer = this.save.createSaveElement());
+		}
 		if (!this.elem.version) {
 			const version = this.elem.version = document.createElement('div');
 			version.id = version.title = 'version';
@@ -361,10 +442,6 @@ const GAME = {
 		const travelTime = this.state.town.travelTime(this.state.towns[id]) * 60*60*1000;
 		this.passTime(travelTime);
 		this.state.location = id;
-		Array.from(document.getElementsByClassName('insertTownName'))
-			.forEach(e => e.innerHTML = this.state.town.name);
-		Array.from(document.getElementsByClassName('insertDate'))
-			.forEach(e => e.innerHTML = this.state.date.toLocaleDateString('en-US', this.config.dateFormat));
 		// alert(`todo: moved to #${id}`);
 		this.updateInterface();
 	},
@@ -386,6 +463,11 @@ const GAME = {
 			e.appendChild(this.elem.createBuySellButtons(i));
 			this.elem.player.appendChild(e);
 		});
+		// insert data
+		Array.from(document.getElementsByClassName('insertTownName'))
+			.forEach(e => e.innerHTML = this.state.town.name);
+		Array.from(document.getElementsByClassName('insertDate'))
+			.forEach(e => e.innerHTML = this.state.date.toLocaleDateString('en-US', this.config.dateFormat));
 	},
 };
 

@@ -99,6 +99,16 @@ h1,h2,h3,h4,h5 {
 .sellContainer {
 	margin-left: 2vw;
 }
+#saveContainer {
+	bottom: 0;
+	color: red;
+	position: absolute;
+	left: 0;
+}
+#saveContainer * {
+	background-color: #400;
+	padding: 1vh 1vw;
+}
 #version {
 	bottom: 0;
 	color: gray;
