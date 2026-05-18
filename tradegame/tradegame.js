@@ -101,7 +101,11 @@ class Town {
 			e.classList.add('location');
 		}
 		e.title = `${this.name}\nDistance: ${GAME.state.town.distance(this).toFixed(0)} km\nTravel Time: ${GAME.prettyDuration(GAME.state.town.travelTime(this))}`;
-		e.onclick = () => GAME.confirmTravel(this.id);
+		e.onclick = () => {
+			GAME.constants.sfx.buttonClick.play();
+			GAME.confirmTravel(this.id)
+		};
+		e.onmouseover = () => GAME.constants.sfx.buttonHover.play();
 		e.style.left = `${this.x*100}%`;
 		e.style.top = `${this.y*100}%`;
 		return e;
