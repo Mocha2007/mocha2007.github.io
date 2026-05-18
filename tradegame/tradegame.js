@@ -319,24 +319,28 @@ const GAME = {
 	},
 	save: {
 		createSaveElement(){
+			const ce = (s, f) => {
+				const e = document.createElement('div');
+				e.classList.add('button');
+				e.innerHTML = s;
+				e.onclick = f;
+				saveContainer.appendChild(e);
+			};
 			const saveContainer = document.createElement('div');
 			saveContainer.id = 'saveContainer';
-			const saveButton = document.createElement('div');
-			saveButton.classList.add('button');
-			saveButton.innerHTML = 'Save';
-			saveButton.onclick = () => 
-				navigator.clipboard.writeText(this.string)
-					.then(() => {alert('Save copied to clipboard'); console.log('Copied save');},
-					e => {alert('Failed to save to clipboard'); console.error('copying save failed:', e)});
-			saveContainer.appendChild(saveButton);
-			const loadButton = document.createElement('div');
-			loadButton.classList.add('button');
-			loadButton.innerHTML = 'Load';
-			loadButton.onclick = () => 
-				navigator.clipboard.readText()
-					.then(s => this.string = s,
-					e => console.error('copying save failed:', e));
-			saveContainer.appendChild(loadButton);
+			ce('Save', () => 
+				navigator.clipboard.writeText(this.string).then(
+					() => {alert('Save copied to clipboard'); console.log('Copied save');},
+					e => {alert('Failed to save to clipboard'); console.error('copying save failed:', e)}));
+			ce('Load', () => 
+				navigator.clipboard.readText().then(
+					s => this.string = s,
+					e => console.error('copying save failed:', e)));
+			ce('Reset', () => {
+				if (confirm('Really restart?')) {
+					GAME.init();
+				}
+			});
 			return saveContainer;
 		},
 		get saveObject(){

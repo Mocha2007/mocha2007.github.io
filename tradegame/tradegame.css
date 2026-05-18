@@ -107,8 +107,9 @@ h1,h2,h3,h4,h5 {
 #saveContainer {
 	bottom: 0;
 	color: red;
-	position: absolute;
 	left: 0;
+	position: absolute;
+	text-align: center;
 }
 #saveContainer * {
 	background-color: #400;
