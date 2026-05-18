@@ -84,11 +84,12 @@ h1,h2,h3,h4,h5 {
 }
 .buyMaxButton, .sellMaxButton {
 	background-color: maroon;
-	top: -1em;
+	top: -0.9em;
 }
 .buyNoneButton, .sellNoneButton {
 	background-color: #444;
 	margin-left: -3vw;
+	top: 0.4em;
 }
 .buyButton, .sellButton {
 	background-color: #444;
