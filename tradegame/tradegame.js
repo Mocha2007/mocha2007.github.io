@@ -165,6 +165,7 @@ const GAME = {
 					if (amt && confirm(`Really buy ${amt} ${GAME.state.goods[goodId].name} for ${GAME.prettyPrice(priceTotal, true)}?`)){
 						GAME.state.player.money -= priceTotal;
 						GAME.state.player.goods[goodId] += amt;
+						GAME.updateInterface();
 					}
 				}
 				else {
@@ -206,6 +207,7 @@ const GAME = {
 					if (amt && confirm(`Really sell ${amt} ${GAME.state.goods[goodId].name} for ${GAME.prettyPrice(priceTotal, true)}?`)){
 						GAME.state.player.goods[goodId] -= amt;
 						GAME.state.player.money += priceTotal;
+						GAME.updateInterface();
 					}
 				}
 				else {
