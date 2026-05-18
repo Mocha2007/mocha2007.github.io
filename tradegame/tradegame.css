@@ -94,8 +94,9 @@ h1,h2,h3,h4,h5 {
 .buyButton, .sellButton {
 	background-color: #444;
 	display: inline-block;
+	margin-left: 0.2em;
 	text-align: center;
-	width: 4vw;
+	width: 5vw;
 }
 .sellContainer {
 	margin-left: 2vw;
