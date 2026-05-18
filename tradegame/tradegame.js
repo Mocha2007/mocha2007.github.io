@@ -473,15 +473,15 @@ const GAME = {
 			this.elem.player.appendChild(e);
 		});
 		// insert data
-		// [
-		// 	['TownName', () => ]
-		// ]
-		Array.from(document.getElementsByClassName('insertTownName'))
-			.forEach(e => e.innerHTML = this.state.town.name);
-		Array.from(document.getElementsByClassName('insertDate'))
-			.forEach(e => e.innerHTML = this.state.date.toLocaleDateString('en-US', this.config.dateFormat));
-		Array.from(document.getElementsByClassName('insertPlayerName'))
-			.forEach(e => e.innerHTML = this.state.player.name);
+		[
+			['Date', () => this.state.date.toLocaleDateString('en-US', this.config.dateFormat)],
+			['PlayerName', () => this.state.player.name],
+			['TownName', () => this.state.town.name],
+		].forEach(([s, f]) => {
+			const o = f();
+			Array.from(document.getElementsByClassName(`insert${s}`))
+				.forEach(e => e.innerHTML = o);
+		});
 	},
 };
 
