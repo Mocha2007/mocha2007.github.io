@@ -433,6 +433,7 @@ const GAME = {
 			.map(i => new Good(this.constants.goodNames[i], Math.round(this.constants.goodPriceBase * Math.pow(this.constants.goodPriceScaling, i))));
 		this.state.towns = range(this.constants.nTowns)
 			.map(i => new Town());
+		this.verify();
 		if (!this.elem.priceList) {
 			const priceListContainer = document.createElement('div');
 			priceListContainer.id = 'priceListContainer';
@@ -522,6 +523,23 @@ const GAME = {
 			Array.from(document.getElementsByClassName(`insert${s}`))
 				.forEach(e => e.innerHTML = o);
 		});
+	},
+	verify(){
+		this.verifyTownNames();
+	},
+	verifyTownNames(){
+		// reroll names until all are unique
+		for (let i = 0; i < this.constants.nTowns; i++) {
+			const a = this.state.towns[i].name;
+			for (let j = 0; j < i; j++) {
+				for (let n = 0; n < 1000; n++) {
+					if (a !== this.state.towns[j].name) {
+						break;
+					}
+					this.state.towns[j].name = this.nameGen.name();
+				}
+			}
+		}
 	},
 };
 
