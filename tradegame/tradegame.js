@@ -328,6 +328,7 @@ const GAME = {
 		player: {
 			/** @type {number[]} */
 			goods: [],
+			name: '',
 			money: 0,
 		},
 		get saveData(){
@@ -405,7 +406,14 @@ const GAME = {
 			const playerContainer = document.createElement('div');
 			playerContainer.id = 'playerContainer';
 			document.body.appendChild(playerContainer);
-			playerContainer.appendChild(this.elem.createHeader(2, this.config.name || prompt('Name:')));
+			const playerHeader = this.elem.createHeader(2, this.state.player.name);
+			playerHeader.classList.add('insertPlayerName');
+			playerHeader.classList.add('button');
+			playerHeader.onclick = () => {
+				this.state.player.name = prompt('Name:');
+				this.updateInterface();
+			};
+			playerContainer.appendChild(playerHeader);
 			const player = this.elem.player = document.createElement('div');
 			player.id = 'player';
 			playerContainer.appendChild(player);
@@ -430,6 +438,7 @@ const GAME = {
 	initPlayer(){
 		this.state.player.money = this.config.playerStartMoney;
 		this.state.player.goods = new Array(this.config.nGoods).fill(0);
+		this.state.player.name = this.config.name;
 	},
 	passTime(t = 0){
 		this.state.t += t;
@@ -464,10 +473,15 @@ const GAME = {
 			this.elem.player.appendChild(e);
 		});
 		// insert data
+		// [
+		// 	['TownName', () => ]
+		// ]
 		Array.from(document.getElementsByClassName('insertTownName'))
 			.forEach(e => e.innerHTML = this.state.town.name);
 		Array.from(document.getElementsByClassName('insertDate'))
 			.forEach(e => e.innerHTML = this.state.date.toLocaleDateString('en-US', this.config.dateFormat));
+		Array.from(document.getElementsByClassName('insertPlayerName'))
+			.forEach(e => e.innerHTML = this.state.player.name);
 	},
 };
 
