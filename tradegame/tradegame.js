@@ -139,7 +139,7 @@ const GAME = {
 				const priceUnit = GAME.state.town.price(good);
 				const priceTotal = Math.round(amt * priceUnit);
 				if (priceTotal <= GAME.state.player.money) {
-					if (confirm(`Really buy ${amt} ${GAME.state.goods[goodId].name} for ${GAME.prettyPrice(priceTotal)}?`)){
+					if (amt && confirm(`Really buy ${amt} ${GAME.state.goods[goodId].name} for ${GAME.prettyPrice(priceTotal, true)}?`)){
 						GAME.state.player.money -= priceTotal;
 						GAME.state.player.goods[goodId] += amt;
 					}
@@ -180,7 +180,7 @@ const GAME = {
 				const priceUnit = GAME.state.town.price(good);
 				const priceTotal = Math.round(amt * priceUnit);
 				if (amt <= GAME.state.player.goods[goodId]) {
-					if (confirm(`Really sell ${amt} ${GAME.state.goods[goodId].name} for ${GAME.prettyPrice(priceTotal)}?`)){
+					if (amt && confirm(`Really sell ${amt} ${GAME.state.goods[goodId].name} for ${GAME.prettyPrice(priceTotal, true)}?`)){
 						GAME.state.player.goods[goodId] -= amt;
 						GAME.state.player.money += priceTotal;
 					}
@@ -282,8 +282,8 @@ const GAME = {
 			this.setLocation(id);
 		}
 	},
-	prettyPrice(x = 0){
-		const wrap = s => `<span class="price" title="${x.toFixed(0)} pence">${s}</span>`;
+	prettyPrice(x = 0, nowrap = false){
+		const wrap = s => nowrap ? s : `<span class="price" title="${x.toFixed(0)} pence">${s}</span>`;
 		let r = Math.round(x);
 		if (this.config.moneyFormat === MoneyFormat.LSD) {
 			const d = r % 12;
