@@ -235,6 +235,12 @@ const GAME = {
 	// todo
 	nameGen: {
 		phones: {
+			get approximant(){
+				return this.liquid.concat(this.nonliquidApproximant);
+			},
+			get approximantNoY(){
+				return this.approximant.filter(x => x !== 'y');
+			},
 			get consonant(){
 				return []
 					.concat(this.plosive)
@@ -242,20 +248,46 @@ const GAME = {
 					.concat(this.nasal)
 					.concat(this.fricative);
 			},
-			fricative: 'fvsz'.split(''),
+			get fricative(){
+				return this.fricativeVoiced.concat(this.fricativeVoiceless);
+			},
+			fricativeVoiceless: 'fs'.split(''),
+			fricativeVoiced: 'vz'.split(''),
 			liquid: 'lr'.split(''),
 			nasal: 'mn'.split(''),
+			nonliquidApproximant: 'wy'.split(''),
+			null: [''],
 			get obstruent(){
 				return this.plosive.concat(this.fricative);
 			},
-			plosive: 'ptkbdg'.split(''),
+			get plosive(){
+				return this.plosiveVoiced.concat(this.plosiveVoiceless);
+			},
+			plosiveVoiceless: 'ptk'.split(''),
+			plosiveVoiced: 'bdg'.split(''),
+			s: ['s'],
 			vowel: "aeiou".split(''),
+			y: ['y'],
 		},
-		sylls: [
-			['consonant', 'vowel'],
-			['consonant', 'vowel', 'consonant'],
-			['obstruent', 'liquid', 'vowel'],
-			['obstruent', 'liquid', 'vowel', 'consonant'],
+		/** https://en.wikipedia.org/wiki/English_phonology#Onset */
+		onsets: [
+			['null'],
+			['consonant'],
+			['plosive', 'approximantNoY'],
+			['fricativeVoiceless', 'approximantNoY'],
+			['obstruent', 'y'],
+			['s', 'plosiveVoiceless'],
+			['s', 'nasal'],
+			['s', 'plosiveVoiceless', 'approximant'],
+		],
+		nuclei: [
+			['vowel'],
+		],
+		codas: [
+			['null'],
+			['consonant'],
+			['liquid', 'obstruent'],
+			['liquid', 'nasal'],
 		],
 		/** @param {Array} arr  */
 		choice(arr){
@@ -263,7 +295,7 @@ const GAME = {
 		},
 		name(){
 			let s = '';
-			const length = this.randint(2, 3);
+			const length = this.randint(1, 3);
 			for (let i = 0; i < length; i++) {
 				s += this.syllable(i === 0);
 			}
@@ -274,11 +306,15 @@ const GAME = {
 			return Math.floor(Math.random()*range + min);
 		},
 		syllable(cap = false){
-			const form = this.choice(this.sylls);
-			return form.map((cat, i) => {
-				const raw = this.choice(this.phones[cat]);
-				return cap && i === 0 ? raw.toUpperCase() : raw;
-			}).join('');
+			const onset = this.choice(this.onsets).map((cat, i) => this.choice(this.phones[cat])).join('');
+			const nucleus = this.choice(this.nuclei).map((cat, i) => this.choice(this.phones[cat])).join('');
+			const coda = this.choice(this.codas).map((cat, i) => this.choice(this.phones[cat])).join('');
+			const syl = onset + nucleus + coda;
+			return cap ? this.title(syl) : syl;
+		},
+		/** @param {string} s  */
+		title(s){
+			return 0 < s.length ? s[0].toUpperCase() + s.slice(1) : s;
 		},
 	},
 	save: {
