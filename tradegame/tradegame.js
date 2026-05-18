@@ -323,6 +323,7 @@ const GAME = {
 				const e = document.createElement('div');
 				e.classList.add('button');
 				e.innerHTML = s;
+				e.title = `${s} game`;
 				e.onclick = f;
 				saveContainer.appendChild(e);
 			};
