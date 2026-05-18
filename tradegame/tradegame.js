@@ -10,7 +10,7 @@ class Good {
 		return GAME.state.goods.indexOf(this);
 	}
 	get price(){
-		return this.priceBase * (1 + (2*this.variance - 1) * GAME.config.varianceScaleGood);
+		return this.priceBase * (1 + (2*this.variance - 1) * GAME.constants.varianceScaleGood);
 	}
 	createElem(priceOverride){
 		const e = document.createElement('div');
@@ -20,7 +20,7 @@ class Good {
 	}
 	tick(){
 		this.variance += (Math.random < this.variance ? -1 : 1)
-			* GAME.config.varianceQuantum;
+			* GAME.constants.varianceQuantum;
 	}
 	/** @param {Good} g */
 	static toObj(g){
@@ -36,7 +36,7 @@ class Town {
 		this.name = GAME.nameGen.name();
 		this.x = Math.random()*0.8 + 0.1;
 		this.y = Math.random()*0.8 + 0.1;
-		this.variances = range(GAME.config.nGoods).map(_ => Math.random());
+		this.variances = range(GAME.constants.nGoods).map(_ => Math.random());
 	}
 	get id(){
 		return GAME.state.towns.indexOf(this);
@@ -62,15 +62,15 @@ class Town {
 	}
 	/** @param {Town} other */
 	distance(other){
-		return Math.hypot((this.x - other.x), (this.y - other.y)) * GAME.config.distanceScale;
+		return Math.hypot((this.x - other.x), (this.y - other.y)) * GAME.constants.distanceScale;
 	}
 	/** @param {Good} good  */
 	price(good){
-		return good.price * (1 + (2*this.variances[good.id]-1) * GAME.config.varianceScaleTown);
+		return good.price * (1 + (2*this.variances[good.id]-1) * GAME.constants.varianceScaleTown);
 	}
 	/** @param {Town} other */
 	travelTime(other){
-		return this.distance(other) / GAME.config.travelSpeed;
+		return this.distance(other) / GAME.constants.travelSpeed;
 	}
 	/** @param {Town} t */
 	static toObj(t){
@@ -92,9 +92,8 @@ class MoneyFormat {
 }
 
 const GAME = {
-	version: '26w21',
-	config: {
-		dateFormat: {month: 'long', day: 'numeric', year: 'numeric'},
+	/** non-user-editable vars */
+	constants: {
 		/* map width/height, in km */
 		distanceScale: 1000,
 		goodPriceBase: 4,
@@ -106,10 +105,9 @@ const GAME = {
 			"Wine", "Bronze", "Tools", "Silver",
 			"Gold", "Silk", "Tomes", "Gems"
 		],
-		moneyFormat: MoneyFormat.LSD,
-		name: 'Trader',
 		nGoods: 20,
 		nTowns: 20,
+		name: 'Trader',
 		playerStartMoney: 480,
 		/** ms */
 		priceUpdateInterval: 60*60*1000,
@@ -118,6 +116,12 @@ const GAME = {
 		varianceScaleGood: 0.5,
 		varianceScaleTown: 0.5,
 		varianceQuantum: 0.01,
+		version: '26w21',
+	},
+	/** user-editable vars */
+	config: {
+		dateFormat: {month: 'long', day: 'numeric', year: 'numeric'},
+		moneyFormat: MoneyFormat.LSD,
 	},
 	elem: {
 		createBuySellButtons(goodId = 0){
@@ -389,9 +393,9 @@ const GAME = {
 	},
 	init(){
 		this.initPlayer();
-		this.state.goods = range(this.config.nGoods)
-			.map(i => new Good(this.config.goodNames[i], this.config.goodPriceBase * Math.pow(this.config.goodPriceScaling, i)));
-		this.state.towns = range(this.config.nTowns)
+		this.state.goods = range(this.constants.nGoods)
+			.map(i => new Good(this.constants.goodNames[i], this.constants.goodPriceBase * Math.pow(this.constants.goodPriceScaling, i)));
+		this.state.towns = range(this.constants.nTowns)
 			.map(i => new Town());
 		if (!this.elem.priceList) {
 			const priceListContainer = document.createElement('div');
@@ -429,20 +433,20 @@ const GAME = {
 		if (!this.elem.version) {
 			const version = this.elem.version = document.createElement('div');
 			version.id = version.title = 'version';
-			version.innerHTML = this.version;
+			version.innerHTML = this.constants.version;
 			document.body.appendChild(version);
 		}
 		this.setLocation(0);
 		console.info('tradegame.js loaded');
 	},
 	initPlayer(){
-		this.state.player.money = this.config.playerStartMoney;
-		this.state.player.goods = new Array(this.config.nGoods).fill(0);
-		this.state.player.name = this.config.name;
+		this.state.player.money = this.constants.playerStartMoney;
+		this.state.player.goods = new Array(this.constants.nGoods).fill(0);
+		this.state.player.name = this.constants.name;
 	},
 	passTime(t = 0){
 		this.state.t += t;
-		const ticks = Math.floor(t / this.config.priceUpdateInterval);
+		const ticks = Math.floor(t / this.constants.priceUpdateInterval);
 		for (let i = 0; i < ticks; i++){
 			this.tick();
 		}
