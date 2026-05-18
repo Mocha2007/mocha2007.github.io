@@ -159,7 +159,8 @@ const GAME = {
 		/** ms */
 		priceUpdateInterval: 60*60*1000,
 		sfx: {
-			button: new Tone({freq: 200, attack: 0, hold: 0, fade: 500, volume: 0.1}),
+			buttonClick: new Tone({freq: 300, attack: 0, hold: 0, fade: 500, volume: 0.1}),
+			buttonHover: new Tone({freq: 200, attack: 0, hold: 0, fade: 500, volume: 0.05}),
 		},
 		/** km/h */
 		travelSpeed: 5,
@@ -192,19 +193,21 @@ const GAME = {
 			buyMaxButton.classList.add('button');
 			buyMaxButton.classList.add('buyMaxButton');
 			buyMaxButton.onclick = () => {
-				GAME.constants.sfx.button.play();
+				GAME.constants.sfx.buttonClick.play();
 				const price = GAME.state.town.price(good);
 				const maxAmt = Math.floor(GAME.state.player.money / price);
 				buyAmt.value = maxAmt;
 			};
+			buyMaxButton.onmouseover = () => GAME.constants.sfx.buttonHover.play();
 			buyContainer.appendChild(buyMaxButton);
 			const buyNoneButton = document.createElement('span');
 			buyNoneButton.innerHTML = 'none';
 			buyNoneButton.classList.add('button');
 			buyNoneButton.onclick = () => {
-				GAME.constants.sfx.button.play();
+				GAME.constants.sfx.buttonClick.play();
 				buyAmt.value = 0;
 			};
+			buyNoneButton.onmouseover = () => GAME.constants.sfx.buttonHover.play();
 			buyNoneButton.classList.add('buyNoneButton');
 			buyContainer.appendChild(buyNoneButton);
 			const buyButton = document.createElement('span');
@@ -212,7 +215,7 @@ const GAME = {
 			buyButton.classList.add('buyButton');
 			buyButton.classList.add('button');
 			buyButton.onclick = () => {
-				GAME.constants.sfx.button.play();
+				GAME.constants.sfx.buttonClick.play();
 				const amt = +buyAmt.value;
 				const priceUnit = GAME.state.town.price(good);
 				const priceTotal = Math.round(amt * priceUnit);
@@ -227,6 +230,7 @@ const GAME = {
 					alert('Insufficient funds.');
 				}
 			};
+			buyButton.onmouseover = () => GAME.constants.sfx.buttonHover.play();
 			buyButton.classList.add('buyButton');
 			buyContainer.appendChild(buyButton);
 			// SELL
@@ -243,17 +247,19 @@ const GAME = {
 			sellMaxButton.classList.add('button');
 			sellMaxButton.classList.add('sellMaxButton');
 			sellMaxButton.onclick = () => {
-				GAME.constants.sfx.button.play();
+				GAME.constants.sfx.buttonClick.play();
 				sellAmt.value = GAME.state.player.goods[goodId];
 			};
+			sellMaxButton.onmouseover = () => GAME.constants.sfx.buttonHover.play();
 			sellContainer.appendChild(sellMaxButton);
 			const sellNoneButton = document.createElement('span');
 			sellNoneButton.innerHTML = 'none';
 			sellNoneButton.classList.add('button');
 			sellNoneButton.onclick = () => {
-				GAME.constants.sfx.button.play();
+				GAME.constants.sfx.buttonClick.play();
 				sellAmt.value = 0;
 			};
+			sellNoneButton.onmouseover = () => GAME.constants.sfx.buttonHover.play();
 			sellNoneButton.classList.add('sellNoneButton');
 			sellContainer.appendChild(sellNoneButton);
 			const sellButton = document.createElement('span');
@@ -261,7 +267,7 @@ const GAME = {
 			sellButton.classList.add('sellButton');
 			sellButton.classList.add('button');
 			sellButton.onclick = () => {
-				GAME.constants.sfx.button.play();
+				GAME.constants.sfx.buttonClick.play();
 				const amt = +sellAmt.value;
 				const priceUnit = GAME.state.town.price(good);
 				const priceTotal = Math.round(amt * priceUnit);
@@ -276,6 +282,7 @@ const GAME = {
 					alert('Insufficient goods.');
 				}
 			};
+			sellButton.onmouseover = () => GAME.constants.sfx.buttonHover.play();
 			sellButton.classList.add('sellButton');
 			sellContainer.appendChild(sellButton);
 			return container;
@@ -389,9 +396,10 @@ const GAME = {
 				e.innerHTML = s;
 				e.title = `${s} game`;
 				e.onclick = () => {
-					GAME.constants.sfx.button.play();
+					GAME.constants.sfx.buttonClick.play();
 					f();
 				};
+				e.onmouseover = () => GAME.constants.sfx.buttonHover.play();
 				saveContainer.appendChild(e);
 			};
 			const saveContainer = document.createElement('div');
@@ -523,10 +531,11 @@ const GAME = {
 			playerHeader.classList.add('insertPlayerName');
 			playerHeader.classList.add('button');
 			playerHeader.onclick = () => {
-				GAME.constants.sfx.button.play();
+				GAME.constants.sfx.buttonClick.play();
 				this.state.player.name = prompt('Name:');
 				this.updateInterface();
 			};
+			playerHeader.onmouseover = () => GAME.constants.sfx.buttonHover.play();
 			playerContainer.appendChild(playerHeader);
 			const player = this.elem.player = document.createElement('div');
 			player.id = 'player';
