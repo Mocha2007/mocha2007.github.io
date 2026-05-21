@@ -19,3 +19,16 @@
 .vowel td {
 	border: none;
 }
+table {
+	font-size: 75%;
+}
+tr:first-child:not(:has(td)) {
+	background-color: black;
+	position: sticky;
+	top: 0;
+	z-index: 1;
+}
+th:first-child {
+	position: sticky;
+	left: 0;
+}
