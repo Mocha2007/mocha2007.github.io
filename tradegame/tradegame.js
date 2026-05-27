@@ -147,8 +147,10 @@ class TravelState {
 		this.destination;
 		/** @type {Town} */
 		this.origin;
+		/** @type {boolean} */
+		this.paused = false;
 		/** @type {number} */
-		this.tick;
+		this.tick = 0;
 	}
 }
 
@@ -323,6 +325,13 @@ const GAME = {
 			const date = document.createElement('span');
 			date.id = 'travelMinigameDate';
 			e.appendChild(date);
+			// pause button
+			const pause = document.createElement('div');
+			pause.id = 'travelMinigamePause';
+			pause.innerHTML = 'Pause';
+			pause.classList.add('button');
+			pause.onmouseover = () => GAME.constants.sfx.buttonHover.play();
+			e.appendChild(pause);
 			return e;
 		},
 		/** @type {HTMLDivElement} */
@@ -634,7 +643,6 @@ const GAME = {
 		const travelState = new TravelState();
 		travelState.origin = this.state.town;
 		travelState.destination = destination;
-		travelState.tick = 0;
 		const onTick = () => {
 			if (travelTicks <= travelState.tick) {
 				clearInterval(intervalKey);
@@ -649,7 +657,22 @@ const GAME = {
 			const displayedTime = this.state.t + travelState.tick * this.constants.travelTickInterval;
 			dateElem.innerHTML = this.state.dateFromT(displayedTime);
 		};
-		const intervalKey = setInterval(() => onTick(), this.constants.travelTickIRL);
+		let intervalKey;
+		const restart = () => intervalKey = setInterval(() => onTick(), this.constants.travelTickIRL);
+		const pause = document.getElementById('travelMinigamePause');
+		pause.onclick = () => {
+			GAME.constants.sfx.buttonClick.play();
+			travelState.paused = !travelState.paused;
+			if (travelState.paused) {
+				clearInterval(intervalKey);
+				pause.innerHTML = 'Resume';
+			}
+			else {
+				restart();
+				pause.innerHTML = 'Pause';
+			}
+		};
+		restart();
 	},
 	updateInterface(){
 		this.elem.priceList.innerHTML = '';
