@@ -141,6 +141,17 @@ class MoneyFormat {
 	static DECIMAL = 1;
 }
 
+class TravelState {
+	constructor(){
+		/** @type {Town} */
+		this.destination;
+		/** @type {Town} */
+		this.origin;
+		/** @type {number} */
+		this.tick;
+	}
+}
+
 const GAME = {
 	audio: new(window.AudioContext || window.webkitAudioContext)(),
 	/** non-user-editable vars */
@@ -620,20 +631,22 @@ const GAME = {
 		this.elem.travelMinigame.style.display = 'block';
 		/** @type {HTMLSpanElement} */
 		const dateElem = document.getElementById('travelMinigameDate');
-		let tick = 0;
+		const travelState = new TravelState();
+		travelState.origin = this.state.town;
+		travelState.destination = destination;
+		travelState.tick = 0;
 		const onTick = () => {
-			console.debug(`tick ${tick}/${travelTicks}`);
-			if (travelTicks <= tick) {
+			if (travelTicks <= travelState.tick) {
 				clearInterval(intervalKey);
 				this.setLocation(destId);
 				this.elem.travelMinigame.style.display = 'none';
 				return;
 			}
-			tick++;
-			const sfx = ['tickHi', 'tickLo'][tick/12 % 2];
+			travelState.tick++;
+			const sfx = ['tickHi', 'tickLo'][travelState.tick/12 % 2];
 			if (this.constants.sfx[sfx]) this.constants.sfx[sfx].play();
 			// continue...
-			const displayedTime = this.state.t + tick * this.constants.travelTickInterval;
+			const displayedTime = this.state.t + travelState.tick * this.constants.travelTickInterval;
 			dateElem.innerHTML = this.state.dateFromT(displayedTime);
 		};
 		const intervalKey = setInterval(() => onTick(), this.constants.travelTickIRL);
