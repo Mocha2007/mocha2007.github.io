@@ -165,9 +165,13 @@ const GAME = {
 		sfx: {
 			buttonClick: new Tone({freq: 300, attack: 0, hold: 0, fade: 500, volume: 0.1}),
 			buttonHover: new Tone({freq: 200, attack: 0, hold: 0, fade: 500, volume: 0.05}),
+			tickHi: new Tone({freq: 1200, attack: 0, hold: 200, fade: 0, volume: 0.05}),
+			tickLo: new Tone({freq: 600, attack: 0, hold: 200, fade: 0, volume: 0.05}),
 		},
 		/** km/h */
 		travelSpeed: 5,
+		travelTickInterval: 5*60*1000,
+		travelTickIRL: 50,
 		varianceScaleGood: 0.5,
 		varianceScaleTown: 0.5,
 		varianceQuantum: 0.01,
@@ -296,6 +300,20 @@ const GAME = {
 			e.innerHTML = s;
 			return e;
 		},
+		createTravelMinigame(){
+			// todo
+			// for now it is JUST a clock and header...
+			const e = document.createElement('div');
+			e.id = 'travelMinigame';
+			e.style.display = 'none';
+			// header
+			e.appendChild(this.createHeader(2, 'Travelling to <span id="destination"></span>'));
+			// date
+			const date = document.createElement('span');
+			date.id = 'travelMinigameDate';
+			e.appendChild(date);
+			return e;
+		},
 		/** @type {HTMLDivElement} */
 		map: undefined,
 		/** @type {HTMLDivElement} */
@@ -304,6 +322,8 @@ const GAME = {
 		priceList: undefined,
 		/** @type {HTMLDivElement} */
 		saveContainer: undefined,
+		/** @type {HTMLDivElement} */
+		travelMinigame: undefined,
 		/** @type {HTMLDivElement} */
 		version: undefined,
 	},
@@ -444,7 +464,10 @@ const GAME = {
 	},
 	state: {
 		get date(){
-			return new Date(1000, 0, 1, 0, 0, 0, this.t);
+			return this.dateFromT(this.t);
+		},
+		dateFromT(t = 0){
+			return new Date(1000, 0, 1, 6, 0, 0, t);
 		},
 		/** @type {Good[]} */
 		goods: [],
@@ -482,7 +505,7 @@ const GAME = {
 		const destination = this.state.towns[id];
 		const t = this.state.town.travelTime(destination);
 		if (confirm(`Are you sure you wish to spend ${this.prettyDuration(t)} travelling to ${destination.name}?`)) {
-			this.setLocation(id);
+			this.travelMinigame(id);
 		}
 	},
 	prettyPrice(x = 0, nowrap = false){
@@ -553,6 +576,9 @@ const GAME = {
 		if (!this.elem.saveContainer) {
 			document.body.appendChild(this.elem.saveContainer = this.save.createSaveElement());
 		}
+		if (!this.elem.travelMinigame) {
+			document.body.appendChild(this.elem.travelMinigame = this.elem.createTravelMinigame());
+		}
 		if (!this.elem.version) {
 			const version = this.elem.version = document.createElement('div');
 			version.id = version.title = 'version';
@@ -584,6 +610,33 @@ const GAME = {
 	tick(){
 		this.state.goods.forEach(g => g.tick());
 		this.updateInterface();
+	},
+	/** @param {number} destId  */
+	travelMinigame(destId){
+		const destination = this.state.towns[destId];
+		const duration = this.state.town.travelTime(destination) * 60*60*1000;
+		const travelTicks = Math.round(duration / this.constants.travelTickInterval);
+		document.getElementById('destination').innerHTML = destination.name;
+		this.elem.travelMinigame.style.display = 'block';
+		/** @type {HTMLSpanElement} */
+		const dateElem = document.getElementById('travelMinigameDate');
+		let tick = 0;
+		const onTick = () => {
+			console.debug(`tick ${tick}/${travelTicks}`);
+			if (travelTicks <= tick) {
+				clearInterval(intervalKey);
+				this.setLocation(destId);
+				this.elem.travelMinigame.style.display = 'none';
+				return;
+			}
+			tick++;
+			const sfx = ['tickHi', 'tickLo'][tick/12 % 2];
+			if (this.constants.sfx[sfx]) this.constants.sfx[sfx].play();
+			// continue...
+			const displayedTime = this.state.t + tick * this.constants.travelTickInterval;
+			dateElem.innerHTML = this.state.dateFromT(displayedTime);
+		};
+		const intervalKey = setInterval(() => onTick(), this.constants.travelTickIRL);
 	},
 	updateInterface(){
 		this.elem.priceList.innerHTML = '';

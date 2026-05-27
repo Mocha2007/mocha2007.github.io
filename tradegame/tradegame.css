@@ -122,3 +122,14 @@ h1,h2,h3,h4,h5 {
 	position: absolute;
 	right: 0;
 }
+#travelMinigame {
+	background-color: #111;
+	border: calc(0.25 * var(--unit)) solid #444;
+	height: 50vh;
+	left: 25vw;
+	position: absolute;
+	text-align: center;
+	top: 25vh;
+	width: 50vw;
+	z-index: 1;
+}
