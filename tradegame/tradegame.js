@@ -176,10 +176,10 @@ const GAME = {
 		/** ms */
 		priceUpdateInterval: 60*60*1000,
 		sfx: {
-			buttonClick: new Tone({freq: 300, attack: 0, hold: 0, fade: 500, volume: 0.1}),
-			buttonHover: new Tone({freq: 200, attack: 0, hold: 0, fade: 500, volume: 0.05}),
-			tickHi: new Tone({freq: 1200, attack: 0, hold: 200, fade: 0, volume: 0.05}),
-			tickLo: new Tone({freq: 600, attack: 0, hold: 200, fade: 0, volume: 0.05}),
+			buttonClick: new Tone({freq: 300, attack: 0, hold: 0, fade: 500, volume: 0.2}),
+			buttonHover: new Tone({freq: 200, attack: 0, hold: 0, fade: 500, volume: 0.1}),
+			tickHi: new Tone({freq: 1200, attack: 0, hold: 200, fade: 0, volume: 0.1}),
+			tickLo: new Tone({freq: 600, attack: 0, hold: 200, fade: 0, volume: 0.1}),
 		},
 		/** km/h */
 		travelSpeed: 5,
