@@ -322,9 +322,13 @@ const GAME = {
 			// header
 			e.appendChild(this.createHeader(2, 'Travelling to <span id="destination"></span>'));
 			// date
-			const date = document.createElement('span');
+			const date = document.createElement('div');
 			date.id = 'travelMinigameDate';
 			e.appendChild(date);
+			// dist
+			const dist = document.createElement('div');
+			dist.id = 'travelMinigameDist';
+			e.appendChild(dist);
 			// pause button
 			const pause = document.createElement('div');
 			pause.id = 'travelMinigamePause';
@@ -634,12 +638,13 @@ const GAME = {
 	/** @param {number} destId  */
 	travelMinigame(destId){
 		const destination = this.state.towns[destId];
+		const distance = this.state.town.distance(destination);
 		const duration = this.state.town.travelTime(destination) * 60*60*1000;
 		const travelTicks = Math.round(duration / this.constants.travelTickInterval);
 		document.getElementById('destination').innerHTML = destination.name;
 		this.elem.travelMinigame.style.display = 'block';
-		/** @type {HTMLSpanElement} */
 		const dateElem = document.getElementById('travelMinigameDate');
+		const distElem = document.getElementById('travelMinigameDist');
 		const travelState = new TravelState();
 		travelState.origin = this.state.town;
 		travelState.destination = destination;
@@ -656,6 +661,8 @@ const GAME = {
 			// continue...
 			const displayedTime = this.state.t + travelState.tick * this.constants.travelTickInterval;
 			dateElem.innerHTML = this.state.dateFromT(displayedTime);
+			const dist = travelState.tick * this.constants.travelTickInterval / (60*60*1000) * this.constants.travelSpeed;
+			distElem.innerHTML = `${dist.toFixed(0)} km of ${distance.toFixed(0)} km`;
 		};
 		let intervalKey;
 		const restart = () => intervalKey = setInterval(() => onTick(), this.constants.travelTickIRL);
