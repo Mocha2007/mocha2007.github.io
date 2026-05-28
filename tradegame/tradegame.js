@@ -154,6 +154,42 @@ class TravelState {
 	}
 }
 
+class TravelEvent {
+	/**
+	 * @param {(state: TravelState) => boolean} condition
+	 * @param {(state: TravelState) => number} mtth (ms)
+	 * @param {(state: TravelState) => void} effect
+	 */
+	constructor(condition = () => true, mtth = () => Infinity, effect = () => {}){
+		/** @type {(state: TravelState) => boolean} */
+		this.condition = condition;
+		/** @type {(state: TravelState) => number} */
+		this.mtth = mtth;
+		/** @type {(state: TravelState) => void} */
+		this.effect = effect;
+	}
+	/** @param {TravelState} state  */
+	check(state){
+		return this.condition(state) && Math.random() * this.mtth(state) < GAME.constants.travelTickInterval;
+	}
+}
+
+const CONSTANTS = {
+	get d(){
+		return this.h * 24;
+	},
+	get h(){
+		return this.min * 60;
+	},
+	get min(){
+		return this.s * 60;
+	},
+	s: 1000,
+	get wk(){
+		return this.d * 7;
+	},
+};
+
 const GAME = {
 	audio: new(window.AudioContext || window.webkitAudioContext)(),
 	/** non-user-editable vars */
@@ -174,7 +210,7 @@ const GAME = {
 		name: 'Trader',
 		playerStartMoney: 480,
 		/** ms */
-		priceUpdateInterval: 60*60*1000,
+		priceUpdateInterval: CONSTANTS.h,
 		sfx: {
 			buttonClick: new Tone({freq: 300, attack: 0, hold: 0, fade: 500, volume: 0.2}),
 			buttonHover: new Tone({freq: 200, attack: 0, hold: 0, fade: 500, volume: 0.1}),
@@ -183,7 +219,7 @@ const GAME = {
 		},
 		/** km/h */
 		travelSpeed: 5,
-		travelTickInterval: 5*60*1000,
+		travelTickInterval: 5*CONSTANTS.min,
 		travelTickIRL: 50,
 		varianceScaleGood: 0.5,
 		varianceScaleTown: 0.5,
@@ -525,6 +561,13 @@ const GAME = {
 		/** @type {Town[]} */
 		towns: [],
 	},
+	travelEvents: [
+		new TravelEvent(
+			state => GAME.state.player.money,
+			state => CONSTANTS.wk,
+			state => console.debug('bepis'),
+		),
+	],
 	confirmTravel(id = 0){
 		const destination = this.state.towns[id];
 		const t = this.state.town.travelTime(destination);
@@ -625,7 +668,7 @@ const GAME = {
 		}
 	},
 	setLocation(id = 0){
-		const travelTime = this.state.town.travelTime(this.state.towns[id]) * 60*60*1000;
+		const travelTime = this.state.town.travelTime(this.state.towns[id]) * CONSTANTS.h;
 		this.passTime(travelTime);
 		this.state.location = id;
 		// alert(`todo: moved to #${id}`);
@@ -639,7 +682,7 @@ const GAME = {
 	travelMinigame(destId){
 		const destination = this.state.towns[destId];
 		const distance = this.state.town.distance(destination);
-		const duration = this.state.town.travelTime(destination) * 60*60*1000;
+		const duration = this.state.town.travelTime(destination) * CONSTANTS.h;
 		const travelTicks = Math.round(duration / this.constants.travelTickInterval);
 		document.getElementById('destination').innerHTML = destination.name;
 		this.elem.travelMinigame.style.display = 'block';
@@ -661,8 +704,11 @@ const GAME = {
 			// continue...
 			const displayedTime = this.state.t + travelState.tick * this.constants.travelTickInterval;
 			dateElem.innerHTML = this.state.dateFromT(displayedTime);
-			const dist = travelState.tick * this.constants.travelTickInterval / (60*60*1000) * this.constants.travelSpeed;
+			const dist = travelState.tick * this.constants.travelTickInterval / CONSTANTS.h * this.constants.travelSpeed;
 			distElem.innerHTML = `${dist.toFixed(0)} km of ${distance.toFixed(0)} km`;
+			// check events...
+			this.travelEvents.forEach(event =>
+				event.check(travelState) && event.effect(travelState));
 		};
 		let intervalKey;
 		const restart = () => intervalKey = setInterval(() => onTick(), this.constants.travelTickIRL);
