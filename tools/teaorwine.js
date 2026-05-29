@@ -27,6 +27,7 @@ class Category {
 	static WINE_WHITE = 9;
 	static WINE_RED = 10;
 	static WINE_CHAMPAGNE = 11;
+	static WINE_ROSE = 12;
 	static is(a = Category.NULL, b = Category.NULL){
 		switch (b){
 			case Category.TEA:
@@ -72,7 +73,7 @@ const TOW = {
 		source: undefined,
 	},
 	prompts: [
-		// WINES (30)
+		// WINES (35)
 		new Prompt(
 			Category.WINE_WHITE,
 			'https://www.totalwine.com/wine/white-wine/pinot-grigiopinot-gris/tesoro-della-regina-pinot-grigio/p/110475750?s=1108&igrules=true',
@@ -253,7 +254,37 @@ const TOW = {
 			'Thievery Zinfandel Lodi, 2022 ',
 			'This selection is vibrant with aromas of raspberry, cream soda, cardamom, and toasty vanilla. The flavors across the palate are Bing cherry, pomegranate, allspice, lemon cream, and a dry spicy finish.'
 		),
-		// TEAS (30)
+		new Prompt(
+			Category.WINE_WHITE,
+			'https://www.totalwine.com/wine/white-wine/sauvignon-blanc/leia-vintners-wavecrest-sbpg/p/2126273944?s=1108&igrules=true',
+			'Leia Vintners Wavecrest Sauvignon Blanc Pinot Grigio, 2024 ',
+			'Showcases aromas of peach and lime chiffon lead to crème caramel flan and lemon meringue.'
+		),
+		new Prompt(
+			Category.WINE_RED,
+			'https://www.totalwine.com/wine/red-wine/tempranillo/asua-rioja-gran-reserva/p/349550750?s=1108&igrules=true',
+			'Asua Rioja Gran Reserva, 2017 ',
+			'So perfumed with flowers, black cherries, orange peel, and hints of lead pencil shavings.'
+		),
+		new Prompt(
+			Category.WINE_WHITE,
+			'https://www.totalwine.com/wine/white-wine/pinot-grigiopinot-gris/laudato-pinot-grigio/p/219512750?s=1108&igrules=true',
+			'Laudato Pinot Grigio ',
+			'Bright citrus and apple flavors, framed by a crisp acidity that leads to a clean, smooth finish. '
+		),
+		new Prompt(
+			Category.WINE_WHITE,
+			'https://www.totalwine.com/wine/white-wine/chardonnay/soaring-heights-buttery-chardonnay/p/2126273878?s=1108&igrules=true',
+			'Soaring Heights Buttery Chardonnay ',
+			'Creamy, rich mouthfeel with layers of butter, vanilla, and ripe orchard fruit.'
+		),
+		new Prompt(
+			Category.WINE_ROSE,
+			'https://www.totalwine.com/wine/rose-blush-wine/rose-blend/les-filets-rose/p/2126237327?s=1108&igrules=true',
+			'Les Filets Cotes de Thau Rose ',
+			'It offers notes of ripe berries and white peach, which are balanced by refreshing minerality.'
+		),
+		// TEAS (35)
 		new Prompt(
 			Category.TEA_GREEN,
 			'https://fiveoclock.eu/zielona/168466-japan-gyokuro-wakamusha.html',
@@ -433,6 +464,36 @@ const TOW = {
 			'https://fiveoclock.eu/czarna/169228-ceylon-fbopfexsp-berubeula-.html',
 			'Ceylon FBOPFEXSP Berubeula',
 			'Balanced in flavor, with a distinctly fruity note. A pleasant citrus aroma and a slightly dessert-like finish are a perfect combination.'
+		),
+		new Prompt(
+			Category.TEA_BLACK,
+			'https://fiveoclock.eu/czarna/169040-nepal-gold-himalayan-shangri-la.html',
+			'Nepal Gold Himalayan Shangri-La',
+			'Deep, with a subtle sweetness of ripe fruit and a hint of honey. Each sip envelops the senses with a delicate tartness and spicy sweetness. Perfect for tasting.'
+		),
+		new Prompt(
+			Category.TEA_BLACK,
+			'https://fiveoclock.eu/czarna/169150-darjeeling-musk-sungma-sf-ftgfop1.html',
+			'Darjeeling Musk Sungma SF FTGFOP1',
+			'Ripe, full-bodied, slightly woody and smoky. A hint of fruitiness and a slight caramel note in the background.'
+		),
+		new Prompt(
+			Category.TEA_OOLONG,
+			'https://fiveoclock.eu/oolong/17117-china-wuyi-rou-gui.html',
+			'China Wuyi Rou Gui',
+			'It lacks bitterness, with a characteristic spiciness. It has a complex, woody, bready flavor, with a dominant cinnamon aftertaste. Perfect for tasting.'
+		),
+		new Prompt(
+			Category.TEA_OOLONG,
+			'https://fiveoclock.eu/oolong/168859-oolong-formosa-tea-pouchong.html',
+			'Oolong Formosa Tea Pouchong',
+			'Its velvety smoothness and creamy fullness evoke notes of sweet flowers, dominated by a hint of freesia.'
+		),
+		new Prompt(
+			Category.TEA_OOLONG,
+			'https://fiveoclock.eu/oolong/169039-oolong-formosa-red-hong-shui-.html',
+			'Oolong Formosa Red Hong Shui',
+			'Its intriguing dessert character delights with notes of caramel, nuts, ripe fruit, and a subtle floral sweetness.'
 		),
 	],
 	state: {
