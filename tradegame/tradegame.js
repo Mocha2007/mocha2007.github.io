@@ -372,6 +372,10 @@ const GAME = {
 			pause.classList.add('button');
 			pause.onmouseover = () => GAME.constants.sfx.buttonHover.play();
 			e.appendChild(pause);
+			// travel log
+			const log = document.createElement('div');
+			log.id = 'travelMinigameLog';
+			e.appendChild(log);
 			return e;
 		},
 		/** @type {HTMLDivElement} */
@@ -565,7 +569,9 @@ const GAME = {
 		new TravelEvent(
 			state => GAME.state.player.money,
 			state => CONSTANTS.wk,
-			state => console.debug('bepis'),
+			state => {
+				// steal 1% of money, rounded up
+			},
 		),
 	],
 	confirmTravel(id = 0){
@@ -688,6 +694,8 @@ const GAME = {
 		this.elem.travelMinigame.style.display = 'block';
 		const dateElem = document.getElementById('travelMinigameDate');
 		const distElem = document.getElementById('travelMinigameDist');
+		const logElem = document.getElementById('travelMinigameLog');
+		logElem.innerHTML = '';
 		const travelState = new TravelState();
 		travelState.origin = this.state.town;
 		travelState.destination = destination;
@@ -726,6 +734,13 @@ const GAME = {
 			}
 		};
 		restart();
+	},
+	travelMessage(s = ''){
+		console.log('travelMessage', s);
+		const e = document.createElement('span');
+		e.classList.add('travelMessage');
+		e.innerHTML = s;
+		document.getElementById('travelMinigameLog').appendChild(e);
 	},
 	updateInterface(){
 		this.elem.priceList.innerHTML = '';
