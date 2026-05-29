@@ -546,7 +546,7 @@ const TOW = {
 		img.alt = 'two bottles of sparkling tea in ice';
 		menu.appendChild(img);
 		menu.appendChild(document.createElement('br'));
-		menu.appendChild(this.elem.button('new', () => this.new()));
+		menu.appendChild(this.elem.button('New', () => this.new()));
 		// PROMPT SCREEN
 		const promptScreen = this.elem.promptScreen = document.createElement('div');
 		promptScreen.id = 'promptScreen';
