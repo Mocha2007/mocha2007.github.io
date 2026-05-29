@@ -72,7 +72,7 @@ const TOW = {
 		source: undefined,
 	},
 	prompts: [
-		// WINES (15)
+		// WINES (20)
 		new Prompt(
 			Category.WINE_WHITE,
 			'https://www.totalwine.com/wine/white-wine/pinot-grigiopinot-gris/tesoro-della-regina-pinot-grigio/p/110475750?s=1108&igrules=true',
@@ -163,7 +163,37 @@ const TOW = {
 			'Eccentric Cabernet Sauvignon, 2025 ',
 			'This shows off flavors of blueberries soaked in coffee. Supple tannins support a touch of dark chocolate cedar flavorful with lingering richness throughout.'
 		),
-		// TEAS (15)
+		new Prompt(
+			Category.WINE_WHITE,
+			'https://www.totalwine.com/wine/white-wine/chardonnay/bishop-pine-chardonnay-california/p/236085750?s=1108&igrules=true',
+			'Bishop Pine Chardonnay California, 2024',
+			'Luscious, bright pear, yellow apple, nutmeg, white flowers, and toasty oak aromas. The flavors translate onto the palate like crisp, crunchy stone fruits, white peach, cinnamon, and candied orange peel, finishing juicy yet dry.'
+		),
+		new Prompt(
+			Category.WINE_RED,
+			'https://www.totalwine.com/wine/red-wine/cabernet-sauvignon/silver-oak-cabernet-alexander/p/220638750?s=1108&igrules=true',
+			'Silver Oak Cabernet Sauvignon Alexander Valley',
+			'Featuring aromas and flavors of black currant jam, rose petals, chocolate, and sandalwood.'
+		),
+		new Prompt(
+			Category.WINE_WHITE,
+			'https://www.totalwine.com/wine/white-wine/chardonnay/river-road-chardonnay-rrv-reserve/p/93152750?s=1108&igrules=true',
+			'River Road Reserve Russian River Valley Chardonnay ',
+			'Vibrant, with a hint of vanilla and bright fresh pear flavors.'
+		),
+		new Prompt(
+			Category.WINE_RED,
+			'https://www.totalwine.com/wine/red-wine/bordeaux-blend/ch-lamothe-vincent-reserve-bord/p/2126222101?s=1108&igrules=true',
+			'Chateau Lamothe Vincent Reserve Bordeaux, 2023 ',
+			'An unravelling of plush hedgerow fruit interlaced with toasty cedarwood and graphite swirling decadently over the supple tannins and cleansing cassis acidity.'
+		),
+		new Prompt(
+			Category.WINE_WHITE,
+			'https://www.totalwine.com/wine/white-wine/sauvignon-blanc/amici-sauvignon-blanc/p/20094750?s=1108&igrules=true',
+			'Amici Sauvignon Blanc, 2024',
+			'Aromas of sliced lemons and hints of celery and fresh white flowers. '
+		),
+		// TEAS (20)
 		new Prompt(
 			Category.TEA_GREEN,
 			'https://fiveoclock.eu/zielona/168466-japan-gyokuro-wakamusha.html',
@@ -253,6 +283,36 @@ const TOW = {
 			'https://fiveoclock.eu/czarna/169134-china-golden-silk.html',
 			'China Golden Silk',
 			'Rich aroma and notes of honey and cocoa. The taste is mild, naturally sweet and velvety, with a long, full, and pleasant finish.'
+		),
+		new Prompt(
+			Category.TEA_GREEN,
+			'https://fiveoclock.eu/zielona/168428-china-snow-buds.html',
+			'China Snow Buds',
+			'Its subtle fruity note lends a lightness and is pleasantly received by those who enjoy delicate flavors.'
+		),
+		new Prompt(
+			Category.TEA_WHITE,
+			'https://fiveoclock.eu/biala/86587-colombia-white-tea.html',
+			'Colombia White Tea',
+			'A hint of bitterness. A mature flavor with a noticeable woodiness and nuttiness.'
+		),
+		new Prompt(
+			Category.TEA_PUER,
+			'https://fiveoclock.eu/pu-erh/1157-herbata-chinska-pu-erh-yunnan.html',
+			'Pu-Erh Yunnan',
+			'The flavor is almost dense, intense and expressive, yet devoid of bitterness. It contains notes of earthiness and woodiness.'
+		),
+		new Prompt(
+			Category.TEA_BLACK,
+			'https://fiveoclock.eu/czarna/1138-herbata-chinska-dianhong-tea.html',
+			'Dianhong Tea',
+			'The flavor is deep and bold. Slightly bitter with a sweet and elegantly smoky aftertaste.'
+		),
+		new Prompt(
+			Category.TEA_GREEN,
+			'https://fiveoclock.eu/zielona/150087-herbata-klasyczna-china-luan-gua-pian.html',
+			'China Luan Gua Pian',
+			'This specialty boasts a unique flavor, blending notes of walnut and chestnut with floral nuances. The most interesting flavors are those that linger after tasting. You can detect herbaceous notes, vanilla, and a hint of vegetable notes.'
 		),
 	],
 	state: {
