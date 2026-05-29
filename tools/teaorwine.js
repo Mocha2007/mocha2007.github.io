@@ -238,6 +238,13 @@ const TOW = {
 		const h1 = document.createElement('h1');
 		h1.innerHTML = 'Tea or Wine?';
 		menu.appendChild(h1);
+		const img = document.createElement('img');
+		img.src = 'teaorwine.jpg';
+		img.style.height = 'min(50vh, 50vw)';
+		img.title = 'No - this is not wine. This is tea.';
+		img.alt = 'two bottles of sparkling tea in ice';
+		menu.appendChild(img);
+		menu.appendChild(document.createElement('br'));
 		menu.appendChild(this.elem.button('new', () => this.new()));
 		// PROMPT SCREEN
 		const promptScreen = this.elem.promptScreen = document.createElement('div');
