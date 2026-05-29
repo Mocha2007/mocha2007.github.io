@@ -72,7 +72,7 @@ const TOW = {
 		source: undefined,
 	},
 	prompts: [
-		// WINES (25)
+		// WINES (30)
 		new Prompt(
 			Category.WINE_WHITE,
 			'https://www.totalwine.com/wine/white-wine/pinot-grigiopinot-gris/tesoro-della-regina-pinot-grigio/p/110475750?s=1108&igrules=true',
@@ -223,7 +223,37 @@ const TOW = {
 			'Cakebread Chardonnay Napa ',
 			'Fresh, ripe, multilayered apple, pear and melon fruit, accented by mineral and toasty oak notes. Full and lush on the palate with a creamy texture and long finish.'
 		),
-		// TEAS (25)
+		new Prompt(
+			Category.WINE_WHITE,
+			'https://www.totalwine.com/wine/white-wine/chardonnay/cloud-break-chardonnay/p/110892750?s=1108&igrules=true',
+			'Cloud Break Chardonnay',
+			'Rich with flavors of toasted oak, vanilla, butter, apple, pear and hints of coconut. Refined acidity and hints of green apple linger on the elegant finish.'
+		),
+		new Prompt(
+			Category.WINE_WHITE,
+			'https://www.totalwine.com/wine/white-wine/chardonnay/sonoma-loeb-chardonnay-reserve/p/92823750?s=1108&igrules=true',
+			'Sonoma Loeb Chardonnay Private Reserve',
+			'Ripe & creamy with complex spicy pear, tropical fruit, vanilla, anise & smoky fig flavors, turning long & silky on the opulent, generously elegant finish.'
+		),
+		new Prompt(
+			Category.WINE_RED,
+			'https://www.totalwine.com/wine/red-wine/sangiovese/renieri-chianti-cls-gran-selezione/p/190155750?s=1108&igrules=true',
+			'Renieri Chianti Classico Gran Selezione, 2020',
+			'Fresh and crunchy, with orange peel, berries and plums with some mineral and bark.'
+		),
+		new Prompt(
+			Category.WINE_WHITE,
+			'https://www.totalwine.com/wine/white-wine/sauvignon-blanc/common-vine-sb-craiglo-waihopai/p/2126224895?s=1108&igrules=true',
+			'Common Vine Craiglochart Vineyard Waihopai Valley Sauvignon Blanc, 2023',
+			'It is mineral, with crushed shells and pressed flowers, pink grapefruit acidity and a spool of flavor through the persistent finish.'
+		),
+		new Prompt(
+			Category.WINE_RED,
+			'https://www.totalwine.com/wine/red-wine/zinfandel/thievery-zinfandel-lodi/p/223956750?s=1108&igrules=true',
+			'Thievery Zinfandel Lodi, 2022 ',
+			'This selection is vibrant with aromas of raspberry, cream soda, cardamom, and toasty vanilla. The flavors across the palate are Bing cherry, pomegranate, allspice, lemon cream, and a dry spicy finish.'
+		),
+		// TEAS (30)
 		new Prompt(
 			Category.TEA_GREEN,
 			'https://fiveoclock.eu/zielona/168466-japan-gyokuro-wakamusha.html',
@@ -373,6 +403,36 @@ const TOW = {
 			'https://fiveoclock.eu/pu-erh/16940-pu-erh-premium.html',
 			'Pu-Erh Premium',
 			'The lack of bitterness doesn\'t diminish the sense of essence. The flavor is distinctive, earthy, with a touch of wood. A hint of dried plum is noticeable in the background.'
+		),
+		new Prompt(
+			Category.TEA_BLACK,
+			'https://fiveoclock.eu/czarna/156583-japan-black-tea-3.html',
+			'Japan Black Tea',
+			'Exceptionally smooth, velvety, and complex, combining mineral freshness with woody and fruity accents. A hint of caramel and sweet spices lingers on the tongue. Perfect for tasting.'
+		),
+		new Prompt(
+			Category.TEA_BLACK,
+			'https://fiveoclock.eu/czarna/168991-ceylon-kolonna-super-fbopfexsp1.html',
+			'Ceylon Kolonna Super FBOPFEXSP1',
+			'Intense in flavor and color, it reveals nuances of woodiness, maltiness, and notes of spice. '
+		),
+		new Prompt(
+			Category.TEA_BLACK,
+			'https://fiveoclock.eu/czarna/161990-nepal-guranse-handrolled-floral-sf.html',
+			'Nepal Guranse Handrolled Floral SF',
+			'The flavor is enchantingly velvety, with pleasant floral notes offset by a touch of bitterness and tannins.'
+		),
+		new Prompt(
+			Category.TEA_PUER,
+			'https://fiveoclock.eu/specjaly-formowane/160402-china-pu-erh-mini-tuo-cha.html',
+			'China Pu-Erh Mini Tuo Cha',
+			'The flavor is pleasantly aromatic, heavier, and the accompanying note of light earthiness intertwines with a subtle nuttiness and a hint of dried plum.'
+		),
+		new Prompt(
+			Category.TEA_BLACK,
+			'https://fiveoclock.eu/czarna/169228-ceylon-fbopfexsp-berubeula-.html',
+			'Ceylon FBOPFEXSP Berubeula',
+			'Balanced in flavor, with a distinctly fruity note. A pleasant citrus aroma and a slightly dessert-like finish are a perfect combination.'
 		),
 	],
 	state: {
