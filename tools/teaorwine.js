@@ -72,7 +72,7 @@ const TOW = {
 		source: undefined,
 	},
 	prompts: [
-		// WINES (10)
+		// WINES (15)
 		new Prompt(
 			Category.WINE_WHITE,
 			'https://www.totalwine.com/wine/white-wine/pinot-grigiopinot-gris/tesoro-della-regina-pinot-grigio/p/110475750?s=1108&igrules=true',
@@ -133,7 +133,37 @@ const TOW = {
 			'1858 by Caymus Vineyards Cabernet Sauvignon Paso Robles, 2023',
 			'Juicy and expressive, this is packed with jammy strawberry and cherry, accented by clove and cedar. Rich and round, it leans into opulence while maintaining balance through spicy undertones.'
 		),
-		// TEAS (10)
+		new Prompt(
+			Category.WINE_RED,
+			'https://www.totalwine.com/wine/red-wine/cabernet-sauvignon/unanime-cabernet-sauvignon/p/130007750?s=1108&igrules=true',
+			'Unanime Cabernet Sauvignon, 2022',
+			'Notes of mocha and roses billow from below, followed by an ethereal bouquet of Provençal herbs and hazelnut. Dried herbs prevail on the palate alongside hints of anise seed, peppercorn, and cedar...elegant tannins with a savory grip.'
+		),
+		new Prompt(
+			Category.WINE_RED,
+			'https://www.totalwine.com/wine/red-wine/cabernet-sauvignon/mina-mesa-cabernet-paso/p/194460750?s=1108&igrules=true',
+			'Mina Mesa Paso Robles Cabernet Sauvignon',
+			'Aromas of blackberries and ripe plums, enhanced by notes of tarragon and mocha. Intense, balanced flavors shine through in the lingering finish of concentrated red fruit with a hint of vanilla.'
+		),
+		new Prompt(
+			Category.WINE_WHITE,
+			'https://www.totalwine.com/wine/white-wine/sauvignon-blanc/olema-sauvignon-blanc/p/231443750?s=1108&igrules=true',
+			'Olema Sauvignon Blanc, 2024',
+			'Attractive lemon, green melon and ginseng aromas follow through to a medium body with crunchy fruit and a tangy finish.'
+		),
+		new Prompt(
+			Category.WINE_RED,
+			'https://www.totalwine.com/wine/red-wine/cabernet-sauvignon/opus-one/p/2126267408?s=1108&igrules=true',
+			'Opus One, 2022',
+			'The aromas are high-toned with cassis and graphite, and a cinnamon-dusted red berry character nuanced by the woody, spicy aromas of just-cut rose stems balanced by fresh rose petals and dark chocolate.'
+		),
+		new Prompt(
+			Category.WINE_RED,
+			'https://www.totalwine.com/wine/red-wine/cabernet-sauvignon/eccentric-cabernet-sauvignon/p/213641750?s=1108&igrules=true',
+			'Eccentric Cabernet Sauvignon, 2025 ',
+			'This shows off flavors of blueberries soaked in coffee. Supple tannins support a touch of dark chocolate cedar flavorful with lingering richness throughout.'
+		),
+		// TEAS (15)
 		new Prompt(
 			Category.TEA_GREEN,
 			'https://fiveoclock.eu/zielona/168466-japan-gyokuro-wakamusha.html',
@@ -193,6 +223,36 @@ const TOW = {
 			'https://fiveoclock.eu/czarna/127984-filizanka-admirala-2.html',
 			'Admiral\'s Cup',
 			'A very pleasant balance, combining subtle tartness with sweet smokiness and nuttiness.'
+		),
+		new Prompt(
+			Category.TEA,
+			'https://fiveoclock.eu/herbata/168880-ceylon-new-falcon-fbopfexsp-.html',
+			'Ceylon New Falcon FBOPFEXSP',
+			'The flavor is vinous yet sweet, with a hint of buckwheat and a delicate cocoa undertone. Distinctive, tannic, and with a long, dessert-like finish.'
+		),
+		new Prompt(
+			Category.TEA_BLACK,
+			'https://fiveoclock.eu/czarna/169206-georgian-wild.html',
+			'Georgian Wild',
+			'Subtle and incredibly aromatic. Smoke and sweetness dominate, with a subtle hint of chocolate in the background. Fresh citrus notes are also noticeable in the aroma. Perfect for savoring.'
+		),
+		new Prompt(
+			Category.TEA_GREEN,
+			'https://fiveoclock.eu/zielona/78522-japan-bancha-2.html',
+			'Japan Bancha',
+			'The flavor is full-bodied, melting in the mouth with a subtle bitterness and a pleasant smoothness. Perfectly balanced notes, reminiscent of walnut, create a dense, buttery character.'
+		),
+		new Prompt(
+			Category.TEA_BLACK,
+			'https://fiveoclock.eu/czarna/1147-herbata-chinska-china-panyong-golden-needle.html',
+			'China Panyong Golden Needle',
+			'Sweet and warm notes, reminiscent of milk chocolate, dominate the flavor. A touch of refined smokiness and a slightly herbal nuance emerge at the end.'
+		),
+		new Prompt(
+			Category.TEA_BLACK,
+			'https://fiveoclock.eu/czarna/169134-china-golden-silk.html',
+			'China Golden Silk',
+			'Rich aroma and notes of honey and cocoa. The taste is mild, naturally sweet and velvety, with a long, full, and pleasant finish.'
 		),
 	],
 	state: {
