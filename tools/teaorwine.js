@@ -72,7 +72,7 @@ const TOW = {
 		source: undefined,
 	},
 	prompts: [
-		// WINES (20)
+		// WINES (25)
 		new Prompt(
 			Category.WINE_WHITE,
 			'https://www.totalwine.com/wine/white-wine/pinot-grigiopinot-gris/tesoro-della-regina-pinot-grigio/p/110475750?s=1108&igrules=true',
@@ -193,7 +193,37 @@ const TOW = {
 			'Amici Sauvignon Blanc, 2024',
 			'Aromas of sliced lemons and hints of celery and fresh white flowers. '
 		),
-		// TEAS (20)
+		new Prompt(
+			Category.WINE_WHITE,
+			'https://www.totalwine.com/wine/white-wine/pinot-grigiopinot-gris/belvino-pinot-grigio/p/140315750?s=1108&igrules=true',
+			'Belvino Pinot Grigio',
+			'Presents fresh ripe apple and pear aromas and flavors, with a hint of peach in the middle and of elderflower on the finish.'
+		),
+		new Prompt(
+			Category.WINE_WHITE,
+			'https://www.totalwine.com/wine/white-wine/chardonnay/chappellet-gc-chardonnay/p/242938750?s=1108&igrules=true',
+			'Chappellet Grower Collection Chardonnay ',
+			'This displays aromas of apricot, tropical flowers, lemon zest, with hints of creme fraiche, melted butter and baking spices adding depth and complexity.'
+		),
+		new Prompt(
+			Category.WINE_RED,
+			'https://www.totalwine.com/wine/red-wine/cabernet-sauvignon/samuel-robert-vyd-cab-napa-rsv/p/2126274136?s=1108&igrules=true',
+			'Samuel Robert Vineyard Reserve Napa Valley Cabernet Sauvignon, 2024 ',
+			'Bright cherry and pomegranate possess mocha overtones. Juicy and fresh, with supple and inviting tannins. Notes of sweet tobacco and lightly oaked cinnamon-cherry are quite pleasing.'
+		),
+		new Prompt(
+			Category.WINE_CHAMPAGNE,
+			'https://www.totalwine.com/wine/champagne-sparkling-wine/champagne/brut/marie-de-moy-grand-cru-champagne/p/238539750?s=1108&igrules=true',
+			'Champagne Marie de Moy Grand Cru',
+			'Stylish yellow apple, apricot and vibrant citrus is gently laced with vanilla pastry cream and brioche. Crisp and mouth-watering with a pervading mousse and an impressive finish.'
+		),
+		new Prompt(
+			Category.WINE_WHITE,
+			'https://www.totalwine.com/wine/white-wine/chardonnay/cakebread-chardonnay-napa/p/2342750?s=1108&igrules=true',
+			'Cakebread Chardonnay Napa ',
+			'Fresh, ripe, multilayered apple, pear and melon fruit, accented by mineral and toasty oak notes. Full and lush on the palate with a creamy texture and long finish.'
+		),
+		// TEAS (25)
 		new Prompt(
 			Category.TEA_GREEN,
 			'https://fiveoclock.eu/zielona/168466-japan-gyokuro-wakamusha.html',
@@ -313,6 +343,36 @@ const TOW = {
 			'https://fiveoclock.eu/zielona/150087-herbata-klasyczna-china-luan-gua-pian.html',
 			'China Luan Gua Pian',
 			'This specialty boasts a unique flavor, blending notes of walnut and chestnut with floral nuances. The most interesting flavors are those that linger after tasting. You can detect herbaceous notes, vanilla, and a hint of vegetable notes.'
+		),
+		new Prompt(
+			Category.TEA_PUER,
+			'https://fiveoclock.eu/pu-erh/169231-pu-erh-buds.html',
+			'Pu-Erh Buds',
+			'Deep, earthy aroma and a velvety flavor with a delicate malt note. It is distinguished by its elegant character and rich, highly complex aroma.'
+		),
+		new Prompt(
+			Category.TEA_GREEN,
+			'https://fiveoclock.eu/zielona/168382-truskawka-z-rabarbarem.html',
+			'Tai Ping Hou Kui',
+			'An incredibly fleeting floral and sweetness combines with a mineral, almost marine accent.'
+		),
+		new Prompt(
+			Category.TEA_GREEN,
+			'https://fiveoclock.eu/zielona/168569-china-huang-shan-mao-feng.html',
+			'China Huang Shan Mao Feng',
+			'A delicate sweetness with floral and malty notes intertwines with the soft body, while an intriguing, light sharpness emerges on the finish.'
+		),
+		new Prompt(
+			Category.TEA_BLACK,
+			'https://fiveoclock.eu/czarna/168458-golden-monkey.html',
+			'Golden Monkey',
+			'The flavor is balanced, with sweet notes and a hint of smokiness and dryness. The overall fullness and density make the taste linger long in the memory.'
+		),
+		new Prompt(
+			Category.TEA_PUER,
+			'https://fiveoclock.eu/pu-erh/16940-pu-erh-premium.html',
+			'Pu-Erh Premium',
+			'The lack of bitterness doesn\'t diminish the sense of essence. The flavor is distinctive, earthy, with a touch of wood. A hint of dried plum is noticeable in the background.'
 		),
 	],
 	state: {
