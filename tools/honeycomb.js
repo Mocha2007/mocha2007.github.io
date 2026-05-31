@@ -263,6 +263,7 @@ const HONEYCOMB = {
 			new Hint("common 19th century anaesthetic", Category.MEDICINE, Difficulty.HARD),
 			new Hint("the luminiferous variety was said to carry light", Category.PHYSICS),
 			new Hint("in a certain Minecraft mod, the opposite of the nether", Category.VIDEOGAME),
+			new Hint("Terraria Shimmer-containing mini-biome", Category.VIDEOGAME),
 		]),
 		new Word("alaska", [
 			new Hint("largest American state", Category.GEOGRAPHY),
@@ -281,12 +282,15 @@ const HONEYCOMB = {
 		new Word("alkaid", new Hint("easternmost star of the big dipper", Category.ASTRONOMY)),
 		new Word("alkali", new Hint("basic", Category.CHEMISTRY)),
 		new Word("alkane", new Hint("eg. methane, propane", Category.CHEMISTRY)),
+		new Word("allies", new Hint("WWII Axis enemy", Category.HISTORY)),
 		new Word("almond", new Hint("nut related to the peach", Category.FOOD)),
 		new Word("altair", new Hint("brightest star in Aquila", Category.ASTRONOMY)),
+		new Word("amarok", new Hint("Terraria hardmode snow yoyo", Category.VIDEOGAME, Difficulty.HARD)),
 		new Word("amazon", [
 			new Hint("mythical warrior woman", Category.RELIGION),
 			new Hint("largest tropical rainforest", Category.GEOGRAPHY),
 			new Hint("technology company that began as a bookseller", Category.TECH),
+			new Hint("Terraria jungle yoyo", Category.VIDEOGAME, Difficulty.HARD),
 		]),
 		new Word("ampere", new Hint("SI unit of current", Category.MEASUREMENT)),
 		new Word("andrew", [
@@ -311,6 +315,10 @@ const HONEYCOMB = {
 			new Hint("Minecraft skeletons bear these", Category.VIDEOGAME),
 		]),
 		new Word("aroace", new Hint("slang: aromantic and asexual", Category.LGBT)),
+		new Word("artery", [
+			new Hint("blood vessel taking blood away from the heart", Category.ANATOMY),
+			new Hint("Terraria yoyo crafted from crimtane", Category.VIDEOGAME, Difficulty.HARD),
+		]),
 		new Word("assist", new Hint("colloquially a 'slingshot' manouver (second word)", Category.ASTRONOMY)),
 		new Word("astana", new Hint("capital of Kazakhstan", Category.GEOGRAPHY)),
 		new Word("athena", new Hint("Greek goddess of wisdom", Category.RELIGION)),
@@ -328,10 +336,14 @@ const HONEYCOMB = {
 		new Word("autumn", new Hint("season after summer", Category.MEASUREMENT, Difficulty.EASY)),
 		new Word("azalea", new Hint("rhododendron", Category.BOTANY, Difficulty.HARD)),
 		new Word("baikal", new Hint("largest Asian freshwater lake", Category.GEOGRAPHY)),
-		new Word("bamboo", new Hint("fast-growing grass used like wood", Category.BOTANY)),
+		new Word("bamboo", [
+			new Hint("fast-growing grass used like wood", Category.BOTANY),
+			new Hint("Terraria jungle plant used in furniture", Category.VIDEOGAME, Difficulty.HARD),
+		]),
 		new Word("banana", [
 			new Hint("long yellow fruit", Category.FOOD, Difficulty.EASY),
 			new Hint("dancing fruit of Peanut Butter Jelly Time meme", Category.MEME),
+			new Hint("in Terraria, may drop from shaken palm trees", Category.VIDEOGAME, Difficulty.HARD),
 		]),
 		new Word("barium", new Hint("in pure form, this element is a common radiocontrast agent", Category.CHEMISTRY)),
 		new Word("barley", new Hint("major cereal grain", Category.BOTANY)),
@@ -376,6 +388,7 @@ const HONEYCOMB = {
 		new Word("bottle", [
 			new Hint("common liquid container", Category.FOOD),
 			new Hint("surface with no inside or outside (second word)", Category.MATH, Difficulty.HARD),
+			new Hint("most potions in Terraria require this vessel", Category.VIDEOGAME),
 		]),
 		new Word("bovine", new Hint("of cattle", Category.ZOOLOGY)),
 		new Word("branch", [
@@ -397,7 +410,10 @@ const HONEYCOMB = {
 		new Word("bushel", new Hint("eight gallons", Category.MEASUREMENT, Difficulty.HARD)),
 		new Word("butane", new Hint("C4H10", Category.CHEMISTRY)),
 		new Word("butter", new Hint("churned cream", Category.FOOD)),
-		new Word("cactus", new Hint("spiked desert plant", Category.BOTANY)),
+		new Word("cactus", [
+			new Hint("spiked desert plant", Category.BOTANY),
+			new Hint("Terraria swiftness potion ingredient", Category.VIDEOGAME, Difficulty.HARD),
+		]),
 		new Word("caelum", new Hint("chisel constellation", Category.ASTRONOMY)),
 		new Word("camels", [
 			new Hint("humped mounts", Category.ZOOLOGY),
@@ -431,7 +447,10 @@ const HONEYCOMB = {
 		new Word("carols", new Hint("sung around the holidays", Category.HOLIDAY_WINTER)),
 		new Word("carpel", new Hint("female reproductive organ of flowering plants", Category.BOTANY, Difficulty.HARD)),
 		new Word("carpet", new Hint("rug", Category.TEXTILE)),
-		new Word("carrot", new Hint("orange root", Category.FOOD)),
+		new Word("carrot", [
+			new Hint("orange root", Category.FOOD),
+			new Hint("in Terraria, spawns the Pet Bunny", Category.VIDEOGAME, Difficulty.HARD),
+		]),
 		new Word("carter", new Hint("hundred year old president who died in 2024", Category.NEWS2020S)),
 		new Word("casein", new Hint("milk protein", Category.FOOD)),
 		new Word("cashew", new Hint("crescent nut", Category.FOOD)),
@@ -456,7 +475,10 @@ const HONEYCOMB = {
 		new Word("chaser", new Hint("fetishizer of trans folks", Category.LGBT)),
 		new Word("chasma", new Hint("deep, elongated, steep-sided depression", Category.ASTRONOMY)),
 		new Word("cheese", new Hint("solid milk product", Category.FOOD)),
-		new Word("cherry", new Hint("small red fruit", Category.FOOD)),
+		new Word("cherry", [
+			new Hint("small red fruit", Category.FOOD),
+			new Hint("in Terraria, may drop from shaken boreal trees", Category.VIDEOGAME, Difficulty.HARD),
+		]),
 		new Word("chiral", new Hint("of a molecule with L- and D- stereoisomers", Category.CHEMISTRY, Difficulty.HARD)),
 		new Word("chives", new Hint("green onion-like plant", Category.FOOD)),
 		new Word("chrome", new Hint("Google browser", Category.TECH)),
@@ -465,8 +487,12 @@ const HONEYCOMB = {
 		new Word("clover", [
 			new Hint("small trefoliate plant", Category.BOTANY),
 			new Hint("symbol of St. Patrick's day", Category.HOLIDAY_SPRING),
+			new Hint("rare Terraria item obtained from cutting tall grass, increases luck", Category.VIDEOGAME, Difficulty.HARD),
 		]),
-		new Word("cobalt", new Hint("metal used in blue pigments", Category.CHEMISTRY)),
+		new Word("cobalt", [
+			new Hint("metal used in blue pigments", Category.CHEMISTRY),
+			new Hint("blue Terraria metal", Category.VIDEOGAME),
+		]),
 		new Word("cobble", new Hint("rock, between a pebble and boulder in size", Category.GEOLOGY)),
 		new Word("coffee", new Hint("dark caffeinated beverage", Category.FOOD)),
 		new Word("collis", new Hint("small hill", Category.ASTRONOMY)),
@@ -475,7 +501,10 @@ const HONEYCOMB = {
 			new Hint("treat for Santa", Category.HOLIDAY_WINTER),
 			new Hint("website storage medium", Category.TECH),
 		]),
-		new Word("copper", new Hint("primary constituent of brass and bronze", Category.CHEMISTRY)),
+		new Word("copper", [
+			new Hint("primary constituent of brass and bronze", Category.CHEMISTRY),
+			new Hint("orange Terraria metal, Tin is its alternate", Category.VIDEOGAME),
+		]),
 		new Word("corona", [
 			new Hint("outer stellar atmosphere", Category.ASTRONOMY),
 			new Hint("Mexican beer", Category.FOOD),
@@ -561,6 +590,7 @@ const HONEYCOMB = {
 			new Hint("Paradox renaissance 4X game (first word)", Category.VIDEOGAME),
 		]),
 		new Word("europe", new Hint("continent of Rome", Category.GEOGRAPHY)),
+		new Word("expert", new Hint("Terraria difficulty between classic and master", Category.VIDEOGAME)),
 		new Word("fabric", [
 			new Hint("cloth", Category.TEXTILE),
 			new Hint("Minecraft modloader", Category.VIDEOGAME),
@@ -593,11 +623,20 @@ const HONEYCOMB = {
 		new Word("flickr", new Hint("image host", Category.TECH)),
 		new Word("floret", new Hint("small flower", Category.BOTANY, Difficulty.HARD)),
 		new Word("florin", new Hint("a coin, worth two shillings", Category.HISTORY)),
-		new Word("flower", new Hint("inflorescence", Category.BOTANY)),
-		new Word("forest", new Hint("biome of trees", Category.GEOGRAPHY, Difficulty.EASY)),
+		new Word("flower", [
+			new Hint("inflorescence", Category.BOTANY),
+			new Hint("in Terraria, shiverthorn is a blue this", Category.VIDEOGAME),
+		]),
+		new Word("forest", [
+			new Hint("biome of trees", Category.GEOGRAPHY, Difficulty.EASY),
+			new Hint("Terraria starting biome", Category.VIDEOGAME),
+		]),
 		new Word("fornax", new Hint("furnace constellation", Category.ASTRONOMY)),
 		new Word("fortis", new Hint("nitric acid, alchemically (second word)", Category.CHEMISTRY)),
-		new Word("fossil", new Hint("mineralized organism remains", Category.GEOLOGY)),
+		new Word("fossil", [
+			new Hint("mineralized organism remains", Category.GEOLOGY),
+			new Hint("Terraria desert block to use with Extractinator", Category.VIDEOGAME),
+		]),
 		new Word("france", [
 			new Hint("country with the most francophones", Category.GEOGRAPHY),
 			new Hint("its capital, Paris", Category.GEOGRAPHY),
@@ -678,7 +717,10 @@ const HONEYCOMB = {
 			new Hint("American state surrounded entirely by ocean", Category.GEOGRAPHY),
 			new Hint("Pacific kingdom invaded by the United States", Category.HISTORY, Difficulty.SPICY),
 		]),
-		new Word("health", new Hint("H of WHO", Category.GEOGRAPHY)),
+		new Word("health", [
+			new Hint("H of WHO", Category.GEOGRAPHY),
+			new Hint("ministry overseeing e.g. vaccines", Category.POLITICS),
+		]),
 		new Word("helium", new Hint("element discovered in the sun", Category.CHEMISTRY)),
 		new Word("hermes", new Hint("Greek messenger god", Category.RELIGION)),
 		new Word("hestia", new Hint("Greek goddess of the hearth", Category.RELIGION)),
@@ -728,6 +770,7 @@ const HONEYCOMB = {
 			new Hint("Spore archetype with the Summon Mini-U ability", Category.VIDEOGAME),
 		]),
 		new Word("kobold", new Hint("mischievous reptilian humanoid", Category.FANTASY)),
+		new Word("kraken", new Hint("Terraria post-Plantera dungeon yoyo", Category.VIDEOGAME, Difficulty.HARD)),
 		new Word("kuiper", new Hint("Pluto lies in this belt", Category.ASTRONOMY)),
 		new Word("labile", [
 			new Hint("kinetically unstable", Category.CHEMISTRY),
@@ -746,7 +789,10 @@ const HONEYCOMB = {
 			new Hint("blue stone (second word)", Category.MINEROLOGY),
 			new Hint("Minecraft ore used to enchant (second word)", Category.VIDEOGAME),
 		]),
-		new Word("league", new Hint("three miles", Category.MEASUREMENT, Difficulty.HARD)),
+		new Word("league", [
+			new Hint("three miles", Category.MEASUREMENT, Difficulty.HARD),
+			new Hint("L of NFL", Category.SPORT, Difficulty.EASY),
+		]),
 		new Word("legume", new Hint("Fabaceae fruit", Category.BOTANY, Difficulty.HARD)),
 		new Word("lemons", new Hint("when life gives you...", Category.ENGLISH)),
 		new Word("length", new Hint("dimesion measured by the meter", Category.MEASUREMENT)),
@@ -776,6 +822,7 @@ const HONEYCOMB = {
 		new Word("marmot", new Hint("large ground-dwelling rodent", Category.ZOOLOGY)),
 		new Word("maroon", new Hint("dark red", Category.COLOR)),
 		new Word("marten", new Hint("weasel-like mammal", Category.ZOOLOGY)),
+		new Word("master", new Hint("Terraria difficulty between expert and legendary", Category.VIDEOGAME)),
 		new Word("matrix", [
 			new Hint("material between eukaryotic cells", Category.BIOLOGY),
 			new Hint("medium in which grains of material are embedded", Category.GEOLOGY),
@@ -847,6 +894,7 @@ const HONEYCOMB = {
 			new Hint("reddish yellow", Category.COLOR, Difficulty.EASY),
 			new Hint("word said to have no rhymes", Category.ENGLISH),
 			new Hint("citrus, eg. mandarin", Category.FOOD),
+			new Hint("in Terraria, a blood this may drop from shaken shadewood trees", Category.VIDEOGAME, Difficulty.HARD),
 		]),
 		new Word("origin", [
 			new Hint("New Glenn manufacturer (second word)", Category.TRANSPORT),
@@ -1053,6 +1101,7 @@ const HONEYCOMB = {
 			new Hint("most basal animal", Category.ZOOLOGY),
 			new Hint("species of star of hit Nickelodeon animation", Category.TV),
 		]),
+		new Word("spouse", new Hint("husband or wife", Category.ENGLISH)),
 		new Word("spring", [
 			new Hint("source", Category.GEOLOGY),
 			new Hint("season after winter", Category.MEASUREMENT, Difficulty.EASY),
@@ -1097,6 +1146,7 @@ const HONEYCOMB = {
 		new Word("taiwan", new Hint("island nation off China", Category.GEOGRAPHY)),
 		new Word("taoism", new Hint("Chinese philosophical tradition", Category.RELIGION)),
 		new Word("taurus", new Hint("bull sign", Category.ASTROLOGY)),
+		new Word("tehran", new Hint("Iranian capital", Category.GEOGRAPHY)),
 		new Word("tephra", new Hint("volcanic ejecta", Category.GEOLOGY)),
 		new Word("tethys", new Hint("fifth-largest Saturnian moon", Category.ASTRONOMY)),
 		new Word("thomas", new Hint("SCOTUS justice found accepting luxury trips from donors in 2023 (surname)", Category.NEWS2020S)),
@@ -1166,6 +1216,7 @@ const HONEYCOMB = {
 		new Word("wisdom", new Hint("in D&D, represents a character's practical intelligence", Category.FANTASY)),
 		new Word("wreath", new Hint("decorative branch ring", Category.HOLIDAY_WINTER)),
 		new Word("wuxing", new Hint("five traditional Chinese elements", Category.RELIGION)),
+		new Word("yelets", new Hint("Terraria post-mechanical jungle yoyo", Category.VIDEOGAME, Difficulty.HARD)),
 		new Word("yellow", new Hint("color between orange and green", Category.COLOR, Difficulty.EASY)),
 		new Word("yogurt", [
 			new Hint("fermented milk product", Category.FOOD),
