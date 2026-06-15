@@ -1537,11 +1537,12 @@ const OOM = {
 		// which claims that "the first hundred hours have cost $3.7 B" ($0.888 B/d)
 		// https://www.nytimes.com/2026/03/11/world/middleeast/iran-war-costs-pentagon.html?unlocked_article_code=1.SVA.vsUF.0KCfGdZalz4Y
 		// https://www.npr.org/2026/04/29/g-s1-119333/the-iran-war-now-has-a-price-tag-25-billion-but-still-no-end-date
-		new MoneyDatum('Cost to maintain the Iran War for a year (2026)', 29e9/2*12, "https://www.nytimes.com/2026/05/12/us/politics/iran-war-cost-hegseth-congress.html"),
+		new MoneyDatum('Cost to maintain the Iran War for a four months (2026)', 29e9/2*4, "https://www.nytimes.com/2026/05/12/us/politics/iran-war-cost-hegseth-congress.html"),
 		new MoneyDatum('Annual cost of universal free college (US, 2026)', 30e9, "https://www.nytimes.com/2026/03/21/opinion/iran-war-cost.html"),
 		new MoneyDatum('Annual cost of universal universal pre-K (US, 2026)', 35e9, "https://www.nytimes.com/2026/03/21/opinion/iran-war-cost.html"),
 		new MoneyDatum('Space Shuttle Project (2012)', 211e9, "https://en.wikipedia.org/wiki/Space_Shuttle"),
 		new MoneyDatum('Apollo Program (2020 inflation-adjusted)', 257e9, "https://en.wikipedia.org/wiki/Apollo_program"),
+		new MoneyDatum('US Reparations for Iran War (2026)', 325e9, "https://newrepublic.com/post/211826/jd-vance-us-pay-iran-billions-trump-deal"),
 		new MoneyDatum('Cost of DOGE due to lost taxes (2025)', 510e9, "https://web.archive.org/web/20250323115010/https://www.washingtonpost.com/business/2025/03/22/irs-tax-revenue-loss-federal-budget/"),
 		new MoneyDatum('US Military Budget (2026)', 892.6e9, "https://en.wikipedia.org/wiki/Military_budget_of_the_United_States#Budget_for_FY2026"),
 		new MoneyDatum('Annual societal cost of systemic racism (US, 2020)', 1e12, "https://www.cbsnews.com/news/us-gdp-growth-missed-16-trillion-systemic-racism-inequality-report/"),
