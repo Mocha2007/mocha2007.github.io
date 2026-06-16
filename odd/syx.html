@@ -62,7 +62,70 @@ td { border-radius: 1em; padding: 1em; text-align: center; }
 		<td class="bad">wine</td>
 	</tr>
 	<tr>
+		<th>Climate</th>
+		<td class="bad"> <!-- 58.333333333 -->
+			<table>
+				<tr><th>Cold</th><td>25%</td></tr>
+				<tr><th>Temperate</th><td>50%</td></tr>
+				<tr><th>Hot</th><td>100%</td></tr>
+			</table>
+		</td>
+		<td class="mid"> <!-- 73.333333333 -->
+			<table>
+				<tr><th>Cold</th><td>20%</td></tr>
+				<tr><th>Temperate</th><td>100%</td></tr>
+				<tr><th>Hot</th><td>100%</td></tr>
+			</table>
+		</td>
+		<td class="bad"> <!-- 63.333333333 -->
+			<table>
+				<tr><th>Cold</th><td>100%</td></tr>
+				<tr><th>Temperate</th><td>80%</td></tr>
+				<tr><th>Hot</th><td>10%</td></tr>
+			</table>
+		</td>
+		<td class="mid"> <!-- 66.666666667 -->
+			<table>
+				<tr><th>Cold</th><td>20%</td></tr>
+				<tr><th>Temperate</th><td>80%</td></tr>
+				<tr><th>Hot</th><td>100%</td></tr>
+			</table>
+		</td>
+		<td class="good"> <!-- 86.666666667 -->
+			<table>
+				<tr><th>Cold</th><td>80%</td></tr>
+				<tr><th>Temperate</th><td>100%</td></tr>
+				<tr><th>Hot</th><td>80%</td></tr>
+			</table>
+		</td>
+		<td class="good"> <!-- 86.666666667 -->
+			<table>
+				<tr><th>Cold</th><td>80%</td></tr>
+				<tr><th>Temperate</th><td>100%</td></tr>
+				<tr><th>Hot</th><td>80%</td></tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
 		<th colspan="6">Economic</th>
+	</tr>
+	<tr>
+		<th>Max Pop</th>
+		<td class="mid">0.65&times;</td>
+		<td class="mid">0.8&times;</td>
+		<td class="bad">0.6&times;</td>
+		<td class="good">1&times;</td>
+		<td class="good">0.9&times;</td>
+		<td class="bad">0.55&times;</td>
+	</tr>
+	<tr>
+		<th>Immigration</th>
+		<td class="mid">1&times;</td>
+		<td class="mid">1&times;</td>
+		<td class="good">25&times;</td>
+		<td class="bad">0.4&times;</td>
+		<td class="good">1.5&times;</td>
+		<td class="mid">1&times;</td>
 	</tr>
 	<tr>
 		<th title="Occurence * Credits">Tourism</th>
@@ -126,6 +189,15 @@ td { border-radius: 1em; padding: 1em; text-align: center; }
 				<tr><th>Fungus</th><td>10%</td></tr>
 			</table>
 		</td>
+	<tr>
+		<th>Pool</th>
+		<td class="good">Pool or Pond</td>
+		<td class="good">Pond</td>
+		<td class="bad">Pool</td>
+		<td class="bad">Moat</td>
+		<td class="bad">Pool</td>
+		<td class="good">Pond</td>
+	</tr>
 	</tr>
 </table>
 <h2>Explanation</h2>
@@ -207,6 +279,11 @@ td { border-radius: 1em; padding: 1em; text-align: center; }
 	When it comes to preferred drink, I slightly prefer shedeh (wine) to piva (beer) due to its decay rate.
 	But it is of course much better if a species prefers <em>both</em>.
 </p>
+<h3>Climate</h3>
+<p>
+	Since all species have at least one climate with 100% preference,
+	scoring is determined by the arithmetic mean of the three preferences.
+</p>
 <h3>Tourism</h3>
 <p>
 	Occurence multiplier times credit multiplier.
@@ -258,5 +335,10 @@ td { border-radius: 1em; padding: 1em; text-align: center; }
 	I have determined species rating by their opinion of dirt,
 	followed by their opinion of cobblestone,
 	followed by their opinion of fungus.
+</p>
+<h3>Pool</h3>
+<p>
+	Pond is objectively cheaper than Moat and Pool, which are equal to each other.
+	Thus, scoring is determined by preference of pond.
 </p>
 </html>
