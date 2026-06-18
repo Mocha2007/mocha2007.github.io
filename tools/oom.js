@@ -1537,7 +1537,9 @@ const OOM = {
 		// which claims that "the first hundred hours have cost $3.7 B" ($0.888 B/d)
 		// https://www.nytimes.com/2026/03/11/world/middleeast/iran-war-costs-pentagon.html?unlocked_article_code=1.SVA.vsUF.0KCfGdZalz4Y
 		// https://www.npr.org/2026/04/29/g-s1-119333/the-iran-war-now-has-a-price-tag-25-billion-but-still-no-end-date
-		new MoneyDatum('Cost to maintain the Iran War for a four months (2026)', 29e9/2*4, "https://www.nytimes.com/2026/05/12/us/politics/iran-war-cost-hegseth-congress.html"),
+		// US official claim: https://www.nytimes.com/2026/05/12/us/politics/iran-war-cost-hegseth-congress.html
+		// after ~ 2 months: https://www.democracynow.org/2026/5/7/headlines/trump_abandons_project_freedom_after_saudi_arabia_and_kuwait_suspend_access_to_bases_and_airspace
+		new MoneyDatum('Cost to maintain the Iran War for four months (2026)', 72e9/2*4, "https://www.democracynow.org/2026/5/7/headlines/trump_abandons_project_freedom_after_saudi_arabia_and_kuwait_suspend_access_to_bases_and_airspace"),
 		new MoneyDatum('Annual cost of universal free college (US, 2026)', 30e9, "https://www.nytimes.com/2026/03/21/opinion/iran-war-cost.html"),
 		new MoneyDatum('Annual cost of universal universal pre-K (US, 2026)', 35e9, "https://www.nytimes.com/2026/03/21/opinion/iran-war-cost.html"),
 		new MoneyDatum('Space Shuttle Project (2012)', 211e9, "https://en.wikipedia.org/wiki/Space_Shuttle"),
