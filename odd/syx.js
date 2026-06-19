@@ -32,6 +32,7 @@ class Species {
 					case Profession.FARMER:
 					case Profession.FARMER_MUSHROOM:
 					case Profession.FARMER_PASTURE:
+					case Profession.FARMER_PASTURE_BALTICRAWLER:
 					case Profession.ORCHARDIST:
 						return 0.8;
 					default:
@@ -65,6 +66,7 @@ class Species {
 					case Profession.FARMER:
 						return 0.75; // excl. mushroom
 					case Profession.FARMER_PASTURE:
+					case Profession.FARMER_PASTURE_BALTICRAWLER:
 					case Profession.FARMER_PASTURE_GLOBDIEN:
 						return 0.85;
 					case Profession.MINER:
@@ -85,6 +87,8 @@ class Species {
 			}
 			case Species.GARTHIMI: {
 				switch (profession) {
+					case Profession.FARMER_PASTURE_BALTICRAWLER:
+						return 3;
 					case Profession.FARMER:
 					case Profession.FARMER_MUSHROOM:
 					case Profession.FARMER_PASTURE:
@@ -127,6 +131,7 @@ class Species {
 					case Profession.BOWYER:
 						return 1.2;
 					case Profession.FARMER_PASTURE:
+					case Profession.FARMER_PASTURE_BALTICRAWLER:
 						return 1.2; // excl. Globdien
 					case Profession.MINER:
 						return 0.25;
@@ -165,6 +170,7 @@ class Profession {
 	static FARMER = "farmer";
 	static FARMER_MUSHROOM = "mushroom farmer";
 	static FARMER_PASTURE = "pasture farmer";
+	static FARMER_PASTURE_BALTICRAWLER = "balticrawler farmer";
 	static FARMER_PASTURE_GLOBDIEN = "globdien farmer";
 	static FISHER = "fisher";
 	static ORCHARDIST = "orchardist";
@@ -271,6 +277,7 @@ const DATA = {
 		// entelodont
 		new Recipe(Profession.FARMER_PASTURE, Item.MEAT, 1.12, [], [], [0.75, 1.1, 0.75]),
 		// globdien
+		new Recipe(Profession.FARMER_PASTURE_BALTICRAWLER, Item.MEAT, 0.7),
 		new Recipe(Profession.FARMER_PASTURE_GLOBDIEN, Item.EGG, 1.05, [], [], [0.5, 1, 2]),
 		new Recipe(Profession.FISHER, Item.FISH, 1.4, [], [], [1.1, 1, 1]),
 		new Recipe(Profession.MINER, Item.CLAY, 1.5),
