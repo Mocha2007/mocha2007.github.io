@@ -58,12 +58,12 @@ td th, td td:not(.emoji) { font-size: 75%; }
 	</tr>
 	<tr>
 		<th>Diet</th>
-		<td class="good">Eggs, Fish, Vegetables</td>
-		<td class="mid">Bread, Fruit, Vegetables</td>
-		<td class="good">Meat, Fish, Mushrooms</td>
-		<td class="mid">Meat, Fish</td>
-		<td class="bad">Bread, Eggs, Meat, Mushrooms</td>
-		<td class="bad">Eggs, Fruit, Meat</td>
+		<td class="mid">Eggs, Fish, Vegetables</td>
+		<td class="good">Bread, Fruit, Vegetables</td>
+		<td class="bad">Meat, Fish, Mushrooms</td>
+		<td class="bad">Meat, Fish</td>
+		<td class="mid">Bread, Eggs, Meat, Mushrooms</td>
+		<td class="good">Eggs, Fruit, Meat</td>
 	</tr>
 	<tr>
 		<th>Drink</th>
@@ -298,12 +298,12 @@ td th, td td:not(.emoji) { font-size: 75%; }
 	</tr>
 	<tr>
 		<th>Nursery Cost</th>
-		<td class="good">Fish</td>
-		<td class="mid">Vegetable</td>
-		<td class="">n/a</td>
-		<td class="bad">Meat</td>
-		<td class="good">Fruit</td>
-		<td class="good">Fruit</td>
+		<td class="bad">Fish (1.75)</td>
+		<td class="mid">Vegetable (2.38)</td>
+		<td class="bad">n/a</td>
+		<td class="mid">Meat (2.1)</td>
+		<td class="good">Fruit (2.45)</td>
+		<td class="good">Fruit (3.12)</td>
 	</tr>
 	<tr>
 		<th>Production Bonuses</th>
@@ -806,19 +806,19 @@ td th, td td:not(.emoji) { font-size: 75%; }
 	</tr>
 </table>
 <h2>Explanation</h2>
+<p>
+	I have excluded explanations for obvious traits (eg. Lifespan and Hunger).
+</p>
 <h3>Adulthood</h3>
 <p>
-	Lower is better.
-</p>
-<h3>Lifespan</h3>
-<p>
-	Higher is better.
+	Lower is better, as this means children enter the workforce faster,
+	and your nurseries can produce children faster.
 </p>
 <h3>Diet</h3>
 <p>
-	From best to worst:
+	Scored based on how easy it is to get their desired food (see explanation for nurseries).
 </p>
-<ol>
+<ol style="display:none">
 	<li>
 		<strong>Fishing</strong>
 		is moderately easy to set up (only requires wood),
@@ -893,7 +893,12 @@ td th, td td:not(.emoji) { font-size: 75%; }
 </p>
 <h3>Tourism</h3>
 <p>
-	Occurence multiplier times credit multiplier.
+	Occurence multiplier times credit multiplier should give a rough approximation of tourism income.
+</p>
+<h3>Nursery Cost</h3>
+<p>
+	Based on the row "Most Efficient Food Sources, per Worker, incl Climate".
+	Species are scored by how easy it is to produce their needed food (excl. hunters, which don't scale).
 </p>
 <h3>Structure</h3>
 <p>
