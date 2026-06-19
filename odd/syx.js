@@ -36,6 +36,7 @@ class Species {
 				switch (profession) {
 					case Profession.FARMER:
 						return 1.25;
+					case Profession.CHARCOALLER:
 					case Profession.SMELTER:
 					case Profession.WEAVER:
 						return 1.1;
@@ -68,6 +69,7 @@ class Species {
 						return 0.75;
 					case Profession.MINER:
 						return 1.25;
+					case Profession.CHARCOALLER:
 					case Profession.SMELTER:
 					case Profession.WEAVER:
 						return 0.9;
@@ -88,6 +90,8 @@ class Species {
 			}
 			case Species.TILAPI: {
 				switch (profession) {
+					case Profession.WOODCUTTER:
+						return 1.4;
 					case Profession.FARMER_PASTURE:
 						return 1.2; // excl. Globdien
 					case Profession.MINER:
@@ -118,6 +122,7 @@ class Climate {
 }
 
 class Profession {
+	static CHARCOALLER = "charcoaller";
 	static FARMER = "farmer";
 	static FARMER_PASTURE = "pasture farmer";
 	static MINER = "miner";
@@ -125,6 +130,7 @@ class Profession {
 	static SMITH = "smith";
 	static TAILOR = "tailor";
 	static WEAVER = "weaver";
+	static WOODCUTTER = "woodcutter";
 }
 
 class Item {
@@ -136,6 +142,7 @@ class Item {
 	static LEATHER = "leather";
 	static METAL = "metal";
 	static ORE = "ore";
+	static WOOD = "wood";
 	static cheapest_recipe(item, species){
 		const possible_recipes = this.recipes(item);
 		const possible_recipe_costs = possible_recipes.map(recipe => recipe.workers_per_item_recurse(species));
@@ -189,6 +196,7 @@ class Recipe {
 
 const DATA = {
 	recipes: [
+		new Recipe(Profession.CHARCOALLER, Item.COAL, 6, [Item.WOOD], [2]),
 		new Recipe(Profession.FARMER, Item.COTTON, 3, [], [], [0.5, 1, 1.5]),
 		new Recipe(Profession.FARMER_PASTURE, Item.COTTON, 1.8, [], [], [1.25, 1, 0.75]),
 		// TODO: confirm actually 0.56
@@ -200,6 +208,7 @@ const DATA = {
 		new Recipe(Profession.TAILOR, Item.CLOTHING, 3, [Item.FABRIC], [4]),
 		new Recipe(Profession.TAILOR, Item.CLOTHING, 3, [Item.LEATHER], [4]),
 		new Recipe(Profession.WEAVER, Item.FABRIC, 2, [Item.COTTON], [2]),
+		new Recipe(Profession.WOODCUTTER, Item.WOOD, 4),
 	],
 };
 
