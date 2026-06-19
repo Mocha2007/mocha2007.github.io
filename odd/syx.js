@@ -236,17 +236,13 @@ const DATA = {
 		new Recipe(Profession.CARPENTER, Item.FURNITURE, 0.5, [Item.WOOD], [2]),
 		new Recipe(Profession.CHARCOALLER, Item.COAL, 6, [Item.WOOD], [2]),
 		new Recipe(Profession.FARMER, Item.COTTON, 3, [], [], [0.5, 1, 1.5]),
-		// todo climate
 		new Recipe(Profession.FARMER, Item.FRUIT, 2.1),
-		// todo climate
 		new Recipe(Profession.FARMER, Item.GRAIN, 4),
 		new Recipe(Profession.FARMER_PASTURE, Item.COTTON, 1.8, [], [], [1.25, 1, 0.75]),
-		// TODO: confirm actually 0.56
 		new Recipe(Profession.FARMER_PASTURE, Item.LEATHER, 0.56, [], [], [0.75, 1.25, 0.75]),
 		new Recipe(Profession.MINER, Item.CLAY, 1.5),
 		new Recipe(Profession.MINER, Item.COAL, 4),
 		new Recipe(Profession.MINER, Item.ORE, 1.5),
-		// todo climate
 		new Recipe(Profession.ORCHARDIST, Item.FRUIT, 2.45),
 		new Recipe(Profession.POTTER, Item.POTTERY, 1, [Item.CLAY], [1]),
 		new Recipe(Profession.SMELTER, Item.METAL, 0.5, [Item.COAL, Item.ORE], [1.25, 1.25]),
