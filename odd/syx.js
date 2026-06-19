@@ -128,9 +128,15 @@ class Item {
 	static FALCATA = "falcata";
 	static METAL = "metal";
 	static ORE = "ore";
-	/** @returns {Recipe} */
-	static recipe(item){
-		return DATA.recipes.find(r => r.output === item);
+	static cheapest_recipe(item, species){
+		const possible_recipes = this.recipes(item);
+		const possible_recipe_costs = possible_recipes.map(recipe => recipe.workers_per_item_recurse(species));
+		const cheapest_cost = Math.min(...possible_recipe_costs);
+		return possible_recipes[possible_recipe_costs.indexOf(cheapest_cost)];
+	}
+	/** @param {Item} item */
+	static recipes(item){
+		return DATA.recipes.filter(r => r.output === item);
 	}
 }
 
@@ -144,9 +150,6 @@ class Recipe {
 		this.input_amts = input_amts;
 		/** @type {[number, number, number]} */
 		this.climate_bonuses = climate_bonuses;
-	}
-	get input_recipes(){
-		return this.inputs.map(i => Item.recipe(i));
 	}
 	get inputs_per_item(){
 		return this.input_amts.map(x => x / this.out_amt);
@@ -168,7 +171,7 @@ class Recipe {
 		const res_amt = this.inputs_per_item;
 		const input_workers = this.inputs.map((item, i) => {
 			const amt = res_amt[i];
-			const recipe = Item.recipe(item);
+			const recipe = Item.cheapest_recipe(item, species);
 			const wpi = recipe.workers_per_item_recurse(species);
 			return wpi * amt;
 		});
@@ -192,8 +195,8 @@ const DATA = {
 ['clothing', 'falcata'].forEach(item_name => {
 	/** @type {HTMLTableRowElement} */
 	const row_falcata = document.getElementById(item_name);
-	const recipe = Item.recipe(Item[item_name.toUpperCase()]);
 	Species.species.forEach(species => {
+		const recipe = Item.cheapest_recipe(Item[item_name.toUpperCase()], species);
 		const cell = row_falcata.children[species];
 		const ipw = recipe.items_per_worker_recursive(species);
 		cell.innerHTML = `${ipw.toFixed(3)}`;
