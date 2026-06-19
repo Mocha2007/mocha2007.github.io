@@ -27,6 +27,7 @@ class Species {
 				switch (profession) {
 					case Profession.FARMER:
 					case Profession.FARMER_PASTURE:
+					case Profession.ORCHARDIST:
 						return 0.8;
 					default:
 						return 1;
@@ -35,8 +36,10 @@ class Species {
 			case Species.CRETONIAN: {
 				switch (profession) {
 					case Profession.FARMER:
+					case Profession.ORCHARDIST:
 						return 1.25;
 					case Profession.CHARCOALLER:
+					case Profession.BREWER:
 					case Profession.SMELTER:
 					case Profession.WEAVER:
 						return 1.1;
@@ -64,6 +67,8 @@ class Species {
 						return 1.2;
 					case Profession.BOWYER:
 						return 0.8;
+					case Profession.ORCHARDIST:
+						return 0.65;
 					default:
 						return 1;
 				}
@@ -72,10 +77,12 @@ class Species {
 				switch (profession) {
 					case Profession.FARMER:
 					case Profession.FARMER_PASTURE:
+					case Profession.ORCHARDIST:
 						return 0.75;
 					case Profession.MINER:
 						return 1.25;
 					case Profession.CHARCOALLER:
+					case Profession.BREWER:
 					case Profession.SMELTER:
 					case Profession.WEAVER:
 						return 0.9;
@@ -91,6 +98,7 @@ class Species {
 			case Species.HUMAN: {
 				switch (profession) {
 					case Profession.FARMER:
+					case Profession.ORCHARDIST:
 						return 1.1;
 					default:
 						return 1;
@@ -98,6 +106,7 @@ class Species {
 			}
 			case Species.TILAPI: {
 				switch (profession) {
+					case Profession.ORCHARDIST:
 					case Profession.WOODCUTTER:
 						return 1.4;
 					case Profession.BOWYER:
@@ -132,11 +141,13 @@ class Climate {
 }
 
 class Profession {
+	static BREWER = "brewer";
 	static BOWYER = "bowyer";
 	static CARPENTER = "carpenter";
 	static CHARCOALLER = "charcoaller";
 	static FARMER = "farmer";
 	static FARMER_PASTURE = "pasture farmer";
+	static ORCHARDIST = "orchardist";
 	static MINER = "miner";
 	static SMELTER = "smelter";
 	static SMITH = "smith";
@@ -146,16 +157,21 @@ class Profession {
 }
 
 class Item {
+	static ALCOHOL = "alcohol";
 	static BOW = "bow";
+	static CLAY = "clay";
 	static CLOTHING = "clothing";
 	static COAL = "coal";
 	static COTTON = "cotton";
 	static FABRIC = "fabric";
 	static FALCATA = "falcata";
+	static FRUIT = "fruit";
 	static FURNITURE = "furniture";
+	static GRAIN = "grain";
 	static LEATHER = "leather";
 	static METAL = "metal";
 	static ORE = "ore";
+	static POTTERY = "pottery";
 	static WOOD = "wood";
 	static cheapest_recipe(item, species){
 		const possible_recipes = this.recipes(item);
@@ -210,15 +226,25 @@ class Recipe {
 
 const DATA = {
 	recipes: [
+		// todo pottery
+		new Recipe(Profession.BREWER, Item.ALCOHOL, 2.25, [Item.FRUIT, Item.COAL], [2, 0.5]),
+		// todo pottery
+		new Recipe(Profession.BREWER, Item.ALCOHOL, 2.5, [Item.GRAIN, Item.COAL], [2, 0.5]),
 		new Recipe(Profession.BOWYER, Item.BOW, 0.4, [Item.WOOD, Item.LEATHER], [4, 1]),
 		new Recipe(Profession.CARPENTER, Item.FURNITURE, 0.5, [Item.WOOD], [2]),
 		new Recipe(Profession.CHARCOALLER, Item.COAL, 6, [Item.WOOD], [2]),
 		new Recipe(Profession.FARMER, Item.COTTON, 3, [], [], [0.5, 1, 1.5]),
+		// todo climate
+		new Recipe(Profession.FARMER, Item.FRUIT, 2.1),
+		// todo climate
+		new Recipe(Profession.FARMER, Item.GRAIN, 4),
 		new Recipe(Profession.FARMER_PASTURE, Item.COTTON, 1.8, [], [], [1.25, 1, 0.75]),
 		// TODO: confirm actually 0.56
 		new Recipe(Profession.FARMER_PASTURE, Item.LEATHER, 0.56, [], [], [0.75, 1.25, 0.75]),
 		new Recipe(Profession.MINER, Item.COAL, 4),
 		new Recipe(Profession.MINER, Item.ORE, 1.5),
+		// todo climate
+		new Recipe(Profession.ORCHARDIST, Item.FRUIT, 2.45),
 		new Recipe(Profession.SMELTER, Item.METAL, 0.5, [Item.COAL, Item.ORE], [1.25, 1.25]),
 		new Recipe(Profession.SMITH, Item.FALCATA, 0.5, [Item.COAL, Item.METAL], [2, 0.4]),
 		new Recipe(Profession.TAILOR, Item.CLOTHING, 3, [Item.FABRIC], [4]),
@@ -229,7 +255,7 @@ const DATA = {
 };
 
 // compute
-['bow', 'clothing', 'falcata', 'furniture'].forEach(item_name => {
+['alcohol', 'bow', 'clothing', 'falcata', 'furniture'].forEach(item_name => {
 	/** @type {HTMLTableRowElement} */
 	const row_falcata = document.getElementById(item_name);
 	Species.species.forEach(species => {
