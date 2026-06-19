@@ -11,11 +11,23 @@ class Species {
 	 */
 	static profession_bonus(species, profession){
 		switch (species) {
+			case Species.AMEVIA: {
+				switch (profession) {
+					case Profession.FARMER:
+						return 0.8;
+					default:
+						return 1;
+				}
+			}
 			case Species.CRETONIAN: {
 				switch (profession) {
+					case Profession.FARMER:
+						return 1.25;
 					case Profession.SMELTER:
+					case Profession.WEAVER:
 						return 1.1;
 					case Profession.SMITH:
+					case Profession.TAILOR:
 						return 0.8;
 					default:
 						return 1;
@@ -23,9 +35,12 @@ class Species {
 			}
 			case Species.DONDORIAN: {
 				switch (profession) {
+					case Profession.FARMER:
+						return 0.75; // excl. mushroom
 					case Profession.MINER:
 						return 1.15;
 					case Profession.SMITH:
+					case Profession.TAILOR:
 						return 1.2;
 					default:
 						return 1;
@@ -33,12 +48,24 @@ class Species {
 			}
 			case Species.GARTHIMI: {
 				switch (profession) {
+					case Profession.FARMER:
+						return 0.75;
 					case Profession.MINER:
 						return 1.25;
 					case Profession.SMELTER:
+					case Profession.WEAVER:
 						return 0.9;
 					case Profession.SMITH:
+					case Profession.TAILOR:
 						return 0.75;
+					default:
+						return 1;
+				}
+			}
+			case Species.HUMAN: {
+				switch (profession) {
+					case Profession.FARMER:
+						return 1.1;
 					default:
 						return 1;
 				}
@@ -67,13 +94,19 @@ Species.species = [
 ]
 
 class Profession {
+	static FARMER = "farmer";
 	static MINER = "miner";
 	static SMELTER = "smelter";
 	static SMITH = "smith";
+	static TAILOR = "tailor";
+	static WEAVER = "weaver";
 }
 
 class Item {
+	static CLOTHING = "clothing";
 	static COAL = "coal";
+	static COTTON = "cotton";
+	static FABRIC = "fabric";
 	static FALCATA = "falcata";
 	static METAL = "metal";
 	static ORE = "ore";
@@ -123,21 +156,24 @@ class Recipe {
 
 const DATA = {
 	recipes: [
-		new Recipe(Profession.SMITH, Item.FALCATA, 0.5, [Item.COAL, Item.METAL], [2, 0.4]),
+		new Recipe(Profession.FARMER, Item.COTTON, 3),
 		new Recipe(Profession.MINER, Item.COAL, 4),
 		new Recipe(Profession.MINER, Item.ORE, 1.5),
 		new Recipe(Profession.SMELTER, Item.METAL, 0.5, [Item.COAL, Item.ORE], [1.25, 1.25]),
+		new Recipe(Profession.SMITH, Item.FALCATA, 0.5, [Item.COAL, Item.METAL], [2, 0.4]),
+		new Recipe(Profession.TAILOR, Item.CLOTHING, 3, [Item.FABRIC], [4]),
+		new Recipe(Profession.WEAVER, Item.FABRIC, 2, [Item.COTTON], [2]),
 	],
 };
 
-// compute falcata
-{
+// compute
+['clothing', 'falcata'].forEach(item_name => {
 	/** @type {HTMLTableRowElement} */
-	const row_falcata = document.getElementById('falcata');
-	const recipe = Item.recipe(Item.FALCATA);
+	const row_falcata = document.getElementById(item_name);
+	const recipe = Item.recipe(Item[item_name.toUpperCase()]);
 	Species.species.forEach(species => {
 		const cell = row_falcata.children[species];
 		const ipw = recipe.items_per_worker_recursive(species);
 		cell.innerHTML = `${ipw.toFixed(3)}`;
 	});
-}
+});
