@@ -40,6 +40,7 @@ class Species {
 					case Profession.SMELTER:
 					case Profession.WEAVER:
 						return 1.1;
+					case Profession.BOWYER:
 					case Profession.SMITH:
 					case Profession.TAILOR:
 						return 0.8;
@@ -58,6 +59,8 @@ class Species {
 					case Profession.SMITH:
 					case Profession.TAILOR:
 						return 1.2;
+					case Profession.BOWYER:
+						return 0.8;
 					default:
 						return 1;
 				}
@@ -73,6 +76,7 @@ class Species {
 					case Profession.SMELTER:
 					case Profession.WEAVER:
 						return 0.9;
+					case Profession.BOWYER:
 					case Profession.SMITH:
 					case Profession.TAILOR:
 						return 0.75;
@@ -92,6 +96,8 @@ class Species {
 				switch (profession) {
 					case Profession.WOODCUTTER:
 						return 1.4;
+					case Profession.BOWYER:
+						return 1.2;
 					case Profession.FARMER_PASTURE:
 						return 1.2; // excl. Globdien
 					case Profession.MINER:
@@ -122,6 +128,7 @@ class Climate {
 }
 
 class Profession {
+	static BOWYER = "bowyer";
 	static CHARCOALLER = "charcoaller";
 	static FARMER = "farmer";
 	static FARMER_PASTURE = "pasture farmer";
@@ -134,6 +141,7 @@ class Profession {
 }
 
 class Item {
+	static BOW = "bow";
 	static CLOTHING = "clothing";
 	static COAL = "coal";
 	static COTTON = "cotton";
@@ -196,6 +204,7 @@ class Recipe {
 
 const DATA = {
 	recipes: [
+		new Recipe(Profession.BOWYER, Item.BOW, 0.4, [Item.WOOD, Item.LEATHER], [4, 1]),
 		new Recipe(Profession.CHARCOALLER, Item.COAL, 6, [Item.WOOD], [2]),
 		new Recipe(Profession.FARMER, Item.COTTON, 3, [], [], [0.5, 1, 1.5]),
 		new Recipe(Profession.FARMER_PASTURE, Item.COTTON, 1.8, [], [], [1.25, 1, 0.75]),
@@ -213,7 +222,7 @@ const DATA = {
 };
 
 // compute
-['clothing', 'falcata'].forEach(item_name => {
+['bow', 'clothing', 'falcata'].forEach(item_name => {
 	/** @type {HTMLTableRowElement} */
 	const row_falcata = document.getElementById(item_name);
 	Species.species.forEach(species => {
