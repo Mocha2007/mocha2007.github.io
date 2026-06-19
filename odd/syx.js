@@ -26,6 +26,7 @@ class Species {
 			case Species.AMEVIA: {
 				switch (profession) {
 					case Profession.FARMER:
+					case Profession.FARMER_PASTURE:
 						return 0.8;
 					default:
 						return 1;
@@ -49,6 +50,8 @@ class Species {
 				switch (profession) {
 					case Profession.FARMER:
 						return 0.75; // excl. mushroom
+					case Profession.FARMER_PASTURE:
+						return 0.85;
 					case Profession.MINER:
 						return 1.15;
 					case Profession.SMITH:
@@ -61,6 +64,7 @@ class Species {
 			case Species.GARTHIMI: {
 				switch (profession) {
 					case Profession.FARMER:
+					case Profession.FARMER_PASTURE:
 						return 0.75;
 					case Profession.MINER:
 						return 1.25;
@@ -84,6 +88,8 @@ class Species {
 			}
 			case Species.TILAPI: {
 				switch (profession) {
+					case Profession.FARMER_PASTURE:
+						return 1.2; // excl. Globdien
 					case Profession.MINER:
 						return 0.25;
 					default:
@@ -113,6 +119,7 @@ class Climate {
 
 class Profession {
 	static FARMER = "farmer";
+	static FARMER_PASTURE = "pasture farmer";
 	static MINER = "miner";
 	static SMELTER = "smelter";
 	static SMITH = "smith";
@@ -126,6 +133,7 @@ class Item {
 	static COTTON = "cotton";
 	static FABRIC = "fabric";
 	static FALCATA = "falcata";
+	static LEATHER = "leather";
 	static METAL = "metal";
 	static ORE = "ore";
 	static cheapest_recipe(item, species){
@@ -182,11 +190,15 @@ class Recipe {
 const DATA = {
 	recipes: [
 		new Recipe(Profession.FARMER, Item.COTTON, 3, [], [], [0.5, 1, 1.5]),
+		new Recipe(Profession.FARMER_PASTURE, Item.COTTON, 1.8, [], [], [1.25, 1, 0.75]),
+		// TODO: confirm actually 0.56
+		new Recipe(Profession.FARMER_PASTURE, Item.LEATHER, 0.56, [], [], [0.75, 1.25, 0.75]),
 		new Recipe(Profession.MINER, Item.COAL, 4),
 		new Recipe(Profession.MINER, Item.ORE, 1.5),
 		new Recipe(Profession.SMELTER, Item.METAL, 0.5, [Item.COAL, Item.ORE], [1.25, 1.25]),
 		new Recipe(Profession.SMITH, Item.FALCATA, 0.5, [Item.COAL, Item.METAL], [2, 0.4]),
 		new Recipe(Profession.TAILOR, Item.CLOTHING, 3, [Item.FABRIC], [4]),
+		new Recipe(Profession.TAILOR, Item.CLOTHING, 3, [Item.LEATHER], [4]),
 		new Recipe(Profession.WEAVER, Item.FABRIC, 2, [Item.COTTON], [2]),
 	],
 };
