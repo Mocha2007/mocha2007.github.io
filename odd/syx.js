@@ -5,6 +5,18 @@ class Species {
 	static GARTHIMI = 4;
 	static HUMAN = 5;
 	static TILAPI = 6;
+	static climate(species){
+		switch (species){
+			case Species.AMEVIA:
+			case Species.CRETONIAN:
+			case Species.GARTHIMI:
+				return Climate.WARM;
+			case Species.DONDORIAN:
+				return Climate.COLD;
+			default:
+				return Climate.TEMPERATE;
+		}
+	}
 	/**
 	 * @param {Species} species 
 	 * @param {Profession} profession 
@@ -93,6 +105,12 @@ Species.species = [
 	Species.TILAPI,
 ]
 
+class Climate {
+	static COLD = 0;
+	static TEMPERATE = 1;
+	static WARM = 2;
+}
+
 class Profession {
 	static FARMER = "farmer";
 	static MINER = "miner";
@@ -117,13 +135,15 @@ class Item {
 }
 
 class Recipe {
-	constructor(profession, output, out_amt = 0, inputs = [], input_amts = []){
+	constructor(profession, output, out_amt = 0, inputs = [], input_amts = [], climate_bonuses = [1, 1, 1]){
 		this.profession = profession;
 		this.output = output;
 		this.out_amt = out_amt;
 		/** @type {Item[]} */
 		this.inputs = inputs;
 		this.input_amts = input_amts;
+		/** @type {[number, number, number]} */
+		this.climate_bonuses = climate_bonuses;
 	}
 	get input_recipes(){
 		return this.inputs.map(i => Item.recipe(i));
@@ -132,7 +152,9 @@ class Recipe {
 		return this.input_amts.map(x => x / this.out_amt);
 	}
 	items_per_worker(species){
-		return Species.profession_bonus(species, this.profession) * this.out_amt;
+		return Species.profession_bonus(species, this.profession)
+			* this.climate_bonuses[Species.climate(species)]
+			* this.out_amt;
 	}
 	items_per_worker_recursive(species){
 		return 1 / this.workers_per_item_recurse(species);
@@ -156,7 +178,7 @@ class Recipe {
 
 const DATA = {
 	recipes: [
-		new Recipe(Profession.FARMER, Item.COTTON, 3),
+		new Recipe(Profession.FARMER, Item.COTTON, 3, [], [], [0.5, 1, 1.5]),
 		new Recipe(Profession.MINER, Item.COAL, 4),
 		new Recipe(Profession.MINER, Item.ORE, 1.5),
 		new Recipe(Profession.SMELTER, Item.METAL, 0.5, [Item.COAL, Item.ORE], [1.25, 1.25]),
