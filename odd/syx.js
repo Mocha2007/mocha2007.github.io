@@ -53,6 +53,7 @@ class Species {
 						return 1.1;
 					case Profession.BOWYER:
 					case Profession.CARPENTER:
+					case Profession.MASON:
 					case Profession.POTTER:
 					case Profession.SMITH:
 					case Profession.TAILOR:
@@ -74,6 +75,7 @@ class Species {
 					case Profession.SMITH:
 						return 1.25;
 					case Profession.CARPENTER:
+					case Profession.MASON:
 					case Profession.POTTER:
 					case Profession.TAILOR:
 						return 1.2;
@@ -89,6 +91,8 @@ class Species {
 				switch (profession) {
 					case Profession.FARMER_PASTURE_BALTICRAWLER:
 						return 3;
+					case Profession.MASON:
+						return 1.3;
 					case Profession.FARMER:
 					case Profession.FARMER_MUSHROOM:
 					case Profession.FARMER_PASTURE:
@@ -173,6 +177,7 @@ class Profession {
 	static FARMER_PASTURE_BALTICRAWLER = "balticrawler farmer";
 	static FARMER_PASTURE_GLOBDIEN = "globdien farmer";
 	static FISHER = "fisher";
+	static MASON = "mason";
 	static ORCHARDIST = "orchardist";
 	static POTTER = "potter";
 	static MINER = "miner";
@@ -191,6 +196,7 @@ class Item {
 	static CLOTHING = "clothing";
 	static COAL = "coal";
 	static COTTON = "cotton";
+	static CUT_STONE = "cut stone";
 	static EGG = "egg";
 	static FABRIC = "fabric";
 	static FALCATA = "falcata";
@@ -206,6 +212,7 @@ class Item {
 	static ORE = "ore";
 	static POTTERY = "pottery";
 	static RESTAURANT = "restaurant";
+	static STONE = "stone";
 	static TOOL = "tool";
 	static WARBEAST = "warbeast";
 	static WOOD = "wood";
@@ -284,9 +291,11 @@ const DATA = {
 		new Recipe(Profession.FARMER_PASTURE_BALTICRAWLER, Item.MEAT, 0.7),
 		new Recipe(Profession.FARMER_PASTURE_GLOBDIEN, Item.EGG, 1.05, [], [], [0.5, 1, 2]),
 		new Recipe(Profession.FISHER, Item.FISH, 1.4, [], [], [1.1, 1, 1]),
+		new Recipe(Profession.MASON, Item.CUT_STONE, 0.5, [Item.STONE], [2]),
 		new Recipe(Profession.MINER, Item.CLAY, 1.5),
 		new Recipe(Profession.MINER, Item.COAL, 4),
 		new Recipe(Profession.MINER, Item.ORE, 1.5),
+		new Recipe(Profession.MINER, Item.STONE, 4.5),
 		new Recipe(Profession.ORCHARDIST, Item.FRUIT, 2.45),
 		new Recipe(Profession.POTTER, Item.POTTERY, 1, [Item.CLAY], [1]),
 		new Recipe(Profession.SMELTER, Item.METAL, 0.5, [Item.COAL, Item.ORE], [1.25, 1.25]),
@@ -312,7 +321,7 @@ const DATA = {
 });
 
 // compute table
-['alcohol', 'bow', 'clothing', 'falcata', 'furniture', 'restaurant', 'tool', 'warbeast']
+['alcohol', 'bow', 'clothing', 'cut stone', 'falcata', 'furniture', 'restaurant', 'tool', 'warbeast']
 .forEach(item_name => {
 	/** @type {HTMLTableRowElement} */
 	const row = document.getElementById(item_name);
