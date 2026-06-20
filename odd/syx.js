@@ -53,6 +53,7 @@ class Species {
 						return 1.1;
 					case Profession.BOWYER:
 					case Profession.CARPENTER:
+					case Profession.JEWELLER:
 					case Profession.MASON:
 					case Profession.POTTER:
 					case Profession.SMITH:
@@ -72,6 +73,7 @@ class Species {
 						return 0.85;
 					case Profession.MINER:
 						return 1.15;
+					case Profession.JEWELLER:
 					case Profession.SMITH:
 						return 1.25;
 					case Profession.CARPENTER:
@@ -111,6 +113,7 @@ class Species {
 						return 0.8;
 					case Profession.BOWYER:
 					case Profession.CARPENTER:
+					case Profession.JEWELLER:
 					case Profession.POTTER:
 					case Profession.SMITH:
 					case Profession.TAILOR:
@@ -184,6 +187,7 @@ class Profession {
 	static FARMER_PASTURE_BALTICRAWLER = "balticrawler farmer";
 	static FARMER_PASTURE_GLOBDIEN = "globdien farmer";
 	static FISHER = "fisher";
+	static JEWELLER = "jeweller";
 	static MASON = "mason";
 	static ORCHARDIST = "orchardist";
 	static POTTER = "potter";
@@ -216,6 +220,7 @@ class Item {
 	static GRAIN = "grain";
 	static HERB = "herb";
 	static INNOVATION = "innovation";
+	static JEWELLERY = "jewellery";
 	static KNOWLEDGE = "knowledge";
 	static LEATHER = "leather";
 	static MEAT = "meat";
@@ -305,6 +310,7 @@ const DATA = {
 		new Recipe(Profession.FARMER_PASTURE_BALTICRAWLER, Item.MEAT, 0.7),
 		new Recipe(Profession.FARMER_PASTURE_GLOBDIEN, Item.EGG, 1.05, [], [], [0.5, 1, 2]),
 		new Recipe(Profession.FISHER, Item.FISH, 1.4, [], [], [1.1, 1, 1]),
+		new Recipe(Profession.JEWELLER, Item.JEWELLERY, 0.1, [Item.METAL, Item.GEM], [0.04, 0.1]),
 		new Recipe(Profession.MASON, Item.CUT_STONE, 0.5, [Item.STONE], [2]),
 		new Recipe(Profession.MINER, Item.CLAY, 1.5),
 		new Recipe(Profession.MINER, Item.COAL, 4),
@@ -341,7 +347,7 @@ const DATA = {
 
 // compute table
 ['alcohol', 'bow', 'clothing', 'cut stone', 'falcata', 'furniture',
-	'gem', 'innovation', 'knowledge', 'opium', 'restaurant', 'tool', 'warbeast']
+	'gem', 'innovation', 'jewellery', 'knowledge', 'opium', 'restaurant', 'tool', 'warbeast']
 .forEach(item_name => {
 	/** @type {HTMLTableRowElement} */
 	const row = document.getElementById(item_name);
