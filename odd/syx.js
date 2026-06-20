@@ -209,6 +209,7 @@ class Item {
 	static MEAT = "meat";
 	static METAL = "metal";
 	static MUSHROOM = "mushroom";
+	static OPIUM = "opium";
 	static ORE = "ore";
 	static POTTERY = "pottery";
 	static RESTAURANT = "restaurant";
@@ -281,6 +282,7 @@ const DATA = {
 		new Recipe(Profession.FARMER, Item.GRAIN, 4),
 		new Recipe(Profession.FARMER, Item.HERB, 0.25, [], [], [2, 1, 0.5]),
 		new Recipe(Profession.FARMER, Item.MUSHROOM, 1, [], [], [2, 1, 0.5]),
+		new Recipe(Profession.FARMER, Item.OPIUM, 0.25, [], [], [0.5, 1, 2]),
 		new Recipe(Profession.FARMER_PASTURE, Item.COTTON, 1.8, [], [], [1.25, 1, 0.75]),
 		new Recipe(Profession.FARMER_PASTURE, Item.LEATHER, 0.56, [], [], [0.75, 1.25, 0.75]),
 		// entelodont
@@ -321,7 +323,7 @@ const DATA = {
 });
 
 // compute table
-['alcohol', 'bow', 'clothing', 'cut stone', 'falcata', 'furniture', 'restaurant', 'tool', 'warbeast']
+['alcohol', 'bow', 'clothing', 'cut stone', 'falcata', 'furniture', 'opium', 'restaurant', 'tool', 'warbeast']
 .forEach(item_name => {
 	/** @type {HTMLTableRowElement} */
 	const row = document.getElementById(item_name);
