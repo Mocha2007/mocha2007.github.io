@@ -231,6 +231,7 @@ class Item {
 	static FURNITURE = "furniture";
 	static GEM = "gem";
 	static GRAIN = "grain";
+	static HAMMER = "hammer";
 	static HERB = "herb";
 	static INNOVATION = "innovation";
 	static JEWELLERY = "jewellery";
@@ -246,6 +247,7 @@ class Item {
 	static POTTERY = "pottery";
 	static RATION = "ration";
 	static RESTAURANT = "restaurant";
+	static SPEAR = "spear";
 	static STONE = "stone";
 	static TOOL = "tool";
 	static WARBEAST = "warbeast";
@@ -309,6 +311,9 @@ const DATA = {
 		new Recipe(Profession.BREWER, Item.ALCOHOL, 2.5, [Item.GRAIN, Item.COAL, Item.POTTERY], [2, 0.5, 0.25]),
 		new Recipe(Profession.BOWYER, Item.BOW, 0.4, [Item.WOOD, Item.LEATHER], [4, 1]),
 		new Recipe(Profession.CARPENTER, Item.FURNITURE, 0.5, [Item.WOOD], [2]),
+		new Recipe(Profession.CARPENTER, Item.HAMMER, 0.25, [Item.WOOD, Item.STONE], [2, 2.5]),
+		new Recipe(Profession.CARPENTER, Item.SPEAR, 0.5, [Item.WOOD, Item.STONE], [2, 2.5]),
+		new Recipe(Profession.CARPENTER, Item.SPEAR, 1, [Item.WOOD, Item.METAL], [1, 0.4]),
 		new Recipe(Profession.CHARCOALLER, Item.COAL, 6, [Item.WOOD], [2]),
 		new Recipe(Profession.FARMER, Item.COTTON, 3, [], [], [0.5, 1, 1.5]),
 		new Recipe(Profession.FARMER, Item.FRUIT, 2.1),
@@ -348,6 +353,7 @@ const DATA = {
 		new Recipe(Profession.SCRIBE, Item.KNOWLEDGE, 2, [Item.LEATHER], [0.5]),
 		new Recipe(Profession.SMELTER, Item.METAL, 0.5, [Item.COAL, Item.ORE], [1.25, 1.25]),
 		new Recipe(Profession.SMITH, Item.FALCATA, 0.5, [Item.COAL, Item.METAL], [2, 0.4]),
+		new Recipe(Profession.SMITH, Item.HAMMER, 0.5, [Item.COAL, Item.METAL, Item.WOOD], [1, 0.4, 2]),
 		new Recipe(Profession.SMITH, Item.TOOL, 2, [Item.COAL, Item.METAL], [2, 0.4]),
 		new Recipe(Profession.TAILOR, Item.CLOTHING, 3, [Item.FABRIC], [4]),
 		new Recipe(Profession.TAILOR, Item.CLOTHING, 3, [Item.LEATHER], [4]),
@@ -370,8 +376,8 @@ const DATA = {
 
 // compute table
 ['alcohol', 'bow', 'clothing', 'cut stone', 'fabric', 'falcata', 'furniture',
-	'gem', 'innovation', 'jewellery', 'knowledge', 'machinery', 'opium',
-	'paper', 'ration', 'restaurant', 'tool', 'warbeast']
+	'gem', 'hammer', 'innovation', 'jewellery', 'knowledge', 'machinery', 'opium',
+	'paper', 'ration', 'restaurant', 'spear', 'tool', 'warbeast']
 .forEach(item_name => {
 	/** @type {HTMLTableRowElement} */
 	const row = document.getElementById(item_name);
