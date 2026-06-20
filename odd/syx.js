@@ -418,15 +418,23 @@ const DATA = {
 // compute table2
 [
 	// STRUCTURES
+	['asylum', 'Asylum (per Worker)', [Item.STONE, Item.METAL, Item.FURNITURE, Item.FABRIC], [8, 16, 20, 20]],
 	['bakery', 'Bakery (per Worker)', [Item.STONE, Item.WOOD], [10.135135135135135, 12.162162162162161]],
 	['brewery', 'Brewery (per Worker)', [Item.FURNITURE, Item.POTTERY], [0.875, 0.875]],
 	['chamber', 'Chamber', [Item.CUT_STONE, Item.FURNITURE, Item.FABRIC, Item.GEM], [40, 60, 50, 20]],
 	['charcoaller', 'Charcoaller (per Worker)', [Item.STONE, Item.CLAY], [9.25, 8.25]],
+	['court', 'Court (per Worker)', [Item.FURNITURE, Item.GEM], [1, 2]],
 	['fishery', 'Fishery (per Worker)', [Item.WOOD], [100/9]],
+	['hospital', 'Hospital (per Worker)', [Item.FURNITURE, Item.TOOL], [16, 8]],
 	['jeweller', 'Jeweller (per Worker)', [Item.CUT_STONE, Item.FURNITURE, Item.METAL], [8/18, 8/18, 7/18]],
+	['lavatory', 'Lavatory (per Service)', [Item.WOOD, Item.FURNITURE], [9/7, 9/7]],
+	['library', 'Library (per Worker)', [Item.FURNITURE, Item.FABRIC], [1, 0.7]],
 	['mine', 'Mine (per Worker)', [Item.STONE, Item.FURNITURE], [1.5, 1.25]],
 	['pasture', 'Pasture (per Worker)', [Item.WOOD], [27.693089431]],
+	['physician', 'Physician (per Worker)', [Item.FURNITURE, Item.CUT_STONE, Item.TOOL], [12, 12, 16]],
+	['restaurant_b', 'Restaurant (per Worker)', [Item.FURNITURE, Item.POTTERY, Item.METAL], [8, 12, 4]],
 	['smithy', 'Smithy (per Worker)', [Item.STONE, Item.FURNITURE, Item.METAL], [25/18, 13/18, 7/18]],
+	['tavern', 'Tavern (per Service)', [Item.WOOD, Item.FURNITURE, Item.FABRIC], [3, 3, 2]],
 	['woodcutter', 'Woodcutter (per Worker)', [Item.STONE, Item.FURNITURE], [2, 0.5]],
 	// DECORATIONS
 	['bench1', 'Bench (1x1)', [Item.STONE, Item.FURNITURE], [1, 1]],
