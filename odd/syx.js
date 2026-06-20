@@ -297,6 +297,10 @@ const DATA = {
 		new Recipe(Profession.WEAVER, Item.FABRIC, 2, [Item.COTTON], [2]),
 		new Recipe(Profession.WOODCUTTER, Item.WOOD, 4),
 	],
+	/** @param {string} s */
+	title(s){
+		return s ? s[0].toUpperCase() + s.slice(1).toLowerCase() : '';
+	}
 };
 
 // compute chef data
@@ -312,6 +316,9 @@ const DATA = {
 .forEach(item_name => {
 	/** @type {HTMLTableRowElement} */
 	const row = document.getElementById(item_name);
+	const th = document.createElement('th');
+	th.innerHTML = DATA.title(item_name);
+	row.appendChild(th);
 	const rank = new Array(7).fill(-1).map((x, i) => [i, x]);
 	Species.species.forEach(species => {
 		const recipe = Item.cheapest_recipe(item_name, species);
