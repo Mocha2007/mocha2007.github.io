@@ -216,6 +216,8 @@ class Profession {
 
 class Item {
 	static ALCOHOL = "alcohol";
+	static ARMOR_LEATHER = "leather armor";
+	static ARMOR_PLATE = "plate armor";
 	static BREAD = "bread";
 	static BOW = "bow";
 	static CLAY = "clay";
@@ -352,9 +354,11 @@ const DATA = {
 		new Recipe(Profession.SCRIBE, Item.KNOWLEDGE, 1),
 		new Recipe(Profession.SCRIBE, Item.KNOWLEDGE, 2, [Item.LEATHER], [0.5]),
 		new Recipe(Profession.SMELTER, Item.METAL, 0.5, [Item.COAL, Item.ORE], [1.25, 1.25]),
+		new Recipe(Profession.SMITH, Item.ARMOR_PLATE, 0.15, [Item.COAL, Item.METAL], [2, 0.4]),
 		new Recipe(Profession.SMITH, Item.FALCATA, 0.5, [Item.COAL, Item.METAL], [2, 0.4]),
 		new Recipe(Profession.SMITH, Item.HAMMER, 0.5, [Item.COAL, Item.METAL, Item.WOOD], [1, 0.4, 2]),
 		new Recipe(Profession.SMITH, Item.TOOL, 2, [Item.COAL, Item.METAL], [2, 0.4]),
+		new Recipe(Profession.TAILOR, Item.ARMOR_LEATHER, 0.25, [Item.LEATHER], [2]),
 		new Recipe(Profession.TAILOR, Item.CLOTHING, 3, [Item.FABRIC], [4]),
 		new Recipe(Profession.TAILOR, Item.CLOTHING, 3, [Item.LEATHER], [4]),
 		new Recipe(Profession.WEAVER, Item.FABRIC, 2, [Item.COTTON], [2]),
@@ -376,8 +380,9 @@ const DATA = {
 
 // compute table
 ['alcohol', 'bow', 'clothing', 'cut stone', 'fabric', 'falcata', 'furniture',
-	'gem', 'hammer', 'innovation', 'jewellery', 'knowledge', 'machinery', 'opium',
-	'paper', 'ration', 'restaurant', 'spear', 'tool', 'warbeast']
+	'gem', 'hammer', 'innovation', 'jewellery', 'knowledge', 'leather armor',
+	'machinery', 'opium', 'paper', 'plate armor', 'ration', 'restaurant',
+	'spear', 'tool', 'warbeast']
 .forEach(item_name => {
 	/** @type {HTMLTableRowElement} */
 	const row = document.getElementById(item_name);
