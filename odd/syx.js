@@ -389,7 +389,7 @@ const DATA = {
 // compute table
 ['alcohol', 'bow', 'clothing', 'cut stone', 'fabric', 'falcata', 'furniture',
 	'gem', 'hammer', 'innovation', 'jewellery', 'knowledge', 'leather armor',
-	'machinery', 'opium', 'paper', 'plate armor', 'ration', 'restaurant',
+	'machinery', 'opium', 'paper', 'plate armor', 'pottery', 'ration', 'restaurant',
 	'spear', 'tool', 'warbeast']
 .forEach(item_name => {
 	/** @type {HTMLTableRowElement} */
@@ -417,6 +417,18 @@ const DATA = {
 
 // compute table2
 [
+	// STRUCTURES
+	['bakery', 'Bakery (per Worker)', [Item.STONE, Item.WOOD], [10.135135135135135, 12.162162162162161]],
+	['brewery', 'Brewery (per Worker)', [Item.FURNITURE, Item.POTTERY], [0.875, 0.875]],
+	['chamber', 'Chamber', [Item.CUT_STONE, Item.FURNITURE, Item.FABRIC, Item.GEM], [40, 60, 50, 20]],
+	['charcoaller', 'Charcoaller (per Worker)', [Item.STONE, Item.CLAY], [9.25, 8.25]],
+	['fishery', 'Fishery (per Worker)', [Item.WOOD], [100/9]],
+	['jeweller', 'Jeweller (per Worker)', [Item.CUT_STONE, Item.FURNITURE, Item.METAL], [8/18, 8/18, 7/18]],
+	['mine', 'Mine (per Worker)', [Item.STONE, Item.FURNITURE], [1.5, 1.25]],
+	['pasture', 'Pasture (per Worker)', [Item.WOOD], [27.693089431]],
+	['smithy', 'Smithy (per Worker)', [Item.STONE, Item.FURNITURE, Item.METAL], [25/18, 13/18, 7/18]],
+	['woodcutter', 'Woodcutter (per Worker)', [Item.STONE, Item.FURNITURE], [2, 0.5]],
+	// DECORATIONS
 	['bench1', 'Bench (1x1)', [Item.STONE, Item.FURNITURE], [1, 1]],
 	['humidifier1', 'Humidifier (1x1)', [Item.CLAY], [2]],
 	// ['humidifier2', 'Humidifier (2x2)', [Item.CLAY], [12]],
