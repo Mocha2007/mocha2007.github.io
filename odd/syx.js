@@ -206,6 +206,7 @@ class Item {
 	static ORE = "ore";
 	static POTTERY = "pottery";
 	static RESTAURANT = "restaurant";
+	static WARBEAST = "warbeast";
 	static WOOD = "wood";
 	static cheapest_recipe(item, species){
 		const possible_recipes = this.recipes(item);
@@ -276,6 +277,8 @@ const DATA = {
 		new Recipe(Profession.FARMER_PASTURE, Item.LEATHER, 0.56, [], [], [0.75, 1.25, 0.75]),
 		// entelodont
 		new Recipe(Profession.FARMER_PASTURE, Item.MEAT, 1.12, [], [], [0.75, 1.1, 0.75]),
+		// warbeast
+		new Recipe(Profession.FARMER_PASTURE, Item.WARBEAST, 0.1, [], [], [1.1, 0.9, 0.9]),
 		// globdien
 		new Recipe(Profession.FARMER_PASTURE_BALTICRAWLER, Item.MEAT, 0.7),
 		new Recipe(Profession.FARMER_PASTURE_GLOBDIEN, Item.EGG, 1.05, [], [], [0.5, 1, 2]),
@@ -303,7 +306,7 @@ const DATA = {
 });
 
 // compute table
-['alcohol', 'bow', 'clothing', 'falcata', 'furniture', 'restaurant']
+['alcohol', 'bow', 'clothing', 'falcata', 'furniture', 'restaurant', 'warbeast']
 .forEach(item_name => {
 	/** @type {HTMLTableRowElement} */
 	const row_falcata = document.getElementById(item_name);
