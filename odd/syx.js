@@ -45,6 +45,8 @@ class Species {
 					case Profession.FARMER_MUSHROOM:
 					case Profession.ORCHARDIST:
 						return 1.25;
+					case Profession.RATIONMAKER:
+						return 1.2;
 					case Profession.BAKER:
 					case Profession.BREWER:
 					case Profession.CHARCOALLER:
@@ -81,6 +83,7 @@ class Species {
 					case Profession.MASON:
 					case Profession.MECHANIC:
 					case Profession.POTTER:
+					case Profession.RATIONMAKER:
 					case Profession.TAILOR:
 						return 1.2;
 					case Profession.BOWYER:
@@ -108,6 +111,7 @@ class Species {
 					case Profession.BAKER:
 					case Profession.BREWER:
 					case Profession.CHARCOALLER:
+					case Profession.RATIONMAKER:
 					case Profession.SMELTER:
 					case Profession.WEAVER:
 						return 0.9;
@@ -196,6 +200,7 @@ class Profession {
 	static ORCHARDIST = "orchardist";
 	static POTTER = "potter";
 	static MINER = "miner";
+	static RATIONMAKER = "rationmaker";
 	static RESEARCHER = "researcher";
 	static SCRIBE = "scribe";
 	static SMELTER = "smelter";
@@ -234,6 +239,7 @@ class Item {
 	static OPIUM = "opium";
 	static ORE = "ore";
 	static POTTERY = "pottery";
+	static RATION = "ration";
 	static RESTAURANT = "restaurant";
 	static STONE = "stone";
 	static TOOL = "tool";
@@ -325,6 +331,11 @@ const DATA = {
 		new Recipe(Profession.MINER, Item.STONE, 4.5),
 		new Recipe(Profession.ORCHARDIST, Item.FRUIT, 2.45),
 		new Recipe(Profession.POTTER, Item.POTTERY, 1, [Item.CLAY], [1]),
+		new Recipe(Profession.RATIONMAKER, Item.RATION, 2, [Item.BREAD], [6]),
+		new Recipe(Profession.RATIONMAKER, Item.RATION, 2.5, [Item.BREAD, Item.HERB], [3, 0.025]),
+		new Recipe(Profession.RATIONMAKER, Item.RATION, 3, [Item.MEAT, Item.HERB], [3, 0.125]),
+		new Recipe(Profession.RATIONMAKER, Item.RATION, 3, [Item.FISH, Item.HERB], [3, 0.125]),
+		new Recipe(Profession.RATIONMAKER, Item.RATION, 3, [Item.FRUIT, Item.ALCOHOL], [3, 1]),
 		new Recipe(Profession.RESEARCHER, Item.INNOVATION, 1),
 		new Recipe(Profession.RESEARCHER, Item.INNOVATION, 2, [Item.CLAY], [0.75]),
 		new Recipe(Profession.SCRIBE, Item.KNOWLEDGE, 1),
@@ -344,7 +355,7 @@ const DATA = {
 };
 
 // compute chef data
-[Item.BREAD, Item.EGG, Item.FISH, Item.FRUIT, Item.MEAT, Item.MUSHROOM].forEach(food => {
+[Item.BREAD, Item.EGG, Item.FISH, Item.FRUIT, Item.MEAT, Item.MUSHROOM, Item.RATION].forEach(food => {
 	// chef logic (I think): 1 Herb + any food -> 1 meal???
 	// usable foods:
 	// fish bread fruit vegetables mushrooms meat eggs rations
@@ -354,7 +365,7 @@ const DATA = {
 // compute table
 ['alcohol', 'bow', 'clothing', 'cut stone', 'fabric', 'falcata', 'furniture',
 	'gem', 'innovation', 'jewellery', 'knowledge', 'machinery', 'opium',
-	'restaurant', 'tool', 'warbeast']
+	'ration', 'restaurant', 'tool', 'warbeast']
 .forEach(item_name => {
 	/** @type {HTMLTableRowElement} */
 	const row = document.getElementById(item_name);
