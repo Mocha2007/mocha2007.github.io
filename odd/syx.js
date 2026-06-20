@@ -55,6 +55,7 @@ class Species {
 					case Profession.CARPENTER:
 					case Profession.JEWELLER:
 					case Profession.MASON:
+					case Profession.MECHANIC:
 					case Profession.POTTER:
 					case Profession.SMITH:
 					case Profession.TAILOR:
@@ -78,6 +79,7 @@ class Species {
 						return 1.25;
 					case Profession.CARPENTER:
 					case Profession.MASON:
+					case Profession.MECHANIC:
 					case Profession.POTTER:
 					case Profession.TAILOR:
 						return 1.2;
@@ -114,6 +116,7 @@ class Species {
 					case Profession.BOWYER:
 					case Profession.CARPENTER:
 					case Profession.JEWELLER:
+					case Profession.MECHANIC:
 					case Profession.POTTER:
 					case Profession.SMITH:
 					case Profession.TAILOR:
@@ -189,6 +192,7 @@ class Profession {
 	static FISHER = "fisher";
 	static JEWELLER = "jeweller";
 	static MASON = "mason";
+	static MECHANIC = "mechanic";
 	static ORCHARDIST = "orchardist";
 	static POTTER = "potter";
 	static MINER = "miner";
@@ -223,6 +227,7 @@ class Item {
 	static JEWELLERY = "jewellery";
 	static KNOWLEDGE = "knowledge";
 	static LEATHER = "leather";
+	static MACHINERY = "machinery";
 	static MEAT = "meat";
 	static METAL = "metal";
 	static MUSHROOM = "mushroom";
@@ -312,6 +317,7 @@ const DATA = {
 		new Recipe(Profession.FISHER, Item.FISH, 1.4, [], [], [1.1, 1, 1]),
 		new Recipe(Profession.JEWELLER, Item.JEWELLERY, 0.1, [Item.METAL, Item.GEM], [0.04, 0.1]),
 		new Recipe(Profession.MASON, Item.CUT_STONE, 0.5, [Item.STONE], [2]),
+		new Recipe(Profession.MECHANIC, Item.MACHINERY, 0.25, [Item.FURNITURE, Item.METAL], [1, 0.4]),
 		new Recipe(Profession.MINER, Item.CLAY, 1.5),
 		new Recipe(Profession.MINER, Item.COAL, 4),
 		new Recipe(Profession.MINER, Item.GEM, 0.2),
@@ -346,8 +352,9 @@ const DATA = {
 });
 
 // compute table
-['alcohol', 'bow', 'clothing', 'cut stone', 'falcata', 'furniture',
-	'gem', 'innovation', 'jewellery', 'knowledge', 'opium', 'restaurant', 'tool', 'warbeast']
+['alcohol', 'bow', 'clothing', 'cut stone', 'fabric', 'falcata', 'furniture',
+	'gem', 'innovation', 'jewellery', 'knowledge', 'machinery', 'opium',
+	'restaurant', 'tool', 'warbeast']
 .forEach(item_name => {
 	/** @type {HTMLTableRowElement} */
 	const row = document.getElementById(item_name);
