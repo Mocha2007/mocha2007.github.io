@@ -249,6 +249,7 @@ class Item {
 	static POTTERY = "pottery";
 	static RATION = "ration";
 	static RESTAURANT = "restaurant";
+	static SITHILON_ORE = "sithilon ore";
 	static SPEAR = "spear";
 	static STONE = "stone";
 	static TOOL = "tool";
@@ -340,6 +341,7 @@ const DATA = {
 		new Recipe(Profession.MINER, Item.COAL, 4),
 		new Recipe(Profession.MINER, Item.GEM, 0.2),
 		new Recipe(Profession.MINER, Item.ORE, 1.5),
+		new Recipe(Profession.MINER, Item.SITHILON_ORE, 0.1),
 		new Recipe(Profession.MINER, Item.STONE, 4.5),
 		new Recipe(Profession.ORCHARDIST, Item.FRUIT, 2.45),
 		new Recipe(Profession.PAPERMAKER, Item.PAPER, 0.75, [Item.WOOD], [2]),
