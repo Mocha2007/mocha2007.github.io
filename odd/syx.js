@@ -115,6 +115,8 @@ class Species {
 					case Profession.SMITH:
 					case Profession.TAILOR:
 						return 0.75;
+					case Profession.SCRIBE:
+						return 0.6;
 					default:
 						return 1;
 				}
@@ -122,6 +124,7 @@ class Species {
 			case Species.HUMAN: {
 				switch (profession) {
 					case Profession.RESEARCHER:
+					case Profession.SCRIBE:
 						return 1.25;
 					case Profession.FARMER:
 					case Profession.FARMER_MUSHROOM:
@@ -186,6 +189,7 @@ class Profession {
 	static POTTER = "potter";
 	static MINER = "miner";
 	static RESEARCHER = "researcher";
+	static SCRIBE = "scribe";
 	static SMELTER = "smelter";
 	static SMITH = "smith";
 	static TAILOR = "tailor";
@@ -208,9 +212,11 @@ class Item {
 	static FISH = "fish";
 	static FRUIT = "fruit";
 	static FURNITURE = "furniture";
+	static GEM = "gem";
 	static GRAIN = "grain";
 	static HERB = "herb";
 	static INNOVATION = "innovation";
+	static KNOWLEDGE = "knowledge";
 	static LEATHER = "leather";
 	static MEAT = "meat";
 	static METAL = "metal";
@@ -302,12 +308,15 @@ const DATA = {
 		new Recipe(Profession.MASON, Item.CUT_STONE, 0.5, [Item.STONE], [2]),
 		new Recipe(Profession.MINER, Item.CLAY, 1.5),
 		new Recipe(Profession.MINER, Item.COAL, 4),
+		new Recipe(Profession.MINER, Item.GEM, 0.2),
 		new Recipe(Profession.MINER, Item.ORE, 1.5),
 		new Recipe(Profession.MINER, Item.STONE, 4.5),
 		new Recipe(Profession.ORCHARDIST, Item.FRUIT, 2.45),
 		new Recipe(Profession.POTTER, Item.POTTERY, 1, [Item.CLAY], [1]),
 		new Recipe(Profession.RESEARCHER, Item.INNOVATION, 1),
 		new Recipe(Profession.RESEARCHER, Item.INNOVATION, 2, [Item.CLAY], [0.75]),
+		new Recipe(Profession.SCRIBE, Item.KNOWLEDGE, 1),
+		new Recipe(Profession.SCRIBE, Item.KNOWLEDGE, 2, [Item.LEATHER], [0.5]),
 		new Recipe(Profession.SMELTER, Item.METAL, 0.5, [Item.COAL, Item.ORE], [1.25, 1.25]),
 		new Recipe(Profession.SMITH, Item.FALCATA, 0.5, [Item.COAL, Item.METAL], [2, 0.4]),
 		new Recipe(Profession.SMITH, Item.TOOL, 2, [Item.COAL, Item.METAL], [2, 0.4]),
@@ -331,7 +340,8 @@ const DATA = {
 });
 
 // compute table
-['alcohol', 'bow', 'clothing', 'cut stone', 'falcata', 'furniture', 'innovation', 'opium', 'restaurant', 'tool', 'warbeast']
+['alcohol', 'bow', 'clothing', 'cut stone', 'falcata', 'furniture',
+	'gem', 'innovation', 'knowledge', 'opium', 'restaurant', 'tool', 'warbeast']
 .forEach(item_name => {
 	/** @type {HTMLTableRowElement} */
 	const row = document.getElementById(item_name);
