@@ -206,6 +206,7 @@ class Item {
 	static ORE = "ore";
 	static POTTERY = "pottery";
 	static RESTAURANT = "restaurant";
+	static TOOL = "tool";
 	static WARBEAST = "warbeast";
 	static WOOD = "wood";
 	static cheapest_recipe(item, species){
@@ -290,6 +291,7 @@ const DATA = {
 		new Recipe(Profession.POTTER, Item.POTTERY, 1, [Item.CLAY], [1]),
 		new Recipe(Profession.SMELTER, Item.METAL, 0.5, [Item.COAL, Item.ORE], [1.25, 1.25]),
 		new Recipe(Profession.SMITH, Item.FALCATA, 0.5, [Item.COAL, Item.METAL], [2, 0.4]),
+		new Recipe(Profession.SMITH, Item.TOOL, 2, [Item.COAL, Item.METAL], [2, 0.4]),
 		new Recipe(Profession.TAILOR, Item.CLOTHING, 3, [Item.FABRIC], [4]),
 		new Recipe(Profession.TAILOR, Item.CLOTHING, 3, [Item.LEATHER], [4]),
 		new Recipe(Profession.WEAVER, Item.FABRIC, 2, [Item.COTTON], [2]),
@@ -306,14 +308,24 @@ const DATA = {
 });
 
 // compute table
-['alcohol', 'bow', 'clothing', 'falcata', 'furniture', 'restaurant', 'warbeast']
+['alcohol', 'bow', 'clothing', 'falcata', 'furniture', 'restaurant', 'tool', 'warbeast']
 .forEach(item_name => {
 	/** @type {HTMLTableRowElement} */
-	const row_falcata = document.getElementById(item_name);
+	const row = document.getElementById(item_name);
+	const rank = new Array(7).fill(-1).map((x, i) => [i, x]);
 	Species.species.forEach(species => {
 		const recipe = Item.cheapest_recipe(item_name, species);
-		const cell = row_falcata.children[species];
-		const ipw = recipe.items_per_worker_recursive(species);
+		const cell = document.createElement('td');
+		row.appendChild(cell);
+		const ipw = rank[species][1] = recipe.items_per_worker_recursive(species);
 		cell.innerHTML = `${ipw.toFixed(3)}`;
 	});
+	rank.sort((a, b) => a[1] - b[1]);
+	// first elem mathematically must be species "0", ie. null, so skip
+	row.children[rank[1][0]].classList.add('bad');
+	row.children[rank[2][0]].classList.add('bad');
+	row.children[rank[3][0]].classList.add('mid');
+	row.children[rank[4][0]].classList.add('mid');
+	row.children[rank[5][0]].classList.add('good');
+	row.children[rank[6][0]].classList.add('good');
 });
