@@ -367,7 +367,15 @@ const DATA = {
 	/** @param {string} s */
 	title(s){
 		return s ? s[0].toUpperCase() + s.slice(1).toLowerCase() : '';
-	}
+	},
+	/**
+	 * @param {Item[]} items
+	 * @param {number[]} amts
+	 */
+	worker_days_required(items, amts, species){
+		return items.map((item, i) => Item.cheapest_recipe(item, species).workers_per_item_recurse(species) * amts[i])
+			.reduce((a, b) => a+b, 0);
+	},
 };
 
 // compute chef data
@@ -405,4 +413,40 @@ const DATA = {
 	row.children[rank[4][0]].classList.add('mid');
 	row.children[rank[5][0]].classList.add('good');
 	row.children[rank[6][0]].classList.add('good');
+});
+
+// compute table2
+[
+	['bench1', 'Bench (1x1)', [Item.STONE, Item.FURNITURE], [1, 1]],
+	['humidifier1', 'Humidifier (1x1)', [Item.CLAY], [2]],
+	// ['humidifier2', 'Humidifier (2x2)', [Item.CLAY], [12]],
+	['flower1', 'Flowerbed (1x1)', [Item.WOOD, Item.STONE], [1, 2]],
+	// ['flower2', 'Flowerbed (2x2)', [Item.WOOD, Item.STONE], [6, 12]],
+	['statue1', 'Statue (1x1)', [Item.CUT_STONE], [1]],
+	['torch1', 'Torch (1x1)', [Item.WOOD, Item.STONE], [4, 1]],
+	// ['torch2', 'Torch (2x2)', [Item.WOOD, Item.STONE], [16, 4]],
+	['tree1', 'Tree (1x1)', [Item.WOOD], [1]],
+]
+.forEach(([id, name, items, amts]) => {
+	/** @type {HTMLTableRowElement} */
+	const row = document.getElementById(id);
+	const th = document.createElement('th');
+	th.innerHTML = name;
+	row.appendChild(th);
+	const rank = new Array(7).fill(-1).map((x, i) => [i, x]);
+	Species.species.forEach(species => {
+		const recipe = Item.cheapest_recipe(id, species);
+		const cell = document.createElement('td');
+		row.appendChild(cell);
+		const wdr = rank[species][1] = DATA.worker_days_required(items, amts, species);
+		cell.innerHTML = `${wdr.toFixed(2)}`;
+	});
+	rank.sort((a, b) => a[1] - b[1]);
+	// first elem mathematically must be species "0", ie. null, so skip
+	row.children[rank[1][0]].classList.add('good');
+	row.children[rank[2][0]].classList.add('good');
+	row.children[rank[3][0]].classList.add('mid');
+	row.children[rank[4][0]].classList.add('mid');
+	row.children[rank[5][0]].classList.add('bad');
+	row.children[rank[6][0]].classList.add('bad');
 });
