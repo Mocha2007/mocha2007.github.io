@@ -700,7 +700,7 @@ const CITY = {
 			return 5 + 7 * FARMERS;
 		},
 		get happiness(){
-			const H_FOOD = 0 < this.food ? 1 : 0;
+			const H_FOOD = clamp(this.food/10, 0, 1);
 			const H_HEALTH = this.health/100;
 			const H_HOBO = 1 - this.unemployment/100;
 			return Math.floor(100 * mean([H_FOOD, H_HEALTH, H_HOBO]));
