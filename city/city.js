@@ -88,12 +88,12 @@ class Infobox {
 	/**
 	 * @param {Name} name
 	 * @param {string} src
-	 * @param {string} desc
+	 * @param {string} desc can also be a fx returning a string
 	 */
 	constructor(name, src = '', desc = ''){
 		this.name = name;
 		this.src = src || CITY.DEFAULT.SRC;
-		this.desc = desc;
+		this.desc = typeof desc !== "function" ? () => desc : desc;
 	}
 	get amountElem(){
 		const elem = document.createElement('span');
@@ -118,7 +118,7 @@ class Infobox {
 	}
 	get tooltip(){
 		const elem = document.createElement('div');
-		elem.innerHTML = `<h2>${this.name.s}</h2><p>${this.desc}</p>`;
+		elem.innerHTML = `<h2>${this.name.s}</h2><p>${this.desc()}</p>`;
 		return elem;
 	}
 	spawnFloater(text, color = 'White'){
@@ -692,11 +692,12 @@ const CITY = {
 			return Math.floor(100 * FF);
 		},
 		get food(){
-			const BASE = 5;
+			return this.foodProduction - this.pop.foodConsumption;
+		},
+		get foodProduction(){
 			const FARMERS = CITY.cachedBuildingTagValue('farm');
-			const PRODUCTION = BASE + 7 * FARMERS;
-			const CONSUMPTION = this.pop.foodConsumption;
-			return PRODUCTION - CONSUMPTION;
+			// 5 is base prod
+			return 5 + 7 * FARMERS;
 		},
 		get happiness(){
 			const H_FOOD = 0 < this.food ? 1 : 0;
@@ -933,7 +934,15 @@ const PEOPLE_E = new Resource('Employed', 'Employed people in the workforce.', f
 const PEOPLE_U = CITY.NAME.UNEMPLOYED = new Resource('Unemployed', 'Unemployed people in the workforce. Folks out of work tend to turn to crime to make ends meet, and their presence irritates other settlers, futher reducing productivity.', false, () => CITY.resources2.pop.unemployed, false);
 
 // concrete
-const FOOD = new Resource('Food Production', 'Food is produced on farms, and cannot be stored. If it is not consumed; it immediately rots. You must have a net inflow of food to increase population. Children and teens consume less food than adults and elders.', false, () => CITY.resources2.food, false);
+const FOOD = new Resource('Food Production', () =>
+	`Food is produced on farms, and cannot be stored.
+	If it is not consumed; it immediately rots.
+	You must have a net inflow of food to increase population.
+	Children and teens consume less food than adults and elders.
+	Production: +${CITY.resources2.foodProduction.toFixed(0)}<br>
+	Consumption: -${CITY.resources2.pop.foodConsumption.toFixed(0)}<br>
+	Net: ${CITY.resources2.food.toFixed(0)}`,
+	false, () => CITY.resources2.food, false);
 
 // abstract
 const APPROVAL = new Resource('Productivity', 'Impacts resource generation rate.', false, () => CITY.resources2.approval, false, 1);
