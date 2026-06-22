@@ -335,7 +335,7 @@ holidayCSS.bgs = [
 	// 'img/oneia_drawing_1.png',
 	'img/pankair_biomes.png',
 	'img/phones.svg',
-	'https://i.imgur.com/bCXJRhu.png', // SA langs pre-columbian map
+	'img/sa_langs', // SA langs pre-columbian map
 ];
 holidayCSS.randomBg = function(){
 	var img = document.getElementById('m_bg');
