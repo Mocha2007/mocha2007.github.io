@@ -761,7 +761,7 @@ const CITY = {
 			return Math.floor((50 - TRANS/2 + 50 * TRAF_) * POP_RAMPUP);
 		},
 		get unemployment(){
-			return Math.floor(100 * this.pop.unemployed / this.pop.total) || 0;
+			return Math.floor(100 * this.pop.unemployed / this.pop.workforce) || 0;
 		},
 		// upgrades
 		upgrade: {
