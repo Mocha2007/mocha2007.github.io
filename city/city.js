@@ -954,7 +954,7 @@ const HAPPINESS = new Resource('Happiness', 'Improves productivity. Affected by 
 const HEALTH = new Resource('Health', 'Improves happiness. Increased by clinics.', false, () => CITY.resources2.health, false, 1);
 const TRANS = new Resource('Infrastructure', 'Improves productivity and reduces traffic. Increased by roads.', false, () => CITY.resources2.trans, false, 1);
 const TRAFFIC = new Resource('Traffic', 'Reduces productivity. Decreased by infrastructure and signage.', false, () => CITY.resources2.traffic, false, -1);
-const UNEMPLOYMENT = new Resource('Unemployment', 'Percentage of workforce employed. High unemployment reduces happiness.', false, () => CITY.resources2.unemployment, false, -1);
+const UNEMPLOYMENT = new Resource('Unemployment', 'Percentage of workforce unemployed. High unemployment reduces happiness.', false, () => CITY.resources2.unemployment, false, -1);
 
 // actual legit resources
 const METAL = new Resource('Metal', CITY.DESC.CONS, false);
