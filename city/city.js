@@ -936,7 +936,7 @@ const PEOPLE_U = CITY.NAME.UNEMPLOYED = new Resource('Unemployed', 'Unemployed p
 // concrete
 const FOOD = new Resource('Food Production', () =>
 	`Food is produced on farms, and cannot be stored.
-	If it is not consumed; it immediately rots.
+	If it is not consumed, it immediately rots.
 	You must have a net inflow of food to increase population.
 	Children and teens consume less food than adults and elders.
 	Production: +${CITY.resources2.foodProduction.toFixed(0)}<br>
