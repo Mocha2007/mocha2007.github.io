@@ -36,15 +36,15 @@ LunaEvent.epoch = new Date(1998, 3, 27);
 
 const LUNALIFE = {
 	CONFIG: {
-		LIFESPAN: 87, // median of tests (updated 2026-02-10)
+		LIFESPAN: 89.8, // median of tests (updated 2026-06-23)
 		/**
 		 *  DEADLINK https://www.bankrate.com/retirement/life-expectancy-calculator/
 		 * 	81.5	https://www.seniorliving.org/research/life-expectancy/calculator/
-		 * 	85.8	https://www.ssa.gov/cgi-bin/longevity.cgi
-		 * 	86		https://www.annuity.org/retirement/planning/life-expectancy/calculator/
-		 * 	88		https://media.nmfn.com/tnetwork/lifespan/index.html#13
-		 * 	91		https://www.johnhancock.com/life-insurance/life-expectancy-calculator.html
-		 * 	106.3	https://calcuworld.com/health-calculators/life-expectancy-calculator/
+		 * 	84		https://www.annuity.org/retirement/planning/life-expectancy/calculator/
+		 * 	85.6	https://www.ssa.gov/cgi-bin/longevity.cgi
+		 * 	94		https://media.nmfn.com/tnetwork/lifespan/index.html#13
+		 * 	97		https://www.johnhancock.com/life-insurance/life-expectancy-calculator.html
+		 * 	102.3	https://calcuworld.com/health-calculators/life-expectancy-calculator/
 		 */
 		get DIM(){
 			return Math.round(Math.sqrt(this.LIFESPAN * 365.25 / 7));
