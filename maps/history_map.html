@@ -4,6 +4,7 @@
 <meta name="description" content="History Map">
 <link rel="shortcut icon" href="../img/favicon.ico">
 <link href="history_map.css" type="text/css" rel="stylesheet">
+<link href="../css/button.css" type="text/css" rel="stylesheet">
 <title>History Map</title>
 <div id="top">
 	<h1>The History Map</h1>
@@ -13,8 +14,10 @@
 	<fieldset>
 		Date: 1 Jan, <input id="date" type="number" value="0" max="2019">
 		<a href="javascript:">Go &rarr;</a><br>
+		<span class="button" onclick="adj(-100)">&larr; c.</span>
 		<input type="range" min="-3000" max="2021" value="2021" class="slider" id="date2"
 			   onclick="document.getElementById('date').value = document.getElementById('date2').value; ">
+		<span class="button" onclick="adj(100)">c. &rarr;</span>
 	</fieldset>
 </form>
 

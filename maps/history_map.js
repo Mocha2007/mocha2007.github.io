@@ -72,6 +72,12 @@ function tooltip(id){ // todo fix for inset
 	document.getElementById('tooltip').appendChild(newpoint);
 }
 
+function adj(delta){
+	let e = document.getElementById('date');
+	let year = +e.value + delta;
+	document.getElementById('date2').value = e.value = year;
+}
+
 function bigmap(){
 	let bottomRightCoords, coords, newlink, newpoint; // , periodSpecificInfo;
 	const wants = document.getElementById('date').value;
