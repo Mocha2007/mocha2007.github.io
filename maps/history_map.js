@@ -345,6 +345,20 @@ const features = [
 		source: 'https://en.wikipedia.org/wiki/Aurignacian',
 	},
 	{
+		name: 'Avar Khaganate',
+		type: 'box',
+		periods: [
+			{
+				yearRange: [567, 822],
+				coords: [50, 15],
+				bottomRight: [45, 42],
+			},
+		],
+		periodInfo: [],
+		color: 'green',
+		source: 'https://en.wikipedia.org/wiki/Pannonian_Avars',
+	},
+	{
 		name: 'Baden Culture',
 		type: 'box',
 		periods: [
@@ -464,6 +478,20 @@ const features = [
 		source: 'https://en.wikipedia.org/wiki/Bolshemys_culture',
 	},
 	{
+		name: 'Brittany',
+		type: 'box',
+		periods: [
+			{
+				yearRange: [939, 1547],
+				coords: [49, -5],
+				bottomRight: [47, -1],
+			},
+		],
+		periodInfo: [],
+		color: 'black',
+		source: 'https://en.wikipedia.org/wiki/Duchy_of_Brittany',
+	},
+	{
 		name: 'Bug-Dniester Culture',
 		type: 'box',
 		periods: [
@@ -536,6 +564,20 @@ const features = [
 		color: 'green',
 		img: 'https://upload.wikimedia.org/wikipedia/commons/7/77/Pointes_de_chatelperron.jpg',
 		source: 'https://en.wikipedia.org/wiki/Ch%C3%A2telperronian',
+	},
+	{
+		name: 'Chernyakhov Culture',
+		type: 'box',
+		periods: [
+			{
+				yearRange: [100, 500],
+				coords: [52, 27],
+				bottomRight: [44, 34],
+			},
+		],
+		periodInfo: [],
+		color: 'orange',
+		source: 'https://en.wikipedia.org/wiki/Chernyakhov_culture',
 	},
 	{
 		name: 'Chinchorro Culture',
@@ -631,6 +673,20 @@ const features = [
 		source: 'https://en.wikipedia.org/wiki/Dacians',
 	},
 	{
+		name: 'Denmark',
+		type: 'box',
+		periods: [
+			{
+				yearRange: [936, 9999],
+				coords: [58, 8],
+				bottomRight: [54.5, 13],
+			},
+		],
+		periodInfo: [],
+		color: '#C91235',
+		source: 'https://en.wikipedia.org/wiki/Denmark',
+	},
+	{
 		name: 'Dimini Culture',
 		type: 'box',
 		periods: [
@@ -689,6 +745,20 @@ const features = [
 		color: 'yellow',
 		img: 'https://upload.wikimedia.org/wikipedia/commons/c/c7/Emireh-Point.jpg',
 		source: 'https://en.wikipedia.org/wiki/Emiran',
+	},
+	{
+		name: 'England',
+		type: 'box',
+		periods: [
+			{
+				yearRange: [886, 1707],
+				coords: [55, -5.5],
+				bottomRight: [50, 2],
+			},
+		],
+		periodInfo: [],
+		color: 'red',
+		source: 'https://en.wikipedia.org/wiki/England',
 	},
 	{
 		name: 'Erligang Culture',
@@ -1013,6 +1083,20 @@ const features = [
 		desc: 'Anatolian Civilization',
 		color: 'blue',
 		source: 'https://en.wikipedia.org/wiki/Hittites',
+	},
+	{
+		name: 'Huns',
+		type: 'box',
+		periods: [
+			{
+				yearRange: [370, 469],
+				coords: [49, 16],
+				bottomRight: [45, 27],
+			},
+		],
+		periodInfo: [],
+		color: 'red',
+		source: 'https://en.wikipedia.org/wiki/Huns',
 	},
 	{
 		name: 'Indus Valley Civilization',
@@ -1393,6 +1477,20 @@ const features = [
 		source: 'https://en.wikipedia.org/wiki/Nordic_Bronze_Age',
 	},
 	{
+		name: 'Normandy',
+		type: 'box',
+		periods: [
+			{
+				yearRange: [911, 1290],
+				coords: [50, -2],
+				bottomRight: [48, 2],
+			},
+		],
+		periodInfo: [],
+		color: 'pink',
+		source: 'https://en.wikipedia.org/wiki/Duchy_of_Normandy',
+	},
+	{
 		name: 'Norte Chico',
 		type: 'box',
 		periods: [
@@ -1452,6 +1550,20 @@ const features = [
 		color: 'yellow',
 		img: 'https://upload.wikimedia.org/wikipedia/commons/9/94/San_Lorenzo_Monument_3.jpg',
 		source: 'https://en.wikipedia.org/wiki/Olmecs',
+	},
+	{
+		name: 'Ostrogothic Kingdom',
+		type: 'box',
+		periods: [
+			{
+				yearRange: [493, 553],
+				coords: [46, 6],
+				bottomRight: [36, 19],
+			},
+		],
+		periodInfo: [],
+		color: 'purple',
+		source: 'https://en.wikipedia.org/wiki/Ostrogothic_Kingdom',
 	},
 	{
 		name: 'Paiján Culture',
@@ -1991,6 +2103,20 @@ const features = [
 		color: 'lavender',
 		img: 'https://upload.wikimedia.org/wikipedia/commons/1/16/Vinca_clay_figure_02.jpg',
 		source: 'https://en.wikipedia.org/wiki/Vinča_culture',
+	},
+	{
+		name: 'Visigothic Kingdom',
+		type: 'box',
+		periods: [
+			{
+				yearRange: [418, 721],
+				coords: [44, -10],
+				bottomRight: [36, 2],
+			},
+		],
+		periodInfo: [],
+		color: 'blue',
+		source: 'https://en.wikipedia.org/wiki/Visigothic_Kingdom',
 	},
 	{
 		name: 'Wielbark Culture',
