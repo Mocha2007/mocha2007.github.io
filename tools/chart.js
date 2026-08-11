@@ -299,7 +299,7 @@ function pie(){
 		chart.appendChild(value);
 	});
 }
-pie.colors = ['blue', 'red', 'yellow', 'green']; // todo
+pie.colors = ['blue', 'red', 'yellow', 'green', 'purple', 'orange', 'chartreuse', 'teal', 'white', 'grey', 'silver', 'black']; // todo
 /*
 {
   type: 'pie',
