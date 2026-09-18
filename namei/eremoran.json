@@ -2215,6 +2215,14 @@
 		]
 	},
 	{
+		"title": "bamelat",
+		"etym": "D/bamz",
+		"cat": "n., 3rd",
+		"defList": [
+			"(gaming) chip, token, marker"
+		]
+	},
+	{
 		"title": "bamz",
 		"etym": "I/PEN/*βams/throw",
 		"cat": "v.",
@@ -8429,6 +8437,14 @@
 		]
 	},
 	{
+		"title": "itbamz",
+		"etym": "C/it/bamz",
+		"cat": "v.",
+		"defList": [
+			"throw away, discard"
+		]
+	},
+	{
 		"title": "itbarz",
 		"etym": "C/it/barz",
 		"cat": "v.",
@@ -11133,6 +11149,25 @@
 		"categories": ["plant"]
 	},
 	{
+		"title": "kusudom",
+		"etym": "C/kusudoz/-m",
+		"cat": "n., 5th",
+		"defList": [
+			"multiplication",
+			"multiplier"
+		],
+		"categories": ["math"]
+	},
+	{
+		"title": "kusudoz",
+		"etym": "C/ku/sudoz/-isêm",
+		"cat": "v.",
+		"defList": [
+			"multiply"
+		],
+		"categories": ["math"]
+	},
+	{
 		"title": "kut",
 		"etym": "C/kum/-t",
 		"cat": "n., 3rd",
@@ -13663,7 +13698,7 @@
 		"etym": "D/nôtô",
 		"cat": "n., 3rd",
 		"defList": [
-			"column"
+			"column, pillar"
 		],
 		"categories": ["building"]
 	},
@@ -17437,7 +17472,8 @@
 		"defList": [
 			"clan, house",
 			"(extended) family",
-			"guild"
+			"guild",
+			"(card games) suit"
 		]
 	},
 	{
