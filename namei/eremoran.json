@@ -5224,6 +5224,16 @@
 		"categories": ["math"]
 	},
 	{
+		"title": "dôafkam",
+		"etym": "C/dôafkaz/-m",
+		"cat": "n., 5th",
+		"defList": [
+			"entrance, entry",
+			"beginning"
+		],
+		"categories": ["motion"]
+	},
+	{
 		"title": "dôafkaz",
 		"etym": "I/PEN/*dôaɸkas/charge from *dô 'in' + *aɸkas 'go'",
 		"cat": "v.",
@@ -6019,6 +6029,14 @@
 			"(mathematics) rectangle (esp. oblong)"
 		],
 		"categories": ["math"]
+	},
+	{
+		"title": "endôdat",
+		"etym": "B/endu/dôdaz",
+		"cat": "n., 3rd",
+		"defList": [
+			"anaglyph"
+		]
 	},
 	{
 		"title": "endu",
@@ -6862,7 +6880,7 @@
 		"cat": "v.",
 		"defList": [
 			"(intransitive) give oneself up, surrender oneself, turn oneself in",
-			"(transitive) give sth up, surrender sth, turn sth in"
+			"(transitive) give sth up, surrender sth, turn sth in, abandon sth"
 		],
 		"categories": ["war"]
 	},
@@ -11113,6 +11131,14 @@
 			"moss"
 		],
 		"categories": ["plant"]
+	},
+	{
+		"title": "kut",
+		"etym": "C/kum/-t",
+		"cat": "n., 3rd",
+		"defList": [
+			"deck/pack of cards"
+		]
 	},
 	{
 		"title": "kutokar",
@@ -17224,11 +17250,19 @@
 	{
 		"title": "tasfut",
 		"etym": "I/PEN/*tasɸut/paper",
-		"cat": "n., 4th",
+		"cat": "n., 3rd",
 		"defList": [
 			"paper"
 		],
 		"categories": ["v3_trade"]
+	},
+	{
+		"title": "tasfudot",
+		"etym": "D/tasfut",
+		"cat": "n., 3rd",
+		"defList": [
+			"card, leaflet, scrap of paper"
+		]
 	},
 	{
 		"title": "tasku",
