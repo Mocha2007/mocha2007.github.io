@@ -1059,6 +1059,23 @@
 		"categories": ["animal"]
 	},
 	{
+		"title": "alu",
+		"etym": "I/PEN/*alu/open",
+		"cat": "adj.",
+		"defList": [
+			"open, opened",
+			"on, activated"
+		]
+	},
+	{
+		"title": "alsudôz",
+		"etym": "B/alu/sudôz",
+		"cat": "v.",
+		"defList": [
+			"(transitive) open"
+		]
+	},
+	{
 		"title": "amabasêz",
 		"etym": "C/amabaz/-isêz",
 		"cat": "v.",
@@ -1217,7 +1234,9 @@
 		"etym": "I/PEN/*amsrals/count",
 		"cat": "v.",
 		"defList": [
-			"count"
+			"count",
+			"tally",
+			"score"
 		],
 		"categories": ["math"]
 	},
@@ -4358,7 +4377,7 @@
 			"ash",
 			"soot",
 			"dust",
-			"(informal) no"
+			"(informal) no, nope"
 		]
 	},
 	{
@@ -6132,6 +6151,14 @@
 		"defList": [
 			"up",
 			"(prefix) (shows action was completed fully and successfully)"
+		]
+	},
+	{
+		"title": "enzkufanlaz",
+		"etym": "C/enz/kufanlam",
+		"cat": "v.",
+		"defList": [
+			"(gaming) level up"
 		]
 	},
 	{
@@ -11318,6 +11345,14 @@
 			"(archaic) good"
 		],
 		"notes": "Displaced by synonym ''uzurku'' after ''laku'' became sarcastic"
+	},
+	{
+		"title": "laksudôz",
+		"etym": "C/laku/sudôz",
+		"cat": "v.",
+		"defList": [
+			"(transitive) improve, better"
+		]
 	},
 	{
 		"title": "lalk",
@@ -16509,7 +16544,8 @@
 		"etym": "I/PEN/*ʃos",
 		"cat": "v.",
 		"defList": [
-			"(intransitive) close"
+			"(intransitive) close",
+			"be closed, off, inactive"
 		]
 	},
 	{
@@ -18680,7 +18716,7 @@
 		"etym": "C/u-/nau",
 		"cat": "pron.",
 		"defList": [
-			"nothing",
+			"nothing, none",
 			"you're welcome"
 		]
 	},
