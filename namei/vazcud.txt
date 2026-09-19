@@ -245,7 +245,7 @@ tha=n, n=smoke
 ze'=n, f=daughter
 onth=n, m=son
 cek=n, f=mother
-izak=n, m=father, paternal uncle
+izak=n, m=father, paternal uncle, boss~employer
 yav=n, f=wife
 sonkh=n, m=husband
 iphad=n, f=older sister/older paternal uncle's daughter

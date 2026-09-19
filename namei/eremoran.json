@@ -493,7 +493,9 @@
 		"cat": "n., 5th",
 		"defList": [
 			"(mathematics) circle (the line, NOT the disk)",
-			"(mathematics) circumference"
+			"(mathematics) circumference",
+			"circuit",
+			"(gaming) round"
 		],
 		"categories": ["math"]
 	},
@@ -3876,6 +3878,15 @@
 		"categories": ["war"]
 	},
 	{
+		"title": "borôsudôz",
+		"etym": "B/borôsu/sudôz",
+		"cat": "v.",
+		"defList": [
+			"subjugate, conquer, defeat"
+		],
+		"categories": ["war"]
+	},
+	{
 		"title": "boru",
 		"etym": "I/PEN/*boru/abdomen",
 		"cat": "n., 4th",
@@ -4168,6 +4179,15 @@
 			"milkweed"
 		],
 		"categories": ["flower", "plant"]
+	},
+	{
+		"title": "bunelat",
+		"etym": "D/bunt",
+		"cat": "n., 3rd",
+		"defList": [
+			"tag",
+			"swatch"
+		]
 	},
 	{
 		"title": "buni",
@@ -5431,7 +5451,8 @@
 		"etym": "r/adafkaz",
 		"cat": "v.",
 		"defList": [
-			"come; arrive"
+			"come; arrive",
+			"(as an adjective) upcoming"
 		],
 		"notes": "Replaced the now-obsolete ''kunz''.",
 		"categories": ["motion"]
@@ -7430,9 +7451,10 @@
 		"cat": "n., 4th",
 		"defList": [
 			"cloud",
-			"fog"
+			"fog",
+			"(astronomy) nebula"
 		],
-		"categories": ["weather"]
+		"categories": ["weather", "astronomy"]
 	},
 	{
 		"title": "hilbenask",
@@ -8437,6 +8459,14 @@
 		]
 	},
 	{
+		"title": "itbam",
+		"etym": "B/itbamz/-m",
+		"cat": "n., 5th",
+		"defList": [
+			"discard"
+		]
+	},
+	{
 		"title": "itbamz",
 		"etym": "C/it/bamz",
 		"cat": "v.",
@@ -8548,6 +8578,14 @@
 			"(transitive) move"
 		],
 		"categories": ["motion"]
+	},
+	{
+		"title": "izakar",
+		"etym": "L/VAZ/izak/father~boss",
+		"cat": "n., 1st",
+		"defList": [
+			"boss, employer"
+		]
 	},
 	{
 		"title": "izardômu",
@@ -12521,6 +12559,14 @@
 		"categories": ["gendered female", "person"]
 	},
 	{
+		"title": "mokisu",
+		"etym": "C/mok/-isu",
+		"cat": "adj.",
+		"defList": [
+			"current, present"
+		]
+	},
+	{
 		"title": "molat",
 		"etym": "D/mo",
 		"cat": "n., 3rd",
@@ -14815,6 +14861,15 @@
 		]
 	},
 	{
+		"title": "raskur",
+		"etym": "I/PEN/*raskur/jester",
+		"cat": "n., 1st",
+		"defList": [
+			"jester, joker, fool"
+		],
+		"categories": ["person"]
+	},
+	{
 		"title": "rasum",
 		"etym": "L/VAZ/???",
 		"cat": "n., 5th",
@@ -14864,7 +14919,8 @@
 		"etym": "I/PEN/*ras/paint",
 		"cat": "v.",
 		"defList": [
-			"paint"
+			"paint",
+			"be painted"
 		],
 		"categories": ["art"]
 	},
@@ -16454,6 +16510,14 @@
 		"cat": "v.",
 		"defList": [
 			"(intransitive) close"
+		]
+	},
+	{
+		"title": "sozem",
+		"etym": "I/PEN/*tʃosem/challenge",
+		"cat": "n., 5th",
+		"defList": [
+			"challenge"
 		]
 	},
 	{
@@ -18677,9 +18741,9 @@
 	{
 		"title": "uod",
 		"etym": "C/u-/hod",
-		"cat": "conj.",
+		"cat": "conj., post.",
 		"defList": [
-			"unless"
+			"unless, except, excluding"
 		]
 	},
 	{
@@ -19082,7 +19146,8 @@
 		"etym": "I/PEN/*asiβe-t",
 		"cat": "n., 3rd",
 		"defList": [
-			"lock"
+			"lock",
+			"slot"
 		]
 	},
 	{
