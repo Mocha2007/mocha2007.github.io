@@ -1059,20 +1059,20 @@
 		"categories": ["animal"]
 	},
 	{
+		"title": "alsudôz",
+		"etym": "B/alu/sudôz",
+		"cat": "v.",
+		"defList": [
+			"(transitive) open"
+		]
+	},
+	{
 		"title": "alu",
 		"etym": "I/PEN/*alu/open",
 		"cat": "adj.",
 		"defList": [
 			"open, opened",
 			"on, activated"
-		]
-	},
-	{
-		"title": "alsudôz",
-		"etym": "B/alu/sudôz",
-		"cat": "v.",
-		"defList": [
-			"(transitive) open"
 		]
 	},
 	{
@@ -6154,14 +6154,6 @@
 		]
 	},
 	{
-		"title": "enzkufanlaz",
-		"etym": "C/enz/kufanlam",
-		"cat": "v.",
-		"defList": [
-			"(gaming) level up"
-		]
-	},
-	{
 		"title": "enzarz",
 		"etym": "C/enz/arz",
 		"cat": "v.",
@@ -6178,6 +6170,14 @@
 			"(intransitive) clothe one's legs/feet (bo + clothing), wear"
 		],
 		"categories": ["clothing"]
+	},
+	{
+		"title": "enzkufanlaz",
+		"etym": "C/enz/kufanlat",
+		"cat": "v.",
+		"defList": [
+			"(gaming) level up"
+		]
 	},
 	{
 		"title": "enzkunz",
@@ -11338,6 +11338,14 @@
 		"categories": ["animal"]
 	},
 	{
+		"title": "laksudôz",
+		"etym": "C/laku/sudôz",
+		"cat": "v.",
+		"defList": [
+			"(transitive) improve, better"
+		]
+	},
+	{
 		"title": "laku",
 		"etym": "I/PEN/*lagu/good",
 		"cat": "adj.",
@@ -11345,14 +11353,6 @@
 			"(archaic) good"
 		],
 		"notes": "Displaced by synonym ''uzurku'' after ''laku'' became sarcastic"
-	},
-	{
-		"title": "laksudôz",
-		"etym": "C/laku/sudôz",
-		"cat": "v.",
-		"defList": [
-			"(transitive) improve, better"
-		]
 	},
 	{
 		"title": "lalk",
