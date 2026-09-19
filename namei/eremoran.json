@@ -11225,7 +11225,7 @@
 	},
 	{
 		"title": "kusudoz",
-		"etym": "C/ku/sudoz/-isêm",
+		"etym": "C/ku/sudôz/-isêm",
 		"cat": "v.",
 		"defList": [
 			"multiply"
@@ -17385,6 +17385,14 @@
 		]
 	},
 	{
+		"title": "tasfudot",
+		"etym": "D/tasfut",
+		"cat": "n., 3rd",
+		"defList": [
+			"card, leaflet, scrap of paper"
+		]
+	},
+	{
 		"title": "tasfut",
 		"etym": "I/PEN/*tasɸut/paper",
 		"cat": "n., 3rd",
@@ -17392,14 +17400,6 @@
 			"paper"
 		],
 		"categories": ["v3_trade"]
-	},
-	{
-		"title": "tasfudot",
-		"etym": "D/tasfut",
-		"cat": "n., 3rd",
-		"defList": [
-			"card, leaflet, scrap of paper"
-		]
 	},
 	{
 		"title": "tasku",
