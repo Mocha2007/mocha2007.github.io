@@ -4412,7 +4412,8 @@ const blogData = [
 	While we're at it, we should raise the age for adults to get HRT to <s>19</s> <s>26</s> 30,
 	because that's when the body stops maturing (I also learned that from Rogan - he's so smart!).
 	@p
-	While we're at it, we can't just let these "teachers" (more like trans activist propagandists, if you ask me) refer to students by their preferred name and pronouns.
+	In the same vein, we can't just let these "teachers"
+	(more like trans activist propagandists, if you ask me) refer to students by their preferred name and pronouns.
 	Well, I mean, it's okay for <em>cis</em> children to be referred to by their preferred name and pronouns.
 	But not <em>trans</em> children!
 	I mean, what if they decide they <em>like</em> being socially accepted by their peers?! What horror!
