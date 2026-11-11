@@ -4409,7 +4409,7 @@ const blogData = [
 	that the biological process that's terrified them their entire life suddenly sounds fun and cool?
 	Oh, what's that, you say? They can simply go off puberty blockers at any time to resume puberty?
 	Um... sorry sweaty, but that's not what Joe Rogan says.
-	While we're at it, we should raise the age for adults to get HRT to <em>19</em> <em>26</em> 30,
+	While we're at it, we should raise the age for adults to get HRT to <s>19</s> <s>26</s> 30,
 	because that's when the body stops maturing (I also learned that from Rogan - he's so smart!).
 	@p
 	While we're at it, we can't just let these "teachers" (more like trans activist propagandists, if you ask me) refer to students by their preferred name and pronouns.
