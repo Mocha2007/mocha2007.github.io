@@ -4428,8 +4428,10 @@ const blogData = [
 	their single point of weakness is anything to do with military combat.
 	They're simply too weak, mentally unstable, and propagandized to be allowed anywhere near a combat zone.
 	@p
-	So yes, aside from these few minor edge cases, I fully support trans rights,
+	Aside from these few minor edge cases, I fully support trans rights,
 	and their ability to once again reintegrate with us first class citizens when their psychological delusions finally die down.
+	So while I don't actually know much about trans people,
+	I nevertheless feel fully qualified to legislate every aspect of their existence.
 	`,
 ];
 // don't forget, run blog.timestamp to get the timestamp!
