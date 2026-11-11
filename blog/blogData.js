@@ -4371,5 +4371,65 @@ const blogData = [
 		<li>For that matter, throughout the entire <cite>Submachine</cite> series, Mateusz uses highly amusing Polglish variable names.</li>
 	</ul>
 	`,
+	`
+	@title [Satire] While I am of course a Trans Ally...
+	@date 1794375426506
+	@tags satire politics trans_rights
+	I'm a liberal, and while I am, of course, a trans ally, and believe trans "women" are women, or whatever,
+	it's simply common sense to not allow these <em>men</em> to compete on the same teams as 6-year-old girls.
+	It's just common sense.
+	Everyone knows the second a trans ""woman"" is popped out of the womb,
+	the testosterone takes over and "she" is fully masculinized, both physically and socially (yes, even BEFORE puberty!).
+	So banning all trans """women""" from every sport is completely logical.
+	Now, sure, trans activist critics will point out the fact every major medical organization
+	and almost every medical professional agrees that after a couple years on hormones,
+	these roided out freaks turn into something resembling a real woman.
+	However, have you considered that a wide array of luminaries of our time,
+	such as Joe Rogan and Charlie Kirk (RIP, you were an American hero!) say otherwise?
+	So clearly, the science is unsettled, just like with vaccines and 5G causing autism,
+	so we should just ban them all until all the non-experts agree with the experts.
+	@p
+	And it's simply good politics.
+	Everyone knows that the vast majority of America hates trannies (It's okay for <em>me</em> to use the slur, I have trans friends!).
+	Giving in to Republican talking points has a <s>high likelihood</s> <s>decent possibility</s> non-zero probability of swaying a couple Republicans towards us Democrats.
+	After all, everyone knows that the top thing on the center-right voter's mind is trans """"women""""'s penises,
+	well ahead of everyone being broke, the country being in yet another forever war, and the entire administration being full of corrupt pedophilic rapists.
+	And obviously we can't solve either of those problems, so what else are Democrats supposed to campaign on?
+	So it's only logical that we allow Republicans to strip trans "people" of their rights.
+	@p
+	And that also includes banning puberty blockers for minors.
+	I mean, giving puberty blockers to minors at all is simply insane.
+	Puberty blockers should be for fully mature adults ONLY!
+	After all, what if, after years of suffering dysphoria and struggling to understand themself,
+	and after years of trying to get anyone, anyone at all to understand and believe their pain,
+	and after spending the entirety of their would-be puberty on this medicine without even once changing their mind,
+	they suddenly decide AFTERWARDS, years later, that the biological process that's terrified them their entire life suddenly sounds fun and cool?
+	Oh, what's that, you say? They can simply go off puberty blockers at any time to resume puberty?
+	Um... sorry sweaty, but that's not what Joe Rogan says.
+	While we're at it, we should raise the age for adults to get HRT to <em>19</em> <em>26</em> 30,
+	because that's when the body stops maturing (I also learned that from Rogan - he's so smart!).
+	@p
+	While we're at it, we can't just let these "teachers" (more like trans activist propagandists, if you ask me) refer to students by their preferred name and pronouns.
+	Well, I mean, it's okay for <em>cis</em> children to be referred to by their preferred name and pronouns.
+	But not <em>trans</em> children!
+	I mean, what if they decide they <em>like</em> being socially accepted by their peers?! What horror!
+	@p
+	And of course, most importantly of all, we simply cannot allow trans """""women""""" in real women's bathrooms, let alone women's prisons!
+	After all, what if these freaks start raping all the women in there?
+	Trans ""people"" are inherently sexual, as I'm sure we all know from our countless hours a day jerking off to tgirls on pornhub.
+	After all, them thinking they're the opposite sex is simply their fetishistic sex fantasy.
+	So why on earth would anyone want one of those <em>things</em> around real women?
+	What about trans men, you say?
+	Um... let's not talk about where changing the law would put trans men.
+	@p
+	Lastly, we can't forget to ban trans women from serving in the military.
+	While we can all agree that trans women excel at every sport in existence, absolutely dominating the competition
+	(as evidenced by every olympic medalist in the past three decades being secretly transgender),
+	their single point of weakness is anything to do with military combat.
+	They're simply too weak, mentally unstable, and propagandized to be allowed anywhere near a combat zone.
+	@p
+	So yes, aside from these few minor edge cases, I fully support trans rights,
+	and their ability to once again reintegrate with us first class citizens when their psychological delusions finally die down.
+	`,
 ];
 // don't forget, run blog.timestamp to get the timestamp!
