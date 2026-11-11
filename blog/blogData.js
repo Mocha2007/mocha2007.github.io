@@ -4416,7 +4416,7 @@ const blogData = [
 	(more like trans activist propagandists, if you ask me) refer to students by their preferred name and pronouns.
 	Well, I mean, it's okay for <em>cis</em> children to be referred to by their preferred name and pronouns.
 	But not <em>trans</em> children!
-	I mean, what if they decide they <em>like</em> being socially accepted by their peers?! What horror!
+	What if they decide they <em>like</em> being socially accepted by their peers?! What horror!
 	@p
 	And of course, most importantly of all, we simply cannot allow trans """""women""""" in real women's bathrooms, let alone women's prisons!
 	After all, what if these freaks start raping all the women in there?
