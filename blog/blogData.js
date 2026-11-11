@@ -4405,7 +4405,8 @@ const blogData = [
 	After all, what if, after years of suffering dysphoria and struggling to understand themself,
 	and after years of trying to get anyone, anyone at all to understand and believe their pain,
 	and after spending the entirety of their would-be puberty on this medicine without even once changing their mind,
-	they suddenly decide AFTERWARDS, years later, that the biological process that's terrified them their entire life suddenly sounds fun and cool?
+	a child suddenly decide AFTERWARDS, years later,
+	that the biological process that's terrified them their entire life suddenly sounds fun and cool?
 	Oh, what's that, you say? They can simply go off puberty blockers at any time to resume puberty?
 	Um... sorry sweaty, but that's not what Joe Rogan says.
 	While we're at it, we should raise the age for adults to get HRT to <em>19</em> <em>26</em> 30,
