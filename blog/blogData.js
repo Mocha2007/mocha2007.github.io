@@ -4433,7 +4433,7 @@ const blogData = [
 	They're simply too weak, mentally unstable, and propagandized to be allowed anywhere near a combat zone.
 	@p
 	Aside from these few minor edge cases, I fully support trans rights,
-	and their ability to once again reintegrate with us first class citizens when their psychological delusions finally wear off.
+	and their ability to once again reintegrate with us first class citizens when their psychotic delusions finally wear off.
 	So while I don't actually know much about trans people,
 	I nevertheless feel fully qualified to legislate every aspect of their existence.
 	And that's why <em>I'm</em> a true ally*! 🏳️‍⚧️🏳️‍⚧️🏳️‍⚧️
