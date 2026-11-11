@@ -4395,7 +4395,8 @@ const blogData = [
 	After all, everyone knows that the top thing on the center-right voter's mind is trans """"women""""'s penises,
 	well ahead of everyone being broke, the country being in yet another forever war, and the entire administration being full of corrupt pedophilic rapists.
 	And obviously we can't solve any of those problems, so what else are Democrats supposed to campaign on?
-	So it's only logical that we allow Republicans to strip trans "people" of their rights.
+	So it's only logical that we not only allow Republicans to strip trans "people" of their rights,
+	but also actively advertise and propagandize against trans people, further demonizing them.
 	@p
 	And that also includes banning puberty blockers for minors.
 	I mean, giving puberty blockers to minors at all is simply insane.
