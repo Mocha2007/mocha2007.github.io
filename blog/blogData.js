@@ -4377,7 +4377,7 @@ const blogData = [
 	@tags satire politics trans_rights
 	I'm a liberal, and while I am, of course, a trans ally, and believe trans "women" are women, or whatever,
 	it's simply common sense to not allow these <em>men</em> to compete on the same teams as 6-year-old girls.
-	It's just common sense.
+	It's common sense. It's just common sense (Have I said "common sense" enough?).
 	Everyone knows the second a trans ""woman"" is popped out of the womb,
 	the testosterone takes over and "she" is fully masculinized, both physically and socially (yes, even BEFORE puberty!).
 	So banning all trans """women""" from every sport is completely logical.
@@ -4394,7 +4394,7 @@ const blogData = [
 	Giving in to Republican talking points has a <s>high likelihood</s> <s>decent possibility</s> non-zero probability of swaying a couple Republicans towards us Democrats.
 	After all, everyone knows that the top thing on the center-right voter's mind is trans """"women""""'s penises,
 	well ahead of everyone being broke, the country being in yet another forever war, and the entire administration being full of corrupt pedophilic rapists.
-	And obviously we can't solve either of those problems, so what else are Democrats supposed to campaign on?
+	And obviously we can't solve any of those problems, so what else are Democrats supposed to campaign on?
 	So it's only logical that we allow Republicans to strip trans "people" of their rights.
 	@p
 	And that also includes banning puberty blockers for minors.
