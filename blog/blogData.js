@@ -4397,6 +4397,7 @@ const blogData = [
 	And obviously we can't solve any of those problems, so what else are Democrats supposed to campaign on?
 	So it's only logical that we not only allow Republicans to strip trans "people" of their rights,
 	but also actively advertise and propagandize against trans people, further demonizing them.
+	And maybe afterwards we can work on the other problems this country faces, like gays and mexicans.
 	@p
 	And that also includes banning puberty blockers for minors.
 	I mean, giving puberty blockers to minors at all is simply insane.
