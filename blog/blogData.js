@@ -4421,7 +4421,7 @@ const blogData = [
 	And of course, most importantly of all, we simply cannot allow trans """""women""""" in real women's bathrooms, let alone women's prisons!
 	After all, what if these freaks start raping all the women in there?
 	Trans ""people"" are inherently sexual, as I'm sure we all know from our countless hours a day jerking off to tgirls on pornhub.
-	After all, them thinking they're the opposite sex is simply their fetishistic sex fantasy.
+	Them thinking they're the opposite sex is simply their fetishistic sex fantasy.
 	So why on earth would anyone want one of those <em>things</em> around real women?
 	What about trans men, you say?
 	Um... let's not talk about where changing the law would put trans men.
